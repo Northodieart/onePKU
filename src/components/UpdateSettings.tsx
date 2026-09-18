@@ -1,13 +1,12 @@
 import { useState } from "react";
-import { action } from "../lib/api";
 import {
   APP_VERSION,
   checkForUpdate,
   inApp,
   relaunchApp,
-  RELEASES_URL,
   type UpdateHandle,
 } from "../lib/updater";
+import SettingRow from "./SettingRow";
 import { Button } from "./ui";
 
 type Phase =
@@ -28,10 +27,9 @@ function mb(n: number) {
   return `${(n / 1024 / 1024).toFixed(1)} MB`;
 }
 
-/** 设置页的“检查更新”：当前版本、检查、下载安装、重启。 */
+/** 设置页“版本”一行：当前版本、检查、下载安装、重启。 */
 export default function UpdateSettings() {
   const [phase, setPhase] = useState<Phase>({ kind: "idle" });
-  const busy = phase.kind === "checking" || phase.kind === "downloading";
 
   async function check() {
     setPhase({ kind: "checking" });
@@ -42,7 +40,10 @@ export default function UpdateSettings() {
           ? { kind: "available", update }
           : {
               kind: "latest",
-              checkedAt: new Date().toLocaleTimeString("zh-CN"),
+              checkedAt: new Date().toLocaleTimeString("zh-CN", {
+                hour: "2-digit",
+                minute: "2-digit",
+              }),
             },
       );
     } catch (e) {
@@ -68,94 +69,44 @@ export default function UpdateSettings() {
     }
   }
 
+  const control = !inApp() ? (
+    <span className="subtle">浏览器预览不能更新</span>
+  ) : phase.kind === "available" ? (
+    <Button variant="primary" onClick={() => void install(phase.update)}>
+      更新到 v{phase.update.version}
+    </Button>
+  ) : phase.kind === "ready" ? (
+    <Button variant="primary" onClick={() => void relaunchApp()}>
+      重新启动
+    </Button>
+  ) : phase.kind === "downloading" ? (
+    <span className="subtle">
+      {phase.total
+        ? `下载中 ${mb(phase.done)} / ${mb(phase.total)}`
+        : `下载中 ${mb(phase.done)}`}
+    </span>
+  ) : (
+    <Button disabled={phase.kind === "checking"} onClick={() => void check()}>
+      {phase.kind === "checking" ? "正在检查…" : "检查更新"}
+    </Button>
+  );
+
+  const status =
+    phase.kind === "latest"
+      ? `已是最新版本（${phase.checkedAt} 检查）`
+      : phase.kind === "available" && phase.update.notes
+        ? phase.update.notes
+        : phase.kind === "ready"
+          ? "新版本已安装，重新启动后生效。"
+          : undefined;
+
   return (
-    <div className="update-settings">
-      <div className="settings-facts">
-        <div>
-          <span>当前版本</span>
-          <strong>v{APP_VERSION}</strong>
-        </div>
-        {phase.kind === "available" ||
-        phase.kind === "downloading" ||
-        phase.kind === "ready" ? (
-          <div>
-            <span>可用版本</span>
-            <strong>v{phase.update.version}</strong>
-          </div>
-        ) : null}
-      </div>
-      <div className="submission-actions">
-        {inApp() ? (
-          <>
-            {(phase.kind === "idle" ||
-              phase.kind === "latest" ||
-              phase.kind === "error" ||
-              phase.kind === "checking") && (
-              <Button
-                variant="quiet"
-                disabled={busy}
-                onClick={() => void check()}
-              >
-                {phase.kind === "checking" ? "正在检查…" : "检查更新"}
-              </Button>
-            )}
-            {phase.kind === "available" && (
-              <Button
-                variant="primary"
-                onClick={() => void install(phase.update)}
-              >
-                下载并安装 v{phase.update.version}
-              </Button>
-            )}
-            {phase.kind === "ready" && (
-              <Button variant="primary" onClick={() => void relaunchApp()}>
-                重新启动以完成更新
-              </Button>
-            )}
-          </>
-        ) : (
-          <Button
-            variant="quiet"
-            onClick={() => void action({ kind: "openLink", url: RELEASES_URL })}
-          >
-            前往 Releases 页
-          </Button>
-        )}
-        <Button
-          variant="quiet"
-          onClick={() => void action({ kind: "openLink", url: RELEASES_URL })}
-        >
-          更新记录
-        </Button>
-      </div>
-      {phase.kind === "latest" && (
-        <p role="status" className="subtle">
-          已是最新版本（{phase.checkedAt} 检查）。
-        </p>
-      )}
-      {phase.kind === "available" && phase.update.notes && (
-        <p className="subtle update-notes">{phase.update.notes}</p>
-      )}
-      {phase.kind === "downloading" && (
-        <p role="status" className="subtle">
-          正在下载
-          {phase.total
-            ? ` ${mb(phase.done)} / ${mb(phase.total)}`
-            : `… ${mb(phase.done)}`}
-        </p>
-      )}
-      {phase.kind === "ready" && (
-        <p role="status" className="subtle">
-          已下载并安装到应用包，重新启动后生效。
-        </p>
-      )}
-      {phase.kind === "error" && <p role="alert">{phase.message}</p>}
-      {!inApp() && (
-        <p className="subtle">浏览器预览模式不能自动更新，请在应用内使用。</p>
-      )}
-      <p className="subtle">
-        更新包来自 GitHub Releases，安装前校验开发者签名；不收集任何使用数据。
-      </p>
-    </div>
+    <SettingRow
+      label={`OnePKU v${APP_VERSION}`}
+      description="更新包来自 GitHub Releases，安装前校验签名。"
+      control={control}
+      status={status}
+      error={phase.kind === "error" ? phase.message : undefined}
+    />
   );
 }

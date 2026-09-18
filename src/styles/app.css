@@ -341,7 +341,18 @@ main {
 .button.quiet {
   background: transparent;
   border-color: transparent;
-  color: var(--muted);
+  color: var(--text);
+}
+.button.quiet:hover {
+  background: var(--hover);
+  border-color: var(--border);
+}
+.button:active:not(:disabled) {
+  transform: translateY(0.5px);
+  filter: brightness(0.97);
+}
+.button:disabled {
+  opacity: 0.55;
 }
 .text-button {
   border: 0;
@@ -3986,4 +3997,135 @@ input[type="checkbox"] {
 }
 .storage-location {
   margin: 4px 0 8px;
+}
+
+/* 设置页：统一的行 */
+.settings-section h2 {
+  margin-bottom: 4px;
+}
+.setting-row {
+  padding: 16px 0;
+  border-top: 1px solid var(--border);
+}
+.settings-section h2 + .setting-row,
+.settings-section h2 + .setting-anchor > .setting-row:first-child {
+  border-top: 0;
+}
+.setting-row-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.setting-row.stacked .setting-row-main {
+  align-items: flex-start;
+}
+.setting-row-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.setting-row-label {
+  font-size: 14px;
+  font-weight: 550;
+}
+.setting-row-description {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 62ch;
+}
+.setting-row-description .path-value {
+  color: var(--text);
+  font-weight: 500;
+}
+.setting-row-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.setting-row-control select {
+  min-width: 200px;
+}
+.setting-row-body {
+  margin-top: 14px;
+}
+.setting-row-body .profile-form {
+  margin: 0;
+}
+.setting-row-status {
+  margin: 10px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+  white-space: pre-wrap;
+}
+.setting-row-status.error {
+  color: var(--danger);
+}
+.setting-details > summary,
+.settings-section .operation-summary > summary {
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--muted);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.setting-details > summary::-webkit-details-marker,
+.settings-section .operation-summary > summary::-webkit-details-marker {
+  display: none;
+}
+.setting-details > summary::before,
+.settings-section .operation-summary > summary::before {
+  content: "▸";
+  font-size: 12px;
+  width: 12px;
+}
+.setting-details[open] > summary::before,
+.settings-section .operation-summary[open] > summary::before {
+  content: "▾";
+}
+.settings-section .operation-summary > summary span {
+  margin-left: 4px;
+}
+.setting-details-body {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 65ch;
+}
+.setting-details-body p {
+  margin: 0 0 6px;
+}
+.setting-details-body pre {
+  margin: 6px 0 10px;
+}
+.settings-section .operation-summary {
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+  margin-top: 0;
+}
+.settings-section .connections + .setting-row {
+  border-top: 1px solid var(--border);
+}
+.connection {
+  padding: 16px 0;
+}
+.connection:last-child {
+  padding-bottom: 16px;
+  border-bottom: 0;
+}
+.connection h3 {
+  font-size: 14px;
+  font-weight: 550;
+}
+.connection p {
+  font-size: 12px;
+}
+.connection-state {
+  font-size: 12px;
 }
