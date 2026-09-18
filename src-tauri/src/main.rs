@@ -143,6 +143,9 @@ async fn open_booking(
 }
 fn main() {
     tauri::Builder::default()
+        // 更新只从 tauri.conf.json 里写死的 GitHub Release 地址取，并用内置公钥校验签名。
+        .plugin(tauri_plugin_updater::Builder::new().build())
+        .plugin(tauri_plugin_process::init())
         .manage(campus_core::Core::new())
         .manage(browser::PortalNoticeReader::default())
         .setup(|app| {

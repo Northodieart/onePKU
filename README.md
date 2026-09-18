@@ -36,6 +36,8 @@
 xattr -cr /Applications/OnePKU.app
 ```
 
+之后的版本可以在应用内更新：设置 → 版本与更新 → 检查更新，下载后重新启动即可，不再需要重新处理 Gatekeeper。
+
 可选组件：下载回放为 MP4 需要 `ffmpeg`（`brew install ffmpeg`）；本机生成字幕需要 macOS 14 以上并运行一次 `bash scripts/subtitles/install.sh`，见 [字幕说明](docs/SUBTITLES.md)。播放回放、导入 SRT/VTT 字幕不需要这些。
 
 ## 第一次打开

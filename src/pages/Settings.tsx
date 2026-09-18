@@ -1,5 +1,6 @@
 import SubtitleSettings from "../components/SubtitleSettings";
 import WriteOperations from "../components/WriteOperations";
+import UpdateSettings from "../components/UpdateSettings";
 import ProfileForm from "../components/ProfileForm";
 import { useEffect, useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
@@ -267,6 +268,10 @@ export default function Settings({
         </div>
         {cacheMessage && <p role="status">{cacheMessage}</p>}
         <WriteOperations />
+      </section>
+      <section className="resource settings-section" aria-label="版本与更新">
+        <h2>版本与更新</h2>
+        <UpdateSettings />
       </section>
       <section className="resource settings-section">
         <h2>关于与原站入口</h2>
