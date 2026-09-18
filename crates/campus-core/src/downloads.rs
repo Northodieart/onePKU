@@ -139,7 +139,7 @@ pub(crate) fn archive_directory(semester: &str, course: &str) -> Result<PathBuf>
         .join(folder_component(semester))
         .join(folder_component(course)))
 }
-fn folder_component(s: &str) -> String {
+pub(crate) fn folder_component(s: &str) -> String {
     let v: String = s
         .chars()
         .map(|c| {

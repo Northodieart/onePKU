@@ -10,6 +10,7 @@ use std::{
 };
 mod auth;
 mod bookings;
+mod curriculum;
 mod downloads;
 mod maintenance;
 mod materials;
@@ -51,6 +52,13 @@ pub enum Request {
     },
     CalendarPdf {
         year: String,
+    },
+    CurriculumPages {
+        volume: String,
+        from: u32,
+        to: u32,
+        title: String,
+        open: bool,
     },
     Preferences,
     Profile,
@@ -533,6 +541,13 @@ impl Core {
                 json!({"opened":true})
             }
             Request::CalendarPdf { year } => news::calendar_pdf(year).await?,
+            Request::CurriculumPages {
+                volume,
+                from,
+                to,
+                title,
+                open,
+            } => curriculum::pages(volume, *from, *to, title, *open).await?,
             Request::OpenLink { url } => {
                 news::open_link(url)?;
                 json!({"opened":true})
