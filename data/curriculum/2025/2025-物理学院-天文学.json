@@ -1,0 +1,907 @@
+{
+ "id": "2025-物理学院-天文学",
+ "cohort": 2025,
+ "volume": "北京大学本科培养方案（2025）理科卷",
+ "school": "物理学院",
+ "major": "天文学",
+ "track": null,
+ "title": "天文学专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "理学学士",
+ "totalCredits": {
+  "min": 145,
+  "max": 152
+ },
+ "topRequirements": [],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "33～39 学分",
+   "min": 33,
+   "max": 39,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "46 学分",
+   "min": 46,
+   "max": 46,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "毕业论文",
+   "requirement": "6 学分",
+   "min": 6,
+   "max": 6,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "15 学分",
+   "min": 15,
+   "max": 15,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "10 学分",
+   "min": 10,
+   "max": 10,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 45,
+   "max": 51,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "1.1",
+   "parent": "1",
+   "name": "公共必修课",
+   "min": 33,
+   "max": 39,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "思想道德与法治",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大一上",
+     "code": "04031652"
+    },
+    {
+     "name": "中国近现代史纲要",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大一下",
+     "code": "04031661"
+    },
+    {
+     "name": "习近平新时代中国特色社会主义思想概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大二上",
+     "code": "04031762"
+    },
+    {
+     "name": "毛泽东思想和中国特色社会主义理论体系概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大二下",
+     "code": "04031731"
+    },
+    {
+     "name": "马克思主义基本原理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大三上",
+     "code": "04031741"
+    },
+    {
+     "name": "形势与政策",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一学期课堂理论教学、4 个学",
+     "code": "04031751"
+    },
+    {
+     "name": "思想政治实践（上） 1 一至三年级的任一秋季学期",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "61130030"
+    },
+    {
+     "name": "思想政治实践（下） 1 大四前的任一春季学期至暑假思想政治理论选择性任一学期 按学校要求选课",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "61130040"
+    },
+    {
+     "name": "劳动教育课 32 学时 32 物理应用与实践为物院劳动",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00437700"
+    },
+    {
+     "name": "计算概论（B）",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大一上",
+     "code": "04831410"
+    },
+    {
+     "name": "计算概论（B）",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 34,
+     "term": "可用计算概论 A 替代",
+     "code": "04831410"
+    },
+    {
+     "name": "数据结构与算法（B）",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大一下",
+     "code": "04831420"
+    },
+    {
+     "name": "数据结构与算法上机",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 34,
+     "term": "可用数据结构与算法 A 替代",
+     "code": "04830494"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "大一上",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "1.2",
+   "parent": "1",
+   "name": "通识教育课",
+   "min": 12,
+   "max": 12,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 75,
+   "max": 76,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.1",
+   "parent": "2",
+   "name": "专业基础课",
+   "min": 46,
+   "max": 46,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学 A（一） 6 大一上",
+     "nature": null,
+     "credits": 10,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00132511"
+    },
+    {
+     "name": "高等数学 A（二） 6 大一下",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00132512"
+    },
+    {
+     "name": "线性代数（B）",
+     "nature": null,
+     "credits": 4,
+     "hours": 5,
+     "practice": null,
+     "term": "大一上",
+     "code": "00131460"
+    },
+    {
+     "name": "力学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大一上",
+     "code": "00431141"
+    },
+    {
+     "name": "热学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "大一下",
+     "code": "00431142"
+    },
+    {
+     "name": "电磁学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大一下",
+     "code": "00431143"
+    },
+    {
+     "name": "光学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大二上",
+     "code": "00431172"
+    },
+    {
+     "name": "原子物理学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大二",
+     "code": "00431151"
+    },
+    {
+     "name": "普通物理实验（1）",
+     "nature": null,
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "大一上",
+     "code": "00437180"
+    },
+    {
+     "name": "普通物理实验（2）",
+     "nature": null,
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "大一下",
+     "code": "00437190"
+    },
+    {
+     "name": "或",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "大二上",
+     "code": "00432110"
+    },
+    {
+     "name": "或数学物理方法（上）+（下）",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00432108"
+    },
+    {
+     "name": "3+3 3+3 大二",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00432109"
+    },
+    {
+     "name": "理论物理基础Ⅰ 4 大二下",
+     "nature": null,
+     "credits": 8,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00432001"
+    },
+    {
+     "name": "理论物理基础Ⅱ 4 大三上",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00432002"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2",
+   "parent": "2",
+   "name": "专业核心课",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.2-1",
+   "parent": "2.2",
+   "kind": "list",
+   "name": "天体物理方向：24 学分",
+   "min": 24,
+   "max": 24,
+   "unit": "学分",
+   "requirement": "天体物理方向：24 学分",
+   "courses": [
+    {
+     "name": "理论力学",
+     "nature": null,
+     "credits": 3,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00432211"
+    },
+    {
+     "name": "电动力学",
+     "nature": null,
+     "credits": 3,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00432213"
+    },
+    {
+     "name": "量子力学",
+     "nature": null,
+     "credits": 3,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00432148"
+    },
+    {
+     "name": "统计力学",
+     "nature": null,
+     "credits": 3,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00431648"
+    },
+    {
+     "name": "基础天文",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 6,
+     "term": "大一",
+     "code": "00431561"
+    },
+    {
+     "name": "天体物理导论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大一-大二",
+     "code": "00430194"
+    },
+    {
+     "name": "天体物理讨论班",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "大一-大三",
+     "code": "00430186"
+    },
+    {
+     "name": "实测天体物理Ⅰ（光学与红外）",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 15,
+     "term": "大三上",
+     "code": "00431568"
+    },
+    {
+     "name": "实测天体物理Ⅱ（高能与射电）",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "大三下",
+     "code": "00431569"
+    },
+    {
+     "name": "理论天体物理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大三-大四",
+     "code": "00432245"
+    },
+    {
+     "name": "天体光谱学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "大三-大四",
+     "code": "00431564"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2-2",
+   "parent": "2.2",
+   "kind": "list",
+   "name": "天文高新技术与应用方向：23 学分",
+   "min": 23,
+   "max": 23,
+   "unit": "学分",
+   "requirement": "天文高新技术与应用方向：23 学分",
+   "courses": [
+    {
+     "name": "基础天文",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 6,
+     "term": "大一",
+     "code": "00431561"
+    },
+    {
+     "name": "天体物理导论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大一-大二",
+     "code": "00430194"
+    },
+    {
+     "name": "天体物理讨论班",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "大二-大三",
+     "code": "00430186"
+    },
+    {
+     "name": "实测天体物理Ⅰ（光学与红外）",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 15,
+     "term": "大三上",
+     "code": "00431568"
+    },
+    {
+     "name": "实测天体物理Ⅱ（高能与射电）",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "大三下",
+     "code": "00431569"
+    },
+    {
+     "name": "天体物理观测实验",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 17,
+     "term": "大三上",
+     "code": "00431563"
+    },
+    {
+     "name": "理论天体物理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大三-大四",
+     "code": "00432245"
+    },
+    {
+     "name": "天文无线电技术基础",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "大三-大四",
+     "code": "00431661"
+    },
+    {
+     "name": "天文数据分析：从统计到人工智能",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大四",
+     "code": "00407807"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.3",
+   "parent": "2",
+   "name": "毕业论文",
+   "min": 6,
+   "max": 6,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 25,
+   "max": 25,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "天体物理辐射过程",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "00406490"
+    },
+    {
+     "name": "恒星结构和演化",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "00416550"
+    },
+    {
+     "name": "弥散介质天体物理学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "00416852"
+    },
+    {
+     "name": "星系物理学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "00416520"
+    },
+    {
+     "name": "宇宙学及星系形成",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "00416800"
+    },
+    {
+     "name": "天体物理前沿",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "00431547"
+    },
+    {
+     "name": "天体物理观测实验",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 17,
+     "term": "秋季",
+     "code": "00431563"
+    },
+    {
+     "name": "天体光谱学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "00431564"
+    },
+    {
+     "name": "天文文献阅读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 24,
+     "term": "秋季",
+     "code": "00431545"
+    },
+    {
+     "name": "天文无线电技术基础",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "00431661"
+    },
+    {
+     "name": "物理宇宙学基础",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "00434070"
+    },
+    {
+     "name": "天文测距导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "00430170"
+    },
+    {
+     "name": "引力波天体物理学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "00407793"
+    },
+    {
+     "name": "广义相对论与天体物理",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 4,
+     "term": "秋季",
+     "code": "00407794"
+    },
+    {
+     "name": "射电天文学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "00407795"
+    },
+    {
+     "name": "天体物理专题",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春、秋季",
+     "code": "00431543"
+    },
+    {
+     "name": "实验室安全教育",
+     "nature": null,
+     "credits": 0.5,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "00414980"
+    },
+    {
+     "name": "广义相对论",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "春季",
+     "code": "00415692"
+    },
+    {
+     "name": "现代电子电路基础及实验（一）",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": 6,
+     "term": "春、秋季",
+     "code": "00430132"
+    },
+    {
+     "name": "现代电子电路基础及实验（二）",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": 60,
+     "term": "春、秋季",
+     "code": "00430133"
+    },
+    {
+     "name": "核天体物理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "00431539"
+    },
+    {
+     "name": "天体粒子物理",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "00432296"
+    },
+    {
+     "name": "物理应用与实践",
+     "nature": null,
+     "credits": 1,
+     "hours": 17,
+     "practice": null,
+     "term": "春、秋季",
+     "code": "00437700"
+    },
+    {
+     "name": "物理卓越计划讲堂：名师面对面（一）",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "00434101"
+    },
+    {
+     "name": "物理卓越计划讲堂：名师面对面（二）",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "00434102"
+    },
+    {
+     "name": "等 教师指导下的独立/小组研究 2～6 / 68～204 大二-大四",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "30330033"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2",
+   "parent": "3",
+   "name": "自主选修课",
+   "min": 10,
+   "max": 10,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "说明：其中的差异来自英语 2～8 学分。",
+  "备注：劳动课程 32 学时，1 门思政选择性必修课。",
+  "—       大学英语           2～8       —     —     按大学英语教研室要求选课",
+  "任选 1 门                     1门      —",
+  "必修                                    详见思政选择性必修课列表",
+  "—       体育系列课程           4      —             全年",
+  "通识教育课程系列                 各系列学分",
+  "（通识核心课+通选课）             （通识核心课+通选课）",
+  "Ⅰ. 人类文明及其传统                       ≥2",
+  "Ⅱ. 现代社会及其问题                       ≥2           1. 不少于 12 学分",
+  "Ⅲ. 艺术与人文                          ≥2           2. 至少修读 1 门“通识核心课”",
+  "Ⅳ. 数学、自然与技术                       ≥2",
+  "（1）具体课程列表详见《北京大学本科生选课手册》 ；",
+  "（2）原则上不允许以专业课替代通识教育课程学分；",
+  "（3）本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分；",
+  "（4）建议合理分配修读时间，每学期修读 1 门课程。",
+  "说明：差异来自不同方向专业核心课程学分差异。",
+  "天文学（天体物理方向）和强基专业物理学（天体物理方向）适用。",
+  "说明：毕业论文课题必须与专业相关。",
+  "新开课       天文数据分析：从统计到人工智能         3    3             秋季",
+  "（1）其他学院专业核心课程；",
+  "（2）物理学院其他专业、方向专业必修课程、专业选修课程。"
+ ],
+ "warnings": [
+  "第 4773 行：课程行缺少学分：61130030   思想政治实践（上）        1           ",
+  "第 4774 行：课程行缺少学分：61130040   思想政治实践（下）        1           ",
+  "第 4779 行：课程行缺少学分：00437700   劳动教育课          32 学时         ",
+  "第 4813 行：课程行缺少学分：00132512    高等数学 A（二）                  6",
+  "第 4825 行：课程行缺少学分：00432108                        或",
+  "第 4827 行：课程行缺少学分：00432109                       3+3    3+",
+  "第 4830 行：课程行缺少学分：00432002    理论物理基础Ⅱ                    4",
+  "第 4901 行：课程行缺少学分：30330033 等   教师指导下的独立/小组研究         2～6  "
+ ],
+ "source": {
+  "volumeId": "2025-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=216",
+  "lineStart": 4685,
+  "lineEnd": 5032
+ }
+}

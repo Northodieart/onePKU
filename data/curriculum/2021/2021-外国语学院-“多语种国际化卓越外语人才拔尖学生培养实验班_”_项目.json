@@ -1,0 +1,861 @@
+{
+ "id": "2021-外国语学院-“多语种国际化卓越外语人才拔尖学生培养实验班_”_项目",
+ "cohort": 2021,
+ "volume": "北京大学本科培养方案（2021）文科卷",
+ "school": "外国语学院",
+ "major": "“多语种国际化卓越外语人才拔尖学生培养实验班/”/项目",
+ "track": null,
+ "title": "“多语种国际化卓越外语人才拔尖学生培养实验班 ” 项目",
+ "kind": "project",
+ "qualifiers": [],
+ "degree": null,
+ "totalCredits": {
+  "min": 32,
+  "max": 32,
+  "inferred": true
+ },
+ "topRequirements": [],
+ "requirements": [],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "学分要求与课程设置",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "课程",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "项目必修课",
+   "min": 24,
+   "max": 24,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "走近西班牙语国家之语言",
+     "nature": null,
+     "credits": 6,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03634070"
+    },
+    {
+     "name": "走进西班牙语国家之历史",
+     "nature": null,
+     "credits": 6,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03634080"
+    },
+    {
+     "name": "走遍西班牙语国家之时政",
+     "nature": null,
+     "credits": 6,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03634091"
+    },
+    {
+     "name": "走出西班牙语国家之文学",
+     "nature": null,
+     "credits": 6,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03634092"
+    },
+    {
+     "name": "走近俄罗斯之语言",
+     "nature": null,
+     "credits": 6,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03730810"
+    },
+    {
+     "name": "走进俄罗斯之文学",
+     "nature": null,
+     "credits": 6,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03730910"
+    },
+    {
+     "name": "走遍俄罗斯之历史",
+     "nature": null,
+     "credits": 6,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03730920"
+    },
+    {
+     "name": "走近中东之语言",
+     "nature": null,
+     "credits": 6,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03538106"
+    },
+    {
+     "name": "走进中东之文学",
+     "nature": null,
+     "credits": 6,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03538107"
+    },
+    {
+     "name": "走遍中东之历史",
+     "nature": null,
+     "credits": 6,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03538108"
+    },
+    {
+     "name": "走近日本之语言",
+     "nature": null,
+     "credits": 6,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03532501"
+    },
+    {
+     "name": "走近德语国家之语言",
+     "nature": null,
+     "credits": 6,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03632911"
+    },
+    {
+     "name": "走进德语国家之文学",
+     "nature": null,
+     "credits": 6,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03632912"
+    },
+    {
+     "name": "走遍德语国家之历史",
+     "nature": null,
+     "credits": 6,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03632913"
+    },
+    {
+     "name": "走出德语国家之文化",
+     "nature": null,
+     "credits": 6,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03632914"
+    },
+    {
+     "name": "批判性思维与学术写作",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03835780"
+    },
+    {
+     "name": "英语公众演讲",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03835860"
+    },
+    {
+     "name": "西班牙历史和文化概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03633210"
+    },
+    {
+     "name": "拉丁美洲历史文化概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03633220"
+    },
+    {
+     "name": "俄罗斯国情 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03730881"
+    },
+    {
+     "name": "俄罗斯国情 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03730882"
+    },
+    {
+     "name": "中东史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03538390"
+    },
+    {
+     "name": "阿拉伯伊斯兰文化",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03538180"
+    },
+    {
+     "name": "中日文化交流史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03532260"
+    },
+    {
+     "name": "德国文化史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03632110"
+    },
+    {
+     "name": "德国历史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03632210"
+    },
+    {
+     "name": "德语国家国情课",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03632220"
+    },
+    {
+     "name": "俄罗斯政治经济与外交",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "国际关系学院",
+     "code": "02430231"
+    },
+    {
+     "name": "国际安全研究",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "国际关系学院",
+     "code": "02432110"
+    },
+    {
+     "name": "伊斯兰世界的政治发展",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "国际关系学院",
+     "code": "02433350"
+    },
+    {
+     "name": "公共外交",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "国际关系学院",
+     "code": "02433170"
+    },
+    {
+     "name": "对外政策分析",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "国际关系学院",
+     "code": "02433240"
+    },
+    {
+     "name": "国际社会中的发展研究",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "国际关系学院",
+     "code": "02430112"
+    },
+    {
+     "name": "中国与国际组织",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "国际关系学院",
+     "code": "02432230"
+    },
+    {
+     "name": "世界宗教与国际社会",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "国际关系学院",
+     "code": "02430500"
+    },
+    {
+     "name": "中东政治经济与外交",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "国际关系学院",
+     "code": "02430320"
+    },
+    {
+     "name": "中国外交谋略研究",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "国际关系学院",
+     "code": "02432030"
+    },
+    {
+     "name": "拉丁美洲政治与外交",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "国际关系学院",
+     "code": "02431400"
+    },
+    {
+     "name": "理解世界政治",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "国际关系学院",
+     "code": "02432240"
+    },
+    {
+     "name": "比较政治与比较文化",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "国际关系学院",
+     "code": "02431551"
+    },
+    {
+     "name": "世界史通论",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "历史系",
+     "code": "02132081"
+    },
+    {
+     "name": "亚洲史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "历史系",
+     "code": "02133660"
+    },
+    {
+     "name": "欧洲史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "历史系",
+     "code": "02133640"
+    },
+    {
+     "name": "美洲史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "历史系",
+     "code": "02133650"
+    },
+    {
+     "name": "非洲史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "历史系",
+     "code": "02139190"
+    },
+    {
+     "name": "外国历史文选 (上)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "历史系",
+     "code": "02132091"
+    },
+    {
+     "name": "外国历史文选 (下)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "历史系",
+     "code": "02132092"
+    },
+    {
+     "name": "公共葡萄牙语 (一)",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03635011"
+    },
+    {
+     "name": "公共葡萄牙语 (二)",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03635012"
+    },
+    {
+     "name": "公共基础意大利语 (一)",
+     "nature": null,
+     "credits": 6,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03530303"
+    },
+    {
+     "name": "公共基础意大利语 (二)",
+     "nature": null,
+     "credits": 6,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03530304"
+    },
+    {
+     "name": "公共基础意大利语 (三)",
+     "nature": null,
+     "credits": 6,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03530305"
+    },
+    {
+     "name": "公共基础意大利语 (四)",
+     "nature": null,
+     "credits": 6,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03530306"
+    },
+    {
+     "name": "公共意大利语 (一)",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03531047"
+    },
+    {
+     "name": "公共意大利语 (二)",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03531048"
+    },
+    {
+     "name": "公共格鲁吉亚语 (一)",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03531053"
+    },
+    {
+     "name": "公共格鲁吉亚语 (二)",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03531056"
+    },
+    {
+     "name": "公共乌兹别克语 (一)",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03531055"
+    },
+    {
+     "name": "公共乌兹别克语 (二)",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03531058"
+    },
+    {
+     "name": "公共阿塞拜疆语 (一)",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03531049"
+    },
+    {
+     "name": "公共阿塞拜疆语 (二)",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03531054"
+    },
+    {
+     "name": "公共库尔德语 (一)",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03530297"
+    },
+    {
+     "name": "公共库尔德语 (二)",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03530298"
+    },
+    {
+     "name": "公共希伯来语 (一)",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03530301"
+    },
+    {
+     "name": "公共希伯来语 (二)",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03530302"
+    },
+    {
+     "name": "公共土耳其语 (一)",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03530510"
+    },
+    {
+     "name": "公共土耳其语 (二)",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03530520"
+    },
+    {
+     "name": "公共波斯语 (一)",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03531029"
+    },
+    {
+     "name": "公共波斯语 (二)",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03531050"
+    },
+    {
+     "name": "公共韩国语 (一)",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03530441"
+    },
+    {
+     "name": "公共韩国语 (二)",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03530442"
+    },
+    {
+     "name": "公共韩国语 (三)",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03530443"
+    },
+    {
+     "name": "公共蒙古语 (一)",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03531023"
+    },
+    {
+     "name": "公共蒙古语 (二)",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03531024"
+    },
+    {
+     "name": "公共基础意大利语 (一)",
+     "nature": null,
+     "credits": 6,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03530303"
+    },
+    {
+     "name": "公共基础意大利语 (二)",
+     "nature": null,
+     "credits": 6,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03530304"
+    },
+    {
+     "name": "公共基础意大利语 (三)",
+     "nature": null,
+     "credits": 6,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03530305"
+    },
+    {
+     "name": "公共基础意大利语 (四)",
+     "nature": null,
+     "credits": 6,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03530306"
+    },
+    {
+     "name": "公共意大利语 (一)",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03531047"
+    },
+    {
+     "name": "公共意大利语 (二)",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03531048"
+    },
+    {
+     "name": "公共基础法语 (一)",
+     "nature": null,
+     "credits": 6,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03631601"
+    },
+    {
+     "name": "公共基础法语 (二)",
+     "nature": null,
+     "credits": 6,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03631602"
+    },
+    {
+     "name": "公共基础法语 (三)",
+     "nature": null,
+     "credits": 6,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03631603"
+    },
+    {
+     "name": "公共基础法语 (四)",
+     "nature": null,
+     "credits": 6,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03631604"
+    },
+    {
+     "name": "公共西班牙语 (一)",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03633611"
+    },
+    {
+     "name": "公共西班牙语 (二)",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03633612"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "总学分:32 学分,其中:(    4)为项目必 修 课 程 24 学 分; (",
+  "选修课程 8 学分。",
+  "1)完成 16 学分第二外语 系 列 课 程 的 学 习, 达 到 该 语 种 专 业 四 级 水 平 或 对 应 语 种 国",
+  "家的官方认定水平 (如西班牙塞万提斯学院 DELE 测试 B1/B2 水平)。",
+  "2)完成 4 学分英语加强课程的学习,主要训练如批判性思维与学术 英 语 写 作、英 语",
+  "演讲与辩论等能力。",
+  "3)完成 2 学分校内课外 实 践 活 动, 包 括 至 少 六 场 历 史 文 化 讲 座 及 三 篇 3000 字 学 习",
+  "报告。",
+  "4)完成 2 学分校外 (海外)实践活动,主要形式为赴国内外国际组织实 习 或 海 外 交",
+  "流学习,以及完成一篇 5000 字左右实践报告。",
+  "5)完成与第二外语使用国家相关的 6 学分历史、文化、外交等领域课程的学习。",
+  "6)完成 2 学分第三外语课程的学习,如西班牙语实验班同学可选修 葡 萄 牙 语、意 大",
+  "利语、罗马尼亚语等拉丁语族近源语言;阿拉伯语实验班同学可选修另外一种中东语言如",
+  "土耳其语、波斯语、希伯来语、库尔德语、阿马齐格语等;俄语实验班同学可选修一种中",
+  "亚、高加索地区或中东欧语言如哈萨克语、乌兹别克语、格鲁吉亚语、阿塞拜疆语、乌克",
+  "兰语等;日语实验班同学可选修韩国语、蒙古语等;德语实验班同学可选修法语、西班牙",
+  "语、意大利语等。",
+  "新开课       走出俄罗斯之文化                  6          4      外国语学院",
+  "北京大学外国语学院                     · 555 ·",
+  "新开课       走出中东之学术                    6         4       外国语学院",
+  "新开课       走进日本之文学                    6         4       外国语学院",
+  "新开课       走遍日本之历史                    6         4       外国语学院",
+  "新开课       走出日本之文化                    6         4       外国语学院",
+  "-3 实践 1:完成 2 学分校内课 外 实 践 活 动,包 括 至 少 六 场 历 史 文 化 讲 座 及 三 篇 3000",
+  "字学习报告。",
+  "-4 实践 2:完成 2 学分 校 外 (海 外) 实 践 活 动, 主 要 形 式 为 赴 国 内 外 国 际 组 织 实 习",
+  "或海外交流学习,以及完成一篇 5000 字左右实践报告。",
+  "· 556 ·            北京大学本科培养方案 (",
+  "以上为建议课程目录,具体选修课程请与相关专业商定。",
+  "北京大学外国语学院         · 557 ·",
+  "北京大学艺术学院/信息科学技术学院                  · 559 ·"
+ ],
+ "warnings": [],
+ "source": {
+  "volumeId": "2021-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=158",
+  "lineStart": 29742,
+  "lineEnd": 30024
+ }
+}

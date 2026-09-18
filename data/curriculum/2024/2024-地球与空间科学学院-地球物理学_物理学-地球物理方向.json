@@ -1,0 +1,653 @@
+{
+ "id": "2024-地球与空间科学学院-地球物理学_物理学-地球物理方向",
+ "untitled": true,
+ "cohort": 2024,
+ "volume": "北京大学本科培养方案（2024）理科卷",
+ "school": "地球与空间科学学院",
+ "major": "地球物理学/物理学",
+ "track": "地球物理方向",
+ "title": "地球物理学专业物理学（地球物理方向）专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "理学学士",
+ "totalCredits": {
+  "min": 140,
+  "max": 146
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 45,
+   "max": 51,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 63,
+   "max": 63,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 32,
+   "max": 32,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "大学英语",
+   "requirement": "2～8 学分",
+   "min": 2,
+   "max": 8,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "思想政治理论必修课",
+   "requirement": "19 学分",
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "1-3",
+   "parent": "1",
+   "name": "思想政治理论选择性必修课",
+   "requirement": "1 门",
+   "min": 1,
+   "max": 1,
+   "unit": "门"
+  },
+  {
+   "id": "1-4",
+   "parent": "1",
+   "name": "劳动教育课",
+   "requirement": "≥32 学时",
+   "min": 32,
+   "max": 32,
+   "unit": "学时"
+  },
+  {
+   "id": "1-5",
+   "parent": "1",
+   "name": "信息课程",
+   "requirement": "6 学分",
+   "min": 6,
+   "max": 6,
+   "unit": "学分"
+  },
+  {
+   "id": "1-6",
+   "parent": "1",
+   "name": "军事理论",
+   "requirement": "2 学分",
+   "min": 2,
+   "max": 2,
+   "unit": "学分"
+  },
+  {
+   "id": "1-7",
+   "parent": "1",
+   "name": "体育课",
+   "requirement": "4 学分",
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  },
+  {
+   "id": "1-8",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "38 学分",
+   "min": 38,
+   "max": 38,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "21 学分",
+   "min": 21,
+   "max": 21,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "毕业论文",
+   "requirement": "4 学分",
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "19 学分",
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "13 学分",
+   "min": 13,
+   "max": 13,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1.1",
+   "parent": "1",
+   "name": "公共必修课",
+   "min": 33,
+   "max": 39,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论（B）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "04831410"
+    },
+    {
+     "name": "计算概论（B）上机",
+     "nature": "专业必修",
+     "credits": 0,
+     "hours": 3,
+     "practice": 32,
+     "term": null,
+     "code": "04831650"
+    },
+    {
+     "name": "数据结构与算法（B）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "课程。学生选“数据",
+     "code": "04831420"
+    },
+    {
+     "name": "数据 结 构 与 算 法上机",
+     "nature": "专业必修",
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": "算法 B”课程后，需",
+     "code": "04830494"
+    },
+    {
+     "name": "军事理论",
+     "nature": "全校必修",
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "一上",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "1.2",
+   "parent": "1",
+   "name": "通识教育课",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.1",
+   "parent": "2",
+   "name": "专业基础课",
+   "min": 38,
+   "max": 38,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学（B） （一）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": "一上",
+     "code": "00130201"
+    },
+    {
+     "name": "高等数学（B） （二）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": "一下",
+     "code": "00130202"
+    },
+    {
+     "name": "力学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "一上",
+     "code": "00431141"
+    },
+    {
+     "name": "热学",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "一下",
+     "code": "00431142"
+    },
+    {
+     "name": "电磁学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "一下",
+     "code": "00431143"
+    },
+    {
+     "name": "光学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "二上",
+     "code": "00431172"
+    },
+    {
+     "name": "原子物理学或                          51        大二",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00431151"
+    },
+    {
+     "name": "近代物理 51 二上",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00431165"
+    },
+    {
+     "name": "普通物理实验（1）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": 68,
+     "term": "二上",
+     "code": "00437180"
+    },
+    {
+     "name": "普通物理实验（2）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": 68,
+     "term": "二下",
+     "code": "00437190"
+    },
+    {
+     "name": "理论物理基础Ⅰ                   4               二上",
+     "nature": "专业必修",
+     "credits": 68,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00432001"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2",
+   "parent": "2",
+   "name": "专业核心课",
+   "min": 21,
+   "max": 21,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "线性代数（B）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "二上",
+     "code": "00131460"
+    },
+    {
+     "name": "数学物理方法（上） 3+3",
+     "nature": null,
+     "credits": 51,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00432108"
+    },
+    {
+     "name": "数学物理方法（下）",
+     "nature": "专业必修",
+     "credits": 51,
+     "hours": null,
+     "practice": null,
+     "term": "或 大二",
+     "code": "00432109"
+    },
+    {
+     "name": "数学物理方法",
+     "nature": null,
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00432110"
+    },
+    {
+     "name": "地球科学概论（地球物理与空间物理）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "一上",
+     "code": "01230202"
+    },
+    {
+     "name": "地球介质力学基础",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "三上",
+     "code": "01233580"
+    },
+    {
+     "name": "地震学",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": 20,
+     "term": "三下",
+     "code": "01233320"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.3",
+   "parent": "2",
+   "name": "毕业论文",
+   "min": 4,
+   "max": 4,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1",
+   "parent": "3",
+   "name": "专业选修课",
+   "min": 19,
+   "max": 19,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "流体力学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大三",
+     "code": "00432249"
+    },
+    {
+     "name": "地球科学概论（空间信息科学基础）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "一下",
+     "code": "01230203"
+    },
+    {
+     "name": "地球与行星构造",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": "春季",
+     "code": "01231943"
+    },
+    {
+     "name": "行星表面过程",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 12,
+     "term": "春季",
+     "code": "01231944"
+    },
+    {
+     "name": "固体行星物理",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "秋季",
+     "code": "01231949"
+    },
+    {
+     "name": "地球物理信号处理",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 15,
+     "term": "三上",
+     "code": "01233130"
+    },
+    {
+     "name": "地球灾害",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "二下",
+     "code": "01233150"
+    },
+    {
+     "name": "地磁学与地电学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": "三下",
+     "code": "01233190"
+    },
+    {
+     "name": "地球重力学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 9,
+     "term": "三上",
+     "code": "01233200"
+    },
+    {
+     "name": "地球物理数值计算方法",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "三下",
+     "code": "01233230"
+    },
+    {
+     "name": "地震学实验",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 51,
+     "term": "三下",
+     "code": "01233510"
+    },
+    {
+     "name": "地球物理学导论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "一下",
+     "code": "01233591"
+    },
+    {
+     "name": "地球物理学术论文写作",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "三下",
+     "code": "01233640"
+    },
+    {
+     "name": "地球物理野外实习",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 12,
+     "term": "天 三暑",
+     "code": "01233660"
+    },
+    {
+     "name": "固体地球物理学前沿问题",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "二上",
+     "code": "01233670"
+    },
+    {
+     "name": "面向地球科学的机器学习入门",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "三上",
+     "code": "01233680"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2",
+   "parent": "3",
+   "name": "自主选修课",
+   "min": 13,
+   "max": 13,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.2.1",
+   "parent": "3.2",
+   "name": "本科生科研训练",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.2.2",
+   "parent": "3.2",
+   "name": "其他自主选修课",
+   "courses": [],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "—       大学英语       全校必修   2～8   —         —",
+  "思想政治理论必                               按马克思主义学院要",
+  "修课                                    求选课",
+  "—                  全校必修   1门                  按照学校要求选课",
+  "课程的上机课“计算",
+  "概论（B）上机”。",
+  "课程的上机课“计算",
+  "概论（B）上机”。",
+  "说明：面向理科院系。",
+  "院系可以根据学科特",
+  "结构与算法 B”课程",
+  "的上机课“数据结构",
+  "与算法上机”。",
+  "说明：面向理科院系。",
+  "要另选该课程的上机",
+  "课“数据结构与算法",
+  "上机”。",
+  "—       体育系列课程         全校必修   1×4       2   0     全年",
+  "说明：思政类课程具体方案以马克思主义学院和学校公布为准。",
+  "Ⅰ. 人类文明及其传统                           ≥2",
+  "Ⅱ. 现代社会及其问题                           ≥2       1. 不少于 12 学分",
+  "Ⅲ. 艺术与人文                              ≥2       2. 至少修读 1 门“通识核心课”",
+  "Ⅳ. 数学、自然与技术                           ≥2",
+  "（1）具体课程列表详见《北京大学本科生选课手册》 ；",
+  "（2）原则上不允许以专业课替代通识教育课程学分；",
+  "（3）本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分；",
+  "（4）建议合理分配修读时间，每学期修读 1 门课程。",
+  "新开课       理论物理基础Ⅱ                   4               二下",
+  "理论力学、电动力学、                                大二",
+  "新开课                         专业必修   至少 3   —",
+  "统计力学、量子力学                                 大三",
+  "除了完成上述学分及德智体的诸方面要求外，本专业学生还必须在最后一学年由本专",
+  "业导师指导下完成毕业学位论文/毕业设计，并顺利通过答辩才能获得学士学位。",
+  "完成“本科生科研训练”结题并通过结题答辩的学生可获得“研究课程”4 学分；在",
+  "专业学术期刊发表第一作者学术论文的学生，可获得 6 学分；其他方面按教务部相关规定",
+  "执行。",
+  "学生可以参考专业教研室或毕业论文指导老师的选课建议，结合自身实际情况自主完",
+  "成该部分课程的学分要求。"
+ ],
+ "warnings": [
+  "第 9048 行：课程行缺少学分：00431165   近代物理                         ",
+  "专业名按 2025 版“地球物理学专业物理学（地球物理方向）专业”推断（专业必修课重合度 64%），请核对"
+ ],
+ "source": {
+  "volumeId": "2024-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=209",
+  "lineStart": 8893,
+  "lineEnd": 9128
+ },
+ "titleInference": {
+  "from": 2025,
+  "title": "地球物理学专业物理学（地球物理方向）专业",
+  "overlap": 0.64
+ }
+}

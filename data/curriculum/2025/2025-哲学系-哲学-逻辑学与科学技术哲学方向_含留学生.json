@@ -1,0 +1,1785 @@
+{
+ "id": "2025-哲学系-哲学-逻辑学与科学技术哲学方向_含留学生",
+ "cohort": 2025,
+ "volume": "北京大学本科培养方案（2025）文科卷",
+ "school": "哲学系",
+ "major": "哲学",
+ "track": "逻辑学与科学技术哲学方向/含留学生",
+ "title": "哲学专业（逻辑学与科学技术哲学方向）（含留学生）",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "哲学学士",
+ "totalCredits": {
+  "min": 133,
+  "max": 133
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 42,
+   "max": 48,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 42,
+   "max": 42,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 43,
+   "max": 49,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "大学英语",
+   "requirement": "2～8 学分",
+   "min": 2,
+   "max": 8,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "思想政治理论必修课",
+   "requirement": "19 学分",
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "1-3",
+   "parent": "1",
+   "name": "思想政治理论选择性必修课",
+   "requirement": "1 门",
+   "min": 1,
+   "max": 1,
+   "unit": "门"
+  },
+  {
+   "id": "1-4",
+   "parent": "1",
+   "name": "劳动教育课",
+   "requirement": "2 门",
+   "min": 2,
+   "max": 2,
+   "unit": "门"
+  },
+  {
+   "id": "1-5",
+   "parent": "1",
+   "name": "信息课程",
+   "requirement": "3 学分",
+   "min": 3,
+   "max": 3,
+   "unit": "学分"
+  },
+  {
+   "id": "1-6",
+   "parent": "1",
+   "name": "军事理论",
+   "requirement": "2 学分",
+   "min": 2,
+   "max": 2,
+   "unit": "学分"
+  },
+  {
+   "id": "1-7",
+   "parent": "1",
+   "name": "体育课",
+   "requirement": "4 学分",
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  },
+  {
+   "id": "1-8",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "16 学分",
+   "min": 16,
+   "max": 16,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "18 学分",
+   "min": 18,
+   "max": 18,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "写作训练",
+   "requirement": "2 学分",
+   "min": 2,
+   "max": 2,
+   "unit": "学分"
+  },
+  {
+   "id": "2-4",
+   "parent": "2",
+   "name": "实践实习",
+   "requirement": "1 学分",
+   "min": 1,
+   "max": 1,
+   "unit": "学分"
+  },
+  {
+   "id": "2-5",
+   "parent": "2",
+   "name": "毕业论文",
+   "requirement": "5 学分",
+   "min": 5,
+   "max": 5,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "22 学分",
+   "min": 22,
+   "max": 22,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "21 学分",
+   "min": 21,
+   "max": 21,
+   "unit": "学分"
+  },
+  {
+   "id": "3-3",
+   "parent": "3",
+   "name": "外语类选修课",
+   "requirement": "0～6 学分",
+   "min": 0,
+   "max": 6,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 42,
+   "max": 48,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "1.1",
+   "parent": "1",
+   "name": "公共必修课",
+   "courses": [
+    {
+     "name": "马克思主义基本原理",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": "大一/上",
+     "code": "02330029"
+    },
+    {
+     "name": "思想道德与法治",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 34,
+     "practice": 10,
+     "term": "大一上/下",
+     "code": "04031652"
+    },
+    {
+     "name": "中国近现代史纲要",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 34,
+     "practice": 6,
+     "term": "大一上/下",
+     "code": "04031661"
+    },
+    {
+     "name": "毛泽东思想和中国特色社会主义理论体系概论",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 34,
+     "practice": 6,
+     "term": "大二上/下",
+     "code": "04031731"
+    },
+    {
+     "name": "形势与政策",
+     "nature": "全校必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大一上",
+     "code": "04031751"
+    },
+    {
+     "name": "习近平新时代中国特色社会主义思想概论",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 12,
+     "term": "大一上/下",
+     "code": "04031762"
+    },
+    {
+     "name": "思想政治实践（上）",
+     "nature": "全校必修",
+     "credits": 1,
+     "hours": 34,
+     "practice": 34,
+     "term": "的任一秋季",
+     "code": "61130030"
+    },
+    {
+     "name": "思想政治实践（下）",
+     "nature": "全校必修",
+     "credits": 1,
+     "hours": 34,
+     "practice": 34,
+     "term": null,
+     "code": "61130040"
+    },
+    {
+     "name": "计算概论（C）",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大一上/下",
+     "code": "04834470"
+    },
+    {
+     "name": "计算机实习",
+     "nature": "全校必修",
+     "credits": 0,
+     "hours": 34,
+     "practice": 34,
+     "term": "大一上/下",
+     "code": "04831435"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "1.2",
+   "parent": "1",
+   "name": "通识教育课",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 42,
+   "max": 42,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.1",
+   "parent": "2",
+   "name": "专业基础课",
+   "min": 16,
+   "max": 16,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.1.1",
+   "parent": "2.1",
+   "name": "专业基础必修课组",
+   "min": 13,
+   "max": 13,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学（B）（一）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": "大一/上",
+     "code": "00130201"
+    },
+    {
+     "name": "哲学导论",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": "大一/上",
+     "code": "02330003"
+    },
+    {
+     "name": "世界文明中的科学技术",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大二/上/下",
+     "code": "02335330"
+    },
+    {
+     "name": "逻辑与论证",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大一/上",
+     "code": "02336401"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.1.2",
+   "parent": "2.1",
+   "name": "专业基础选择性必修组",
+   "min": 3,
+   "max": 3,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "概率统计（B）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大二/上/下",
+     "code": "00132380"
+    },
+    {
+     "name": "理论计算机科学基础",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大二/上/下",
+     "code": "04830260"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2",
+   "parent": "2",
+   "name": "专业核心课",
+   "min": 18,
+   "max": 18,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "西方哲学（上）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": "大一/下",
+     "code": "02330051"
+    },
+    {
+     "name": "西方哲学（下）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": "大二/上",
+     "code": "02330053"
+    },
+    {
+     "name": "中国哲学（上）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": "大一/上",
+     "code": "02330092"
+    },
+    {
+     "name": "中国哲学（下）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": "大一/下",
+     "code": "02330096"
+    },
+    {
+     "name": "科学哲学导论",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大二/下",
+     "code": "02330132"
+    },
+    {
+     "name": "伦理学导论",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大二/下",
+     "code": "02330142"
+    },
+    {
+     "name": "美学原理",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大二/下",
+     "code": "02330152"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.3",
+   "parent": "2",
+   "name": "写作训练",
+   "min": 2,
+   "max": 2,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "哲学阅读与写作",
+     "nature": "专业必修",
+     "credits": 1,
+     "hours": 17,
+     "practice": 17,
+     "term": "大三/上",
+     "code": "02330005"
+    },
+    {
+     "name": "学年论文",
+     "nature": "专业必修",
+     "credits": 1,
+     "hours": 17,
+     "practice": 17,
+     "term": "大三/下",
+     "code": "02335000"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.4",
+   "parent": "2",
+   "name": "实践实习",
+   "min": 1,
+   "max": 1,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "哲学系实践实习",
+     "nature": "专业必修",
+     "credits": 1,
+     "hours": 17,
+     "practice": null,
+     "term": "大四/上",
+     "code": "02330512"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.5",
+   "parent": "2",
+   "name": "毕业论文",
+   "min": 5,
+   "max": 5,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 43,
+   "max": 49,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1",
+   "parent": "3",
+   "name": "专业选修课",
+   "min": 22,
+   "max": 22,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.1",
+   "parent": "3.1",
+   "name": "逻辑学与科技哲学模块组",
+   "min": 16,
+   "max": 16,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "可计算理论基础",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02315032"
+    },
+    {
+     "name": "高级模态逻辑",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "02315051"
+    },
+    {
+     "name": "知识的逻辑",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02315320"
+    },
+    {
+     "name": "社会选择理论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02315340"
+    },
+    {
+     "name": "生物学哲学导论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02319160"
+    },
+    {
+     "name": "自然科学哲学问题",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02319480"
+    },
+    {
+     "name": "西方科技史导论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02319700"
+    },
+    {
+     "name": "逻辑导论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02330030"
+    },
+    {
+     "name": "美国环境思想",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02330501"
+    },
+    {
+     "name": "科学社会学导论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02330620"
+    },
+    {
+     "name": "一阶逻辑",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02331031"
+    },
+    {
+     "name": "模态逻辑",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02331051"
+    },
+    {
+     "name": "数理逻辑*",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "02331070"
+    },
+    {
+     "name": "哲学逻辑",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02331191"
+    },
+    {
+     "name": "集合论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02331210"
+    },
+    {
+     "name": "模型论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02331221"
+    },
+    {
+     "name": "模型论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00104143"
+    },
+    {
+     "name": "公理集合论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02331240"
+    },
+    {
+     "name": "数学哲学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02315240"
+    },
+    {
+     "name": "数学结构",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02331371"
+    },
+    {
+     "name": "环境伦理学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02334020"
+    },
+    {
+     "name": "科学与宗教",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02335110"
+    },
+    {
+     "name": "博物学导论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02335350"
+    },
+    {
+     "name": "科学哲学前沿",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02334141"
+    },
+    {
+     "name": "前沿科技伦理导论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02335151"
+    },
+    {
+     "name": "量子逻辑",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02304619"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.2",
+   "parent": "3.1",
+   "name": "外国哲学模块组",
+   "min": 2,
+   "max": 2,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "人工智能哲学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02302723"
+    },
+    {
+     "name": "比较哲学与多元化哲学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02312341"
+    },
+    {
+     "name": "卡西尔文化哲学和比较哲学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02312342"
+    },
+    {
+     "name": "哲学专业德语",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02313002"
+    },
+    {
+     "name": "德国古典美学和艺术哲学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02313010"
+    },
+    {
+     "name": "德语哲学原文选读",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 51,
+     "term": null,
+     "code": "02313013"
+    },
+    {
+     "name": "古希腊哲学原著",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 51,
+     "term": null,
+     "code": "02313030"
+    },
+    {
+     "name": "古希腊语经典哲学文本阅读",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02313032"
+    },
+    {
+     "name": "行动哲学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02313071"
+    },
+    {
+     "name": "中世纪思想中的自由与责任",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02313111"
+    },
+    {
+     "name": "自由意志专题",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02313113"
+    },
+    {
+     "name": "当代西方政治哲学研究",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02313163"
+    },
+    {
+     "name": "希腊化时期哲学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02313191"
+    },
+    {
+     "name": "古希腊哲学进阶",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02313192"
+    },
+    {
+     "name": "观念论与分析哲学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02313394"
+    },
+    {
+     "name": "语言与实在的哲学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02313452"
+    },
+    {
+     "name": "康德《判断力批判》研究",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 51,
+     "term": null,
+     "code": "02313500"
+    },
+    {
+     "name": "黑格尔逻辑学·存在论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02313551"
+    },
+    {
+     "name": "黑格尔的法哲学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02313591"
+    },
+    {
+     "name": "康德意识理论研究",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02313672"
+    },
+    {
+     "name": "哲学研讨会",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02313740"
+    },
+    {
+     "name": "元哲学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02313741"
+    },
+    {
+     "name": "话题的帕菲特",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02313750"
+    },
+    {
+     "name": "机器道德伦理",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02313761"
+    },
+    {
+     "name": "笛卡尔哲学研究",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02313810"
+    },
+    {
+     "name": "休谟哲学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02313840"
+    },
+    {
+     "name": "种族批判哲学导论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02313880"
+    },
+    {
+     "name": "人工智能时代的人文主义",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02315042"
+    },
+    {
+     "name": "人工智能伦理",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02315043"
+    },
+    {
+     "name": "恶与伦理学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02316212"
+    },
+    {
+     "name": "正义理论研究",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02316240"
+    },
+    {
+     "name": "黑格尔美学研究",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02317110"
+    },
+    {
+     "name": "心灵哲学专题",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02319091"
+    },
+    {
+     "name": "汉语哲学与社会学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02319991"
+    },
+    {
+     "name": "西方哲学史（现代部分）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02330046"
+    },
+    {
+     "name": "现代西方哲学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02330070"
+    },
+    {
+     "name": "当代认识论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02330320"
+    },
+    {
+     "name": "中世纪形而上学专题",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02330342"
+    },
+    {
+     "name": "情感哲学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02330611"
+    },
+    {
+     "name": "古希腊语哲学经典阅读",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02330643"
+    },
+    {
+     "name": "阿拉伯哲学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02332030"
+    },
+    {
+     "name": "现代欧陆哲学原著选读",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02332720"
+    },
+    {
+     "name": "海德格尔哲学研究",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02332751"
+    },
+    {
+     "name": "西方早期近代哲学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02332771"
+    },
+    {
+     "name": "法国哲学研究",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02332811"
+    },
+    {
+     "name": "启蒙哲学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02332910"
+    },
+    {
+     "name": "黑格尔哲学引论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02332961"
+    },
+    {
+     "name": "黑格尔《精神现象学》",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 51,
+     "term": null,
+     "code": "02332962"
+    },
+    {
+     "name": "费希特《全部知识学的基础》",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 51,
+     "term": null,
+     "code": "02332963"
+    },
+    {
+     "name": "西方古典思想（一）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02332971"
+    },
+    {
+     "name": "柏拉图的《理想国》",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02332972"
+    },
+    {
+     "name": "西方古典思想（Ⅱ）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02332973"
+    },
+    {
+     "name": "柏拉图和亚里士多德哲学研究",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02332974"
+    },
+    {
+     "name": "维特根斯坦哲学研究",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02332980"
+    },
+    {
+     "name": "哲学方法",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02333042"
+    },
+    {
+     "name": "哲学方法（讨论课）",
+     "nature": "任选",
+     "credits": 0,
+     "hours": 17,
+     "practice": null,
+     "term": null,
+     "code": "02333043"
+    },
+    {
+     "name": "古希腊神话与哲学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02333058"
+    },
+    {
+     "name": "近代欧洲哲学专题",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02333070"
+    },
+    {
+     "name": "德国古典哲学专题",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02333090"
+    },
+    {
+     "name": "德国古典哲学系列Ⅰ（谢林哲学）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02333093"
+    },
+    {
+     "name": "德国古典哲学原著",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 51,
+     "term": null,
+     "code": "02333096"
+    },
+    {
+     "name": "分析哲学概论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02333100"
+    },
+    {
+     "name": "俄罗斯哲学专题",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02333120"
+    },
+    {
+     "name": "当代分析哲学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02333140"
+    },
+    {
+     "name": "当代分析哲学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02333141"
+    },
+    {
+     "name": "现象学专题",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02333160"
+    },
+    {
+     "name": "现象学导论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02333161"
+    },
+    {
+     "name": "现象学引论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02333162"
+    },
+    {
+     "name": "东西方哲学比较",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02333180"
+    },
+    {
+     "name": "民主理论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02333431"
+    },
+    {
+     "name": "分析进路的当代伦理学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02333811"
+    },
+    {
+     "name": "西方哲学原著导读（形而上学原理）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 34,
+     "term": null,
+     "code": "02334010"
+    },
+    {
+     "name": "西方哲学原著选读",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02335081"
+    },
+    {
+     "name": "罗尔斯《政治自由主义》研究",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02335091"
+    },
+    {
+     "name": "西方自由主义史",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02335092"
+    },
+    {
+     "name": "罗尔斯《正义论》 研究",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02335093"
+    },
+    {
+     "name": "知识论专题",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02335101"
+    },
+    {
+     "name": "亚里士多德与亚里士多德传统",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02336141"
+    },
+    {
+     "name": "叔本华和尼采的哲学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02336150"
+    },
+    {
+     "name": "尼采哲学研究",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02336152"
+    },
+    {
+     "name": "西方思想经典（一）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02336160"
+    },
+    {
+     "name": "西方思想经典（二）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02336161"
+    },
+    {
+     "name": "西方思想经典（三）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02336162"
+    },
+    {
+     "name": "意识的理论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02336171"
+    },
+    {
+     "name": "中世纪哲学原著",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 34,
+     "term": null,
+     "code": "02336180"
+    },
+    {
+     "name": "康德实践哲学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02336190"
+    },
+    {
+     "name": "康德哲学研究",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02336191"
+    },
+    {
+     "name": "康德《纯然理性范围内的宗教》",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02336201"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.3",
+   "parent": "3.1",
+   "name": "理论哲学模块组",
+   "min": 4,
+   "max": 4,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "自由意志专题",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02313113"
+    },
+    {
+     "name": "心灵哲学专题",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02319091"
+    },
+    {
+     "name": "形而上学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02330340"
+    },
+    {
+     "name": "环境哲学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02330500"
+    },
+    {
+     "name": "心灵哲学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02330610"
+    },
+    {
+     "name": "哲学方法",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02333042"
+    },
+    {
+     "name": "哲学方法（讨论课）",
+     "nature": "任选",
+     "credits": 0,
+     "hours": 17,
+     "practice": null,
+     "term": null,
+     "code": "02333043"
+    },
+    {
+     "name": "语言哲学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02333390"
+    },
+    {
+     "name": "知识论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02335100"
+    },
+    {
+     "name": "知识论专题",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02335101"
+    },
+    {
+     "name": "规范性理论专题",
+     "nature": "任选",
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "02304570"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2",
+   "parent": "3",
+   "name": "自主选修课",
+   "min": 21,
+   "max": 21,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.2-1",
+   "parent": "3.2",
+   "kind": "list",
+   "name": "选修的非本专业课程一般不超过 10 学分",
+   "min": 10,
+   "max": 10,
+   "unit": "学分",
+   "requirement": "选修的非本专业课程一般不超过 10 学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.3",
+   "parent": "3",
+   "name": "外语类选修课",
+   "min": 0,
+   "max": 6,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "要求“思想政治理论选择性必修课”共 1 门、“劳动教育课”累计不少于 32 学时。思",
+  "想政治理论必修课和其他公共必修课按学校要求选课，信息课程见下表。",
+  "学期",
+  "一至三年级",
+  "注：① 哲学系学生须在大一上修习本系开设的马克思主义基本原理；② 港澳台学生、",
+  "留学生思想政治理论必修课修习要求与哲学系学生要求一致。",
+  "通识教育课程系列              各系列学分",
+  "（通识核心课+通选课）           （通识核心课+通选课）",
+  "Ⅰ. 人类文明及其传统                  ≥2",
+  "Ⅱ. 现代社会及其问题                  ≥2              1. 不少于 12 学分",
+  "Ⅲ. 艺术与人文                     ≥2              2. 至少修读 1 门“通识核心课”",
+  "Ⅳ. 数学、自然与技术                  ≥2",
+  "（1）具体课程列表详见《北京大学本科生选课手册》 ；",
+  "（2）原则上不允许以专业课替代通识教育课程学分；",
+  "（3）本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分；",
+  "（4）建议合理分配修读时间，每学期修读 1 门课程。",
+  "注：概率统计（B）和理论计算机科学基础（任选 3 学分）",
+  "。",
+  "注：大一至大三寒暑假校外实习，大四上选课提交报告。",
+  "原则上要求中文书写，如因专业特点等原因确需使用英文书写，学生需提交书面申请，",
+  "陈述使用英文书写的必要性，经由导师签字同意后，交由系教学指导委员会审核通过后，",
+  "方可使用英文书写。",
+  "（1）下设 4 个模块，在每一模块中选修规定学分的课程。",
+  "（2）模块中标记* 的课程为必修。",
+  "（2）如修读辅修专业，选修辅修专业培养方案中的非本专业课程可计入本类学分，且",
+  "不超过 10 学分。",
+  "（3）如参加跨学科项目，选修项目培养方案中的非本专业课程可计入本类学分，且可",
+  "超过 10 学分。",
+  "（4）如开展跨学科科研，确有相关学习需求，经项目或论文指导教师同意，选修的非",
+  "本专业课程可超过 10 学分。",
+  "学生根据入学英语分级考试所确定的等级，修完相应级别的大学英语课程后，未满 8",
+  "学分的，须选修二外或英语授课的哲学专业课程来补足 8 学分。"
+ ],
+ "warnings": [
+  "第 8918 行：课程行缺少学分：02304570   规范性理论专题       任选"
+ ],
+ "source": {
+  "volumeId": "2025-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=217",
+  "lineStart": 8594,
+  "lineEnd": 9000
+ }
+}

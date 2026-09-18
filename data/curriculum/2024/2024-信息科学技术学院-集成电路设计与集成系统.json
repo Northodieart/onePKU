@@ -1,0 +1,841 @@
+{
+ "id": "2024-信息科学技术学院-集成电路设计与集成系统",
+ "untitled": true,
+ "cohort": 2024,
+ "volume": "北京大学本科培养方案（2024）理科卷",
+ "school": "信息科学技术学院",
+ "major": "集成电路设计与集成系统",
+ "track": null,
+ "title": "集成电路设计与集成系统专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "工学学士",
+ "totalCredits": {
+  "min": 140,
+  "max": 140
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 51,
+   "max": 51,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 56,
+   "max": 56,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 33,
+   "max": 33,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "大学英语",
+   "requirement": "2～8 学分",
+   "min": 2,
+   "max": 8,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "思想政治理论必修课",
+   "requirement": "19 学分",
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "1-3",
+   "parent": "1",
+   "name": "思想政治理论选择性必修课",
+   "requirement": "1 门",
+   "min": 1,
+   "max": 1,
+   "unit": "门"
+  },
+  {
+   "id": "1-4",
+   "parent": "1",
+   "name": "劳动教育课",
+   "requirement": "32 学时",
+   "min": 32,
+   "max": 32,
+   "unit": "学时"
+  },
+  {
+   "id": "1-5",
+   "parent": "1",
+   "name": "信息课程",
+   "requirement": "6 学分",
+   "min": 6,
+   "max": 6,
+   "unit": "学分"
+  },
+  {
+   "id": "1-6",
+   "parent": "1",
+   "name": "军事理论",
+   "requirement": "2 学分",
+   "min": 2,
+   "max": 2,
+   "unit": "学分"
+  },
+  {
+   "id": "1-7",
+   "parent": "1",
+   "name": "体育课",
+   "requirement": "4 学分",
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  },
+  {
+   "id": "1-8",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "22 学分",
+   "min": 22,
+   "max": 22,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "30 学分",
+   "min": 30,
+   "max": 30,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "requirement": "4 学分",
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "16 学分",
+   "min": 16,
+   "max": 16,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "17 学分",
+   "min": 17,
+   "max": 17,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 51,
+   "max": 51,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "1.1",
+   "parent": "1",
+   "name": "公共必修课",
+   "courses": [
+    {
+     "name": "计算概论 A",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": 0,
+     "term": "大一/上",
+     "code": "04830041"
+    },
+    {
+     "name": "数据结构与算法 B",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": 16,
+     "term": "大一/下",
+     "code": "04831420"
+    }
+   ],
+   "alternatives": [
+    {
+     "code": "04830530",
+     "name": "计算概论 A（实验班）",
+     "credits": 3,
+     "replaces": "计算概论 A"
+    },
+    {
+     "code": "04833840",
+     "name": "程序设计与算法",
+     "credits": 3,
+     "replaces": "数据结构与算法 B"
+    },
+    {
+     "code": "04830050",
+     "name": "数据结构与算法 A",
+     "credits": 3,
+     "replaces": "数据结构与算法 B"
+    }
+   ]
+  },
+  {
+   "id": "1.2",
+   "parent": "1",
+   "name": "通识教育课",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 56,
+   "max": 56,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.1",
+   "parent": "2",
+   "name": "专业基础课",
+   "min": 22,
+   "max": 22,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学 A（一）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": "大一/上",
+     "code": "00132511"
+    },
+    {
+     "name": "线性代数（B）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "大一/上",
+     "code": "00131460"
+    },
+    {
+     "name": "信息科学中的物理学（上）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": 17,
+     "term": "大一/上",
+     "code": "04833370"
+    },
+    {
+     "name": "高等数学 A（二）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": "大一/下",
+     "code": "00132512"
+    },
+    {
+     "name": "信息科学中的物理学（下）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": 17,
+     "term": "大一/下",
+     "code": "04833371"
+    },
+    {
+     "name": "信息科学技术概论",
+     "nature": "专业必修",
+     "credits": 1,
+     "hours": 34,
+     "practice": null,
+     "term": "大一/上",
+     "code": "04830010"
+    },
+    {
+     "name": "电子系统基础训练",
+     "nature": "专业必修",
+     "credits": 1,
+     "hours": 34,
+     "practice": 30,
+     "term": "大一/下",
+     "code": "04833800"
+    }
+   ],
+   "alternatives": [
+    {
+     "code": "00132301",
+     "name": "数学分析（Ⅰ）",
+     "credits": 5,
+     "replaces": "高等数学 A（Ⅰ）"
+    },
+    {
+     "code": "00132302",
+     "name": "数学分析（Ⅱ）",
+     "credits": 5,
+     "replaces": "高等数学 A（Ⅱ）"
+    },
+    {
+     "code": "00132321",
+     "name": "高等代数（Ⅰ）",
+     "credits": 5,
+     "replaces": "线性代数 B"
+    },
+    {
+     "code": "00132611",
+     "name": "线性代数 A（Ⅰ）",
+     "credits": 4,
+     "replaces": "线性代数 B"
+    },
+    {
+     "code": "00431141",
+     "name": "力学",
+     "credits": 3,
+     "replaces": "信物（上）"
+    },
+    {
+     "code": "00431143",
+     "name": "电磁学",
+     "credits": 3,
+     "replaces": "信物（下）"
+    }
+   ]
+  },
+  {
+   "id": "2.2",
+   "parent": "2",
+   "name": "专业核心课",
+   "min": 30,
+   "max": 30,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "电路、信号与系统",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "大二/上",
+     "code": "04834660"
+    },
+    {
+     "name": "集成电路器件导论",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": 0,
+     "term": "大二/上",
+     "code": "04833870"
+    },
+    {
+     "name": "数字逻辑电路",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": 24,
+     "term": "大二/下",
+     "code": "04834790"
+    },
+    {
+     "name": "电子线路分析",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": 16,
+     "term": "大二/下",
+     "code": "04834800"
+    },
+    {
+     "name": "优化",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": 16,
+     "term": "大二/下",
+     "code": "04834960"
+    },
+    {
+     "name": "数字集成电路与系统",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 51,
+     "practice": 0,
+     "term": "大三/上",
+     "code": "04834830"
+    },
+    {
+     "name": "数字集成电路与系统设计实验",
+     "nature": "专业必修",
+     "credits": 0,
+     "hours": 34,
+     "practice": 34,
+     "term": "大三/上",
+     "code": "04834831"
+    },
+    {
+     "name": "模拟集成电路与系统",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 51,
+     "practice": 6,
+     "term": "大三/上",
+     "code": "04834840"
+    },
+    {
+     "name": "模拟集成电路与系统实践课",
+     "nature": "专业必修",
+     "credits": 0,
+     "hours": 34,
+     "practice": 30,
+     "term": "大三/上",
+     "code": "04834841"
+    },
+    {
+     "name": "集成电路制造技术",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "大三/上",
+     "code": "04835332"
+    },
+    {
+     "name": "集成电路制造技术实践课",
+     "nature": "专业必修",
+     "credits": 0,
+     "hours": 34,
+     "practice": 34,
+     "term": "大三/上",
+     "code": "04835331"
+    },
+    {
+     "name": "微处理器设计与智能芯片",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": 17,
+     "term": "大三/下",
+     "code": "04834810"
+    }
+   ],
+   "alternatives": [
+    {
+     "code": "04834670",
+     "name": "集成电路器件（含研讨班）",
+     "credits": 3,
+     "replaces": "集成电路器件导论"
+    }
+   ]
+  },
+  {
+   "id": "2.3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "min": 4,
+   "max": 4,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 33,
+   "max": 33,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1",
+   "parent": "3",
+   "name": "专业选修课",
+   "min": 16,
+   "max": 16,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "微电子与电路基础",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 51,
+     "practice": 0,
+     "term": "大一/下",
+     "code": "04831770"
+    },
+    {
+     "name": "微纳机电系统",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": 16,
+     "term": "大二/下",
+     "code": "04834680"
+    },
+    {
+     "name": "固体电子学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "大二/上",
+     "code": "04834970"
+    },
+    {
+     "name": "量子力学（B）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "大三/上",
+     "code": "00432149"
+    },
+    {
+     "name": "纳电子器件导论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": "大三/上",
+     "code": "04832200"
+    },
+    {
+     "name": "先进电子材料",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 4,
+     "term": "大三/上",
+     "code": "04834890"
+    },
+    {
+     "name": "现代集成电路中的器件设计与应用",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 11,
+     "term": "大三/下",
+     "code": "04832730"
+    },
+    {
+     "name": "功率 半 导 体 器 件 原 理 与应用",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "大三/下",
+     "code": "04835140"
+    },
+    {
+     "name": "先进集成电路工艺与制造",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 3,
+     "term": "大三/下",
+     "code": "04834540"
+    },
+    {
+     "name": "新型信息器件与未来计算",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "大三/下",
+     "code": "04834950"
+    },
+    {
+     "name": "纳米离子学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "大四/上",
+     "code": "04803006"
+    },
+    {
+     "name": "微纳尺度流体科学与应用",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 18,
+     "term": "大四/上",
+     "code": "04831811"
+    },
+    {
+     "name": "柔性电子学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": "大四/上",
+     "code": "04834270"
+    },
+    {
+     "name": "基于 HDL 的数字系统设计",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": "大三/上",
+     "code": "04832010"
+    },
+    {
+     "name": "无线通信集成电路基础",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": "大三/下",
+     "code": "04832500"
+    },
+    {
+     "name": "射频集成电路",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 3,
+     "term": "大四/上",
+     "code": "04831190"
+    },
+    {
+     "name": "高等模拟集成电路",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "大四/上",
+     "code": "04835340"
+    },
+    {
+     "name": "电子信息学中的机器学习",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "大二/下",
+     "code": "04834880"
+    },
+    {
+     "name": "芯片设计自动化与智能优化",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "大三/上",
+     "code": "04834590"
+    },
+    {
+     "name": "高层次芯片设计",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 13,
+     "term": "大三/上",
+     "code": "04834850"
+    },
+    {
+     "name": "集成电路计算机辅助设计",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "大三/下",
+     "code": "04831070"
+    },
+    {
+     "name": "应用",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "大四/上",
+     "code": "00136540"
+    },
+    {
+     "name": "科技交流与写作",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 9,
+     "term": "大三/下",
+     "code": "04830030"
+    },
+    {
+     "name": "集成电路设计实习",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 68,
+     "practice": 68,
+     "term": "大三/下",
+     "code": "04831060"
+    },
+    {
+     "name": "微电子器件测试实验",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 68,
+     "practice": 68,
+     "term": "大三/下",
+     "code": "04831080"
+    },
+    {
+     "name": "创新工程实践",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 34,
+     "term": "大三/下",
+     "code": "04832850"
+    },
+    {
+     "name": "集成电路逻辑综合实验",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 40,
+     "practice": 36,
+     "term": "大三/小",
+     "code": "04833310"
+    },
+    {
+     "name": "基于ⅠP 的 SOC 设计实验",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 40,
+     "practice": 32,
+     "term": "大三/小",
+     "code": "04833720"
+    },
+    {
+     "name": "集成电路的物理设计实验",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 40,
+     "practice": 36,
+     "term": "大三/小",
+     "code": "04833730"
+    },
+    {
+     "name": "数字集成电路验证方法学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 40,
+     "practice": 32,
+     "term": "大三/小",
+     "code": "04833740"
+    },
+    {
+     "name": "智能计算系统",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": "大三/小",
+     "code": "04834440"
+    },
+    {
+     "name": "PSoC 应用开发基础实验",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 68,
+     "practice": 52,
+     "term": "大四/上",
+     "code": "04831180"
+    }
+   ],
+   "alternatives": [
+    {
+     "code": "04832130",
+     "name": "微电子物理基础",
+     "credits": 3,
+     "replaces": "量子力学 B"
+    }
+   ]
+  },
+  {
+   "id": "3.2",
+   "parent": "3",
+   "name": "自主选修课",
+   "min": 17,
+   "max": 17,
+   "unit": "学分",
+   "note": "任意课程均可",
+   "courses": [],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "要求“思想政治理论选择性必修课”共 1 门、“劳动教育课”累计不少于 32 学时。思",
+  "想政治理论必修课和其他公共必修课按学校要求选课，信息课程见下表。",
+  "注：相关课程均可以由同名的实验班课程进行替代（下同）。",
+  "Ⅰ. 人类文明及其传统                     ≥2",
+  "Ⅱ. 现代社会及其问题                     ≥2                1. 不少于 12 学分",
+  "Ⅲ. 艺术与人文                        ≥2                2. 至少修读 1 门“通识核心课”",
+  "Ⅳ. 数学、自然与技术                     ≥2",
+  "（1）具体课程列表详见《北京大学本科生选课手册》 ；",
+  "（2）原则上不允许以专业课替代通识教育课程学分；",
+  "（3）本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分；",
+  "（4）建议合理分配修读时间，每学期修读 1 门课程。",
+  "① 同名的 A 类课可代替 B 类课，以下不重复。",
+  "② 信息与工程科学部和理学部转入本专业，数学基础满足 14 学分，物理基础满足 6",
+  "学分即可，差额学分可以在自主选修里面补齐。",
+  "以下四类中每类至少选择一门，多出的学分可算作自主选修。",
+  "3.1.3 第 3 类：设计自动化（EDA）与计算系统类组 2 学分",
+  "本科生科研训练           任选   2～6"
+ ],
+ "warnings": [
+  "专业名按 2025 版“集成电路设计与集成系统专业”推断（专业必修课重合度 96%），请核对"
+ ],
+ "source": {
+  "volumeId": "2024-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=209",
+  "lineStart": 14996,
+  "lineEnd": 15292
+ },
+ "titleInference": {
+  "from": 2025,
+  "title": "集成电路设计与集成系统专业",
+  "overlap": 0.96
+ }
+}

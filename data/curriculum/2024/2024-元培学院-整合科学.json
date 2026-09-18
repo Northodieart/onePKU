@@ -1,0 +1,1230 @@
+{
+ "id": "2024-元培学院-整合科学",
+ "untitled": true,
+ "cohort": 2024,
+ "volume": "北京大学本科培养方案（2024）理科卷",
+ "school": "元培学院",
+ "major": "整合科学",
+ "track": null,
+ "title": "整合科学专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "理学学士",
+ "totalCredits": {
+  "min": 130,
+  "max": 130
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 45,
+   "max": 51,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 55,
+   "max": 55,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 24,
+   "max": 24,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "大学英语",
+   "requirement": "2～8 学分",
+   "min": 2,
+   "max": 8,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "思想政治理论必修课",
+   "requirement": "19 学分",
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "1-5",
+   "parent": "1",
+   "name": "信息课程",
+   "requirement": "3 学分",
+   "min": 3,
+   "max": 3,
+   "unit": "学分"
+  },
+  {
+   "id": "1-6",
+   "parent": "1",
+   "name": "军事理论",
+   "requirement": "2 学分",
+   "min": 2,
+   "max": 2,
+   "unit": "学分"
+  },
+  {
+   "id": "1-7",
+   "parent": "1",
+   "name": "体育课",
+   "requirement": "4 学分",
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  },
+  {
+   "id": "1-9",
+   "parent": "1",
+   "name": "大学成长课",
+   "requirement": "3 学分",
+   "min": 3,
+   "max": 3,
+   "unit": "学分"
+  },
+  {
+   "id": "1-10",
+   "parent": "1",
+   "name": "元培通识课",
+   "requirement": "12 学分",
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "26 学分",
+   "min": 26,
+   "max": 26,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "23 学分",
+   "min": 23,
+   "max": 23,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "requirement": "6 学分",
+   "min": 6,
+   "max": 6,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "24 学分",
+   "min": 24,
+   "max": 24,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1.1",
+   "parent": "1",
+   "name": "公共必修课",
+   "courses": [
+    {
+     "name": "计算概论 A",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "04830041"
+    },
+    {
+     "name": "计算概论 A 上机实习课",
+     "nature": "全校必修",
+     "credits": 0,
+     "hours": 34,
+     "practice": 34,
+     "term": null,
+     "code": "04830042"
+    },
+    {
+     "name": "计算概论 A（实验班）",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "04830530"
+    },
+    {
+     "name": "计算概论（B）",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "04831410"
+    },
+    {
+     "name": "计算概论（B）上机",
+     "nature": "全校必修",
+     "credits": 0,
+     "hours": 34,
+     "practice": 34,
+     "term": null,
+     "code": "04831650"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "1.2",
+   "parent": "1",
+   "name": "通识教育课",
+   "min": 12,
+   "max": 12,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "1.3",
+   "parent": "1",
+   "name": "大学成长课",
+   "courses": [
+    {
+     "name": "新生教育实践课程",
+     "nature": "专业任选",
+     "credits": 1,
+     "hours": 32,
+     "practice": 34,
+     "term": "一上",
+     "code": "04631815"
+    },
+    {
+     "name": "书院成长课程",
+     "nature": "专业任选",
+     "credits": 2,
+     "hours": 64,
+     "practice": 64,
+     "term": "二年级",
+     "code": "04631816"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.1",
+   "parent": "2",
+   "name": "专业基础课",
+   "min": 26,
+   "max": 26,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.1.1",
+   "parent": "2.1",
+   "name": "专业基础课-物理组 3 门",
+   "courses": [
+    {
+     "name": "力学",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00431110"
+    },
+    {
+     "name": "电磁学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "一下",
+     "code": "00431143"
+    },
+    {
+     "name": "简明数学物理方法",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "00432107"
+    },
+    {
+     "name": "简明数学物理方法",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "00432107"
+    },
+    {
+     "name": "数学物理方法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "00432110"
+    },
+    {
+     "name": "力学（整合科学）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 48,
+     "practice": null,
+     "term": null,
+     "code": "04630821"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.1.2",
+   "parent": "2.1",
+   "name": "专业基础课-数学组",
+   "min": 14,
+   "max": 14,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学（B）（一）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00130201"
+    },
+    {
+     "name": "高等数学（B）（二）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00130202"
+    },
+    {
+     "name": "高等数学（B）（一）习题课",
+     "nature": "专业必修",
+     "credits": 0,
+     "hours": 34,
+     "practice": 34,
+     "term": null,
+     "code": "00130211"
+    },
+    {
+     "name": "高等数学（B）（二）习题课",
+     "nature": "专业必修",
+     "credits": 0,
+     "hours": 34,
+     "practice": 34,
+     "term": null,
+     "code": "00130212"
+    },
+    {
+     "name": "线性代数（B）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00131460"
+    },
+    {
+     "name": "线性代数（B）习题",
+     "nature": "专业必修",
+     "credits": 0,
+     "hours": 17,
+     "practice": 17,
+     "term": null,
+     "code": "00131470"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.1.3",
+   "parent": "2.1",
+   "name": "专业基础课-生物化学组",
+   "min": 4,
+   "max": 4,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "化学基础（整合科学）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "04630842"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2",
+   "parent": "2",
+   "name": "专业核心课",
+   "min": 23,
+   "max": 23,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.2.1",
+   "parent": "2.2",
+   "name": "专业核心组",
+   "min": 23,
+   "max": 23,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "定量细胞生物学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "04630771"
+    },
+    {
+     "name": "综合实验课程Ⅰ",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 136,
+     "practice": 136,
+     "term": null,
+     "code": "04630832"
+    },
+    {
+     "name": "综合实验课程Ⅱ",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 136,
+     "practice": 136,
+     "term": null,
+     "code": "04630850"
+    },
+    {
+     "name": "整合热力学",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "04630984"
+    },
+    {
+     "name": "定量分子生物学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "04630994"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "min": 6,
+   "max": 6,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.3.1",
+   "parent": "2.3",
+   "name": "毕业论文组",
+   "min": 6,
+   "max": 6,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1",
+   "parent": "3",
+   "name": "专业选修课",
+   "min": 22,
+   "max": 22,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.1",
+   "parent": "3.1",
+   "name": "专业限选【必选】组",
+   "min": 16,
+   "max": 16,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "综合科学实验课程Ⅲ",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 136,
+     "practice": 136,
+     "term": null,
+     "code": "04630990"
+    },
+    {
+     "name": "整合科学科学实践课（上）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 48,
+     "practice": 36,
+     "term": null,
+     "code": "04630997"
+    },
+    {
+     "name": "整合科学科学实践课（下）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 48,
+     "practice": 36,
+     "term": null,
+     "code": "04630998"
+    },
+    {
+     "name": "定量遗传学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "04630999"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.2",
+   "parent": "3.1",
+   "name": "专业选修（数理化生）组",
+   "min": 8,
+   "max": 8,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等概率论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "秋季",
+     "code": "00112630"
+    },
+    {
+     "name": "高等统计学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "秋季",
+     "code": "00112640"
+    },
+    {
+     "name": "数值分析",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "春季",
+     "code": "00130560"
+    },
+    {
+     "name": "最优化方法",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "秋季",
+     "code": "00130630"
+    },
+    {
+     "name": "时间序列分析",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "秋季",
+     "code": "00131350"
+    },
+    {
+     "name": "微分几何",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "秋季",
+     "code": "00132310"
+    },
+    {
+     "name": "偏微分方程",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "秋季",
+     "code": "00132330"
+    },
+    {
+     "name": "应用随机过程",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "秋季",
+     "code": "00133090"
+    },
+    {
+     "name": "低温物理学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "秋季",
+     "code": "00405608"
+    },
+    {
+     "name": "群论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 68,
+     "practice": null,
+     "term": "不定",
+     "code": "00410140"
+    },
+    {
+     "name": "非线性物理专题",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 68,
+     "practice": null,
+     "term": "春季",
+     "code": "00410644"
+    },
+    {
+     "name": "表面物理",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "秋季",
+     "code": "00411950"
+    },
+    {
+     "name": "激光实验",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 51,
+     "practice": 51,
+     "term": "春、秋季",
+     "code": "00414860"
+    },
+    {
+     "name": "现代光学与光电子学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "秋季",
+     "code": "00415510"
+    },
+    {
+     "name": "计算物理学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "春季",
+     "code": "00431443"
+    },
+    {
+     "name": "数学物理方法（上）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "全年",
+     "code": "00432108"
+    },
+    {
+     "name": "数学物理方法（下）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "全年",
+     "code": "00432109"
+    },
+    {
+     "name": "数学物理方法",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "全年",
+     "code": "00432110"
+    },
+    {
+     "name": "理论力学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "全年",
+     "code": "00432211"
+    },
+    {
+     "name": "平衡态统计物理",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "全年",
+     "code": "00432217"
+    },
+    {
+     "name": "激光物理学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "秋季",
+     "code": "00432236"
+    },
+    {
+     "name": "固体物理学",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "春、秋季",
+     "code": "00432510"
+    },
+    {
+     "name": "近代物理实验（Ⅰ）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 102,
+     "practice": 102,
+     "term": "春、秋季",
+     "code": "00433327"
+    },
+    {
+     "name": "近代物理实验（Ⅱ）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 102,
+     "practice": 102,
+     "term": "春、秋季",
+     "code": "00433328"
+    },
+    {
+     "name": "半导体物理学",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": 8,
+     "term": "秋季",
+     "code": "00433410"
+    },
+    {
+     "name": "超导物理学",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "秋季",
+     "code": "00433520"
+    },
+    {
+     "name": "材料物理",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "春季",
+     "code": "00433640"
+    },
+    {
+     "name": "纳米科技进展",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "秋季",
+     "code": "00434092"
+    },
+    {
+     "name": "量子化学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 63,
+     "practice": 12,
+     "term": "春季",
+     "code": "01014240"
+    },
+    {
+     "name": "化学生物学导论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "秋季",
+     "code": "01019010"
+    },
+    {
+     "name": "结构化学",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 85,
+     "practice": 23,
+     "term": "春季",
+     "code": "01030120"
+    },
+    {
+     "name": "化学动力学选读",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": "秋季",
+     "code": "01030440"
+    },
+    {
+     "name": "材料物理",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "秋季",
+     "code": "01032390"
+    },
+    {
+     "name": "高分子物理",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "春季",
+     "code": "01032530"
+    },
+    {
+     "name": "催化化学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "秋季",
+     "code": "01032580"
+    },
+    {
+     "name": "有机化学（一）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "春季",
+     "code": "01034371"
+    },
+    {
+     "name": "有机化学（二）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "秋季",
+     "code": "01034373"
+    },
+    {
+     "name": "化工基础",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "秋季",
+     "code": "01034450"
+    },
+    {
+     "name": "高分子化学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "春季",
+     "code": "01034460"
+    },
+    {
+     "name": "中级有机化学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "秋季",
+     "code": "01034530"
+    },
+    {
+     "name": "电分析化学研究方法",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": "春季",
+     "code": "01034590"
+    },
+    {
+     "name": "胶体化学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "秋季",
+     "code": "01034780"
+    },
+    {
+     "name": "理论与计算化学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 48,
+     "practice": null,
+     "term": "秋季",
+     "code": "01034960"
+    },
+    {
+     "name": "生物物理化学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "春季",
+     "code": "01034980"
+    },
+    {
+     "name": "表面物理化学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "秋季",
+     "code": "01035100"
+    },
+    {
+     "name": "高等电化学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "春季",
+     "code": "01035110"
+    },
+    {
+     "name": "无机化学",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "秋季",
+     "code": "01035140"
+    },
+    {
+     "name": "生理学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "春、秋季",
+     "code": "01130370"
+    },
+    {
+     "name": "生物统计学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "春季",
+     "code": "01130760"
+    },
+    {
+     "name": "生物进化论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "秋季",
+     "code": "01130780"
+    },
+    {
+     "name": "普通生态学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "秋季",
+     "code": "01130930"
+    },
+    {
+     "name": "植物生物学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "春季",
+     "code": "01131040"
+    },
+    {
+     "name": "生物学概念与途径",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "秋季",
+     "code": "01131161"
+    },
+    {
+     "name": "病毒与蛋白质结构",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": "秋季",
+     "code": "01138450"
+    },
+    {
+     "name": "神经生物学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "秋季",
+     "code": "01139000"
+    },
+    {
+     "name": "发育生物学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "秋季",
+     "code": "01139580"
+    },
+    {
+     "name": "电动力学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 64,
+     "practice": null,
+     "term": "全年",
+     "code": "04830610"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2",
+   "parent": "3",
+   "name": "自主选修课",
+   "courses": [
+    {
+     "name": "普通心理学 心理学院",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "秋/春季",
+     "code": "01630900"
+    },
+    {
+     "name": "实验心理学 心理学院",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 2,
+     "term": "秋/春季",
+     "code": "01630034"
+    },
+    {
+     "name": "教育心理学 心理学院",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 4,
+     "term": "春季",
+     "code": "01630350"
+    },
+    {
+     "name": "发展认知神经科学 心理学院",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "01630743"
+    },
+    {
+     "name": "心理与教育测量 教育学院",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "06734060"
+    },
+    {
+     "name": "大学生心理健康 心理学院",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "01635060"
+    },
+    {
+     "name": "异常儿童心理学 心理学院",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "01630033"
+    },
+    {
+     "name": "学习与行为 心理学院",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "01630706"
+    },
+    {
+     "name": "发展心理学 心理学院",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季/春季",
+     "code": "01630060"
+    },
+    {
+     "name": "课程与教学导论 教育学院",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "06735060"
+    },
+    {
+     "name": "在线教育的设计与实施 教育学院",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "06733080"
+    },
+    {
+     "name": "教育与人工智能 教育学院",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 14,
+     "term": "秋季",
+     "code": "06733030"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [
+  {
+   "code": "04832640",
+   "line": 26009,
+   "text": "04832640"
+  }
+ ],
+ "notes": [
+  "要求“思想政治理论选择性必修课”共 1 门、“劳动教育课”累计不少于 32 学时。思",
+  "想政治理论必修课和其他公共必修课按学校要求选课，信息课程见下表。",
+  "≥1 门       2. 第Ⅰ/Ⅱ类至少选 1 门，第Ⅲ/Ⅳ类至",
+  "Ⅴ. 现代科学                         —",
+  "Ⅵ. 艺术                           —",
+  "新生讨论课                          1分                      1 学分",
+  "（1）新生讨论课选课要求：限本科一年级学生选修；具体课程见学院选课指导",
+  "（2）通识课程选课要求：本科各年级学生均可选修；具体课程见学院通识课程方案。",
+  "或                                                            二上",
+  "新开课       整合量子力学       专业必修   3    3           二下",
+  "新开课       生物化学         专业必修   2    2           一下",
+  "北京大学心理与认知科学学院/教育学院",
+  "“教育心理学”项目由北京大学心理与认知科学学院（以下简称“心理学院”）和北京",
+  "大学教育学院共同组织，致力于发挥北京大学在教育学和心理学领域的学科优势和资源，",
+  "培养懂使命、懂国情、懂教育、懂心理，愿意投身中国教育事业的高层次人才，使之成长",
+  "为懂得教育对象的心理规律和特点，致力于从事教育行业相关领域工作的跨学科人才。",
+  "本项目融合了教育学和心理学领域的重要理论并辅助教学实践指导，可以帮助学生在",
+  "教学实践与理论研究两方面得到提升。完成该项目的学生将掌握教育心理学的基础知识和",
+  "研究方法，具备从事实践教学工作的基本能力素养和教学经验，能够在教育行业及相关领",
+  "域中从事教学或教学管理工作。",
+  "教育心理学项目采用学分制，共要求完成 25 个学分。项目课程由专业核心课程+跨",
+  "学科选修课（含课外实践交流活动）组成，课程由心理学院和教育学院相关研究领域专",
+  "家开设。",
+  "学生须获得主修专业毕业证书和学位证书，并完成本项目所规定的 25 学分最低要求，",
+  "经项目教学委员会审核通过后，方可获得“教育心理学”项目证书。",
+  "新开课       教育实习与教师资格   教育学院   1   1   16   春季",
+  "注：发展认知神经科学和教育心理学不计入心理学专业主修/辅修学生选修课学分。",
+  "新开课        学习科学与未来教育    教育学院   1   1          春季",
+  "新开课        学生发展与生涯教育    教育学院   1   1          春季",
+  "新开课        教育与社会发展      教育学院   1   1          春季",
+  "新开课        设计有效的教学      教育学院   1   1          春季",
+  "注：①每个学院选课不少于 2 门。心理学院课程不计入心理学专业学生选修课学分。",
+  "②心理学专业主修/辅修学生不能将发展心理学作为项目选修课学分。③选修课列表以培",
+  "养方案系统公布为准。"
+ ],
+ "warnings": [
+  "第 26009 行：课程 04832640 缺少课程名，未纳入",
+  "专业名按 2025 版“整合科学专业”推断（专业必修课重合度 89%），请核对"
+ ],
+ "source": {
+  "volumeId": "2024-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=209",
+  "lineStart": 25893,
+  "lineEnd": 26199
+ },
+ "titleInference": {
+  "from": 2025,
+  "title": "整合科学专业",
+  "overlap": 0.89
+ }
+}

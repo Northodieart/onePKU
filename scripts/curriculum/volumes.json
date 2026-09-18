@@ -1,0 +1,62 @@
+{
+  "note": "教务部公开的培养方案卷目。id 用于本地缓存文件名；url 为 dean.pku.edu.cn 的下载入口。新增年份时在此追加。",
+  "page": "https://dean.pku.edu.cn/web/student_info.php?type=1&id=2",
+  "volumes": [
+    {
+      "id": "2025-理科",
+      "cohort": 2025,
+      "volume": "理科卷",
+      "title": "北京大学本科培养方案（2025）理科卷",
+      "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=216"
+    },
+    {
+      "id": "2025-文科",
+      "cohort": 2025,
+      "volume": "文科卷",
+      "title": "北京大学本科培养方案（2025）文科卷",
+      "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=217"
+    },
+    {
+      "id": "2024-理科",
+      "cohort": 2024,
+      "volume": "理科卷",
+      "title": "北京大学本科培养方案（2024）理科卷",
+      "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=209"
+    },
+    {
+      "id": "2024-文科",
+      "cohort": 2024,
+      "volume": "文科卷",
+      "title": "北京大学本科培养方案（2024）文科卷",
+      "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=210"
+    },
+    {
+      "id": "2023-理科",
+      "cohort": 2023,
+      "volume": "理科卷",
+      "title": "北京大学本科教学计划（2023）理科卷",
+      "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=195"
+    },
+    {
+      "id": "2023-文科",
+      "cohort": 2023,
+      "volume": "文科卷",
+      "title": "北京大学本科教学计划（2023）文科卷",
+      "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=196"
+    },
+    {
+      "id": "2021-理科",
+      "cohort": 2021,
+      "volume": "理科卷",
+      "title": "北京大学本科培养方案（2021）理科卷",
+      "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=152"
+    },
+    {
+      "id": "2021-文科",
+      "cohort": 2021,
+      "volume": "文科卷",
+      "title": "北京大学本科培养方案（2021）文科卷",
+      "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=158"
+    }
+  ]
+}

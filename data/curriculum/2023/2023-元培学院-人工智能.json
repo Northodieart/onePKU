@@ -1,0 +1,933 @@
+{
+ "id": "2023-元培学院-人工智能",
+ "cohort": 2023,
+ "volume": "北京大学本科教学计划（2023）理科卷",
+ "school": "元培学院",
+ "major": "人工智能",
+ "track": null,
+ "title": "人工智能专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "工学学士",
+ "totalCredits": {
+  "min": 140,
+  "max": 140
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 44,
+   "max": 50,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 75,
+   "max": 75,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 15,
+   "max": 15,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "32~38 学分",
+   "inferredParent": true,
+   "min": 32,
+   "max": 38,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "9 学分",
+   "inferredParent": true,
+   "min": 9,
+   "max": 9,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "25 学分",
+   "inferredParent": true,
+   "min": 25,
+   "max": 25,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "44 学分",
+   "inferredParent": true,
+   "min": 44,
+   "max": 44,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "毕业论文",
+   "requirement": "6 学分",
+   "inferredParent": true,
+   "min": 6,
+   "max": 6,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "5 学分",
+   "inferredParent": true,
+   "min": 5,
+   "max": 5,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "10 学分",
+   "inferredParent": true,
+   "min": 10,
+   "max": 10,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 44,
+   "max": 50,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "一上",
+     "code": "60730020"
+    },
+    {
+     "name": "计算概论 A",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "一上",
+     "code": "04830041"
+    },
+    {
+     "name": "计算概论 A 上机",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": "一上",
+     "code": "04831650"
+    },
+    {
+     "name": "数据结构与算法 A",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": 32,
+     "term": "二上",
+     "code": "04830050"
+    },
+    {
+     "name": "海洋与气候变化 专业任选 周力平",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04631020"
+    },
+    {
+     "name": "苏轼的文学与人生 专业任选 张鸣",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04631024"
+    },
+    {
+     "name": "整合科学讨论班 专业任选 汤超等",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04631037"
+    },
+    {
+     "name": "营造学社与中国建筑 专业任选 张剑葳",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04631053"
+    },
+    {
+     "name": "经济决策与大脑 专业任选 朱露莎",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04631060"
+    },
+    {
+     "name": "教育:自我、社会与文化 专业任选 刘云杉",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04631059"
+    },
+    {
+     "name": "金融与社会 专业任选 陈佳",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04631063"
+    },
+    {
+     "name": "银发经济与创意设计 专业任选 陈功",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04631072"
+    },
+    {
+     "name": "化石与生命史 专业任选 薛进庄",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04631073"
+    },
+    {
+     "name": "从人口爆炸到人口减少:破译未来全球人口秩序 专业任选 张蕾",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04631075"
+    },
+    {
+     "name": "法国大革命与拿破仑 专业任选 崇明",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04631076"
+    },
+    {
+     "name": "古代中国思想世界中的身体与自我 专业任选 程乐松",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04631077"
+    },
+    {
+     "name": "诗的美与力:现代诗歌阅读与写作 专业任选 秦立彦",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04631078"
+    },
+    {
+     "name": "经济与社会:关于动机、制度和现代性的思考 专业任选 陶林",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04631079"
+    },
+    {
+     "name": "数学的证明与反驳 专业任选 李若",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04631080"
+    },
+    {
+     "name": "中国社会转型与人口变迁 专业任选 陆杰华",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04631081"
+    },
+    {
+     "name": "国际法与全球治理 专业任选 陈一峰",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04631082"
+    },
+    {
+     "name": "理解图像 专业任选 唐宏峰",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04631083"
+    },
+    {
+     "name": "法学的视野 专业任选",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04631085"
+    },
+    {
+     "name": "人工智能初级研讨班 专业任选 朱松纯",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04631100"
+    },
+    {
+     "name": "人口与经济 专业任选 郑伟",
+     "nature": null,
+     "credits": 1,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04631087"
+    },
+    {
+     "name": "《庄子》 精读",
+     "nature": null,
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": "杨立华 Ⅰ 秋季",
+     "code": "02333202"
+    },
+    {
+     "name": "中国社会研究",
+     "nature": null,
+     "credits": 3,
+     "hours": 48,
+     "practice": null,
+     "term": "周飞舟 Ⅲ 秋季",
+     "code": "03130905"
+    },
+    {
+     "name": "《理想国》",
+     "nature": null,
+     "credits": 3,
+     "hours": 48,
+     "practice": null,
+     "term": "吴飞 Ⅱ 秋季",
+     "code": "02332976"
+    },
+    {
+     "name": "中国社会研究 (政治学)",
+     "nature": null,
+     "credits": 3,
+     "hours": 48,
+     "practice": null,
+     "term": "张长东 Ⅲ 春季",
+     "code": "03232880"
+    },
+    {
+     "name": "《理想国》",
+     "nature": null,
+     "credits": 3,
+     "hours": 48,
+     "practice": null,
+     "term": "吴增定 Ⅱ 春季",
+     "code": "02332976"
+    },
+    {
+     "name": "西方现代政治",
+     "nature": null,
+     "credits": 3,
+     "hours": 48,
+     "practice": null,
+     "term": "李强 Ⅳ 春季",
+     "code": "04631038"
+    },
+    {
+     "name": "科学史",
+     "nature": null,
+     "credits": 2,
+     "hours": 36,
+     "practice": null,
+     "term": "V 秋季",
+     "code": "04631800"
+    },
+    {
+     "name": "创新产品研发基础",
+     "nature": null,
+     "credits": 2,
+     "hours": 36,
+     "practice": null,
+     "term": "陈江 V 秋季",
+     "code": "04631042"
+    },
+    {
+     "name": "现代社会的基础:文化与文明 2 田耕 Ⅳ 春季",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04632020"
+    },
+    {
+     "name": "中国通史 (古代部分)",
+     "nature": null,
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": "陈侃理 Ⅰ 春季",
+     "code": "02132750"
+    },
+    {
+     "name": "《四书》 精读 哲学系 杨立华",
+     "nature": null,
+     "credits": 2,
+     "hours": null,
+     "practice": null,
+     "term": "Ⅰ 春季",
+     "code": "02335220"
+    },
+    {
+     "name": "国外社会学学说 (上) 社会学系 孙飞宇",
+     "nature": null,
+     "credits": 2,
+     "hours": null,
+     "practice": null,
+     "term": "Ⅳ 秋季",
+     "code": "03100130"
+    },
+    {
+     "name": "西方政治思想 (现代) 哲学系 吴增定",
+     "nature": null,
+     "credits": 2,
+     "hours": null,
+     "practice": null,
+     "term": "Ⅳ 秋季",
+     "code": "02332213"
+    },
+    {
+     "name": "现代西方社会思想 社会学系 渠敬东",
+     "nature": null,
+     "credits": 2,
+     "hours": null,
+     "practice": null,
+     "term": "Ⅳ 春季",
+     "code": "03139130"
+    },
+    {
+     "name": "生物进化论 生命科学学院 顾红雅/张蔚",
+     "nature": null,
+     "credits": 2,
+     "hours": null,
+     "practice": null,
+     "term": "Ⅴ 秋季",
+     "code": "01130780"
+    },
+    {
+     "name": "普通生物学 ( B) 生命科学学院 佟向军",
+     "nature": null,
+     "credits": 2,
+     "hours": null,
+     "practice": null,
+     "term": "Ⅴ 秋季",
+     "code": "01139380"
+    },
+    {
+     "name": "演示物理学 物理学院 李湘庆",
+     "nature": null,
+     "credits": 2,
+     "hours": null,
+     "practice": null,
+     "term": "Ⅴ 秋季",
+     "code": "00430109"
+    },
+    {
+     "name": "简明量子力学 物理学院 吴飙",
+     "nature": null,
+     "credits": 2,
+     "hours": null,
+     "practice": null,
+     "term": "Ⅴ 春季",
+     "code": "00433331"
+    },
+    {
+     "name": "新生教育实践课程",
+     "nature": null,
+     "credits": 1,
+     "hours": 1,
+     "practice": null,
+     "term": "一上",
+     "code": "04631815"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 75,
+   "max": 75,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学 (Ⅰ )",
+     "nature": null,
+     "credits": 5,
+     "hours": 6,
+     "practice": 32,
+     "term": "一上",
+     "code": "00132511"
+    },
+    {
+     "name": "线性代数 A (Ⅰ )",
+     "nature": null,
+     "credits": 4,
+     "hours": 5,
+     "practice": 32,
+     "term": "一上",
+     "code": "00132611"
+    },
+    {
+     "name": "高等数学 (Ⅱ )",
+     "nature": null,
+     "credits": 5,
+     "hours": 6,
+     "practice": 32,
+     "term": "一下",
+     "code": "00132512"
+    },
+    {
+     "name": "概率统计 A",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "一下",
+     "code": "00131480"
+    },
+    {
+     "name": "近现代物理导论 (Ⅰ )",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "二上",
+     "code": "00431113"
+    },
+    {
+     "name": "近现代物理导论 (Ⅱ )",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "二下",
+     "code": "00431114"
+    },
+    {
+     "name": "人工智能初级研讨班",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": 0,
+     "term": "一下",
+     "code": "04631100"
+    },
+    {
+     "name": "人工智能引论",
+     "nature": null,
+     "credits": 3,
+     "hours": 2,
+     "practice": 0,
+     "term": "一下",
+     "code": "04834040"
+    },
+    {
+     "name": "人工智能引论实践课",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": "一下",
+     "code": "04834041"
+    },
+    {
+     "name": "计算机系统导论",
+     "nature": null,
+     "credits": 5,
+     "hours": 4,
+     "practice": 0,
+     "term": "二上",
+     "code": "04833040"
+    },
+    {
+     "name": "计算机系统导论讨论班",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": "二上",
+     "code": "04832363"
+    },
+    {
+     "name": "离散数学与结构 (Ⅰ )",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": 0,
+     "term": "二上",
+     "code": "04833400"
+    },
+    {
+     "name": "算法设计与分析",
+     "nature": null,
+     "credits": 5,
+     "hours": 4,
+     "practice": 0,
+     "term": "二下",
+     "code": "04833060"
+    },
+    {
+     "name": "算法设计与分析 (研讨型小班)",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": "二下",
+     "code": "04832580"
+    },
+    {
+     "name": "机器学习",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "04833420"
+    },
+    {
+     "name": "AI中的数学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "22530003"
+    },
+    {
+     "name": "计算机视觉 I~ 早期与中层视觉",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "22530006"
+    },
+    {
+     "name": "认知与推理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "四上",
+     "code": "22530005"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 15,
+   "max": 15,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "程序设计实习",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": 48,
+     "term": "一下",
+     "code": "04831750"
+    },
+    {
+     "name": "人工智能伦理与治理",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 36,
+     "term": "二上",
+     "code": "22530002"
+    },
+    {
+     "name": "人工智能与社会科学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 36,
+     "term": "二下",
+     "code": "22530004"
+    },
+    {
+     "name": "微电子与电路基础",
+     "nature": null,
+     "credits": 2,
+     "hours": 3,
+     "practice": 16,
+     "term": "一下",
+     "code": "04831770"
+    },
+    {
+     "name": "电子系统基础训练",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": 28,
+     "term": "二上",
+     "code": "04833800"
+    },
+    {
+     "name": "信号与系统",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 6,
+     "term": "三上",
+     "code": "04830670"
+    },
+    {
+     "name": "信息论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上",
+     "code": "04831210"
+    },
+    {
+     "name": "随机过程引论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三下",
+     "code": "04831200"
+    },
+    {
+     "name": "自动控制理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 8,
+     "term": "三下",
+     "code": "04831230"
+    },
+    {
+     "name": "凸分析与优化方法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "04833410"
+    },
+    {
+     "name": "理论计算机科学基础",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "04830260"
+    },
+    {
+     "name": "操作系统",
+     "nature": null,
+     "credits": 4,
+     "hours": 5,
+     "practice": 32,
+     "term": "三上/下",
+     "code": "04834260"
+    },
+    {
+     "name": "计算机组织与体系结构",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上/下",
+     "code": "04830140"
+    },
+    {
+     "name": "编译原理",
+     "nature": null,
+     "credits": 4,
+     "hours": 5,
+     "practice": 32,
+     "term": "三上/下",
+     "code": "04834200"
+    },
+    {
+     "name": "计算机网络",
+     "nature": null,
+     "credits": 4,
+     "hours": 5,
+     "practice": 32,
+     "term": "三上/下",
+     "code": "04834210"
+    },
+    {
+     "name": "并行与分布 式计算导论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "04832240"
+    },
+    {
+     "name": "强化学习",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "04834520"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [
+  {
+   "code": "02335222",
+   "line": 28432,
+   "text": "02335222"
+  }
+ ],
+ "notes": [
+  "—       大学英语                2~8      —      —     按大学英语教研室要求选课",
+  "—       思想政治理论必修课            19                   按马克思主义学院要求选课。",
+  "—                            1门                   按学校要求选课。",
+  "—       劳动教育课               32 学时                 按学校要求选课。",
+  "—       体育系列课程              1×4      2      0     全年",
+  "① 【大学英语系列课程】:2~8 学分,根据新生进校英语分级考试成绩,分 为 Y 级、A 级、B 级、C",
+  "级和 C+ 级,分别对应 8 学分、8 学分、6 学分、4 学分和 2 学分。如专业无特殊要求,不足 8 分的 部 分,",
+  "由任意课程补足。",
+  "② 【思想政治课】:19 学分。课程包括:思想道德与法治 (即 思 想 道 德 修 养 与 法 律 基 础) (",
+  "3 学分)、习 近 平 新 时 代 中 国 特 色 社 会 主 义 思 想 概 论 (",
+  "2 学分)。部分专业的港澳台学生、留学生可免修, 不 足 学 分 用 “与",
+  "· 540 ·             北京大学本科培养方案 (",
+  "中国有关课程” 补足。",
+  "③ 【军事理论课】:2 学 分。 港 澳 台 学 生 可 免 修, 不 足 学 分 用 “与 中 国 有 关 课 程 ” 补 足; 留 学 生 免",
+  "修,不足学分用 “与中国有关课程” 补足。",
+  "④ 【体育课】:4 学分,每门课 1 学分,其中 “太极拳” 为男生必修,“健美操” 为 女 生 必 修。 剩 下 3",
+  "学分,可任选学校开设的所有体 育 课 程, 原 则 上 四 年 期 间 修 完 即 可, 建 议 在 大 四 之 前 修 完。 特 别 强 调:",
+  "体育课每学期只能选 1 门,务必合理安排选课时间。",
+  "1 新生讨论课,1 学分。",
+  "1 通识教育系列课程,8 学分。",
+  "选课要求:本 科 各 年 级 学 生 均 可 选 修, 第 Ⅰ/Ⅱ 类 至 少 选 1 门, 第 Ⅲ/Ⅳ 类 至 少 选",
+  "1 门。",
+  "北京大学元培学院                               · 541 ·",
+  "新开课       书院成长课程 (上)                1         1         32        二年级",
+  "新开课       书院成长课程 (下)                1         1         32        二年级",
+  "· 542 ·             北京大学本科培养方案 (",
+  "新开课       自然语言处理              3     3      0      三下",
+  "新开课       人工智能系统实践 Ⅰ          2     2     32      三上",
+  "新开课       多智能体系统              3     3      0      三下",
+  "新开课       机器人学                3     3      0      三下",
+  "新开课       人工智能系统实践 Ⅱ          2     2     32      三下",
+  "新开课       人工智能系统实践 Ⅲ          2     2     32      四上",
+  "新开课       人工智能与艺术             2     2     36      三上",
+  "新开课       人工智能与哲学             2     2     36      三下",
+  "以下表格中仅列出近年及计划开设的课程,具体以实际开课为准。",
+  "北京大学元培学院                    · 543 ·",
+  "济与管理学部的所有专业核心课"
+ ],
+ "warnings": [
+  "第 28373 行：课程行缺少学分：04631020   海洋与气候变化                      ",
+  "第 28374 行：课程行缺少学分：04631024   苏轼的文学与人生                     ",
+  "第 28375 行：课程行缺少学分：04631037   整合科学讨论班                      ",
+  "第 28376 行：课程行缺少学分：04631053   营造学社与中国建筑                    ",
+  "第 28377 行：课程行缺少学分：04631060   经济决策与大脑                      ",
+  "第 28378 行：课程行缺少学分：04631059   教育:自我、社会与文化                  ",
+  "第 28379 行：课程行缺少学分：04631063   金融与社会                        ",
+  "第 28380 行：课程行缺少学分：04631072   银发经济与创意设计                    ",
+  "第 28381 行：课程行缺少学分：04631073   化石与生命史                       ",
+  "第 28382 行：课程行缺少学分：04631075   从人口爆炸到人口减少:破译未来全球人口秩序        ",
+  "第 28383 行：课程行缺少学分：04631076   法国大革命与拿破仑                    ",
+  "第 28384 行：课程行缺少学分：04631077   古代中国思想世界中的身体与自我              ",
+  "第 28385 行：课程行缺少学分：04631078   诗的美与力:现代诗歌阅读与写作              ",
+  "第 28386 行：课程行缺少学分：04631079   经济与社会:关于动机、制度和现代性的思考         ",
+  "第 28387 行：课程行缺少学分：04631080   数学的证明与反驳                     ",
+  "第 28388 行：课程行缺少学分：04631081   中国社会转型与人口变迁                  ",
+  "第 28389 行：课程行缺少学分：04631082   国际法与全球治理                     ",
+  "第 28390 行：课程行缺少学分：04631083   理解图像                         ",
+  "第 28392 行：课程行缺少学分：04631085   法学的视野                        ",
+  "第 28394 行：课程行缺少学分：04631100   人工智能初级研讨班                    ",
+  "第 28423 行：课程行缺少学分：04632020   现代社会的基础:文化与文明       2        ",
+  "第 28432 行：课程 02335222 缺少课程名，未纳入"
+ ],
+ "source": {
+  "volumeId": "2023-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=195",
+  "lineStart": 28231,
+  "lineEnd": 28564
+ }
+}

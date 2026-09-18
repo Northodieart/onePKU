@@ -1,0 +1,547 @@
+{
+ "id": "2023-工学院-生物医学工程",
+ "cohort": 2023,
+ "volume": "北京大学本科教学计划（2023）理科卷",
+ "school": "工学院",
+ "major": "生物医学工程",
+ "track": null,
+ "title": "生物医学工程专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": null,
+ "totalCredits": null,
+ "topRequirements": [
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 56,
+   "max": 56,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "学院/学生选修课",
+   "min": 43,
+   "max": 43,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "25 学分",
+   "inferredParent": true,
+   "min": 25,
+   "max": 25,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "25 学分",
+   "inferredParent": true,
+   "min": 25,
+   "max": 25,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "23 学分",
+   "inferredParent": true,
+   "min": 23,
+   "max": 23,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "20 学分",
+   "inferredParent": true,
+   "min": 20,
+   "max": 20,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课",
+   "min": 45,
+   "max": 51,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 B",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "算概论 B” 课程同时, 需 要 另",
+     "code": "04831410"
+    },
+    {
+     "name": "计算概论 B 上机",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": "算概论 B” 课程同时, 需 要 另",
+     "code": "04831650"
+    },
+    {
+     "name": "数据结构与算法 B",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "据结 构 与 算 法 B” 课 程 同 时,",
+     "code": "04831420"
+    },
+    {
+     "name": "数据结构与算法上机",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": "据结 构 与 算 法 B” 课 程 同 时,",
+     "code": "04830494"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "一上",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 56,
+   "max": 56,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "现代工学通论",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "一上",
+     "code": "00334010"
+    },
+    {
+     "name": "数学分析 (一)",
+     "nature": null,
+     "credits": 4,
+     "hours": 6,
+     "practice": null,
+     "term": "一上",
+     "code": "00331501"
+    },
+    {
+     "name": "线性代数与几何",
+     "nature": null,
+     "credits": 4,
+     "hours": 6,
+     "practice": null,
+     "term": "一上",
+     "code": "00331770"
+    },
+    {
+     "name": "数学分析 (二)",
+     "nature": null,
+     "credits": 4,
+     "hours": 6,
+     "practice": null,
+     "term": "一下",
+     "code": "00331502"
+    },
+    {
+     "name": "普通化学 ( B)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "一下",
+     "code": "01034880"
+    },
+    {
+     "name": "普通物理 (Ⅰ )",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "一下",
+     "code": "00431132"
+    },
+    {
+     "name": "普通物理 (Ⅱ )",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "二上",
+     "code": "00431133"
+    },
+    {
+     "name": "生物医学工程原理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 8,
+     "term": "二上",
+     "code": "00334100"
+    },
+    {
+     "name": "分子细胞生物学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二上",
+     "code": "00332600"
+    },
+    {
+     "name": "电路与电子学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二上",
+     "code": "00332510"
+    },
+    {
+     "name": "生物医学工程设计 (Ⅰ )",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 32,
+     "term": "二下",
+     "code": "00333920"
+    },
+    {
+     "name": "有机化学 ( B)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二下",
+     "code": "01032690"
+    },
+    {
+     "name": "生理学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二下",
+     "code": "89130043"
+    },
+    {
+     "name": "人体解剖学",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": 18,
+     "term": "三上",
+     "code": "89130035"
+    },
+    {
+     "name": "生物医学工程设计 (Ⅱ )",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 32,
+     "term": "三上",
+     "code": "00334020"
+    },
+    {
+     "name": "生物医学信号处理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 4,
+     "term": "三上",
+     "code": "00333580"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 43,
+   "max": 43,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "工程制图",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "一上",
+     "code": "00330630"
+    },
+    {
+     "name": "常微分方程",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "二上",
+     "code": "00330700"
+    },
+    {
+     "name": "概率与数理统计",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上",
+     "code": "00331900"
+    },
+    {
+     "name": "计算方法",
+     "nature": null,
+     "credits": 3,
+     "hours": 5,
+     "practice": null,
+     "term": "三下",
+     "code": "00330050"
+    },
+    {
+     "name": "生物材料学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 2,
+     "term": "三上",
+     "code": "00332900"
+    },
+    {
+     "name": "生物材料分析方法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上",
+     "code": "00333270"
+    },
+    {
+     "name": "计算生物学导论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上/四上",
+     "code": "00333280"
+    },
+    {
+     "name": "生物医学图像处理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 16,
+     "term": "三下",
+     "code": "00333860"
+    },
+    {
+     "name": "普通化学实验 ( B)(必修)",
+     "nature": null,
+     "credits": 2,
+     "hours": 3,
+     "practice": 54,
+     "term": "二上",
+     "code": "01034920"
+    },
+    {
+     "name": "基础物理实验 (必修)",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": 54,
+     "term": "二下",
+     "code": "00431200"
+    },
+    {
+     "name": "生物医学工程综合实验",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": 4,
+     "term": "二下",
+     "code": "00333800"
+    },
+    {
+     "name": "金工实习",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 48,
+     "term": "二暑",
+     "code": "00333050"
+    },
+    {
+     "name": "有机化学实验 ( B)",
+     "nature": null,
+     "credits": 2,
+     "hours": 5,
+     "practice": 60,
+     "term": "三上",
+     "code": "01032711"
+    },
+    {
+     "name": "生物医学工程实习 (必修)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 48,
+     "term": "三暑",
+     "code": "00332290"
+    },
+    {
+     "name": "生物医学光学及应用",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三下",
+     "code": "00333480"
+    },
+    {
+     "name": "生物力学基础",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "四上",
+     "code": "00332970"
+    },
+    {
+     "name": "医学成像基础",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 18,
+     "term": "四上",
+     "code": "00333980"
+    },
+    {
+     "name": "纳米医学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "四上",
+     "code": "00333290"
+    },
+    {
+     "name": "细胞与分子影像学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "四下",
+     "code": "00333630"
+    },
+    {
+     "name": "生物材料制备与加工",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "四下",
+     "code": "00333880"
+    },
+    {
+     "name": "发育与再生生物学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "四下",
+     "code": "00332960"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "—       大学英语                2~8      —      —     按大学英语教研室要求选课",
+  "—       思想政治理论必修课            19                   按马克思主义学院要求选课",
+  "—                            1门                   按学校要求选课",
+  "劳动教育课               32 学时                 按学校要求选课",
+  "选 该 课 程 的 上 机 课 “计 算 概",
+  "论 B 上机”。",
+  "选 该 课 程 的 上 机 课 “计 算 概",
+  "论 B 上机”。",
+  "需要 另 选 该 课 程 的 上 机 课",
+  "“数据结构与算法上机”。",
+  "需要 另 选 该 课 程 的 上 机 课",
+  "“数据结构与算法上机”。",
+  "· 462 ·             北京大学本科培养方案 (",
+  "—       体育系列课程          1×4      2          0       全年",
+  "通识教育课程分为四个 系 列: Ⅰ. 人 类 文 明 及 其 传 统, Ⅱ. 现 代 社 会 及 其 问 题, Ⅲ.",
+  "艺术与人文, Ⅳ. 数学、自然与技术。每个系列均包含通识教育核心课、通选课两部分课",
+  "程,具体课程列表详见 《北京大学本科生选课手册》。",
+  "1)至少修读 1 门 “通识教育核心课程” (任一系列),且在四个课程系列中 每个系列",
+  "至少修读 2 学分 (通识教育核心课或通选课均可)。",
+  "2)原则上不允许以专业课替代通识教育课程学分。",
+  "3)本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分。",
+  "4)建议合理分配修读时间,每学期修读 1 门课程。",
+  "注:",
+  "1) 可用高等数学 B (一、二) 替代数学分析 (一、二),多余学分计入 3",
+  "2) 普物 (Ⅰ ) 与力学 + 电磁学属于同质 类 课 程,普 物 (Ⅱ ) 与 热 学 + 光 学 + 近 代 物 理 属 于 同 质 类",
+  "课程,同质类课程不可重复修读。可用力学、电 磁 学、 光 学、 热 学、 近 代 物 理 中 的 至 少 4 门 且 总 学 分 不",
+  "少于 8 学分替代普物 (Ⅰ ) 和普物 (Ⅱ ),超出 8 学分的部分计入 3",
+  "-2 自主选修学分。",
+  "北京大学工学院                  · 463 ·",
+  "注:不在列表中的其他课程是否可以代替专业必修课,需经本专业认定。",
+  "-",
+  "注:概率与数理统计可以用数学学院的概率统计 B (",
+  "-",
+  "清华大学       生物医学电子学              4     4     16      三下",
+  "-          3-1",
+  "-",
+  "-21 专业相关课程:6 学分 (根据专业侧重至少选修 9 学分,多余学分可以计入 3",
+  "-                                       -2-",
+  "· 464 ·             北京大学本科培养方案 (",
+  "可根据学习兴趣在全校范围 自 主 选 课 (全 校 公 选 课 不 能 计 入),建 议 继 续 读 研 的 学 生",
+  "选择感兴趣的研究方向,并联系意向读研导师推荐选修课程。"
+ ],
+ "warnings": [
+  "未找到“毕业总学分”"
+ ],
+ "source": {
+  "volumeId": "2023-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=195",
+  "lineStart": 24104,
+  "lineEnd": 24442
+ }
+}

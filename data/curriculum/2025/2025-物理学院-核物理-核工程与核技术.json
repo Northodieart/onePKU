@@ -1,0 +1,569 @@
+{
+ "id": "2025-物理学院-核物理-核工程与核技术",
+ "cohort": 2025,
+ "volume": "北京大学本科培养方案（2025）理科卷",
+ "school": "物理学院",
+ "major": "核物理",
+ "track": "核工程与核技术",
+ "title": "核物理（核工程与核技术）专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "理学学士",
+ "totalCredits": {
+  "min": 143,
+  "max": 149
+ },
+ "topRequirements": [],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "33～39 学分",
+   "min": 33,
+   "max": 39,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "46 学分",
+   "min": 46,
+   "max": 46,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "21 学分",
+   "min": 21,
+   "max": 21,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "毕业论文",
+   "requirement": "6 学分",
+   "min": 6,
+   "max": 6,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "15 学分",
+   "min": 15,
+   "max": 15,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "10 学分",
+   "min": 10,
+   "max": 10,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 45,
+   "max": 51,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "1.1",
+   "parent": "1",
+   "name": "公共必修课",
+   "min": 33,
+   "max": 39,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "思想道德与法治",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大一上",
+     "code": "04031652"
+    },
+    {
+     "name": "中国近现代史纲要",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大一下",
+     "code": "04031661"
+    },
+    {
+     "name": "习 近平 新时 代中 国特色社会主义思想概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大二上",
+     "code": "04031762"
+    },
+    {
+     "name": "毛泽东思想和中国特色社会主义理论体系概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大二下",
+     "code": "04031731"
+    },
+    {
+     "name": "马克思主义基本原理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大三上",
+     "code": "04031741"
+    },
+    {
+     "name": "形势与政策",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一学期课堂理论教学、4 个学",
+     "code": "04031751"
+    },
+    {
+     "name": "思想政治实践（上） 1 一至三年级的任一秋季学期",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "61130030"
+    },
+    {
+     "name": "思想政治实践（下） 1 大四前的任一春季学期至暑假思 想政 治理 论选 择性任一学期 按学校要求选课",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "61130040"
+    },
+    {
+     "name": "劳动教育课 32 学时 32 物理应用与实践为物院劳动",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00437700"
+    },
+    {
+     "name": "计算概论（B）",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大一上",
+     "code": "04831410"
+    },
+    {
+     "name": "计算概论（B）上机",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 34,
+     "term": "可用计算概论 A 替代",
+     "code": "04831650"
+    },
+    {
+     "name": "数据结构与算法（B）",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大一上",
+     "code": "04831420"
+    },
+    {
+     "name": "数据结构与算法上机",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 34,
+     "term": "可用计算概论 A 替代",
+     "code": "04830494"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "大一上",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "1.2",
+   "parent": "1",
+   "name": "通识教育课",
+   "min": 12,
+   "max": 12,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 73,
+   "max": 73,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.1",
+   "parent": "2",
+   "name": "专业基础课",
+   "min": 46,
+   "max": 46,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学 A（一） 6 大一上",
+     "nature": null,
+     "credits": 10,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00132511"
+    },
+    {
+     "name": "高等数学 A（二） 6 大一下",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00132512"
+    },
+    {
+     "name": "线性代数（B）",
+     "nature": null,
+     "credits": 4,
+     "hours": 5,
+     "practice": null,
+     "term": "大一上",
+     "code": "00131460"
+    },
+    {
+     "name": "力学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大一上",
+     "code": "00431141"
+    },
+    {
+     "name": "热学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "大一下",
+     "code": "00431142"
+    },
+    {
+     "name": "电磁学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大一下",
+     "code": "00431143"
+    },
+    {
+     "name": "光学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大二上",
+     "code": "00431172"
+    },
+    {
+     "name": "近代物理 或",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大二上",
+     "code": "00431165"
+    },
+    {
+     "name": "原子物理学 （任选 1 门） 3 大二",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00431151"
+    },
+    {
+     "name": "普通物理实验（1）",
+     "nature": null,
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "大一上",
+     "code": "00437180"
+    },
+    {
+     "name": "普通物理实验（2）",
+     "nature": null,
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "大一下",
+     "code": "00437190"
+    },
+    {
+     "name": "或",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": null,
+     "code": "00432110"
+    },
+    {
+     "name": "或 或 大二数学物理方法（上）+（下）",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00432108"
+    },
+    {
+     "name": "3+3 3+3",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00432109"
+    },
+    {
+     "name": "理论物理基础Ⅰ 4 大二上",
+     "nature": null,
+     "credits": 8,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00432001"
+    },
+    {
+     "name": "理论物理基础Ⅱ 4 大二下",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00432002"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2",
+   "parent": "2",
+   "name": "专业核心课",
+   "min": 21,
+   "max": 21,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "理论力学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大二下",
+     "code": "00432211"
+    },
+    {
+     "name": "电动力学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大二下",
+     "code": "00432213"
+    },
+    {
+     "name": "量子力学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大三上",
+     "code": "00432148"
+    },
+    {
+     "name": "统计力学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大三上",
+     "code": "00431648"
+    },
+    {
+     "name": "或",
+     "nature": null,
+     "credits": 3,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00431443"
+    },
+    {
+     "name": "（任选 1 门） 4 大三下计算模拟",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00434202"
+    },
+    {
+     "name": "近代物理实验（Ⅰ）",
+     "nature": null,
+     "credits": 6,
+     "hours": 102,
+     "practice": null,
+     "term": "大三上",
+     "code": "00433327"
+    },
+    {
+     "name": "核物理与粒子物理专题实验",
+     "nature": null,
+     "credits": 5,
+     "hours": 85,
+     "practice": null,
+     "term": "大四上",
+     "code": "00437160"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.3",
+   "parent": "2",
+   "name": "毕业论文",
+   "min": 6,
+   "max": 6,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 25,
+   "max": 25,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1",
+   "parent": "3",
+   "name": "专业选修课",
+   "min": 15,
+   "max": 15,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.2",
+   "parent": "3",
+   "name": "自主选修课",
+   "min": 10,
+   "max": 10,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "说明：其中的差异来自英语 2～8 学分。",
+  "备注：劳动课程 32 学时，1 门思政选择性必修课。",
+  "—       大学英语            2～8     —      —      按大学英语教研室要求选课",
+  "任选 1 门                       1门      —",
+  "必修                                             详见思政选择性必修课列表",
+  "—        体育系列课程            4      —                     全年",
+  "通识教育课程系列                     各系列学分",
+  "（通识核心课+通选课）                （通识核心课+通选课）",
+  "Ⅰ. 人类文明及其传统                          ≥2",
+  "Ⅱ. 现代社会及其问题                          ≥2                  1. 不少于 12 学分",
+  "Ⅲ. 艺术与人文                             ≥2                  2. 至少修读 1 门“通识核心课”",
+  "Ⅳ. 数学、自然与技术                          ≥2",
+  "（1）具体课程列表详见《北京大学本科生选课手册》 ；",
+  "（2）原则上不允许以专业课替代通识教育课程学分；",
+  "（3）本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分；",
+  "（4）建议合理分配修读时间，每学期修读 1 门课程。",
+  "说明：毕业论文课题必须与专业相关。",
+  "（1）物理学院开设的专业任选课程（不含通识课、公选课，含本科生科研训练）；",
+  "（2）物理学院其他专业、方向专业必修课程、专业选修课程。",
+  "其他学院专业核心课程。"
+ ],
+ "warnings": [
+  "第 5386 行：课程行缺少学分：61130030   思想政治实践（上）        1           ",
+  "第 5391 行：课程行缺少学分：61130040    思想政治实践（下）         1         ",
+  "第 5396 行：课程行缺少学分：00437700    劳动教育课           32 学时       ",
+  "第 5426 行：课程行缺少学分：00132512    高等数学 A（二）                   ",
+  "第 5437 行：课程行缺少学分：00431151    原子物理学           （任选 1 门）    ",
+  "第 5443 行：课程行缺少学分：00432108                        或       ",
+  "第 5445 行：课程行缺少学分：00432109                       3+3     3",
+  "第 5448 行：课程行缺少学分：00432002    理论物理基础Ⅱ                     ",
+  "第 5461 行：课程行缺少学分：00434202                 （任选 1 门）       "
+ ],
+ "source": {
+  "volumeId": "2025-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=216",
+  "lineStart": 5306,
+  "lineEnd": 5613
+ }
+}

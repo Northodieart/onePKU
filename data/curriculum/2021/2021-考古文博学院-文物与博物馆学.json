@@ -1,0 +1,63 @@
+{
+ "id": "2021-考古文博学院-文物与博物馆学",
+ "cohort": 2021,
+ "volume": "北京大学本科培养方案（2021）文科卷",
+ "school": "考古文博学院",
+ "major": "文物与博物馆学",
+ "track": null,
+ "title": "文物与博物馆学专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "历史学学士学位。",
+ "totalCredits": {
+  "min": 140,
+  "max": 140
+ },
+ "topRequirements": [],
+ "requirements": [],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 41,
+   "max": 47,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 56,
+   "max": 59,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 38,
+   "max": 38,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "· 108 ·              北京大学本科培养方案 ("
+ ],
+ "warnings": [
+  "第 5675 行：课程设置出现第二套“1. 公共基础课程”，只保留第一套"
+ ],
+ "source": {
+  "volumeId": "2021-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=158",
+  "lineStart": 5617,
+  "lineEnd": 6073
+ }
+}

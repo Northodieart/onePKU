@@ -1,0 +1,363 @@
+{
+ "id": "2023-信息科学技术学院-信息与计算科学",
+ "cohort": 2023,
+ "volume": "北京大学本科教学计划（2023）理科卷",
+ "school": "信息科学技术学院",
+ "major": "信息与计算科学",
+ "track": null,
+ "title": "信息与计算科学专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": null,
+ "totalCredits": null,
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 51,
+   "max": 51,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "39 学分",
+   "inferredParent": true,
+   "min": 39,
+   "max": 39,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "19 学分",
+   "inferredParent": true,
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "33 学分",
+   "inferredParent": true,
+   "min": 33,
+   "max": 33,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "24 学分",
+   "inferredParent": true,
+   "min": 24,
+   "max": 24,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "15 学分",
+   "inferredParent": true,
+   "min": 15,
+   "max": 15,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 45,
+   "max": 51,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 A",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": 32,
+     "term": "一上",
+     "code": "04830041"
+    },
+    {
+     "name": "数据结构与算法 A",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": 32,
+     "term": "二上",
+     "code": "04830050"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "一上",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": [
+    {
+     "code": "04830530",
+     "name": "计算概论 A (实验班)",
+     "credits": 3,
+     "replaces": "计算概论 A"
+    },
+    {
+     "code": "04830540",
+     "name": "数据结构与算法 A (实验班)",
+     "credits": 3,
+     "replaces": "数据结构与算法 A"
+    }
+   ]
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 58,
+   "max": 58,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学 A (Ⅰ )",
+     "nature": null,
+     "credits": 5,
+     "hours": 6,
+     "practice": 32,
+     "term": "一上",
+     "code": "00132511"
+    },
+    {
+     "name": "高等数学 A (Ⅱ )",
+     "nature": null,
+     "credits": 5,
+     "hours": 6,
+     "practice": 32,
+     "term": "一下",
+     "code": "00132512"
+    },
+    {
+     "name": "线性代数 A (Ⅰ )",
+     "nature": null,
+     "credits": 4,
+     "hours": 5,
+     "practice": 32,
+     "term": "一上",
+     "code": "00132611"
+    },
+    {
+     "name": "线性代数 A (Ⅱ )",
+     "nature": null,
+     "credits": 4,
+     "hours": 5,
+     "practice": 32,
+     "term": "一下",
+     "code": "00132612"
+    },
+    {
+     "name": "信息科学技术概论",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": 0,
+     "term": "一上",
+     "code": "04830010"
+    }
+   ],
+   "alternatives": [
+    {
+     "code": "00132301",
+     "name": "数学分析 (Ⅰ )",
+     "credits": 5,
+     "replaces": "高等数学 A (Ⅰ )"
+    },
+    {
+     "code": "00132302",
+     "name": "数学分析 (Ⅱ )",
+     "credits": 5,
+     "replaces": "高等数学 A (Ⅱ )"
+    },
+    {
+     "code": "00132321",
+     "name": "高等代数 (Ⅰ )",
+     "credits": 5,
+     "replaces": "线性代数 A (Ⅰ )"
+    },
+    {
+     "code": "00132323",
+     "name": "高等代数 (Ⅱ )",
+     "credits": 4,
+     "replaces": "线性代数 A (Ⅱ )"
+    },
+    {
+     "code": "04831750",
+     "name": "程序设计实习",
+     "credits": 3,
+     "replaces": "一下"
+    },
+    {
+     "code": "04835230",
+     "name": "人工智能基础",
+     "credits": 3,
+     "replaces": "一下"
+    },
+    {
+     "code": "04833040",
+     "name": "计算机系统导论",
+     "credits": 5,
+     "replaces": "二上"
+    },
+    {
+     "code": "04832363",
+     "name": "计算机系统导论讨论班",
+     "credits": 0,
+     "replaces": "二上"
+    },
+    {
+     "code": "04833050",
+     "name": "算法设计与分析",
+     "credits": 5,
+     "replaces": "二下"
+    },
+    {
+     "code": "04832580",
+     "name": "算法设计与分析 (研讨型小班)",
+     "credits": 0,
+     "replaces": "二下"
+    },
+    {
+     "code": "04835310",
+     "name": "离散数学基础",
+     "credits": 3,
+     "replaces": "二上"
+    },
+    {
+     "code": "04834260",
+     "name": "操作系统 4 学与技术",
+     "credits": 5,
+     "replaces": "三上/下"
+    },
+    {
+     "code": "04834200",
+     "name": "编译原理 4 课程模块",
+     "credits": 5,
+     "replaces": "三上/下"
+    },
+    {
+     "code": "04830140",
+     "name": "计算机组织与体系结构",
+     "credits": 3,
+     "replaces": "三上/下"
+    },
+    {
+     "code": "04835060",
+     "name": "人工智能中的数学",
+     "credits": 4,
+     "replaces": "二上"
+    },
+    {
+     "code": "04835000",
+     "name": "可视计算与交互概论 4 智能科学",
+     "credits": 4,
+     "replaces": "二上"
+    },
+    {
+     "code": "04835120",
+     "name": "自然语言处理基础 3 与技术课",
+     "credits": 3,
+     "replaces": "二下"
+    },
+    {
+     "code": "04831730",
+     "name": "机器学习概论 3 程模块",
+     "credits": 3,
+     "replaces": "三上"
+    },
+    {
+     "code": "04835070",
+     "name": "认知推理",
+     "credits": 3,
+     "replaces": "三下"
+    },
+    {
+     "code": "04833400",
+     "name": "离散数学与结构 (Ⅰ )",
+     "credits": 3,
+     "replaces": "离散数学基础"
+    },
+    {
+     "code": "04834040",
+     "name": "人工智能引论",
+     "credits": 3,
+     "replaces": "人工智能基础"
+    },
+    {
+     "code": "04833420",
+     "name": "机器学习",
+     "credits": 3,
+     "replaces": "机器学习概论"
+    },
+    {
+     "code": "04831780",
+     "name": "自然语言处理导论",
+     "credits": 2,
+     "replaces": "自然语言处理基础"
+    }
+   ]
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "—    大学英语           2~8    —       —    英语 专 业)大 学 英 语 能 力 培",
+  "—    思想政治理论必修课       19                 政治 理 论 必 修 课 培 养 方 案",
+  "2023年 6月修订)》。",
+  "· 386 ·              北京大学本科培养方案 (",
+  "—                           1门                                性必修 课 教 学 实 施 方 案 (",
+  "年 5月)》。",
+  "—       劳动教育课              32 学时",
+  "202    。",
+  "—       体育系列课程               4                                全年,按体育教研室要求选课",
+  "注:相关课程均可以由同名的实验班课程进行替代 (下同)。",
+  "通识教育课程有四个系列 Ⅰ. 人类文明及其传统、 Ⅱ. 现代社会及其问题、 Ⅲ. 艺术",
+  "与人文、 Ⅳ. 数学、自然与技术),每个系列均包含通识教育核心课和通选课两部分课程,",
+  "1)至少修读一门 “通识教育核心 课 程”, 且 在 四 个 课 程 系 列 中 每 个 系 列 至 少 修 读 2",
+  "3)本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分;",
+  "4)建议合理分配修读时 ,每学期修读 1 门课程。",
+  "北京大学信息科学技术学院                    · 387 ·",
+  "课程模            实践",
+  "新开课          信息学中的概率统计         3    计算机科    3      0      三上",
+  "注:在 “计算机科学与技术课程模块” 和 “智能科学与技术课程模块” 任选其一,完整修完。"
+ ],
+ "warnings": [
+  "未找到“毕业总学分”"
+ ],
+ "source": {
+  "volumeId": "2023-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=195",
+  "lineStart": 19774,
+  "lineEnd": 20274
+ }
+}

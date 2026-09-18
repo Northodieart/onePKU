@@ -1,0 +1,456 @@
+{
+ "id": "2021-政府管理学院-“政治_、_法律与社会_”_项目",
+ "cohort": 2021,
+ "volume": "北京大学本科培养方案（2021）文科卷",
+ "school": "政府管理学院",
+ "major": "“政治/、/法律与社会/”/项目",
+ "track": null,
+ "title": "“政治 、 法律与社会 ” 项目",
+ "kind": "project",
+ "qualifiers": [],
+ "degree": null,
+ "totalCredits": null,
+ "topRequirements": [],
+ "requirements": [],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "项目必修课",
+   "min": 26,
+   "max": 26,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "新政治学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋季",
+     "code": "03233050"
+    },
+    {
+     "name": "法理学",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "春季",
+     "code": "02930010"
+    },
+    {
+     "name": "社会学概论",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "秋季",
+     "code": "03130010"
+    },
+    {
+     "name": "社会科学的经典与前沿",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "春季",
+     "code": "03232610"
+    },
+    {
+     "name": "中国政府与政治",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋季、春季",
+     "code": "03232960"
+    },
+    {
+     "name": "法律思维与法学方法",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "秋季",
+     "code": "02930192"
+    },
+    {
+     "name": "社会学与中国社会",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "春季",
+     "code": "03132130"
+    },
+    {
+     "name": "政治、法律与社会经典阅读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "秋季",
+     "code": "03232830"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "项目选修课",
+   "min": 13,
+   "max": 13,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "政治学原理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋季、春季",
+     "code": "03230020"
+    },
+    {
+     "name": "政治学研究方法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "春季",
+     "code": "03232840"
+    },
+    {
+     "name": "政治心理学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "春季",
+     "code": "03233120"
+    },
+    {
+     "name": "计算政治学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "春季",
+     "code": "03232860"
+    },
+    {
+     "name": "近现代欧洲政治思想",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "春季",
+     "code": "03233140"
+    },
+    {
+     "name": "中国政治思想史",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋季、春季",
+     "code": "03230780"
+    },
+    {
+     "name": "中国政治制度史",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋季",
+     "code": "03230770"
+    },
+    {
+     "name": "公共组织行为学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋季",
+     "code": "03232460"
+    },
+    {
+     "name": "政治学阶梯:体系与问题",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "秋季",
+     "code": "03233040"
+    },
+    {
+     "name": "西方政治思想史",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "春季",
+     "code": "03230790"
+    },
+    {
+     "name": "政党学概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "春季",
+     "code": "03231700"
+    },
+    {
+     "name": "比较政治学概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "春季",
+     "code": "03230040"
+    },
+    {
+     "name": "西方政治制度",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "春季",
+     "code": "03232990"
+    },
+    {
+     "name": "刑法总论",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "春季",
+     "code": "02930152"
+    },
+    {
+     "name": "宪法与行政法学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "春季",
+     "code": "03232620"
+    },
+    {
+     "name": "宪法学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋季",
+     "code": "02930060"
+    },
+    {
+     "name": "西方法律思想史",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋季",
+     "code": "02930040"
+    },
+    {
+     "name": "刑法分论",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "秋季",
+     "code": "02930153"
+    },
+    {
+     "name": "国际公法",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "秋季",
+     "code": "02930480"
+    },
+    {
+     "name": "民事诉讼法学",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "秋季",
+     "code": "02930050"
+    },
+    {
+     "name": "刑事诉讼法学",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "春季",
+     "code": "02930920"
+    },
+    {
+     "name": "社会学专题讲座",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "秋季",
+     "code": "03131010"
+    },
+    {
+     "name": "社会调查与研究方法",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "秋季",
+     "code": "03131500"
+    },
+    {
+     "name": "中国社会",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "秋季",
+     "code": "03130590"
+    },
+    {
+     "name": "国外社会学说 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "春季",
+     "code": "03100130"
+    },
+    {
+     "name": "国外社会学说 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "秋季",
+     "code": "03130020"
+    },
+    {
+     "name": "社会心理学",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "秋季",
+     "code": "03130210"
+    },
+    {
+     "name": "组织社会学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "秋季",
+     "code": "03130560"
+    },
+    {
+     "name": "中国社会学史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "秋季",
+     "code": "03131740"
+    },
+    {
+     "name": "社会问题与社会政策",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "暑期",
+     "code": "03130471"
+    },
+    {
+     "name": "社会统计学",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "秋季",
+     "code": "03130120"
+    },
+    {
+     "name": "马列经典著作选读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "春季",
+     "code": "03131520"
+    },
+    {
+     "name": "西方社会思想史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "春季",
+     "code": "03130880"
+    },
+    {
+     "name": "中国社会思想史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "春季",
+     "code": "03130050"
+    },
+    {
+     "name": "人类学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "春季",
+     "code": "03130940"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "说明:“新政治学”是仅面向本项目学生开放,实行小班教学的特色基础课程。",
+  "· 568 ·             北京大学本科培养方案 (",
+  "说明:特设核心课程仅面向本项目学生开放,实行小班教学。",
+  "本项目提供资金和其他便利条件,要求学生在导师的指导下,参与政治、法律与社会",
+  "6000 字以上),由导师做出成绩评定。",
+  "0293008a   民法总论              3    3        0    秋季",
+  "北京大学政府管理学院                        · 569 ·",
+  "说明:政治学类、法学类、社会学类至少各选一门 (政治学类课程对政治学相关专业",
+  "的学生不作强制要求,法学类课程对法学相关专业的学生不作强制要求,社会学类课程对",
+  "社会学相关专业的学生不作 强 制 要 求),其 他 类 课 程 不 作 强 制 要 求。上 述 课 程 若 属 本 项 目",
+  "学生所在专业的必修课,学生应选列表内的其它课程。本项目每期开设的课程,由项目教",
+  "学委员会 确 定。 该 类 课 程 原 则 上 同 相 关 专 业 学 生 共 同 选 课、 学 习, 并 遵 守 统 一 的 考 试",
+  "要求。",
+  "参加 “政治、法律与社会”项目的同学所完成的课程学分,可以用来满足各院系培养",
+  "方案中的专业限选和自主选修课程的学分要求。本项目开设的 “政治、法律与社会经典阅",
+  "读”课程和 “实践与调研”课 程, 可 替 代 相 关 院 系 对 读 书 会、 实 践 与 调 研 方 面 的 学 分 要",
+  "求。原则上不鼓励学生大幅增加总体学分数量,根据上述方案,本学部学生增加学分控制",
+  "在 15 学分之内。"
+ ],
+ "warnings": [
+  "未找到“毕业总学分”"
+ ],
+ "source": {
+  "volumeId": "2021-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=158",
+  "lineStart": 30324,
+  "lineEnd": 30509
+ }
+}

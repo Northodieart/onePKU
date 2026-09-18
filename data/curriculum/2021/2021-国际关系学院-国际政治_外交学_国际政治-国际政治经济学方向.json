@@ -1,0 +1,1358 @@
+{
+ "id": "2021-国际关系学院-国际政治_外交学_国际政治-国际政治经济学方向",
+ "cohort": 2021,
+ "volume": "北京大学本科培养方案（2021）文科卷",
+ "school": "国际关系学院",
+ "major": "国际政治/外交学/国际政治",
+ "track": "国际政治经济学方向",
+ "title": "国际政治专业外交学专业国际政治专业 (国际政治经济学方向 )",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "法学学士学位。",
+ "totalCredits": {
+  "min": 139,
+  "max": 139
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 33,
+   "max": 39,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 60,
+   "max": 60,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 40,
+   "max": 40,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "21~27 学分",
+   "inferredParent": true,
+   "min": 21,
+   "max": 27,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "21 学分",
+   "inferredParent": true,
+   "min": 21,
+   "max": 21,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "32 学分",
+   "inferredParent": true,
+   "min": 32,
+   "max": 32,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "21 学分",
+   "inferredParent": true,
+   "min": 21,
+   "max": 21,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "19 学分",
+   "inferredParent": true,
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 33,
+   "max": 39,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 C ◎ / *",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "04834470"
+    },
+    {
+     "name": "计算机实习",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "1-1",
+   "parent": "1",
+   "kind": "list",
+   "name": "留学生需修满 33 学分 = ( 1-",
+   "min": 33,
+   "max": 33,
+   "unit": "学分",
+   "requirement": "留学生需修满 33 学分 = ( 1-",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "kind": "list",
+   "name": "港澳台学生需修满 33~39 学分 = (   1-",
+   "min": 33,
+   "max": 39,
+   "unit": "学分",
+   "requirement": "港澳台学生需修满 33~39 学分 = (   1-",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "1-3",
+   "parent": "1",
+   "kind": "list",
+   "name": "本科生需修满 33~39 学分 = (",
+   "min": 33,
+   "max": 39,
+   "unit": "学分",
+   "requirement": "本科生需修满 33~39 学分 = (",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "1.1",
+   "parent": "1",
+   "name": "公 共 必 修 课 21~27 学 分 +1",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 60,
+   "max": 60,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "国际政治概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "一上",
+     "code": "02430010"
+    },
+    {
+     "name": "中国政治概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "一上",
+     "code": "02430150"
+    },
+    {
+     "name": "国家安全学导论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "一上",
+     "code": "02432400"
+    },
+    {
+     "name": "经济学原理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "一下",
+     "code": "02432050"
+    },
+    {
+     "name": "政治学原理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "一下",
+     "code": "02430041"
+    },
+    {
+     "name": "中华人民共和国对外关系",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上/下",
+     "code": "02430140"
+    },
+    {
+     "name": "国际组织与国际法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "02430931"
+    },
+    {
+     "name": "专业汉语 (一) *",
+     "nature": null,
+     "credits": 1,
+     "hours": 3,
+     "practice": 0,
+     "term": "一上",
+     "code": "02431093"
+    },
+    {
+     "name": "专业汉语 (二) *",
+     "nature": null,
+     "credits": 1,
+     "hours": 3,
+     "practice": 0,
+     "term": "一下",
+     "code": "02431094"
+    },
+    {
+     "name": "专业文献选读 (一) *",
+     "nature": null,
+     "credits": 1,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "02432421"
+    },
+    {
+     "name": "专业文献选读 (二) *",
+     "nature": null,
+     "credits": 1,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "02432422"
+    },
+    {
+     "name": "专业文献选读 (三) *",
+     "nature": null,
+     "credits": 1,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "02432423"
+    },
+    {
+     "name": "专业文献选读 (四) *",
+     "nature": null,
+     "credits": 1,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "02432424"
+    },
+    {
+     "name": "国际关系史 (上)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "一上",
+     "code": "02430091"
+    },
+    {
+     "name": "国际关系史 (下)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "一下",
+     "code": "02430092"
+    },
+    {
+     "name": "中国对外关系史",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "一下",
+     "code": "02430211"
+    },
+    {
+     "name": "外交学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "02430050"
+    },
+    {
+     "name": "世界社会主义概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "02430032"
+    },
+    {
+     "name": "中国传统政治制度",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "02432120"
+    },
+    {
+     "name": "比较政治学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "02431641"
+    },
+    {
+     "name": "社会科学方法论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "02431840"
+    },
+    {
+     "name": "西方国际关系理论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "02430411"
+    },
+    {
+     "name": "国际政治经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上/下",
+     "code": "02430020"
+    },
+    {
+     "name": "原著译读",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上",
+     "code": "02431684"
+    },
+    {
+     "name": "英语写作",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": 0,
+     "term": "四上",
+     "code": "02430159"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 40,
+   "max": 40,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "西方外交思想概论 ( B)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "02431240"
+    },
+    {
+     "name": "中国外交新论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "02433322"
+    },
+    {
+     "name": "世界难民问题与难民政策",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "02432280"
+    },
+    {
+     "name": "国际发展政策 (英文)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "02432380"
+    },
+    {
+     "name": "台湾概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "02430570"
+    },
+    {
+     "name": "非传统安全概论 (英文)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "02433230"
+    },
+    {
+     "name": "非政府外交 ( B)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "02431230"
+    },
+    {
+     "name": "国际政治思想史",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "02431761"
+    },
+    {
+     "name": "国际安全研究 (英文)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "02432110"
+    },
+    {
+     "name": "社会科学定量方法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "02432161"
+    },
+    {
+     "name": "伊斯兰世界的政治发展",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "02433350"
+    },
+    {
+     "name": "美国政治与公共政策",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "02432150"
+    },
+    {
+     "name": "小国与国际关系概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "02432390"
+    },
+    {
+     "name": "国家安全与技术变迁",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "02432410"
+    },
+    {
+     "name": "全球治理的政治经济分析 ( C)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "02432330"
+    },
+    {
+     "name": "国际战略分析",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "02430891"
+    },
+    {
+     "name": "国际经济学 ( C)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "02433030"
+    },
+    {
+     "name": "国际关系心理学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "02432040"
+    },
+    {
+     "name": "中国与非洲:全球性相遇 (英文)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "02432360"
+    },
+    {
+     "name": "政治博弈论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "02432428"
+    },
+    {
+     "name": "西方政治思想史",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "02430421"
+    },
+    {
+     "name": "民族国家概论 ( A)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "02433180"
+    },
+    {
+     "name": "国际贸易政治学 ( C)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "02433050"
+    },
+    {
+     "name": "世界宗教与国际社会 ( A)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "02430500"
+    },
+    {
+     "name": "对外政策分析 ( B)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "02433240"
+    },
+    {
+     "name": "冲突学概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "02431270"
+    },
+    {
+     "name": "全球化与当代国际关系专题",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "02433311"
+    },
+    {
+     "name": "发展学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "02430111"
+    },
+    {
+     "name": "世界政治中的民族问题 ( A)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "02430380"
+    },
+    {
+     "name": "文化、口才与领导力",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "02432425"
+    },
+    {
+     "name": "中国与国际组织 (英文)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "02432230"
+    },
+    {
+     "name": "中国政治与公共政策 (英文)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "02432140"
+    },
+    {
+     "name": "国际安全理论与实践 (英文)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "02432080"
+    },
+    {
+     "name": "中美关系史 ( B)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "02431100"
+    },
+    {
+     "name": "媒体与国际关系",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "四上",
+     "code": "02431291"
+    },
+    {
+     "name": "两岸关系与一国两制",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "四上",
+     "code": "02430620"
+    },
+    {
+     "name": "民主的历史与现实",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "四上",
+     "code": "02432210"
+    },
+    {
+     "name": "中美经贸关系",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "四下",
+     "code": "02431600"
+    },
+    {
+     "name": "美国与东亚关系",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "四下",
+     "code": "02431781"
+    },
+    {
+     "name": "军备控制与裁军",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "四下",
+     "code": "02430360"
+    },
+    {
+     "name": "现代官僚制度比较研究",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "四下",
+     "code": "02432100"
+    },
+    {
+     "name": "中日关系史 ( B)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "四下",
+     "code": "02431120"
+    },
+    {
+     "name": "美国政治、经济与外交",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "02430220"
+    },
+    {
+     "name": "日本政治经济与外交",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "02430280"
+    },
+    {
+     "name": "俄罗斯政治与外交",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "02431420"
+    },
+    {
+     "name": "东北亚政治经济与外交",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "02430290"
+    },
+    {
+     "name": "欧洲联盟概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "02431920"
+    },
+    {
+     "name": "英国政治、经济与外交",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "02430250"
+    },
+    {
+     "name": "东欧各国政治经济与外交",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "02430240"
+    },
+    {
+     "name": "东南亚政治经济与外交",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "02430300"
+    },
+    {
+     "name": "中国的国际安全",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "02432430"
+    },
+    {
+     "name": "南亚各国政治与外交",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "02431310"
+    },
+    {
+     "name": "中亚各国政治与外交",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "02430920"
+    },
+    {
+     "name": "(英文)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下/上",
+     "code": "02432090"
+    },
+    {
+     "name": "泛非主义:新挑战与新机遇 (英文)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "02432180"
+    },
+    {
+     "name": "(英文)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "02432190"
+    },
+    {
+     "name": "东亚政治经济",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "02431171"
+    },
+    {
+     "name": "澳大利亚的政治经济 (英文)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三下",
+     "code": "02432260"
+    },
+    {
+     "name": "非洲导论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "02430331"
+    },
+    {
+     "name": "中国与国际法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "02432429"
+    },
+    {
+     "name": "中东政治经济与外交",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "四上",
+     "code": "02430320"
+    },
+    {
+     "name": "拉丁美洲政治与外交",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "四上",
+     "code": "02431400"
+    },
+    {
+     "name": "国际关系与国际法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "四上",
+     "code": "02432440"
+    },
+    {
+     "name": "理解世界政治",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "四下",
+     "code": "02432240"
+    },
+    {
+     "name": "经典原著选读",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "四下",
+     "code": "02433340"
+    },
+    {
+     "name": "人权与国际政治",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "四下",
+     "code": "02430391"
+    },
+    {
+     "name": "比较政治与比较文化",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "四下",
+     "code": "02431551"
+    },
+    {
+     "name": "高等数学 D",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "秋",
+     "code": "00137940"
+    },
+    {
+     "name": "世界史通论",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "秋",
+     "code": "02132081"
+    },
+    {
+     "name": "古希腊罗马史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋",
+     "code": "02133620"
+    },
+    {
+     "name": "亚洲史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春",
+     "code": "02133660"
+    },
+    {
+     "name": "欧洲史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春",
+     "code": "02133640"
+    },
+    {
+     "name": "欧洲史",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋",
+     "code": "02133641"
+    },
+    {
+     "name": "美洲史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋",
+     "code": "02133650"
+    },
+    {
+     "name": "美国史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春",
+     "code": "02130601"
+    },
+    {
+     "name": "拉丁美洲史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春",
+     "code": "02133651"
+    },
+    {
+     "name": "非洲史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋",
+     "code": "02139190"
+    },
+    {
+     "name": "法理学",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "春",
+     "code": "02930010"
+    },
+    {
+     "name": "国际公法",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "秋",
+     "code": "02930480"
+    },
+    {
+     "name": "社科文献资源与检索利用",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春",
+     "code": "03033190"
+    },
+    {
+     "name": "中国社会思想史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春",
+     "code": "03130050"
+    },
+    {
+     "name": "西方社会思想史",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春",
+     "code": "03130880"
+    },
+    {
+     "name": "社会调查与研究方法",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "秋",
+     "code": "03131500"
+    },
+    {
+     "name": "社会统计学",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "春",
+     "code": "03130120"
+    },
+    {
+     "name": "国外社会学学说 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋/春",
+     "code": "03100130"
+    },
+    {
+     "name": "国外社会学学说 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋/春",
+     "code": "03130020"
+    },
+    {
+     "name": "社会学概论",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "春",
+     "code": "03130010"
+    },
+    {
+     "name": "数据分析技术",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春",
+     "code": "03131260"
+    },
+    {
+     "name": "世界新闻史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春",
+     "code": "01833750"
+    },
+    {
+     "name": "新闻传播导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋",
+     "code": "01833690"
+    },
+    {
+     "name": "网络传播",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋",
+     "code": "01830300"
+    },
+    {
+     "name": "政党学概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春",
+     "code": "03231700"
+    },
+    {
+     "name": "政治经济导论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春",
+     "code": "03231080"
+    },
+    {
+     "name": "监察与监督",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋",
+     "code": "03231720"
+    },
+    {
+     "name": "中国近代政治思想史",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春",
+     "code": "03232690"
+    },
+    {
+     "name": "哲学导论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋",
+     "code": "02330003"
+    },
+    {
+     "name": "理想国",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋",
+     "code": "02332976"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "-1 公共必修课:21~27 学分 (留学生 10 学分,港澳台学生 9~15 学分)",
+  "英语分级产生的学分差额,可由任意学分补充。",
+  "—       大学英语 ◎            2~8     —          —     按大学英语教研室要求选课。",
+  "—       思想政治理论必修课         10      —          —",
+  "关学院 2021 级要求选课。",
+  "思想政 治 理 论 选 择 性                            由国 关 学 院 专 业 必 修 课",
+  "—                         1门      —          —",
+  "必修课                                        0",
+  "0中国政治概论替代。",
+  "需选该 课 程 上 机 课 (",
+  "计算机实习)。",
+  "需选该 课 程 上 机 课 (",
+  "计算机实习)。",
+  "—       体育系列课程 ◎ / *      1×4     2                全年",
+  "注: ① 留学生选修 “思想政治理论必修课” 中的 “马克思主义基本原理概论” (",
+  "以及带 * 号课,总计 10 学分,另再选修 “与中国有关的课程”9 学分替代思政课。",
+  "② 港澳台学生选课参看带 ◎ 号 课, 总 计 9~15 学 分 (由 英 语 课 决 定 ), 另 再 选 修 “与 中 国 有 关 的 课",
+  "程”12 学分。",
+  "· 294 ·            北京大学本科培养方案 (",
+  "通识教育课 = 通识教育核心课 + 通选课 ≥12。其中, ① 四个课程系列中每个系列至少",
+  "修读 2 学分; ② 通识教育核心课 ≥2 学分。以教务部通识教育课课库课程相关要求为准。",
+  "1 公 共 必 修 课 10 学 分 + 与 中 国 有 关 的 课 程 9 学 分 +",
+  "-2 通识教育课 12 学分 + 任意 2 学分)。",
+  "-2 通识教育课 12 学分)。",
+  "学分)。",
+  "由英语分级产生学分差,可以由任意课程学分补充。",
+  "注:带 * 号者为留学生必修课,中国学生不需要上。",
+  "北京大学国际关系学院                      · 295 ·",
+  "实习实践 2 周:2 学分。",
+  "实习时间:利用大学四年的寒暑假或课余时间,参加学校、学院或老师组织的实习实",
+  "践活动,或自行联系实习地点及单位,实习结束后需提交实习证明及实习报告。",
+  "1)6000 字以上,内容为对我国各行业取得的成就和存在的问题的调查、思考,能与",
+  "专业相联系者尤佳。",
+  "2)提交时间:大四春季学期注册时统一提交。",
+  "-1 专业选修课:21 学分 (各专业选课指导意见:国际政治专业建议优 先 选 修 备 注 A",
+  "的课程;外交学专业建议优先选修备注 B 的课程;国际政治经济学专业方向建议优先选择",
+  "· 296 ·             北京大学本科培养方案 (",
+  "其中含跨学科课程 不 少 于 10 学 分 或 完 成 辅 修 专 业 的 学 分 可 替 代 自 主 选 修 的 全 部 19",
+  "学分。",
+  "修读的辅修课程若最 终 没 有 完 成 所 修 专 业 要 求 可 优 先 抵 免 跨 学 科 课 程 部 分 10 学 分,",
+  "至多可替代自主选修的全部 19 学 分;外 院 系 转 入 同 学 原 专 业 核 心 课 可 优 先 抵 免 跨 学 科 课",
+  "程 10 学分,至多可替代自主选修的全部 19 学分。",
+  "北京大学国际关系学院                       · 297 ·",
+  "· 298 ·             北京大学本科培养方案 ("
+ ],
+ "warnings": [],
+ "source": {
+  "volumeId": "2021-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=158",
+  "lineStart": 15364,
+  "lineEnd": 15746
+ }
+}

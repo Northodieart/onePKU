@@ -1,0 +1,14 @@
+node_modules/
+dist/
+target/
+.DS_Store
+*.log
+.private/
+.qa/
+__pycache__/
+*.pyc
+.venv/
+tsconfig.tsbuildinfo
+# 由脚本生成
+public/pdfjs/
+src-tauri/gen/schemas/

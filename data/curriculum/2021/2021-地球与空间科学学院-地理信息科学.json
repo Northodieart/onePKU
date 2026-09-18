@@ -1,0 +1,557 @@
+{
+ "id": "2021-地球与空间科学学院-地理信息科学",
+ "cohort": 2021,
+ "volume": "北京大学本科培养方案（2021）理科卷",
+ "school": "地球与空间科学学院",
+ "major": "地理信息科学",
+ "track": null,
+ "title": "地理信息科学专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "理学学士学位。",
+ "totalCredits": {
+  "min": 142,
+  "max": 142
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 46,
+   "max": 46,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 55,
+   "max": 55,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 41,
+   "max": 41,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "34 学分",
+   "inferredParent": true,
+   "min": 34,
+   "max": 34,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "25 学分",
+   "inferredParent": true,
+   "min": 25,
+   "max": 25,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "26 学分",
+   "inferredParent": true,
+   "min": 26,
+   "max": 26,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 46,
+   "max": 46,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 B",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "04831410"
+    },
+    {
+     "name": "计算概论 B 上机",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": "概论 B” 课 程 同 时, 需 要 另 选",
+     "code": "04831650"
+    },
+    {
+     "name": "数据结构与算法 B",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "必修 课 程。 学 生 选 “数 据 结 构",
+     "code": "04831420"
+    },
+    {
+     "name": "数据结 构 与 算 法上机",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": "“数 据 结 构 与 算 法 B” 课 程 同",
+     "code": "04830494"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "一上",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 55,
+   "max": 55,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学 ( B)(一)",
+     "nature": null,
+     "credits": 5,
+     "hours": 6,
+     "practice": 0,
+     "term": "一上",
+     "code": "00130201"
+    },
+    {
+     "name": "高等数学 ( B)(二)",
+     "nature": null,
+     "credits": 5,
+     "hours": 6,
+     "practice": 0,
+     "term": "一下",
+     "code": "00130202"
+    },
+    {
+     "name": "线性代数 B",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "二上",
+     "code": "00131460"
+    },
+    {
+     "name": "概率统计 B",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "00132380"
+    },
+    {
+     "name": "力学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "一上",
+     "code": "00431141"
+    },
+    {
+     "name": "电磁学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "一下",
+     "code": "00431143"
+    },
+    {
+     "name": "热学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "一下",
+     "code": "00431154"
+    },
+    {
+     "name": "地理学基础",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "01235450"
+    },
+    {
+     "name": "遥感概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "01230070"
+    },
+    {
+     "name": "地图学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "01235230"
+    },
+    {
+     "name": "地理信息系统原理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "01235240"
+    },
+    {
+     "name": "卫星导航定位基础",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "01235430"
+    },
+    {
+     "name": "GI S 设计和应用",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": 0,
+     "term": "三下",
+     "code": "01235180"
+    },
+    {
+     "name": "遥感数字图像处理原理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "01235120"
+    },
+    {
+     "name": "地理信息系统工程",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三下",
+     "code": "01235190"
+    },
+    {
+     "name": "3S 野外综合实习",
+     "nature": null,
+     "credits": 1,
+     "hours": 32,
+     "practice": null,
+     "term": "2周 二暑",
+     "code": "01235260"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 41,
+   "max": 41,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "地理信息系统实验",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 32,
+     "term": "三上",
+     "code": "01235250"
+    },
+    {
+     "name": "遥感图像处理实验",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 32,
+     "term": "三下",
+     "code": "01235340"
+    },
+    {
+     "name": "测量学概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 8,
+     "term": "二上",
+     "code": "01235310"
+    },
+    {
+     "name": "地学数学模型",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三下",
+     "code": "01235080"
+    },
+    {
+     "name": "定量遥感基础",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三下",
+     "code": "01235410"
+    },
+    {
+     "name": "数据库概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "01235100"
+    },
+    {
+     "name": "程序设计语言",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 16,
+     "term": "二下",
+     "code": "01235270"
+    },
+    {
+     "name": "环境与生态科学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 8,
+     "term": "二上",
+     "code": "01235290"
+    },
+    {
+     "name": "遥感应用",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "四上",
+     "code": "01235330"
+    },
+    {
+     "name": "软件工程原理",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上",
+     "code": "01235010"
+    },
+    {
+     "name": "城市与区域科学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下",
+     "code": "01235300"
+    },
+    {
+     "name": "数字地球导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "(四) 上",
+     "code": "01235140"
+    },
+    {
+     "name": "数字地形模型",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "(四) 上",
+     "code": "01235060"
+    },
+    {
+     "name": "网络基础与 WebGI S",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "(三) 上",
+     "code": "01235090"
+    },
+    {
+     "name": "智能交通系统概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "(二) 下",
+     "code": "01235210"
+    },
+    {
+     "name": "物联网技术导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "(三) 下",
+     "code": "01235370"
+    },
+    {
+     "name": "离散数学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "(二) 上",
+     "code": "01230100"
+    },
+    {
+     "name": "计算数学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "(三) 上",
+     "code": "01235030"
+    },
+    {
+     "name": "计算机图形学基础",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "(三) 上",
+     "code": "01235040"
+    },
+    {
+     "name": "雷达遥感原理与应用",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "(三) 下",
+     "code": "01235440"
+    },
+    {
+     "name": "激光雷达遥感导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "(三) 下",
+     "code": "01235420"
+    },
+    {
+     "name": "北斗系统与时空智能",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "暑期",
+     "code": "01230470"
+    },
+    {
+     "name": "定量遥感反演的数理基础",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "(四) 上",
+     "code": "01235470"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "—       大学英语              2~8    —        —   按大学英语教研室要求选课",
+  "18                  按马克思主义学院要求选课",
+  "论 B”课 程 同 时,需 要 另 选 该 课",
+  "程的上机课 “计算概论 B 上机”。",
+  "· 194 ·                 北京大学本科培养方案 (",
+  "该课 程 的 上 机 课 “计 算 概 论 B",
+  "上机”。",
+  "与算 法 B” 课 程 同 时, 需 要 另",
+  "选该课 程 的 上 机 课 “数 据 结 构",
+  "与算法上机”。",
+  "时,需 要 另 选 该 课 程 的 上 机 课",
+  "“数据结构与算法上机”。",
+  "—        体育系列课程         1×4    2        0     全年",
+  "说明: ① 思政类课程具体方案以马克思主义学院和学校公布为准。 ② 公共英文课程如超过 4 个 学 分,",
+  "则在选修课程中减少相应的学分数;不足 4 个学 分 的,则 在 选 修 课 程 中 增 加 相 应 的 学 分 数, 总 学 分 仍 保",
+  "持为 142 学分。",
+  "通识课程的总学分要求为 12 学 分,至 少 修 读 一 门 通 识 核 心 课, 且 在 下 列 四 个 课 程 系",
+  "列中每个系列至少修读 2 学分。",
+  "说明:学生选修本院系开设的通识课程不计入学生毕业所需的通识课程学分,原则上",
+  "不允许以专业课替代通识教育课程学分。",
+  "北京大学地球与空间科学学院                            · 195 ·",
+  "0123020X    地球科学概论 *                   2         2          0      一上",
+  "说明:不承认其他院系选修的同名课; * 学院一年级必修课程。",
+  "除了完成上述学分及德智体的诸方面要求外,本专业学生还必须在最后一学年由本专",
+  "业导师指导下完成毕业学位论文/毕业设计,并顺利通过答辩才能获得学士学位。",
+  "专业选修和自主选 修 课 程 完 成 总 学 分 达 到 41 学 分, 其 中 专 业 选 修 课 程 至 少 完 成 27",
+  "学分。",
+  "· 196 ·            北京大学本科培养方案 (",
+  "大二开始参加的学校本科生科研训练活动,须有本专业副教授及以上职称老师为指导",
+  "教师,按开题、中期检查与结题审查等环节管理。如果以小组形式参加,只计前两名。学",
+  "生自行开展未 经 专 业 统 一 管 理 的 科 研 活 动 不 在 计 算 之 列; 其 他 方 面 按 教 务 部 相 关 规 定",
+  "执行。",
+  "学生可根据兴趣和将来发展需要选修信息科学与技术学院、数学学院、城市与环境学",
+  "院的专业核心课程或专业选修课程。尤其建议学生选择信息学院和数学学院机器学习、模",
+  "式识别、人工智能、数据科学与大数据等相关课程。"
+ ],
+ "warnings": [],
+ "source": {
+  "volumeId": "2021-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=152",
+  "lineStart": 9342,
+  "lineEnd": 9613
+ }
+}

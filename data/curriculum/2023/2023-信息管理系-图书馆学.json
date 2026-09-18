@@ -1,0 +1,1118 @@
+{
+ "id": "2023-信息管理系-图书馆学",
+ "cohort": 2023,
+ "volume": "北京大学本科教学计划（2023）文科卷",
+ "school": "信息管理系",
+ "major": "图书馆学",
+ "track": null,
+ "title": "图书馆学专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": null,
+ "totalCredits": {
+  "min": 143,
+  "max": 147
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 45,
+   "max": 51,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 46,
+   "max": 46,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 52,
+   "max": 52,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "33~39 学分",
+   "inferredParent": true,
+   "min": 33,
+   "max": 39,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "23 学分",
+   "inferredParent": true,
+   "min": 23,
+   "max": 23,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "19 学分",
+   "inferredParent": true,
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "2-4",
+   "parent": "2",
+   "name": "其他非课程必修要求",
+   "requirement": "社会实习实践,无学分",
+   "inferredParent": true
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "37 学分",
+   "inferredParent": true,
+   "min": 37,
+   "max": 37,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "15 学分",
+   "inferredParent": true,
+   "min": 15,
+   "max": 15,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 45,
+   "max": 51,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 C",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "概 论 C” 课 程 同 时, 需 要 另 选",
+     "code": "04834470"
+    },
+    {
+     "name": "计",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "计算机实习",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": "概 论 C” 课 程 同 时, 需 要 另 选",
+     "code": "04831435"
+    },
+    {
+     "name": "计学科特 点 选 择 是 否 作 为 必 修 课",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "问题求解 与 程 序设计",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "程。学 生 选 “问 题 求 解 与 程 序",
+     "code": "04834471"
+    },
+    {
+     "name": "计 算",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 46,
+   "max": 46,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学 ( C)(一)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "一上",
+     "code": "00131421"
+    },
+    {
+     "name": "高等数学 ( C)(二)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "一下",
+     "code": "00131422"
+    },
+    {
+     "name": "概率统计 B",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二下",
+     "code": "00132380"
+    },
+    {
+     "name": "信息管理第一课",
+     "nature": null,
+     "credits": 1,
+     "hours": 1,
+     "practice": null,
+     "term": "一上",
+     "code": "03033910"
+    },
+    {
+     "name": "信息资源管理基础",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上",
+     "code": "03033400"
+    },
+    {
+     "name": "信息行为导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上",
+     "code": "03033740"
+    },
+    {
+     "name": "信息组织",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "一下",
+     "code": "03032130"
+    },
+    {
+     "name": "调查与统计方法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "一下",
+     "code": "03033460"
+    },
+    {
+     "name": "图书馆学概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "03030010"
+    },
+    {
+     "name": "社科文献资源与检索利用",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "03033190"
+    },
+    {
+     "name": "计算机网络概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二上",
+     "code": "03033710"
+    },
+    {
+     "name": "信息资源建设",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03033180"
+    },
+    {
+     "name": "公共文化服务概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03033620"
+    },
+    {
+     "name": "图书馆参考咨询",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03033470"
+    },
+    {
+     "name": "信息政策与法规",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03032110"
+    },
+    {
+     "name": "中国图书史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03033490"
+    },
+    {
+     "name": "知识服务组织的管理与创新",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03033810"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 52,
+   "max": 52,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "信息架构设计与实践",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03033750"
+    },
+    {
+     "name": "著作权法",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03030220"
+    },
+    {
+     "name": "商务信息",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03033520"
+    },
+    {
+     "name": "信息计量学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03033650"
+    },
+    {
+     "name": "信息分析与决策",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三下",
+     "code": "03033030"
+    },
+    {
+     "name": "信息表示与知识图谱",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三下",
+     "code": "03033631"
+    },
+    {
+     "name": "数字人文",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03033820"
+    },
+    {
+     "name": "数据可视化",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03033940"
+    },
+    {
+     "name": "信息技术与应用",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "+2 一上",
+     "code": "03033720"
+    },
+    {
+     "name": "数据科学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上",
+     "code": "03033890"
+    },
+    {
+     "name": "Py thon 数据分析",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "+2 一下",
+     "code": "03033930"
+    },
+    {
+     "name": "数据库系统",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "+2 二上",
+     "code": "03033020"
+    },
+    {
+     "name": "面向对象程序设计 JAVA",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "+2 二上",
+     "code": "03033350"
+    },
+    {
+     "name": "信息存储与检索",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "+2 二下",
+     "code": "03033770"
+    },
+    {
+     "name": "信息安全",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03033110"
+    },
+    {
+     "name": "信息系统分析与设计",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "四上",
+     "code": "03033450"
+    },
+    {
+     "name": "信息素养概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03033560"
+    },
+    {
+     "name": "信息服务学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03033730"
+    },
+    {
+     "name": "人机交互与用户体验",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03033550"
+    },
+    {
+     "name": "健康信息学概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03033600"
+    },
+    {
+     "name": "交互式信息检索",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03033590"
+    },
+    {
+     "name": "媒体与社会",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上",
+     "code": "03032170"
+    },
+    {
+     "name": "传播学原理",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "03030370"
+    },
+    {
+     "name": "运筹学基础",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二上",
+     "code": "03033500"
+    },
+    {
+     "name": "管理学原理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二上",
+     "code": "03032000"
+    },
+    {
+     "name": "质性数据分析",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03033800"
+    },
+    {
+     "name": "管理信息系统",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三下",
+     "code": "03030740"
+    },
+    {
+     "name": "信息伦理与隐私保护",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03033950"
+    },
+    {
+     "name": "图书馆自动化",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03033160"
+    },
+    {
+     "name": "中文工具书",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "中文系",
+     "code": "02033090"
+    },
+    {
+     "name": "语言学概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "中文系",
+     "code": "02030070"
+    },
+    {
+     "name": "版本目录学基础 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季 中文系",
+     "code": "02034841"
+    },
+    {
+     "name": "版本目录学基础 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季 中文系",
+     "code": "02034842"
+    },
+    {
+     "name": "古典文献学基础",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "中文系",
+     "code": "02033620"
+    },
+    {
+     "name": "中国当代文学",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "中文系",
+     "code": "02033360"
+    },
+    {
+     "name": "世界史通论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "历史学系",
+     "code": "02132080"
+    },
+    {
+     "name": "伦理学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "哲学系",
+     "code": "02330142"
+    },
+    {
+     "name": "哲学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "哲学系",
+     "code": "02330001"
+    },
+    {
+     "name": "博物学文化专题",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "哲学系",
+     "code": "02335351"
+    },
+    {
+     "name": "艺术学原理",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "艺术学院",
+     "code": "04330013"
+    },
+    {
+     "name": "信息技术与文化产业",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "艺术学院",
+     "code": "04330089"
+    },
+    {
+     "name": "博物馆学概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "考古文博学院",
+     "code": "02231040"
+    },
+    {
+     "name": "文化遗产学概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "考古文博学院",
+     "code": "02232220"
+    },
+    {
+     "name": "社会科学的经 典 与前沿",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季 政府管理学院",
+     "code": "03232610"
+    },
+    {
+     "name": "公共政策分析",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季 政府管理学院",
+     "code": "03231620"
+    },
+    {
+     "name": "电子政务与计 算 机技术",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季 政府管理学院",
+     "code": "03231170"
+    },
+    {
+     "name": "社会学概论",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "社会学系",
+     "code": "03130010"
+    },
+    {
+     "name": "数据分析技术",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季 社会学系",
+     "code": "03131260"
+    },
+    {
+     "name": "社会调查与研究方法",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "秋季 社会学系",
+     "code": "03131500"
+    },
+    {
+     "name": "知识产权法学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "法学院",
+     "code": "02930180"
+    },
+    {
+     "name": "网络传播",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "新闻与传播学院",
+     "code": "01830300"
+    },
+    {
+     "name": "视听语言",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "新闻与传播学院",
+     "code": "01831740"
+    },
+    {
+     "name": "中华 人 民 共 和 国 对 外关系",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "国际关系学院",
+     "code": "02430140"
+    },
+    {
+     "name": "外交",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "国际关系学院",
+     "code": "02430220"
+    },
+    {
+     "name": "数据分析与统计软件",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "光华管理学院",
+     "code": "02838160"
+    },
+    {
+     "name": "市场数据分析",
+     "nature": null,
+     "credits": 2,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季 光华管理学院",
+     "code": "02838440"
+    },
+    {
+     "name": "互联网金融与大数据",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季 国家发展研究院",
+     "code": "06238080"
+    },
+    {
+     "name": "线性代数 C",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "数学科学学院",
+     "code": "00130310"
+    },
+    {
+     "name": "普通心理学",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "心理与认知学院",
+     "code": "01630900"
+    },
+    {
+     "name": "社会心理学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "心理与认知学院",
+     "code": "01630044"
+    },
+    {
+     "name": "脑与认知科学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "心理与认知学院",
+     "code": "04831320"
+    },
+    {
+     "name": "地理信息系统概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "地球与空间科学学院",
+     "code": "01235350"
+    },
+    {
+     "name": "人工智能与信息社会",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季 地球与空间科学学院",
+     "code": "01230460"
+    },
+    {
+     "name": "教育与人工智能",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "教育学院",
+     "code": "06733030"
+    },
+    {
+     "name": "人工智能创新实践",
+     "nature": null,
+     "credits": 4,
+     "hours": 2,
+     "practice": null,
+     "term": "+2 元培学院",
+     "code": "04630750"
+    },
+    {
+     "name": "社会调查数据 分 析方法",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "18730020"
+    },
+    {
+     "name": "应用量化分析",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03033850"
+    },
+    {
+     "name": "社群信息学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03033680"
+    },
+    {
+     "name": "信息经济学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03030720"
+    },
+    {
+     "name": "知识禁忌与文明发展 (原中国禁书史)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03033840"
+    },
+    {
+     "name": "大众健康信息资源与利用",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03033610"
+    },
+    {
+     "name": "分布式计算",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03033831"
+    },
+    {
+     "name": "企业与政府信息化",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03033140"
+    },
+    {
+     "name": "电子商务",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03032230"
+    },
+    {
+     "name": "商务智能分析",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03033860"
+    },
+    {
+     "name": "数据治理",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03033920"
+    },
+    {
+     "name": "电子资源的检索与利用",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "本系学生不可作为通选",
+     "code": "03033246"
+    },
+    {
+     "name": "中国文化史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "本系学生不可作为通选",
+     "code": "03032360"
+    },
+    {
+     "name": "中国名著导读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "本系学生不可作为通选",
+     "code": "03033243"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "—       大学英语             2~8      —       —    按大学英语教研室要求选课",
+  "—                         19              —    按马克思主义学院要求选课。",
+  "—                         1门              —    按学校要求选课。",
+  "—       劳动教育课            32 学时                 按学校要求选课",
+  "算机实习)。",
+  "算机实习)。",
+  "设 计 ” 课 程 同 时, 需 要 另 选 该",
+  "机实习”。",
+  "—       体育系列课程           1×4      2            全年",
+  "通识 教 育 课 程 分 为 四 个 系 列: Ⅰ. 人 类 文 明 及 其 传 统; Ⅱ. 现 代 社 会 及 其 问 题;",
+  "Ⅲ. 艺术与人文; Ⅳ. 数学、自然与技术。每个系列均包含通识教育核心课、通选课两部",
+  "· 344 ·              北京大学本科培养方案 (",
+  "分课程,具体课程列表详见 《北京大学本科生选课手册》。",
+  "1)至少修读 1 门 “通识教育核心课程” (任一系列),且在四个课程系列中每个系列",
+  "至少修读 2 学分 (通识教育核心课或通选课均可)。",
+  "2)原则上不允许以专业课替代通识教育课程学分。",
+  "3)本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分。",
+  "4)建议合理分配修读时间,每学期修读 1 门课程。",
+  "注:高等数学 (",
+  "B) 可以代替高等数学 (",
+  "C),但高数 (",
+  "B) 不可与高数 (",
+  "C) 重复选。",
+  "本院系四个模块,每个模块至少 选 修 2 学 分,至 少 共 选 修 27 学 分, 建 议 根 据 个 人 兴",
+  "趣和发展需要,集中 2~3 个模块选修。",
+  "北京大学信息管理系                 · 345 ·",
+  "· 346 ·               北京大学本科培养方案 (",
+  "-",
+  "实践",
+  "北京大学信息管理系                      · 347 ·",
+  "实践",
+  "结合专业领域、个人兴趣与未来发展,可选择全校各学部包括社会科学学部、经济管",
+  "理学部、信息与工程学部、理学 部、 人 文 学 部 各 院 系 的 专 业 课 (包 括 必 修 课 和 专 业 选 修",
+  "课),辅修学分可替代。"
+ ],
+ "warnings": [
+  "第 18313 行：课程行缺少学分：04831435 计",
+  "第 18319 行：课程行缺少学分：04831435 计",
+  "第 18329 行：课程行缺少学分：04831435 计 算"
+ ],
+ "source": {
+  "volumeId": "2023-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=196",
+  "lineStart": 18225,
+  "lineEnd": 18589
+ }
+}

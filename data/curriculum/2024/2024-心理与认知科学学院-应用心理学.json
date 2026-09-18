@@ -1,0 +1,554 @@
+{
+ "id": "2024-心理与认知科学学院-应用心理学",
+ "untitled": true,
+ "cohort": 2024,
+ "volume": "北京大学本科培养方案（2024）理科卷",
+ "school": "心理与认知科学学院",
+ "major": "应用心理学",
+ "track": null,
+ "title": "应用心理学专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "理学学士",
+ "totalCredits": {
+  "min": 144,
+  "max": 144
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 48,
+   "max": 48,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 54,
+   "max": 54,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 42,
+   "max": 42,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "大学英语",
+   "requirement": "8 学分",
+   "min": 8,
+   "max": 8,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "思想政治理论必修课",
+   "requirement": "19 学分",
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "1-3",
+   "parent": "1",
+   "name": "思想政治理论选择性必修课",
+   "requirement": "1 门",
+   "min": 1,
+   "max": 1,
+   "unit": "门"
+  },
+  {
+   "id": "1-4",
+   "parent": "1",
+   "name": "劳动教育课",
+   "requirement": "32 学时",
+   "min": 32,
+   "max": 32,
+   "unit": "学时"
+  },
+  {
+   "id": "1-5",
+   "parent": "1",
+   "name": "信息课程",
+   "requirement": "3 学分",
+   "min": 3,
+   "max": 3,
+   "unit": "学分"
+  },
+  {
+   "id": "1-6",
+   "parent": "1",
+   "name": "军事理论",
+   "requirement": "2 学分",
+   "min": 2,
+   "max": 2,
+   "unit": "学分"
+  },
+  {
+   "id": "1-7",
+   "parent": "1",
+   "name": "体育课",
+   "requirement": "4 学分",
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  },
+  {
+   "id": "1-8",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "17 学分",
+   "min": 17,
+   "max": 17,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "33 学分",
+   "min": 33,
+   "max": 33,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "requirement": "4 学分",
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "16 学分",
+   "min": 16,
+   "max": 16,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1.1",
+   "parent": "1",
+   "name": "公共必修课",
+   "courses": [
+    {
+     "name": "计算概论（B）",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "04831410"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "1.2",
+   "parent": "1",
+   "name": "通识教育课",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.1",
+   "parent": "2",
+   "name": "专业基础课",
+   "min": 17,
+   "max": 17,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学 C（一）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "一上",
+     "code": "00131421"
+    },
+    {
+     "name": "高等数学 C（二）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "一下",
+     "code": "00131422"
+    },
+    {
+     "name": "线性代数（C）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "一上",
+     "code": "00130310"
+    },
+    {
+     "name": "数据结构与算法（B）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "04831420"
+    },
+    {
+     "name": "有机化学（B）*",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "01032690"
+    },
+    {
+     "name": "普通化学（B）*",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": 4,
+     "term": null,
+     "code": "01034880"
+    },
+    {
+     "name": "普通生物学（B）*",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "01139380"
+    },
+    {
+     "name": "概率统计（B）*",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00132380"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2",
+   "parent": "2",
+   "name": "专业核心课",
+   "min": 33,
+   "max": 33,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "普通心理学",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "一上",
+     "code": "01630900"
+    },
+    {
+     "name": "心理统计（1）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 51,
+     "practice": 17,
+     "term": "一上",
+     "code": "01630051"
+    },
+    {
+     "name": "心理统计（2）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 51,
+     "practice": 17,
+     "term": "一下",
+     "code": "01630708"
+    },
+    {
+     "name": "社会心理学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "一下",
+     "code": "01630047"
+    },
+    {
+     "name": "实验心理学",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": 2,
+     "term": "二上",
+     "code": "01630034"
+    },
+    {
+     "name": "实验心理学实验",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": 51,
+     "term": "二上",
+     "code": "01603333"
+    },
+    {
+     "name": "心理测量",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "二下",
+     "code": "01603011"
+    },
+    {
+     "name": "发展心理学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 52,
+     "practice": 18,
+     "term": "二下",
+     "code": "01630060"
+    },
+    {
+     "name": "组织管理心理学",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 40,
+     "practice": 4,
+     "term": "二下",
+     "code": "01630600"
+    },
+    {
+     "name": "生理心理学",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 6,
+     "term": "三上",
+     "code": "01630101"
+    },
+    {
+     "name": "变态心理学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 63,
+     "practice": 21,
+     "term": "三上",
+     "code": "01630090"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "min": 4,
+   "max": 4,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1",
+   "parent": "3",
+   "name": "专业选修课",
+   "min": 16,
+   "max": 16,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.2",
+   "parent": "3",
+   "name": "自主选修课",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.2.1",
+   "parent": "3.2",
+   "name": "跨院系选修课",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.2.2",
+   "parent": "3.2",
+   "name": "荣誉学位课程",
+   "courses": [
+    {
+     "name": "生理学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "二下",
+     "code": "01630735"
+    },
+    {
+     "name": "CNS 解剖",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "二下",
+     "code": "01630020"
+    },
+    {
+     "name": "生理心理实验",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 68,
+     "practice": 56,
+     "term": "CNS 之后",
+     "code": "01630220"
+    },
+    {
+     "name": "心理学前沿文献讨论（1）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01630800"
+    },
+    {
+     "name": "心理学前沿文献讨论（2）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01630737"
+    },
+    {
+     "name": "科学写作与交流",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "秋季",
+     "code": "01630704"
+    },
+    {
+     "name": "认知建模基础*",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": null,
+     "code": "01630075"
+    },
+    {
+     "name": "心理学前沿成像技术专题*",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 14,
+     "term": null,
+     "code": "01630077"
+    },
+    {
+     "name": "人工智能在心理学研究中的应用*",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01630082"
+    },
+    {
+     "name": "磁共振成像原理及脑科学应用*",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 14,
+     "term": null,
+     "code": "01630738"
+    },
+    {
+     "name": "神经建模基础*",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01630741"
+    },
+    {
+     "name": "从数据到模型*",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": null,
+     "code": "01630744"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "大学英语应修学分不足 8 学分的学生应从其他院系专业核心课中选修相应学分补足 8",
+  "学分。",
+  "公共必修课中标*的课程留学生、港澳台学生免修。免修课程学分从“与中国有关课程”",
+  "中补足。",
+  "要求“思想政治理论选择性必修课”共 1 门、“劳动教育课”累计不少于 32 学时。思",
+  "想政治理论必修课和其他公共必修课按学校要求选课，信息课程见下表。",
+  "Ⅱ. 现代社会及其问题                 ≥2               1. 不少于 12 学分",
+  "Ⅲ. 艺术与人文                    ≥2               2. 至少修读 1 门“通识核心课”",
+  "（1）具体课程列表详见《北京大学本科生选课手册》 ；",
+  "（2）原则上不允许以专业课替代通识教育课程学分；",
+  "（3）本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分；",
+  "（4）建议合理分配修读时间，每学期修读 1 门课程。",
+  "说明：带*的课程任选一门。",
+  "新开课       认知心理学           专业必修   3   51        三上",
+  "从本院的专业选修课中选择，每个学系开设的课程不少于 1 门。",
+  "学生可根据兴趣和将来发展需要，选修其他院系的专业必修或专业选修课。",
+  "本科生科研            任选   2～6",
+  "说明：带*的课程至少选 4 学分。"
+ ],
+ "warnings": [
+  "专业名按 2025 版“应用心理学专业”推断（专业必修课重合度 100%），请核对"
+ ],
+ "source": {
+  "volumeId": "2024-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=209",
+  "lineStart": 13754,
+  "lineEnd": 13999
+ },
+ "titleInference": {
+  "from": 2025,
+  "title": "应用心理学专业",
+  "overlap": 1
+ }
+}

@@ -1,0 +1,49 @@
+{
+  "name": "onepku",
+  "private": true,
+  "version": "0.6.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 1420",
+    "build": "tsc -b && vite build",
+    "typecheck": "tsc -b",
+    "test": "vitest run",
+    "format": "prettier --write src scripts tests *.json *.md",
+    "format:check": "prettier --check src scripts tests *.json *.md",
+    "tauri": "tauri",
+    "preview:live": "cargo run -p campus-core --bin preview -- dist",
+    "verify:tokens": "node scripts/tokens.mjs --check",
+    "prebuild": "node scripts/pdf-assets.mjs",
+    "predev": "node scripts/pdf-assets.mjs",
+    "curriculum:fetch": "node scripts/curriculum/fetch.mjs",
+    "curriculum:build": "node scripts/curriculum/build.mjs",
+    "curriculum:check": "node scripts/curriculum/check.mjs"
+  },
+  "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.23",
+    "@tanstack/react-query": "^5.102.8",
+    "@tauri-apps/api": "^2.11.1",
+    "hls.js": "^1.7.2",
+    "lucide-react": "^1.43.0",
+    "pdfjs-dist": "^6.3.289",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.11.4",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.7",
+    "@types/node": "^26.5.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "axe-core": "^4.13.0",
+    "jsdom": "^30.0.1",
+    "prettier": "^3.9.6",
+    "typescript": "^7.0.2",
+    "vite": "^8.2.2",
+    "vitest": "^5.0.0",
+    "yaml": "^2.9.0"
+  }
+}

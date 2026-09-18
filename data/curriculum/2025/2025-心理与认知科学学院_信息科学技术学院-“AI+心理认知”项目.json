@@ -1,0 +1,196 @@
+{
+ "id": "2025-心理与认知科学学院_信息科学技术学院-“AI+心理认知”项目",
+ "cohort": 2025,
+ "volume": "北京大学本科培养方案（2025）理科卷",
+ "school": "心理与认知科学学院/信息科学技术学院",
+ "major": "“AI+心理认知”项目",
+ "track": null,
+ "title": "“AI+心理认知”项目",
+ "kind": "project",
+ "qualifiers": [],
+ "degree": null,
+ "totalCredits": {
+  "min": 21,
+  "max": 21,
+  "inferred": true
+ },
+ "topRequirements": [],
+ "requirements": [],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "项目必修课（",
+   "min": 17,
+   "max": 17,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "（限选心理学方向）",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": 0,
+     "term": "春季",
+     "code": "04834472"
+    },
+    {
+     "name": "普通心理学",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 4,
+     "term": "秋季/春季",
+     "code": "01630900"
+    },
+    {
+     "name": "可视计算与交互概论*",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 4,
+     "term": "秋季",
+     "code": "04835000"
+    },
+    {
+     "name": "人工智能引论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 3,
+     "term": "春季，二选一",
+     "code": "04834040"
+    },
+    {
+     "name": "人工智能基础",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 3,
+     "term": null,
+     "code": "04835230"
+    },
+    {
+     "name": "机器学习概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 3,
+     "term": "秋季，二选一",
+     "code": "04831730"
+    },
+    {
+     "name": "机器学习",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 3,
+     "term": null,
+     "code": "04833420"
+    },
+    {
+     "name": "实验心理学**",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 4,
+     "term": "秋季/春季",
+     "code": "01630034"
+    },
+    {
+     "name": "心理测量**",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 2,
+     "term": "秋季/春季",
+     "code": "01603011"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "项目选修课（",
+   "min": 4,
+   "max": 4,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "人工智能中的编程",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 3,
+     "term": "秋季",
+     "code": "04835050"
+    },
+    {
+     "name": "脑与认知科学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "秋季",
+     "code": "04831320"
+    },
+    {
+     "name": "模式识别导论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋季",
+     "code": "04831290"
+    },
+    {
+     "name": "脑中的节奏",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "01630705"
+    },
+    {
+     "name": "认知建模基础",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "01630075"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "学分要求：总学分 21，其中项目必修课 17 学分，项目选修课 4 学分。",
+  "项目新开课       类脑智能基础        2     2     2             春季",
+  "项目新开课       神经科学与人工智能     2     2     2             秋季",
+  "1. 列表中的课程不能计入除 3.2 自主选修课以外的其他主修学分类别，也不能计入双",
+  "专业/辅修的必修课或选修课。",
+  "2. 标*的课程仅限心理学专业主修/双专业/辅修学生或生物科学（心理学方向）专业学",
+  "生选课，与“普通心理学”互斥。",
+  "3. 标**的课程仅限信科学院计算机类专业主修/双专业/辅修学生选课，与人工智能二",
+  "选一课程及机器学习二选一课程互斥。",
+  "新开课        决策的认知神经算法                          2    2",
+  "新开课        系统认知神经科学                           2    2",
+  "新开课        心理统计（3）                            2    2",
+  "新开课        人类与人工智能的双向启发：从思想到应用                2    2",
+  "1. 列表中的课程不能计入除 3.2 自主选修课以外的其他主修学分类别，也不能计入双",
+  "专业/辅修的必修课或选修课。",
+  "2. 部分课程有先修课要求，请在选课前确认。",
+  "3. 信科学院和心理学院开设的选修课至少各选 1 门。"
+ ],
+ "warnings": [],
+ "source": {
+  "volumeId": "2025-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=216",
+  "lineStart": 26248,
+  "lineEnd": 26328
+ }
+}

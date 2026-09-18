@@ -1,0 +1,693 @@
+{
+ "id": "2023-信息科学技术学院-信息与计算科学-图灵班",
+ "cohort": 2023,
+ "volume": "北京大学本科教学计划（2023）理科卷",
+ "school": "信息科学技术学院",
+ "major": "信息与计算科学",
+ "track": "图灵班",
+ "title": "信息与计算科学专业 (图灵班 )",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": null,
+ "totalCredits": null,
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 51,
+   "max": 51,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 72,
+   "max": 72,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 28,
+   "max": 28,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "39 学分",
+   "inferredParent": true,
+   "min": 39,
+   "max": 39,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "24 学分",
+   "inferredParent": true,
+   "min": 24,
+   "max": 24,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "42 学分",
+   "inferredParent": true,
+   "min": 42,
+   "max": 42,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "17 学分",
+   "inferredParent": true,
+   "min": 17,
+   "max": 17,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "11 学分",
+   "inferredParent": true,
+   "min": 11,
+   "max": 11,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 45,
+   "max": 51,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 A",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": 32,
+     "term": "一上",
+     "code": "04830041"
+    },
+    {
+     "name": "数据结构与算法 A",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": 32,
+     "term": "二上",
+     "code": "04830050"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "一上",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": [
+    {
+     "code": "04830530",
+     "name": "计算概论 A (实验班)",
+     "credits": 3,
+     "replaces": "计算概论 A"
+    },
+    {
+     "code": "04830540",
+     "name": "数据结构与算法 A (实验班)",
+     "credits": 3,
+     "replaces": "数据结构与算法 A"
+    }
+   ]
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 72,
+   "max": 72,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "数学分析 (Ⅰ )",
+     "nature": null,
+     "credits": 5,
+     "hours": 6,
+     "practice": 32,
+     "term": "一上",
+     "code": "00132301"
+    },
+    {
+     "name": "数学分析 (Ⅱ )",
+     "nature": null,
+     "credits": 5,
+     "hours": 6,
+     "practice": 32,
+     "term": "一下",
+     "code": "00132302"
+    },
+    {
+     "name": "数学分析 (Ⅲ )",
+     "nature": null,
+     "credits": 4,
+     "hours": 5,
+     "practice": 32,
+     "term": "二上",
+     "code": "00132304"
+    },
+    {
+     "name": "高等代数 (Ⅰ )",
+     "nature": null,
+     "credits": 5,
+     "hours": 6,
+     "practice": 32,
+     "term": "一上",
+     "code": "00132321"
+    },
+    {
+     "name": "高等代数 (Ⅱ )",
+     "nature": null,
+     "credits": 4,
+     "hours": 5,
+     "practice": 32,
+     "term": "一下",
+     "code": "00132323"
+    },
+    {
+     "name": "信息科学技术概论",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": 0,
+     "term": "一上",
+     "code": "04830010"
+    },
+    {
+     "name": "程序设计实习",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": 32,
+     "term": "一下",
+     "code": "04831750"
+    },
+    {
+     "name": "人工智能基础",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 16,
+     "term": "一下",
+     "code": "04835230"
+    },
+    {
+     "name": "离散数学与结构 (Ⅰ )",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": 0,
+     "term": "二上",
+     "code": "04833400"
+    },
+    {
+     "name": "计算机系统导论",
+     "nature": null,
+     "credits": 5,
+     "hours": 4,
+     "practice": 0,
+     "term": "二上",
+     "code": "04833040"
+    },
+    {
+     "name": "计算机系统导论讨论班",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": "二上",
+     "code": "04832363"
+    },
+    {
+     "name": "前沿计算研究实践 (Ⅰ )",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 16,
+     "term": "二上",
+     "code": "04833460"
+    },
+    {
+     "name": "前沿计算研究实践 (Ⅱ )",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 24,
+     "term": "二下",
+     "code": "04833461"
+    },
+    {
+     "name": "算法设计与分析",
+     "nature": null,
+     "credits": 5,
+     "hours": 4,
+     "practice": 0,
+     "term": "二下",
+     "code": "04833050"
+    },
+    {
+     "name": "算法设计与分析 (研讨型小班)",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": "二下",
+     "code": "04832580"
+    },
+    {
+     "name": "计算理论导论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "04833440"
+    },
+    {
+     "name": "操作系统",
+     "nature": null,
+     "credits": 4,
+     "hours": 5,
+     "practice": 32,
+     "term": "三上/下",
+     "code": "04834260"
+    },
+    {
+     "name": "编译原理",
+     "nature": null,
+     "credits": 4,
+     "hours": 5,
+     "practice": 32,
+     "term": "三上/下",
+     "code": "04834200"
+    },
+    {
+     "name": "计算机组织与体系结构",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上/下",
+     "code": "04830140"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 28,
+   "max": 28,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "力学 B",
+     "nature": null,
+     "credits": 3,
+     "hours": 5,
+     "practice": 32,
+     "term": "一上",
+     "code": "00431141"
+    },
+    {
+     "name": "电磁学 B",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": 16,
+     "term": "一下",
+     "code": "00431143"
+    },
+    {
+     "name": "微电子与电路基础",
+     "nature": null,
+     "credits": 2,
+     "hours": 3,
+     "practice": 16,
+     "term": "一下",
+     "code": "04831770"
+    },
+    {
+     "name": "电子系统基础训练",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": 28,
+     "term": "二上",
+     "code": "04833800"
+    }
+   ],
+   "alternatives": [
+    {
+     "code": "00431110",
+     "name": "力学 A",
+     "credits": 4,
+     "replaces": "力学 B"
+    },
+    {
+     "code": "04833370",
+     "name": "信息科学中的物理学 (上)",
+     "credits": 3,
+     "replaces": "力学 B"
+    },
+    {
+     "code": "00431155",
+     "name": "电磁学 A",
+     "credits": 4,
+     "replaces": "电磁学 B"
+    },
+    {
+     "code": "04833371",
+     "name": "信息科学中的物理学 (下)",
+     "credits": 3,
+     "replaces": "电磁学 B"
+    },
+    {
+     "code": "04830080",
+     "name": "代数结构与组合数学",
+     "credits": 3,
+     "replaces": "二下"
+    },
+    {
+     "code": "04834100",
+     "name": "信息科学中的数学",
+     "credits": 2,
+     "replaces": "二上"
+    },
+    {
+     "code": "04830090",
+     "name": "数理逻辑",
+     "credits": 3,
+     "replaces": "三上"
+    },
+    {
+     "code": "04833900",
+     "name": "密码学基础",
+     "credits": 3,
+     "replaces": "三上"
+    },
+    {
+     "code": "04834220",
+     "name": "软件工程",
+     "credits": 4,
+     "replaces": "二下/三上"
+    },
+    {
+     "code": "04830220",
+     "name": "数据库概论",
+     "credits": 3,
+     "replaces": "三下"
+    },
+    {
+     "code": "04834230",
+     "name": "软件测试导论",
+     "credits": 3,
+     "replaces": "三上"
+    },
+    {
+     "code": "04830410",
+     "name": "信息安全引论",
+     "credits": 2,
+     "replaces": "四上"
+    },
+    {
+     "code": "04833020",
+     "name": "软件分析技术",
+     "credits": 3,
+     "replaces": "三上"
+    },
+    {
+     "code": "04834210",
+     "name": "计算机网络",
+     "credits": 4,
+     "replaces": "三上/下"
+    },
+    {
+     "code": "04830145",
+     "name": "计算机组织与体系结构实习",
+     "credits": 2,
+     "replaces": "三上/下"
+    },
+    {
+     "code": "04830100",
+     "name": "数字逻辑设计",
+     "credits": 3,
+     "replaces": "二下/三上"
+    },
+    {
+     "code": "04832240",
+     "name": "并行与分布式计算导论",
+     "credits": 3,
+     "replaces": "三下"
+    },
+    {
+     "code": "04832520",
+     "name": "并行程序设计原理",
+     "credits": 2,
+     "replaces": "二下"
+    },
+    {
+     "code": "04833420",
+     "name": "机器学习",
+     "credits": 3,
+     "replaces": "二下"
+    },
+    {
+     "code": "04834920",
+     "name": "计算机视觉导论",
+     "credits": 3,
+     "replaces": "三下"
+    },
+    {
+     "code": "04835400",
+     "name": "自然语言处理",
+     "credits": 3,
+     "replaces": "三下"
+    },
+    {
+     "code": "04830230",
+     "name": "计算机图形学",
+     "credits": 3,
+     "replaces": "二下"
+    },
+    {
+     "code": "04830320",
+     "name": "数字图像处理",
+     "credits": 3,
+     "replaces": "三下"
+    },
+    {
+     "code": "04834760",
+     "name": "智能机器人系统导论",
+     "credits": 3,
+     "replaces": "三上"
+    },
+    {
+     "code": "04834520",
+     "name": "强化学习",
+     "credits": 3,
+     "replaces": "三上"
+    },
+    {
+     "code": "04834770",
+     "name": "数值分析",
+     "credits": 3,
+     "replaces": "二上"
+    },
+    {
+     "code": "04834630",
+     "name": "Py thon 程序设计与数据科学导论",
+     "credits": 3,
+     "replaces": "二下"
+    },
+    {
+     "code": "04833410",
+     "name": "凸分析与优化方法",
+     "credits": 3,
+     "replaces": "三下"
+    },
+    {
+     "code": "00135460",
+     "name": "数理统计",
+     "credits": 3,
+     "replaces": "三上"
+    },
+    {
+     "code": "00132340",
+     "name": "常微分方程",
+     "credits": 3,
+     "replaces": "二下"
+    },
+    {
+     "code": "04630790",
+     "name": "数据科学导引",
+     "credits": 3,
+     "replaces": "三上"
+    },
+    {
+     "code": "00136720",
+     "name": "大数据分析中的算法",
+     "credits": 3,
+     "replaces": "三上"
+    },
+    {
+     "code": "00130280",
+     "name": "计算方法 B",
+     "credits": 3,
+     "replaces": "数值分析"
+    },
+    {
+     "code": "04830030",
+     "name": "科技交流与写作",
+     "credits": 2,
+     "replaces": "二下"
+    },
+    {
+     "code": "04830340",
+     "name": "JAVA 程序设计",
+     "credits": 2,
+     "replaces": "二下"
+    },
+    {
+     "code": "04834940",
+     "name": "量子计算",
+     "credits": 3,
+     "replaces": "三上"
+    },
+    {
+     "code": "04834980",
+     "name": "量子信息",
+     "credits": 3,
+     "replaces": "三下"
+    },
+    {
+     "code": "04831210",
+     "name": "信息论",
+     "credits": 2,
+     "replaces": "三下"
+    },
+    {
+     "code": "04831800",
+     "name": "数字媒体技术基础",
+     "credits": 2,
+     "replaces": "三下"
+    },
+    {
+     "code": "04830290",
+     "name": "面向对象技术引论",
+     "credits": 2,
+     "replaces": "三下"
+    },
+    {
+     "code": "04830760",
+     "name": "数字信号处理 (含上机)",
+     "credits": 3,
+     "replaces": "三下"
+    },
+    {
+     "code": "04830270",
+     "name": "程序设计语言概论",
+     "credits": 2,
+     "replaces": "四上"
+    },
+    {
+     "code": "04830510",
+     "name": "语言统计分析",
+     "credits": 2,
+     "replaces": "四上"
+    },
+    {
+     "code": "04831880",
+     "name": "初等数论及其应用",
+     "credits": 3,
+     "replaces": "四上"
+    },
+    {
+     "code": "04831890",
+     "name": "现代信息检索导论",
+     "credits": 2,
+     "replaces": "四上"
+    }
+   ]
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "—       大学英语                2~8     —      —     英语 专 业)大 学 英 语 能 力 培",
+  "—       思想政治理论必修课           19                   政治 理 论 必 修 课 培 养 方 案",
+  "2023年6月修订)》。",
+  "—                           1门                   性必修 课 教 学 实 施 方 案 (",
+  "年 5月)》。",
+  "—       劳动教育课              32 学时",
+  "202    。",
+  "—       体育系列课程               4                   全年,按体育教研室要求选课",
+  "注:相关课程均可以由同名的实验班课程进行替代 (下同)。",
+  "通识教育课程有四个系列 Ⅰ. 人类文明及其传统、 Ⅱ. 现代社会及其问题、 Ⅲ. 艺术",
+  "与人文、 Ⅳ. 数学、自然与技术),每个系列均包含通识教育核心课和通选课两部分课程,",
+  "1)至少修读一门 “通识教育核心 课 程”, 且 在 四 个 课 程 系 列 中 每 个 系 列 至 少 修 读 2",
+  "3)本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分;",
+  "4)建议合理分配修读时间,每学期修读 1 门课程。",
+  "· 396 ·             北京大学本科培养方案 (",
+  "新开课       信息学中的概率统计             3     3      0        三上",
+  "要求:在 (",
+  "个主修课程类别,选择至少 3 门 课 (不 少 于 7 学 分);并 在 至 少 其 他 2 个 类 别 中 各 选 修 不",
+  "少于 2 学分。",
+  "1)物理与电子类。",
+  "北京大学信息科学技术学院               · 397 ·",
+  "注:同名 A 类课程可替代 B 类课程,如上述 “力学 A” 可替代 “力学 B”,以下不重复说明。",
+  "2)理论与算法类。",
+  "3)软件系统类。",
+  "4)系统结构与并行计算类。",
+  "· 398 ·             北京大学本科培养方案 (",
+  "(",
+  "5)计算机应用与智能类。",
+  "6)数据科学与大数据类。",
+  "北京大学信息科学技术学院              · 399 ·"
+ ],
+ "warnings": [
+  "未找到“毕业总学分”"
+ ],
+ "source": {
+  "volumeId": "2023-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=195",
+  "lineStart": 20275,
+  "lineEnd": 20744
+ }
+}

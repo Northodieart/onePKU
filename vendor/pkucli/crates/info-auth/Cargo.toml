@@ -1,0 +1,31 @@
+[package]
+name = "pku-auth"
+description = "PKU 统一凭据管理 CLI — 安全地存储/管理 IAAA 认证凭据"
+readme = "README.md"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+keywords = ["pku", "auth", "keyring", "credential"]
+categories = ["command-line-utilities", "authentication"]
+
+[[bin]]
+name = "info-auth"
+path = "src/main.rs"
+
+[dependencies]
+pkuinfo-common = { workspace = true }
+clap = { workspace = true }
+anyhow = { workspace = true }
+colored = { workspace = true }
+rpassword = { workspace = true }
+
+[target.'cfg(target_os = "linux")'.dependencies]
+keyring = { version = "3", default-features = false, features = ["sync-secret-service"] }
+
+[target.'cfg(target_os = "macos")'.dependencies]
+keyring = { version = "3", default-features = false, features = ["apple-native"] }
+
+[target.'cfg(target_os = "windows")'.dependencies]
+keyring = { version = "3", default-features = false, features = ["windows-native"] }

@@ -1,0 +1,647 @@
+{
+ "id": "2021-艺术学院-艺术史论",
+ "cohort": 2021,
+ "volume": "北京大学本科培养方案（2021）文科卷",
+ "school": "艺术学院",
+ "major": "艺术史论",
+ "track": null,
+ "title": "艺术史论专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "艺术学学士学位。",
+ "totalCredits": {
+  "min": 142,
+  "max": 142
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 47,
+   "max": 47,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 52,
+   "max": 52,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 43,
+   "max": 43,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "35 学分",
+   "inferredParent": true,
+   "min": 35,
+   "max": 35,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "24 学分",
+   "inferredParent": true,
+   "min": 24,
+   "max": 24,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "24 学分",
+   "inferredParent": true,
+   "min": 24,
+   "max": 24,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "20 学分",
+   "inferredParent": true,
+   "min": 20,
+   "max": 20,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "23 学分",
+   "inferredParent": true,
+   "min": 23,
+   "max": 23,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 47,
+   "max": 47,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 C",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "“计算 概 论 C” 课 程 后,",
+     "code": "04834470"
+    },
+    {
+     "name": "计算机实习",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "计 算 机",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上或一下",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 52,
+   "max": 52,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "中国古代文学 (上)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "02035201"
+    },
+    {
+     "name": "中国古代文学 (下)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "02035202"
+    },
+    {
+     "name": "史学概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "02130110"
+    },
+    {
+     "name": "考古学通论",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "春季",
+     "code": "02232210"
+    },
+    {
+     "name": "哲学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "02330001"
+    },
+    {
+     "name": "艺术理论导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上",
+     "code": "04330202"
+    },
+    {
+     "name": "艺术史导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "04330218"
+    },
+    {
+     "name": "艺术批评导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "04330201"
+    },
+    {
+     "name": "艺术管理导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "04330214"
+    },
+    {
+     "name": "美术概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "04333021"
+    },
+    {
+     "name": "电影概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上",
+     "code": "04330101"
+    },
+    {
+     "name": "戏剧艺术概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "04331570"
+    },
+    {
+     "name": "音乐概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上",
+     "code": "04330005"
+    },
+    {
+     "name": "舞蹈概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "04330209"
+    },
+    {
+     "name": "中国美术通史 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "04330052"
+    },
+    {
+     "name": "中国美术通史 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "04330053"
+    },
+    {
+     "name": "西方美术通史 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "04332511"
+    },
+    {
+     "name": "西方美术通史 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "04330203"
+    },
+    {
+     "name": "中国艺术学原著导读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "04330038"
+    },
+    {
+     "name": "西方艺术学原著导读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "04330007"
+    },
+    {
+     "name": "当代艺术与文化资源",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "04330204"
+    },
+    {
+     "name": "艺术史论专业论文写作",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "04332512"
+    },
+    {
+     "name": "艺术博物馆学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "04330206"
+    },
+    {
+     "name": "视觉文化导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "04330208"
+    },
+    {
+     "name": "图像阅读专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "04330222"
+    },
+    {
+     "name": "书画理论与实践",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "04330219"
+    },
+    {
+     "name": "毕业实习",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "04332284"
+    },
+    {
+     "name": "毕业论文",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四下",
+     "code": "04332285"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 43,
+   "max": 43,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "文化产业导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "04332530"
+    },
+    {
+     "name": "跨文化艺术传播学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "04330028"
+    },
+    {
+     "name": "信息技术与文化产业",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "04330089"
+    },
+    {
+     "name": "创意管理学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "04330037"
+    },
+    {
+     "name": "艺术法",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "04330677"
+    },
+    {
+     "name": "文化经济学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "04330205"
+    },
+    {
+     "name": "文化市场与政策",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "04330213"
+    },
+    {
+     "name": "影视理论与批评",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "04330649"
+    },
+    {
+     "name": "剧作法",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "04330212"
+    },
+    {
+     "name": "电影音乐",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "04333019"
+    },
+    {
+     "name": "视听语言 (电影语言)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "04331791"
+    },
+    {
+     "name": "表演理论与实践",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "04332270"
+    },
+    {
+     "name": "影视制作 (电影剪辑基础)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "04330088"
+    },
+    {
+     "name": "影视导演",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "04330211"
+    },
+    {
+     "name": "戏曲史与戏曲美学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "04330207"
+    },
+    {
+     "name": "中国电影史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "04332210"
+    },
+    {
+     "name": "世界电影史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "04330217"
+    },
+    {
+     "name": "世界电影专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "04330216"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [
+  {
+   "code": "02330000",
+   "line": 14255,
+   "text": "02330000                          2     2"
+  },
+  {
+   "code": "02330003",
+   "line": 14257,
+   "text": "02330003                          3     3"
+  }
+ ],
+ "notes": [
+  "—       大学英语                 2~8    —         —",
+  "选课。",
+  "—       思想政治理论必修课            18     —         —",
+  "选课。",
+  "—                            1门     —         —      按学校要求选课。",
+  "需要另 选 该 课 程 的 上 机",
+  "课 (",
+  "实习)。",
+  "时,需要 另 选 该 课 程 的",
+  "实习)。",
+  "—       体育系列课程               1×4    2                全年",
+  "注:大学英语按英语教研室要求分级选课:A 级需修 8 学分 (",
+  "A 级课 程 4 学 分 +B 级 课 程 4 学 分),B 级",
+  "B 级课程 4 学分 +C 级课程 2 学 分),C 级 需 修 4 学 分 (",
+  "分。本系学生修完 C+ 级课程后,可以选修二外及外语学院开设的其他课程来补足学分。",
+  "通识教育 课 程 分 为 四 个 系 列: Ⅰ.人 类 文 明 及 其 传 统; Ⅱ.现 代 社 会 及 其 问 题;",
+  "Ⅲ.艺术与人文; Ⅳ.数学、自然与 技 术。每 个 系 列 均 包 含 通 识 教 育 核 心 课、通 选 课 两 部",
+  "分课程,具体课程列表详见 《北京大学本科生选课手册》。",
+  "1)至少修读 1 门 “通识教育核心课程” (任一系列),且在四个课程系列中每个系列",
+  "至少修读 2 学分 (通识教育核心课或通选课均可)。",
+  "2)原则上不允许以专业课替代通识教育课程学分。",
+  "3)本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分。",
+  "4)建议合理分配修读时间,每学期修读 1 门课程。",
+  "北京大学艺术学院          · 271 ·",
+  "注:由以上所列课程中选满 6 学分。",
+  "· 272 ·             北京大学本科培养方案 (",
+  "本专业选修课程及本院跨方向 “专业核心课程” ≥8 学 分、本 学 部 跨 院 系 专 业 基 础 课",
+  "程 ≥6 学分。",
+  "-11 本专业选修课程及本院跨方向 “专业核心课程”: ≥8 学分。",
+  "-",
+  "新开课       中国电影专题                2            2     三下",
+  "2 本学部跨院系专业基础课程: ≥6 学分。",
+  "此部分课程可选修本学部其他院系 (中文、历史、考古、哲学、外语) 培养方案中专",
+  "2-1 专业基础课”中学部专业基础课程重复计算学分。",
+  "e.超出本教学计划要求之外的其他课程。",
+  "北京大学艺术学院                          · 273 ·"
+ ],
+ "warnings": [
+  "第 14212 行：课程行缺少学分：04831435 计 算 机",
+  "第 14255 行：课程 02330000 缺少课程名，未纳入",
+  "第 14257 行：课程 02330003 缺少课程名，未纳入"
+ ],
+ "source": {
+  "volumeId": "2021-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=158",
+  "lineStart": 14126,
+  "lineEnd": 14477
+ }
+}

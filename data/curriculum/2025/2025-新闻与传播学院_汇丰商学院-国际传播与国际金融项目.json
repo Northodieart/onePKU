@@ -1,0 +1,348 @@
+{
+ "id": "2025-新闻与传播学院_汇丰商学院-国际传播与国际金融项目",
+ "cohort": 2025,
+ "volume": "北京大学本科培养方案（2025）文科卷",
+ "school": "新闻与传播学院/汇丰商学院",
+ "major": "国际传播与国际金融项目",
+ "track": null,
+ "title": "国际传播与国际金融项目",
+ "kind": "project",
+ "qualifiers": [],
+ "degree": null,
+ "totalCredits": null,
+ "topRequirements": [],
+ "requirements": [],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "项目必修课（",
+   "min": 33,
+   "max": 33,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "经济学原理 必修 3 秋 海闻",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "20130001"
+    },
+    {
+     "name": "英语写作 必修 1 秋 Donya MehrabⅠ",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "20130017"
+    },
+    {
+     "name": "实习实践 必修 2 秋 海闻",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "20130019"
+    },
+    {
+     "name": "商务数学 必修 3 秋 David Lander",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "20130018"
+    },
+    {
+     "name": "金融学原理 必修 3 秋 欧阳良宜",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "20130008"
+    },
+    {
+     "name": "战略管理 必修 3 秋 汤一诺",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "20131019"
+    },
+    {
+     "name": "公司金融 必修 3 秋 刘柏霄",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "20130102"
+    },
+    {
+     "name": "国际金融 必修 3 春 史蛟",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "20130106"
+    },
+    {
+     "name": "博弈论 必修 3 春 Young Joon Park",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "20131007"
+    },
+    {
+     "name": "国际贸易 必修 3 春 Marshall Urias英国校区",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "20131008"
+    },
+    {
+     "name": "金融市场 必修 3 春Domenico Tarzia",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "20130103"
+    },
+    {
+     "name": "中英中欧经贸关系和发展 必修 3 春 英国校区选课学期",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "20133001"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "项目选修课（",
+   "min": 0,
+   "max": 10,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "组织行为学 选修 2 秋 宋立国",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "20130208"
+    },
+    {
+     "name": "国际管理 选修 2 秋 翁翠芬",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "20132031"
+    },
+    {
+     "name": "网络舆情研究 选修 2 秋 胡杨涓",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "20132034"
+    },
+    {
+     "name": "新媒体与社会 选修 2 秋 叶韦明",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "20132035"
+    },
+    {
+     "name": "商业模式研究 选修 2 春 魏炜",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "20131020"
+    },
+    {
+     "name": "实证商业分析 选修 2 春 程越",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "20132032"
+    },
+    {
+     "name": "金融科技导论 选修 2 春 沈艳",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "20131028"
+    },
+    {
+     "name": "数据新闻与信息可视化 选修 2 秋 叶韦明",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "20132038"
+    },
+    {
+     "name": "应用数据分析 选修 2 秋 陈灼",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "20131032"
+    },
+    {
+     "name": "全球创新管理 选修 2 秋 张坤选课学期",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "20131014"
+    },
+    {
+     "name": "人工智能与新闻传播 选修 2 春 包路冶",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "20132037"
+    },
+    {
+     "name": "风险管理与保险学原理 选修 2 春 雎岚",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "20132005"
+    },
+    {
+     "name": "谈判学 选修 2 春 Nanakdewa Kevin选课学期",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "20132036"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "体育课（",
+   "min": 0,
+   "max": 1,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "有氧健身和器械 选修 1 秋 丁嘉辉",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "20134002"
+    },
+    {
+     "name": "领导力提升户外教育课程 选修 1 秋 丁嘉辉网球赛艇理论与实践羽毛球",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "20134001"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "新闻与传播学院各专业本科生原则上均可参加本项目。按照新闻与传播学院本科各专",
+  "业培养方案的要求，完成课程和学分。其中部分学分（不多于 38 学分）可按照本培养方案",
+  "的规定替代或抵免。",
+  "参加本项目的学生在汇丰商学院期间需完成不少于 33 学分、不多于 44 学分的课程。",
+  "学生在汇丰商学院完成的所有必修课程均可认定或抵免新闻与传播学院的选修课程或",
+  "选修学分。",
+  "项目执行期间，学生按计划于 5 月份至 6 月份在英国校区学习。如学生因不可抗力无",
+  "法出访（如签证、身体健康等），其在英国所修的必修课金融市场、中英中欧经贸关系和发",
+  "展无法修读，则需根据选修课列表选择汇丰商学院开设的 3 门专业选修课程（共 6 学分）",
+  "代替。选课前须提交书面申请由汇丰商学院教学部门审批确认。",
+  "学生可从汇丰商学院的以上课程中选修不多于 10 学分课程，其中 4 学分可抵免新闻与",
+  "传播学院培养方案中的自主选修学分。",
+  "学生可从深圳研究生院开设的体育课程中选择不多于 1 学分的课程，可抵免公共必修",
+  "课中体育系列课程 1 学分。",
+  "综上，本项目需要完成的必修课和选修课总学分应大于或等于 33 学分。本项目所修学",
+  "分最多可替代新闻与传播学院培养方案中的 38 学分。"
+ ],
+ "warnings": [
+  "未找到“毕业总学分”",
+  "第 28894 行：课程行缺少学分：20130001   经济学原理            必修        3 ",
+  "第 28895 行：课程行缺少学分：20130017   英语写作             必修        1 ",
+  "第 28896 行：课程行缺少学分：20130019   实习实践             必修        2 ",
+  "第 28897 行：课程行缺少学分：20130018   商务数学             必修        3 ",
+  "第 28898 行：课程行缺少学分：20130008   金融学原理            必修        3 ",
+  "第 28899 行：课程行缺少学分：20131019   战略管理             必修        3 ",
+  "第 28900 行：课程行缺少学分：20130102   公司金融             必修        3 ",
+  "第 28901 行：课程行缺少学分：20130106   国际金融             必修        3 ",
+  "第 28902 行：课程行缺少学分：20131007   博弈论              必修        3 ",
+  "第 28903 行：课程行缺少学分：20131008   国际贸易             必修        3 ",
+  "第 28905 行：课程行缺少学分：20130103   金融市场             必修        3 ",
+  "第 28907 行：课程行缺少学分：20133001   中英中欧经贸关系和发展      必修        3 ",
+  "第 28920 行：课程行缺少学分：20130208   组织行为学                 选修     ",
+  "第 28921 行：课程行缺少学分：20132031   国际管理                  选修     ",
+  "第 28922 行：课程行缺少学分：20132034   网络舆情研究                选修     ",
+  "第 28923 行：课程行缺少学分：20132035   新媒体与社会                选修     ",
+  "第 28924 行：课程行缺少学分：20131020   商业模式研究                选修     ",
+  "第 28925 行：课程行缺少学分：20132032   实证商业分析                选修     ",
+  "第 28926 行：课程行缺少学分：20131028   金融科技导论                选修     ",
+  "第 28927 行：课程行缺少学分：20132038   数据新闻与信息可视化            选修     ",
+  "第 28928 行：课程行缺少学分：20131032   应用数据分析                选修     ",
+  "第 28929 行：课程行缺少学分：20131014   全球创新管理                选修     ",
+  "第 28936 行：课程行缺少学分：20132037   人工智能与新闻传播       选修     2     ",
+  "第 28937 行：课程行缺少学分：20132005   风险管理与保险学原理      选修     2     ",
+  "第 28938 行：课程行缺少学分：20132036   谈判学             选修     2     ",
+  "第 28947 行：课程行缺少学分：20134002   有氧健身和器械          选修        1 ",
+  "第 28948 行：课程行缺少学分：20134001   领导力提升户外教育课程      选修        1 "
+ ],
+ "source": {
+  "volumeId": "2025-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=217",
+  "lineStart": 28850,
+  "lineEnd": 28964
+ }
+}

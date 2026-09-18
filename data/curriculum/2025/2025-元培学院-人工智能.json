@@ -1,0 +1,836 @@
+{
+ "id": "2025-元培学院-人工智能",
+ "cohort": 2025,
+ "volume": "北京大学本科培养方案（2025）理科卷",
+ "school": "元培学院",
+ "major": "人工智能",
+ "track": null,
+ "title": "人工智能专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "工学学士",
+ "totalCredits": {
+  "min": 140,
+  "max": 140
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 45,
+   "max": 51,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 75,
+   "max": 75,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 14,
+   "max": 14,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "大学英语",
+   "requirement": "2～8 学分",
+   "min": 2,
+   "max": 8,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "思想政治理论必修课",
+   "requirement": "19 学分",
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "1-5",
+   "parent": "1",
+   "name": "信息课程",
+   "requirement": "6 学分",
+   "min": 6,
+   "max": 6,
+   "unit": "学分"
+  },
+  {
+   "id": "1-6",
+   "parent": "1",
+   "name": "军事理论",
+   "requirement": "2 学分",
+   "min": 2,
+   "max": 2,
+   "unit": "学分"
+  },
+  {
+   "id": "1-7",
+   "parent": "1",
+   "name": "体育课",
+   "requirement": "4 学分",
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  },
+  {
+   "id": "1-9",
+   "parent": "1",
+   "name": "元培通识课",
+   "requirement": "9 学分",
+   "min": 9,
+   "max": 9,
+   "unit": "学分"
+  },
+  {
+   "id": "1-10",
+   "parent": "1",
+   "name": "大学成长课",
+   "requirement": "3 学分",
+   "min": 3,
+   "max": 3,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "25 学分",
+   "min": 25,
+   "max": 25,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "44 学分",
+   "min": 44,
+   "max": 44,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "requirement": "6 学分",
+   "min": 6,
+   "max": 6,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "8 学分",
+   "min": 8,
+   "max": 8,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "6 学分",
+   "min": 6,
+   "max": 6,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 45,
+   "max": 51,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "1.1",
+   "parent": "1",
+   "name": "公共必修课",
+   "courses": [
+    {
+     "name": "计算概论 A",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "04830041"
+    },
+    {
+     "name": "计算概论 A 上机实习课",
+     "nature": "全校必修",
+     "credits": 0,
+     "hours": 34,
+     "practice": 34,
+     "term": null,
+     "code": "04830042"
+    },
+    {
+     "name": "数据结构与算法（A）",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": 34,
+     "term": null,
+     "code": "04830050"
+    },
+    {
+     "name": "计算概论 A（实验班）",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "04830530"
+    },
+    {
+     "name": "（实验班）",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": 34,
+     "term": null,
+     "code": "04830540"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "1.2",
+   "parent": "1",
+   "name": "通识教育课",
+   "min": 12,
+   "max": 12,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "1.3",
+   "parent": "1",
+   "name": "大学成长课",
+   "courses": [
+    {
+     "name": "新生教育实践课程",
+     "nature": "专业任选",
+     "credits": 1,
+     "hours": 32,
+     "practice": 34,
+     "term": "一上",
+     "code": "04631815"
+    },
+    {
+     "name": "书院成长课程",
+     "nature": "专业任选",
+     "credits": 2,
+     "hours": 64,
+     "practice": 64,
+     "term": "二年级",
+     "code": "04631816"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 75,
+   "max": 75,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.1",
+   "parent": "2",
+   "name": "专业基础课",
+   "min": 25,
+   "max": 25,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "概率统计（A）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00131480"
+    },
+    {
+     "name": "高等数学 A（一）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00132511"
+    },
+    {
+     "name": "高等数学 A（二）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00132512"
+    },
+    {
+     "name": "线性代数 A（Ⅰ）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00132611"
+    },
+    {
+     "name": "近现代物理导论Ⅰ",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00431113"
+    },
+    {
+     "name": "近现代物理导论Ⅱ",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00431114"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2",
+   "parent": "2",
+   "name": "专业核心课",
+   "min": 44,
+   "max": 44,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.2.1",
+   "parent": "2.2",
+   "name": "专业核心课 1 组",
+   "min": 41,
+   "max": 41,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "机器人学概论",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 10,
+     "term": "三下/",
+     "code": "00334260"
+    },
+    {
+     "name": "人工智能初级研讨班",
+     "nature": "专业必修",
+     "credits": 1,
+     "hours": 34,
+     "practice": null,
+     "term": "一下/",
+     "code": "04631100"
+    },
+    {
+     "name": "人工智能系统实践（Ⅱ）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 32,
+     "term": "三上/",
+     "code": "04632030"
+    },
+    {
+     "name": "人工智能系统实践（Ⅲ）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 32,
+     "term": "三下/",
+     "code": "04632031"
+    },
+    {
+     "name": "人工智能系统实践Ⅰ",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 32,
+     "term": "二下/",
+     "code": "04632032"
+    },
+    {
+     "name": "基于深度学习的自然语言处理",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "三上/",
+     "code": "04632033"
+    },
+    {
+     "name": "多智能体系统",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "三下/",
+     "code": "04632034"
+    },
+    {
+     "name": "机器学习",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "三上/",
+     "code": "04632036"
+    },
+    {
+     "name": "计算机系统导论讨论班",
+     "nature": "专业必修",
+     "credits": 0,
+     "hours": 34,
+     "practice": 34,
+     "term": "二上/",
+     "code": "04832363"
+    },
+    {
+     "name": "算法设计与分析（研讨型小班）",
+     "nature": "专业必修",
+     "credits": 0,
+     "hours": 32,
+     "practice": null,
+     "term": "二下/",
+     "code": "04832580"
+    },
+    {
+     "name": "计算机系统导论",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": "二上/",
+     "code": "04833040"
+    },
+    {
+     "name": "算法设计与分析",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "04833050"
+    },
+    {
+     "name": "算法设计与分析（实验班）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": "二下/",
+     "code": "04833060"
+    },
+    {
+     "name": "离散数学与结构（Ⅰ）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": null,
+     "term": "二上/",
+     "code": "04833400"
+    },
+    {
+     "name": "机器学习",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "04833420"
+    },
+    {
+     "name": "AI 中的数学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "二下/",
+     "code": "22530003"
+    },
+    {
+     "name": "认知与推理",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": "四上/",
+     "code": "22530005"
+    },
+    {
+     "name": "计算机视觉Ⅰ-早期与中层视觉",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "三上/",
+     "code": "22530006"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2.2",
+   "parent": "2.2",
+   "name": "专业核心课 2 组",
+   "min": 3,
+   "max": 3,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "人工智能引论",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "04834040"
+    },
+    {
+     "name": "人工智能引论实践课",
+     "nature": "专业必修",
+     "credits": 0,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "04834041"
+    },
+    {
+     "name": "人工智能基础",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "04835230"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "min": 6,
+   "max": 6,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 14,
+   "max": 14,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1",
+   "parent": "3",
+   "name": "专业选修课",
+   "min": 8,
+   "max": 8,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "人工智能与音乐",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "三下/",
+     "code": "04632035"
+    },
+    {
+     "name": "人工智能与商学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "三上/四上/",
+     "code": "04632037"
+    },
+    {
+     "name": "基于深度学习的内容生成原理与方法",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "三下/四下/",
+     "code": "04632039"
+    },
+    {
+     "name": "知识表达与学习",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "04632040"
+    },
+    {
+     "name": "大语言模型基础与对齐",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 20,
+     "term": null,
+     "code": "04632041"
+    },
+    {
+     "name": "计算机组织与体系结构",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "三上/下/",
+     "code": "04830140"
+    },
+    {
+     "name": "理论计算机科学基础",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "三下/",
+     "code": "04830260"
+    },
+    {
+     "name": "随机过程引论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "三下/",
+     "code": "04831200"
+    },
+    {
+     "name": "信息论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "三上/",
+     "code": "04831210"
+    },
+    {
+     "name": "自动控制理论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 36,
+     "practice": null,
+     "term": "三下/",
+     "code": "04831230"
+    },
+    {
+     "name": "程序设计实习",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 68,
+     "practice": 20,
+     "term": "一下/",
+     "code": "04831750"
+    },
+    {
+     "name": "微电子与电路基础",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 51,
+     "practice": null,
+     "term": "一下/",
+     "code": "04831770"
+    },
+    {
+     "name": "并行与分布式计算导论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": "三下/",
+     "code": "04832240"
+    },
+    {
+     "name": "电子系统基础训练",
+     "nature": "任选",
+     "credits": 1,
+     "hours": 34,
+     "practice": 30,
+     "term": "二上/",
+     "code": "04833800"
+    },
+    {
+     "name": "编译原理",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 85,
+     "practice": 34,
+     "term": "三上/下/",
+     "code": "04834200"
+    },
+    {
+     "name": "计算机网络",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 85,
+     "practice": 34,
+     "term": "三上/下/",
+     "code": "04834210"
+    },
+    {
+     "name": "操作系统",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 85,
+     "practice": 34,
+     "term": "三上/下/",
+     "code": "04834260"
+    },
+    {
+     "name": "强化学习",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": "三上/",
+     "code": "04834520"
+    },
+    {
+     "name": "人工智能伦理与治理",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "二/三上/",
+     "code": "22530002"
+    },
+    {
+     "name": "人工智能与社会科学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "二/三下/",
+     "code": "22530004"
+    },
+    {
+     "name": "人工智能与芯片设计",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 20,
+     "term": "三上/四上/",
+     "code": "22530007"
+    },
+    {
+     "name": "计算神经科学导论：从大脑模拟到 NeuroAI",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 18,
+     "term": "三上/四上/",
+     "code": "22530008"
+    },
+    {
+     "name": "计算神经科学和类脑智能领域前沿进展（专题）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "三上/四上/",
+     "code": "22530010"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2",
+   "parent": "3",
+   "name": "自主选修课",
+   "min": 6,
+   "max": 6,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.2.1",
+   "parent": "3.2",
+   "name": "学部核心课程组",
+   "min": 6,
+   "max": 6,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.2.2",
+   "parent": "3.2",
+   "name": "非毕业课程组",
+   "courses": [],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "要求“思想政治理论选择性必修课”共 1 门、“劳动教育课”累计不少于 32 学时。思",
+  "想政治理论必修课和其他公共必修课按学校要求选课，信息课程见下表。",
+  "数据结构与算法（A）",
+  "通识教育课程系列             各系列学分",
+  "（通识系列课程+新生讨论课）           （通识核心课+通选课）",
+  "≥1 门           2. 第Ⅰ/Ⅱ类至少选 1 门，第Ⅲ/Ⅳ类至",
+  "Ⅴ. 现代科学                          —",
+  "Ⅵ. 艺术                            —",
+  "新生讨论课                           1分                             1 学分",
+  "（1）新生讨论课选课要求：限本科一年级学生选修；具体课程见学院选课指导",
+  "（2）通识课程选课要求：本科各年级学生均可选修；具体课程见学院通识课程方案。",
+  "新开       智能硬件体系结构                                三上/四上",
+  "新开      从物理世界到人工智能            2     1            三上/四上",
+  "备注：北京大学理学部、信息与工学部、经济与管理学部的所有专业核心课",
+  "备注：北京大学理学部、信息与工学部、经济与管理学部的所有专业核心课"
+ ],
+ "warnings": [],
+ "source": {
+  "volumeId": "2025-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=216",
+  "lineStart": 25409,
+  "lineEnd": 25619
+ }
+}

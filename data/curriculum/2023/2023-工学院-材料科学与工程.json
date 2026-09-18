@@ -1,0 +1,761 @@
+{
+ "id": "2023-工学院-材料科学与工程",
+ "cohort": 2023,
+ "volume": "北京大学本科教学计划（2023）理科卷",
+ "school": "工学院",
+ "major": "材料科学与工程",
+ "track": null,
+ "title": "材料科学与工程专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": null,
+ "totalCredits": null,
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 45,
+   "max": 51,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 58,
+   "max": 58,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 41,
+   "max": 41,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "33~39 学分",
+   "inferredParent": true,
+   "min": 33,
+   "max": 39,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "25 学分",
+   "inferredParent": true,
+   "min": 25,
+   "max": 25,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "27 学分",
+   "inferredParent": true,
+   "min": 27,
+   "max": 27,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "23 学分",
+   "inferredParent": true,
+   "min": 23,
+   "max": 23,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "18 学分",
+   "inferredParent": true,
+   "min": 18,
+   "max": 18,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课",
+   "min": 45,
+   "max": 51,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 B",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "算概论 B” 课程同时, 需 要 另",
+     "code": "04831410"
+    },
+    {
+     "name": "计算概论 B 上机",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": "算概论 B” 课程同时, 需 要 另",
+     "code": "04831650"
+    },
+    {
+     "name": "数据结构与算法 B",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "据结 构 与 算 法 B” 课 程 同 时,",
+     "code": "04831420"
+    },
+    {
+     "name": "数据结构与算法上机",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": "据结 构 与 算 法 B” 课 程 同 时,",
+     "code": "04830494"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "一上",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 58,
+   "max": 58,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "现代工学通论",
+     "nature": null,
+     "credits": 1,
+     "hours": 1,
+     "practice": null,
+     "term": "一上",
+     "code": "00334010"
+    },
+    {
+     "name": "数学分析 (一)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "一上",
+     "code": "00331501"
+    },
+    {
+     "name": "线性代数与几何",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "一上",
+     "code": "00331770"
+    },
+    {
+     "name": "数学分析 (二)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "一下",
+     "code": "00331502"
+    },
+    {
+     "name": "普通化学 ( B)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "一下",
+     "code": "01034880"
+    },
+    {
+     "name": "普通物理 (Ⅰ )",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "一下",
+     "code": "00431132"
+    },
+    {
+     "name": "普通物理 (Ⅱ )",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "二上",
+     "code": "00431133"
+    },
+    {
+     "name": "彤程材料科学论坛",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "一上/一下",
+     "code": "00334381"
+    },
+    {
+     "name": "材料科学基础 (上)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "二上",
+     "code": "00332641"
+    },
+    {
+     "name": "实验室安全与防护",
+     "nature": null,
+     "credits": 1,
+     "hours": 1,
+     "practice": 16,
+     "term": "二上",
+     "code": "00333610"
+    },
+    {
+     "name": "物理化学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二上",
+     "code": "00331720"
+    },
+    {
+     "name": "材料科学基础 (下)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "二下",
+     "code": "00332642"
+    },
+    {
+     "name": "材料物理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二下",
+     "code": "00333410"
+    },
+    {
+     "name": "材料科学与工程实验",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 34,
+     "term": "三上",
+     "code": "00333210"
+    },
+    {
+     "name": "材料化学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上",
+     "code": "00333190"
+    },
+    {
+     "name": "材料计算科学与工程",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上",
+     "code": "00333010"
+    },
+    {
+     "name": "现代材料分析与原理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上",
+     "code": "00333000"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 41,
+   "max": 41,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "工程制图",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "一上",
+     "code": "00330630"
+    },
+    {
+     "name": "分析化学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二上",
+     "code": "00333970"
+    },
+    {
+     "name": "基础物理实验",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "00431200"
+    },
+    {
+     "name": "普通化学实验 ( B)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "01034920"
+    },
+    {
+     "name": "材料学中的量子与统计",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上",
+     "code": "00334480"
+    },
+    {
+     "name": "材料力学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三下",
+     "code": "00330070"
+    },
+    {
+     "name": "材料热力学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三下",
+     "code": "00333200"
+    },
+    {
+     "name": "材料与时代",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上/一下",
+     "code": "23200001"
+    },
+    {
+     "name": "材料量子力学基础",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二上",
+     "code": "00333950"
+    },
+    {
+     "name": "材料科学与工程专业英语",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "00332990"
+    },
+    {
+     "name": "有机化学 ( B)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二下",
+     "code": "01032690"
+    },
+    {
+     "name": "工学类文献检索和科技写作",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "00333420"
+    },
+    {
+     "name": "半导体物理与器件",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上",
+     "code": "00333750"
+    },
+    {
+     "name": "柔性材料和器件",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三下",
+     "code": "00334130"
+    },
+    {
+     "name": "纳米材料科学与技术",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三下",
+     "code": "00333020"
+    },
+    {
+     "name": "高分子材料科学与工程",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三下",
+     "code": "00333230"
+    },
+    {
+     "name": "无机非金属材料科学与工程",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三下",
+     "code": "00333240"
+    },
+    {
+     "name": "金属材料科学与工程",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三下",
+     "code": "00333250"
+    },
+    {
+     "name": "材料加工原理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三下",
+     "code": "00333011"
+    },
+    {
+     "name": "材料表面工程",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "00334470"
+    },
+    {
+     "name": "金工实习 (必修)",
+     "nature": null,
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "— 二暑",
+     "code": "00333050"
+    },
+    {
+     "name": "认知实习",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "— 三暑",
+     "code": "00333170"
+    },
+    {
+     "name": "生产实习",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "— 三暑",
+     "code": "00332120"
+    },
+    {
+     "name": "仪器分析",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "01034390"
+    },
+    {
+     "name": "仪器分析实验",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "01034400"
+    },
+    {
+     "name": "电子线路 A",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "二上",
+     "code": "04830630"
+    },
+    {
+     "name": "结构化学",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "二下",
+     "code": "01034410"
+    },
+    {
+     "name": "工程数学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二下",
+     "code": "00339760"
+    },
+    {
+     "name": "复合材料与结构力学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上",
+     "code": "00332410"
+    },
+    {
+     "name": "固体物理 ( B)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上",
+     "code": "00334120"
+    },
+    {
+     "name": "信号与系统",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上",
+     "code": "04830670"
+    },
+    {
+     "name": "电路与电子学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "00332510"
+    },
+    {
+     "name": "新能源材料",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "00331970"
+    },
+    {
+     "name": "生物材料学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "四下",
+     "code": "00332900"
+    },
+    {
+     "name": "系统与控制引论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "00331480"
+    },
+    {
+     "name": "机械设计基础",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "00332690"
+    },
+    {
+     "name": "工程 CAD ( 1)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "00331311"
+    },
+    {
+     "name": "量子材料的物性",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "00405612"
+    },
+    {
+     "name": "表面物理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "00411950"
+    },
+    {
+     "name": "自动控制原理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 6,
+     "term": "春季",
+     "code": "00330220"
+    },
+    {
+     "name": "光电功能材料",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "00411851"
+    },
+    {
+     "name": "模拟电路",
+     "nature": null,
+     "credits": 2,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "04832470"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "—       大学英语                2~8      —      —     按大学英语教研室要求选课",
+  "—       思想政治理论必修课            19                   按马克思主义学院要求选课",
+  "—                            1门                   按学校要求选课",
+  "劳动教育课               32 学时                 按学校要求选课",
+  "选 该 课 程 的 上 机 课 “计 算 概",
+  "论 B 上机”。",
+  "选 该 课 程 的 上 机 课 “计 算 概",
+  "论 B 上机”。",
+  "需要 另 选 该 课 程 的 上 机 课",
+  "“数据结构与算法上机”。",
+  "需要 另 选 该 课 程 的 上 机 课",
+  "“数据结构与算法上机”。",
+  "—       体育系列课程              1×4      2      0     全年",
+  "· 468 ·             北京大学本科培养方案 (",
+  "通识教育课程分为四个 系 列: Ⅰ. 人 类 文 明 及 其 传 统, Ⅱ. 现 代 社 会 及 其 问 题, Ⅲ.",
+  "艺术与人文, Ⅳ. 数学、自然与技术。每个系列均包含通识教育核心课、通选课两部分课",
+  "程,具体课程列表详见 《北京大学本科生选课手册》。",
+  "1)至少修读 1 门 “通识教育核心课程” (任一系列),且在四个课程系列中 每个系列",
+  "至少修读 2 学分 (通识教育核心课或通选课均可)。",
+  "2)原则上不允许以专业课替代通识教育课程学分。",
+  "3)本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分。",
+  "4)建议合理分配修读时间,每学期修读 1 门课程。",
+  "1) 可用高等数学 B (一、二) 替代数学分析 (一、二),多余学分计入 3",
+  "注:(                                     -         2)",
+  "普物 (Ⅰ ) 与力学 + 电磁学属于同质类课程,普 物 (Ⅱ ) 与 热 学 + 光 学 + 近 代 物 理 属 于 同 质 类 课 程, 同",
+  "质类课程不可重复修读。可用力学、电磁学、光学、热 学、近 代 物 理 中 的 至 少 四 门 且 总 学 分 不 少 于 8 学",
+  "分替代普物 (Ⅰ ) 和普物 (Ⅱ ),超出 8 学分的部分计入 3",
+  "-2 自主选修学分。",
+  "注:彤程材料科 学 论 坛 分 为 Ⅰ (秋 季 开 课, 课 号 003334381)、 Ⅱ (春 季 开 课, 课 号 00334382), 任",
+  "选其一即可。",
+  "北京大学工学院                  · 469 ·",
+  "新开课       交叉科学实验               3     6     90      三上",
+  "新开课       前沿材料设计与应用            2     2             三下",
+  "新开课       材料工程基础               3     3             三下",
+  "· 470 ·             北京大学本科培养方案 (",
+  "可根据学习兴趣在全校范围 自 主 选 课 (全 校 公 选 课 不 能 计 入),建 议 继 续 深 造 的 学 生",
+  "多选以下列表中的课程。",
+  "新开课       能源化学                   2      2               四上",
+  "新开课       电工学                    2      2               四上",
+  "新开课       化学电源工艺                 2      2               待定"
+ ],
+ "warnings": [
+  "未找到“毕业总学分”"
+ ],
+ "source": {
+  "volumeId": "2023-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=195",
+  "lineStart": 24443,
+  "lineEnd": 24741
+ }
+}

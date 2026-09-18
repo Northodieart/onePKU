@@ -1,0 +1,783 @@
+{
+ "id": "2023-外国语学院-西班牙语",
+ "cohort": 2023,
+ "volume": "北京大学本科教学计划（2023）文科卷",
+ "school": "外国语学院",
+ "major": "西班牙语",
+ "track": null,
+ "title": "西班牙语专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "文学学士学位。",
+ "totalCredits": {
+  "min": 140,
+  "max": 140
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 48,
+   "max": 48,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 58,
+   "max": 58,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 34,
+   "max": 34,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "36 学分",
+   "inferredParent": true,
+   "min": 36,
+   "max": 36,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "28 学分",
+   "inferredParent": true,
+   "min": 28,
+   "max": 28,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "30 学分",
+   "inferredParent": true,
+   "min": 30,
+   "max": 30,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "20 学分",
+   "inferredParent": true,
+   "min": 20,
+   "max": 20,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "14 学分",
+   "inferredParent": true,
+   "min": 14,
+   "max": 14,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 48,
+   "max": 48,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 C",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "“计算 概 论 C” 课 程 后,",
+     "code": "04834470"
+    },
+    {
+     "name": "计算机实习",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "计 算",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上或一下",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 58,
+   "max": 58,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "西班牙语精读 (五)",
+     "nature": null,
+     "credits": 4,
+     "hours": 6,
+     "practice": null,
+     "term": "三上",
+     "code": "03633015"
+    },
+    {
+     "name": "西班牙语精读 (六)",
+     "nature": null,
+     "credits": 4,
+     "hours": 6,
+     "practice": null,
+     "term": "三下",
+     "code": "03633016"
+    },
+    {
+     "name": "西班牙语写作",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03633050"
+    },
+    {
+     "name": "西汉笔译 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03633081"
+    },
+    {
+     "name": "西汉笔译 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03633082"
+    },
+    {
+     "name": "西汉口译 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03633091"
+    },
+    {
+     "name": "西汉口译 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03633092"
+    },
+    {
+     "name": "西班牙语语音",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上",
+     "code": "03633100"
+    },
+    {
+     "name": "西班牙历史和文化概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上",
+     "code": "03633210"
+    },
+    {
+     "name": "拉丁美洲历史和文化概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "03633220"
+    },
+    {
+     "name": "西班牙语语法",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03633230"
+    },
+    {
+     "name": "西班牙语阅读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03633530"
+    },
+    {
+     "name": "西班牙语精读 (一)",
+     "nature": null,
+     "credits": 6,
+     "hours": 10,
+     "practice": null,
+     "term": "一上",
+     "code": "03633341"
+    },
+    {
+     "name": "西班牙语精读 (二)",
+     "nature": null,
+     "credits": 6,
+     "hours": 10,
+     "practice": null,
+     "term": "一下",
+     "code": "03633342"
+    },
+    {
+     "name": "西班牙语精读 (三)",
+     "nature": null,
+     "credits": 5,
+     "hours": 8,
+     "practice": null,
+     "term": "二上",
+     "code": "03633013"
+    },
+    {
+     "name": "西班牙语精读 (四)",
+     "nature": null,
+     "credits": 5,
+     "hours": 8,
+     "practice": null,
+     "term": "二下",
+     "code": "03633014"
+    },
+    {
+     "name": "西班牙文学史和文学选读 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03633061"
+    },
+    {
+     "name": "西班牙文学史和文学选读 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03633062"
+    },
+    {
+     "name": "拉丁美洲文学史和文学选读 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03633071"
+    },
+    {
+     "name": "拉丁美洲文学史和文学选读 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03633072"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 34,
+   "max": 34,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "西班牙语视听 (一)",
+     "nature": null,
+     "credits": 2,
+     "hours": 1,
+     "practice": null,
+     "term": "一下",
+     "code": "03633021"
+    },
+    {
+     "name": "西班牙语视听 (二)",
+     "nature": null,
+     "credits": 2,
+     "hours": 1,
+     "practice": null,
+     "term": "二上",
+     "code": "03633022"
+    },
+    {
+     "name": "西班牙语视听 (三)",
+     "nature": null,
+     "credits": 2,
+     "hours": 1,
+     "practice": null,
+     "term": "二下",
+     "code": "03633023"
+    },
+    {
+     "name": "西班牙语视听 (四)",
+     "nature": null,
+     "credits": 2,
+     "hours": 1,
+     "practice": null,
+     "term": "三上",
+     "code": "03633024"
+    },
+    {
+     "name": "西班牙语视听 (五)",
+     "nature": null,
+     "credits": 2,
+     "hours": 1,
+     "practice": null,
+     "term": "三下",
+     "code": "03633025"
+    },
+    {
+     "name": "西班牙语口语 (一)",
+     "nature": null,
+     "credits": 2,
+     "hours": 1,
+     "practice": null,
+     "term": "一上",
+     "code": "03633041"
+    },
+    {
+     "name": "西班牙语口语 (二)",
+     "nature": null,
+     "credits": 2,
+     "hours": 1,
+     "practice": null,
+     "term": "一下",
+     "code": "03633042"
+    },
+    {
+     "name": "西班牙语口语 (三)",
+     "nature": null,
+     "credits": 2,
+     "hours": 1,
+     "practice": null,
+     "term": "二上",
+     "code": "03633043"
+    },
+    {
+     "name": "西班牙语口语 (四)",
+     "nature": null,
+     "credits": 2,
+     "hours": 1,
+     "practice": null,
+     "term": "二下",
+     "code": "03633044"
+    },
+    {
+     "name": "西班牙语口语 (五)",
+     "nature": null,
+     "credits": 2,
+     "hours": 1,
+     "practice": null,
+     "term": "三上",
+     "code": "03633045"
+    },
+    {
+     "name": "经贸西班牙语",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03633209"
+    },
+    {
+     "name": "西班牙语报刊选读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03633250"
+    },
+    {
+     "name": "西班牙语应用文",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03633260"
+    },
+    {
+     "name": "西班牙语世界文化研究",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "03633290"
+    },
+    {
+     "name": "西班牙语语言学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "03633310"
+    },
+    {
+     "name": "翻译学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "双年春季",
+     "code": "03633350"
+    },
+    {
+     "name": "西语美洲思想史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "双年秋季",
+     "code": "03633580"
+    },
+    {
+     "name": "学术前沿和跨学科研究",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "全年",
+     "code": "03633590"
+    },
+    {
+     "name": "东方文学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季学期",
+     "code": "03530450"
+    },
+    {
+     "name": "中国古代史 (上)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": null,
+     "code": "02130011"
+    },
+    {
+     "name": "中国古代史 (下)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": null,
+     "code": "02130012"
+    },
+    {
+     "name": "考古学通论",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": null,
+     "code": "02232210"
+    },
+    {
+     "name": "中国哲学 (上)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "02330092"
+    },
+    {
+     "name": "中国哲学 (下)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "02330096"
+    },
+    {
+     "name": "中国哲学 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02330094"
+    },
+    {
+     "name": "中国哲学 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02330095"
+    },
+    {
+     "name": "哲学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02330001"
+    },
+    {
+     "name": "哲学导论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "02330003"
+    },
+    {
+     "name": "西方哲学 (上)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "02330051"
+    },
+    {
+     "name": "西方哲学 (下)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "02330053"
+    },
+    {
+     "name": "西方哲学 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02330052"
+    },
+    {
+     "name": "西方哲学 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02330054"
+    },
+    {
+     "name": "美洲史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02133650"
+    },
+    {
+     "name": "西方文明史导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02131250"
+    },
+    {
+     "name": "艺术史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02132710"
+    },
+    {
+     "name": "拉美国家现代化进程研究",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02131460"
+    },
+    {
+     "name": "宗教学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02330162"
+    },
+    {
+     "name": "宗教学导论",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "02330160"
+    },
+    {
+     "name": "文化与翻译批评",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03833260"
+    },
+    {
+     "name": "欧洲文学选读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03832040"
+    },
+    {
+     "name": "文学形式导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03832020"
+    },
+    {
+     "name": "西方古典文学与社会",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03834410"
+    },
+    {
+     "name": "圣经释读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03833190"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "—       思想政治理论必修课             19      —      —",
+  "选课。",
+  "—                             1门      —      —     按学校要求选课。",
+  "—       劳动教育课                32 学时                 按学校要求选课",
+  "需要另 选 该 课 程 的 上 机",
+  "课 (",
+  "实习)。",
+  "时,需要 另 选 该 课 程 的",
+  "机实习)。",
+  "—       体育系列课程               1×4      2            全年",
+  "注:大学外语必修大学英语对应级别的学分,不足 8 学 分 部 分,需 用 非 本 专 业 语 言 的 公 共 语 言 课 或 专 业",
+  "基础语言课补足 (课程明细见本学院附表 1)。",
+  "通识 教 育 课 程 分 为 四 个 系 列: Ⅰ. 人 类 文 明 及 其 传 统; Ⅱ. 现 代 社 会 及 其 问 题;",
+  "Ⅲ. 艺术与人文; Ⅳ. 数学、自然与技术。每个系列均包含通识教育核心课、通选课两部",
+  "分课程,具体课程列表详见 《北京大学本科生选课手册》。",
+  "1)至少修读 1 门 “通识教育核心课程” (任一系列),且在四个课程系列中每个系列",
+  "至少修读 2 学分 (通识教育核心课或通选课均可)。",
+  "2)原则上不允许以专业课替代通识教育课程学分。",
+  "3)本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分。",
+  "4)建议合理分配修读时间,每学期修读 1 门课程。",
+  "北京大学外国语学院                      · 245 ·",
+  "-1 专业选修课:20 学分 (其中视听、口语课程须修满 10 学分)",
+  "西班牙语电影研究                  2       2       单年春季",
+  "以下为推荐课程,其中人文学部课程 (中国文学史、中国古代史、考古学通论、哲学",
+  "导论、中国哲 学、 西 方 哲 学、 艺 术 史 导 论 ) 不 少 于 3 学 分; 东 方 文 学、 西 方 文 学 必 选",
+  "一门。",
+  "新开课       西方文学                      2       2       春季学期",
+  "新开课       中国文学史                     3       3",
+  "新开课       中国古代史                     4       4",
+  "· 246 ·             北京大学本科培养方案 (",
+  "新开课       艺术史导论                        2       2"
+ ],
+ "warnings": [
+  "第 13224 行：课程行缺少学分：04831435 计 算",
+  "第 13353 行：课程行缺少学分：02330160   宗教学导论"
+ ],
+ "source": {
+  "volumeId": "2023-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=196",
+  "lineStart": 13124,
+  "lineEnd": 13410
+ }
+}

@@ -1,0 +1,471 @@
+{
+ "id": "2021-外国语学院-波斯语-2020_年招生",
+ "cohort": 2021,
+ "volume": "北京大学本科培养方案（2021）文科卷",
+ "school": "外国语学院",
+ "major": "波斯语",
+ "track": "2020 年招生",
+ "title": "波斯语专业 ( 2020 年招生 )",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "文学学士学位。",
+ "totalCredits": {
+  "min": 141,
+  "max": 141
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 47,
+   "max": 47,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 54,
+   "max": 54,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 40,
+   "max": 40,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "35 学分",
+   "inferredParent": true,
+   "min": 35,
+   "max": 35,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "24 学分",
+   "inferredParent": true,
+   "min": 24,
+   "max": 24,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "30 学分",
+   "inferredParent": true,
+   "min": 30,
+   "max": 30,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "20 学分",
+   "inferredParent": true,
+   "min": 20,
+   "max": 20,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "20 学分",
+   "inferredParent": true,
+   "min": 20,
+   "max": 20,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 47,
+   "max": 47,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 C",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "“计算 概 论 C” 课 程 后,",
+     "code": "04834470"
+    },
+    {
+     "name": "计算机实习",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": "课程 同 时, 需 要 另 选 该",
+     "code": "04831435"
+    },
+    {
+     "name": "计算机实习)",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "一上或一下",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 54,
+   "max": 54,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "伊朗历史文明概论 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上",
+     "code": "03537701"
+    },
+    {
+     "name": "伊朗历史文明概论 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "03537702"
+    },
+    {
+     "name": "波斯语视听说 (上)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "03537511"
+    },
+    {
+     "name": "波斯语视听说 (下)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03537512"
+    },
+    {
+     "name": "波斯语口语 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03537681"
+    },
+    {
+     "name": "波斯语口语 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03537682"
+    },
+    {
+     "name": "波斯语写作 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03537551"
+    },
+    {
+     "name": "波斯语写作 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03537552"
+    },
+    {
+     "name": "波斯文学史 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03537611"
+    },
+    {
+     "name": "波斯文学史 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03537612"
+    },
+    {
+     "name": "波斯语散文 (上)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "三上",
+     "code": "03537531"
+    },
+    {
+     "name": "波斯语散文 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03537532"
+    },
+    {
+     "name": "基础波斯语 (一)",
+     "nature": null,
+     "credits": 9,
+     "hours": 12,
+     "practice": null,
+     "term": "一上",
+     "code": "03537671"
+    },
+    {
+     "name": "基础波斯语 (二)",
+     "nature": null,
+     "credits": 7,
+     "hours": 10,
+     "practice": null,
+     "term": "一下",
+     "code": "03537502"
+    },
+    {
+     "name": "基础波斯语 (三)",
+     "nature": null,
+     "credits": 7,
+     "hours": 10,
+     "practice": null,
+     "term": "二上",
+     "code": "03537503"
+    },
+    {
+     "name": "基础波斯语 (四)",
+     "nature": null,
+     "credits": 7,
+     "hours": 10,
+     "practice": null,
+     "term": "二下",
+     "code": "03537504"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 40,
+   "max": 40,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "波斯语报刊阅读 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03537691"
+    },
+    {
+     "name": "波斯语报刊阅读 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03537692"
+    },
+    {
+     "name": "波斯语-汉语翻译",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03537620"
+    },
+    {
+     "name": "波斯语语法",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03537600"
+    },
+    {
+     "name": "汉语-波斯语翻译 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03537631"
+    },
+    {
+     "name": "波斯古今散文研读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03537650"
+    },
+    {
+     "name": "波斯语诗歌选读 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03537591"
+    },
+    {
+     "name": "波斯语诗歌选读 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四下",
+     "code": "03537592"
+    },
+    {
+     "name": "波斯语小说 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03537571"
+    },
+    {
+     "name": "波斯语小说 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四下",
+     "code": "03537572"
+    },
+    {
+     "name": "中伊交流史 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03537601"
+    },
+    {
+     "name": "波斯语阅读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四下",
+     "code": "03537540"
+    },
+    {
+     "name": "东方文学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "每年秋季学期",
+     "code": "03530450"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "—       思想政治理论必修课            18     —        —",
+  "选课。",
+  "—                            1门     —        —    按学校要求选课。",
+  "需要另 选 该 课 程 的 上 机",
+  "课 (",
+  "实习)。",
+  "一 上。 面 向 文 科 院 系。",
+  "课   程   的   上   机   课",
+  "—       体育系列课程               1×4    2        0    全年",
+  "注:大学外语必修大学英语对应级别的学分,不足 8 学 分 部 分,需 用 非 本 专 业 语 言 的 公 共 语 言 课 或 专 业",
+  "基础语言课补足 (课程明细见本学院附表 1)。",
+  "通识教育课分为四个系列: Ⅰ.人 类 文 明 及 其 传 统; Ⅱ.现 代 社 会 及 其 问 题; Ⅲ.艺",
+  "术与人文; Ⅳ.数学、自然与技 术。 每 个 系 列 均 包 含 通 识 教 育 核 心 课、 通 选 课 两 部 分 课",
+  "北京大学外国语学院         · 175 ·",
+  "程,具体课程列表详见 《北京大学本科生选课手册》。",
+  "1)至少修读 1 门 “通识教育核心课程” (任一系列),且在四个课程系列中每个系列",
+  "至少修读 2 学分 (通识教育核心课或通选课均可)。",
+  "2)原则上不允许以专业课替代通识教育课程学分。",
+  "3)本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分。",
+  "4)建议合理分配修读时间,每学期修读 1 门课程。",
+  "· 176 ·            北京大学本科培养方案 (",
+  "新开课       中伊交流史 (下)            2      2      四下",
+  "新开课       西方文学                 2      2    每年春季学期",
+  "注:东方文学和西方文学学院建议选修至少其中一门。",
+  "含跨学科课程和辅修专业学分可替代学分,其中人文学部课程不少于 3 学分,详见本",
+  "学院附表 2。"
+ ],
+ "warnings": [
+  "第 9479 行：课程行缺少学分：04831435 计算机实习)"
+ ],
+ "source": {
+  "volumeId": "2021-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=158",
+  "lineStart": 9380,
+  "lineEnd": 9584
+ }
+}

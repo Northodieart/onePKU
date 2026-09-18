@@ -1,0 +1,275 @@
+{
+ "id": "2025-光华管理学院_信息科学技术学院-数智金融项目",
+ "cohort": 2025,
+ "volume": "北京大学本科培养方案（2025）文科卷",
+ "school": "光华管理学院/信息科学技术学院",
+ "major": "数智金融项目",
+ "track": null,
+ "title": "数智金融项目",
+ "kind": "project",
+ "qualifiers": [],
+ "degree": null,
+ "totalCredits": {
+  "min": 25,
+  "max": 25,
+  "inferred": true
+ },
+ "topRequirements": [],
+ "requirements": [],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "项目必修课",
+   "min": 15,
+   "max": 15,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "（实验班）",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 34,
+     "term": "二下",
+     "code": "02839711"
+    },
+    {
+     "name": "人工智能与计算思维（金融方向）",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": 0,
+     "term": "一下",
+     "code": "04834472"
+    },
+    {
+     "name": "微观经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "一下",
+     "code": "02832110"
+    },
+    {
+     "name": "公司金融（中英文）",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 2,
+     "term": "二上（大班授课小班讨",
+     "code": "02839610"
+    },
+    {
+     "name": "公司金融讨论班",
+     "nature": null,
+     "credits": 0,
+     "hours": 1,
+     "practice": 34,
+     "term": "论，中英文班二选一）",
+     "code": "02839611"
+    },
+    {
+     "name": "证券投资学（中英文）",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下（中英文班二选一）",
+     "code": "02834420"
+    },
+    {
+     "name": "机器学习概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上/三上",
+     "code": "04831730"
+    },
+    {
+     "name": "机器学习",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "（二选一）",
+     "code": "04833420"
+    },
+    {
+     "name": "数据结构与算法 B",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "04831420"
+    },
+    {
+     "name": "数据结构与算法上机",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 34,
+     "term": null,
+     "code": "04830494"
+    },
+    {
+     "name": "数据库概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 17,
+     "term": "二下/三下",
+     "code": "04830220"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "项目选修课",
+   "min": 10,
+   "max": 10,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "宏观经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 10,
+     "term": "二上",
+     "code": "02832120"
+    },
+    {
+     "name": "金融市场与金融机构",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 6,
+     "term": "二下",
+     "code": "02833230"
+    },
+    {
+     "name": "计量经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 17,
+     "term": "二下",
+     "code": "02833720"
+    },
+    {
+     "name": "固定收益证券",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三下",
+     "code": "02831570"
+    },
+    {
+     "name": "衍生品定价及应用",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 24,
+     "term": "三上",
+     "code": "02839360"
+    },
+    {
+     "name": "科技金融与数字金融",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 34,
+     "term": "三下",
+     "code": "02839630"
+    },
+    {
+     "name": "信息科学中的数学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二上",
+     "code": "04834100"
+    },
+    {
+     "name": "信息安全引论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 9,
+     "term": "三上/四上",
+     "code": "04830410"
+    },
+    {
+     "name": "区块链理论与技术",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "04833910"
+    },
+    {
+     "name": "强化学习",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 17,
+     "term": "三上",
+     "code": "04834520"
+    },
+    {
+     "name": "可视化与可视分析",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 21,
+     "term": "三上",
+     "code": "04835020"
+    },
+    {
+     "name": "自然语言处理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上",
+     "code": "04835400"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "学分要求：总学分 25 学分，其中项目必修课 15 学分，项目选修课 10 学分",
+  "待定        数智金融整合实践       1        1         17        三下",
+  "注：",
+  "1. 两院同学必须修读“人工智能与投资分析（实验班）”、“人工智能与计算思维（金",
+  "融方向）”、“数智金融整合实践”三门课程。",
+  "2. 光华管理学院的同学不能把下列课程计入本项目学分，“微观经济学”、“公司金融",
+  "（中英文）”、“公司金融讨论班”、“证券投资学”课程。",
+  "3. 信息科学技术学院同学不能把下列课程计入本项目学分，“机器学习概论”、“机器",
+  "“数据库概论”课程。",
+  "注：",
+  "1. 光华管理学院学生在光华管理学院开设的选修课中最多选 2 门课程，其余需要选信",
+  "息科学技术学院开设的课程。",
+  "2. 信息科学技术学院学生在信息科学技术学院开设的选修课中最多选 2 门课程，其余",
+  "需要选光华管理学院开设的课程。",
+  "3. 028 开头的是光华管理学院开设课程，048 开头的是信息科学技术学院开设课程。"
+ ],
+ "warnings": [],
+ "source": {
+  "volumeId": "2025-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=217",
+  "lineStart": 29237,
+  "lineEnd": 29760
+ }
+}

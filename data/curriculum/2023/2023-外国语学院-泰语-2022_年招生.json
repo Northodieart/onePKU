@@ -1,0 +1,542 @@
+{
+ "id": "2023-外国语学院-泰语-2022_年招生",
+ "cohort": 2023,
+ "volume": "北京大学本科教学计划（2023）文科卷",
+ "school": "外国语学院",
+ "major": "泰语",
+ "track": "2022 年招生",
+ "title": "泰语专业 ( 2022 年招生 )",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": null,
+ "totalCredits": null,
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 48,
+   "max": 48,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 56,
+   "max": 56,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 40,
+   "max": 40,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "36 学分",
+   "inferredParent": true,
+   "min": 36,
+   "max": 36,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "24 学分",
+   "inferredParent": true,
+   "min": 24,
+   "max": 24,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "32 学分",
+   "inferredParent": true,
+   "min": 32,
+   "max": 32,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "28 学分",
+   "inferredParent": true,
+   "min": 28,
+   "max": 28,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 48,
+   "max": 48,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 C",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "“计算 概 论 C” 课 程 后,",
+     "code": "04834470"
+    },
+    {
+     "name": "计算机实习",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "计 算",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上或一下",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 56,
+   "max": 56,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "泰国文化和社会",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上",
+     "code": "03533870"
+    },
+    {
+     "name": "泰国历史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03533829"
+    },
+    {
+     "name": "泰语语法",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03533540"
+    },
+    {
+     "name": "泰语泛读 (一)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03533781"
+    },
+    {
+     "name": "泰语泛读 (二)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03533782"
+    },
+    {
+     "name": "泰语听力 (上)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03533511"
+    },
+    {
+     "name": "泰语听力 (下)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03533512"
+    },
+    {
+     "name": "泰国文学史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03533590"
+    },
+    {
+     "name": "泰语翻译教程 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03533551"
+    },
+    {
+     "name": "泰语翻译教程 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03533552"
+    },
+    {
+     "name": "高年级泰语 (一)",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "三上",
+     "code": "03533711"
+    },
+    {
+     "name": "高年级泰语 (二)",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "三下",
+     "code": "03533712"
+    },
+    {
+     "name": "泰语教程 (一)",
+     "nature": null,
+     "credits": 8,
+     "hours": 10,
+     "practice": null,
+     "term": "一上",
+     "code": "03533861"
+    },
+    {
+     "name": "泰语教程 (二)",
+     "nature": null,
+     "credits": 8,
+     "hours": 10,
+     "practice": null,
+     "term": "一下",
+     "code": "03533862"
+    },
+    {
+     "name": "泰语教程 (三)",
+     "nature": null,
+     "credits": 8,
+     "hours": 10,
+     "practice": null,
+     "term": "二上",
+     "code": "03533863"
+    },
+    {
+     "name": "泰语教程 (四)",
+     "nature": null,
+     "credits": 8,
+     "hours": 10,
+     "practice": null,
+     "term": "二下",
+     "code": "03533864"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 40,
+   "max": 40,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "泰语视听说",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "三上三年级秋季学期)",
+     "code": "03533640"
+    },
+    {
+     "name": "泰语报刊阅读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03534000"
+    },
+    {
+     "name": "泰学研究专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03533850"
+    },
+    {
+     "name": "泰学文献选读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03533900"
+    },
+    {
+     "name": "泰国历史文献选读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四下",
+     "code": "03533910"
+    },
+    {
+     "name": "泰国国情专题研究",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四下",
+     "code": "03533980"
+    },
+    {
+     "name": "泰国政治发展史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03533960"
+    },
+    {
+     "name": "中泰关系",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "四下",
+     "code": "03533680"
+    },
+    {
+     "name": "泰语的外来语",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03533920"
+    },
+    {
+     "name": "泰国民俗学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03533940"
+    },
+    {
+     "name": "泰国现代文学选读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03533630"
+    },
+    {
+     "name": "泰国现代文学作品欣赏",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四下",
+     "code": "03533890"
+    },
+    {
+     "name": "当代泰国与东南亚政治",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03533750"
+    },
+    {
+     "name": "东南亚文化",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03530370"
+    },
+    {
+     "name": "东南亚历史与现状",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03535760"
+    },
+    {
+     "name": "高年级泰语阅读 (一)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03533811"
+    },
+    {
+     "name": "高年级泰语阅读 (二)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03533812"
+    },
+    {
+     "name": "高年级泰语阅读 (三)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四下",
+     "code": "03533813"
+    },
+    {
+     "name": "泰学研究概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四下",
+     "code": "03533880"
+    },
+    {
+     "name": "泰语成语",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四下",
+     "code": "03533930"
+    },
+    {
+     "name": "东方文学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "每年秋季学期",
+     "code": "03530450"
+    },
+    {
+     "name": "西方文学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "每年春季学期",
+     "code": "03632990"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "—       思想政治理论必修课             19      —      —",
+  "选课。",
+  "—                             1门      —      —     按学校要求选课。",
+  "—       劳动教育课                32 学时                 按学校要求选课",
+  "需要另 选 该 课 程 的 上 机",
+  "课 (",
+  "实习)。",
+  "时,需要 另 选 该 课 程 的",
+  "机实习)。",
+  "—      体育系列课程               1×4      2            全年",
+  "* 注:大学外语必修大学英语对应级别的学分,不足 8 学分部分,需用非本 专 业 语 言 的 公 共 语 言 课 或 专",
+  "业基础语言课补足 (课程明细见本学院附表 1)。",
+  "· 236 ·            北京大学本科培养方案 (",
+  "新开课       泰语高级口译               2    2       四上",
+  "北京大学外国语学院            · 237 ·",
+  "新开课       东南亚佛教与社会               2     2",
+  "注:东方文学和西方文学必选其中一门。",
+  "-2 自主选修课:24 学分 (含跨学科课程和辅修专业学分可替代学分)"
+ ],
+ "warnings": [
+  "未找到“毕业总学分”",
+  "第 12811 行：课程行缺少学分：04831435 计 算"
+ ],
+ "source": {
+  "volumeId": "2023-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=196",
+  "lineStart": 12710,
+  "lineEnd": 12910
+ }
+}

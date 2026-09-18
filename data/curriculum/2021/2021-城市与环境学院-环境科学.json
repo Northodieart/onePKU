@@ -1,0 +1,700 @@
+{
+ "id": "2021-城市与环境学院-环境科学",
+ "cohort": 2021,
+ "volume": "北京大学本科培养方案（2021）理科卷",
+ "school": "城市与环境学院",
+ "major": "环境科学",
+ "track": null,
+ "title": "环境科学专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "理学学士学位。",
+ "totalCredits": {
+  "min": 143,
+  "max": 143
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 41,
+   "max": 47,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 56,
+   "max": 56,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 40,
+   "max": 40,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "29~35 学分",
+   "inferredParent": true,
+   "min": 29,
+   "max": 35,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "22 学分",
+   "inferredParent": true,
+   "min": 22,
+   "max": 22,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "28 学分",
+   "inferredParent": true,
+   "min": 28,
+   "max": 28,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "22 学分",
+   "inferredParent": true,
+   "min": 22,
+   "max": 22,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "18 学分",
+   "inferredParent": true,
+   "min": 18,
+   "max": 18,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 41,
+   "max": 47,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 B",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "“计算概论 B” 课 程 同 时,",
+     "code": "04831410"
+    },
+    {
+     "name": "计算概论 B 上机",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": "“计算概论 B” 课 程 同 时,",
+     "code": "04831650"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "一上或一下",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 56,
+   "max": 56,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学 C (一)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "一上",
+     "code": "00131421"
+    },
+    {
+     "name": "普通化学 ( B)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "一上",
+     "code": "01034880"
+    },
+    {
+     "name": "高等数学 C (二)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "一下",
+     "code": "00131422"
+    },
+    {
+     "name": "概率统计 ( B)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "一下",
+     "code": "00132380"
+    },
+    {
+     "name": "普通生物学 ( B)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "一下",
+     "code": "01139380"
+    },
+    {
+     "name": "普通物理",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "一下",
+     "code": "00431121"
+    },
+    {
+     "name": "环境科学概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上",
+     "code": "12631070"
+    },
+    {
+     "name": "环境化学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二下",
+     "code": "01536850"
+    },
+    {
+     "name": "环境科学前沿秋季讲座",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "12631050"
+    },
+    {
+     "name": "环境科学专业英语",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "01536530"
+    },
+    {
+     "name": "环境科学野外综合实习",
+     "nature": null,
+     "credits": 1,
+     "hours": null,
+     "practice": null,
+     "term": "— 三暑",
+     "code": "01536840"
+    },
+    {
+     "name": "大气物理学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上 √",
+     "code": "12631130"
+    },
+    {
+     "name": "应用数理统计方法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二上 √ √",
+     "code": "01536040"
+    },
+    {
+     "name": "大气环境导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下 √ √",
+     "code": "12631060"
+    },
+    {
+     "name": "环境生物学",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "二下 √",
+     "code": "12631170"
+    },
+    {
+     "name": "能源与环境",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下 √ √",
+     "code": "12631200"
+    },
+    {
+     "name": "气候变化科学概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下 √ √",
+     "code": "12632050"
+    },
+    {
+     "name": "环境经济学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下 √",
+     "code": "01536020"
+    },
+    {
+     "name": "环境化学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二下 √ √",
+     "code": "12631080"
+    },
+    {
+     "name": "环境工程学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上 √ √",
+     "code": "12631110"
+    },
+    {
+     "name": "环境健康风险评价",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上 √ √",
+     "code": "12631160"
+    },
+    {
+     "name": "遥感基础与图象解译原理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上 √",
+     "code": "01531230"
+    },
+    {
+     "name": "水环境化学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上 √ √",
+     "code": "01536210"
+    },
+    {
+     "name": "环境毒理学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上 √",
+     "code": "12631020"
+    },
+    {
+     "name": "污染环境修复",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三下 √",
+     "code": "12631010"
+    },
+    {
+     "name": "环境监测与实验",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "三下 √ √",
+     "code": "12631100"
+    },
+    {
+     "name": "环境污染数值模拟",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下 √",
+     "code": "12631180"
+    },
+    {
+     "name": "污染物水土环境过程",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下 √",
+     "code": "12631210"
+    },
+    {
+     "name": "环境科学前沿",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下 √ √",
+     "code": "12631030"
+    },
+    {
+     "name": "环境规划学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下 √ √",
+     "code": "12732060"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 40,
+   "max": 40,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "普通化学实验 ( B)",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": null,
+     "term": "一上",
+     "code": "01034920"
+    },
+    {
+     "name": "有机化学 ( B)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "二上",
+     "code": "01030810"
+    },
+    {
+     "name": "物理化学 ( B)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "二上",
+     "code": "01030840"
+    },
+    {
+     "name": "有机化学实验 ( B)",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": null,
+     "term": "二上",
+     "code": "01032711"
+    },
+    {
+     "name": "物理化学实验 ( B)",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": null,
+     "term": "二上",
+     "code": "01032720"
+    },
+    {
+     "name": "定量分析化学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "01035180"
+    },
+    {
+     "name": "定量分析化学实验",
+     "nature": null,
+     "credits": 4,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "01035190"
+    },
+    {
+     "name": "仪器分析",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "01034390"
+    },
+    {
+     "name": "仪器分析实验",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": null,
+     "term": "三上",
+     "code": "01034400"
+    },
+    {
+     "name": "普通生物学实验",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": null,
+     "term": "一下",
+     "code": "01130311"
+    },
+    {
+     "name": "植物学 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "01535121"
+    },
+    {
+     "name": "植物学 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "12632130"
+    },
+    {
+     "name": "生态学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "01536820"
+    },
+    {
+     "name": "微生物学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "01139600"
+    },
+    {
+     "name": "生物化学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三下",
+     "code": "01139633"
+    },
+    {
+     "name": "生物化学实验",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": null,
+     "term": "三下",
+     "code": "01139632"
+    },
+    {
+     "name": "微生物学实验",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "01130071"
+    },
+    {
+     "name": "数据结构与算法 ( B)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "一下",
+     "code": "04831420"
+    },
+    {
+     "name": "计算方法 ( B)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二上",
+     "code": "00130280"
+    },
+    {
+     "name": "应用多元统计分析",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二上",
+     "code": "00133050"
+    },
+    {
+     "name": "线性代数 ( C)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二上",
+     "code": "00130310"
+    },
+    {
+     "name": "地理信息系统原理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二下",
+     "code": "01235240"
+    },
+    {
+     "name": "科学软件应用与文献检索",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二下",
+     "code": "12631140"
+    },
+    {
+     "name": "常微分方程",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二下",
+     "code": "00132340"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "新生入学后根据英语测试结果确定需修读的学分,最多修读 8 学分 (公共必修课总学",
+  "分 35 学分),最少修读 2 学分 (公 共 必 修 课 总 学 分 29 学 分),不 足 35 个 学 分 的 部 分 用 于",
+  "修读除公共必修课外的其他类课程 (通识教育课、专业必修课、选修课)。",
+  "—       大学英语               2~8     —          —",
+  "1门                      按学校要求选课",
+  "需要 另 选 该 课 程 的 上 机",
+  "课 “计算概论 B 上机”。",
+  "需要 另 选 该 课 程 的 上 机",
+  "课 “计算概论 B 上机”。",
+  "—       体育系列课程             1×4     2          0    全年",
+  "通识教育 课 程 分 为 四 个 系 列: Ⅰ.人 类 文 明 及 其 传 统, Ⅱ.现 代 社 会 及 其 问 题,",
+  "Ⅲ.艺术与人文, Ⅳ.数学、自然与 技 术,每 个 系 列 均 包 含 通 识 教 育 核 心 课、通 选 课 两 部",
+  "分课程,具体课程列表详见 《北京大学本科生选课手册》。",
+  "1)至少修读 1 门 “通识教育核心课程” (任一系列),且在四个课程系列中 每个系列",
+  "至少修读 2 学分 (通识教育核心课或通选课均可)。",
+  "· 250 ·             北京大学本科培养方案 (",
+  "2)原则上不允许以专业课替代通识教育课程学分。",
+  "3)本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分。",
+  "4)建议合理分配修读时间,每学期修读 1 门课程。",
+  "根据学生兴趣分 A,B,C 三个模块。下列课程中选 8 学分。",
+  "学生应从下表中至少修读 20 个 学 分,按 照 兴 趣 侧 重 某 一 模 块 (模 块 A: 环 境 化 学 与",
+  "污染控制;模块 B:环境毒理与健康;模块 C:区域环境过程与模拟)。",
+  "北京大学城市与环境学院                     · 251 ·",
+  "毕业论文安排在四年级进行,一 般 为 15~25 周。学 生 可 在 综 合 实 习 的 基 础 上 完 成 论",
+  "文,也可另行选定题目,鼓励学生结合指导教师的科研课题完成毕业论文。毕业论文为学",
+  "术性研究论文,内容包括国内外相关研究进展、研究方法与技术、研究结果和结论与讨论",
+  "等。毕业论文完成后经过答辩及格后方可获得学分。",
+  "1)化学类课程。",
+  "2)生命科学类课程。",
+  "(",
+  "3)数学、计算机类课程。",
+  "4)本科生科研和拔尖计划:0~4 学分。",
+  "按时完成科研任务、提交成 果、成 绩 合 格 的 学 生,按 照 北 京 大 学 本 科 生 “研 究 课 程”",
+  "的规定,按照选修课记 4 个学分。",
+  "参加拔尖计划并按照拔尖计划实施办法考核通过的学生将按照选修课记 4 个学分,计",
+  "入大四上学期课程。指导老师根据学生表现决定学分计入情况,拔尖计划不能与本研、毕",
+  "业论文的内容、学分重复使用。",
+  "不选本研或拔尖计划可以选其他专业核心课。",
+  "-2 自主选修课:18 学分 (含跨学科课程和辅修专业学分可替代学分)",
+  "可从理科和工科的所有专业课程中选择,鼓励选修本专业核心课和专业选修课中未修",
+  "的课程。"
+ ],
+ "warnings": [],
+ "source": {
+  "volumeId": "2021-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=152",
+  "lineStart": 11999,
+  "lineEnd": 12315
+ }
+}

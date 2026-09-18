@@ -1,0 +1,45 @@
+{
+ "id": "2023-考古文博学院-外国语言与外国历史-考古学方向",
+ "cohort": 2023,
+ "volume": "北京大学本科教学计划（2023）文科卷",
+ "school": "考古文博学院",
+ "major": "外国语言与外国历史",
+ "track": "考古学方向",
+ "title": "外国语言与外国历史 (考古学方向 ) 专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "历史学学士",
+ "totalCredits": {
+  "min": 151,
+  "max": 151
+ },
+ "topRequirements": [],
+ "requirements": [],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 34,
+   "max": 40,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "满足公共基础课程、专业必修课程、选修 课 程 最 低 学 分 要 求 后,所 获 学 分 仍 不 足 151",
+  "北京大学考古文博学院                         · 137 ·",
+  "学分,可用全校任意课程补足。"
+ ],
+ "warnings": [
+  "第 7523 行：课程设置出现第二套“1. 公共基础课程”，只保留第一套"
+ ],
+ "source": {
+  "volumeId": "2023-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=196",
+  "lineStart": 7466,
+  "lineEnd": 8236
+ }
+}

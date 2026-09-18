@@ -1,0 +1,457 @@
+{
+ "id": "2025-历史学系-历史学_古典语文学项目-中国古典学方向",
+ "cohort": 2025,
+ "volume": "北京大学本科培养方案（2025）文科卷",
+ "school": "历史学系",
+ "major": "历史学/古典语文学项目",
+ "track": "中国古典学方向",
+ "title": "历史学专业古典语文学项目（中国古典学方向）",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": null,
+ "totalCredits": {
+  "min": 132,
+  "max": 132
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 49,
+   "max": 49,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 54,
+   "max": 54,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 29,
+   "max": 29,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "37 学分",
+   "min": 37,
+   "max": 37,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "≥24 学分",
+   "min": 24,
+   "max": 24,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "≥22 学分",
+   "min": 22,
+   "max": 22,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "学年论文和毕业论文",
+   "requirement": "6 学分",
+   "min": 6,
+   "max": 6,
+   "unit": "学分"
+  },
+  {
+   "id": "2-4",
+   "parent": "2",
+   "name": "实习/实践/劳动教育课",
+   "requirement": "2 学分",
+   "min": 2,
+   "max": 2,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "9 学分",
+   "min": 9,
+   "max": 9,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "20 学分",
+   "min": 20,
+   "max": 20,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 49,
+   "max": 49,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "1.1",
+   "parent": "1",
+   "name": "公共必修课",
+   "min": 37,
+   "max": 37,
+   "unit": "学分",
+   "note": "+1 门思想政治理论选择性必修课",
+   "courses": [
+    {
+     "name": "中国近代史",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 4,
+     "term": null,
+     "code": "02130020"
+    },
+    {
+     "name": "计算概论（C）",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "面向文科院系。学生选“计算概论",
+     "code": "04834470"
+    },
+    {
+     "name": "计算机实习",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "军事理论*",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": null,
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "1.2",
+   "parent": "1",
+   "name": "通识教育课程",
+   "min": 12,
+   "max": 12,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.1",
+   "parent": "2",
+   "name": "专业基础课",
+   "min": 24,
+   "max": 24,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.2",
+   "parent": "2",
+   "name": "专业核心课",
+   "min": 22,
+   "max": 22,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "史学新生导学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 2,
+     "term": "一上 课程必修",
+     "code": "02133020"
+    },
+    {
+     "name": "历史论文写作",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 2,
+     "term": "一上或二上 课程必修",
+     "code": "02132100"
+    },
+    {
+     "name": "中国古代史（上）",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 4,
+     "term": "一上一下 课程必修",
+     "code": "02130011"
+    },
+    {
+     "name": "中国古代史（下）",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 4,
+     "term": "一上一下 课程必修",
+     "code": "02130012"
+    },
+    {
+     "name": "中国历史文选（上）",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 4,
+     "term": "一上 课程必修",
+     "code": "02130101"
+    },
+    {
+     "name": "中国历史文选（下）",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 4,
+     "term": "一下 课程必修",
+     "code": "02130102"
+    },
+    {
+     "name": "中国古代史练习",
+     "nature": null,
+     "credits": 2,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "02132460"
+    },
+    {
+     "name": "中国近代史练习",
+     "nature": null,
+     "credits": 2,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "02132471"
+    },
+    {
+     "name": "中国现代史练习",
+     "nature": null,
+     "credits": 2,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "02132472"
+    },
+    {
+     "name": "世界古代史练习 至少",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一或二 课程必修",
+     "code": "02132480"
+    },
+    {
+     "name": "欧美近现代史练习",
+     "nature": null,
+     "credits": 2,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "02132491"
+    },
+    {
+     "name": "亚非拉近现代史练习",
+     "nature": null,
+     "credits": 2,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "02132492"
+    },
+    {
+     "name": "全球史练习",
+     "nature": null,
+     "credits": 2,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "02132481"
+    },
+    {
+     "name": "中国现代史",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "一下或二下 课程选修",
+     "code": "02132030"
+    },
+    {
+     "name": "世界史通论",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "一上 课程选修",
+     "code": "02132081"
+    },
+    {
+     "name": "史学概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下 课程选修",
+     "code": "02130111"
+    },
+    {
+     "name": "社会调查与史学研究",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下 课程选修",
+     "code": "02132110"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.3",
+   "parent": "2",
+   "name": "学年论文和毕业论文",
+   "min": 6,
+   "max": 6,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "学年论文 2 三下 课程必修毕业论文",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "02133030"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.4",
+   "parent": "2",
+   "name": "实习/实践/劳动教育课",
+   "min": 2,
+   "max": 2,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "社会历史调查*",
+     "nature": null,
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": "二年级暑期进行调查。三上选课。 课程选修",
+     "code": "02132291"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.1",
+   "parent": "3",
+   "name": "专业选修课",
+   "min": 9,
+   "max": 9,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.2",
+   "parent": "3",
+   "name": "自主选修课",
+   "min": 20,
+   "max": 20,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "课号         课程系列类型    学分要求        周学时   实践总学时               说明",
+  "16          —      —         按马克思主义学院要求选课。",
+  "近现代史纲要”。",
+  "思想政治理论",
+  "1门          —      —         按学校要求选课。",
+  "详参学校大学英语课程要求及培养",
+  "大学英语        2～8         —      —",
+  "方案。留学生免修。",
+  "上机课（04831435 计算机实习）。",
+  "论课要求及培养方案",
+  "注：①课程名带*号者为留学生、港澳台学生选择性必修课，所缺学分可选修与中国有",
+  "关的课程来补足学分。②“思想政治理论必修课”中“中国近现代史纲要”的内容，因已",
+  "涵盖在历史学系专业必修课“中国近代史”与“中国现代史”中，经学校教务部和马克思",
+  "主义学院同意批准，本系学生用“中国近代史”的学分替代“中国近现代史纲要”的学分。",
+  "③“大学英语”课程不足 8 学分的，以及留学生免修“大学英语”课程所缺 8 学分，可自",
+  "主选修其他课程补足学分。④“计算概论 C”也可用更高级别的“计算概论 A”或“计算",
+  "概论 B”来代替。",
+  "通识教育课程系列         ≥12        学分必修",
+  "学分选修非本系“通选课”。",
+  "注：本系学生选修本系开设的“通识教育核心课程”“通选课”，其学分不可计入上面",
+  "两个课程类别中，可计入“选修课程”学分中。在四个课程系列中每个系列应至少修读 2",
+  "学分（通识教育核心课或通选课均可），不允许以其他课程替代通识教育课学分。",
+  "详见中国古典学项目培养方案。",
+  "注：以上课程多选学分不可代替其他专业核心课学分，可代替“选修课程”学分。",
+  "“社会历史调查”课程为古典语文学项目学生的选修课，所缺学分可用“专业核心",
+  "注：",
+  "课”学分代替。不选修的学生需参加历史学系安排的其他劳动活动。",
+  "注：需选修本系课程。"
+ ],
+ "warnings": [
+  "第 5391 行：课程行缺少学分：02133030    学年论文           2            "
+ ],
+ "source": {
+  "volumeId": "2025-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=217",
+  "lineStart": 5270,
+  "lineEnd": 5469
+ }
+}

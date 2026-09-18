@@ -1,0 +1,554 @@
+{
+ "id": "2023-元培学院-古生物学",
+ "cohort": 2023,
+ "volume": "北京大学本科教学计划（2023）理科卷",
+ "school": "元培学院",
+ "major": "古生物学",
+ "track": null,
+ "title": "古生物学专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": null,
+ "totalCredits": null,
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 45,
+   "max": 51,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 61,
+   "max": 61,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "30~36 学分",
+   "inferredParent": true,
+   "min": 30,
+   "max": 36,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "27 学分",
+   "inferredParent": true,
+   "min": 27,
+   "max": 27,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "28 学分",
+   "inferredParent": true,
+   "min": 28,
+   "max": 28,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "19 学分",
+   "inferredParent": true,
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "0 学分",
+   "inferredParent": true,
+   "min": 0,
+   "max": 0,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 61,
+   "max": 61,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学 ( B)(一)",
+     "nature": null,
+     "credits": 5,
+     "hours": 6,
+     "practice": 0,
+     "term": "一上",
+     "code": "00130201"
+    },
+    {
+     "name": "高等数学 ( B)(二)",
+     "nature": null,
+     "credits": 5,
+     "hours": 6,
+     "practice": 0,
+     "term": "一下",
+     "code": "00130202"
+    },
+    {
+     "name": "普通物理学 ( B)(一)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "一下",
+     "code": "00436011"
+    },
+    {
+     "name": "普通物理学 ( B)(二)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "二上",
+     "code": "00436012"
+    },
+    {
+     "name": "普通化学 B",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "一上",
+     "code": "01034880"
+    },
+    {
+     "name": "普通化学实验 B*",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": 64,
+     "term": "一上",
+     "code": "01034920"
+    },
+    {
+     "name": "行星地球科学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 8,
+     "term": "一上",
+     "code": "01232001"
+    },
+    {
+     "name": "地球系统演化",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 8,
+     "term": "一下",
+     "code": "01231882"
+    },
+    {
+     "name": "地球物质",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 32,
+     "term": "二下",
+     "code": "01232003"
+    },
+    {
+     "name": "古生物学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 16,
+     "term": "二上",
+     "code": "01231030"
+    },
+    {
+     "name": "动物生物学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋季",
+     "code": "01131080"
+    },
+    {
+     "name": "动物生物学实验 1.",
+     "nature": null,
+     "credits": 5,
+     "hours": 3,
+     "practice": 48,
+     "term": "秋季",
+     "code": "01131050"
+    },
+    {
+     "name": "植物生物学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "春季",
+     "code": "01131040"
+    },
+    {
+     "name": "植物生物学实验 1.",
+     "nature": null,
+     "credits": 5,
+     "hours": 3,
+     "practice": 48,
+     "term": "春季",
+     "code": "01131060"
+    },
+    {
+     "name": "遗传学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "生化之后",
+     "code": "01130200"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 19,
+   "max": 19,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "普通地质实习 ( A)",
+     "nature": null,
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": "2周 一暑",
+     "code": "01231640"
+    },
+    {
+     "name": "三峡地区综合地质实习",
+     "nature": null,
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": "2周 二下",
+     "code": "01231911"
+    },
+    {
+     "name": "生物学野外综合实习",
+     "nature": null,
+     "credits": 2,
+     "hours": 68,
+     "practice": null,
+     "term": "二暑",
+     "code": "01134140"
+    },
+    {
+     "name": "普通生物学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "一上",
+     "code": "01139381"
+    },
+    {
+     "name": "普通生物学实验",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": 64,
+     "term": "一上",
+     "code": "01130311"
+    },
+    {
+     "name": "生物进化论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "春季",
+     "code": "01130780"
+    },
+    {
+     "name": "生物化学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "01139633"
+    },
+    {
+     "name": "遗传学讨论课 *",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "遗传同期",
+     "code": "01132022"
+    },
+    {
+     "name": "分子生物学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "生化之后",
+     "code": "01138540"
+    },
+    {
+     "name": "细胞生物学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "生化之后",
+     "code": "01130150"
+    },
+    {
+     "name": "微生物学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "春季",
+     "code": "01139600"
+    },
+    {
+     "name": "发育生物学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "春季",
+     "code": "01139580"
+    },
+    {
+     "name": "生理学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "01130370"
+    },
+    {
+     "name": "普通生态学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "秋季",
+     "code": "01130930"
+    },
+    {
+     "name": "地史学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 12,
+     "term": "秋季",
+     "code": "01231320"
+    },
+    {
+     "name": "古海洋学与全球变化",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 2,
+     "term": "春季",
+     "code": "01231370"
+    },
+    {
+     "name": "古生物学前沿",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "春季",
+     "code": "01231510"
+    },
+    {
+     "name": "古植物学及孢粉学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上",
+     "code": "01231520"
+    },
+    {
+     "name": "地层学原理与应用",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三下",
+     "code": "01231530"
+    },
+    {
+     "name": "结晶学与矿物学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 16,
+     "term": "二上",
+     "code": "01231410"
+    },
+    {
+     "name": "构造地质学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 16,
+     "term": "二下",
+     "code": "01231310"
+    },
+    {
+     "name": "地球化学",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 16,
+     "term": "二下",
+     "code": "01231660"
+    },
+    {
+     "name": "地层学原理与应用",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三下",
+     "code": "01231530"
+    },
+    {
+     "name": "沉积学概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上",
+     "code": "01231540"
+    },
+    {
+     "name": "海洋地质学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三下",
+     "code": "01231140"
+    },
+    {
+     "name": "地球生物学概论 ▲",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下",
+     "code": "01231820"
+    },
+    {
+     "name": "海洋环境和动力学 ▲",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三下",
+     "code": "01231860"
+    },
+    {
+     "name": "区域地质实习",
+     "nature": null,
+     "credits": 2,
+     "hours": 64,
+     "practice": null,
+     "term": "3周 三暑",
+     "code": "01231800"
+    },
+    {
+     "name": "美国中部国际实习 ★",
+     "nature": null,
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": "2周 二暑",
+     "code": "01231922"
+    },
+    {
+     "name": "阿尔卑斯野外综合地质国 际 对比实习 ★",
+     "nature": null,
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": "2周 三暑",
+     "code": "01231921"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "· 536 ·            北京大学本科培养方案 (",
+  "-",
+  "-",
+  "分为两个方向:生物学方向需选 修 生 物 学 类 课 程 至 少 10 学 分; 地 学 方 向 需 选 修 地 学",
+  "类课程至少 10 学分。",
+  "1)生物学类课程。",
+  "新开课       微生物学实验            1     2      32           春季",
+  "2)地学类课程。",
+  "北京大学元培学院               · 537 ·",
+  "注: ▲ 为全英文授课课程; ★ 为国际实习。",
+  "完成 “本科生科研训练”结题并通过结题答辩的学生可获得 “研究课 程”4 学 分;在",
+  "专业学术期刊发表第一作者学术论文的学生,可获得 6 学分;其他方面按教务部相关规定",
+  "执行。",
+  "学生可根据兴趣和将来发展需要从学校其他院系专业必修和专业选修课程中进行课程",
+  "选择。"
+ ],
+ "warnings": [
+  "未找到“毕业总学分”"
+ ],
+ "source": {
+  "volumeId": "2023-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=195",
+  "lineStart": 28027,
+  "lineEnd": 28230
+ }
+}

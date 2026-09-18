@@ -1,0 +1,119 @@
+{
+ "id": "2021-对外汉语教育学院_教育学院-“汉语国际教育_”_项目",
+ "cohort": 2021,
+ "volume": "北京大学本科培养方案（2021）文科卷",
+ "school": "对外汉语教育学院/教育学院",
+ "major": "“汉语国际教育/”/项目",
+ "track": null,
+ "title": "“汉语国际教育 ” 项目",
+ "kind": "project",
+ "qualifiers": [],
+ "degree": null,
+ "totalCredits": null,
+ "topRequirements": [],
+ "requirements": [],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "专业核心课程 (不低于",
+   "min": 10,
+   "max": 10,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "第二语言习得导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "对外汉语教育学院 秋季",
+     "code": "04410096"
+    },
+    {
+     "name": "中华 人 民 共 和 国 教 育 专题史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "教育学院 秋季",
+     "code": "06734130"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "跨学科选修课 (不低于",
+   "min": 8,
+   "max": 8,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "文化与跨文化交际",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "对外汉语教育学院 秋季",
+     "code": "04410095"
+    },
+    {
+     "name": "教育与人工智能",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "教育学院 秋季",
+     "code": "06733030"
+    },
+    {
+     "name": "在线教育的设计与实施",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "教育学院 秋季",
+     "code": "06733080"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "课外实践交流活动模块 (",
+   "courses": [],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "选修本项目的同学需要在项目指定的选课范围内完成不低于 10 学分的专业核心课程。",
+  "中文作为第二 语 言 要 素 教                             秋季/春季",
+  "新开课                            2+2   2+2   对外汉语教育学院",
+  "学 (上、下)                                     (",
+  "新开课       国际中文教育概论             2      2    对外汉语教育学院     春季",
+  "新开课       中文作为第二语言教学法          2      2    对外汉语教育学院     春季",
+  "选修本项目的同学需要在项目指定的选课范围内完成不低于 8 学分的项目选修课。目",
+  "新开课       教学资源开发与应用            2      2    对外汉语教育学院     春季",
+  "新开课       国外中小学外语教学            2      2    对外汉语教育学院     春季",
+  "学生需完成 2 学分的课外实践交流活动。课外实践交流活动主要包括:",
+  "1)不少于 20 小时的留学生语伴实践活动 (学生在修完不低于 12 学分的课程后方可",
+  "提出,对外汉语教育学院负责安排)。",
+  "2)不少于 20 小时的留学生中文教学课堂观摩活动 (对外汉语教育学院负责安排)。",
+  "3)至少四场由对外汉语教育学院或教育学院开设的汉语国际教育学术讲座 (其中每",
+  "个学院不少于 2 场)。",
+  "4)撰写一篇 3000 字的实践报告和一篇 3000 字的学习报告。"
+ ],
+ "warnings": [
+  "未找到“毕业总学分”"
+ ],
+ "source": {
+  "volumeId": "2021-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=158",
+  "lineStart": 30137,
+  "lineEnd": 30275
+ }
+}

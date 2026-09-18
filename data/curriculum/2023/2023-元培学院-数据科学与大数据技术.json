@@ -1,0 +1,622 @@
+{
+ "id": "2023-元培学院-数据科学与大数据技术",
+ "cohort": 2023,
+ "volume": "北京大学本科教学计划（2023）理科卷",
+ "school": "元培学院",
+ "major": "数据科学与大数据技术",
+ "track": null,
+ "title": "数据科学与大数据技术专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": null,
+ "totalCredits": null,
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 48,
+   "max": 54,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 49,
+   "max": 49,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 34,
+   "max": 34,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "36~42 学分",
+   "inferredParent": true,
+   "min": 36,
+   "max": 42,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "19 学分",
+   "inferredParent": true,
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "26 学分",
+   "inferredParent": true,
+   "min": 26,
+   "max": 26,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "17 学分",
+   "inferredParent": true,
+   "min": 17,
+   "max": 17,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "17 学分",
+   "inferredParent": true,
+   "min": 17,
+   "max": 17,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 48,
+   "max": 54,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 A",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": 32,
+     "term": "一上",
+     "code": "04830041"
+    },
+    {
+     "name": "数据结构与算法 A",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": 32,
+     "term": "二上",
+     "code": "04830050"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "按武装部要求学期选课",
+     "code": "60730020"
+    },
+    {
+     "name": "新生教育实践课程",
+     "nature": null,
+     "credits": 1,
+     "hours": 1,
+     "practice": 3,
+     "term": "一上",
+     "code": "04631815"
+    }
+   ],
+   "alternatives": [
+    {
+     "code": "04830530",
+     "name": "计算概论 A (实验班)",
+     "credits": 3,
+     "replaces": "计算概论 A"
+    },
+    {
+     "code": "04830540",
+     "name": "数据结构与算法 A ( 实验班)",
+     "credits": 3,
+     "replaces": "数据结构与算法 A"
+    }
+   ]
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 49,
+   "max": 49,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学 A (一)",
+     "nature": null,
+     "credits": 5,
+     "hours": 6,
+     "practice": null,
+     "term": "一上",
+     "code": "00132511"
+    },
+    {
+     "name": "高等数学 A (二)",
+     "nature": null,
+     "credits": 5,
+     "hours": 6,
+     "practice": null,
+     "term": "一下",
+     "code": "00132512"
+    },
+    {
+     "name": "高等代数 Ⅰ",
+     "nature": null,
+     "credits": 5,
+     "hours": 6,
+     "practice": null,
+     "term": "一上",
+     "code": "00132321"
+    },
+    {
+     "name": "高等代数 Ⅱ",
+     "nature": null,
+     "credits": 4,
+     "hours": 5,
+     "practice": null,
+     "term": "一下",
+     "code": "00132323"
+    }
+   ],
+   "alternatives": [
+    {
+     "code": "00132301",
+     "name": "数学分析 (Ⅰ )",
+     "credits": 5,
+     "replaces": "高等数学 A (Ⅰ )"
+    },
+    {
+     "code": "00132302",
+     "name": "数学分析 (Ⅱ )",
+     "credits": 5,
+     "replaces": "高等数学 A (Ⅱ )"
+    },
+    {
+     "code": "00131300",
+     "name": "概率论",
+     "credits": 3,
+     "replaces": "二下"
+    },
+    {
+     "code": "00137170",
+     "name": "机器学习基础",
+     "credits": 3,
+     "replaces": "二下"
+    },
+    {
+     "code": "00135460",
+     "name": "数理统计",
+     "credits": 3,
+     "replaces": "三上"
+    },
+    {
+     "code": "00130280",
+     "name": "计算方法 B",
+     "credits": 3,
+     "replaces": "三上"
+    },
+    {
+     "code": "04834040",
+     "name": "人工智能引论",
+     "credits": 3,
+     "replaces": "一下"
+    },
+    {
+     "code": "04834041",
+     "name": "人工智能引论实践课",
+     "credits": 0,
+     "replaces": "一下"
+    },
+    {
+     "code": "04830070",
+     "name": "集合论与图论",
+     "credits": 3,
+     "replaces": "二上"
+    },
+    {
+     "code": "04833040",
+     "name": "计算机系统导论",
+     "credits": 5,
+     "replaces": "二上"
+    },
+    {
+     "code": "04832363",
+     "name": "计算机系统导论讨论班",
+     "credits": 0,
+     "replaces": "二上"
+    },
+    {
+     "code": "00110060",
+     "name": "算法设计与分析",
+     "credits": 3,
+     "replaces": "二下"
+    },
+    {
+     "code": "04833400",
+     "name": "离散数学与结构 (Ⅰ )",
+     "credits": 3,
+     "replaces": "集合论与图论"
+    },
+    {
+     "code": "00135290",
+     "name": "集合论与图论",
+     "credits": 3,
+     "replaces": "集合论与图论"
+    },
+    {
+     "code": "04833050",
+     "name": "算法设计与分析",
+     "credits": 5,
+     "replaces": "算法设计与分析"
+    },
+    {
+     "code": "04832580",
+     "name": "算法设计与分析 (研讨型小班)",
+     "credits": 0,
+     "replaces": null
+    }
+   ]
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "courses": [],
+   "alternatives": [
+    {
+     "code": "00132513",
+     "name": "高等数学 A (三)",
+     "credits": 4,
+     "replaces": "二上"
+    },
+    {
+     "code": "00132340",
+     "name": "常微分方程",
+     "credits": 3,
+     "replaces": "二上"
+    },
+    {
+     "code": "00132330",
+     "name": "偏微分方程",
+     "credits": 3,
+     "replaces": "三上"
+    },
+    {
+     "code": "00133010",
+     "name": "测度论",
+     "credits": 3,
+     "replaces": "三下"
+    },
+    {
+     "code": "00133050",
+     "name": "应用多元统计分析",
+     "credits": 3,
+     "replaces": "秋季"
+    },
+    {
+     "code": "00133070",
+     "name": "应用时间序列分析",
+     "credits": 3,
+     "replaces": "秋季"
+    },
+    {
+     "code": "00133110",
+     "name": "应用回归分析",
+     "credits": 3,
+     "replaces": "春季"
+    },
+    {
+     "code": "00132370",
+     "name": "实变函数",
+     "credits": 3,
+     "replaces": "秋季"
+    },
+    {
+     "code": "00136660",
+     "name": "凸优化",
+     "credits": 3,
+     "replaces": "秋季"
+    },
+    {
+     "code": "00132320",
+     "name": "复变函数",
+     "credits": 3,
+     "replaces": "秋季"
+    },
+    {
+     "code": "00130161",
+     "name": "拓扑学",
+     "credits": 3,
+     "replaces": "秋季"
+    },
+    {
+     "code": "00132304",
+     "name": "数学分析 (Ⅲ )",
+     "credits": 4,
+     "replaces": "高等数学 A (Ⅲ )"
+    },
+    {
+     "code": "04830080",
+     "name": "代数结构与组合数学",
+     "credits": 3,
+     "replaces": "二下"
+    },
+    {
+     "code": "04830090",
+     "name": "数理逻辑",
+     "credits": 3,
+     "replaces": "三上"
+    },
+    {
+     "code": "04830260",
+     "name": "理论计算机科学基础",
+     "credits": 3,
+     "replaces": "三下"
+    },
+    {
+     "code": "04831200",
+     "name": "随机过程引论",
+     "credits": 2,
+     "replaces": "三下"
+    },
+    {
+     "code": "04833900",
+     "name": "密码学基础",
+     "credits": 3,
+     "replaces": "三上"
+    },
+    {
+     "code": "00135040",
+     "name": "程序设计技术与方法",
+     "credits": 3,
+     "replaces": "秋季"
+    },
+    {
+     "code": "04833430",
+     "name": "离散数学与结构 (Ⅱ )",
+     "credits": 3,
+     "replaces": "代数结构与组合数学"
+    },
+    {
+     "code": "04833440",
+     "name": "计算理论导论",
+     "credits": 3,
+     "replaces": "理论计算机科学基础"
+    },
+    {
+     "code": "00130730",
+     "name": "数理逻辑",
+     "credits": 3,
+     "replaces": "数理逻辑"
+    },
+    {
+     "code": "00135050",
+     "name": "理论计算机科学基础",
+     "credits": 3,
+     "replaces": "理论计算机科学基础"
+    },
+    {
+     "code": "04833840",
+     "name": "程序设计与算法",
+     "credits": 3,
+     "replaces": "程序设计技术与方法"
+    },
+    {
+     "code": "04834200",
+     "name": "编译原理",
+     "credits": 4,
+     "replaces": "三上/下"
+    },
+    {
+     "code": "04834220",
+     "name": "软件工程",
+     "credits": 4,
+     "replaces": "二下/三上"
+    },
+    {
+     "code": "04830140",
+     "name": "计算机组织与体系结构",
+     "credits": 3,
+     "replaces": "三上/下"
+    },
+    {
+     "code": "04830145",
+     "name": "计算 机 组 织 与 体 系 结 构实习",
+     "credits": 2,
+     "replaces": "三上/下"
+    },
+    {
+     "code": "04830100",
+     "name": "数字逻辑设计",
+     "credits": 3,
+     "replaces": "二下/三上"
+    },
+    {
+     "code": "04832240",
+     "name": "并行与分布式计算导论",
+     "credits": 3,
+     "replaces": "三下"
+    },
+    {
+     "code": "04834260",
+     "name": "操作系统",
+     "credits": 4,
+     "replaces": "三上/下"
+    },
+    {
+     "code": "04834210",
+     "name": "计算机网络",
+     "credits": 4,
+     "replaces": "三上/下"
+    },
+    {
+     "code": "04830220",
+     "name": "数据库概论",
+     "credits": 3,
+     "replaces": "三下"
+    },
+    {
+     "code": "00137150",
+     "name": "并行与分布式计算基础",
+     "credits": 3,
+     "replaces": "并行与分布式计算导论"
+    },
+    {
+     "code": "00131501",
+     "name": "数字逻辑设计",
+     "credits": 3,
+     "replaces": "数字逻辑设计"
+    },
+    {
+     "code": "04831780",
+     "name": "自然语言处理导论",
+     "credits": 2,
+     "replaces": "三下"
+    },
+    {
+     "code": "04830230",
+     "name": "计算机图形学",
+     "credits": 3,
+     "replaces": "二下"
+    },
+    {
+     "code": "04830320",
+     "name": "数字图像处理",
+     "credits": 3,
+     "replaces": "三下"
+    },
+    {
+     "code": "04832220",
+     "name": "智能机器人概论",
+     "credits": 2,
+     "replaces": "三上"
+    },
+    {
+     "code": "04834520",
+     "name": "强化学习",
+     "credits": 3,
+     "replaces": "三上"
+    },
+    {
+     "code": "04833410",
+     "name": "凸分析与优化方法",
+     "credits": 3,
+     "replaces": "三下"
+    },
+    {
+     "code": "04630790",
+     "name": "数据科学导引",
+     "credits": 3,
+     "replaces": "三上"
+    },
+    {
+     "code": "00136720",
+     "name": "大数据分析中的算法",
+     "credits": 3,
+     "replaces": "三上"
+    },
+    {
+     "code": "00137130",
+     "name": "深度学习:算法与应用",
+     "credits": 3,
+     "replaces": "春季"
+    },
+    {
+     "code": "08408010",
+     "name": "强化学习:理论与算法",
+     "credits": 3,
+     "replaces": "春季"
+    },
+    {
+     "code": "00110950",
+     "name": "人工智能",
+     "credits": 3,
+     "replaces": "春季"
+    },
+    {
+     "code": "08408010",
+     "name": "强化学习:理论与算法",
+     "credits": 3,
+     "replaces": "强化学习"
+    }
+   ]
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "—       思想政治理论必修课           19                   按马克思主义学院要求选课",
+  "—                           1门                   按学校要求选课",
+  "劳动教育课              32 学时                 按学校要求选课",
+  "· 526 ·              北京大学本科培养方案 (",
+  "全 年, 按 体 育 教 研 室 要 求",
+  "书院成长课程 (上)         1         1          3          二年级",
+  "书院成长课程 (下)         1         1          3          三年级",
+  "注:相关课程均可以由同名的实验班课程进行替代 (下同)。",
+  "注 1:数学分析 Ⅰ 、 Ⅱ 、 Ⅲ ,高 等 代 数 Ⅰ 、 Ⅱ , 概 率 论 都 同 时 开 设 常 规 班 和 实 验 班, 均 可 作 为 毕 业",
+  "学分,但一种课程班型已修 读 及 格 后, 不 能 再 修 读 另 一 种 班 型。 因 课 号、 班 型 不 同, 计 算 学 分、GPA",
+  "时,一种班型的及格成绩不能覆盖另一种班型的不及格成绩。",
+  "注 2:数学分析 Ⅰ 、 Ⅱ 、 Ⅲ + 高 等 代 数 Ⅰ 、 Ⅱ 和 高 等 数 学 (一 ) (二 ) (三 ) + 线 性 代 数 A (一 )",
+  "(二) 两种课程组合可自由选择。",
+  "北京大学元培学院                   · 527 ·",
+  "-1 专业选修课:17 学分 (四个模块,数学模块、计算机理 论 与 算 法 模 块、软 件 与 系",
+  "要求在以下课程类别中至少选修 2 个模块,每个模块至少选修 6 学分。",
+  "· 528 ·            北京大学本科培养方案 (",
+  "注:所有标注为春季和秋季学期的课程,原则上建议三、四年级选修。",
+  "北京大学元培学院                          · 529 ·",
+  "-1 专业选修课中的课程以及下列课程,另外也包括数 学 学 院 和 信 息 科",
+  "学技术学院开设的所有专业课,或者信息与工程科学部、理学部、经济与管理学部的所有",
+  "核心课程。"
+ ],
+ "warnings": [
+  "未找到“毕业总学分”"
+ ],
+ "source": {
+  "volumeId": "2023-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=195",
+  "lineStart": 27491,
+  "lineEnd": 27803
+ }
+}

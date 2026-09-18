@@ -1,0 +1,176 @@
+{
+ "id": "2021-地球与空间科学学院-物理学-地球物理方向",
+ "cohort": 2021,
+ "volume": "北京大学本科培养方案（2021）理科卷",
+ "school": "地球与空间科学学院",
+ "major": "物理学",
+ "track": "地球物理方向",
+ "title": "物理学 (地球物理方向 )",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "理学学士学位。",
+ "totalCredits": {
+  "min": 142,
+  "max": 148
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 44,
+   "max": 50,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 59,
+   "max": 59,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 39,
+   "max": 39,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "32~38 学分",
+   "inferredParent": true,
+   "min": 32,
+   "max": 38,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "33 学分",
+   "inferredParent": true,
+   "min": 33,
+   "max": 33,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "22 学分",
+   "inferredParent": true,
+   "min": 22,
+   "max": 22,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "25 学分",
+   "inferredParent": true,
+   "min": 25,
+   "max": 25,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "14 学分",
+   "inferredParent": true,
+   "min": 14,
+   "max": 14,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 44,
+   "max": 50,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 B",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "“计 算 概 论 B” 课 程 同 时,",
+     "code": "04831410"
+    },
+    {
+     "name": "计算概论 B 上机",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": "“计 算 概 论 B” 课 程 同 时,",
+     "code": "04831650"
+    },
+    {
+     "name": "数据结构 与 算 法(B)系可 以 根 据 学 科 特 点 选 择课 程 同 时, 需 要 另 选 该 课",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04831420"
+    },
+    {
+     "name": "微机原理 B",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04830480"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "—       大学英语              2~8     —          —",
+  "思想政治 理 论 必                                按马 克 思 主 义 学 院 要 求",
+  "修课                                        选课",
+  "1门                      按学校要求选课",
+  "需要 另 选 该 课 程 的 上 机 课",
+  "“计算概论 B 上机”。",
+  "需要 另 选 该 课 程 的 上 机 课",
+  "“计算概论 B 上机”。",
+  "· 200 ·             北京大学本科培养方案 (",
+  "3                    说 明: 面 向 理 科 院 系。 院",
+  "至少 3                 0       选 “数 据 结 构 与 算 法 B”",
+  "3                    程的上 机 课 “数 据 结 构 与",
+  "3                    算法上机”。"
+ ],
+ "warnings": [
+  "第 9718 行：课程行缺少学分：04831420   数据结构 与 算 法",
+  "第 9727 行：课程行缺少学分：04830480   微机原理 B"
+ ],
+ "source": {
+  "volumeId": "2021-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=152",
+  "lineStart": 9614,
+  "lineEnd": 9728
+ }
+}

@@ -1,0 +1,948 @@
+{
+ "id": "2025-外国语学院-德语",
+ "cohort": 2025,
+ "volume": "北京大学本科培养方案（2025）文科卷",
+ "school": "外国语学院",
+ "major": "德语",
+ "track": null,
+ "title": "德语专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "文学学士",
+ "totalCredits": {
+  "min": 146,
+  "max": 146
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 48,
+   "max": 48,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 60,
+   "max": 60,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 38,
+   "max": 38,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "大学英语",
+   "requirement": "2～8 学分",
+   "min": 2,
+   "max": 8,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "思想政治理论必修课",
+   "requirement": "19 学分",
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "1-3",
+   "parent": "1",
+   "name": "思想政治理论选择性必修课",
+   "requirement": "1 门",
+   "min": 1,
+   "max": 1,
+   "unit": "门"
+  },
+  {
+   "id": "1-4",
+   "parent": "1",
+   "name": "劳动教育课",
+   "requirement": "32 学时",
+   "min": 32,
+   "max": 32,
+   "unit": "学时"
+  },
+  {
+   "id": "1-5",
+   "parent": "1",
+   "name": "信息课程",
+   "requirement": "3 学分",
+   "min": 3,
+   "max": 3,
+   "unit": "学分"
+  },
+  {
+   "id": "1-6",
+   "parent": "1",
+   "name": "军事理论",
+   "requirement": "2 学分",
+   "min": 2,
+   "max": 2,
+   "unit": "学分"
+  },
+  {
+   "id": "1-7",
+   "parent": "1",
+   "name": "体育课",
+   "requirement": "4 学分",
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  },
+  {
+   "id": "1-8",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "1-9",
+   "parent": "1",
+   "name": "大学外语",
+   "requirement": "0 学分",
+   "min": 0,
+   "max": 0,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "24 学分",
+   "min": 24,
+   "max": 24,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "36 学分",
+   "min": 36,
+   "max": 36,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "requirement": "0 学分",
+   "min": 0,
+   "max": 0,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "30 学分",
+   "min": 30,
+   "max": 30,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "8 学分",
+   "min": 8,
+   "max": 8,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 48,
+   "max": 48,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "1.1",
+   "parent": "1",
+   "name": "公共必修课",
+   "courses": [
+    {
+     "name": "计算机实习",
+     "nature": "全校必修",
+     "credits": 0,
+     "hours": 34,
+     "practice": 34,
+     "term": "一上",
+     "code": "04831435"
+    },
+    {
+     "name": "计算概论（C）",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "一上",
+     "code": "04834470"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "1.2",
+   "parent": "1",
+   "name": "通识教育课",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 60,
+   "max": 60,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.1",
+   "parent": "2",
+   "name": "专业基础课",
+   "min": 24,
+   "max": 24,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "德语语法精讲与实践（一）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大一/上",
+     "code": "03632231"
+    },
+    {
+     "name": "德语语法精讲与实践（二）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大一/下",
+     "code": "03632232"
+    },
+    {
+     "name": "德语语法精讲与实践（三）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大二/上",
+     "code": "03632233"
+    },
+    {
+     "name": "德语语法精讲与实践（四）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大二/下",
+     "code": "03632234"
+    },
+    {
+     "name": "德语笔译（一）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 17,
+     "term": "大三/上",
+     "code": "03632041"
+    },
+    {
+     "name": "德语笔译（二）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 17,
+     "term": "大三/下",
+     "code": "03632042"
+    },
+    {
+     "name": "德语笔译（三）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 17,
+     "term": "大四/上",
+     "code": "03632043"
+    },
+    {
+     "name": "德语笔译（四）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 17,
+     "term": "大四/下",
+     "code": "03632044"
+    },
+    {
+     "name": "德语口译（上）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 17,
+     "term": "大三/上",
+     "code": "03632053"
+    },
+    {
+     "name": "德语口译（下）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 17,
+     "term": "大三/下",
+     "code": "03632054"
+    },
+    {
+     "name": "德语国家国情课",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 17,
+     "term": "大一/下",
+     "code": "03632220"
+    },
+    {
+     "name": "德语文学研究导论",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 38,
+     "practice": 4,
+     "term": "大三/上",
+     "code": "03632410"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2",
+   "parent": "2",
+   "name": "专业核心课",
+   "min": 36,
+   "max": 36,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "德语精读（一）",
+     "nature": "专业必修",
+     "credits": 7,
+     "hours": 170,
+     "practice": 68,
+     "term": "大一/上",
+     "code": "03632005"
+    },
+    {
+     "name": "德语精读（二）",
+     "nature": "专业必修",
+     "credits": 7,
+     "hours": 170,
+     "practice": 68,
+     "term": "大一/下",
+     "code": "03632006"
+    },
+    {
+     "name": "德语精读（三）",
+     "nature": "专业必修",
+     "credits": 7,
+     "hours": 170,
+     "practice": 17,
+     "term": "大二/上",
+     "code": "03632007"
+    },
+    {
+     "name": "德语精读（四）",
+     "nature": "专业必修",
+     "credits": 7,
+     "hours": 170,
+     "practice": 17,
+     "term": "大二/下",
+     "code": "03632008"
+    },
+    {
+     "name": "德语国家文学史与选读（一）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": "大二/下",
+     "code": "03632621"
+    },
+    {
+     "name": "德语国家文学史与选读（二）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": "大三/上",
+     "code": "03632622"
+    },
+    {
+     "name": "德语国家文学史与选读（三）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": "大三/下",
+     "code": "03632623"
+    },
+    {
+     "name": "德语国家文学史与选读（四）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": "大四/上",
+     "code": "03632624"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.3",
+   "parent": "2",
+   "name": "毕业论文",
+   "note": "设计",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 38,
+   "max": 38,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1",
+   "parent": "3",
+   "name": "专业选修课",
+   "min": 30,
+   "max": 30,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.1",
+   "parent": "3.1",
+   "name": "德语语言实践组",
+   "courses": [
+    {
+     "name": "德语视听说（一）",
+     "nature": "任选",
+     "credits": 1,
+     "hours": 34,
+     "practice": 17,
+     "term": "大一/上",
+     "code": "03632021"
+    },
+    {
+     "name": "德语视听说（二）",
+     "nature": "任选",
+     "credits": 1,
+     "hours": 34,
+     "practice": 17,
+     "term": "大一/下",
+     "code": "03632022"
+    },
+    {
+     "name": "德语视听说（三）",
+     "nature": "任选",
+     "credits": 1,
+     "hours": 34,
+     "practice": 17,
+     "term": "大二/上",
+     "code": "03632023"
+    },
+    {
+     "name": "德语视听说（四）",
+     "nature": "任选",
+     "credits": 1,
+     "hours": 34,
+     "practice": 17,
+     "term": "大二/下",
+     "code": "03632024"
+    },
+    {
+     "name": "德语高级听力",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 17,
+     "term": "大三/上",
+     "code": "03632029"
+    },
+    {
+     "name": "德语写作（上）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 17,
+     "term": "大二/上",
+     "code": "03632291"
+    },
+    {
+     "name": "德语写作（下）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 17,
+     "term": "大二/下",
+     "code": "03632292"
+    },
+    {
+     "name": "德语综合实践（一）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 17,
+     "term": "大二/下",
+     "code": "03632235"
+    },
+    {
+     "name": "德语综合实践（二）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 17,
+     "term": "大四/上",
+     "code": "03632236"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.2",
+   "parent": "3.1",
+   "name": "德语文学研究组",
+   "courses": [
+    {
+     "name": "德语散文名篇选读",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 10,
+     "term": "大三/上",
+     "code": "03632089"
+    },
+    {
+     "name": "德语长篇小说（上）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "大四/上",
+     "code": "03632103"
+    },
+    {
+     "name": "德语长篇小说（下）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "大四/下",
+     "code": "03632104"
+    },
+    {
+     "name": "奥地利、瑞士文学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "大三/下",
+     "code": "03632130"
+    },
+    {
+     "name": "德语文学批评选读",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "大四/上",
+     "code": "03632190"
+    },
+    {
+     "name": "德语中短篇小说研究",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "大三/下",
+     "code": "03632200"
+    },
+    {
+     "name": "德语国家诗歌",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": "大三/下",
+     "code": "03632270"
+    },
+    {
+     "name": "德语国家戏剧",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": "大三/下",
+     "code": "03632280"
+    },
+    {
+     "name": "圣经与德语文学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "大二/上",
+     "code": "03632331"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.3",
+   "parent": "3.1",
+   "name": "德语国家思想与文化研究组",
+   "courses": [
+    {
+     "name": "德国文化史",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "大二/上",
+     "code": "03632110"
+    },
+    {
+     "name": "德国历史",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 17,
+     "term": "大二/下",
+     "code": "03632210"
+    },
+    {
+     "name": "跨文化交际",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "大三/上",
+     "code": "03632340"
+    },
+    {
+     "name": "德语思想史名篇选读",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 14,
+     "term": "大三/下",
+     "code": "03632400"
+    },
+    {
+     "name": "德国研究学术前沿",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": "大一/上",
+     "code": "03632440"
+    },
+    {
+     "name": "德语名家中国著述选读",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 13,
+     "term": "大一/下",
+     "code": "03632630"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.4",
+   "parent": "3.1",
+   "name": "德语语言学组",
+   "courses": [
+    {
+     "name": "德语语言学导论（一）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": "大一/下",
+     "code": "03632181"
+    },
+    {
+     "name": "德语语言学导论（二）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": "大二/上",
+     "code": "03632182"
+    },
+    {
+     "name": "德语语法专题",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 17,
+     "term": "大二/上",
+     "code": "03632230"
+    },
+    {
+     "name": "德语词汇学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 7,
+     "term": "大三/上",
+     "code": "03632390"
+    },
+    {
+     "name": "德语语言史",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": "大三/上",
+     "code": "03632420"
+    },
+    {
+     "name": "语言学理论与学派",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": "大二/下",
+     "code": "03632430"
+    },
+    {
+     "name": "中古德语",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/上",
+     "code": "03632450"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2",
+   "parent": "3",
+   "name": "自主选修课",
+   "min": 8,
+   "max": 8,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "中国古代文学（上）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02035201"
+    },
+    {
+     "name": "中国古代文学（下）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02035202"
+    },
+    {
+     "name": "中国古代史（上）",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "02130011"
+    },
+    {
+     "name": "中国古代史（下）",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 64,
+     "practice": null,
+     "term": null,
+     "code": "02130012"
+    },
+    {
+     "name": "考古学通论",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 64,
+     "practice": null,
+     "term": null,
+     "code": "02232210"
+    },
+    {
+     "name": "哲学导论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "02330001"
+    },
+    {
+     "name": "西方哲学（上）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "02330052"
+    },
+    {
+     "name": "西方哲学（下）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02330053"
+    },
+    {
+     "name": "西方哲学（下）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02330054"
+    },
+    {
+     "name": "中国哲学（上）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 48,
+     "practice": null,
+     "term": null,
+     "code": "02330092"
+    },
+    {
+     "name": "中国哲学（上）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "02330094"
+    },
+    {
+     "name": "中国哲学（下）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "02330095"
+    },
+    {
+     "name": "中国哲学（下）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 48,
+     "practice": null,
+     "term": null,
+     "code": "02330096"
+    },
+    {
+     "name": "东方文学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "03530450"
+    },
+    {
+     "name": "西方文学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "03632990"
+    },
+    {
+     "name": "艺术史导论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "04330218"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "要求“思想政治理论选择性必修课”共 1 门、“劳动教育课”累计不少于 32 学时。思",
+  "想政治理论必修课和其他公共必修课按学校要求选课，信息课程见下表。",
+  "备注：大学英语不足 8 学分部分需用非本专业语言的公共语言课或专业基础语言课补足。",
+  "通识教育课程系列               各系列学分",
+  "（通识核心课+通选课）         （通识核心课+通选课）",
+  "Ⅰ. 人类文明及其传统                   ≥2",
+  "Ⅱ. 现代社会及其问题                   ≥2             1. 不少于 12 学分",
+  "Ⅲ. 艺术与人文                      ≥2             2. 至少修读 1 门“通识核心课”",
+  "Ⅳ. 数学、自然与技术                   ≥2",
+  "（1）具体课程列表详见《北京大学本科生选课手册》 ；",
+  "（2）原则上不允许以专业课替代通识教育课程学分；",
+  "（3）本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分；",
+  "（4）建议合理分配修读时间，每学期修读 1 门课程。",
+  "备注：不计学分，但为毕业必要条件。",
+  "新开课       德语读写与当代中国     任选    2    34            大二/下",
+  "新开课       德语媒体文化        任选    2    32            大三/上",
+  "新开课        德语语言学经典文献选读    任选    2     34           大三/下",
+  "备注：人文学部课程不少于 5 学分 ，其中人文学部课程（中国文学史、中国古代史、",
+  "考古学通论、哲学导论、中国哲学、西方哲学、艺术史导论）不少于 3 学分；东方文学、",
+  "西方文学必选一门。"
+ ],
+ "warnings": [],
+ "source": {
+  "volumeId": "2025-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=217",
+  "lineStart": 10123,
+  "lineEnd": 10365
+ }
+}

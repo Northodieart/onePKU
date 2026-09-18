@@ -1,0 +1,478 @@
+{
+ "id": "2021-哲学系宗教学系_社会学系-“思想与社会_”_项目",
+ "cohort": 2021,
+ "volume": "北京大学本科培养方案（2021）文科卷",
+ "school": "哲学系宗教学系/社会学系",
+ "major": "“思想与社会/”/项目",
+ "track": null,
+ "title": "“思想与社会 ” 项目",
+ "kind": "project",
+ "qualifiers": [],
+ "degree": null,
+ "totalCredits": null,
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "核心课程",
+   "min": 16,
+   "max": 16,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "跨学科限选课程",
+   "min": 8,
+   "max": 8,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "8 学分",
+   "inferredParent": true,
+   "min": 8,
+   "max": 8,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "综合论文考试",
+   "requirement": "1 学分",
+   "inferredParent": true,
+   "min": 1,
+   "max": 1,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "核心课程",
+   "min": 16,
+   "max": 16,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "思想与社会研究方法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "02338001"
+    },
+    {
+     "name": "社会研究:经典与方法",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "03130903"
+    },
+    {
+     "name": "政治哲学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "02333371"
+    },
+    {
+     "name": "哲学导论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "02330003"
+    },
+    {
+     "name": "宗教学导论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "02330160"
+    },
+    {
+     "name": "伦理学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "02330142"
+    },
+    {
+     "name": "社会学概论",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "秋季",
+     "code": "03130010"
+    },
+    {
+     "name": "国外社会学学说 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋/春",
+     "code": "03100130"
+    },
+    {
+     "name": "国外社会学学说 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋/春",
+     "code": "03130020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "跨学科限选课程",
+   "min": 8,
+   "max": 8,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "中国哲学 (上)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "02330092"
+    },
+    {
+     "name": "中国哲学 (下)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "02330096"
+    },
+    {
+     "name": "西方哲学 (上)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "02330051"
+    },
+    {
+     "name": "西方哲学 (下)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "02330053"
+    },
+    {
+     "name": "四书精读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "02335220"
+    },
+    {
+     "name": "宗教社会学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "02332180"
+    },
+    {
+     "name": "中国礼学史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "02332991"
+    },
+    {
+     "name": "理想国",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋/春",
+     "code": "02332976"
+    },
+    {
+     "name": "近代形而上学与道德哲学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "02330343"
+    },
+    {
+     "name": "西方政治思想 (古代)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "02333373"
+    },
+    {
+     "name": "西方政治思想 (中世纪)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "02332214"
+    },
+    {
+     "name": "西方政治思想 (现代)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "02332213"
+    },
+    {
+     "name": "社会调查与研究方法",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "春季",
+     "code": "03131500"
+    },
+    {
+     "name": "中国社会思想史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "03130050"
+    },
+    {
+     "name": "中国社会学史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "03131740"
+    },
+    {
+     "name": "中国社会",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "03130590"
+    },
+    {
+     "name": "历史社会学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "03130700"
+    },
+    {
+     "name": "发展社会学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "03130660"
+    },
+    {
+     "name": "家庭社会学",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "春季",
+     "code": "03131131"
+    },
+    {
+     "name": "中国社会史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "03130321"
+    },
+    {
+     "name": "民族与社会",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "03131360"
+    },
+    {
+     "name": "田野调查实践",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "03132520"
+    },
+    {
+     "name": "现代西方社会思想",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "03139130"
+    },
+    {
+     "name": "法理学",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "春季",
+     "code": "02930010"
+    },
+    {
+     "name": "政治学概论",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "秋季",
+     "code": "03232270"
+    },
+    {
+     "name": "人文社会科学中的质性研究方法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "03232900"
+    },
+    {
+     "name": "中国古典政治思想",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "03230780"
+    },
+    {
+     "name": "中国古代史 (上)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "秋季",
+     "code": "02130011"
+    },
+    {
+     "name": "中国古代史 (下)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "春季",
+     "code": "02130012"
+    },
+    {
+     "name": "中国经学史 (一)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "02132301"
+    },
+    {
+     "name": "中国经学史 (二)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "02132302"
+    },
+    {
+     "name": "中国传统官僚政治制度",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "02131310"
+    },
+    {
+     "name": "考古学通论",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "春季",
+     "code": "02232210"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "以下项目核心课为必修课程。",
+  "在以下专业核心课中选修至少 8 学分的课程,且在哲学系和社会学系开设的课程中至",
+  "少各选修 2 门课程。",
+  "如该课程已列入主修 专 业 必 修 课 的 要 求, 则 可 以 申 请 用 跨 学 科 部 分 的 课 程 学 分 来 替",
+  "代,本部分多出的学分可以用来满足跨学科课程的要求。",
+  "北京大学哲学系宗教学系/社会学系             · 551 ·",
+  "综合论文考试               1     1             春/夏",
+  "在以下跨学科限选课程中选修至少 8 学分课程。",
+  "跨学科限选课程目录每年由教学委员会认定。",
+  "除课程目录所列课程外,项目指导教师开设的课程,经教学委员会认定,可以作为跨",
+  "学科限选课程。",
+  "· 552 ·            北京大学本科培养方案 (",
+  "北京大学外国语学院                       · 553 ·"
+ ],
+ "warnings": [
+  "未找到“毕业总学分”"
+ ],
+ "source": {
+  "volumeId": "2021-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=158",
+  "lineStart": 29536,
+  "lineEnd": 29741
+ }
+}

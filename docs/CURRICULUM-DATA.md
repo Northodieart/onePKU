@@ -1,0 +1,83 @@
+# 培养方案数据
+
+`data/curriculum/` 保存从教务部公开 PDF 清洗出的本科培养方案，应用离线读取，用于推断用户专业并计算学分完成情况。数据不是学校接口，以学校毕业审查为准。
+
+## 来源
+
+教务部[培养方案页](https://dean.pku.edu.cn/web/student_info.php?type=1&id=2)每个版本公开文、理科两卷 PDF，无需登录。卷目在 [scripts/curriculum/volumes.json](../scripts/curriculum/volumes.json)。当前收录 2025、2024、2023、2021 四个版本；没有 2022 版，2022 级按学校惯例沿用 2021 版，应用默认选择不大于入学年份的最新版本，用户可改。
+
+PDF 是 Word 直接打印，正文可提取。2024 版的标题字体无法提取，专业名由同院系其他版本中专业必修课重合度最高的方案推断，并在 `titleInference` 与 `warnings` 中注明。
+
+## 生成
+
+```sh
+npm run curriculum:fetch      # 下载 PDF 并用 pdftotext -layout 转文本到 .private/curriculum-src/（不进仓库）
+npm run curriculum:build      # 解析、套用 overrides/、写出 data/curriculum/
+npm run curriculum:check      # 结构校验与覆盖统计
+```
+
+需要 poppler（`brew install poppler`）。`build.mjs` 只处理本地已有的文本，加 `--fetch` 会补下载。
+
+解析器 [parse.mjs](../scripts/curriculum/parse.mjs) 只做确定性的文本解析：找到每个专业的段落，读出学位、毕业总学分、学分系列汇总表（1-1 大学英语 … 3-2 自主选修课），再按“1. / 1.1 / （1）”三级标题收集课程表。解析不了的行进入 `warnings`，缺课程名的行进入 `unparsed`，不猜。
+
+## 文件结构
+
+`data/curriculum/index.json` 是索引，应用启动时加载：
+
+| 字段 | 含义 |
+| --- | --- |
+| `id` | `年份-院系-专业-方向`，也是文件名 |
+| `cohort` | 版本年份 |
+| `school`、`major`、`track`、`title` | 院系、专业、方向、原文标题 |
+| `kind` | `major` 或 `project`（跨院系项目、双学位项目） |
+| `degree`、`totalCredits` | 学位类型、毕业总学分 |
+| `file` | 方案文件相对路径 |
+| `courses`、`warnings` | 课程行数、解析警告数 |
+| `core` | 专业必修课名列表，用于按成绩推断专业 |
+
+每份方案 `data/curriculum/<年份>/<id>.json`：
+
+| 字段 | 含义 |
+| --- | --- |
+| `requirements` | 学分系列汇总，`id` 如 `2-1`，带 `min`/`max`/`unit`（学分、门、学时） |
+| `topRequirements` | 三大类汇总（公共基础、专业必修、选修） |
+| `groups` | 课程组。`id` 如 `2.1`、`3.1-2`（列表式子组），`parent` 指向上级；`courses` 为课程行（课程号、名称、性质、学分、学时、建议学期），`alternatives` 为可替代课程 |
+| `notes` | 原文中的注释与规则，原样保留 |
+| `warnings`、`unparsed` | 解析问题 |
+| `source` | 卷 id、下载地址、原文本行号范围，便于核对 |
+
+## 匹配规则（应用侧）
+
+见 [src/lib/curriculum.ts](../src/lib/curriculum.ts)。
+
+1. 成绩接口返回的课程名做规范化（全角括号、空格、罗马数字与中文序号）后与方案课程名、可替代课程名精确匹配。
+2. 匹配不上时按实验班同名替代规则再试一次。
+3. 公共必修课按名称关键词归入英语、思政、体育、军事理论、劳动教育。
+4. 仍匹配不上的，按成绩接口的课程类别（通选课、全校必修、专业选修、任选）归入对应大类；专业必修类别无法区分基础课与核心课，进入“待确认”。
+5. 用户在界面里手动归类的结果只存本机，随时可改。
+
+不做的事：不用总学分除以毕业学分算百分比；不把“未匹配”当“未修”；不替用户选择方案版本。
+
+## 修正
+
+发现某份方案解析错误时，在 `scripts/curriculum/overrides/<id>.json` 写修正，字段与方案文件相同，只需给出要覆盖的部分：
+
+```json
+{
+  "degree": "理学学士",
+  "groups": [{ "id": "2.2", "min": 32, "max": 32 }],
+  "notes": ["2.2 学分按院系 2025 年 9 月通知修正"],
+  "resolvedWarnings": ["缺少学分"]
+}
+```
+
+`groups` 按 `id` 合并，`remove: true` 删除该组。重新 `npm run curriculum:build` 后修正生效，方案文件会带 `override: true`。
+
+## 已知缺口
+
+- 599 份方案中约七成带至少一条警告。其中 135 条只是“专业名按其他版本推断”，不影响课程表；其余多数是课程学分落在下一行、两栏并排的“或”关系课程、课程组编号重复、以及荣誉学位课程表混入。每份方案的警告原文在应用的“方案原文备注与数据说明”里可见。
+- 2023、2021 版个别院系的汇总表把 `1-1` 排成了 `-1`，父级按名称推断，标记 `inferredParent`。
+- 2024 版有少量方案在其他版本里找不到对应专业（院系调整或新专业），标题为“院系 未命名方案”，需要人工在 overrides 里补名。
+- 元培、跨院系项目的结构与普通专业不同，只保证读出课程表。
+
+`npm run curriculum:check` 输出“需要人工核对”列表，是补 overrides 的入口。

@@ -1,0 +1,1069 @@
+{
+ "id": "2025-光华管理学院-工商管理-数字经济管理方向",
+ "cohort": 2025,
+ "volume": "北京大学本科培养方案（2025）文科卷",
+ "school": "光华管理学院",
+ "major": "工商管理",
+ "track": "数字经济管理方向",
+ "title": "工商管理专业（数字经济管理方向）",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "管理学学士",
+ "totalCredits": {
+  "min": 125,
+  "max": 132
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 42,
+   "max": 48,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 65,
+   "max": 66,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "专业选修课程",
+   "min": 18,
+   "max": 18,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "大学英语",
+   "requirement": "2～8 学分",
+   "min": 2,
+   "max": 8,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "思想政治理论必修课",
+   "requirement": "19 学分",
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "1-3",
+   "parent": "1",
+   "name": "思想政治理论选择性必修课",
+   "requirement": "1 门",
+   "min": 1,
+   "max": 1,
+   "unit": "门"
+  },
+  {
+   "id": "1-4",
+   "parent": "1",
+   "name": "劳动教育课",
+   "requirement": "32 学时",
+   "min": 32,
+   "max": 32,
+   "unit": "学时"
+  },
+  {
+   "id": "1-5",
+   "parent": "1",
+   "name": "信息课程",
+   "requirement": "3 学分",
+   "min": 3,
+   "max": 3,
+   "unit": "学分"
+  },
+  {
+   "id": "1-6",
+   "parent": "1",
+   "name": "军事理论",
+   "requirement": "2 学分",
+   "min": 2,
+   "max": 2,
+   "unit": "学分"
+  },
+  {
+   "id": "1-7",
+   "parent": "1",
+   "name": "体育课",
+   "requirement": "4 学分",
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  },
+  {
+   "id": "1-8",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "30 学分",
+   "min": 30,
+   "max": 30,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "33～34 学分",
+   "min": 33,
+   "max": 34,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "requirement": "2 学分",
+   "min": 2,
+   "max": 2,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "8 学分",
+   "min": 8,
+   "max": 8,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "10 学分",
+   "min": 10,
+   "max": 10,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 42,
+   "max": 48,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "1.1",
+   "parent": "1",
+   "name": "公共必修课",
+   "courses": [
+    {
+     "name": "计算概论 B",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "04831410"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "1.2",
+   "parent": "1",
+   "name": "通识教育课",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 65,
+   "max": 66,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.1",
+   "parent": "2",
+   "name": "专业基础课",
+   "min": 30,
+   "max": 30,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学（B） （一）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": null,
+     "practice": null,
+     "term": "大一/上",
+     "code": "00130201"
+    },
+    {
+     "name": "光华第一课",
+     "nature": "专业必修",
+     "credits": 1,
+     "hours": 17,
+     "practice": 6,
+     "term": "大一/上",
+     "code": "02839150"
+    },
+    {
+     "name": "经济学",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "大一/上",
+     "code": "02831110"
+    },
+    {
+     "name": "经济学讨论班",
+     "nature": "专业必修",
+     "credits": 0,
+     "hours": 34,
+     "practice": 34,
+     "term": "大一/上",
+     "code": "02831170"
+    },
+    {
+     "name": "高等数学（B） （二）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": null,
+     "practice": null,
+     "term": "大一/下",
+     "code": "00130202"
+    },
+    {
+     "name": "概率统计",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": 2,
+     "term": "大一/下",
+     "code": "02834720"
+    },
+    {
+     "name": "科学思维与实践论",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 20,
+     "term": "大一/下",
+     "code": "02839510"
+    },
+    {
+     "name": "人工智能与计算思维",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大一/下",
+     "code": "04834472"
+    },
+    {
+     "name": "线性代数（B）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": null,
+     "practice": null,
+     "term": "大二/上",
+     "code": "00131460"
+    },
+    {
+     "name": "数据科学的 Python 基础",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大二/上",
+     "code": "02812930"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2",
+   "parent": "2",
+   "name": "专业核心课",
+   "min": 33,
+   "max": 34,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "微观经济学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大一/下",
+     "code": "02832110"
+    },
+    {
+     "name": "公司金融（中英文）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 2,
+     "term": "大二/上",
+     "code": "02839610"
+    },
+    {
+     "name": "公司金融讨论班",
+     "nature": "专业必修",
+     "credits": 0,
+     "hours": 34,
+     "practice": 34,
+     "term": "大二/上",
+     "code": "02839611"
+    },
+    {
+     "name": "组织与管理",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": 2,
+     "term": "大二/上",
+     "code": "02838500"
+    },
+    {
+     "name": "组织与管理讨论班",
+     "nature": "专业必修",
+     "credits": 0,
+     "hours": 34,
+     "practice": 34,
+     "term": "大二/上",
+     "code": "02831101"
+    },
+    {
+     "name": "营销学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 60,
+     "practice": 12,
+     "term": "大二/上",
+     "code": "02832640"
+    },
+    {
+     "name": "会计学（中英文）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 10,
+     "term": "大二/下",
+     "code": "02831520"
+    },
+    {
+     "name": "计量经济学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": "大二/下",
+     "code": "02833720"
+    },
+    {
+     "name": "数字经济",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大二/下",
+     "code": "02800190"
+    },
+    {
+     "name": "数据结构与算法 B",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大二/下",
+     "code": "04831420"
+    },
+    {
+     "name": "数据结构与算法上机",
+     "nature": "专业必修",
+     "credits": 0,
+     "hours": null,
+     "practice": null,
+     "term": "大二/下",
+     "code": "04830494"
+    },
+    {
+     "name": "机器学习",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大三/上",
+     "code": "04833420"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "min": 2,
+   "max": 2,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 18,
+   "max": 18,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1",
+   "parent": "3",
+   "name": "专业选修课",
+   "min": 8,
+   "max": 8,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "人工智能和社会经济",
+     "nature": "专业选修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 6,
+     "term": "大三四/上",
+     "code": "02839200"
+    },
+    {
+     "name": "因果推断与商业应用",
+     "nature": "专业选修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 17,
+     "term": "大三四/上",
+     "code": "02839380"
+    },
+    {
+     "name": "R 语言与数据可视化",
+     "nature": "专业选修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 10,
+     "term": "大三四/上",
+     "code": "02812710"
+    },
+    {
+     "name": "人工智能与投资分析",
+     "nature": "专业选修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三四/上",
+     "code": "02839710"
+    },
+    {
+     "name": "市场数据分析",
+     "nature": "专业选修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三四/上",
+     "code": "02838440"
+    },
+    {
+     "name": "仿真模型与智慧决策",
+     "nature": "专业选修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 5,
+     "term": "大三四/上",
+     "code": "02839280"
+    },
+    {
+     "name": "商务时间序列分析",
+     "nature": "专业选修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "大三四/下",
+     "code": "02812980"
+    },
+    {
+     "name": "新媒体营销与精准广告",
+     "nature": "专业选修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 10,
+     "term": "大三四/下",
+     "code": "02838450"
+    },
+    {
+     "name": "深度学习与文本分析",
+     "nature": "专业选修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 6,
+     "term": "大三四/下",
+     "code": "02839640"
+    },
+    {
+     "name": "金融中的数学方法",
+     "nature": "专业选修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大三四/下",
+     "code": "02839460"
+    },
+    {
+     "name": "科技金融与数字金融",
+     "nature": "专业选修",
+     "credits": 2,
+     "hours": 51,
+     "practice": 34,
+     "term": "大三四/下",
+     "code": "02839630"
+    },
+    {
+     "name": "量化营销模型",
+     "nature": "专业选修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "大三四/下",
+     "code": "02839070"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2",
+   "parent": "3",
+   "name": "自主选修课",
+   "min": 10,
+   "max": 10,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.2-4",
+   "parent": "3.2",
+   "kind": "list",
+   "name": "Minor 学分要求及课程列表",
+   "requirement": "Minor 学分要求及课程列表：",
+   "courses": [
+    {
+     "name": "证券投资学（中英文）",
+     "nature": null,
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "二下 必修",
+     "code": "02834420"
+    },
+    {
+     "name": "金融市场与金融机构（中英文）",
+     "nature": null,
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": "二下 必修",
+     "code": "02833230"
+    },
+    {
+     "name": "行为金融",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": "三上",
+     "code": "02838400"
+    },
+    {
+     "name": "因果推断与商业应用",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 17,
+     "term": "三上 本研合上",
+     "code": "02839380"
+    },
+    {
+     "name": "人工智能与投资分析",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": "三上",
+     "code": "02839710"
+    },
+    {
+     "name": "衍生品定价及应用",
+     "nature": null,
+     "credits": 2,
+     "hours": 54,
+     "practice": 24,
+     "term": "三上",
+     "code": "02839360"
+    },
+    {
+     "name": "金融时间序列分析",
+     "nature": null,
+     "credits": 2,
+     "hours": 63,
+     "practice": 35,
+     "term": "三下",
+     "code": "02834760"
+    },
+    {
+     "name": "金融中的数学方法",
+     "nature": null,
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "三下",
+     "code": "02839460"
+    },
+    {
+     "name": "科技金融与数字金融",
+     "nature": null,
+     "credits": 2,
+     "hours": 51,
+     "practice": 34,
+     "term": "三下",
+     "code": "02839630"
+    },
+    {
+     "name": "固定收益证券",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": "三下",
+     "code": "02831570"
+    },
+    {
+     "name": "风险管理（中英文）",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "四上",
+     "code": "02839340"
+    },
+    {
+     "name": "国际金融",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 20,
+     "term": "四上",
+     "code": "02838460"
+    },
+    {
+     "name": "风险资本与创新融资（英文）",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": "四上",
+     "code": "02839060"
+    },
+    {
+     "name": "公司估值",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": "四上",
+     "code": "02839300"
+    },
+    {
+     "name": "衍生品定价及应用",
+     "nature": null,
+     "credits": 2,
+     "hours": 54,
+     "practice": 24,
+     "term": "三上",
+     "code": "02839360"
+    },
+    {
+     "name": "科技金融与数字金融",
+     "nature": null,
+     "credits": 2,
+     "hours": 51,
+     "practice": 34,
+     "term": "三下",
+     "code": "02839630"
+    },
+    {
+     "name": "人工智能与投资分析",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": "三上",
+     "code": "02839710"
+    },
+    {
+     "name": "机器学习与人工智能",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 10,
+     "term": "三上",
+     "code": "02839440"
+    },
+    {
+     "name": "人工智能与商业创新",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 5,
+     "term": "三上",
+     "code": "02839210"
+    },
+    {
+     "name": "策略与博弈（英文）",
+     "nature": null,
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "三下",
+     "code": "02837170"
+    },
+    {
+     "name": "行为经济学（英文）",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "三上",
+     "code": "02839250"
+    },
+    {
+     "name": "货币经济学",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": "三下",
+     "code": "02839390"
+    },
+    {
+     "name": "公共经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "三下",
+     "code": "02839270"
+    },
+    {
+     "name": "劳动经济学",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": "三上",
+     "code": "02839370"
+    },
+    {
+     "name": "中级财务会计",
+     "nature": null,
+     "credits": 4,
+     "hours": 68,
+     "practice": 10,
+     "term": "三下",
+     "code": "02833540"
+    },
+    {
+     "name": "高级财务会计",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "三下",
+     "code": "02833670"
+    },
+    {
+     "name": "内部控制与合规管理",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 14,
+     "term": "三下",
+     "code": "02839480"
+    },
+    {
+     "name": "营销研究方法",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": "三下",
+     "code": "02839400"
+    },
+    {
+     "name": "消费者行为",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "三上",
+     "code": "02839500"
+    },
+    {
+     "name": "品牌管理",
+     "nature": null,
+     "credits": 2,
+     "hours": 50,
+     "practice": 20,
+     "term": "三上",
+     "code": "02833460"
+    },
+    {
+     "name": "市场数据分析",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": "三上",
+     "code": "02838440"
+    },
+    {
+     "name": "机器学习与人工智能",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 10,
+     "term": "三上",
+     "code": "02839440"
+    },
+    {
+     "name": "因果推断与商业应用",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 17,
+     "term": "三上 本研合上",
+     "code": "02839380"
+    },
+    {
+     "name": "运筹优化与最优决策",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": "三下",
+     "code": "02839410"
+    },
+    {
+     "name": "量化营销模型",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "三下",
+     "code": "02839070"
+    },
+    {
+     "name": "R 语言与数据可视化",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 10,
+     "term": "三上 本研合上",
+     "code": "02812710"
+    },
+    {
+     "name": "商务时间序列分析",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "三下 本研合上",
+     "code": "02812980"
+    },
+    {
+     "name": "深度学习与人工智能",
+     "nature": null,
+     "credits": 2,
+     "hours": 51,
+     "practice": 34,
+     "term": "三上 本研合上",
+     "code": "02812770"
+    },
+    {
+     "name": "人工智能与商业创新",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 5,
+     "term": "三上",
+     "code": "02839210"
+    },
+    {
+     "name": "仿真模型与智慧决策",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 5,
+     "term": "三上",
+     "code": "02839280"
+    },
+    {
+     "name": "运筹优化与最优决策",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": "三下",
+     "code": "02839410"
+    },
+    {
+     "name": "网络科学与商业智能场景",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": "三下",
+     "code": "02839690"
+    },
+    {
+     "name": "数据驱动模型与运营分析",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": "三下",
+     "code": "02839650"
+    },
+    {
+     "name": "深度学习与文本分析",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 6,
+     "term": "三下",
+     "code": "02839640"
+    },
+    {
+     "name": "战略管理（中文班）",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": "三下",
+     "code": "02834390"
+    },
+    {
+     "name": "创业思维",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "三下",
+     "code": "02839190"
+    },
+    {
+     "name": "人力资源管理",
+     "nature": null,
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "三下",
+     "code": "02830110"
+    },
+    {
+     "name": "从案例学习管理",
+     "nature": null,
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "三下 两年开一次",
+     "code": "02838070"
+    },
+    {
+     "name": "创新管理",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": "三上",
+     "code": "02834750"
+    },
+    {
+     "name": "共演战略：从创业到企业转型",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 10,
+     "term": "三上",
+     "code": "02839030"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "要求“思想政治理论选择性必修课”共 1 门、“劳动教育课”累计不少于 32 学时。思",
+  "想政治理论必修课和其他公共必修课按学校要求选课，信息课程见下表。",
+  "通识教育课程系列          各系列学分",
+  "Ⅱ. 现代社会及其问题                 ≥2                 1.不少于 12 学分",
+  "Ⅲ. 艺术与人文                    ≥2             2.至少修读 1 门“通识核心课”",
+  "（1）具体课程列表详见《北京大学本科生选课手册》 ；",
+  "（2）原则上不允许以专业课替代通识教育课程学分；",
+  "（3）本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分；",
+  "（4）建议合理分配修读时间，每学期修读 1 门课程。",
+  "新开课程       运筹与决策科学           专业必修   2    34            大二/下",
+  "新开课程       科研产业实践            专业必修   2    34            大二/下",
+  "新开课程       数据库与数据分析          专业必修   2    34            大三/上",
+  "新开课程       智能科技与数字治理         专业必修   2    34            大三/上",
+  "新开课程       数字技术与商业管理         专业必修   2    34            大三/上",
+  "说明：组织与管理和营销学二选一。",
+  "新开课程       回归分析与数据思维     专业选修        2    34              大三四/上",
+  "新开课程       产业前沿专题        专业必修        2    34              大三四/下",
+  "自主选修课范围：多修的专业选修课及各专业有跟人工智能密切结合的课程。",
+  "（1）学院开设 8 个 Minor，学生完成 Minor 要求的课程及学分，毕业时学院将出具相",
+  "关证明。",
+  "（2）专业及 Minor 互斥：本专业不能修读本专业同名 Minor；数据科学专业（方向）",
+  "学生不能修读人工智能 Minor。",
+  "（3）一门课程不能同时算作两个类别，即作为专业选修课就不能再作为 Minor 课程；",
+  "一门课程不能同时作为 2 个 Minor 中的课程。",
+  "与量化投资",
+  "E2800040   组织行为与领导力（英文）   3     51     0      三下"
+ ],
+ "warnings": [],
+ "source": {
+  "volumeId": "2025-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=217",
+  "lineStart": 24577,
+  "lineEnd": 24852
+ }
+}

@@ -1,0 +1,991 @@
+{
+ "id": "2024-环境科学与工程学院-化学-环境化学方向",
+ "untitled": true,
+ "cohort": 2024,
+ "volume": "北京大学本科培养方案（2024）理科卷",
+ "school": "环境科学与工程学院",
+ "major": "化学",
+ "track": "环境化学方向",
+ "title": "化学（环境化学方向）专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "理学学士",
+ "totalCredits": {
+  "min": 140,
+  "max": 140
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 42,
+   "max": 48,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 53,
+   "max": 53,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 39,
+   "max": 45,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "大学英语",
+   "requirement": "2～8 学分",
+   "min": 2,
+   "max": 8,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "思想政治理论必修课",
+   "requirement": "19 学分",
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "1-3",
+   "parent": "1",
+   "name": "思想政治理论选择性必修课",
+   "requirement": "1 门",
+   "min": 1,
+   "max": 1,
+   "unit": "门"
+  },
+  {
+   "id": "1-4",
+   "parent": "1",
+   "name": "劳动教育课",
+   "requirement": "32 学时",
+   "min": 32,
+   "max": 32,
+   "unit": "学时"
+  },
+  {
+   "id": "1-5",
+   "parent": "1",
+   "name": "信息课程",
+   "requirement": "3 学分",
+   "min": 3,
+   "max": 3,
+   "unit": "学分"
+  },
+  {
+   "id": "1-6",
+   "parent": "1",
+   "name": "军事理论",
+   "requirement": "2 学分",
+   "min": 2,
+   "max": 2,
+   "unit": "学分"
+  },
+  {
+   "id": "1-7",
+   "parent": "1",
+   "name": "体育课",
+   "requirement": "4 学分",
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  },
+  {
+   "id": "1-8",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "21 学分",
+   "min": 21,
+   "max": 21,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "29 学分",
+   "min": 29,
+   "max": 29,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "requirement": "3 学分",
+   "min": 3,
+   "max": 3,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "21 学分",
+   "min": 21,
+   "max": 21,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "18～24 学分",
+   "min": 18,
+   "max": 24,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1.1",
+   "parent": "1",
+   "name": "公共必修课",
+   "courses": [
+    {
+     "name": "计算概论（B）",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "04831410"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "1.2",
+   "parent": "1",
+   "name": "通识教育课",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.1",
+   "parent": "2",
+   "name": "专业基础课",
+   "min": 21,
+   "max": 21,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学（B）（一）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": "大一/上",
+     "code": "00130201"
+    },
+    {
+     "name": "普通物理",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "大一/下",
+     "code": "00431121"
+    },
+    {
+     "name": "高等数学（B）（二）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": "大一/下",
+     "code": "00130202"
+    },
+    {
+     "name": "线性代数（B）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "大一/下",
+     "code": "00131460"
+    },
+    {
+     "name": "概率统计（B）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大二/下",
+     "code": "00132380"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2",
+   "parent": "2",
+   "name": "专业核心课",
+   "min": 29,
+   "max": 29,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "普通化学",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "大一/上",
+     "code": "01034310"
+    },
+    {
+     "name": "普通化学实验",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 68,
+     "practice": 68,
+     "term": "大一/上",
+     "code": "01034322"
+    },
+    {
+     "name": "环境问题",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 9,
+     "term": "大一/上",
+     "code": "12730030"
+    },
+    {
+     "name": "环境实验室安全",
+     "nature": "专业必修",
+     "credits": 1,
+     "hours": 17,
+     "practice": 2,
+     "term": "大一/上",
+     "code": "12733240"
+    },
+    {
+     "name": "定量分析化学",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大一/下",
+     "code": "01035180"
+    },
+    {
+     "name": "有机化学（B）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": 4,
+     "term": "大二/上",
+     "code": "01030810"
+    },
+    {
+     "name": "物理化学（B）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": 10,
+     "term": "大二/上",
+     "code": "01030840"
+    },
+    {
+     "name": "环境科学",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "大二/上",
+     "code": "12732010"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "min": 3,
+   "max": 3,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.3.1",
+   "parent": "2.3",
+   "name": "毕业论文（设计）组",
+   "min": 3,
+   "max": 3,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1",
+   "parent": "3",
+   "name": "专业选修课",
+   "min": 21,
+   "max": 21,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.1",
+   "parent": "3.1",
+   "name": "模块一 化学拓展类课程组",
+   "min": 10,
+   "max": 10,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "定量分析化学实验",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 68,
+     "practice": 68,
+     "term": "大一/下",
+     "code": "01035190"
+    },
+    {
+     "name": "有机化学实验（B）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 68,
+     "practice": 68,
+     "term": "大二/上",
+     "code": "01032711"
+    },
+    {
+     "name": "物理化学实验（B）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 68,
+     "practice": 68,
+     "term": "大二/上",
+     "code": "01032720"
+    },
+    {
+     "name": "界面化学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大二/下",
+     "code": "01034710"
+    },
+    {
+     "name": "仪器分析",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/上",
+     "code": "01034390"
+    },
+    {
+     "name": "仪器分析实验",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 68,
+     "practice": 68,
+     "term": "大三/上",
+     "code": "01034400"
+    },
+    {
+     "name": "生命化学基础",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大三/上",
+     "code": "01034500"
+    },
+    {
+     "name": "结构化学",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 85,
+     "practice": 23,
+     "term": "大三/下",
+     "code": "01030120"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.2",
+   "parent": "3.1",
+   "name": "模块二 环境拓展类课程组",
+   "min": 11,
+   "max": 11,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "环境综合实习一",
+     "nature": "任选",
+     "credits": 1,
+     "hours": 51,
+     "practice": null,
+     "term": "7天 大一/暑期",
+     "code": "12739040"
+    },
+    {
+     "name": "环境综合实习二",
+     "nature": "任选",
+     "credits": 1,
+     "hours": 51,
+     "practice": null,
+     "term": "7天 大二/暑期",
+     "code": "12739060"
+    },
+    {
+     "name": "环境监测",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大二/上",
+     "code": "12732040"
+    },
+    {
+     "name": "环境监测实验",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 102,
+     "practice": 96,
+     "term": "大二/下",
+     "code": "12732070"
+    },
+    {
+     "name": "环境工程学二",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大二/下",
+     "code": "12732080"
+    },
+    {
+     "name": "环境工程学一",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大二/下",
+     "code": "12732150"
+    },
+    {
+     "name": "水环境模型与数据分析",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "大三/上",
+     "code": "12732190"
+    },
+    {
+     "name": "大气环境模型与数据分析",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 6,
+     "term": "大三/下",
+     "code": "12732200"
+    },
+    {
+     "name": "环境化学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大三/上",
+     "code": "12733010"
+    },
+    {
+     "name": "工程制图",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 12,
+     "term": "大三/上",
+     "code": "12734010"
+    },
+    {
+     "name": "水处理工程（上）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/上",
+     "code": "12734020"
+    },
+    {
+     "name": "水处理工程（下）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/下",
+     "code": "12734030"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2",
+   "parent": "3",
+   "name": "自主选修课",
+   "min": 18,
+   "max": 24,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.2.1",
+   "parent": "3.2",
+   "name": "第一部分 本学院开设课程组",
+   "courses": [
+    {
+     "name": "变化中的地球",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/下",
+     "code": "12730020"
+    },
+    {
+     "name": "环境伦理概论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/下",
+     "code": "12731060"
+    },
+    {
+     "name": "环境规划学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/下",
+     "code": "12732060"
+    },
+    {
+     "name": "文献检索与论文写作入门",
+     "nature": "任选",
+     "credits": 1,
+     "hours": 17,
+     "practice": 5,
+     "term": "大二/上",
+     "code": "12732180"
+    },
+    {
+     "name": "环境化学实验",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 102,
+     "practice": 86,
+     "term": "大三/上",
+     "code": "12733020"
+    },
+    {
+     "name": "环境法",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/上",
+     "code": "12733030"
+    },
+    {
+     "name": "环境与发展",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/上",
+     "code": "12733050"
+    },
+    {
+     "name": "气象学基础",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大二/上",
+     "code": "12733060"
+    },
+    {
+     "name": "环境微生物实验",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 102,
+     "practice": 70,
+     "term": "大三/上",
+     "code": "12733090"
+    },
+    {
+     "name": "大气化学基础",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/下",
+     "code": "12733110"
+    },
+    {
+     "name": "企业环境管理",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": "大三/下",
+     "code": "12733140"
+    },
+    {
+     "name": "空气污染基础",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大二/上",
+     "code": "12733150"
+    },
+    {
+     "name": "室内空气污染",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/下",
+     "code": "12733160"
+    },
+    {
+     "name": "化学品环境风险评估与风险管理",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/下",
+     "code": "12733170"
+    },
+    {
+     "name": "大气气溶胶测量技术与实验",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": "大二/下",
+     "code": "12733180"
+    },
+    {
+     "name": "环境测量数据分析与可视化",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 10,
+     "term": "大三/下",
+     "code": "12733200"
+    },
+    {
+     "name": "社会研究设计原理与方法",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": "大三/上",
+     "code": "12733210"
+    },
+    {
+     "name": "环境微生物学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/上",
+     "code": "12733230"
+    },
+    {
+     "name": "时间序列分析与环境应用",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/上",
+     "code": "12733250"
+    },
+    {
+     "name": "环境统计方法与应用",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "大三/下",
+     "code": "12733270"
+    },
+    {
+     "name": "环境工程实验（一）",
+     "nature": "任选",
+     "credits": 1.5,
+     "hours": 51,
+     "practice": 39,
+     "term": "大三/下",
+     "code": "12734050"
+    },
+    {
+     "name": "环境工程实验（二）",
+     "nature": "任选",
+     "credits": 1.5,
+     "hours": 51,
+     "practice": 45,
+     "term": "大四/上",
+     "code": "12734060"
+    },
+    {
+     "name": "环境工程设计基础",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 24,
+     "term": "大四/上",
+     "code": "12734070"
+    },
+    {
+     "name": "固体废物处置与资源化基础",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大三/上",
+     "code": "12734080"
+    },
+    {
+     "name": "化工原理",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大二/上",
+     "code": "12735010"
+    },
+    {
+     "name": "土壤与地下水",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大二/上",
+     "code": "12735030"
+    },
+    {
+     "name": "环境纳米技术导论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/上",
+     "code": "12735050"
+    },
+    {
+     "name": "环境矿物学导论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": "大二/上",
+     "code": "12735070"
+    },
+    {
+     "name": "物理性污染控制",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/下",
+     "code": "12735090"
+    },
+    {
+     "name": "污染生态工程",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": "大四/上",
+     "code": "12735100"
+    },
+    {
+     "name": "工业微生物学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/下",
+     "code": "12735120"
+    },
+    {
+     "name": "环境质量评价",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/下",
+     "code": "12735130"
+    },
+    {
+     "name": "环境系统分析",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/上",
+     "code": "12735140"
+    },
+    {
+     "name": "环境遥感基础",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 9,
+     "term": "大三/下",
+     "code": "12735170"
+    },
+    {
+     "name": "环境信息系统",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 6,
+     "term": "大三/上",
+     "code": "12735180"
+    },
+    {
+     "name": "环境工程仿真与控制",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 52,
+     "practice": 24,
+     "term": "大三/上",
+     "code": "12735210"
+    },
+    {
+     "name": "环境工程概预算",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/下",
+     "code": "12735220"
+    },
+    {
+     "name": "环境科学与工程前沿",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大四/下",
+     "code": "12735230"
+    },
+    {
+     "name": "环境系统中的物理化学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/下",
+     "code": "12735240"
+    },
+    {
+     "name": "教师指导下的独立研究",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 68,
+     "practice": 68,
+     "term": null,
+     "code": "30330031"
+    },
+    {
+     "name": "教师指导下的小组研究",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 68,
+     "practice": 68,
+     "term": null,
+     "code": "30330041"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2.2",
+   "parent": "3.2",
+   "name": "第二部分 全校其他院系开设的课程组",
+   "courses": [],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "要求“思想政治理论选择性必修课”共 1 门、“劳动教育课”累计不少于 32 学时。思",
+  "想政治理论必修课和其他公共必修课按学校要求选课，信息课程见下表。",
+  "Ⅰ. 人类文明及其传统                   ≥2",
+  "Ⅱ. 现代社会及其问题                   ≥2              1. 不少于 12 学分",
+  "Ⅲ. 艺术与人文                      ≥2              2. 至少修读 1 门“通识核心课”",
+  "Ⅳ. 数学、自然与技术                   ≥2",
+  "（1）具体课程列表详见《北京大学本科生选课手册》",
+  "；",
+  "（2）原则上不允许以专业课替代通识教育课程学分；",
+  "（3）本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分；",
+  "（4）建议合理分配修读时间，每学期修读 1 门课程。",
+  "新开课       环境系统基础          专业必修   2   34        大一/下",
+  "新开课       环境管理学           专业必修   3   51        大二/下",
+  "注：*普通化学实验可由定量分析化学实验替代。",
+  "新开课        环境研究方法        任选   2   34    10   大三/上",
+  "注：①环境监测为环境监测实验先修课，环境监测实验为环境综合实习二先修课，必",
+  "须修完先修课程才能修读对应的后续课程；②环境工程学二与水处理工程（上）、（下）互",
+  "斥，水处理工程（上）、（下）不互斥；③如所选课程已满足专业选修学分要求，多选课程",
+  "可计入自主选修学分。",
+  "备注：含新开课，与所选其他课程内容不可重复。",
+  "E1273325      大气化学              任选       2      34              大三/下",
+  "E1273326      环境政策与管理           任选       2      34              大三/下",
+  "备注：与本学院课程内容不重复；其中其他院系的非专业必修或非专业选修不超过 5",
+  "学分。"
+ ],
+ "warnings": [
+  "专业名按 2025 版“化学（环境化学方向）专业”推断（专业必修课重合度 93%），请核对"
+ ],
+ "source": {
+  "volumeId": "2024-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=209",
+  "lineStart": 24682,
+  "lineEnd": 25135
+ },
+ "titleInference": {
+  "from": 2025,
+  "title": "化学（环境化学方向）专业",
+  "overlap": 0.93
+ }
+}

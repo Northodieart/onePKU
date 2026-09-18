@@ -1,0 +1,823 @@
+{
+ "id": "2021-社会学系-社会工作",
+ "cohort": 2021,
+ "volume": "北京大学本科培养方案（2021）文科卷",
+ "school": "社会学系",
+ "major": "社会工作",
+ "track": null,
+ "title": "社会工作专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "法学学士学位。",
+ "totalCredits": {
+  "min": 142,
+  "max": 142
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 41,
+   "max": 47,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 55,
+   "max": 55,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 40,
+   "max": 40,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "29~35 学分",
+   "inferredParent": true,
+   "min": 29,
+   "max": 35,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "20 学分",
+   "inferredParent": true,
+   "min": 20,
+   "max": 20,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "30 学分",
+   "inferredParent": true,
+   "min": 30,
+   "max": 30,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "20 学分",
+   "inferredParent": true,
+   "min": 20,
+   "max": 20,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "20 学分",
+   "inferredParent": true,
+   "min": 20,
+   "max": 20,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 41,
+   "max": 47,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 C",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "“计算 概 论 C” 课 程 后,",
+     "code": "04834470"
+    },
+    {
+     "name": "计算机实习",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "计 算",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "一上或一下",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 55,
+   "max": 55,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学 D",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "一上",
+     "code": "00332580"
+    },
+    {
+     "name": "社会学概论",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "一上",
+     "code": "03130010"
+    },
+    {
+     "name": "社会学专题讲座",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上",
+     "code": "03131010"
+    },
+    {
+     "name": "哲学导论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "一上",
+     "code": "02330003"
+    },
+    {
+     "name": "社会调查与研究方法",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "二上",
+     "code": "03131500"
+    },
+    {
+     "name": "经济学原理 (Ⅰ )",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二上",
+     "code": "02533160"
+    },
+    {
+     "name": "社会工作概论",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "一下",
+     "code": "03131190"
+    },
+    {
+     "name": "社会心理学",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "一下",
+     "code": "03130210"
+    },
+    {
+     "name": "国外社会学学说 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "03100130"
+    },
+    {
+     "name": "国外社会学学说 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03130020"
+    },
+    {
+     "name": "个案工作",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二上",
+     "code": "03130420"
+    },
+    {
+     "name": "群体工作",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二下",
+     "code": "03130430"
+    },
+    {
+     "name": "社区工作",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二下",
+     "code": "03131220"
+    },
+    {
+     "name": "社会行政",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上",
+     "code": "03130480"
+    },
+    {
+     "name": "社会政策",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03130470"
+    },
+    {
+     "name": "社会调查实践",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 68,
+     "term": null,
+     "code": "03132550"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 40,
+   "max": 40,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "论证性论文写作",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "03132110"
+    },
+    {
+     "name": "社会统计学",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "二上",
+     "code": "03130120"
+    },
+    {
+     "name": "中国社会",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03130590"
+    },
+    {
+     "name": "数据分析技术",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03131260"
+    },
+    {
+     "name": "中国社会思想史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03130050"
+    },
+    {
+     "name": "劳动社会学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03130840"
+    },
+    {
+     "name": "发展社会学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03130660"
+    },
+    {
+     "name": "社会保障",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上",
+     "code": "03130460"
+    },
+    {
+     "name": "社会分层与社会流动",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03131570"
+    },
+    {
+     "name": "贫困与发展",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03130790"
+    },
+    {
+     "name": "越轨与犯罪社会学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03130710"
+    },
+    {
+     "name": "农村社会学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03130250"
+    },
+    {
+     "name": "城市社会学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03130190"
+    },
+    {
+     "name": "自杀社会问题研究",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03131410"
+    },
+    {
+     "name": "社会工作实习",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "三下",
+     "code": "03131230"
+    },
+    {
+     "name": "马列经典著作选读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03131520"
+    },
+    {
+     "name": "中国社会福利",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03131390"
+    },
+    {
+     "name": "支配与社会:马克思· 韦 伯 的 《经 济与社会》",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03111400"
+    },
+    {
+     "name": "社会人类学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "03130150"
+    },
+    {
+     "name": "社会老年学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03130270"
+    },
+    {
+     "name": "社会性别研究",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03130280"
+    },
+    {
+     "name": "人类学专题讲座",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "03132030"
+    },
+    {
+     "name": "中国社会史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03130321"
+    },
+    {
+     "name": "中国社会学史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03131740"
+    },
+    {
+     "name": "宗教社会学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03130340"
+    },
+    {
+     "name": "教育社会学思考",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03130400"
+    },
+    {
+     "name": "组织社会学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03130560"
+    },
+    {
+     "name": "经济社会学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03130640"
+    },
+    {
+     "name": "历史社会学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03130700"
+    },
+    {
+     "name": "民族志研究方法",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03130820"
+    },
+    {
+     "name": "西方社会思想史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03130880"
+    },
+    {
+     "name": "弗洛伊德与精神分析",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03130904"
+    },
+    {
+     "name": "家庭社会学",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": null,
+     "code": "03131131"
+    },
+    {
+     "name": "医学社会学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03131290"
+    },
+    {
+     "name": "民族与社会",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03131360"
+    },
+    {
+     "name": "人口社会学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03131530"
+    },
+    {
+     "name": "对中国边疆社会的社会学研究",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03131572"
+    },
+    {
+     "name": "人口统计学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03131650"
+    },
+    {
+     "name": "政治人类学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03131700"
+    },
+    {
+     "name": "人口资源环境社会学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03131760"
+    },
+    {
+     "name": "人群与网络",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "03131840"
+    },
+    {
+     "name": "公民社会与非营利组织",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03131870"
+    },
+    {
+     "name": "社会学英文原著精读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03131880"
+    },
+    {
+     "name": "社会博弈论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03131900"
+    },
+    {
+     "name": "中国社会思想研究专题",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "03131910"
+    },
+    {
+     "name": "人类学理论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "03132000"
+    },
+    {
+     "name": "人类学方法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "03132020"
+    },
+    {
+     "name": "人类学史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03132010"
+    },
+    {
+     "name": "中国的民族与边疆问题专题研究",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03133190"
+    },
+    {
+     "name": "不平等、社会制度和社会变迁",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03136120"
+    },
+    {
+     "name": "死亡的社会学思考",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03139110"
+    },
+    {
+     "name": "现代西方社会思想",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03139130"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "—       大学英语                 2~8    —      —",
+  "选课。",
+  "—       思想政治理论必修课            18     —      —",
+  "选课。",
+  "—                            1门     —      —     按学校要求选课。",
+  "需要另 选 该 课 程 的 上 机",
+  "课 (",
+  "实习)。",
+  "时,需要 另 选 该 课 程 的",
+  "机实习)。",
+  "—       体育系列课程               1×4    2      0     全年",
+  "注:英语课不足 8 学分,可自主选择课程补齐学分。",
+  "通识教育 课 程 分 为 四 个 系 列: Ⅰ.人 类 文 明 及 其 传 统; Ⅱ.现 代 社 会 及 其 问 题;",
+  "Ⅲ.艺术与人文;   Ⅳ.数学、自然 与 技 术。每 个 系 列 均 包 含 “通 识 教 育 核 心 课” 与 “通 选",
+  "1)至少修读一门 “通 识 教 育 核 心 课 程”, 且 在 四 个 课 程 系 列 中 每 个 系 列 至 少 修 读 2",
+  "学分。",
+  "2)本院系开设的通识教育课程不计入毕业所需的通识教育课程学分。",
+  "3)建议合理分配修读时间,每学期修读 1 门课程。",
+  "通识教育课程列表详见 《北京大学本科生选课手册》。",
+  "· 350 ·             北京大学本科培养方案 (",
+  "(包括暑期)",
+  "说明:从下列课程中选满 20 学分。",
+  "北京大学社会学系                    · 351 ·",
+  "本科生科研训练                  4     4",
+  "2)剩余学分可自主选择其他院系任意课程 (辅修专业学分可替代此部 分 学 分;与 社",
+  "会学系开设课程同名的外院系课程不计入有效学分)。",
+  "· 352 ·             北京大学本科培养方案 ("
+ ],
+ "warnings": [
+  "第 18193 行：课程行缺少学分：04831435 计 算"
+ ],
+ "source": {
+  "volumeId": "2021-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=158",
+  "lineStart": 18108,
+  "lineEnd": 18394
+ }
+}

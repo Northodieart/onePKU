@@ -1,0 +1,992 @@
+{
+ "id": "2025-经济学院-保险学",
+ "cohort": 2025,
+ "volume": "北京大学本科培养方案（2025）文科卷",
+ "school": "经济学院",
+ "major": "保险学",
+ "track": null,
+ "title": "保险学专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "经济学学士",
+ "totalCredits": {
+  "min": 131,
+  "max": 131
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 42,
+   "max": 48,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 62,
+   "max": 62,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 21,
+   "max": 21,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "大学英语",
+   "requirement": "2～8 学分",
+   "min": 2,
+   "max": 8,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "思想政治理论必修课",
+   "requirement": "19 学分",
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "1-3",
+   "parent": "1",
+   "name": "思想政治理论选择性必修课",
+   "requirement": "1 门",
+   "min": 1,
+   "max": 1,
+   "unit": "门"
+  },
+  {
+   "id": "1-4",
+   "parent": "1",
+   "name": "劳动教育课",
+   "requirement": "32 学时",
+   "min": 32,
+   "max": 32,
+   "unit": "学时"
+  },
+  {
+   "id": "1-5",
+   "parent": "1",
+   "name": "信息课程",
+   "requirement": "3 学分",
+   "min": 3,
+   "max": 3,
+   "unit": "学分"
+  },
+  {
+   "id": "1-6",
+   "parent": "1",
+   "name": "军事理论",
+   "requirement": "2 学分",
+   "min": 2,
+   "max": 2,
+   "unit": "学分"
+  },
+  {
+   "id": "1-7",
+   "parent": "1",
+   "name": "体育课",
+   "requirement": "4 学分",
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  },
+  {
+   "id": "1-8",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "38 学分",
+   "min": 38,
+   "max": 38,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "21 学分",
+   "min": 21,
+   "max": 21,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "requirement": "3 学分",
+   "min": 3,
+   "max": 3,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "18 学分",
+   "min": 18,
+   "max": 18,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "3 学分",
+   "min": 3,
+   "max": 3,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 42,
+   "max": 48,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "1.1",
+   "parent": "1",
+   "name": "公共必修课",
+   "courses": [
+    {
+     "name": "计算机实习",
+     "nature": "全校必修",
+     "credits": 0,
+     "hours": 34,
+     "practice": 34,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "计算概论（C）",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "04834470"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "1.2",
+   "parent": "1",
+   "name": "通识教育课",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 62,
+   "max": 62,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.1",
+   "parent": "2",
+   "name": "专业基础课",
+   "min": 38,
+   "max": 38,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.1.1",
+   "parent": "2.1",
+   "name": "数学组",
+   "min": 17,
+   "max": 17,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学（B） （一）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00130201"
+    },
+    {
+     "name": "高等数学（B） （二）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00130202"
+    },
+    {
+     "name": "线性代数（B）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00131460"
+    },
+    {
+     "name": "概率统计（B）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00132380"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.1.2",
+   "parent": "2.1",
+   "name": "经济组",
+   "min": 21,
+   "max": 21,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "微观经济学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": 18,
+     "term": null,
+     "code": "02530060"
+    },
+    {
+     "name": "宏观经济学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": 14,
+     "term": null,
+     "code": "02530070"
+    },
+    {
+     "name": "计量经济学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": 6,
+     "term": null,
+     "code": "02530140"
+    },
+    {
+     "name": "经济学原理（Ⅰ）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 16,
+     "term": null,
+     "code": "02533160"
+    },
+    {
+     "name": "经济学原理（Ⅱ）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": null,
+     "code": "02533170"
+    },
+    {
+     "name": "政治经济学（上）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02533180"
+    },
+    {
+     "name": "政治经济学（下）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 58,
+     "practice": 10,
+     "term": null,
+     "code": "02533190"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2",
+   "parent": "2",
+   "name": "专业核心课",
+   "min": 21,
+   "max": 21,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "保险法",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 6,
+     "term": null,
+     "code": "02530400"
+    },
+    {
+     "name": "社会保险",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 6,
+     "term": null,
+     "code": "02531080"
+    },
+    {
+     "name": "保险精算",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 2,
+     "term": null,
+     "code": "02532090"
+    },
+    {
+     "name": "公司金融",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 10,
+     "term": null,
+     "code": "02533570"
+    },
+    {
+     "name": "风险管理学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 4,
+     "term": null,
+     "code": "02534200"
+    },
+    {
+     "name": "保险学原理",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 3,
+     "term": null,
+     "code": "02534820"
+    },
+    {
+     "name": "保险经济学导论",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "02534960"
+    },
+    {
+     "name": "金融会计",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 3,
+     "term": null,
+     "code": "02535390"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "min": 3,
+   "max": 3,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 21,
+   "max": 21,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1",
+   "parent": "3",
+   "name": "专业选修课",
+   "min": 18,
+   "max": 18,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.1",
+   "parent": "3.1",
+   "name": "专业选修 1 组",
+   "min": 8,
+   "max": 8,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "保险公司运作与管理",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": null,
+     "code": "02533290"
+    },
+    {
+     "name": "中国保险市场专题研究",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 9,
+     "term": null,
+     "code": "02533640"
+    },
+    {
+     "name": "金融风险管理",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "02533750"
+    },
+    {
+     "name": "企业风险管理",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 6,
+     "term": null,
+     "code": "02534670"
+    },
+    {
+     "name": "风险管理模型与应用",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "02534950"
+    },
+    {
+     "name": "财产与责任保险",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": null,
+     "code": "02535350"
+    },
+    {
+     "name": "人寿与健康保险",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "02535360"
+    },
+    {
+     "name": "保险资产管理",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 12,
+     "term": null,
+     "code": "02535400"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.2",
+   "parent": "3.1",
+   "name": "专业选修 2 组",
+   "courses": [
+    {
+     "name": "投资中的数据分析方法",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": null,
+     "code": "02500184"
+    },
+    {
+     "name": "经济学及金融学中的数值方法",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": null,
+     "code": "02500185"
+    },
+    {
+     "name": "经济史学导论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02535740"
+    },
+    {
+     "name": "统计学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 15,
+     "term": null,
+     "code": "02530051"
+    },
+    {
+     "name": "国际贸易",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 10,
+     "term": null,
+     "code": "02530090"
+    },
+    {
+     "name": "国际金融",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02530100"
+    },
+    {
+     "name": "发展经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": null,
+     "code": "02530150"
+    },
+    {
+     "name": "投资学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 10,
+     "term": null,
+     "code": "02530340"
+    },
+    {
+     "name": "国际投资学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 8,
+     "term": null,
+     "code": "02530620"
+    },
+    {
+     "name": "世界经济专题",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": null,
+     "code": "02532120"
+    },
+    {
+     "name": "投资银行学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 12,
+     "term": null,
+     "code": "02532180"
+    },
+    {
+     "name": "金融经济学导论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": null,
+     "code": "02532240"
+    },
+    {
+     "name": "信息经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 8,
+     "term": null,
+     "code": "02532260"
+    },
+    {
+     "name": "金融工程概论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": null,
+     "code": "02532420"
+    },
+    {
+     "name": "随机过程",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02533080"
+    },
+    {
+     "name": "固定收益证券",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02533320"
+    },
+    {
+     "name": "世界经济史",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02533490"
+    },
+    {
+     "name": "预算经济学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 10,
+     "term": null,
+     "code": "02533530"
+    },
+    {
+     "name": "产业组织理论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02533600"
+    },
+    {
+     "name": "投资基金概论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 6,
+     "term": null,
+     "code": "02533790"
+    },
+    {
+     "name": "商业银行管理",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02533830"
+    },
+    {
+     "name": "货币银行学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": null,
+     "code": "02534060"
+    },
+    {
+     "name": "公共经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 9,
+     "term": null,
+     "code": "02534500"
+    },
+    {
+     "name": "财政学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 9,
+     "term": null,
+     "code": "02534520"
+    },
+    {
+     "name": "金融衍生品",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": null,
+     "code": "02534650"
+    },
+    {
+     "name": "行为金融学导论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 30,
+     "practice": null,
+     "term": null,
+     "code": "02534660"
+    },
+    {
+     "name": "金融工程软件编程",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 12,
+     "term": null,
+     "code": "02534870"
+    },
+    {
+     "name": "社会实践",
+     "nature": "任选",
+     "credits": 1,
+     "hours": 17,
+     "practice": null,
+     "term": "7天",
+     "code": "02534880"
+    },
+    {
+     "name": "投资理财",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 12,
+     "term": null,
+     "code": "02534940"
+    },
+    {
+     "name": "中国经济史",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 9,
+     "term": null,
+     "code": "02535240"
+    },
+    {
+     "name": "金融市场与机构实务",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 21,
+     "term": null,
+     "code": "02535310"
+    },
+    {
+     "name": "应用时间序列分析",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": null,
+     "code": "02535320"
+    },
+    {
+     "name": "《资本论》选读",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 2,
+     "term": null,
+     "code": "02535370"
+    },
+    {
+     "name": "中国对外经济",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 6,
+     "term": null,
+     "code": "02535380"
+    },
+    {
+     "name": "应用计量经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 4,
+     "term": null,
+     "code": "02535410"
+    },
+    {
+     "name": "经济学研究训练",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": null,
+     "code": "02535500"
+    },
+    {
+     "name": "福利经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 11,
+     "term": null,
+     "code": "02535720"
+    },
+    {
+     "name": "数据结构与算法（B）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "04831420"
+    },
+    {
+     "name": "机器学习概论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 8,
+     "term": null,
+     "code": "04831730"
+    },
+    {
+     "name": "计算机科学与编程入门",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "04833490"
+    },
+    {
+     "name": "Python 程序设计与数据科学导论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": null,
+     "code": "04834630"
+    },
+    {
+     "name": "教师指导下的独立研究",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 136,
+     "practice": 136,
+     "term": null,
+     "code": "30330033"
+    },
+    {
+     "name": "教师指导下的小组研究",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 136,
+     "practice": 136,
+     "term": null,
+     "code": "30330043"
+    },
+    {
+     "name": "金融数学引论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00132830"
+    },
+    {
+     "name": "统计学习",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00102892"
+    },
+    {
+     "name": "统计模型与计算方法",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00102516"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2",
+   "parent": "3",
+   "name": "自主选修课",
+   "min": 3,
+   "max": 3,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "要求“思想政治理论选择性必修课”共 1 门、“劳动教育课”累计不少于 32 学时。思",
+  "想政治理论必修课和其他公共必修课按学校要求选课，信息课程见下表。",
+  "通识教育课程系列            各系列学分",
+  "（通识核心课+通选课）          （通识核心课+通选课）",
+  "（1）具体课程列表详见《北京大学本科生选课手册》 ；",
+  "（2）原则上不允许以专业课替代通识教育课程学分；",
+  "（3）本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分；",
+  "（4）建议合理分配修读时间，每学期修读 1 门课程。",
+  "政治经济学（下）为思政政治理论选择性必修课，该课程可以同时认定为相应课程类",
+  "别学分。"
+ ],
+ "warnings": [],
+ "source": {
+  "volumeId": "2025-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=217",
+  "lineStart": 21776,
+  "lineEnd": 21992
+ }
+}

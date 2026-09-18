@@ -1,0 +1,64 @@
+{
+ "id": "2023-物理学院-天文学",
+ "cohort": 2023,
+ "volume": "北京大学本科教学计划（2023）理科卷",
+ "school": "物理学院",
+ "major": "天文学",
+ "track": null,
+ "title": "天文学专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "理学学士学位。",
+ "totalCredits": {
+  "min": 144,
+  "max": 150
+ },
+ "topRequirements": [],
+ "requirements": [],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 45,
+   "max": 51,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 71,
+   "max": 71,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 28,
+   "max": 28,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "天文学 (天体物理方向)和强基专业物理学 (天体物理方向)适用。",
+  "本专业方向学生在学期间,须修满培养方案规定的 144~150 学分,方能毕业。"
+ ],
+ "warnings": [
+  "第 4500 行：课程设置出现第二套“1. 公共基础课程”，只保留第一套"
+ ],
+ "source": {
+  "volumeId": "2023-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=195",
+  "lineStart": 4415,
+  "lineEnd": 4941
+ }
+}

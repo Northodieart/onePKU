@@ -1,0 +1,33 @@
+[package]
+name = "pku-claspider"
+description = "北大课程信息爬取工具（教务部 + 选课网）"
+readme = "README.md"
+version = "0.1.2"
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+keywords = ["pku", "course", "spider", "cli"]
+categories = ["command-line-utilities"]
+
+[[bin]]
+name = "claspider"
+path = "src/main.rs"
+
+[dependencies]
+pkuinfo-common.workspace = true
+pku-elective = { version = "0.1.4", path = "../elective" }
+clap = { workspace = true, features = ["env"] }
+tokio = { workspace = true, features = ["time"] }
+reqwest.workspace = true
+reqwest_cookie_store.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+colored.workspace = true
+chrono.workspace = true
+scraper.workspace = true
+regex.workspace = true
+rand.workspace = true

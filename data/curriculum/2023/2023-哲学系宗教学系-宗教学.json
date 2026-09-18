@@ -1,0 +1,877 @@
+{
+ "id": "2023-哲学系宗教学系-宗教学",
+ "cohort": 2023,
+ "volume": "北京大学本科教学计划（2023）文科卷",
+ "school": "哲学系宗教学系",
+ "major": "宗教学",
+ "track": null,
+ "title": "宗教学专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "哲学学士学位。",
+ "totalCredits": {
+  "min": 133,
+  "max": 133
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 36,
+   "max": 42,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 53,
+   "max": 53,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 38,
+   "max": 44,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "24~30 学分",
+   "inferredParent": true,
+   "min": 24,
+   "max": 30,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "19 学分",
+   "inferredParent": true,
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "26 学分",
+   "inferredParent": true,
+   "min": 26,
+   "max": 26,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "写作训练与论文",
+   "requirement": "7 学分",
+   "inferredParent": true,
+   "min": 7,
+   "max": 7,
+   "unit": "学分"
+  },
+  {
+   "id": "2-4",
+   "parent": "2",
+   "name": "实践实习",
+   "requirement": "1 学分",
+   "inferredParent": true,
+   "min": 1,
+   "max": 1,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "20 学分",
+   "inferredParent": true,
+   "min": 20,
+   "max": 20,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "18 学分",
+   "inferredParent": true,
+   "min": 18,
+   "max": 18,
+   "unit": "学分"
+  },
+  {
+   "id": "3-3",
+   "parent": "3",
+   "name": "外语类选修课",
+   "requirement": "0~6 学分",
+   "inferredParent": true,
+   "min": 0,
+   "max": 6,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 36,
+   "max": 42,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 C",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "“计算 概 论 C” 课 程 后,",
+     "code": "04834470"
+    },
+    {
+     "name": "计算机实习",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "计 算",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "军事理论课",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 53,
+   "max": 53,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "哲学导论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 16,
+     "term": "一上",
+     "code": "02330003"
+    },
+    {
+     "name": "宗教学导论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 16,
+     "term": "一下",
+     "code": "02330160"
+    },
+    {
+     "name": "逻辑与论证",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "一上",
+     "code": "02336401"
+    },
+    {
+     "name": "高等数学 D (任选一门)中国古代史 (上/下)/中国古代文学 (上/下)",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00137940"
+    },
+    {
+     "name": "东方文学 (任选 2 学分)",
+     "nature": null,
+     "credits": 2,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "03530450"
+    },
+    {
+     "name": "马克思主义哲学 (上)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 16,
+     "term": "一下",
+     "code": "02330102"
+    },
+    {
+     "name": "马克思主义哲学 (下)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 16,
+     "term": "二上",
+     "code": "02330104"
+    },
+    {
+     "name": "中国哲学 (上)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 16,
+     "term": "一上",
+     "code": "02330092"
+    },
+    {
+     "name": "中国哲学 (下)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 16,
+     "term": "一下",
+     "code": "02330096"
+    },
+    {
+     "name": "西方哲学 (上)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 16,
+     "term": "一下",
+     "code": "02330051"
+    },
+    {
+     "name": "西方哲学 (下)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 16,
+     "term": "二上",
+     "code": "02330053"
+    },
+    {
+     "name": "伦理学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下",
+     "code": "02330142"
+    },
+    {
+     "name": "美学原理",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二上",
+     "code": "02330152"
+    },
+    {
+     "name": "科学哲学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下",
+     "code": "02330132"
+    },
+    {
+     "name": "中国宗教史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下",
+     "code": "02332250"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 38,
+   "max": 44,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "知识论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下",
+     "code": "02335100"
+    },
+    {
+     "name": "马克思主义哲学史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02330101"
+    },
+    {
+     "name": "中国现代哲学史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02330091"
+    },
+    {
+     "name": "现代西方哲学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02330070"
+    },
+    {
+     "name": "西方哲学史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02335060"
+    },
+    {
+     "name": "中国礼学史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332991"
+    },
+    {
+     "name": "《四书》 精读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 16,
+     "term": "三上下",
+     "code": "02335220"
+    },
+    {
+     "name": "政治哲学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02333371"
+    },
+    {
+     "name": "西方政治思想 (古代)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02333373"
+    },
+    {
+     "name": "西方政治思想 (中世纪)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332211"
+    },
+    {
+     "name": "西方政治思想 (现代)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332213"
+    },
+    {
+     "name": "宗教哲学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332190"
+    },
+    {
+     "name": "宗教社会学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332180"
+    },
+    {
+     "name": "宗教人类学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332541"
+    },
+    {
+     "name": "宗教哲学专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332220"
+    },
+    {
+     "name": "宗教史专题",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02318300"
+    },
+    {
+     "name": "宗教与中西文明传统比较研究",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02318500"
+    },
+    {
+     "name": "宗教学经典著作选读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332200"
+    },
+    {
+     "name": "宗教学名著选读",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332050"
+    },
+    {
+     "name": "古希腊语",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02333050"
+    },
+    {
+     "name": "拉丁语",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332610"
+    },
+    {
+     "name": "基督教史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332210"
+    },
+    {
+     "name": "中国基督教史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332230"
+    },
+    {
+     "name": "基督教与中国文化",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332042"
+    },
+    {
+     "name": "圣经导读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332131"
+    },
+    {
+     "name": "基督教专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332240"
+    },
+    {
+     "name": "基督教原典",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332118"
+    },
+    {
+     "name": "东正教专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332140"
+    },
+    {
+     "name": "东正教原典",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332150"
+    },
+    {
+     "name": "东正教艺术",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332141"
+    },
+    {
+     "name": "基督教伦理学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02333911"
+    },
+    {
+     "name": "伊斯兰教史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332058"
+    },
+    {
+     "name": "伊斯兰教专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332034"
+    },
+    {
+     "name": "伊斯兰教原典",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332025"
+    },
+    {
+     "name": "古兰经导读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332080"
+    },
+    {
+     "name": "中国伊斯兰教史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332024"
+    },
+    {
+     "name": "阿拉伯伊斯兰文化",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332035"
+    },
+    {
+     "name": "伊斯兰哲学研究专题",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02318373"
+    },
+    {
+     "name": "印度佛教史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332013"
+    },
+    {
+     "name": "中国佛教史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332336"
+    },
+    {
+     "name": "日本佛教史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02330730"
+    },
+    {
+     "name": "藏传佛教导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332460"
+    },
+    {
+     "name": "印度佛教经典选读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332338"
+    },
+    {
+     "name": "中国佛教经典选读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332017"
+    },
+    {
+     "name": "佛教专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332321"
+    },
+    {
+     "name": "佛教哲学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332410"
+    },
+    {
+     "name": "佛教文献学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02314300"
+    },
+    {
+     "name": "《坛经》",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332323"
+    },
+    {
+     "name": "天台宗研究",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332390"
+    },
+    {
+     "name": "道教史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332160"
+    },
+    {
+     "name": "道教专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332072"
+    },
+    {
+     "name": "道教原典",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332071"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "—       大学英语                 2~8      —        —",
+  "选课。",
+  "—       思想政治理论必修课             13      —        —",
+  "选课。",
+  "—                             1门      —        —      按学校要求选课。",
+  "—       劳动教育课                32 学时                    按学校要求选课",
+  "需要另 选 该 课 程 的 上 机",
+  "课 (",
+  "实习)。",
+  "时,需要 另 选 该 课 程 的",
+  "机实习)。",
+  "—       体育系列课程               1×4      2               全年",
+  "注: ① 哲学系学生免修思想政治理论必修课中的思想道德与法治 (",
+  "克思主义基本原理概论)(                   6 学分) 替代。港澳 台 学 生、 留 学 生",
+  "思想政治理论必修课修习要求与哲学系学生要 求 一 致。留 学 生 免 修 军 事 理 论 课, 免 修 课 程 学 分 须 用 “与",
+  "中国有关课程” 补足。",
+  "② 新生入学后需参加英语分级考试,根据 考 试 成 绩 编 入 5 个 等 级, 并 修 习 该 级 别 规 定 学 分 的 课 程。",
+  "Y 级 8 学分,A 级 8 学分,B 级 6 学分,C 级 4 学分,C+ 级 2 学 分。 本 系 学 生 修 完 相 应 级 别 课 程 后, 未",
+  "满 8 学分的,须选修二外或英语授课的哲学专业课程来补足 8 学分。",
+  "③ 留学生大学英语修课原则:新生入学后需参 加 英 语 分 级 考 试, 根 据 考 试 成 绩 编 入 5 个 等 级, 并 修",
+  "习该级别规定学分的课程。Y 级 8 学分,A 级 8 学分,B 级 6 学 分,C 级 4 学 分,C+ 级 2 学 分。 修 完 相",
+  "应级别课程后,未满 8 学分的,须选修英语及母语以 外 的 第 三 种 语 言、中 文 系 语 言 类 课 程 或 英 语 授 课 的",
+  "哲学专业课程来补足 8 学分。中文系语言类课程包括:现代汉语、古代汉语、语言学概论。",
+  "通识教育课分为四个系列: Ⅰ. 人类文明及其传统; Ⅱ. 现代社会及其问题; Ⅲ. 艺",
+  "· 168 ·             北京大学本科培养方案 (",
+  "术与人文; Ⅳ. 数 学、 自 然 与 技 术。 每 个 系 列 均 包 含 通 识 教 育 核 心 课、 通 选 课 两 部 分 课",
+  "程,具体课程列表详见 《北京大学本科生选课手册》。",
+  "1)至少修读 1 门 “通识教育核心课程” (任一系列),且在四个课程系列中每个系列",
+  "至少修读 2 学分 (通识教育核心课或通选课均可)。",
+  "2)原则上不允许以专业课替代通识教育课程学分。",
+  "3)本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分。",
+  "4)建议合理分配修读时间,每学期修读 1 门课程。",
+  "古代汉语 (上/下)/",
+  "02030022/                     4       4         0          一上",
+  "2       2         0         二上下",
+  "北京大学哲学系宗教学系                     · 169 ·",
+  "哲学阅读与写作 B        1         2         0        三上下",
+  "学年论文             1                   0         三下",
+  "毕业论文             5                   0        四上下",
+  "下设 6 个模块,在每一模块中选修规定学分的课程。",
+  "类别                   学分",
+  "哲学模块                              8",
+  "宗教学基础模块                           2",
+  "基督教模块                             3",
+  "伊斯兰教模块                            2",
+  "佛教模块                              3",
+  "道教模块                              2",
+  "宗教心理学                 2        2         0     三上下",
+  "· 170 ·            北京大学本科培养方案 (",
+  "北京大学哲学系宗教学系                   · 171 ·",
+  "1)选修的非本专业课程一般不超过 10 学分。",
+  "2)如修读辅修专业,选修辅修专业培养方案中的非本专业课程可计 入 本 类 学 分,且",
+  "不超过 10 学分。",
+  "(3)如参加跨学科项目,选修项目培养方案中的非本专业课程可计入 本 类 学 分,且 可",
+  "超过 10 学分。",
+  "4)如开展跨学科科研,确有相关学习需求,经项目或论文指导教 师 同 意,选 修 的 非",
+  "本专业课程可超过 10 学分。",
+  "学生根据入学英语分级考试所确定的等级,修 完 相 应 级 别 的 大 学 英 语 课 程 后,未 满 8",
+  "学分的,须选修二外或英语授课的哲学专业课程来补足 8 学分。"
+ ],
+ "warnings": [
+  "第 9307 行：课程行缺少学分：04831435 计 算",
+  "第 9361 行：课程行缺少学分：00137940"
+ ],
+ "source": {
+  "volumeId": "2023-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=196",
+  "lineStart": 9219,
+  "lineEnd": 9617
+ }
+}

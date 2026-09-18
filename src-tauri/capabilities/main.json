@@ -1,0 +1,8 @@
+{
+  "identifier": "main",
+  "windows": ["main"],
+  "permissions": [
+    "core:window:allow-is-fullscreen",
+    "core:window:allow-set-fullscreen"
+  ]
+}

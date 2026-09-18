@@ -1,0 +1,719 @@
+{
+ "id": "2023-元培学院-政治学_、_经济学_、_哲学",
+ "cohort": 2023,
+ "volume": "北京大学本科教学计划（2023）文科卷",
+ "school": "元培学院",
+ "major": "政治学/、/经济学/、/哲学",
+ "track": null,
+ "title": "政治学 、 经济学 、 哲学专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": null,
+ "totalCredits": null,
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 45,
+   "max": 51,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 41,
+   "max": 41,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 39,
+   "max": 45,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "30~36 学分",
+   "inferredParent": true,
+   "min": 30,
+   "max": 36,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "13 学分",
+   "inferredParent": true,
+   "min": 13,
+   "max": 13,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "25 学分",
+   "inferredParent": true,
+   "min": 25,
+   "max": 25,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "39 学分",
+   "inferredParent": true,
+   "min": 39,
+   "max": 39,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "0~6 学分",
+   "inferredParent": true,
+   "min": 0,
+   "max": 6,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 41,
+   "max": 41,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学 D",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "一上",
+     "code": "00137940"
+    },
+    {
+     "name": "应用统计学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "03230160"
+    },
+    {
+     "name": "劳动经济学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02532730"
+    },
+    {
+     "name": "卫生经济学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02534280"
+    },
+    {
+     "name": "福利经济学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02533390"
+    },
+    {
+     "name": "货币经济学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02534630"
+    },
+    {
+     "name": "保险经济学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02534960"
+    },
+    {
+     "name": "政治学前沿",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "秋季",
+     "code": "03232600"
+    },
+    {
+     "name": "政治学原理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "03230020"
+    },
+    {
+     "name": "政治学阶梯:体系与问题",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "秋季",
+     "code": "03233040"
+    },
+    {
+     "name": "比较政治学概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "03230040"
+    },
+    {
+     "name": "政治经济导论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "03231080"
+    },
+    {
+     "name": "经济学原理 (Ⅰ )",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "02533160"
+    },
+    {
+     "name": "经济学原理 (Ⅱ )",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "02533170"
+    },
+    {
+     "name": "微观经济学",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "全年",
+     "code": "02530060"
+    },
+    {
+     "name": "宏观经济学",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "全年",
+     "code": "02530070"
+    },
+    {
+     "name": "哲学导论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "02330000"
+    },
+    {
+     "name": "宗教学导论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "02330161"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 39,
+   "max": 45,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "政治学原理﹡",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "03230020"
+    },
+    {
+     "name": "政治学阶梯:体系与问题﹡",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "秋季",
+     "code": "03233040"
+    },
+    {
+     "name": "地方政府与政治﹡",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "03231750"
+    },
+    {
+     "name": "西方政治思想史",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "03230790"
+    },
+    {
+     "name": "中国政治思想史",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "03230780"
+    },
+    {
+     "name": "行政学原理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "03232580"
+    },
+    {
+     "name": "国际公法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "02939994"
+    },
+    {
+     "name": "计量经济学﹡",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "全年",
+     "code": "02530140"
+    },
+    {
+     "name": "线性代数 ( B) ﹡",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "全年",
+     "code": "00131460"
+    },
+    {
+     "name": "概率统计 ( B) ﹡",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "全年",
+     "code": "00132380"
+    },
+    {
+     "name": "经济增长理论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "02534430"
+    },
+    {
+     "name": "产业组织理论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "02533600"
+    },
+    {
+     "name": "财政学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "02534520"
+    },
+    {
+     "name": "国际贸易",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "全年",
+     "code": "02530090"
+    },
+    {
+     "name": "国际金融",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "全年",
+     "code": "02530100"
+    },
+    {
+     "name": "货币银行学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "全年",
+     "code": "02534060"
+    },
+    {
+     "name": "金融经济学导论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "02532240"
+    },
+    {
+     "name": "公司金融",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "全年",
+     "code": "02533570"
+    },
+    {
+     "name": "环境资源经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "02533370"
+    },
+    {
+     "name": "保险学原理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "02534820"
+    },
+    {
+     "name": "风险管理学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "02534200"
+    },
+    {
+     "name": "信息经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "02532260"
+    },
+    {
+     "name": "应用计量经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "02535410"
+    },
+    {
+     "name": "《四书》 精读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "02335220"
+    },
+    {
+     "name": "政治哲学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "02333371"
+    },
+    {
+     "name": "宪法学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "02930060"
+    },
+    {
+     "name": "法理学",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "春季",
+     "code": "02930010"
+    },
+    {
+     "name": "西方法律思想史",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "02930040"
+    },
+    {
+     "name": "中国社会思想史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "03130050"
+    },
+    {
+     "name": "国外社会学学说 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春/秋",
+     "code": "03100130"
+    },
+    {
+     "name": "国外社会学学说 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春/秋",
+     "code": "03130020"
+    },
+    {
+     "name": "中国社会",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "03130590"
+    },
+    {
+     "name": "发展社会学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "03130660"
+    },
+    {
+     "name": "古代汉语 (上)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "秋季",
+     "code": "02030021"
+    },
+    {
+     "name": "古代汉语 (下)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "春季",
+     "code": "02034432"
+    },
+    {
+     "name": "古代典籍概要",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "秋季",
+     "code": "02033450"
+    },
+    {
+     "name": "中国古代史 (上)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "秋季",
+     "code": "02130011"
+    },
+    {
+     "name": "中国古代史 (下)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "春季",
+     "code": "02130012"
+    },
+    {
+     "name": "古希腊罗马史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "02133620"
+    },
+    {
+     "name": "中世纪欧洲史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "02133630"
+    },
+    {
+     "name": "社会经济调查数据分析",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "06239104"
+    },
+    {
+     "name": "社会经济调查数据分析",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "秋季",
+     "code": "03131500"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [
+  {
+   "code": "02330096",
+   "line": 29488,
+   "text": "02330096"
+  },
+  {
+   "code": "02330053",
+   "line": 29491,
+   "text": "02330053"
+  }
+ ],
+ "notes": [
+  "政治学研讨班               2      2                    秋季",
+  "经济学研讨班               2      2                    春季",
+  "哲学研讨班                2      2                    春季",
+  "跨学科方向研讨班                                         春季",
+  "说明 1:高等数学 B (一)、高等数学 C (一)、数学分析I均可替代高等数学 D。",
+  "说明 2:经济学方向必修高等数学 B (一)(二),多余学分计入专业选修课学分。",
+  "说明 3:强烈建议所有 有 意 将 来 攻 读 政 治 学 方 向 的 同 学 选 修 高 等 数 学 C (一) (二),",
+  "这对将来的发展非常有好处。",
+  "说明 4:经济学研讨班认可课程清单见下表。",
+  "说明 5:哲学系本研合上课程可替代哲学研讨班。",
+  "说明 6:政治学本研合上课程可替代政治学研讨班。",
+  "说明 7:4 个研讨班中任选 3 个研讨班。",
+  "政治、经济、哲学 3 个类别的课程每类不低于 7 学分,总计不得低于 25 学分。",
+  "· 562 ·              北京大学本科培养方案 (",
+  "中国哲学 (上、下)        3+3     3+3           春/秋",
+  "西方哲学 (上、下)        3+3     3+3           春/秋",
+  "说明 1:光华管理学院的微观经济学、国家发展 研 究 院 的 中 级 微 观 经 济 学 可 以 替 代 经",
+  "济学院的微观经济学;光华管理学院的宏观经济学、国家发展研究院的中级宏观经济学可",
+  "以替代经济学院的宏观经济学。",
+  "说明 2:政治学原理课程和政治学阶梯:体系与 问 题 课 程 中 必 须 且 只 能 选 择 一 门 计 入",
+  "专业核心课程学分。",
+  "说明 3:哲学系专业核心课程需选修讨论班。",
+  "0293007a    行政法与行政诉讼法             3    3             秋季",
+  "北京大学元培学院                · 563 ·",
+  "政府管理学院全部政治学专业课程",
+  "哲学系全部专业课程",
+  "经管学部全部专业课程",
+  "说明 1:政治学原理、政治学阶梯:体系 与 问 题、 宪 法 与 行 政 法 学、 地 方 政 府 与 政 治",
+  "为政治学方向必修课,政治学原理课程和政治学阶梯:体系与问题两门课程一门计入核心",
+  "课程学分,一门计入选修课学分。",
+  "B)为经济学方向必修课。",
+  "含跨学科课程和辅修专业学分可替代学分。"
+ ],
+ "warnings": [
+  "未找到“毕业总学分”",
+  "第 29488 行：课程 02330096 缺少课程名，未纳入",
+  "第 29491 行：课程 02330053 缺少课程名，未纳入"
+ ],
+ "source": {
+  "volumeId": "2023-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=196",
+  "lineStart": 29358,
+  "lineEnd": 29579
+ }
+}

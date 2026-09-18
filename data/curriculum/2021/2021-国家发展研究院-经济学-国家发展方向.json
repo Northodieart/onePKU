@@ -1,0 +1,1772 @@
+{
+ "id": "2021-国家发展研究院-经济学-国家发展方向",
+ "cohort": 2021,
+ "volume": "北京大学本科培养方案（2021）文科卷",
+ "school": "国家发展研究院",
+ "major": "经济学",
+ "track": "国家发展方向",
+ "title": "经济学 (国家发展方向 ) 专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "经济学学士学位。",
+ "totalCredits": {
+  "min": 130,
+  "max": 130
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 41,
+   "max": 47,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 42,
+   "max": 42,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 41,
+   "max": 41,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "29~35 学分",
+   "inferredParent": true,
+   "min": 29,
+   "max": 35,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "20 学分",
+   "inferredParent": true,
+   "min": 20,
+   "max": 20,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "19 学分",
+   "inferredParent": true,
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "37 学分",
+   "inferredParent": true,
+   "min": 37,
+   "max": 37,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "4 学分",
+   "inferredParent": true,
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 41,
+   "max": 47,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 C",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋季",
+     "code": "04831433"
+    },
+    {
+     "name": "计算概论 ( B)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三选一",
+     "code": "04831410"
+    },
+    {
+     "name": "计算概论 A",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "04830041"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": null,
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 42,
+   "max": 42,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学 B (一)",
+     "nature": null,
+     "credits": 5,
+     "hours": 6,
+     "practice": 0,
+     "term": "一上",
+     "code": "00130201"
+    },
+    {
+     "name": "数学分析 (Ⅰ )",
+     "nature": null,
+     "credits": 5,
+     "hours": 5,
+     "practice": 0,
+     "term": "一上 三选一",
+     "code": "00132301"
+    },
+    {
+     "name": "数学分析 (一)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "一上",
+     "code": "00331501"
+    },
+    {
+     "name": "高等数学 ( B)(一) 习题课",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 0,
+     "term": "一上",
+     "code": "00130211"
+    },
+    {
+     "name": "数学分析 (Ⅰ ) 习题课",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 0,
+     "term": "一上",
+     "code": "00132311"
+    },
+    {
+     "name": "线性代数 ( B)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "一上",
+     "code": "00131460"
+    },
+    {
+     "name": "高等代数 (Ⅰ )",
+     "nature": null,
+     "credits": 5,
+     "hours": 5,
+     "practice": 0,
+     "term": "一上 三选一",
+     "code": "00132321"
+    },
+    {
+     "name": "高等代数 Ⅰ (实验班)",
+     "nature": null,
+     "credits": 5,
+     "hours": 5,
+     "practice": 0,
+     "term": "一上",
+     "code": "00132371"
+    },
+    {
+     "name": "线性代数 ( B) 习题",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 0,
+     "term": "一上",
+     "code": "00131470"
+    },
+    {
+     "name": "高等代数 (Ⅰ ) 习题课",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 0,
+     "term": "一上",
+     "code": "00132331"
+    },
+    {
+     "name": "高等数学 B (二)",
+     "nature": null,
+     "credits": 5,
+     "hours": 6,
+     "practice": 0,
+     "term": "一下",
+     "code": "00130202"
+    },
+    {
+     "name": "数学分析 (Ⅱ )",
+     "nature": null,
+     "credits": 5,
+     "hours": 5,
+     "practice": 0,
+     "term": "一下 三选一",
+     "code": "00132302"
+    },
+    {
+     "name": "数学分析 (二)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "一下",
+     "code": "00331502"
+    },
+    {
+     "name": "高等数学 ( B)(二) 习题课",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 0,
+     "term": "一下",
+     "code": "00130212"
+    },
+    {
+     "name": "数学分析 (Ⅱ ) 习题课",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 0,
+     "term": "一下",
+     "code": "00132312"
+    },
+    {
+     "name": "概率论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "00131300"
+    },
+    {
+     "name": "数理统计",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "00135460"
+    },
+    {
+     "name": "经济学原理",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "一上 详 见 “其",
+     "code": "06232000"
+    },
+    {
+     "name": "经济学原理习题课",
+     "nature": null,
+     "credits": 0,
+     "hours": 1,
+     "practice": 0,
+     "term": "一上",
+     "code": "06239129"
+    },
+    {
+     "name": "中级宏观经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "06239084"
+    },
+    {
+     "name": "中级宏观经济学习题课",
+     "nature": null,
+     "credits": 0,
+     "hours": 1,
+     "practice": 0,
+     "term": "二上",
+     "code": "06239130"
+    },
+    {
+     "name": "中级微观经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "06239085"
+    },
+    {
+     "name": "中级微观经济学习题课",
+     "nature": null,
+     "credits": 0,
+     "hours": 1,
+     "practice": 0,
+     "term": "二上",
+     "code": "06239131"
+    },
+    {
+     "name": "计量经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "06239086"
+    },
+    {
+     "name": "计量经济学习题课",
+     "nature": null,
+     "credits": 0,
+     "hours": 1,
+     "practice": 0,
+     "term": "二下",
+     "code": "06239132"
+    },
+    {
+     "name": "中国经济专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下",
+     "code": "06234900"
+    },
+    {
+     "name": "中国经济专题小班讨论课",
+     "nature": null,
+     "credits": 1,
+     "hours": 1,
+     "practice": 0,
+     "term": "二下",
+     "code": "06239087"
+    },
+    {
+     "name": "经济学研究训练",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "06239114"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 41,
+   "max": 41,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "经济学田野调查",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 90,
+     "term": "二下及二暑",
+     "code": "06200420"
+    },
+    {
+     "name": "社会 经 济 调 查 理 论 方 法与实践",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 256,
+     "term": "二下",
+     "code": "06237020"
+    },
+    {
+     "name": "社会 经 济 调 查 理 论 方 法与实践",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 192,
+     "term": "二下",
+     "code": "06239119"
+    },
+    {
+     "name": "经济学社会实践",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 64,
+     "term": "二暑",
+     "code": "06239083"
+    },
+    {
+     "name": "数据 分 析 和 计 量 经 济 学编程",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上 必选",
+     "code": "06239121"
+    },
+    {
+     "name": "经济学前沿与研究方法",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二上",
+     "code": "06239120"
+    },
+    {
+     "name": "战略管理学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "06239111"
+    },
+    {
+     "name": "经济增长导论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "06238090"
+    },
+    {
+     "name": "国际贸易",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "06239098"
+    },
+    {
+     "name": "真实世界的经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "06239125"
+    },
+    {
+     "name": "真实世界的经济学讨论课",
+     "nature": null,
+     "credits": 0,
+     "hours": 1,
+     "practice": 0,
+     "term": "二下",
+     "code": "06239126"
+    },
+    {
+     "name": "政治学概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "06239123"
+    },
+    {
+     "name": "发展经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "06239093"
+    },
+    {
+     "name": "产业组织",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "06239089"
+    },
+    {
+     "name": "劳动经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三/四",
+     "code": "06239103"
+    },
+    {
+     "name": "政治经济导论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "03231080"
+    },
+    {
+     "name": "哲学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": null,
+     "code": "02330000"
+    },
+    {
+     "name": "哲学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "互斥",
+     "code": "02330001"
+    },
+    {
+     "name": "哲学导论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "02330003"
+    },
+    {
+     "name": "宗教学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": null,
+     "code": "02330162"
+    },
+    {
+     "name": "宗教学导论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "互斥",
+     "code": "02330160"
+    },
+    {
+     "name": "宗教学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": null,
+     "code": "02330161"
+    },
+    {
+     "name": "社会学概论",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": null,
+     "code": "03130010"
+    },
+    {
+     "name": "财务会计",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "06235060"
+    },
+    {
+     "name": "财务会计",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "02832510"
+    },
+    {
+     "name": "财务会计",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "02838430"
+    },
+    {
+     "name": "会计学 B",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "02839290"
+    },
+    {
+     "name": "财务报表分析",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "06236010"
+    },
+    {
+     "name": "互联网金融与大数据",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": null,
+     "code": "06238080"
+    },
+    {
+     "name": "博弈与社会",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "06239000"
+    },
+    {
+     "name": "宏观经济与健康",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "06239040"
+    },
+    {
+     "name": "新结构经济学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": null,
+     "code": "06239075"
+    },
+    {
+     "name": "定价",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "06239077"
+    },
+    {
+     "name": "中国改革专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": null,
+     "code": "06239082"
+    },
+    {
+     "name": "产业组织",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "06239089"
+    },
+    {
+     "name": "低碳经济与碳金融",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "06239092"
+    },
+    {
+     "name": "国际金融",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "06239097"
+    },
+    {
+     "name": "国际贸易",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "06239098"
+    },
+    {
+     "name": "环境经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "06239100"
+    },
+    {
+     "name": "货币银行学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "06239101"
+    },
+    {
+     "name": "金融计量",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "06239102"
+    },
+    {
+     "name": "劳动经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "06239103"
+    },
+    {
+     "name": "社会经济调查数据分析",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "06239104"
+    },
+    {
+     "name": "投资学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "06239106"
+    },
+    {
+     "name": "网络营销与信息经济战略",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "06239107"
+    },
+    {
+     "name": "卫生经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "06239108"
+    },
+    {
+     "name": "中国财政前沿问题",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "06239112"
+    },
+    {
+     "name": "中国宏观经济",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "06239113"
+    },
+    {
+     "name": "公共财政学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "06239115"
+    },
+    {
+     "name": "国际 发 展 前 沿: 理 论 与实务",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "06239116"
+    },
+    {
+     "name": "教育经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "06239117"
+    },
+    {
+     "name": "金融经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "06239118"
+    },
+    {
+     "name": "随机 微 积 分 及 其 在 量 化金融的应用",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "06239122"
+    },
+    {
+     "name": "中国经济",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "06239124"
+    },
+    {
+     "name": "中国经济",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "互斥",
+     "code": "02830150"
+    },
+    {
+     "name": "中国经济",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "02802190"
+    },
+    {
+     "name": "经济学高级研讨班",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "06239136"
+    },
+    {
+     "name": "博弈论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "06239137"
+    },
+    {
+     "name": "经济和政治哲学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "06239138"
+    },
+    {
+     "name": "量化金融专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": null,
+     "code": "06239139"
+    },
+    {
+     "name": "公共政策参与",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "06239141"
+    },
+    {
+     "name": "数字货币原理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "06239142"
+    },
+    {
+     "name": "数字 时 代 的 组 织 行 为 与领导力",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "06239143"
+    },
+    {
+     "name": "世界经济千年史",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "06239144"
+    },
+    {
+     "name": "教师指导下的独立研究",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二上",
+     "code": "30330031"
+    },
+    {
+     "name": "教师指导下的独立研究",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "30330032"
+    },
+    {
+     "name": "教师指导下的独立研究",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "二上",
+     "code": "30330033"
+    },
+    {
+     "name": "教师指导下的小组研究",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二上",
+     "code": "30330041"
+    },
+    {
+     "name": "教师指导下的小组研究",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "30330042"
+    },
+    {
+     "name": "教师指导下的小组研究",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "二上",
+     "code": "30330043"
+    },
+    {
+     "name": "经济 学 及 金 融 学 中 的 数值方法",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": null,
+     "code": "02500185"
+    },
+    {
+     "name": "外国经济史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": null,
+     "code": "02530160"
+    },
+    {
+     "name": "金融经济学导论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "02532240"
+    },
+    {
+     "name": "随机过程",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "02533080"
+    },
+    {
+     "name": "政治经济学 (上)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "02533180"
+    },
+    {
+     "name": "政治经济学 (下)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "02533190"
+    },
+    {
+     "name": "中国经济思想史",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "02533340"
+    },
+    {
+     "name": "外国经济思想史",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "02533350"
+    },
+    {
+     "name": "世界经济史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": null,
+     "code": "02533490"
+    },
+    {
+     "name": "公司金融",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "02533570"
+    },
+    {
+     "name": "动态优化理论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "02533700"
+    },
+    {
+     "name": "经济地理学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": null,
+     "code": "02534270"
+    },
+    {
+     "name": "公共经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "02534500"
+    },
+    {
+     "name": "财政学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "02534520"
+    },
+    {
+     "name": "公共选择理论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "02534750"
+    },
+    {
+     "name": "中国经济史",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "02535240"
+    },
+    {
+     "name": "应用时间序列分析",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": null,
+     "code": "02535320"
+    },
+    {
+     "name": "《资本论》 选读",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "02535370"
+    },
+    {
+     "name": "应用计量经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "02535410"
+    },
+    {
+     "name": "计量经济学应用",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "02831560"
+    },
+    {
+     "name": "劳动经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "02831620"
+    },
+    {
+     "name": "城市与区域经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "02831650"
+    },
+    {
+     "name": "金融市场与金融机构",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "02833230"
+    },
+    {
+     "name": "金融时间序列分析",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": null,
+     "code": "02834760"
+    },
+    {
+     "name": "应用计量经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "02838150"
+    },
+    {
+     "name": "数据分析与统计软件",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": null,
+     "code": "02838160"
+    },
+    {
+     "name": "随机分析与应用",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": null,
+     "code": "02838320"
+    },
+    {
+     "name": "金融中的数学方法",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": null,
+     "code": "02838420"
+    },
+    {
+     "name": "商业预测分析",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "02839100"
+    },
+    {
+     "name": "契约经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "研究生课",
+     "code": "06200040"
+    },
+    {
+     "name": "宏观 经 济 与 国 际 金 融 市场:理论与实践",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "研究生课",
+     "code": "06200301"
+    },
+    {
+     "name": "现代 中 央 银 行: 理 论 与实践",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "研究生课",
+     "code": "06202001"
+    },
+    {
+     "name": "投 资 研 究: 从 理 论 到实践",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "研究生课",
+     "code": "06202002"
+    },
+    {
+     "name": "异质主体宏观经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "研究生课",
+     "code": "06202751"
+    },
+    {
+     "name": "健康经济学田野调查",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 80,
+     "term": "研究生课",
+     "code": "06202766"
+    },
+    {
+     "name": "组织理论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "研究生课",
+     "code": "06205230"
+    },
+    {
+     "name": "高级微观经济学 Ⅱ",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "研究生课",
+     "code": "06206010"
+    },
+    {
+     "name": "高级宏观经济学 Ⅱ",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "研究生课",
+     "code": "06206020"
+    },
+    {
+     "name": "高级自然资源经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "研究生课",
+     "code": "06206040"
+    },
+    {
+     "name": "时间序列计量经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "研究生课",
+     "code": "06206055"
+    },
+    {
+     "name": "高级卫生经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "研究生课",
+     "code": "06210880"
+    },
+    {
+     "name": "高级微观经济学 Ⅰ",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "研究生课",
+     "code": "06215010"
+    },
+    {
+     "name": "高级宏观经济学 Ⅰ",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "研究生课",
+     "code": "06215020"
+    },
+    {
+     "name": "高级计量经济学 Ⅰ",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "研究生课",
+     "code": "06215051"
+    },
+    {
+     "name": "高级计量经济学 Ⅱ",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "研究生课",
+     "code": "06215052"
+    },
+    {
+     "name": "高级数理经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "研究生课",
+     "code": "06215062"
+    },
+    {
+     "name": "宏观经济专题",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "研究生课",
+     "code": "06215072"
+    },
+    {
+     "name": "经济学研究专题 Ⅰ",
+     "nature": null,
+     "credits": 1,
+     "hours": 1,
+     "practice": 0,
+     "term": "研究生课",
+     "code": "06215091"
+    },
+    {
+     "name": "创新创业学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "研究生课",
+     "code": "06215161"
+    },
+    {
+     "name": "经济学思想史",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "研究生课",
+     "code": "06216020"
+    },
+    {
+     "name": "法律经济学 Ⅱ",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "研究生课",
+     "code": "06216460"
+    },
+    {
+     "name": "发展经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "研究生课",
+     "code": "06216500"
+    },
+    {
+     "name": "老年人口与经济分析",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "研究生课",
+     "code": "06216580"
+    },
+    {
+     "name": "产业组织",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "研究生课",
+     "code": "06216700"
+    },
+    {
+     "name": "实证策略",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "研究生课",
+     "code": "06216790"
+    },
+    {
+     "name": "劳动经济学 Ⅰ",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "研究生课",
+     "code": "06216800"
+    },
+    {
+     "name": "拓扑学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "00130161"
+    },
+    {
+     "name": "数学模型",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "00130200"
+    },
+    {
+     "name": "计算方法 ( B)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "00130280"
+    },
+    {
+     "name": "数据结构",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "00131420"
+    },
+    {
+     "name": "微分几何",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "00132310"
+    },
+    {
+     "name": "复变函数",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "00132320"
+    },
+    {
+     "name": "常微分方程",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "00132340"
+    },
+    {
+     "name": "泛函分析",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "00132350"
+    },
+    {
+     "name": "实变函数",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "00132370"
+    },
+    {
+     "name": "应用回归分析",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "00133110"
+    },
+    {
+     "name": "抽象代数",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "00135450"
+    },
+    {
+     "name": "实变函数与泛函分析",
+     "nature": null,
+     "credits": 5,
+     "hours": 5,
+     "practice": 0,
+     "term": null,
+     "code": "00136360"
+    },
+    {
+     "name": "随机过程引论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "00136750"
+    },
+    {
+     "name": "机器学习基础",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "00137170"
+    },
+    {
+     "name": "随机模型与方法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "00137910"
+    },
+    {
+     "name": "随机过程引论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": null,
+     "code": "04831200"
+    },
+    {
+     "name": "计算概论 ( B)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "04831410"
+    },
+    {
+     "name": "数据结构与算法 ( B)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "04831420"
+    },
+    {
+     "name": "计算概论 ( B) 上机",
+     "nature": null,
+     "credits": 0,
+     "hours": 0,
+     "practice": 0,
+     "term": null,
+     "code": "04831650"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "若英语课按要求选修少于 8 学分的,可选修其他类别的课程补齐培养方案总学分。",
+  "—       大学英语             2~8    —     —    语教研 室",
+  "要求选课",
+  "方案总学分。",
+  "思想政治理论必                                    想政治理论必修课教学",
+  "—                        18   —     —     主义学 院",
+  "修课                                         实施 方 案》 (",
+  "要求选课",
+  "月修订)。",
+  "—                        1门     —     —      —     想政治理论选择性 必 修",
+  "不再选修其他课程。",
+  "—       体育系列课程           1×4    —     0    全年",
+  "通识教育 课 程 分 为 四 个 系 列: Ⅰ.人 类 文 明 及 其 传 统; Ⅱ.现 代 社 会 及 其 问 题;",
+  "Ⅲ.艺术与人文; Ⅳ.数学、自然与 技 术。每 个 系 列 均 包 含 通 识 教 育 核 心 课、通 选 课 两 部",
+  "· 520 ·              北京大学本科培养方案 (",
+  "分课程,具体课程列表详见 《北京大学本科生选课手册》。",
+  "1)至少修读 1 门 “通识教育核心课程” (任一系列),且在四个课程系列中每个系列",
+  "至少修读 2 学分 (通识教育核心课或通选课均可)。",
+  "2)原则上不允许以专业课替代通识教育课程学分。",
+  "3)本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分。",
+  "4)建议合理分配修读时间,每学期修读 1 门课程。",
+  "说明:经管学部开设的通识教育课程不计入 “通识教育课”学分。",
+  "若选修 4 学分的数学分析,专 业 基 础 课 不 满 20 学 分 的,应 选 修 其 他 类 型 课 程 补 齐 总",
+  "学分。",
+  "北京大学国家发展研究院                            · 521 ·",
+  "学生修读 “专业实践课”或 “专业基础选修课”学分超过培养方案要求的部分,可计",
+  "入 “其他专业选修课”或 “自主选修课”。",
+  "互斥",
+  "· 522 ·              北京大学本科培养方案 (",
+  "北京大学国家发展研究院               · 523 ·",
+  "· 524 ·               北京大学本科培养方案 (",
+  "北京大学国家发展研究院                  · 525 ·",
+  "学生可以自主选修任意课程 (培养方案规定不得重复修读的课程除外)。"
+ ],
+ "warnings": [],
+ "source": {
+  "volumeId": "2021-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=158",
+  "lineStart": 27910,
+  "lineEnd": 28476
+ }
+}

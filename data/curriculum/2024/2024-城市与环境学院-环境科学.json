@@ -1,0 +1,683 @@
+{
+ "id": "2024-城市与环境学院-环境科学",
+ "untitled": true,
+ "cohort": 2024,
+ "volume": "北京大学本科培养方案（2024）理科卷",
+ "school": "城市与环境学院",
+ "major": "环境科学",
+ "track": null,
+ "title": "环境科学专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "理学学士",
+ "totalCredits": {
+  "min": 125,
+  "max": 125
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 42,
+   "max": 48,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 41,
+   "max": 41,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 36,
+   "max": 36,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "大学英语",
+   "requirement": "2～8 学分",
+   "min": 2,
+   "max": 8,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "思想政治理论必修课",
+   "requirement": "19 学分",
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "1-3",
+   "parent": "1",
+   "name": "思想政治理论选择性必修课",
+   "requirement": "1 门",
+   "min": 1,
+   "max": 1,
+   "unit": "门"
+  },
+  {
+   "id": "1-4",
+   "parent": "1",
+   "name": "劳动教育课",
+   "requirement": "32 学时",
+   "min": 32,
+   "max": 32,
+   "unit": "学时"
+  },
+  {
+   "id": "1-5",
+   "parent": "1",
+   "name": "信息课程",
+   "requirement": "3 学分",
+   "min": 3,
+   "max": 3,
+   "unit": "学分"
+  },
+  {
+   "id": "1-6",
+   "parent": "1",
+   "name": "军事理论",
+   "requirement": "2 学分",
+   "min": 2,
+   "max": 2,
+   "unit": "学分"
+  },
+  {
+   "id": "1-7",
+   "parent": "1",
+   "name": "体育课",
+   "requirement": "4 学分",
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  },
+  {
+   "id": "1-8",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "19 学分",
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "18 学分",
+   "min": 18,
+   "max": 18,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "requirement": "4 学分",
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "28 学分",
+   "min": 28,
+   "max": 28,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "8 学分",
+   "min": 8,
+   "max": 8,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1.1",
+   "parent": "1",
+   "name": "公共必修课",
+   "courses": [
+    {
+     "name": "计算概论（B）",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大一/上",
+     "code": "04831410"
+    },
+    {
+     "name": "计算概论（B）上机",
+     "nature": "全校必修",
+     "credits": 0,
+     "hours": 34,
+     "practice": 34,
+     "term": "大一/上",
+     "code": "04831650"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "1.2",
+   "parent": "1",
+   "name": "通识教育课",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.1",
+   "parent": "2",
+   "name": "专业基础课",
+   "min": 19,
+   "max": 19,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学 C（一）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "大一/上",
+     "code": "00131421"
+    },
+    {
+     "name": "高等数学 C（二）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "大一/下",
+     "code": "00131422"
+    },
+    {
+     "name": "普通物理",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "大一/下",
+     "code": "00431121"
+    },
+    {
+     "name": "普通化学（B）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": 4,
+     "term": "大一/上",
+     "code": "01034880"
+    },
+    {
+     "name": "普通生物学（B）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大一/下",
+     "code": "01139380"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2",
+   "parent": "2",
+   "name": "专业核心课",
+   "min": 18,
+   "max": 18,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "环境经济学",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 7,
+     "term": "大二/下",
+     "code": "01536020"
+    },
+    {
+     "name": "大气环境导论",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": "大二/下",
+     "code": "12631060"
+    },
+    {
+     "name": "环境科学概论",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 7,
+     "term": "大一/上",
+     "code": "12631070"
+    },
+    {
+     "name": "环境化学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 9,
+     "term": "大三/上",
+     "code": "12631080"
+    },
+    {
+     "name": "环境工程学",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": "大三/上",
+     "code": "12631110"
+    },
+    {
+     "name": "能源与环境",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "大二/下",
+     "code": "12631200"
+    },
+    {
+     "name": "环境科学野外综合实习",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/暑期",
+     "code": "12631310"
+    },
+    {
+     "name": "宜居地球（新生讨论课）",
+     "nature": "专业必修",
+     "credits": 1,
+     "hours": 17,
+     "practice": null,
+     "term": "大一/上/下",
+     "code": "12631320"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "min": 4,
+   "max": 4,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1",
+   "parent": "3",
+   "name": "专业选修课",
+   "min": 28,
+   "max": 28,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.1",
+   "parent": "3.1",
+   "name": "环境科学类组",
+   "min": 16,
+   "max": 18,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "水环境化学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": "大二/上",
+     "code": "01536210"
+    },
+    {
+     "name": "环境地学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 18,
+     "term": "大二/下",
+     "code": "01536850"
+    },
+    {
+     "name": "污染环境修复",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大三/下",
+     "code": "12631010"
+    },
+    {
+     "name": "环境毒理学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": "大三/上",
+     "code": "12631020"
+    },
+    {
+     "name": "大气物理学导论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 7,
+     "term": "大二/下",
+     "code": "12631130"
+    },
+    {
+     "name": "环境科学研究方法",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大二/上",
+     "code": "12631150"
+    },
+    {
+     "name": "环境健康风险评价",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 3,
+     "term": "大三/上",
+     "code": "12631160"
+    },
+    {
+     "name": "污染物水土环境过程",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/下",
+     "code": "12631210"
+    },
+    {
+     "name": "实验室安全",
+     "nature": "任选",
+     "credits": 1,
+     "hours": 17,
+     "practice": 4,
+     "term": "大一/上",
+     "code": "12631250"
+    },
+    {
+     "name": "暴露组学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 14,
+     "term": "大三/上",
+     "code": "12631290"
+    },
+    {
+     "name": "气候变化科学概论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大二/下",
+     "code": "12632050"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.2",
+   "parent": "3.1",
+   "name": "数理与技能类组",
+   "min": 10,
+   "max": 12,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "线性代数（C）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大二/上",
+     "code": "00130310"
+    },
+    {
+     "name": "概率统计（B）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大二/下",
+     "code": "00132380"
+    },
+    {
+     "name": "遥感基础与图像解译原理",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 30,
+     "term": "大三/上",
+     "code": "01531230"
+    },
+    {
+     "name": "计量地理",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 40,
+     "practice": 10,
+     "term": "大二/上",
+     "code": "01531690"
+    },
+    {
+     "name": "应用数理统计方法",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 54,
+     "practice": 12,
+     "term": "大二/上",
+     "code": "01536040"
+    },
+    {
+     "name": "环境污染数值模拟",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 14,
+     "term": "大二/下",
+     "code": "12631180"
+    },
+    {
+     "name": "R 语言应用",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 17,
+     "term": "大三/上",
+     "code": "12632120"
+    },
+    {
+     "name": "生态遥感基础",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 10,
+     "term": "大三/上",
+     "code": "12632200"
+    },
+    {
+     "name": "地图学与 GⅠS 基础",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": "大一/下",
+     "code": "12633090"
+    },
+    {
+     "name": "地理数据应用概论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": "大二/下",
+     "code": "12633100"
+    },
+    {
+     "name": "地表过程模拟和监测",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 11,
+     "term": "大二/下",
+     "code": "12633110"
+    },
+    {
+     "name": "遥感原理与应用",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 12,
+     "term": "大二/上",
+     "code": "12633120"
+    },
+    {
+     "name": "陆面过程模型和植被遥感实习",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 20,
+     "term": "大二/暑期",
+     "code": "12633130"
+    },
+    {
+     "name": "地理空间分析",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 6,
+     "term": "大三/上",
+     "code": "12634100"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2",
+   "parent": "3",
+   "name": "自主选修课",
+   "min": 8,
+   "max": 8,
+   "unit": "学分",
+   "note": "含跨学科课程和辅修专业学分可替代学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.2.1",
+   "parent": "3.2",
+   "name": "自主选修课组",
+   "min": 4,
+   "max": 8,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.2.2",
+   "parent": "3.2",
+   "name": "本科生科研和拔尖计划组",
+   "min": 0,
+   "max": 4,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "理论必修课和其他公共必修课按学校要求选课，信息课程见下表。",
+  "注：新生入学后根据英语测试结果确定需修读的学分，最多修读 8 学分（公共必修课",
+  "于修读除公共必修课外的其他类课程（通识教育课、专业必修课、选修课）        。",
+  "Ⅱ. 现代社会及其问题                 ≥2            1. 不少于 12 学分",
+  "Ⅲ. 艺术与人文                    ≥2            2. 至少修读 1 门“通识核心课”",
+  "（1）具体课程列表详见《北京大学本科生选课手册》 ；",
+  "（2）原则上不允许以专业课替代通识教育课程学分；",
+  "（3）本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分；",
+  "（4）建议合理分配修读时间，每学期修读 1 门课程。",
+  "新开课       环境生物学           专业必修   2   34       大二/上",
+  "毕业论文安排在四年级进行，一般为 15～25 周。学生可在综合实习的基础上完成论文，",
+  "也可另行选定题目，鼓励学生结合指导教师的科研课题完成毕业论文。毕业论文为学术性",
+  "研究论文，内容包括国内外相关研究进展、研究方法与技术、研究结果和结论与展望等。",
+  "毕业论文完成后经过答辩及格后方可获得学分。",
+  "备注：实验室安全进实验室前务必修读。",
+  "新开课       环境污染物分析         任选   2      34        大二/下",
+  "新开课       环境污染物分析实验       任选   1      34        大二/下",
+  "新开课       环境科学前沿专题        任选   2      34        大三/上",
+  "新开课       土壤与环境分析         任选   2      34        大二/下",
+  "新开课       GⅠS 地学分析        任选   3      51        大二/上",
+  "新开课       简化地球系统模型        任选   1      17        大三/暑期",
+  "地学大数据分析与人",
+  "新开课                 任选    3   51     大三/下",
+  "工智能技术",
+  "新开课   遥感图像处理实践      任选    2   34     大三/下",
+  "新开课   GⅠS 软件高级应用    任选    3   51     大三/下",
+  "可计算一般均衡模型",
+  "新开课                 任选    2   34     大三/上",
+  "理论与应用",
+  "可从理科和工科专业课程中选择，鼓励选修本专业选修课中未修的课程。",
+  "学生选择本科生科研，按时完成科研任务、提交成果、成绩合格的学生，按照北京大",
+  "学本科生“研究课程”的规定，按照选修课记 4 学分。参加拔尖计划并按照拔尖计划实施",
+  "办法考核通过且最终提交报告的学生，将按照选修课本科生“研究课程”记 4 学分。拔尖",
+  "计划不能与本科生科研和毕业论文的内容、学分重复。不选本科生科研或拔尖计划，可从",
+  "理科和工科专业课程中选择，鼓励选修本专业选修课中未修的课程。"
+ ],
+ "warnings": [
+  "专业名按 2025 版“环境科学专业”推断（专业必修课重合度 93%），请核对"
+ ],
+ "source": {
+  "volumeId": "2024-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=209",
+  "lineStart": 12501,
+  "lineEnd": 12749
+ },
+ "titleInference": {
+  "from": 2025,
+  "title": "环境科学专业",
+  "overlap": 0.93
+ }
+}

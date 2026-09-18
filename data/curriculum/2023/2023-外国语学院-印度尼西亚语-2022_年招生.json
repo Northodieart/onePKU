@@ -1,0 +1,468 @@
+{
+ "id": "2023-外国语学院-印度尼西亚语-2022_年招生",
+ "cohort": 2023,
+ "volume": "北京大学本科教学计划（2023）文科卷",
+ "school": "外国语学院",
+ "major": "印度尼西亚语",
+ "track": "2022 年招生",
+ "title": "印度尼西亚语专业 ( 2022 年招生 )",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": null,
+ "totalCredits": null,
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 48,
+   "max": 48,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 60,
+   "max": 60,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 36,
+   "max": 36,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "36 学分",
+   "inferredParent": true,
+   "min": 36,
+   "max": 36,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "28 学分",
+   "inferredParent": true,
+   "min": 28,
+   "max": 28,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "32 学分",
+   "inferredParent": true,
+   "min": 32,
+   "max": 32,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "14 学分",
+   "inferredParent": true,
+   "min": 14,
+   "max": 14,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "22 学分",
+   "inferredParent": true,
+   "min": 22,
+   "max": 22,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 48,
+   "max": 48,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 C",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "04834470"
+    },
+    {
+     "name": "计算机实习",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": "“计 算 概 论 C” 课 程 同 时,",
+     "code": "04831435"
+    },
+    {
+     "name": "计算机实习)。",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上或一下",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 60,
+   "max": 60,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "印度尼西亚文化与社会",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上",
+     "code": "03534529"
+    },
+    {
+     "name": "印度尼西亚历史 (一)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03534551"
+    },
+    {
+     "name": "印度尼西亚历史 (二)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03534552"
+    },
+    {
+     "name": "印度尼西亚文学史 (一)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03534601"
+    },
+    {
+     "name": "印度尼西亚文学史 (二)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四下",
+     "code": "03534602"
+    },
+    {
+     "name": "印尼文学选读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03534610"
+    },
+    {
+     "name": "印尼语译汉语",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03534630"
+    },
+    {
+     "name": "汉语译印尼语",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03534690"
+    },
+    {
+     "name": "印尼语写作",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四下",
+     "code": "03534710"
+    },
+    {
+     "name": "印尼语 (一)",
+     "nature": null,
+     "credits": 8,
+     "hours": 10,
+     "practice": null,
+     "term": "一上",
+     "code": "03534811"
+    },
+    {
+     "name": "印尼语 (二)",
+     "nature": null,
+     "credits": 8,
+     "hours": 10,
+     "practice": null,
+     "term": "一下",
+     "code": "03534812"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 36,
+   "max": 36,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "东南亚历史与现状",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03535760"
+    },
+    {
+     "name": "东南亚文化",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03530370"
+    },
+    {
+     "name": "东方文学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季学期",
+     "code": "03530450"
+    },
+    {
+     "name": "马来语 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03534731"
+    },
+    {
+     "name": "马来语 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03534732"
+    },
+    {
+     "name": "印尼文献选读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03534590"
+    },
+    {
+     "name": "印尼语旅游口语 (一)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03534831"
+    },
+    {
+     "name": "印尼语旅游口语 (二)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03534832"
+    },
+    {
+     "name": "印度尼西亚宗教概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03534650"
+    },
+    {
+     "name": "印尼民俗学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03534620"
+    },
+    {
+     "name": "战后印尼政治与经济",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03534560"
+    },
+    {
+     "name": "马来西亚文化与社会",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四下",
+     "code": "03534779"
+    },
+    {
+     "name": "印度尼西亚电影欣赏",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "四下",
+     "code": "03534750"
+    },
+    {
+     "name": "印尼报刊选读 (一)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03534581"
+    },
+    {
+     "name": "印尼报刊选读 (二)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03534582"
+    },
+    {
+     "name": "印尼短篇小说",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四下",
+     "code": "03534640"
+    },
+    {
+     "name": "印度尼西亚华人问题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四下",
+     "code": "03534700"
+    },
+    {
+     "name": "印尼民间文学概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03534820"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "大学外语                 8      —       —",
+  "—       思想政治理论必修课           19      —       —",
+  "—                           1门      —       —    按学校要求选课",
+  "劳动教育课              32 学时                 按学校要求选课",
+  "算概论 C” 课程后,需要 另",
+  "选 该 课 程 的 上 机 课",
+  "(",
+  "04831435,计算机实习)。",
+  "需要 另 选 该 课 程 的 上 机 课",
+  "—       体育系列课程             1×4      2            全年",
+  "* 注:大学外语必修大学英语对应级别的学分,不足 8 学分部分,需用非本 专 业 语 言 的 公 共 语 言 课 或 专",
+  "业基础语言课补足 (课程明细见本学院附表 1)。",
+  "· 258 ·            北京大学本科培养方案 (",
+  "新开课       印尼语视听说 (一)           1     2     二上",
+  "新开课       印尼语视听说 (二)           1     2     二下",
+  "新开课       高级印尼语精读 (一)          2     4     三上",
+  "新开课       高级印尼语精读 (二)          2     4     三下",
+  "新开课       高级印尼语泛读 (一)          2     3     三上",
+  "新开课       高级印尼语泛读 (二)          2     3     三下",
+  "新开课       印尼语 (三)              8    10     二上",
+  "新开课       印尼语 (四)              8    10     二下",
+  "-3 毕业论文:不计学分,但为毕业必要条件。",
+  "新开课       西方文学                 2     2    春季学期",
+  "北京大学外国语学院                         · 259 ·",
+  "-2 自主选修课:22 学分 (含跨学科课程和辅修专业学分可替代学分)"
+ ],
+ "warnings": [
+  "未找到“毕业总学分”",
+  "第 13914 行：课程行缺少学分：04831435 计算机实习)。"
+ ],
+ "source": {
+  "volumeId": "2023-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=196",
+  "lineStart": 13796,
+  "lineEnd": 14010
+ }
+}

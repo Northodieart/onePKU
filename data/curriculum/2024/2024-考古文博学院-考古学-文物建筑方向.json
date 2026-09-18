@@ -1,0 +1,1347 @@
+{
+ "id": "2024-考古文博学院-考古学-文物建筑方向",
+ "untitled": true,
+ "cohort": 2024,
+ "volume": "北京大学本科培养方案（2024）文科卷",
+ "school": "考古文博学院",
+ "major": "考古学",
+ "track": "文物建筑方向",
+ "title": "考古学（文物建筑方向）专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "历史学学士",
+ "totalCredits": {
+  "min": 140,
+  "max": 140
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 42,
+   "max": 48,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 65,
+   "max": 65,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 33,
+   "max": 33,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "大学英语",
+   "requirement": "2～8 学分",
+   "min": 2,
+   "max": 8,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "思想政治理论必修课",
+   "requirement": "19 学分",
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "1-3",
+   "parent": "1",
+   "name": "思想政治理论选择性必修课",
+   "requirement": "1 门",
+   "min": 1,
+   "max": 1,
+   "unit": "门"
+  },
+  {
+   "id": "1-4",
+   "parent": "1",
+   "name": "劳动教育课",
+   "requirement": "32 学时",
+   "min": 32,
+   "max": 32,
+   "unit": "学时"
+  },
+  {
+   "id": "1-5",
+   "parent": "1",
+   "name": "信息课程",
+   "requirement": "3 学分",
+   "min": 3,
+   "max": 3,
+   "unit": "学分"
+  },
+  {
+   "id": "1-6",
+   "parent": "1",
+   "name": "军事理论",
+   "requirement": "2 学分",
+   "min": 2,
+   "max": 2,
+   "unit": "学分"
+  },
+  {
+   "id": "1-7",
+   "parent": "1",
+   "name": "体育课",
+   "requirement": "4 学分",
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  },
+  {
+   "id": "1-8",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "24 学分",
+   "min": 24,
+   "max": 24,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "35 学分",
+   "min": 35,
+   "max": 35,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "requirement": "6 学分",
+   "min": 6,
+   "max": 6,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "20 学分",
+   "min": 20,
+   "max": 20,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "13 学分",
+   "min": 13,
+   "max": 13,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1.1",
+   "parent": "1",
+   "name": "公共必修课",
+   "courses": [
+    {
+     "name": "计算机实习",
+     "nature": "全校必修",
+     "credits": 0,
+     "hours": 34,
+     "practice": 34,
+     "term": "大一/上",
+     "code": "04831435"
+    },
+    {
+     "name": "计算概论（C）",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大一/上",
+     "code": "04834470"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "1.2",
+   "parent": "1",
+   "name": "通识教育课",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.1",
+   "parent": "2",
+   "name": "专业基础课",
+   "min": 24,
+   "max": 24,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "感悟考古",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "大一/上",
+     "code": "02230010"
+    },
+    {
+     "name": "文物法规与行政管理",
+     "nature": "专业必修",
+     "credits": 1,
+     "hours": 17,
+     "practice": null,
+     "term": "大二/下",
+     "code": "02230730"
+    },
+    {
+     "name": "中国文物建筑导论",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 36,
+     "practice": 8,
+     "term": "大一/上",
+     "code": "02231021"
+    },
+    {
+     "name": "经典导读",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/上",
+     "code": "02231081"
+    },
+    {
+     "name": "建筑初步",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 96,
+     "practice": 84,
+     "term": "大一/上",
+     "code": "02231090"
+    },
+    {
+     "name": "建筑设计（一）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 96,
+     "practice": 78,
+     "term": "大一/下",
+     "code": "02231100"
+    },
+    {
+     "name": "建筑设计（二）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 90,
+     "practice": 72,
+     "term": "大二/上",
+     "code": "02231110"
+    },
+    {
+     "name": "美术素描基础",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 102,
+     "practice": null,
+     "term": "大一/上",
+     "code": "02233010"
+    },
+    {
+     "name": "美术色彩基础",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 96,
+     "practice": null,
+     "term": "大一/下",
+     "code": "02233020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2",
+   "parent": "2",
+   "name": "专业核心课",
+   "min": 35,
+   "max": 35,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "建筑遗产保护",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 38,
+     "practice": 8,
+     "term": "大三/上",
+     "code": "02231022"
+    },
+    {
+     "name": "建筑设计（三）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 102,
+     "practice": null,
+     "term": "大二/下",
+     "code": "02231120"
+    },
+    {
+     "name": "建筑设计（四）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 96,
+     "practice": null,
+     "term": "大三/上",
+     "code": "02231130"
+    },
+    {
+     "name": "中国传统建筑构造",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 102,
+     "practice": 34,
+     "term": null,
+     "code": "02231150"
+    },
+    {
+     "name": "文化遗产学概论",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 36,
+     "practice": 4,
+     "term": "大二/下",
+     "code": "02232220"
+    },
+    {
+     "name": "文化遗产踏查与测绘实习",
+     "nature": "专业必修",
+     "credits": 8,
+     "hours": 720,
+     "practice": 50,
+     "term": "天 大三/下",
+     "code": "02233040"
+    },
+    {
+     "name": "文化遗产保护规划设计理论与方法",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 102,
+     "practice": 51,
+     "term": "大四/上",
+     "code": "02233050"
+    },
+    {
+     "name": "中国建筑史（上）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 54,
+     "practice": 12,
+     "term": "大一/下",
+     "code": "02240011"
+    },
+    {
+     "name": "中国建筑史（下）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 16,
+     "term": "大二/上",
+     "code": "02240012"
+    },
+    {
+     "name": "传统建筑概预算",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 40,
+     "practice": 16,
+     "term": "大四/上",
+     "code": "02240060"
+    },
+    {
+     "name": "文化遗产保护实践",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 60,
+     "practice": 40,
+     "term": "大三/下",
+     "code": "02240140"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "min": 6,
+   "max": 6,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1",
+   "parent": "3",
+   "name": "专业选修课",
+   "min": 20,
+   "max": 20,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.1",
+   "parent": "3.1",
+   "name": "必修课程组 12 分",
+   "courses": [
+    {
+     "name": "田野考古学概论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "大二/下",
+     "code": "02230120"
+    },
+    {
+     "name": "考古学导论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大一/上",
+     "code": "02231080"
+    },
+    {
+     "name": "计算机建筑制图",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 96,
+     "practice": 64,
+     "term": "大二/上",
+     "code": "02231140"
+    },
+    {
+     "name": "考古学通论",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": 4,
+     "term": "大一/下",
+     "code": "02232210"
+    },
+    {
+     "name": "现代建筑构造与结构选型",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大二/上",
+     "code": "02233030"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.2",
+   "parent": "3.1",
+   "name": "专业选修课组",
+   "min": 8,
+   "max": 8,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "中国石窟寺",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "上",
+     "code": "02230411"
+    },
+    {
+     "name": "不可移动文物保护",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 48,
+     "practice": 8,
+     "term": "大三/下",
+     "code": "02230840"
+    },
+    {
+     "name": "外国建筑史",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "上/下",
+     "code": "02230890"
+    },
+    {
+     "name": "田野考古技术专题",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 48,
+     "practice": 32,
+     "term": "下",
+     "code": "02230961"
+    },
+    {
+     "name": "博物馆学概论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": "上",
+     "code": "02231040"
+    },
+    {
+     "name": "古罗马考古与艺术通论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "下",
+     "code": "02231180"
+    },
+    {
+     "name": "博物馆发展史",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "下",
+     "code": "02231290"
+    },
+    {
+     "name": "中国考古学（下二）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大二/下",
+     "code": "02232106"
+    },
+    {
+     "name": "美术考古",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "下",
+     "code": "02232200"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.3",
+   "parent": "3.1",
+   "name": "本科生科研组",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.2",
+   "parent": "3",
+   "name": "自主选修课",
+   "min": 13,
+   "max": 13,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.2.1",
+   "parent": "3.2",
+   "name": "中国语言文学系课程组",
+   "courses": [
+    {
+     "name": "中文工具书",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "下",
+     "code": "02033090"
+    },
+    {
+     "name": "古代典籍概要",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "上",
+     "code": "02033450"
+    },
+    {
+     "name": "古典文献学基础",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "下",
+     "code": "02033620"
+    },
+    {
+     "name": "版本目录学基础（上）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "上",
+     "code": "02034841"
+    },
+    {
+     "name": "中国古代文学（上）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "上",
+     "code": "02035201"
+    },
+    {
+     "name": "中国古代文学（下）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "下",
+     "code": "02035202"
+    },
+    {
+     "name": "中国古代文化基础",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02080420"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2.2",
+   "parent": "3.2",
+   "name": "历史学系课程组",
+   "courses": [
+    {
+     "name": "中国古代史（上）",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "02130011"
+    },
+    {
+     "name": "中国古代史（下）",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": 4,
+     "term": null,
+     "code": "02130012"
+    },
+    {
+     "name": "社会记忆与文本分析",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02130097"
+    },
+    {
+     "name": "中国历史文选（上）",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": 4,
+     "term": "上",
+     "code": "02130101"
+    },
+    {
+     "name": "中国历史文选（下）",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": 4,
+     "term": "下",
+     "code": "02130102"
+    },
+    {
+     "name": "史学概论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 48,
+     "practice": null,
+     "term": "下",
+     "code": "02130110"
+    },
+    {
+     "name": "中国史学史",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "上",
+     "code": "02130120"
+    },
+    {
+     "name": "中国古代政治文化",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "下",
+     "code": "02130180"
+    },
+    {
+     "name": "中国古代政治与文化",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02131110"
+    },
+    {
+     "name": "西方文明史导论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "上",
+     "code": "02131250"
+    },
+    {
+     "name": "中国历史文化导论",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 64,
+     "practice": null,
+     "term": "下",
+     "code": "02132040"
+    },
+    {
+     "name": "中国历史地理概论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "下",
+     "code": "02132160"
+    },
+    {
+     "name": "中国古代经济史专题",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "下",
+     "code": "02132190"
+    },
+    {
+     "name": "蒙古古代史",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "下",
+     "code": "02132210"
+    },
+    {
+     "name": "中国古代民族史",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "下",
+     "code": "02132220"
+    },
+    {
+     "name": "先秦史专题",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "下",
+     "code": "02132320"
+    },
+    {
+     "name": "秦汉史专题",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "下",
+     "code": "02132330"
+    },
+    {
+     "name": "魏晋南北朝史专题",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "上",
+     "code": "02132340"
+    },
+    {
+     "name": "蒙元史专题",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "上",
+     "code": "02132370"
+    },
+    {
+     "name": "明史专题",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "下",
+     "code": "02132380"
+    },
+    {
+     "name": "艺术史概论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 48,
+     "practice": null,
+     "term": "上",
+     "code": "02132720"
+    },
+    {
+     "name": "中国古代农业与农业地理",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02132810"
+    },
+    {
+     "name": "宋史专题",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": "上",
+     "code": "02138360"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2.3",
+   "parent": "3.2",
+   "name": "哲学系课程组",
+   "courses": [
+    {
+     "name": "宗教与中西文明传统比较研究",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02318500"
+    },
+    {
+     "name": "西方科技史导论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02319700"
+    },
+    {
+     "name": "逻辑导论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "上",
+     "code": "02330030"
+    },
+    {
+     "name": "西方哲学（上）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": "下",
+     "code": "02330051"
+    },
+    {
+     "name": "西方哲学（上）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "下",
+     "code": "02330052"
+    },
+    {
+     "name": "西方哲学（下）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": "上",
+     "code": "02330053"
+    },
+    {
+     "name": "西方哲学（下）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "上",
+     "code": "02330054"
+    },
+    {
+     "name": "中国哲学（上）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": "上",
+     "code": "02330092"
+    },
+    {
+     "name": "中国哲学（上）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "上",
+     "code": "02330094"
+    },
+    {
+     "name": "中国哲学（下）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "下",
+     "code": "02330095"
+    },
+    {
+     "name": "中国哲学（下）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": "下",
+     "code": "02330096"
+    },
+    {
+     "name": "科学哲学导论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02330132"
+    },
+    {
+     "name": "逻辑与论证",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02336401"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2.4",
+   "parent": "3.2",
+   "name": "艺术学院课程组",
+   "courses": [
+    {
+     "name": "中国美术通史（上）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": "上",
+     "code": "04330052"
+    },
+    {
+     "name": "中国美术通史（下）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": "下",
+     "code": "04330053"
+    },
+    {
+     "name": "西方美术通史（下）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "04330203"
+    },
+    {
+     "name": "西方美术通史（上）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": "上",
+     "code": "04332511"
+    },
+    {
+     "name": "美术概论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": "上",
+     "code": "04333021"
+    },
+    {
+     "name": "世界著名博物馆艺术经典",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "04334002"
+    },
+    {
+     "name": "敦煌的艺术",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "04334007"
+    },
+    {
+     "name": "美索不达米亚艺术与文明",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "04334017"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2.5",
+   "parent": "3.2",
+   "name": "城市与环境学院课程组 1 门",
+   "courses": [
+    {
+     "name": "中国自然地理",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 8,
+     "term": null,
+     "code": "01531130"
+    },
+    {
+     "name": "文化地理学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01531710"
+    },
+    {
+     "name": "中外城市建设史",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 6,
+     "term": null,
+     "code": "01532190"
+    },
+    {
+     "name": "人文地理学导论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 6,
+     "term": null,
+     "code": "12634110"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2.6",
+   "parent": "3.2",
+   "name": "外国语学院课程组",
+   "courses": [
+    {
+     "name": "日本文化艺术专题",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "下",
+     "code": "03530190"
+    },
+    {
+     "name": "东南亚文化",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "03530370"
+    },
+    {
+     "name": "东方文学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "03530450"
+    },
+    {
+     "name": "中日文化交流史",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": null,
+     "code": "03532260"
+    },
+    {
+     "name": "古代安纳托利亚文明",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "下",
+     "code": "03537703"
+    },
+    {
+     "name": "阿拉伯艺术概论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "上",
+     "code": "03538103"
+    },
+    {
+     "name": "中东史",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "上",
+     "code": "03538390"
+    },
+    {
+     "name": "中俄文化交流史",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "上",
+     "code": "03730740"
+    },
+    {
+     "name": "圣经释读",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03833190"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2.7",
+   "parent": "3.2",
+   "name": "数学类课程组",
+   "min": 2,
+   "max": 2,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "普通统计学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "上/下",
+     "code": "00136700"
+    },
+    {
+     "name": "高等数学 D",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "上",
+     "code": "00137940"
+    },
+    {
+     "name": "定量考古学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "下",
+     "code": "02230310"
+    },
+    {
+     "name": "社会统计学",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": 12,
+     "term": "下",
+     "code": "03130120"
+    },
+    {
+     "name": "应用统计学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 10,
+     "term": "下",
+     "code": "03232300"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2.8",
+   "parent": "3.2",
+   "name": "非本专业选修课组",
+   "min": 1,
+   "max": 1,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.2.9",
+   "parent": "3.2",
+   "name": "社会学系课程组 1 门",
+   "courses": [
+    {
+     "name": "组织社会学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "03130560"
+    },
+    {
+     "name": "中国社会",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": null,
+     "code": "03130590"
+    },
+    {
+     "name": "社会研究：经典与方法",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "03130903"
+    },
+    {
+     "name": "中国社会学史",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "03131740"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "要求“思想政治理论选择性必修课”共 1 门、“劳动教育课”累计不少于 32 学时。思",
+  "想政治理论必修课和其他公共必修课按学校要求选课，信息课程见下表。",
+  "+                     +",
+  "Ⅰ. 人类文明及其传统                        ≥2",
+  "Ⅱ. 现代社会及其问题                        ≥2            1. 不少于 12 学分",
+  "Ⅲ. 艺术与人文                           ≥2            2. 至少修读 1 门“通识核心课”",
+  "Ⅳ. 数学、自然与技术                        ≥2",
+  "（1）具体课程列表详见《北京大学本科生选课手册》 ；",
+  "（2）原则上不允许以专业课替代通识教育课程学分；",
+  "（3）本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分；",
+  "（4）建议合理分配修读时间，每学期修读 1 门课程。",
+  "备注：自愿选择是否参加本科生科研项目。与毕业论文选题不可重复。",
+  "备注：社会学系、城市与环境学院所开课程必须各选一门。中国古代史（上、下）必",
+  "选一门。",
+  "备注：选课范围为全校开放选课课程。",
+  "学生在学校规定的学习年限内，修完培养方案规定的内容，成绩合格，达到学校毕业",
+  "要求的，准予毕业，学校颁发毕业证书；符合学士学位授予条件的，授予学士学位。"
+ ],
+ "warnings": [
+  "第 7543 行：课程组编号 1.1 重复出现，之后的内容未纳入",
+  "专业名按 2025 版“考古学（文物建筑方向）专业”推断（专业必修课重合度 100%），请核对"
+ ],
+ "source": {
+  "volumeId": "2024-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=210",
+  "lineStart": 7260,
+  "lineEnd": 7696
+ },
+ "titleInference": {
+  "from": 2025,
+  "title": "考古学（文物建筑方向）专业",
+  "overlap": 1
+ }
+}

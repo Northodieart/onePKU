@@ -1,0 +1,868 @@
+{
+ "id": "2024-工学院-理论与应用力学_+机器人工程_双学士学位",
+ "untitled": true,
+ "cohort": 2024,
+ "volume": "北京大学本科培养方案（2024）理科卷",
+ "school": "工学院",
+ "major": "理论与应用力学/+机器人工程/双学士学位",
+ "track": null,
+ "title": "理论与应用力学专业+机器人工程专业双学士学位",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "理学学士+工学学士",
+ "totalCredits": {
+  "min": 151,
+  "max": 157
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 45,
+   "max": 51,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 61,
+   "max": 61,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 45,
+   "max": 45,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "大学英语",
+   "requirement": "2～8 学分",
+   "min": 2,
+   "max": 8,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "思想政治理论必修课",
+   "requirement": "19 学分",
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "1-3",
+   "parent": "1",
+   "name": "思想政治理论选择性必修课",
+   "requirement": "1 门",
+   "min": 1,
+   "max": 1,
+   "unit": "门"
+  },
+  {
+   "id": "1-4",
+   "parent": "1",
+   "name": "劳动教育课",
+   "requirement": "32 学时",
+   "min": 32,
+   "max": 32,
+   "unit": "学时"
+  },
+  {
+   "id": "1-5",
+   "parent": "1",
+   "name": "信息课程",
+   "requirement": "6 学分",
+   "min": 6,
+   "max": 6,
+   "unit": "学分"
+  },
+  {
+   "id": "1-6",
+   "parent": "1",
+   "name": "军事理论",
+   "requirement": "2 学分",
+   "min": 2,
+   "max": 2,
+   "unit": "学分"
+  },
+  {
+   "id": "1-7",
+   "parent": "1",
+   "name": "体育课",
+   "requirement": "4 学分",
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  },
+  {
+   "id": "1-8",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "21 学分",
+   "min": 21,
+   "max": 21,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "34 学分",
+   "min": 34,
+   "max": 34,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "requirement": "6 学分",
+   "min": 6,
+   "max": 6,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课程",
+   "requirement": "33 学分",
+   "min": 33,
+   "max": 33,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "12 学分",
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1.1",
+   "parent": "1",
+   "name": "公共必修课",
+   "courses": [
+    {
+     "name": "计算概论（B）",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大一/上",
+     "code": "04831410"
+    },
+    {
+     "name": "数据结构与算法（B）",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大一/下",
+     "code": "04831420"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "1.2",
+   "parent": "1",
+   "name": "通识教育课",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.1",
+   "parent": "2",
+   "name": "专业基础课",
+   "min": 21,
+   "max": 21,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "数学分析（一）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 96,
+     "practice": 28,
+     "term": "大一/上",
+     "code": "00331501"
+    },
+    {
+     "name": "线性代数与几何",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 85,
+     "practice": 17,
+     "term": "大一/上",
+     "code": "00331770"
+    },
+    {
+     "name": "现代工学通论",
+     "nature": "专业必修",
+     "credits": 1,
+     "hours": 34,
+     "practice": null,
+     "term": "大一/上",
+     "code": "00334010"
+    },
+    {
+     "name": "数学分析（二）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 96,
+     "practice": 28,
+     "term": "大一/下",
+     "code": "00331502"
+    },
+    {
+     "name": "普通物理（Ⅰ）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "大一/下",
+     "code": "00431132"
+    },
+    {
+     "name": "普通物理（Ⅱ）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "大二/上",
+     "code": "00431133"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2",
+   "parent": "2",
+   "name": "专业核心课",
+   "min": 34,
+   "max": 34,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.2.1",
+   "parent": "2.2",
+   "name": "力学与机器人交叉融合课程组",
+   "min": 12,
+   "max": 12,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "理论力学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": null,
+     "term": "大二/上",
+     "code": "00331910"
+    },
+    {
+     "name": "机器人学概论",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 10,
+     "term": "大二/上",
+     "code": "00334260"
+    },
+    {
+     "name": "高等动力学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大二/下",
+     "code": "00331800"
+    },
+    {
+     "name": "机器人学实验（二）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 85,
+     "practice": 68,
+     "term": "大四/上",
+     "code": "00334592"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2.2",
+   "parent": "2.2",
+   "name": "力学与物理专业核心课组",
+   "min": 6,
+   "max": 6,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "材料力学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": 8,
+     "term": "大二/下",
+     "code": "00330070"
+    },
+    {
+     "name": "工程流体力学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大三/上",
+     "code": "00332300"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2.3",
+   "parent": "2.2",
+   "name": "机器人专业核心课组",
+   "min": 16,
+   "max": 16,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "机械设计基础",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": null,
+     "term": "大二/上",
+     "code": "00332690"
+    },
+    {
+     "name": "模拟电子技术",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": 4,
+     "term": "大三/上",
+     "code": "00334220"
+    },
+    {
+     "name": "自动控制原理",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": "大三/下",
+     "code": "00330220"
+    },
+    {
+     "name": "机器人学实验（一）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 85,
+     "practice": 68,
+     "term": "大三/下",
+     "code": "00334591"
+    },
+    {
+     "name": "数字电子技术",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大四/下",
+     "code": "00334230"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "min": 6,
+   "max": 6,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1",
+   "parent": "3",
+   "name": "专业选修课",
+   "min": 33,
+   "max": 33,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.1",
+   "parent": "3.1",
+   "name": "数学力学类基础课程组",
+   "min": 12,
+   "max": 12,
+   "unit": "学分",
+   "note": "标注“必修”的课程必须选修",
+   "courses": [
+    {
+     "name": "高等代数（必修）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大一/下",
+     "code": "00331880"
+    },
+    {
+     "name": "常微分方程（必修）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 68,
+     "practice": null,
+     "term": "大二/上",
+     "code": "00330700"
+    },
+    {
+     "name": "计算方法",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 85,
+     "practice": 34,
+     "term": "大二/上",
+     "code": "00330050"
+    },
+    {
+     "name": "数学分析（三）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 51,
+     "practice": null,
+     "term": "大二/上",
+     "code": "00331510"
+    },
+    {
+     "name": "工程数学（必修）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 68,
+     "practice": null,
+     "term": "大二/下",
+     "code": "00330760"
+    },
+    {
+     "name": "代数结构与组合数学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大二/下",
+     "code": "04830080"
+    },
+    {
+     "name": "概率与数理统计（必修）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大三/上",
+     "code": "00331900"
+    },
+    {
+     "name": "数学物理方法（下）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大三/上",
+     "code": "00332242"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.2",
+   "parent": "3.1",
+   "name": "机器人类基础课程组",
+   "min": 21,
+   "max": 21,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "群体智能",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大二/下",
+     "code": "00334360"
+    },
+    {
+     "name": "信号与系统",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 54,
+     "practice": 6,
+     "term": "大三/上",
+     "code": "00334330"
+    },
+    {
+     "name": "先进制造技术基础",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大三/下",
+     "code": "00334410"
+    },
+    {
+     "name": "机器人学实验（三）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 51,
+     "practice": 34,
+     "term": "大四/上",
+     "code": "00334293"
+    },
+    {
+     "name": "工程优化设计",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 3,
+     "term": "大四/上",
+     "code": "00334420"
+    },
+    {
+     "name": "机器人感知与控制",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大四/上",
+     "code": "00334430"
+    },
+    {
+     "name": "机器学习",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00114250"
+    },
+    {
+     "name": "数字信号处理",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "秋季",
+     "code": "00130830"
+    },
+    {
+     "name": "机器人动力学与控制",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "秋季",
+     "code": "00334270"
+    },
+    {
+     "name": "仿生机器人",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 54,
+     "practice": 3,
+     "term": "秋季",
+     "code": "00334280"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.3",
+   "parent": "3.1",
+   "name": "其他基础课程组",
+   "courses": [
+    {
+     "name": "工程制图",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大一/上",
+     "code": "00330630"
+    },
+    {
+     "name": "连续介质力学基础",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大二/下",
+     "code": "00332460"
+    },
+    {
+     "name": "材料力学实验",
+     "nature": "任选",
+     "credits": 1,
+     "hours": 34,
+     "practice": 34,
+     "term": "大二/下",
+     "code": "00334050"
+    },
+    {
+     "name": "弹性力学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 68,
+     "practice": null,
+     "term": "大三/上",
+     "code": "00331540"
+    },
+    {
+     "name": "流体力学（下）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大三/下",
+     "code": "00332282"
+    },
+    {
+     "name": "固体力学实验",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 85,
+     "practice": 68,
+     "term": "大三/下",
+     "code": "00332330"
+    },
+    {
+     "name": "流体力学实验",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 71,
+     "practice": 20,
+     "term": "大四/上",
+     "code": "00332340"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2",
+   "parent": "3",
+   "name": "自主选修课",
+   "min": 12,
+   "max": 12,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "气体力学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "春季",
+     "code": "00330130"
+    },
+    {
+     "name": "计算流体力学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "春季",
+     "code": "00330140"
+    },
+    {
+     "name": "专业英语",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "春季",
+     "code": "00330270"
+    },
+    {
+     "name": "振动理论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "秋季",
+     "code": "00330280"
+    },
+    {
+     "name": "工程 CAD（1）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 85,
+     "practice": 34,
+     "term": "秋季",
+     "code": "00331311"
+    },
+    {
+     "name": "燃烧学基础",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "秋季",
+     "code": "00332430"
+    },
+    {
+     "name": "非线性动力学和混沌引论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "春季",
+     "code": "00333640"
+    },
+    {
+     "name": "热力学与统计力学导论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "秋季",
+     "code": "00333900"
+    },
+    {
+     "name": "环境力学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 3,
+     "term": "秋季",
+     "code": "00333910"
+    },
+    {
+     "name": "医学成像基础",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "秋季",
+     "code": "00333980"
+    },
+    {
+     "name": "工学创新实践",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 85,
+     "practice": 68,
+     "term": "春季",
+     "code": "00334030"
+    },
+    {
+     "name": "生物力学与医学工程概论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "春季",
+     "code": "00334160"
+    },
+    {
+     "name": "计算固体力学Ⅰ",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "春季",
+     "code": "00334441"
+    },
+    {
+     "name": "塑性力学",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": 17,
+     "term": "秋季",
+     "code": "08611640"
+    },
+    {
+     "name": "湍流",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "秋季",
+     "code": "08611830"
+    },
+    {
+     "name": "高等数理方程",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "秋季",
+     "code": "08612130"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "要求“思想政治理论选择性必修课”共 1 门、“劳动教育课”累计不少于 32 学时。思",
+  "想政治理论必修课和其他公共必修课按学校要求选课，信息课程见下表。",
+  "Ⅰ. 人类文明及其传统                  ≥2",
+  "Ⅱ. 现代社会及其问题                  ≥2             1. 不少于 12 学分",
+  "Ⅲ. 艺术与人文                     ≥2             2. 至少修读 1 门“通识核心课”",
+  "Ⅳ. 数学、自然与技术                  ≥2",
+  "（1）具体课程列表详见《北京大学本科生选课手册》",
+  "；",
+  "（2）原则上不允许以专业课替代通识教育课程学分；",
+  "（3）本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分；",
+  "（4）建议合理分配修读时间，每学期修读 1 门课程。",
+  "备注：普物（Ⅰ）与电磁学属于同质类课程，普物（Ⅱ）与热学+光学+近代物理属于",
+  "同质类课程，同质类课程不可重复修读。可用电磁学、光学、热学、近代物理中的至少三",
+  "门且总学分不少于 8 学分替代普物（Ⅰ）和普物（Ⅱ），超出 8 学分的部分计入 3.2 自主选",
+  "修学分。",
+  "备注：多余学分可以计入 3.2 自主选修课程学分。",
+  "新开课       电机驱动与运动控制      任选    3     51           大三/下",
+  "备注：可根据学习兴趣在全校范围自主选课（全校公选课不能计入），建议继续读研的",
+  "学生联系意向导师推荐选修课程。列表中仅为近期课程，请以实际开课为准。"
+ ],
+ "warnings": [
+  "专业名按 2025 版“理论与应用力学专业+机器人工程专业双学士学位”推断（专业必修课重合度 100%），请核对"
+ ],
+ "source": {
+  "volumeId": "2024-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=209",
+  "lineStart": 26200,
+  "lineEnd": 26473
+ },
+ "titleInference": {
+  "from": 2025,
+  "title": "理论与应用力学专业+机器人工程专业双学士学位",
+  "overlap": 1
+ }
+}

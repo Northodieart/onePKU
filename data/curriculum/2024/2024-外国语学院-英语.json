@@ -1,0 +1,1134 @@
+{
+ "id": "2024-外国语学院-英语",
+ "untitled": true,
+ "cohort": 2024,
+ "volume": "北京大学本科培养方案（2024）文科卷",
+ "school": "外国语学院",
+ "major": "英语",
+ "track": null,
+ "title": "英语专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "文学学士",
+ "totalCredits": {
+  "min": 139,
+  "max": 139
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 46,
+   "max": 46,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 38,
+   "max": 38,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 55,
+   "max": 55,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "大学英语",
+   "requirement": "0 学分",
+   "min": 0,
+   "max": 0,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "思想政治理论必修课",
+   "requirement": "19 学分",
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "1-3",
+   "parent": "1",
+   "name": "思想政治理论选择性必修课",
+   "requirement": "1 门",
+   "min": 1,
+   "max": 1,
+   "unit": "门"
+  },
+  {
+   "id": "1-4",
+   "parent": "1",
+   "name": "劳动教育课",
+   "requirement": "32 学时",
+   "min": 32,
+   "max": 32,
+   "unit": "学时"
+  },
+  {
+   "id": "1-5",
+   "parent": "1",
+   "name": "信息课程",
+   "requirement": "3 学分",
+   "min": 3,
+   "max": 3,
+   "unit": "学分"
+  },
+  {
+   "id": "1-6",
+   "parent": "1",
+   "name": "军事理论",
+   "requirement": "2 学分",
+   "min": 2,
+   "max": 2,
+   "unit": "学分"
+  },
+  {
+   "id": "1-7",
+   "parent": "1",
+   "name": "体育课",
+   "requirement": "4 学分",
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  },
+  {
+   "id": "1-8",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "1-9",
+   "parent": "1",
+   "name": "大学外语",
+   "requirement": "6 学分",
+   "min": 6,
+   "max": 6,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "6 学分",
+   "min": 6,
+   "max": 6,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "32 学分",
+   "min": 32,
+   "max": 32,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "requirement": "0 学分",
+   "min": 0,
+   "max": 0,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "42 学分",
+   "min": 42,
+   "max": 42,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "13 学分",
+   "min": 13,
+   "max": 13,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1.1",
+   "parent": "1",
+   "name": "公共必修课",
+   "courses": [
+    {
+     "name": "计算机实习",
+     "nature": "全校必修",
+     "credits": 0,
+     "hours": 34,
+     "practice": 34,
+     "term": "一上",
+     "code": "04831435"
+    },
+    {
+     "name": "计算概论（C）",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "一上",
+     "code": "04834470"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "1.2",
+   "parent": "1",
+   "name": "通识教育课",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.1",
+   "parent": "2",
+   "name": "专业基础课",
+   "min": 6,
+   "max": 6,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "写作（一）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 7,
+     "term": "大二/上",
+     "code": "03830071"
+    },
+    {
+     "name": "写作（二）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": "大二/下",
+     "code": "03830072"
+    },
+    {
+     "name": "文学形式导论",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": "大一/上",
+     "code": "03832020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2",
+   "parent": "2",
+   "name": "专业核心课",
+   "min": 32,
+   "max": 32,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "英语精读（一）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 4,
+     "practice": 68,
+     "term": "大一/上",
+     "code": "03830017"
+    },
+    {
+     "name": "英语精读（二）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 4,
+     "practice": 68,
+     "term": "大一/下",
+     "code": "03830018"
+    },
+    {
+     "name": "英语精读（三）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 4,
+     "practice": 68,
+     "term": "大二/上",
+     "code": "03830033"
+    },
+    {
+     "name": "英语精读（四）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 4,
+     "practice": 68,
+     "term": "大二/下",
+     "code": "03830034"
+    },
+    {
+     "name": "英译汉",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 5,
+     "term": "大三/下",
+     "code": "03830110"
+    },
+    {
+     "name": "汉译英",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": "大三/上",
+     "code": "03830120"
+    },
+    {
+     "name": "美国文学史与选读（一）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": "大三/下",
+     "code": "03830131"
+    },
+    {
+     "name": "美国文学史与选读（二）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": "大四/上",
+     "code": "03830132"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.3",
+   "parent": "2",
+   "name": "毕业论文",
+   "note": "设计",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1",
+   "parent": "3",
+   "name": "专业选修课",
+   "min": 42,
+   "max": 42,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.1",
+   "parent": "3.1",
+   "name": "语言技能与运用组",
+   "courses": [
+    {
+     "name": "口语（一）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 24,
+     "term": null,
+     "code": "03830041"
+    },
+    {
+     "name": "口语（二）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 24,
+     "term": null,
+     "code": "03830042"
+    },
+    {
+     "name": "英语视听（一）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 27,
+     "term": null,
+     "code": "03830061"
+    },
+    {
+     "name": "英语视听（二）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 27,
+     "term": null,
+     "code": "03830062"
+    },
+    {
+     "name": "汉英交传",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 24,
+     "term": null,
+     "code": "03834091"
+    },
+    {
+     "name": "英汉交传",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 24,
+     "term": null,
+     "code": "03834092"
+    },
+    {
+     "name": "同声传译",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 24,
+     "term": null,
+     "code": "03834080"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.2",
+   "parent": "3.1",
+   "name": "英语文学与文化研究组",
+   "courses": [
+    {
+     "name": "希腊罗马神话",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03831020"
+    },
+    {
+     "name": "短篇小说选读",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03832030"
+    },
+    {
+     "name": "欧洲文学选读",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03832040"
+    },
+    {
+     "name": "西方思想传统",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03832060"
+    },
+    {
+     "name": "美国短篇小说",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03832080"
+    },
+    {
+     "name": "英语史",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03832150"
+    },
+    {
+     "name": "十九世纪美国小说",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03832170"
+    },
+    {
+     "name": "英国散文名篇",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": null,
+     "code": "03833120"
+    },
+    {
+     "name": "英国小说选读",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": null,
+     "code": "03833130"
+    },
+    {
+     "name": "英诗选读",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03833140"
+    },
+    {
+     "name": "英美女作家作品选读",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03833170"
+    },
+    {
+     "name": "英国现代主义小说",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03833180"
+    },
+    {
+     "name": "圣经释读",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03833190"
+    },
+    {
+     "name": "英语文学文体学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03833300"
+    },
+    {
+     "name": "英语文学文体赏析",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03833309"
+    },
+    {
+     "name": "西方思想与近代中国",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03833340"
+    },
+    {
+     "name": "文化理论与加拿大小说",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": null,
+     "code": "03833360"
+    },
+    {
+     "name": "哥特小说",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03833370"
+    },
+    {
+     "name": "加拿大小说选读",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03834070"
+    },
+    {
+     "name": "现代爱尔兰经典作家",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03834120"
+    },
+    {
+     "name": "英语诗歌鉴赏",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": null,
+     "code": "03834130"
+    },
+    {
+     "name": "20 世纪西方文论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03834180"
+    },
+    {
+     "name": "文学导读与批评实践",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03834190"
+    },
+    {
+     "name": "大众文化简介与批评",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03834200"
+    },
+    {
+     "name": "西方宗教思想",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": null,
+     "code": "03834210"
+    },
+    {
+     "name": "比较视野中的中美当代小说",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03834240"
+    },
+    {
+     "name": "文学、自然与地方",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03834370"
+    },
+    {
+     "name": "西方古典文学与社会",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03834410"
+    },
+    {
+     "name": "现代欧洲小说中的自",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03834420"
+    },
+    {
+     "name": "英国浪漫主义文学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": null,
+     "code": "03834460"
+    },
+    {
+     "name": "英国维多利亚时期散文作品",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": null,
+     "code": "03834470"
+    },
+    {
+     "name": "中世纪英国文学选读",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03834480"
+    },
+    {
+     "name": "时代背景下的简·奥斯汀小说",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03834490"
+    },
+    {
+     "name": "英语科幻小说",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03834510"
+    },
+    {
+     "name": "经典著作的经典译本",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03834520"
+    },
+    {
+     "name": "文学与电影中的奇幻元素",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03834530"
+    },
+    {
+     "name": "社会",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03834550"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.3",
+   "parent": "3.1",
+   "name": "英语语言学与翻译研究组",
+   "courses": [
+    {
+     "name": "普通语言学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03830100"
+    },
+    {
+     "name": "语法语义学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03831060"
+    },
+    {
+     "name": "英语结构",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03831080"
+    },
+    {
+     "name": "现代英文写作修辞传统",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03831110"
+    },
+    {
+     "name": "中西修辞传统",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03831120"
+    },
+    {
+     "name": "语篇分析入门",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03831130"
+    },
+    {
+     "name": "英语词汇学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03832120"
+    },
+    {
+     "name": "英语辞典和词源学研究",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03832190"
+    },
+    {
+     "name": "报刊选读",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03833030"
+    },
+    {
+     "name": "社会",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03834500"
+    },
+    {
+     "name": "中西翻译史",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "03834540"
+    },
+    {
+     "name": "英语词汇与英美文化",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": null,
+     "code": "03835270"
+    },
+    {
+     "name": "语言、文化与交际",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "03835710"
+    },
+    {
+     "name": "第二语言习得",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 6,
+     "term": null,
+     "code": "03930130"
+    },
+    {
+     "name": "系统功能语法",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 12,
+     "term": null,
+     "code": "03930140"
+    },
+    {
+     "name": "语言与文化研究",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 17,
+     "term": null,
+     "code": "03930150"
+    },
+    {
+     "name": "语音学和音系学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "03930160"
+    },
+    {
+     "name": "句法学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 9,
+     "term": null,
+     "code": "03930170"
+    },
+    {
+     "name": "语料库语言学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "03930180"
+    },
+    {
+     "name": "语义学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": null,
+     "code": "03930190"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2",
+   "parent": "3",
+   "name": "自主选修课",
+   "min": 13,
+   "max": 13,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "中国古代文学（上）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02035201"
+    },
+    {
+     "name": "中国古代文学（下）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02035202"
+    },
+    {
+     "name": "中国古代史（上）",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "02130011"
+    },
+    {
+     "name": "中国古代史（下）",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 64,
+     "practice": null,
+     "term": null,
+     "code": "02130012"
+    },
+    {
+     "name": "考古学通论",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 64,
+     "practice": null,
+     "term": null,
+     "code": "02232210"
+    },
+    {
+     "name": "哲学导论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "02330001"
+    },
+    {
+     "name": "西方哲学（上）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "02330052"
+    },
+    {
+     "name": "西方哲学（下）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02330053"
+    },
+    {
+     "name": "西方哲学（下）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02330054"
+    },
+    {
+     "name": "中国哲学（上）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 48,
+     "practice": null,
+     "term": null,
+     "code": "02330092"
+    },
+    {
+     "name": "中国哲学（上）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "02330094"
+    },
+    {
+     "name": "中国哲学（下）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "02330095"
+    },
+    {
+     "name": "中国哲学（下）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 48,
+     "practice": null,
+     "term": null,
+     "code": "02330096"
+    },
+    {
+     "name": "东方文学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "03530450"
+    },
+    {
+     "name": "西方文学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "03632990"
+    },
+    {
+     "name": "艺术史导论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "04330218"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "要求“思想政治理论选择性必修课”共 1 门、“劳动教育课”累计不少于 32 学时。思",
+  "想政治理论必修课和其他公共必修课按学校要求选课，信息课程见下表。",
+  "+                +",
+  "Ⅰ. 人类文明及其传统                  ≥2",
+  "Ⅱ. 现代社会及其问题                  ≥2            1. 不少于 12 学分",
+  "Ⅲ. 艺术与人文                     ≥2            2. 至少修读 1 门“通识核心课”",
+  "Ⅳ. 数学、自然与技术                  ≥2",
+  "（1）具体课程列表详见《北京大学本科生选课手册》 ；",
+  "（2）原则上不允许以专业课替代通识教育课程学分；",
+  "（3）本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分；",
+  "（4）建议合理分配修读时间，每学期修读 1 门课程。",
+  "新开课       英国文学史与选读（一）     专业必修   4    68        大二/下",
+  "新开课       英国文学史与选读（二）     专业必修   4    68        大三/上",
+  "备注：不计学分，但为毕业必要条件。",
+  "中国文化研究英文著",
+  "新开课                       任选   2     34   0",
+  "作选读",
+  "备注：人文学部课程不少于 5 学分，其中人文学部课程（中国文学史、中国古代史、",
+  "考古学通论、哲学导论、中国哲学、西方哲学、艺术史导论）不少于 3 学分；东方文学、",
+  "西方文学必选一门。"
+ ],
+ "warnings": [
+  "专业名按 2025 版“英语专业”推断（专业必修课重合度 100%），请核对"
+ ],
+ "source": {
+  "volumeId": "2024-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=210",
+  "lineStart": 12368,
+  "lineEnd": 12742
+ },
+ "titleInference": {
+  "from": 2025,
+  "title": "英语专业",
+  "overlap": 1
+ }
+}

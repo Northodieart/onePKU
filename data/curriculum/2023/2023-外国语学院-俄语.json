@@ -1,0 +1,759 @@
+{
+ "id": "2023-外国语学院-俄语",
+ "cohort": 2023,
+ "volume": "北京大学本科教学计划（2023）文科卷",
+ "school": "外国语学院",
+ "major": "俄语",
+ "track": null,
+ "title": "俄语专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "文学学士学位。",
+ "totalCredits": {
+  "min": 155,
+  "max": 155
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 48,
+   "max": 48,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 54,
+   "max": 54,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 53,
+   "max": 53,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "36 学分",
+   "inferredParent": true,
+   "min": 36,
+   "max": 36,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "24 学分",
+   "inferredParent": true,
+   "min": 24,
+   "max": 24,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "30 学分",
+   "inferredParent": true,
+   "min": 30,
+   "max": 30,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "20 学分",
+   "inferredParent": true,
+   "min": 20,
+   "max": 20,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "33 学分",
+   "inferredParent": true,
+   "min": 33,
+   "max": 33,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 48,
+   "max": 48,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 C",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "“计算 概 论 C” 课 程 后,",
+     "code": "04834470"
+    },
+    {
+     "name": "计算机实习",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "计 算",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上或一下",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 54,
+   "max": 54,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "俄语语音",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "一上",
+     "code": "03730650"
+    },
+    {
+     "name": "俄语视听说 (一)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "03730751"
+    },
+    {
+     "name": "俄语视听说 (二)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03730752"
+    },
+    {
+     "name": "俄语语法 (一)",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": null,
+     "term": "二上",
+     "code": "03730031"
+    },
+    {
+     "name": "俄语口语会话 (一)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03730871"
+    },
+    {
+     "name": "俄语语法 (二)",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": null,
+     "term": "二下",
+     "code": "03730032"
+    },
+    {
+     "name": "俄译汉教程 (上)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03730551"
+    },
+    {
+     "name": "俄语写作 (上)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03730541"
+    },
+    {
+     "name": "俄罗斯文学选读 (上)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03730311"
+    },
+    {
+     "name": "俄语报刊阅读 (一)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03730381"
+    },
+    {
+     "name": "高级俄语 (一)",
+     "nature": null,
+     "credits": 3,
+     "hours": 6,
+     "practice": null,
+     "term": "三上",
+     "code": "03730511"
+    },
+    {
+     "name": "俄语实践修辞",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03730132"
+    },
+    {
+     "name": "汉译俄教程 (上)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03730811"
+    },
+    {
+     "name": "高级俄语 (二)",
+     "nature": null,
+     "credits": 3,
+     "hours": 6,
+     "practice": null,
+     "term": "三下",
+     "code": "03730512"
+    },
+    {
+     "name": "高级俄语 (三)",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": null,
+     "term": "四上",
+     "code": "03730513"
+    },
+    {
+     "name": "高级俄语 (四)",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": null,
+     "term": "四下",
+     "code": "03730514"
+    },
+    {
+     "name": "基础俄语 (一)",
+     "nature": null,
+     "credits": 6,
+     "hours": 12,
+     "practice": null,
+     "term": "一上",
+     "code": "03730501"
+    },
+    {
+     "name": "基础俄语 (二)",
+     "nature": null,
+     "credits": 6,
+     "hours": 12,
+     "practice": null,
+     "term": "一下",
+     "code": "03730502"
+    },
+    {
+     "name": "基础俄语 (三)",
+     "nature": null,
+     "credits": 5,
+     "hours": 10,
+     "practice": null,
+     "term": "二上",
+     "code": "03730503"
+    },
+    {
+     "name": "基础俄语 (四)",
+     "nature": null,
+     "credits": 5,
+     "hours": 10,
+     "practice": null,
+     "term": "二下",
+     "code": "03730504"
+    },
+    {
+     "name": "俄罗斯文学史 (一)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03730071"
+    },
+    {
+     "name": "俄罗斯文学史 (二)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03730072"
+    },
+    {
+     "name": "俄罗斯国情 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上",
+     "code": "03730881"
+    },
+    {
+     "name": "俄罗斯国情 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "03730882"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 53,
+   "max": 53,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "俄语阅读———文化背景知识 (一)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "03730111"
+    },
+    {
+     "name": "俄罗斯艺术史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03730490"
+    },
+    {
+     "name": "俄语阅读———文化背景知识 (二)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03730112"
+    },
+    {
+     "name": "俄语阅读———文化背景知识 (三)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03730113"
+    },
+    {
+     "name": "俄语视听说 (三)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03730753"
+    },
+    {
+     "name": "俄语口语会话 (二)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03730872"
+    },
+    {
+     "name": "中俄文化交流史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03730740"
+    },
+    {
+     "name": "俄语新闻听力 (上)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03730761"
+    },
+    {
+     "name": "俄罗斯文学选读 (下)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03730312"
+    },
+    {
+     "name": "俄语写作 (下)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03730542"
+    },
+    {
+     "name": "俄语报刊阅读 (二)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03730382"
+    },
+    {
+     "name": "汉译俄教程 (下)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03730812"
+    },
+    {
+     "name": "20 世纪俄国文学专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03730813"
+    },
+    {
+     "name": "俄语口译 (上)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03730301"
+    },
+    {
+     "name": "19 世纪俄国文学专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四下",
+     "code": "03730873"
+    },
+    {
+     "name": "俄语口译 (下)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "四下",
+     "code": "03730302"
+    },
+    {
+     "name": "东方文学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "每年秋季学期",
+     "code": "03530450"
+    },
+    {
+     "name": "西方文学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "每年春季学期",
+     "code": "03632990"
+    },
+    {
+     "name": "普通语言学概论 #",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上",
+     "code": "03730720"
+    },
+    {
+     "name": "俄语快速阅读",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03730620"
+    },
+    {
+     "name": "俄语功能语法学 #",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "三上",
+     "code": "03730120"
+    },
+    {
+     "name": "俄语应用文",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03730140"
+    },
+    {
+     "name": "俄译汉教程 (下) #",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03730552"
+    },
+    {
+     "name": "俄语新闻听力 (下)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03730762"
+    },
+    {
+     "name": "文学理论基础 #",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "03730739"
+    },
+    {
+     "name": "俄苏诗歌",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03730170"
+    },
+    {
+     "name": "俄罗斯民间文学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03730680"
+    },
+    {
+     "name": "中俄文学比较 #",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03730660"
+    },
+    {
+     "name": "俄罗斯社会与文化系列讲座",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "03730780"
+    },
+    {
+     "name": "俄罗斯的信仰与文化 (上) #",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03730850"
+    },
+    {
+     "name": "俄罗斯的信仰与文化 (下) #",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03730852"
+    },
+    {
+     "name": "俄罗斯民俗民情 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03730591"
+    },
+    {
+     "name": "俄罗斯民俗民情 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03730592"
+    },
+    {
+     "name": "俄罗斯文学与音乐",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03730699"
+    },
+    {
+     "name": "俄苏电影赏析",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03730329"
+    },
+    {
+     "name": "环俄国国家语言与文化 #",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03730874"
+    },
+    {
+     "name": "* 俄国戏剧与实践",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "全年",
+     "code": "03730131"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "—       思想政治理论必修课             19      —      —",
+  "选课。",
+  "—                             1门      —      —     按学校要求选课。",
+  "—       劳动教育课                32 学时                 按学校要求选课",
+  "需要另 选 该 课 程 的 上 机",
+  "课 (",
+  "实习)。",
+  "时,需要 另 选 该 课 程 的",
+  "机实习)。",
+  "—       体育系列课程               1×4      2            全年",
+  "注:大学外语必修大学英语对应级别的学分,不足 8 学 分 部 分,需 用 非 本 专 业 语 言 的 公 共 语 言 课 或 专 业",
+  "基础语言课补足学分 (课程明细见本学院附表 1)。",
+  "通识教育课分为四个系列: Ⅰ. 人类文明及其传统; Ⅱ. 现代社会及其问题; Ⅲ. 艺",
+  "术与人文; Ⅳ. 数 学、 自 然 与 技 术。 每 个 系 列 均 包 含 通 识 教 育 核 心 课、 通 选 课 两 部 分 课",
+  "程,具体课程列表详见 《北京大学本科生选课手册》。",
+  "1)至少修读 1 门 “通识教育核心课程” (任一系列),且在四个课程系列中每个系列",
+  "至少修读 2 学分 (通识教育核心课或通选课均可)。",
+  "2)原则上不允许以专业课替代通识教育课程学分。",
+  "3)本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分。",
+  "4)建议合理分配修读时间,每学期修读 1 门课程。",
+  "北京大学外国语学院               · 201 ·",
+  "注:东方文学和西方文学学院建议选修至少其中一门。",
+  "含跨学科课程和辅修专业学分可替代学分,其中人文学部课程不少于 3 学分,详见本",
+  "学院附表 2。自主专业选修课:不少于 13 学分。",
+  "注: ①* 俄国戏剧与实践每年开设,各年级均可 参 加,次 数 不 限, 只 计 算 一 次 学 分。 ② # 课 程 为 欲 取 得",
+  "荣誉学位应修课程。"
+ ],
+ "warnings": [
+  "第 10999 行：课程行缺少学分：04831435 计 算"
+ ],
+ "source": {
+  "volumeId": "2023-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=196",
+  "lineStart": 10907,
+  "lineEnd": 11180
+ }
+}

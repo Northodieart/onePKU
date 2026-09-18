@@ -1,0 +1,12 @@
+[workspace]
+members = ["crates/campus-core", "src-tauri"]
+exclude = ["vendor/pkucli"]
+resolver = "2"
+
+[profile.dev]
+debug = 1
+
+[profile.release]
+strip = true
+lto = "thin"
+codegen-units = 8

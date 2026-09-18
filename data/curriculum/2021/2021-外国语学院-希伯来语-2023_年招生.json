@@ -1,0 +1,432 @@
+{
+ "id": "2021-外国语学院-希伯来语-2023_年招生",
+ "cohort": 2021,
+ "volume": "北京大学本科培养方案（2021）文科卷",
+ "school": "外国语学院",
+ "major": "希伯来语",
+ "track": "2023 年招生",
+ "title": "希伯来语专业 ( 2023 年招生 )",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": null,
+ "totalCredits": null,
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 47,
+   "max": 47,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 56,
+   "max": 56,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 40,
+   "max": 40,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "35 学分",
+   "inferredParent": true,
+   "min": 35,
+   "max": 35,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "24 学分",
+   "inferredParent": true,
+   "min": 24,
+   "max": 24,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "32 学分",
+   "inferredParent": true,
+   "min": 32,
+   "max": 32,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "20 学分",
+   "inferredParent": true,
+   "min": 20,
+   "max": 20,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "20 学分",
+   "inferredParent": true,
+   "min": 20,
+   "max": 20,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 47,
+   "max": 47,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 C",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "“计算 概 论 C” 课 程 后,",
+     "code": "04834470"
+    },
+    {
+     "name": "计算机实习",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "计 算",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上或一下",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 56,
+   "max": 56,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "犹太简史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一年级下",
+     "code": "03535080"
+    },
+    {
+     "name": "以色列现代史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二年级上",
+     "code": "03535210"
+    },
+    {
+     "name": "以色列社会",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二年级下",
+     "code": "03535220"
+    },
+    {
+     "name": "圣经概述与导读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三年级上",
+     "code": "03535230"
+    },
+    {
+     "name": "犹太教概述",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三年级下",
+     "code": "03535240"
+    },
+    {
+     "name": "希伯来语文学作品选读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四年级上",
+     "code": "03535290"
+    },
+    {
+     "name": "希伯来语 (五)",
+     "nature": null,
+     "credits": 6,
+     "hours": 6,
+     "practice": null,
+     "term": "三年级上",
+     "code": "03535165"
+    },
+    {
+     "name": "希伯来语 (六)",
+     "nature": null,
+     "credits": 6,
+     "hours": 6,
+     "practice": null,
+     "term": "三年级下",
+     "code": "03535166"
+    },
+    {
+     "name": "希伯来语 (一)",
+     "nature": null,
+     "credits": 8,
+     "hours": 10,
+     "practice": null,
+     "term": "一年级上",
+     "code": "03535161"
+    },
+    {
+     "name": "希伯来语 (二)",
+     "nature": null,
+     "credits": 8,
+     "hours": 10,
+     "practice": null,
+     "term": "一年级下",
+     "code": "03535162"
+    },
+    {
+     "name": "希伯来语 (三)",
+     "nature": null,
+     "credits": 8,
+     "hours": 10,
+     "practice": null,
+     "term": "二年级上",
+     "code": "03535163"
+    },
+    {
+     "name": "希伯来语 (四)",
+     "nature": null,
+     "credits": 8,
+     "hours": 10,
+     "practice": null,
+     "term": "二年级下",
+     "code": "03535164"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 40,
+   "max": 40,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "希伯来语 (七)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "四年级上",
+     "code": "03535267"
+    },
+    {
+     "name": "希伯来语 (八)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "四年级下",
+     "code": "03535168"
+    },
+    {
+     "name": "希伯来语视听说 (一)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "一年级上",
+     "code": "03535021"
+    },
+    {
+     "name": "希伯来语视听说 (二)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "一年级下",
+     "code": "03535022"
+    },
+    {
+     "name": "希伯来语视听说 (三)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "二年级上",
+     "code": "03535023"
+    },
+    {
+     "name": "希伯来语视听说 (四)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "二年级下",
+     "code": "03535024"
+    },
+    {
+     "name": "希伯来语口语 (一)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "三年级上",
+     "code": "03535191"
+    },
+    {
+     "name": "希伯来语口语 (二)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "三年级下",
+     "code": "03535192"
+    },
+    {
+     "name": "希伯来语口语 (三)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "四年级上",
+     "code": "03535273"
+    },
+    {
+     "name": "希伯来语口语 (四)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "四年级下",
+     "code": "03535274"
+    },
+    {
+     "name": "希伯来语报刊选读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四年级上",
+     "code": "03535040"
+    },
+    {
+     "name": "希伯来语翻译教程",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三年级上",
+     "code": "03535060"
+    },
+    {
+     "name": "东方文学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "每年秋季学期",
+     "code": "03530450"
+    },
+    {
+     "name": "西方文学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "每年春季学期",
+     "code": "03632990"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "—        思想政治理论必修课            18     —         —",
+  "选课。",
+  "—                             1门     —         —     按学校要求选课。",
+  "需要另 选 该 课 程 的 上 机",
+  "课 (",
+  "实习)。",
+  "时,需要 另 选 该 课 程 的",
+  "机实习)。",
+  "—        体育系列课程               1×4    2               全年",
+  "注:大学外语必修大学英语对应级别的学分,不足 8 学 分 部 分,需 用 非 本 专 业 语 言 的 公 共 语 言 课 或 专 业",
+  "基础语言课补足 (课程明细见本学院附表 1)。",
+  "北京大学外国语学院            · 241 ·",
+  "新开课       古典希伯来语 (一)           2      2     四年级上",
+  "新开课       古典希伯来语 (二)           2      2     四年级下",
+  "注:东方文学和西方文学必选其中一门。",
+  "-2 自主选修课:20 学分 (含跨学科课程和辅修专业学分可替代学分)"
+ ],
+ "warnings": [
+  "未找到“毕业总学分”",
+  "第 12737 行：课程行缺少学分：04831435 计 算"
+ ],
+ "source": {
+  "volumeId": "2021-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=158",
+  "lineStart": 12642,
+  "lineEnd": 12816
+ }
+}

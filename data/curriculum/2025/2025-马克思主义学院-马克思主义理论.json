@@ -1,0 +1,1198 @@
+{
+ "id": "2025-马克思主义学院-马克思主义理论",
+ "cohort": 2025,
+ "volume": "北京大学本科培养方案（2025）文科卷",
+ "school": "马克思主义学院",
+ "major": "马克思主义理论",
+ "track": null,
+ "title": "马克思主义理论专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": null,
+ "totalCredits": null,
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 29,
+   "max": 35,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 78,
+   "max": 78,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 22,
+   "max": 28,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "15～21 学分",
+   "min": 15,
+   "max": 21,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "26 学分",
+   "min": 26,
+   "max": 26,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "46 学分",
+   "min": 46,
+   "max": 46,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "写作训练与论文",
+   "requirement": "6 学分",
+   "min": 6,
+   "max": 6,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "10～12 学分",
+   "min": 10,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主非外语类选修课",
+   "requirement": "10～12 学分",
+   "min": 10,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "3-3",
+   "parent": "3",
+   "name": "第二外语类选修课",
+   "requirement": "0～4 学分",
+   "min": 0,
+   "max": 4,
+   "unit": "学分"
+  },
+  {
+   "id": "3-4",
+   "parent": "3",
+   "name": "高等数学类选修课",
+   "requirement": "0～4 学分",
+   "min": 0,
+   "max": 4,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 29,
+   "max": 35,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "1.1",
+   "parent": "1",
+   "name": "公共必修课",
+   "min": 17,
+   "max": 23,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "形势与政策",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "一上",
+     "code": "04031751"
+    },
+    {
+     "name": "思想政治实践（上） 1 一上",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "61130030"
+    },
+    {
+     "name": "思想政治实践（下） 1 一下",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "61130040"
+    },
+    {
+     "name": "新时代劳动理论",
+     "nature": null,
+     "credits": 1,
+     "hours": 16,
+     "practice": 0,
+     "term": "大四前",
+     "code": "04031861"
+    },
+    {
+     "name": "新时代劳动实践",
+     "nature": null,
+     "credits": 1,
+     "hours": 16,
+     "practice": 16,
+     "term": "大四前",
+     "code": "04030063"
+    },
+    {
+     "name": "计算概论 C",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "2（上机） 一上",
+     "code": "04831433"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "一下",
+     "code": "60730020"
+    },
+    {
+     "name": "04030500 思想政治教育学德修养与法律基础”）",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04031651"
+    },
+    {
+     "name": "中国近现代史纲要 04030082 中国近现代史（下）习近平新时代中国特色社会主义思想概论",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04031661"
+    },
+    {
+     "name": "毛泽东思想与中国特色社会主义理论体系概论",
+     "nature": null,
+     "credits": 4030036,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04031731"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "1.2",
+   "parent": "1",
+   "name": "通识教育课",
+   "min": 12,
+   "max": 12,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 78,
+   "max": 78,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.1",
+   "parent": "2",
+   "name": "专业基础课",
+   "min": 26,
+   "max": 26,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "马克思主义哲学（上）",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "大一上",
+     "code": "04030091"
+    },
+    {
+     "name": "政治经济学（上）",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "大一上",
+     "code": "04030071"
+    },
+    {
+     "name": "习近平新时代中国特色社会主义思想",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "大一上",
+     "code": "04030006"
+    },
+    {
+     "name": "马克思主义经济学说史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "大一上",
+     "code": "04030044"
+    },
+    {
+     "name": "马克思主义哲学（下）",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "大一下",
+     "code": "04030092"
+    },
+    {
+     "name": "政治经济学（下）",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "大一下",
+     "code": "04030072"
+    },
+    {
+     "name": "科学社会主义",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "大一下",
+     "code": "04030003"
+    },
+    {
+     "name": "社会主义发展史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "大一下",
+     "code": "04030019"
+    },
+    {
+     "name": "马克思主义发展史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "大二上",
+     "code": "04030027"
+    },
+    {
+     "name": "中共党史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "大二上",
+     "code": "04030701"
+    },
+    {
+     "name": "毛泽东思想",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "大二上",
+     "code": "04030021"
+    },
+    {
+     "name": "重要思想和科学发展观",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "04030036"
+    },
+    {
+     "name": "马克思主义理论导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "大三上",
+     "code": "04031111"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2",
+   "parent": "2",
+   "name": "专业核心课",
+   "min": 46,
+   "max": 46,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "世界近现代史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "大一上",
+     "code": "04030012"
+    },
+    {
+     "name": "中国近现代史（上）",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "大一上",
+     "code": "04030081"
+    },
+    {
+     "name": "西方政治思想史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "大一上",
+     "code": "04030013"
+    },
+    {
+     "name": "思想政治教育学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "大一上",
+     "code": "04030500"
+    },
+    {
+     "name": "中国近现代史（下）",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "大一下",
+     "code": "04030082"
+    },
+    {
+     "name": "中国政治思想史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "大一下",
+     "code": "04030014"
+    },
+    {
+     "name": "马克思恩格斯经典著作导读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "大二上",
+     "code": "04032001"
+    },
+    {
+     "name": "社会调查研究方法",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "大二上",
+     "code": "04031314"
+    },
+    {
+     "name": "《资本论》导读",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "大二上",
+     "code": "04030200"
+    },
+    {
+     "name": "列宁经典著作导读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "大二上",
+     "code": "04030111"
+    },
+    {
+     "name": "资本主义发展史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "大二下",
+     "code": "04030302"
+    },
+    {
+     "name": "中国共产党建设的理论与实践",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "大二下",
+     "code": "04030043"
+    },
+    {
+     "name": "当代世界经济与政治",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "大二下",
+     "code": "04030032"
+    },
+    {
+     "name": "国外马克思主义",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "大二下",
+     "code": "04030039"
+    },
+    {
+     "name": "中华人民共和国史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "大二下",
+     "code": "04030046"
+    },
+    {
+     "name": "社会发展理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "大三上",
+     "code": "04031000"
+    },
+    {
+     "name": "中共历史文献学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "大三上",
+     "code": "04030041"
+    },
+    {
+     "name": "逻辑与论证（哲学系开课）",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "大三上",
+     "code": "02336401"
+    },
+    {
+     "name": "改革开放史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "大三下",
+     "code": "04031602"
+    },
+    {
+     "name": "马克思主义前沿专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "大四上",
+     "code": "04030900"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.3",
+   "parent": "2",
+   "name": "写作训练与论文",
+   "min": 6,
+   "max": 6,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "社会科学研究论文写作",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "大三上",
+     "code": "04031312"
+    },
+    {
+     "name": "学年论文（马院）",
+     "nature": null,
+     "credits": 1,
+     "hours": 16,
+     "practice": null,
+     "term": "大三下",
+     "code": "04031313"
+    },
+    {
+     "name": "毕业论文",
+     "nature": null,
+     "credits": 3,
+     "hours": 48,
+     "practice": null,
+     "term": "大四下",
+     "code": "04031311"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 22,
+   "max": 28,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1",
+   "parent": "3",
+   "name": "专业选修课",
+   "min": 10,
+   "max": 12,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "西方哲学史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "秋季学期",
+     "code": "04030093"
+    },
+    {
+     "name": "中国近现代史重大问题研究",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "秋季学期",
+     "code": "04030028"
+    },
+    {
+     "name": "西方人文经典",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "秋季学期",
+     "code": "04030023"
+    },
+    {
+     "name": "当代资本主义",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "秋季学期",
+     "code": "04030300"
+    },
+    {
+     "name": "中国经济专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "待定",
+     "code": "04030045"
+    },
+    {
+     "name": "中国哲学史纲要",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "春季学期",
+     "code": "04030022"
+    },
+    {
+     "name": "当代社会思潮",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "春季学期",
+     "code": "04030102"
+    },
+    {
+     "name": "马克思与德国思想传统",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "春季学期",
+     "code": "04030301"
+    },
+    {
+     "name": "统计和计量方法",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "春季学期",
+     "code": "04030034"
+    },
+    {
+     "name": "中苏关系史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "春季学期",
+     "code": "04030042"
+    },
+    {
+     "name": "李大钊思想研究",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "春季学期",
+     "code": "04031890"
+    },
+    {
+     "name": "周易古经与先秦诸子",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "春季学期",
+     "code": "04038170"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2",
+   "parent": "3",
+   "name": "自主非外语类选修课",
+   "min": 10,
+   "max": 12,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "世界史通论",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "历史学系",
+     "code": "02132081"
+    },
+    {
+     "name": "亚洲史",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "历史学系",
+     "code": "02133661"
+    },
+    {
+     "name": "欧洲史",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "历史学系",
+     "code": "02133641"
+    },
+    {
+     "name": "哲学导论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 16,
+     "term": "哲学系",
+     "code": "02330003"
+    },
+    {
+     "name": "逻辑与论证",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 16,
+     "term": "哲学系",
+     "code": "02336401"
+    },
+    {
+     "name": "马克思主义哲学（上）",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 16,
+     "term": "哲学系",
+     "code": "02330102"
+    },
+    {
+     "name": "马克思主义哲学（下）",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 16,
+     "term": "哲学系",
+     "code": "02330104"
+    },
+    {
+     "name": "中国哲学（上）",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 16,
+     "term": "哲学系",
+     "code": "02330092"
+    },
+    {
+     "name": "中国哲学（下）",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 16,
+     "term": "哲学系",
+     "code": "02330096"
+    },
+    {
+     "name": "西方哲学（上）",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 16,
+     "term": "哲学系",
+     "code": "02330051"
+    },
+    {
+     "name": "西方哲学（下）",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 16,
+     "term": "哲学系",
+     "code": "02330053"
+    },
+    {
+     "name": "世界社会主义概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "国际关系学院",
+     "code": "02430032"
+    },
+    {
+     "name": "中国政治思想史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "政府管理学院",
+     "code": "03230780"
+    },
+    {
+     "name": "中国政治制度史",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "政府管理学院",
+     "code": "03230770"
+    },
+    {
+     "name": "西方政治思想史",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "政府管理学院",
+     "code": "03231910"
+    },
+    {
+     "name": "中国经济史",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "经济学院",
+     "code": "02535240"
+    },
+    {
+     "name": "外国经济史",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "经济学院",
+     "code": "02535250"
+    },
+    {
+     "name": "中国经济思想史",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "经济学院",
+     "code": "02533340"
+    },
+    {
+     "name": "外国经济思想史",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "经济学院",
+     "code": "02533350"
+    },
+    {
+     "name": "世界经济史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "经济学院",
+     "code": "02533490"
+    },
+    {
+     "name": "经济学原理",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "国家发展研究院",
+     "code": "06232000"
+    },
+    {
+     "name": "中国经济专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "国家发展研究院",
+     "code": "06234900"
+    },
+    {
+     "name": "社会人类学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "社会学系",
+     "code": "03130590"
+    },
+    {
+     "name": "中国社会思想史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "社会学系",
+     "code": "03130050"
+    },
+    {
+     "name": "政治人类学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "社会学系",
+     "code": "03131700"
+    },
+    {
+     "name": "历史地理学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "城市与环境学院",
+     "code": "12639040"
+    },
+    {
+     "name": "普通化学",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "化学与分子工程学院",
+     "code": "01034310"
+    },
+    {
+     "name": "普通生物学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "生命科学学院",
+     "code": "01139381"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.3",
+   "parent": "3",
+   "name": "第二外语类选修课",
+   "min": 0,
+   "max": 4,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "公共基础德语（一）",
+     "nature": null,
+     "credits": 4,
+     "hours": 6,
+     "practice": 0,
+     "term": "秋季学期",
+     "code": "03632601"
+    },
+    {
+     "name": "公共俄语（一）",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": 0,
+     "term": "秋季学期",
+     "code": "03730821"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.4",
+   "parent": "3",
+   "name": "高等数学类选修课",
+   "min": 0,
+   "max": 4,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学 D",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "秋季学期",
+     "code": "00137940"
+    },
+    {
+     "name": "高等数学（D）习题课",
+     "nature": null,
+     "credits": 0,
+     "hours": 1,
+     "practice": null,
+     "term": "秋季学期",
+     "code": "00137950"
+    },
+    {
+     "name": "高等数学（D 类基础）",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "秋季学期",
+     "code": "00131960"
+    },
+    {
+     "name": "高等数学（D 类基础）习题课",
+     "nature": null,
+     "credits": 0,
+     "hours": 1,
+     "practice": null,
+     "term": "秋季学期",
+     "code": "00131970"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "4.1",
+   "parent": "4",
+   "name": "保送研究生要求",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "4.2",
+   "parent": "4",
+   "name": "港澳台学生和留学生学分与选课要求",
+   "courses": [
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "一下",
+     "code": "60730020"
+    },
+    {
+     "name": "形势与政策",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "一上",
+     "code": "04031751"
+    },
+    {
+     "name": "思想政治实践（上） 1 一上",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "61130030"
+    },
+    {
+     "name": "思想政治实践（下） 1 一下",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "61130040"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "一下",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "—       大学英语         2～8   —       —       按大学英语教研室要求选课",
+  "—       体育系列课程       1×4    2      0            —",
+  "1. 全校本科思想政治课的替代选课方案：自 2022 年起，各春季学期申请转专业到马",
+  "克思主义理论专业的本科生，已修习的全校本科思想政治类课程可按照如下列表替代马克",
+  "思主义理论专业课，对应专业课不再重复修习。",
+  "全校本科思想政治课                        可替代的专业课程",
+  "04031761/2                         04030006",
+  "04031740/1     马克思主义基本原理（概论）       04030092    马克思主义哲学（下）",
+  "2. 关于公共必修课的培养目标、修读要求、课程设置等内容，详见 2021 年发布的《通",
+  "识课程培养方案》   《北京大学本科思想政治课教学管理办法》 《大学英语课程培养方案》  《军",
+  "事理论课培养方案》   《北京大学体育课程方案》 。其中大学英语选修不足 8 分时，建议选修",
+  "“3-3 第二外语类选修课”“3-4 高等数学类选修课”补足学分。",
+  "通识教育课程分为“人类文明及其传统”  “现代社会及其问题”“艺术与人文”",
+  "自然与技术”四个系列，每个系列均包含通识教育核心课、通选课两部分课程，具体课程",
+  "列表详见《通识课程培养方案》 。",
+  "（1）至少修读 1 门“通识教育核心课程”（任一系列），且在四个课程系列中每个系列",
+  "至少修读 2 学分（通识教育核心课或通选课均可）；",
+  "（2）原则上不允许以专业课替代通识教育课程学分；",
+  "（3）本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分；",
+  "（4）建议合理分配修读时间，每学期修读 1 门课程。",
+  "邓小平理论、“三个代表”                        0           大二下",
+  "E4030090     马克思生平与思想研究引论             2         2           0      大三上",
+  "1         1           0      大三下",
+  "理论",
+  "注意：专业选修课清单更新较为频繁，凡马克思主义学院开设的非必修类课程，即专",
+  "业限选课、专业任选课、通选课等课程类型，均可归为专业选修课。",
+  "以下列表选取了历史学系、哲学系、国际关系学院、政府管理学院、经济学院、国家",
+  "发展研究院以及社会学系等院系开设的部分课程。这些课程主要反映人类社会（含中国）",
+  "不同历史时期的思想、政治、经济等各方面的探索过程和建设成果。选课要求：",
+  "（1）建议选修列表中课程；",
+  "（2）可选修列表以外课程，其中公选课不得超过 4 分；",
+  "（3）辅修专业学分可替代自主非外语类选修课学分；与马克思主义学院开设课程同名",
+  "的其他院系课程不计入有效学分。",
+  "在符合学校免试推荐研究生资格的前提下，申请保研学生需满足如下北大马院专业要求：",
+  "（1）高考直招学生必须在三年级结束时完成不低于 93 学分的必修类课程（包括公共必",
+  "修课、专业基础课、专业核心课）。",
+  "（2）春季学期申请转入马克思主义理论专业的学生必须在三年级结束时完成不低于 87",
+  "学分的必修类课程（包括公共必修课、专业基础课、专业核心课）  。",
+  "留学生、港澳台学生除以下免修课程外，学分完成要求（包括公共基础课程、专业必",
+  "修课程、专业选修课程等）均与本科生要求一致。免修课程的学分必须从“与中国有关课",
+  "程”名单中替代补足。",
+  "（1）留学生可免修全校公共必修课中的英语课、军事理论课包括：",
+  "（2）港澳台学生可免修全校公共必修课中的政治课、军事理论课包括："
+ ],
+ "warnings": [
+  "未找到“毕业总学分”",
+  "第 19247 行：课程行缺少学分：61130030   思想政治实践（上）     1              ",
+  "第 19248 行：课程行缺少学分：61130040   思想政治实践（下）     1              ",
+  "第 19264 行：课程行缺少学分：04031651                           04030",
+  "第 19266 行：课程行缺少学分：04031661       中国近现代史纲要            04030",
+  "第 19457 行：课程行缺少学分：61130030   思想政治实践（上）                 1  ",
+  "第 19458 行：课程行缺少学分：61130040   思想政治实践（下）                 1  "
+ ],
+ "source": {
+  "volumeId": "2025-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=217",
+  "lineStart": 19175,
+  "lineEnd": 19463
+ }
+}

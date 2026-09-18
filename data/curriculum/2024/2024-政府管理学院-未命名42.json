@@ -1,0 +1,1595 @@
+{
+ "id": "2024-政府管理学院-未命名42",
+ "untitled": true,
+ "cohort": 2024,
+ "volume": "北京大学本科培养方案（2024）文科卷",
+ "school": "政府管理学院",
+ "major": "政府管理学院 未命名方案",
+ "track": null,
+ "title": "政府管理学院 未命名方案",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": null,
+ "totalCredits": {
+  "min": 136,
+  "max": 136
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 42,
+   "max": 48,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 53,
+   "max": 53,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 35,
+   "max": 41,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "大学英语",
+   "requirement": "2～8 学分",
+   "min": 2,
+   "max": 8,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "思想政治理论必修课",
+   "requirement": "19 学分",
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "1-3",
+   "parent": "1",
+   "name": "思想政治理论选择性必修课",
+   "requirement": "1 门",
+   "min": 1,
+   "max": 1,
+   "unit": "门"
+  },
+  {
+   "id": "1-4",
+   "parent": "1",
+   "name": "劳动教育课",
+   "requirement": "32 学时",
+   "min": 32,
+   "max": 32,
+   "unit": "学时"
+  },
+  {
+   "id": "1-5",
+   "parent": "1",
+   "name": "信息课程",
+   "requirement": "3 学分",
+   "min": 3,
+   "max": 3,
+   "unit": "学分"
+  },
+  {
+   "id": "1-6",
+   "parent": "1",
+   "name": "军事理论",
+   "requirement": "2 学分",
+   "min": 2,
+   "max": 2,
+   "unit": "学分"
+  },
+  {
+   "id": "1-7",
+   "parent": "1",
+   "name": "体育课",
+   "requirement": "4 学分",
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  },
+  {
+   "id": "1-8",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "25 学分",
+   "min": 25,
+   "max": 25,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "21 学分",
+   "min": 21,
+   "max": 21,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "requirement": "3 学分",
+   "min": 3,
+   "max": 3,
+   "unit": "学分"
+  },
+  {
+   "id": "2-4",
+   "parent": "2",
+   "name": "其他非课程必修要求",
+   "requirement": "4 学分",
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "27 学分",
+   "min": 27,
+   "max": 27,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "8～14 学分",
+   "min": 8,
+   "max": 14,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "3.1.1",
+   "parent": "3.1",
+   "name": "学院内进阶课程——政治学提升及拓展类组 3 门",
+   "courses": [
+    {
+     "name": "比较政治学概论",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "二下",
+     "code": "03230040"
+    },
+    {
+     "name": "中国政治制度史",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "三上",
+     "code": "03230770"
+    },
+    {
+     "name": "中国政治思想史",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 3,
+     "term": "二上、二下",
+     "code": "03230780"
+    },
+    {
+     "name": "西方政治思想史",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "二下",
+     "code": "03230790"
+    },
+    {
+     "name": "政治经济导论",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "三上",
+     "code": "03231080"
+    },
+    {
+     "name": "政治哲学",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "二上",
+     "code": "03231660"
+    },
+    {
+     "name": "发展政治学",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "三上",
+     "code": "03231690"
+    },
+    {
+     "name": "政党学概论",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "三下",
+     "code": "03231700"
+    },
+    {
+     "name": "美国政府与政治（荣誉课程）",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "三上",
+     "code": "03231740"
+    },
+    {
+     "name": "中国地方政府与政治",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": "三下",
+     "code": "03231750"
+    },
+    {
+     "name": "当代世界经济与政治",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "二下",
+     "code": "03231910"
+    },
+    {
+     "name": "政治学前沿",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 12,
+     "term": "三下",
+     "code": "03232600"
+    },
+    {
+     "name": "中国近代政治思想史",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "三下",
+     "code": "03232690"
+    },
+    {
+     "name": "政治心理学导论（荣誉课程）",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "三上",
+     "code": "03232850"
+    },
+    {
+     "name": "欧洲政治思想史",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "二下",
+     "code": "03232870"
+    },
+    {
+     "name": "当代西方政治思潮",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "三上",
+     "code": "03232970"
+    },
+    {
+     "name": "政治学阶梯：体系与问题",
+     "nature": "限选",
+     "credits": 4,
+     "hours": 76,
+     "practice": 8,
+     "term": "二上",
+     "code": "03233040"
+    },
+    {
+     "name": "新政治学",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 12,
+     "term": "二上",
+     "code": "03233050"
+    },
+    {
+     "name": "监察与监督专题（荣誉课程）",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "三上",
+     "code": "03233060"
+    },
+    {
+     "name": "国家治理理论",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "三上",
+     "code": "03233080"
+    },
+    {
+     "name": "中国古典政治思想文本选读",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "三上",
+     "code": "03233090"
+    },
+    {
+     "name": "政治分析中的重大问题（荣誉课程）",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "三下",
+     "code": "03233160"
+    },
+    {
+     "name": "俄罗斯政治转型专题",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "三上",
+     "code": "03233330"
+    },
+    {
+     "name": "社会科学的理论阅读与思维训练",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 3,
+     "term": "三上",
+     "code": "03233350"
+    },
+    {
+     "name": "科技政治学",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "三下",
+     "code": "03233410"
+    },
+    {
+     "name": "美国政治发展史",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "三上",
+     "code": "03233420"
+    },
+    {
+     "name": "比较宪法",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "二上",
+     "code": "03233430"
+    },
+    {
+     "name": "国家安全导论",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "二上",
+     "code": "03233440"
+    },
+    {
+     "name": "政治行为导论",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "二下",
+     "code": "03233480"
+    },
+    {
+     "name": "政治学研究方法",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "二下",
+     "code": "03232840"
+    },
+    {
+     "name": "西方政治制度",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "三下",
+     "code": "03232990"
+    },
+    {
+     "name": "“第三世界”的政治变革",
+     "nature": null,
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "三下",
+     "code": "03233110"
+    },
+    {
+     "name": "国家安全与应急管理",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "三下",
+     "code": "03233150"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.2",
+   "parent": "3.1",
+   "name": "学院内进阶课程——行政管理提升及拓展类组 2 门",
+   "courses": [
+    {
+     "name": "行政领导学",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "三上",
+     "code": "03230450"
+    },
+    {
+     "name": "公共财政与税收",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "二下",
+     "code": "03231140"
+    },
+    {
+     "name": "货币与金融政策",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "二下",
+     "code": "03231470"
+    },
+    {
+     "name": "财政预算与行政财务管理",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 3,
+     "term": "三下",
+     "code": "03231530"
+    },
+    {
+     "name": "管理运筹学",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": "三上",
+     "code": "03231610"
+    },
+    {
+     "name": "日本经济",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": null,
+     "code": "03232080"
+    },
+    {
+     "name": "公共组织行为学",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "三上",
+     "code": "03232460"
+    },
+    {
+     "name": "公共组织战略管理",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "三上",
+     "code": "03232510"
+    },
+    {
+     "name": "经济法学",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "三下",
+     "code": "03232370"
+    },
+    {
+     "name": "公共经济学",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 9,
+     "term": "三上",
+     "code": "03232530"
+    },
+    {
+     "name": "全球视野下的中国工业与经济发展",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "三下",
+     "code": "03232680"
+    },
+    {
+     "name": "公共政策的经济学分析",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "三上",
+     "code": "03232920"
+    },
+    {
+     "name": "法治政府概论",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 21,
+     "term": "三上",
+     "code": "03233000"
+    },
+    {
+     "name": "行政学说史",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "二下",
+     "code": "03233170"
+    },
+    {
+     "name": "公务员制度",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 12,
+     "term": "三下",
+     "code": "03233180"
+    },
+    {
+     "name": "数字政府概论",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 9,
+     "term": "三下",
+     "code": "03233370"
+    },
+    {
+     "name": "公共政策评估",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 12,
+     "term": "三下",
+     "code": "03233380"
+    },
+    {
+     "name": "非营利组织与社会创新",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 3,
+     "term": "二下",
+     "code": "03233460"
+    },
+    {
+     "name": "风险、危机与管理",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 3,
+     "term": "二下",
+     "code": "03233470"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.3",
+   "parent": "3.1",
+   "name": "学院内进阶课程——城市管理类组",
+   "courses": [
+    {
+     "name": "城市管理",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 9,
+     "term": "二上",
+     "code": "03231250"
+    },
+    {
+     "name": "城市规划",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": "三下",
+     "code": "03231260"
+    },
+    {
+     "name": "地理信息系统基础与应用",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 51,
+     "term": "二下",
+     "code": "03232360"
+    },
+    {
+     "name": "房地产经济与管理",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "三下",
+     "code": "03232450"
+    },
+    {
+     "name": "区域经济学",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": "三上",
+     "code": "03232550"
+    },
+    {
+     "name": "城市经济学",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": "三上",
+     "code": "03232560"
+    },
+    {
+     "name": "城市历史与文化",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": "二下",
+     "code": "03233020"
+    },
+    {
+     "name": "城市发展与政策",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": "三下",
+     "code": "03233030"
+    },
+    {
+     "name": "城市环境与可持续发展",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "四上",
+     "code": "03233200"
+    },
+    {
+     "name": "城市交通与土地利用",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "三上",
+     "code": "03233360"
+    },
+    {
+     "name": "中国区域经济学",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "二上",
+     "code": "03233400"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.4",
+   "parent": "3.1",
+   "name": "学院内进阶课程——方法类组 2 门",
+   "courses": [
+    {
+     "name": "应用统计学",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 10,
+     "term": "一下",
+     "code": "03232300"
+    },
+    {
+     "name": "社会调查的理论与方法",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 15,
+     "term": "二上",
+     "code": "03232400"
+    },
+    {
+     "name": "博弈论",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 9,
+     "term": "三上",
+     "code": "03232480"
+    },
+    {
+     "name": "政治学研究方法",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 9,
+     "term": "二下",
+     "code": "03232840"
+    },
+    {
+     "name": "城市治理定量方法（荣誉课程）",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": "二下",
+     "code": "03232890"
+    },
+    {
+     "name": "人文社会科学中的质性研究方法",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 9,
+     "term": "三上",
+     "code": "03232900"
+    },
+    {
+     "name": "计算政治学",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "三下",
+     "code": "03232860"
+    },
+    {
+     "name": "社会治理前沿问题",
+     "nature": "限选",
+     "credits": 1,
+     "hours": 16,
+     "practice": 8,
+     "term": "三上、三下",
+     "code": "03233230"
+    },
+    {
+     "name": "城市应急管理",
+     "nature": "限选",
+     "credits": 1,
+     "hours": 17,
+     "practice": 0,
+     "term": "三上、三下",
+     "code": "03233300"
+    },
+    {
+     "name": "国际公共管理前沿",
+     "nature": "限选",
+     "credits": 1,
+     "hours": 16,
+     "practice": 4,
+     "term": "三上、三下",
+     "code": "03233320"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.6",
+   "parent": "3.1",
+   "name": "学院内进阶课程——科研训练组",
+   "courses": [
+    {
+     "name": "教师指导下的独立研究",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 68,
+     "practice": 68,
+     "term": "三上、三下",
+     "code": "30330031"
+    },
+    {
+     "name": "教师指导下的独立研究",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 102,
+     "practice": 102,
+     "term": "三上、三下",
+     "code": "30330032"
+    },
+    {
+     "name": "教师指导下的独立研究",
+     "nature": "限选",
+     "credits": 4,
+     "hours": 136,
+     "practice": 136,
+     "term": "三上、三下",
+     "code": "30330033"
+    },
+    {
+     "name": "教师指导下的小组研究",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 68,
+     "practice": 68,
+     "term": "三上、三下",
+     "code": "30330041"
+    },
+    {
+     "name": "教师指导下的小组研究",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 102,
+     "practice": 102,
+     "term": "三上、三下",
+     "code": "30330042"
+    },
+    {
+     "name": "教师指导下的小组研究",
+     "nature": "限选",
+     "credits": 4,
+     "hours": 136,
+     "practice": 136,
+     "term": "三上、三下",
+     "code": "30330043"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.7",
+   "parent": "3.1",
+   "name": "学院外模块课程——经济学类组",
+   "courses": [
+    {
+     "name": "微观经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 68,
+     "practice": 18,
+     "term": "全年",
+     "code": "02530060"
+    },
+    {
+     "name": "宏观经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 68,
+     "practice": 14,
+     "term": "全年",
+     "code": "02530070"
+    },
+    {
+     "name": "计量经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 68,
+     "practice": 6,
+     "term": "全年",
+     "code": "02530140"
+    },
+    {
+     "name": "发展经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": "春季",
+     "code": "02530150"
+    },
+    {
+     "name": "外国经济史",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": "秋季",
+     "code": "02530160"
+    },
+    {
+     "name": "经济学原理（Ⅰ）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 16,
+     "term": "秋季",
+     "code": "02533160"
+    },
+    {
+     "name": "经济学原理（Ⅱ）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": "春季",
+     "code": "02533170"
+    },
+    {
+     "name": "政治经济学（上）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "秋季",
+     "code": "02533180"
+    },
+    {
+     "name": "政治经济学（下）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 58,
+     "practice": 10,
+     "term": "春季",
+     "code": "02533190"
+    },
+    {
+     "name": "中国经济思想史",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 9,
+     "term": "春季",
+     "code": "02533340"
+    },
+    {
+     "name": "外国经济思想史",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 9,
+     "term": "春季",
+     "code": "02533350"
+    },
+    {
+     "name": "预算经济学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 10,
+     "term": "春季",
+     "code": "02533530"
+    },
+    {
+     "name": "风险管理学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 4,
+     "term": "秋季",
+     "code": "02534200"
+    },
+    {
+     "name": "地方财政",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 6,
+     "term": "春季",
+     "code": "02534260"
+    },
+    {
+     "name": "世界经济与中国",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 32,
+     "practice": 0,
+     "term": "秋季",
+     "code": "02534560"
+    },
+    {
+     "name": "公共选择理论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": "秋季",
+     "code": "02534750"
+    },
+    {
+     "name": "风险管理模型与应用",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": "秋季",
+     "code": "02534950"
+    },
+    {
+     "name": "中国经济史",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 9,
+     "term": "春季",
+     "code": "02535240"
+    },
+    {
+     "name": "经济学思维训练",
+     "nature": "任选",
+     "credits": 1,
+     "hours": 17,
+     "practice": 0,
+     "term": "春季",
+     "code": "02535260"
+    },
+    {
+     "name": "人类行动学原理（经济学部分）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 48,
+     "practice": 0,
+     "term": "秋季",
+     "code": "02535270"
+    },
+    {
+     "name": "财经素养教育",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": "暑期",
+     "code": "02535340"
+    },
+    {
+     "name": "创新创业家精神培育和实验",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 10,
+     "term": "秋季",
+     "code": "02535430"
+    },
+    {
+     "name": "经济学研究训练",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": "暑期",
+     "code": "02535500"
+    },
+    {
+     "name": "文化与领导力",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": "暑期",
+     "code": "02535570"
+    },
+    {
+     "name": "中国减贫与发展",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 12,
+     "term": "秋季",
+     "code": "02535640"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.8",
+   "parent": "3.1",
+   "name": "学院外模块课程——法学类组",
+   "courses": [
+    {
+     "name": "法理学",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": 7,
+     "term": "春季",
+     "code": "02930010"
+    },
+    {
+     "name": "中国法制史",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 5,
+     "term": "春季",
+     "code": "02930030"
+    },
+    {
+     "name": "宪法学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 26,
+     "term": "秋季",
+     "code": "02930060"
+    },
+    {
+     "name": "法律和社会科学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 5,
+     "term": "秋季",
+     "code": "02930144"
+    },
+    {
+     "name": "刑法总论",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": 17,
+     "term": "春季",
+     "code": "02930152"
+    },
+    {
+     "name": "选举法比较研究",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": "暑期",
+     "code": "02930164"
+    },
+    {
+     "name": "非营利组织法",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 9,
+     "term": "秋季",
+     "code": "02930172"
+    },
+    {
+     "name": "公法与思想史",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 6,
+     "term": "秋季",
+     "code": "02930188"
+    },
+    {
+     "name": "法律思维与法学方法",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 6,
+     "term": "秋季",
+     "code": "02930192"
+    },
+    {
+     "name": "宪法案例研习",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "春季",
+     "code": "02930198"
+    },
+    {
+     "name": "行政法案例研习",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 68,
+     "practice": 68,
+     "term": "秋季",
+     "code": "02930202"
+    },
+    {
+     "name": "基本权利：原理与案例",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 102,
+     "practice": 102,
+     "term": "春季",
+     "code": "02930223"
+    },
+    {
+     "name": "商法总论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 9,
+     "term": "春季",
+     "code": "02930470"
+    },
+    {
+     "name": "国际公法",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": 0,
+     "term": "秋季",
+     "code": "02930480"
+    },
+    {
+     "name": "外国宪法",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 9,
+     "term": "春季",
+     "code": "02930530"
+    },
+    {
+     "name": "法律导论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 6,
+     "term": "春季",
+     "code": "02939999"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.9",
+   "parent": "3.1",
+   "name": "学院外模块课程——社会学类组",
+   "courses": [
+    {
+     "name": "国外社会学学说（上）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": "春季",
+     "code": "03100130"
+    },
+    {
+     "name": "思·韦伯的《经济与社",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": "秋季",
+     "code": "03111400"
+    },
+    {
+     "name": "社会学概论",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": 0,
+     "term": "秋季",
+     "code": "03130010"
+    },
+    {
+     "name": "国外社会学学说（下）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": "秋季",
+     "code": "03130020"
+    },
+    {
+     "name": "社会人类学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "春季",
+     "code": "03130150"
+    },
+    {
+     "name": "城市社会学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": "春季",
+     "code": "03130190"
+    },
+    {
+     "name": "社会心理学",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": 0,
+     "term": "春季",
+     "code": "03130210"
+    },
+    {
+     "name": "个案工作",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "秋季",
+     "code": "03130420"
+    },
+    {
+     "name": "群体工作",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 54,
+     "practice": 17,
+     "term": "春季",
+     "code": "03130430"
+    },
+    {
+     "name": "社会问题与社会政策",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": "暑期",
+     "code": "03130471"
+    },
+    {
+     "name": "社会行政",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "春季",
+     "code": "03130480"
+    },
+    {
+     "name": "组织社会学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": "秋季",
+     "code": "03130560"
+    },
+    {
+     "name": "中国社会",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": "春季",
+     "code": "03130590"
+    },
+    {
+     "name": "发展社会学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": "秋季",
+     "code": "03130660"
+    },
+    {
+     "name": "贫困与发展",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": "春季",
+     "code": "03130790"
+    },
+    {
+     "name": "社会研究：经典与方法",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": "秋季",
+     "code": "03130903"
+    },
+    {
+     "name": "中国社会研究",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 12,
+     "term": "秋季",
+     "code": "03130905"
+    },
+    {
+     "name": "人类学导论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": "秋季",
+     "code": "03130940"
+    },
+    {
+     "name": "社会学专题讲座",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": "秋季",
+     "code": "03131010"
+    },
+    {
+     "name": "政治人类学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": "秋季",
+     "code": "03131700"
+    },
+    {
+     "name": "中国社会学史",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": "秋季",
+     "code": "03131740"
+    },
+    {
+     "name": "人群与网络",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 48,
+     "practice": 0,
+     "term": "秋季",
+     "code": "03131840"
+    },
+    {
+     "name": "身份政治",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": "春季",
+     "code": "03131960"
+    },
+    {
+     "name": "社会人类学与中国研究",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "秋季",
+     "code": "03132060"
+    },
+    {
+     "name": "福利国家：起源与发展",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "春季",
+     "code": "03132100"
+    },
+    {
+     "name": "中国社会：结构与变迁",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": "春季",
+     "code": "03132120"
+    },
+    {
+     "name": "历史与政治研究专题",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": "秋季",
+     "code": "03132160"
+    },
+    {
+     "name": "田野调查实践",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 34,
+     "term": "秋季",
+     "code": "03132520"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "3.1.5 学院内进阶课程——前沿专题讨论与前沿性英文课程组 1 门",
+  "注：前沿专题讨论与外籍教师前沿性英文课程为平行课程，选课学期有 2 个，允许学",
+  "生自由选择任一学期。",
+  "学院鼓励学生在导师的指导下，本科四年完整地参与一项课题（包括纵向、横向和导",
+  "师自拟课题，相关助研费按有关规定支付）  ，可以是独立开展研究，也可以是组成小组开展",
+  "研究，但小组成员原则上不得超过 3 人，且成员间有明确的分工和任务。",
+  "研修时间：学生能够投入较充足的时间，进行科研活动一年以上（含一年）   。",
+  "成绩评定：学生提交结题材料，结题材料包括结题论文（或结题报告）  、指导教师对学",
+  "生结题论文（或结题报告）和科研工作的评价。学院组织开展结题答辩或结题材料评阅，",
+  "并根据答辩或结题材料评阅结果按百分制予以成绩评定。  （结题论文或报告的内容，原则上",
+  "① 学校立项的本研项目，通过结题答辩。",
+  "② 参加“挑战杯”大学生课外学术科技作品竞赛。",
+  "③ 有突出的研究成果，在导师指导下公开发表学术期刊文章（至少一篇）  。",
+  "0293007a   行政法与行政诉讼法      任选   4     68   17   春季",
+  "0293008a   民法总论           任选   3     51   26   秋季"
+ ],
+ "warnings": [
+  "第 18181 行：课程组编号 3.1.1 重复出现，之后的内容未纳入",
+  "原文标题无法提取，专业名待推断",
+  "未找到可比对的其他年份方案（最高重合度 12%）"
+ ],
+ "source": {
+  "volumeId": "2024-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=210",
+  "lineStart": 17721,
+  "lineEnd": 18320
+ }
+}

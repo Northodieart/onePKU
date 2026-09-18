@@ -1,0 +1,51 @@
+[package]
+name = "pkuinfo-common"
+description = "PKU IAAA 统一身份认证及公共工具库"
+readme = "README.md"
+version = "0.1.4"
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+keywords = ["pku", "iaaa", "auth", "sso"]
+categories = ["authentication"]
+
+[dependencies]
+reqwest.workspace = true
+reqwest_cookie_store.workspace = true
+cookie_store.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+tokio = { workspace = true, features = ["time"] }
+tracing.workspace = true
+colored.workspace = true
+rand.workspace = true
+rsa = "0.9"
+base64.workspace = true
+image.workspace = true
+rqrr = "0.9"
+qrcode.workspace = true
+terminal_size = "0.4"
+viuer = { version = "0.9", features = ["print-file"] }
+directories = "5"
+chrono.workspace = true
+url.workspace = true
+hmac = "0.12"
+sha1 = "0.10"
+data-encoding = "2"
+rpassword.workspace = true
+
+# Keyring: 按平台选择 backend
+# Linux: D-Bus Secret Service（GNOME Keyring / KDE Wallet），持久化
+#   不用 linux-keyutils，内核 session keyring 跨进程不持久
+# macOS: Apple Keychain
+# Windows: Windows Credential Manager
+[target.'cfg(target_os = "linux")'.dependencies]
+keyring = { version = "3", default-features = false, features = ["sync-secret-service"] }
+
+[target.'cfg(target_os = "macos")'.dependencies]
+keyring = { version = "3", default-features = false, features = ["apple-native"] }
+
+[target.'cfg(target_os = "windows")'.dependencies]
+keyring = { version = "3", default-features = false, features = ["windows-native"] }

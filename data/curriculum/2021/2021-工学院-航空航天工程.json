@@ -1,0 +1,708 @@
+{
+ "id": "2021-工学院-航空航天工程",
+ "cohort": 2021,
+ "volume": "北京大学本科培养方案（2021）理科卷",
+ "school": "工学院",
+ "major": "航空航天工程",
+ "track": null,
+ "title": "航空航天工程专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "工学学士学位。",
+ "totalCredits": {
+  "min": 148,
+  "max": 148
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 44,
+   "max": 50,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 56,
+   "max": 56,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 42,
+   "max": 42,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "32~38 学分",
+   "inferredParent": true,
+   "min": 32,
+   "max": 38,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "19 学分",
+   "inferredParent": true,
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "31 学分",
+   "inferredParent": true,
+   "min": 31,
+   "max": 31,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "24 学分",
+   "inferredParent": true,
+   "min": 24,
+   "max": 24,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "18 学分",
+   "inferredParent": true,
+   "min": 18,
+   "max": 18,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 44,
+   "max": 50,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 B",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "算概论 B” 课程同时,需要 另",
+     "code": "04831410"
+    },
+    {
+     "name": "计算概论 B 上机",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": "算概论 B” 课程同时,需要 另",
+     "code": "04831650"
+    },
+    {
+     "name": "数据结构与算法 B",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "“数 据 结 构 与 算 法 B” 课 程 同",
+     "code": "04831420"
+    },
+    {
+     "name": "数据结构 与 算 法上机",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": "“数 据 结 构 与 算 法 B” 课 程 同",
+     "code": "04830494"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "一上",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 56,
+   "max": 56,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "现代工学通论",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "一上",
+     "code": "00334010"
+    },
+    {
+     "name": "数学分析 (一)",
+     "nature": null,
+     "credits": 4,
+     "hours": 6,
+     "practice": null,
+     "term": "一上",
+     "code": "00331501"
+    },
+    {
+     "name": "线性代数与几何",
+     "nature": null,
+     "credits": 4,
+     "hours": 5,
+     "practice": null,
+     "term": "一上",
+     "code": "00331770"
+    },
+    {
+     "name": "数学分析 (二)",
+     "nature": null,
+     "credits": 4,
+     "hours": 6,
+     "practice": null,
+     "term": "一下",
+     "code": "00331502"
+    },
+    {
+     "name": "常微分方程",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "二上",
+     "code": "00330700"
+    },
+    {
+     "name": "工程数学",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "二下",
+     "code": "00330760"
+    },
+    {
+     "name": "理论力学",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "二上",
+     "code": "00331910"
+    },
+    {
+     "name": "电路与电子学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二上",
+     "code": "00332510"
+    },
+    {
+     "name": "高等动力学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二下",
+     "code": "00331800"
+    },
+    {
+     "name": "材料力学",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "二下",
+     "code": "00330070"
+    },
+    {
+     "name": "材料力学实验",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": 16,
+     "term": "二下",
+     "code": "00334050"
+    },
+    {
+     "name": "工程热力学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二下",
+     "code": "00331960"
+    },
+    {
+     "name": "工程流体力学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上",
+     "code": "00332300"
+    },
+    {
+     "name": "飞行器结构力学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上",
+     "code": "00332680"
+    },
+    {
+     "name": "飞行器设计与动力",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上",
+     "code": "00333790"
+    },
+    {
+     "name": "空气动力学基础",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三下",
+     "code": "00334060"
+    },
+    {
+     "name": "航空航天信息工程",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三下",
+     "code": "00333770"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 42,
+   "max": 42,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "概率与数理统计",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上",
+     "code": "00331900"
+    },
+    {
+     "name": "计算方法",
+     "nature": null,
+     "credits": 3,
+     "hours": 5,
+     "practice": null,
+     "term": "三下",
+     "code": "00330050"
+    },
+    {
+     "name": "普通化学 ( B)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "一下",
+     "code": "01034880"
+    },
+    {
+     "name": "热学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "00431142"
+    },
+    {
+     "name": "电磁学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二上",
+     "code": "00431143"
+    },
+    {
+     "name": "光学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "00431144"
+    },
+    {
+     "name": "基础物理实验",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": null,
+     "term": "二下",
+     "code": "00431200"
+    },
+    {
+     "name": "工程制图",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "一上",
+     "code": "00330630"
+    },
+    {
+     "name": "航空航天概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "00332470"
+    },
+    {
+     "name": "自动控制原理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 6,
+     "term": "二下",
+     "code": "00330220"
+    },
+    {
+     "name": "机械设计基础",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "00332690"
+    },
+    {
+     "name": "航空航天实习",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 48,
+     "term": "大三暑期",
+     "code": "00333050"
+    },
+    {
+     "name": "高等代数",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "一下",
+     "code": "00331880"
+    },
+    {
+     "name": "模拟电子技术",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 6,
+     "term": "二上",
+     "code": "04834390"
+    },
+    {
+     "name": "数字电子技术",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二下",
+     "code": "04834380"
+    },
+    {
+     "name": "近代物理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二下",
+     "code": "00431165"
+    },
+    {
+     "name": "物理化学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二下",
+     "code": "00331720"
+    },
+    {
+     "name": "传热传质学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三下",
+     "code": "00332020"
+    },
+    {
+     "name": "渗流物理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上",
+     "code": "00332150"
+    },
+    {
+     "name": "材料科学进展",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "00331720"
+    },
+    {
+     "name": "数值模拟",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三下",
+     "code": "00332390"
+    },
+    {
+     "name": "信号与系统",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上",
+     "code": "00334330"
+    },
+    {
+     "name": "纳米科学与技术",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三下",
+     "code": "00333020"
+    },
+    {
+     "name": "飞行器控制与仿真",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 16,
+     "term": "三/四下",
+     "code": "00332910"
+    },
+    {
+     "name": "现代电子器件基础",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "00332440"
+    },
+    {
+     "name": "燃烧学基础",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "00332430"
+    },
+    {
+     "name": "系统与控制引论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "00331480"
+    },
+    {
+     "name": "科学计算",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "秋季",
+     "code": "00333470"
+    },
+    {
+     "name": "工程 CAD ( 1)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 34,
+     "term": "秋季",
+     "code": "00331311"
+    },
+    {
+     "name": "新能源技术",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "四上",
+     "code": "00331970"
+    },
+    {
+     "name": "流体力学实验",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 9,
+     "term": "四上",
+     "code": "00332340"
+    },
+    {
+     "name": "固体力学实验",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 34,
+     "term": "四上",
+     "code": "00332330"
+    },
+    {
+     "name": "人工智能概论 信息科学技术",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "04830250"
+    },
+    {
+     "name": "机器学习概论 信息科学技术",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "04831730"
+    },
+    {
+     "name": "模拟电路 信息科学技术",
+     "nature": null,
+     "credits": 2,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "04832470"
+    },
+    {
+     "name": "电子线路 A 信息科学技术",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "二上",
+     "code": "04830630"
+    },
+    {
+     "name": "脑与认知科学 信息科学技术",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "04831320"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "—       大学英语             2~8    —      —     按大学英语教研室要求选课",
+  "18                  按马克思主义学院要求选课",
+  "选 该 课 程 的 上 机 课 “计 算 概",
+  "论 B 上机”。",
+  "选 该 课 程 的 上 机 课 “计 算 概",
+  "论 B 上机”。",
+  "时,需要另选 该 课 程 的 上 机 课",
+  "“数据结构与算法上机”。",
+  "时,需要另选 该 课 程 的 上 机 课",
+  "“数据结构与算法上机”。",
+  "—       体育系列课程           1×4    2      0     全年",
+  "注:大学英语学分不足 8 的部分,可用 3",
+  "-2 自主选修课程补齐学分。",
+  "至少修读一门通识核心课,且在四个课程系列中每个系列至少修读 2 学分,大学国文",
+  "为必修。",
+  "北京大学工学院                   · 419 ·",
+  "注:本院开设的通识课程不得计入毕业所需学分。",
+  "注:可以选修高等数学 B (一、二) 替代数学分析 (一、二)。如果选修高等数学 B (一、二),总学",
+  "分为 148。",
+  "要求:3",
+  "学分,五类课程的总学分不少于 24 学分。",
+  "· 420 ·             北京大学本科培养方案 (",
+  "注:如果选修了普通物理 (Ⅰ )(Ⅱ ),热 学、 电 磁 学、 光 学 重 复 部 分 的 学 分 可 以 互 认。 其 中, 普 通",
+  "物理 (Ⅰ ) 可对应表格中的电磁学,普物 (Ⅱ ) 可对应表格中的热学和光学以及表格 3-2 中 的 近 代 物 理",
+  "三门课。",
+  "可根据学习兴趣及研究方向在工学院范围内选课,也可根据需要在全校范围选课,通",
+  "选和公选课程不能计入 (思想 政 治 理 论 选 择 性 必 修 课 除 外)。建 议 计 划 走 科 研 方 向 的 学 生",
+  "多选以下列表中的课程。",
+  "建议计划走科研方向的学生多选以下列表中的课程。",
+  "新开课       机器人学概论               3       3                  二上",
+  "北京大学工学院                            · 421 ·"
+ ],
+ "warnings": [],
+ "source": {
+  "volumeId": "2021-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=152",
+  "lineStart": 20174,
+  "lineEnd": 20465
+ }
+}

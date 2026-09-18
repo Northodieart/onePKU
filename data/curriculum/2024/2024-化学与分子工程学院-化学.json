@@ -1,0 +1,1336 @@
+{
+ "id": "2024-化学与分子工程学院-化学",
+ "untitled": true,
+ "cohort": 2024,
+ "volume": "北京大学本科培养方案（2024）理科卷",
+ "school": "化学与分子工程学院",
+ "major": "化学",
+ "track": null,
+ "title": "化学专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "理学",
+ "totalCredits": {
+  "min": 141,
+  "max": 141
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 42,
+   "max": 48,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 57,
+   "max": 57,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 36,
+   "max": 42,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "大学英语",
+   "requirement": "2～8 学分",
+   "min": 2,
+   "max": 8,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "思想政治理论必修课",
+   "requirement": "19 学分",
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "1-3",
+   "parent": "1",
+   "name": "思想政治理论选择性必修课",
+   "requirement": "1 门",
+   "min": 1,
+   "max": 1,
+   "unit": "门"
+  },
+  {
+   "id": "1-4",
+   "parent": "1",
+   "name": "劳动教育课",
+   "requirement": "32 学时",
+   "min": 32,
+   "max": 32,
+   "unit": "学时"
+  },
+  {
+   "id": "1-5",
+   "parent": "1",
+   "name": "信息课程",
+   "requirement": "3 学分",
+   "min": 3,
+   "max": 3,
+   "unit": "学分"
+  },
+  {
+   "id": "1-6",
+   "parent": "1",
+   "name": "军事理论",
+   "requirement": "2 学分",
+   "min": 2,
+   "max": 2,
+   "unit": "学分"
+  },
+  {
+   "id": "1-7",
+   "parent": "1",
+   "name": "体育课",
+   "requirement": "4 学分",
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  },
+  {
+   "id": "1-8",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "18 学分",
+   "min": 18,
+   "max": 18,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "33 学分",
+   "min": 33,
+   "max": 33,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "requirement": "6 学分",
+   "min": 6,
+   "max": 6,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "18 学分",
+   "min": 18,
+   "max": 18,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "18 学分",
+   "min": 18,
+   "max": 18,
+   "unit": "学分"
+  },
+  {
+   "id": "3-3",
+   "parent": "3",
+   "name": "补齐英语所缺学分",
+   "requirement": "0～6 学分",
+   "min": 0,
+   "max": 6,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 42,
+   "max": 48,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "1.1",
+   "parent": "1",
+   "name": "公共必修课",
+   "courses": [
+    {
+     "name": "计算概论（B）",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "04831410"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "1.2",
+   "parent": "1",
+   "name": "通识教育课",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 57,
+   "max": 57,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.1",
+   "parent": "2",
+   "name": "专业基础课",
+   "min": 18,
+   "max": 18,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学（B）（一）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": "大一/上",
+     "code": "00130201"
+    },
+    {
+     "name": "高等数学（B）（二）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": "大一/下",
+     "code": "00130202"
+    },
+    {
+     "name": "普通物理（Ⅰ）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "大一/下",
+     "code": "00431132"
+    },
+    {
+     "name": "普通物理（Ⅱ）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "大二/上",
+     "code": "00431133"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2",
+   "parent": "2",
+   "name": "专业核心课",
+   "min": 33,
+   "max": 33,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "今日化学",
+     "nature": "专业必修",
+     "credits": 1,
+     "hours": 17,
+     "practice": null,
+     "term": "大一/上",
+     "code": "01031100"
+    },
+    {
+     "name": "结构化学",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 85,
+     "practice": 23,
+     "term": "大二/下",
+     "code": "01030120"
+    },
+    {
+     "name": "化学实验室安全技术",
+     "nature": "专业必修",
+     "credits": 1,
+     "hours": 17,
+     "practice": 2,
+     "term": "大一/上",
+     "code": "01030200"
+    },
+    {
+     "name": "普通化学",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "大一/上",
+     "code": "01034310"
+    },
+    {
+     "name": "普通化学实验",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 68,
+     "practice": 68,
+     "term": "大一/上",
+     "code": "01034322"
+    },
+    {
+     "name": "有机化学（一）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大一/下",
+     "code": "01034371"
+    },
+    {
+     "name": "有机化学（二）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大二/上",
+     "code": "01034373"
+    },
+    {
+     "name": "有机化学实验",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 102,
+     "practice": 102,
+     "term": "大一/下",
+     "code": "01035003"
+    },
+    {
+     "name": "物理化学实验",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 102,
+     "practice": 102,
+     "term": "大三/上",
+     "code": "01035021"
+    },
+    {
+     "name": "定量分析化学",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大一/下",
+     "code": "01035180"
+    },
+    {
+     "name": "定量分析化学实验",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 68,
+     "practice": 68,
+     "term": "大一/下",
+     "code": "01035190"
+    },
+    {
+     "name": "物理化学（一）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大二/下",
+     "code": "01035200"
+    },
+    {
+     "name": "物理化学（二）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大三/上",
+     "code": "01035210"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "min": 6,
+   "max": 6,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 36,
+   "max": 42,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1",
+   "parent": "3",
+   "name": "专业选修课",
+   "min": 18,
+   "max": 18,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.1",
+   "parent": "3.1",
+   "name": "化学学院专业选修课",
+   "courses": [
+    {
+     "name": "高分子物理",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01032530"
+    },
+    {
+     "name": "无机化学实验",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 68,
+     "practice": 68,
+     "term": null,
+     "code": "01032860"
+    },
+    {
+     "name": "仪器分析",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01034390"
+    },
+    {
+     "name": "仪器分析原理与实验",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 102,
+     "practice": 68,
+     "term": null,
+     "code": "01034391"
+    },
+    {
+     "name": "仪器分析实验",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 68,
+     "practice": 68,
+     "term": null,
+     "code": "01034400"
+    },
+    {
+     "name": "化工基础",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01034450"
+    },
+    {
+     "name": "高分子化学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01034460"
+    },
+    {
+     "name": "材料化学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "01034490"
+    },
+    {
+     "name": "生命化学基础",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "01034500"
+    },
+    {
+     "name": "立体化学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01034600"
+    },
+    {
+     "name": "环境化学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01034630"
+    },
+    {
+     "name": "放射化学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01034670"
+    },
+    {
+     "name": "无机化学",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "01035140"
+    },
+    {
+     "name": "化学中的数学",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": 16,
+     "term": null,
+     "code": "01035240"
+    },
+    {
+     "name": "化工制图",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01035250"
+    },
+    {
+     "name": "化学中的数学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01035260"
+    },
+    {
+     "name": "改变世界的药物分子",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01035311"
+    },
+    {
+     "name": "化学生物学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01035320"
+    },
+    {
+     "name": "化学生物学实验",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 68,
+     "practice": 68,
+     "term": null,
+     "code": "01035340"
+    },
+    {
+     "name": "化学生物学整合实验",
+     "nature": "任选",
+     "credits": 1,
+     "hours": 34,
+     "practice": 34,
+     "term": null,
+     "code": "01035341"
+    },
+    {
+     "name": "机器学习及其在化学中的应用",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01035370"
+    },
+    {
+     "name": "理论与计算化学导论",
+     "nature": "任选",
+     "credits": 1,
+     "hours": 20,
+     "practice": 8,
+     "term": null,
+     "code": "01035440"
+    },
+    {
+     "name": "生物物理化学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01034980"
+    },
+    {
+     "name": "化学反应动力学及机理",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "01035460"
+    },
+    {
+     "name": "细胞分子生物学中的物理化学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "08402105"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.2",
+   "parent": "3.1",
+   "name": "推荐数理类课程",
+   "courses": [
+    {
+     "name": "线性代数（B）",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00131460"
+    },
+    {
+     "name": "数学分析（Ⅰ）",
+     "nature": "任选",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00132301"
+    },
+    {
+     "name": "数学分析（Ⅱ）",
+     "nature": "任选",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00132302"
+    },
+    {
+     "name": "数学分析（Ⅲ）",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00132304"
+    },
+    {
+     "name": "高等代数（Ⅰ）",
+     "nature": "任选",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00132321"
+    },
+    {
+     "name": "高等代数（Ⅱ）",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00132323"
+    },
+    {
+     "name": "概率统计（B）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00132380"
+    },
+    {
+     "name": "概率统计（B）",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00136950"
+    },
+    {
+     "name": "力学",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00431110"
+    },
+    {
+     "name": "力学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00431141"
+    },
+    {
+     "name": "热学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "00431142"
+    },
+    {
+     "name": "电磁学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00431143"
+    },
+    {
+     "name": "光学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "00431144"
+    },
+    {
+     "name": "原子物理学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00431151"
+    },
+    {
+     "name": "热学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00431154"
+    },
+    {
+     "name": "电磁学",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00431155"
+    },
+    {
+     "name": "光学",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00431156"
+    },
+    {
+     "name": "近代物理",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00431165"
+    },
+    {
+     "name": "基础物理实验",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 68,
+     "practice": 68,
+     "term": null,
+     "code": "00431200"
+    },
+    {
+     "name": "数据结构与算法（B）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "04831420"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.4",
+   "parent": "3.1",
+   "name": "其他符合学生学业发展的课程",
+   "note": "由学生申请、教师推荐，经学院认定",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.2",
+   "parent": "3",
+   "name": "自主选修课",
+   "min": 18,
+   "max": 18,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.2.1",
+   "parent": "3.2",
+   "name": "化学学院自主选修课",
+   "courses": [
+    {
+     "name": "核磁共振波谱分析基础",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01002153"
+    },
+    {
+     "name": "生物核磁共振波谱分析",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "01002154"
+    },
+    {
+     "name": "高等物理化学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 3,
+     "term": null,
+     "code": "01002904"
+    },
+    {
+     "name": "手性材料",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01003018"
+    },
+    {
+     "name": "三维成像前沿",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01003501"
+    },
+    {
+     "name": "群论与化学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01014090"
+    },
+    {
+     "name": "学术道德规范与科技写作",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01016010"
+    },
+    {
+     "name": "理论与计算化学（Ⅱ）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": null,
+     "code": "01016070"
+    },
+    {
+     "name": "化学动力学选读",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "01030440"
+    },
+    {
+     "name": "材料物理",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01032390"
+    },
+    {
+     "name": "催化化学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01032580"
+    },
+    {
+     "name": "物理有机化学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01033010"
+    },
+    {
+     "name": "中级分析化学实验",
+     "nature": "任选",
+     "credits": 1,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "01034520"
+    },
+    {
+     "name": "中级有机化学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01034530"
+    },
+    {
+     "name": "中级物理化学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "01034551"
+    },
+    {
+     "name": "色谱质谱分析",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01034581"
+    },
+    {
+     "name": "中级分析化学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01034610"
+    },
+    {
+     "name": "应用化学基础",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01034640"
+    },
+    {
+     "name": "生化分析",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 6,
+     "term": null,
+     "code": "01034650"
+    },
+    {
+     "name": "界面化学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01034710"
+    },
+    {
+     "name": "辐射化学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01034721"
+    },
+    {
+     "name": "胶体化学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01034780"
+    },
+    {
+     "name": "多晶 X 射线衍射",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 6,
+     "term": null,
+     "code": "01034800"
+    },
+    {
+     "name": "计算 机 在 化 学 化 工 中 的应用",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": null,
+     "code": "01034970"
+    },
+    {
+     "name": "化学开发基础",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01034990"
+    },
+    {
+     "name": "中级有机化学实验",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 68,
+     "practice": 68,
+     "term": null,
+     "code": "01035011"
+    },
+    {
+     "name": "中级物理化学实验",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 68,
+     "practice": 68,
+     "term": null,
+     "code": "01035031"
+    },
+    {
+     "name": "化学信息检索",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01035080"
+    },
+    {
+     "name": "表面物理化学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01035100"
+    },
+    {
+     "name": "高等电化学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01035110"
+    },
+    {
+     "name": "中级无机化学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01035150"
+    },
+    {
+     "name": "数学串珠与分子几何",
+     "nature": "任选",
+     "credits": 1,
+     "hours": 17,
+     "practice": null,
+     "term": null,
+     "code": "01035270"
+    },
+    {
+     "name": "化工新概念",
+     "nature": "任选",
+     "credits": 1,
+     "hours": 17,
+     "practice": null,
+     "term": null,
+     "code": "01035280"
+    },
+    {
+     "name": "通用高分子材料—结",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01035290"
+    },
+    {
+     "name": "纳米化学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01035300"
+    },
+    {
+     "name": "生物大分子工程",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01035330"
+    },
+    {
+     "name": "综合化学实验",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 120,
+     "practice": 120,
+     "term": null,
+     "code": "01035351"
+    },
+    {
+     "name": "软物质与硬科学：微观到宏观的中间世界",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01035360"
+    },
+    {
+     "name": "高性能聚合物材料",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01035380"
+    },
+    {
+     "name": "博雅理学讲堂",
+     "nature": "任选",
+     "credits": 1,
+     "hours": 17,
+     "practice": null,
+     "term": null,
+     "code": "01035390"
+    },
+    {
+     "name": "药物化学导论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01035400"
+    },
+    {
+     "name": "f 区元素化学",
+     "nature": "任选",
+     "credits": 1,
+     "hours": 17,
+     "practice": null,
+     "term": null,
+     "code": "01035410"
+    },
+    {
+     "name": "分子光谱与分子结构",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "01035420"
+    },
+    {
+     "name": "化学应用与实践",
+     "nature": "任选",
+     "credits": 1,
+     "hours": 34,
+     "practice": 34,
+     "term": null,
+     "code": "01035430"
+    },
+    {
+     "name": "综合创新实验（化学）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 102,
+     "practice": 102,
+     "term": null,
+     "code": "01035450"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2.2",
+   "parent": "3.2",
+   "name": "跨学科选修课",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.3",
+   "parent": "3",
+   "name": "补齐英语所缺学分",
+   "min": 0,
+   "max": 6,
+   "unit": "学分",
+   "note": "可在学校所列课程表中任意选择，无限制",
+   "courses": [],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "理论必修课和其他公共必修课按学校要求选课，信息课程见下表。",
+  "Ⅰ. 人类文明及其传统                      ≥2",
+  "Ⅱ. 现代社会及其问题                      ≥2            1. 不少于 12 学分",
+  "Ⅲ. 艺术与人文                         ≥2            2. 至少修读 1 门“通识核心课”",
+  "Ⅳ. 数学、自然与技术                      ≥2",
+  "（1）具体课程列表详见《北京大学本科生选课手册》；",
+  "（2）原则上不允许以专业课替代通识教育课程学分；",
+  "（3）本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分；",
+  "（4）建议合理分配修读时间，每学期修读 1 门课程。",
+  "备注：表中课程可以用 3.1.2 中指定课程替代。",
+  "备注：结构化学（01030120）可用物理学院的固体物理学（00432510）代替。",
+  "综合型：6 学分（开展某一课题的系统研究工作，撰写毕业论文）    。",
+  "综述型：2 学分（就某个专题进行文献调研和分析）  。",
+  "若选择综述型论文，须在 3.1 所列专业选修课程中另选 4 学分，满足总共 6 学分要求。",
+  "可以从如下课程中选择：化学课程群、数理类课程群、指定学部特定课程群及其他课程。",
+  "注意：同名称课程只能选一类（门），不能重复选课。",
+  "提示：注意表中所列课程选修要求及其与其他课程的互斥关系；同名称课程只能选一",
+  "类（门），不能重复选课。",
+  "（1）可以用“数学分析（Ⅰ）和（Ⅱ）     ”两门课分别替代 2.1 中“高等数学 B（一）和",
+  "（二）”，但两类之间不可以重复登记学分；数学分析（Ⅲ）可以计入专业选修中。",
+  "（2）可以用表中所列的力、热、光、电替代 2.1 中的普通物理（Ⅰ）和（Ⅱ）      ，满足 8",
+  "学分即可，多出的学分可计入专业选修（但一门课不能分开登记）          。",
+  "注意：普通物理（Ⅰ）与力学和电磁学互斥；普通物理（Ⅱ）与光学和热学互斥。",
+  "（3）“线性代数（B）”与数院核心课“高等代数（Ⅰ）和（Ⅱ）        ”互斥。",
+  "（4）“原子物理学（00431151）”与“近代物理（00431165）",
+  "”互斥",
+  "3.1.3 理学部其他院系（含元培理科）和信息与工程学部核心课程",
+  "本科生科研         任选   2～6",
+  "可自主选修理学部（含元培学院理科）、信息与工程科学部、人文学部、社会科学部四",
+  "个学部开设的核心课程；其他符合学生专业发展的课程（由学生申请，经学院认定）。"
+ ],
+ "warnings": [
+  "专业名按 2025 版“化学专业”推断（专业必修课重合度 100%），请核对"
+ ],
+ "source": {
+  "volumeId": "2024-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=209",
+  "lineStart": 5454,
+  "lineEnd": 5767
+ },
+ "titleInference": {
+  "from": 2025,
+  "title": "化学专业",
+  "overlap": 1
+ }
+}

@@ -1,0 +1,419 @@
+{
+ "id": "2024-地球与空间科学学院-空间科学与技术",
+ "untitled": true,
+ "cohort": 2024,
+ "volume": "北京大学本科培养方案（2024）理科卷",
+ "school": "地球与空间科学学院",
+ "major": "空间科学与技术",
+ "track": null,
+ "title": "空间科学与技术专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "理学学士",
+ "totalCredits": {
+  "min": 143,
+  "max": 143
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 47,
+   "max": 47,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 55,
+   "max": 55,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 41,
+   "max": 41,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "35 学分",
+   "min": 35,
+   "max": 35,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "23 学分",
+   "min": 23,
+   "max": 23,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "28 学分",
+   "min": 28,
+   "max": 28,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "毕业论文",
+   "requirement": "4 学分",
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1.1",
+   "parent": "1",
+   "name": "公共必修课",
+   "min": 35,
+   "max": 35,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论（B）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "“计算概论（B）”课程后，",
+     "code": "04831410"
+    },
+    {
+     "name": "计算概论（B）上机",
+     "nature": "专业必修",
+     "credits": 0,
+     "hours": 3,
+     "practice": 32,
+     "term": "“计算概论（B）”课程后，",
+     "code": "04831650"
+    },
+    {
+     "name": "数据结构与算法（B）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "04831420"
+    },
+    {
+     "name": "数据结构与算法上机",
+     "nature": "专业必修",
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": null,
+     "code": "04830494"
+    },
+    {
+     "name": "军事理论",
+     "nature": "全校必修",
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "一上",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "1.2",
+   "parent": "1",
+   "name": "通识教育课",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.1",
+   "parent": "2",
+   "name": "专业基础课",
+   "min": 23,
+   "max": 23,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学（B） （一）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": "一上",
+     "code": "00130201"
+    },
+    {
+     "name": "高等数学（B） （二）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": "一下",
+     "code": "00130202"
+    },
+    {
+     "name": "力学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "一上",
+     "code": "00431141"
+    },
+    {
+     "name": "热学",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "一下",
+     "code": "00431142"
+    },
+    {
+     "name": "电磁学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "一下",
+     "code": "00431143"
+    },
+    {
+     "name": "光学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "一上",
+     "code": "00431172"
+    },
+    {
+     "name": "地球科学概论（地球物理与空间物理）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "一上",
+     "code": "01230202"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2",
+   "parent": "2",
+   "name": "专业核心课",
+   "min": 28,
+   "max": 28,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "空间天气学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": "二上",
+     "code": "01233650"
+    },
+    {
+     "name": "宇航技术基础",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "三上",
+     "code": "01233410"
+    },
+    {
+     "name": "空间等离子体物理基础",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "二下",
+     "code": "01233420"
+    },
+    {
+     "name": "中高层大气物理学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "三下",
+     "code": "01233470"
+    },
+    {
+     "name": "太 阳 大气 层 与 日球 层 物理学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "三上",
+     "code": "01233430"
+    },
+    {
+     "name": "电离层物理学与电波传播",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "四上",
+     "code": "01233620"
+    },
+    {
+     "name": "计算空间物理学基础",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "四下",
+     "code": "01233550"
+    },
+    {
+     "name": "行星科学概论",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "三下",
+     "code": "01233140"
+    },
+    {
+     "name": "空间探测与实验基础",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 15,
+     "term": "四上",
+     "code": "01233450"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.3",
+   "parent": "2",
+   "name": "毕业论文",
+   "min": 4,
+   "max": 4,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.2",
+   "parent": "3.1",
+   "name": "专业选修类课程",
+   "courses": [
+    {
+     "name": "空间探测信息可视化处理",
+     "nature": null,
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": "三下",
+     "code": "01233530"
+    },
+    {
+     "name": "空间探测信息处理技术与实验",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": 16,
+     "term": "三下 至少完成",
+     "code": "01233531"
+    },
+    {
+     "name": "探测误差与空间物理统计分析方法",
+     "nature": null,
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": "三下",
+     "code": "01233540"
+    },
+    {
+     "name": "空间科学与技术基础",
+     "nature": null,
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "一下",
+     "code": "01233610"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "—        大学英语       全校必修   2～8   —       —",
+  "思想政治理论                                  按 马克 思 主义学院 要 求",
+  "必修课                                     选课",
+  "—                   全校必修   1门                    按照学校要求选课",
+  "需 要另 选 该课程的 上 机",
+  "课“计算概论（B）上机”  。",
+  "需 要另 选 该课程的 上 机",
+  "课“计算概论（B）上机”  。",
+  "系 可以 根 据学科特 点 选",
+  "该课程的上机课“数据结",
+  "构与算法上机”  。",
+  "该课程的上机课“数据结",
+  "—        体育系列课程    全校必修   1×4        2        0       全年",
+  "说明：思政类课程具体方案以马克思主义学院和学校公布为准。",
+  "公共英文课程如超过 4 个学分，则在选修课程中减少相应的学分数；不足 4 个学分的，",
+  "则在选修课程中增加相应的学分数，毕业所需的总学分仍保持为 143 学分。",
+  "Ⅰ. 人类文明及其传统                        ≥2",
+  "Ⅱ. 现代社会及其问题                        ≥2                1. 不少于 12 学分",
+  "Ⅲ. 艺术与人文                           ≥2                2. 至少修读 1 门“通识核心课”",
+  "Ⅳ. 数学、自然与技术                        ≥2",
+  "（1）具体课程列表详见《北京大学本科生选课手册》 ；",
+  "（2）原则上不允许以专业课替代通识教育课程学分；",
+  "（3）本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分；",
+  "（4）建议合理分配修读时间，每学期修读 1 门课程。",
+  "E1233650    磁层物理学               专业必修        3   51         四上",
+  "除了完成上述学分及德智体的诸方面要求外，本专业学生还必须在最后一学年由本专",
+  "业导师指导下完成毕业学位论文/毕业设计，并顺利通过答辩才能获得学士学位。",
+  "专业选修和自主选修课程总完成学分达到 41 学分，其中专业选修课程至少完成 27",
+  "学分。"
+ ],
+ "warnings": [
+  "第 9319 行：课程组编号 3.1.2 重复出现，之后的内容未纳入",
+  "专业名按 2025 版“空间科学与技术专业”推断（专业必修课重合度 100%），请核对"
+ ],
+ "source": {
+  "volumeId": "2024-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=209",
+  "lineStart": 9129,
+  "lineEnd": 9377
+ },
+ "titleInference": {
+  "from": 2025,
+  "title": "空间科学与技术专业",
+  "overlap": 1
+ }
+}

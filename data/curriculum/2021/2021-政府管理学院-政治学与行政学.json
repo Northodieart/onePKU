@@ -1,0 +1,1176 @@
+{
+ "id": "2021-政府管理学院-政治学与行政学",
+ "cohort": 2021,
+ "volume": "北京大学本科培养方案（2021）文科卷",
+ "school": "政府管理学院",
+ "major": "政治学与行政学",
+ "track": null,
+ "title": "政治学与行政学专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "法学学士学位。",
+ "totalCredits": {
+  "min": 144,
+  "max": 144
+ },
+ "topRequirements": [
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 41,
+   "max": 41,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "29~35 学分",
+   "inferredParent": true,
+   "min": 29,
+   "max": 35,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "22 学分",
+   "inferredParent": true,
+   "min": 22,
+   "max": 22,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "27 学分",
+   "inferredParent": true,
+   "min": 27,
+   "max": 27,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "33 学分",
+   "inferredParent": true,
+   "min": 33,
+   "max": 33,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "8 学分",
+   "inferredParent": true,
+   "min": 8,
+   "max": 8,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 41,
+   "max": 47,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 C",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "“计算 概 论 C” 课 程 后,",
+     "code": "04834470"
+    },
+    {
+     "name": "计算机实习",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "计 算",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 56,
+   "max": 56,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学 ( D 类)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "一上",
+     "code": "00332580"
+    },
+    {
+     "name": "D 类 基 础:体 特 生 和 留 学生专选)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "一上",
+     "code": "00332590"
+    },
+    {
+     "name": "政治学原理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "一上、二下",
+     "code": "03230020"
+    },
+    {
+     "name": "行政学原理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "一上",
+     "code": "03232580"
+    },
+    {
+     "name": "宪法与行政法学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "一下",
+     "code": "03232620"
+    },
+    {
+     "name": "公共政策分析",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "03231620"
+    },
+    {
+     "name": "经济学原理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上、二下",
+     "code": "03232630"
+    },
+    {
+     "name": "中国政府与政治",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上、二下",
+     "code": "03232960"
+    },
+    {
+     "name": "中国政治思想史",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上、二下",
+     "code": "03230780"
+    },
+    {
+     "name": "西方政治思想史",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "03230790"
+    },
+    {
+     "name": "比较政治学概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "03230040"
+    },
+    {
+     "name": "政治学研究方法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "03232840"
+    },
+    {
+     "name": "当代西方政治思潮",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "03232970"
+    },
+    {
+     "name": "政治学前沿",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "03232600"
+    },
+    {
+     "name": "中国政治制度史",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "03230770"
+    },
+    {
+     "name": "地方政府与政治",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "03232980"
+    },
+    {
+     "name": "西方政治制度",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "03232990"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 41,
+   "max": 41,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "社会科学的经典与前沿",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "03232610"
+    },
+    {
+     "name": "政治学阶梯:体系与问题",
+     "nature": null,
+     "credits": 4,
+     "hours": 6,
+     "practice": 0,
+     "term": "二上",
+     "code": "03233040"
+    },
+    {
+     "name": "政治哲学 (荣誉课程)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "03231660"
+    },
+    {
+     "name": "政治、法律与社会经典阅读",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "03232830"
+    },
+    {
+     "name": "法治政府概论(行政管理专业核心课)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "03233000"
+    },
+    {
+     "name": "监察与监督专题 (荣誉课程)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "03233060"
+    },
+    {
+     "name": "国家治理理论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "03233080"
+    },
+    {
+     "name": "中国古典政治思想文本阅读",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "03233090"
+    },
+    {
+     "name": "俄罗斯与东欧政治 (荣誉课程)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "03233100"
+    },
+    {
+     "name": "美国政府与政治 (荣誉课程)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "03231740"
+    },
+    {
+     "name": "社会 科 学 的 理 论 阅 读 与 思 维训练",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "03233350"
+    },
+    {
+     "name": "“第三世界” 的政治变革(荣誉课程)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "03233110"
+    },
+    {
+     "name": "发展政治学 (荣誉课程)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "03231690"
+    },
+    {
+     "name": "政党学概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "03231700"
+    },
+    {
+     "name": "共享 价 值 时 代 的 社 会 治 理 与创新",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "03233130"
+    },
+    {
+     "name": "中国近代政治思想史",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "03232690"
+    },
+    {
+     "name": "近现代欧洲政治思想",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "03233140"
+    },
+    {
+     "name": "国家安全与应急管理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "03233150"
+    },
+    {
+     "name": "政治分析中的重大问题(荣誉课程)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "03233160"
+    },
+    {
+     "name": "日本经济",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": null,
+     "code": "03232080"
+    },
+    {
+     "name": "公共经济学(行政管理专业核心课)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "03232530"
+    },
+    {
+     "name": "组织与管理(行政管理专业核心课)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "03230120"
+    },
+    {
+     "name": "人力资源开发与管理(行政管理专业核心课)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "03231160"
+    },
+    {
+     "name": "地方政府管理(行政管理专业核心课)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "03231130"
+    },
+    {
+     "name": "行政学说史",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "03233170"
+    },
+    {
+     "name": "公共财政与税收",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "03231140"
+    },
+    {
+     "name": "管理运筹学(行政管理专业核心课)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "03231610"
+    },
+    {
+     "name": "(荣誉课程)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "03232920"
+    },
+    {
+     "name": "行政领导学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "03230450"
+    },
+    {
+     "name": "公务员制度",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上",
+     "code": "03233180"
+    },
+    {
+     "name": "公共组织行为学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "03232460"
+    },
+    {
+     "name": "公共组织战略管理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "03232510"
+    },
+    {
+     "name": "比较公共管理(行政管理专业核心课)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "03231120"
+    },
+    {
+     "name": "经济法专题 (荣誉课程)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "03233190"
+    },
+    {
+     "name": "全球 视 野 下 的 中 国 工 业 与 经济发展",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "03232680"
+    },
+    {
+     "name": "财政预算与行政财务管理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "03231530"
+    },
+    {
+     "name": "电子政务概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "03232720"
+    },
+    {
+     "name": "经济地理学(城市管理专业核心课)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "03231240"
+    },
+    {
+     "name": "城市管理(城市管理专业核心课)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "03231250"
+    },
+    {
+     "name": "城市历史与文化(城市管理专业核心课)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "03233020"
+    },
+    {
+     "name": "地理信息系统基础与应用(城市管理专业核心课)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "03232360"
+    },
+    {
+     "name": "区域经济学(城市管理专业核心课)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "03232550"
+    },
+    {
+     "name": "城市交通与土地利用",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "03233360"
+    },
+    {
+     "name": "房地产经济与管理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "03232450"
+    },
+    {
+     "name": "城市规划(城市管理专业核心课)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "03231260"
+    },
+    {
+     "name": "城市发展与政策(城市管理专业核心课)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "03233030"
+    },
+    {
+     "name": "城市环境与可持续发展",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "四上",
+     "code": "03233200"
+    },
+    {
+     "name": "应用统计学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "一下",
+     "code": "03232300"
+    },
+    {
+     "name": "社会调查的理论与方法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "03232400"
+    },
+    {
+     "name": "城市治理定量方法(城市管理专业核心课)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "03232890"
+    },
+    {
+     "name": "博弈论 (荣誉课程)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "03232480"
+    },
+    {
+     "name": "计算政治学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "03232860"
+    },
+    {
+     "name": "全球治理前沿问题",
+     "nature": null,
+     "credits": 1,
+     "hours": 4,
+     "practice": 0,
+     "term": null,
+     "code": "03233210"
+    },
+    {
+     "name": "国家治理前沿问题",
+     "nature": null,
+     "credits": 1,
+     "hours": 4,
+     "practice": 0,
+     "term": null,
+     "code": "03233220"
+    },
+    {
+     "name": "社会治理前沿问题",
+     "nature": null,
+     "credits": 1,
+     "hours": 4,
+     "practice": 0,
+     "term": null,
+     "code": "03233230"
+    },
+    {
+     "name": "中国政治体制改革前沿问题",
+     "nature": null,
+     "credits": 1,
+     "hours": 4,
+     "practice": 0,
+     "term": null,
+     "code": "03233240"
+    },
+    {
+     "name": "中国经济发展前沿问题",
+     "nature": null,
+     "credits": 1,
+     "hours": 4,
+     "practice": 0,
+     "term": null,
+     "code": "03233260"
+    },
+    {
+     "name": "法治中国前沿问题",
+     "nature": null,
+     "credits": 1,
+     "hours": 4,
+     "practice": 0,
+     "term": null,
+     "code": "03233280"
+    },
+    {
+     "name": "中国人权发展前沿问题",
+     "nature": null,
+     "credits": 1,
+     "hours": 4,
+     "practice": 0,
+     "term": null,
+     "code": "03233290"
+    },
+    {
+     "name": "城市应急管理",
+     "nature": null,
+     "credits": 1,
+     "hours": 4,
+     "practice": 0,
+     "term": null,
+     "code": "03233300"
+    },
+    {
+     "name": "国际政治前沿 (英文)",
+     "nature": null,
+     "credits": 1,
+     "hours": 4,
+     "practice": 0,
+     "term": null,
+     "code": "03233310"
+    },
+    {
+     "name": "教师指导下的独立研究",
+     "nature": null,
+     "credits": 2,
+     "hours": 0,
+     "practice": 0,
+     "term": null,
+     "code": "30330031"
+    },
+    {
+     "name": "教师指导下的小组研究",
+     "nature": null,
+     "credits": 2,
+     "hours": 0,
+     "practice": 0,
+     "term": null,
+     "code": "30330041"
+    },
+    {
+     "name": "法理学 法学院",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "春季",
+     "code": "02930010"
+    },
+    {
+     "name": "刑法总论 法学院",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "春季",
+     "code": "02930152"
+    },
+    {
+     "name": "国际公法 法学院",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "秋季",
+     "code": "02930480"
+    },
+    {
+     "name": "商法总论 法学院",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "02930470"
+    },
+    {
+     "name": "宏观经济学 经济学院",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "全年",
+     "code": "02530070"
+    },
+    {
+     "name": "微观经济学 经济学院",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "全年",
+     "code": "02530060"
+    },
+    {
+     "name": "计量经济学 经济学院",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "全年",
+     "code": "02530140"
+    },
+    {
+     "name": "中国经济思想史 经济学院",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "02533340"
+    },
+    {
+     "name": "中国经济史 经济学院",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "02535240"
+    },
+    {
+     "name": "发展经济学 经济学院",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "02530150"
+    },
+    {
+     "name": "社会学概论 社会学系",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "秋季",
+     "code": "03130010"
+    },
+    {
+     "name": "中国社会 社会学系",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "03130590"
+    },
+    {
+     "name": "中国社会学史 社会学系",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "03131740"
+    },
+    {
+     "name": "社会心理学 社会学系",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "春季",
+     "code": "03130210"
+    },
+    {
+     "name": "国外社会学学说 (上) 社会学系",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "03100130"
+    },
+    {
+     "name": "国外社会学学说 (下) 社会学系",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "03130020"
+    },
+    {
+     "name": "社会学专题讲座 社会学系",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "03131010"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [
+  {
+   "code": "03232650",
+   "line": 19054,
+   "text": "03232650                    3     3      0       二上"
+  },
+  {
+   "code": "03232900",
+   "line": 19224,
+   "text": "03232900                            3     3      0      三上"
+  }
+ ],
+ "notes": [
+  "-1 公共必修课:29~35 学 分 (港 澳 台 学 生 15 分、留 学 生 7 学 分,差 异 部 分 从 “与",
+  "—       大学英语                2~8      —           —",
+  "选课。",
+  "北京大学政府管理学院                    · 365 ·",
+  "—       思想政治理论必修课             18     —      —",
+  "选课。",
+  "—                             1门     —      —     按学校要求选课。",
+  "需要另 选 该 课 程 的 上 机",
+  "课 (",
+  "实习)。",
+  "时,需要 另 选 该 课 程 的",
+  "机实习)。",
+  "—       体育系列课程                1×4    2            全年",
+  "注: ① 全校公共必修课程具体开课学期按学校教务部当年公布的开课计划执行。",
+  "② 大学英语系列课程采取进阶分级式 (具体细则参考 《北京大学本科生 (非 英 语 专 业) 大 学 英 语 能",
+  "力培养方案》);新生英语等级考试成绩为 B、C、C+ 的学生,可以从自主选修 课 程 里 面 选 择 学 分 补 足 8",
+  "学分。",
+  "通识教育 课 共 分 为 四 个 系 列: Ⅰ.人 类 文 明 及 其 传 统; Ⅱ.现 代 社 会 及 其 问 题;",
+  "Ⅲ.艺术与人文; Ⅳ.数学、自然与技 术。每 个 系 列 均 包 含 通 识 教 育 核 心 课 和 通 选 课 两 部",
+  "分课程。",
+  "1)至少修读一门 “通 识 教 育 核 心 课 程”, 且 在 四 个 课 程 系 列 中 每 个 系 列 至 少 修 读 2",
+  "学分。",
+  "2)原则上不允许以专业课替代通识教育课程学分。",
+  "3)本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分。",
+  "4)建议合理分配修读时间,每学期修读 1 门课程。",
+  "专业必修课程包含专业基础课和专业核心课。专业基础课,一般为专业大类必修课或",
+  "专业核心课的先修必修课。",
+  "· 366 ·             北京大学本科培养方案 (",
+  "高等数学 (",
+  "注: ① “政治学原理”“经济学原理”“中国政府与政治”3 门 课 程 均 为 平 行 课 程, 选 课 学 期 各 有 2 个,3",
+  "门课程均允许学生自由选择任一学期上课。",
+  "② 选修国发院开设的 “经 济 学 原 理 ” (课 号:06232000,4 学 分 )、 经 济 学 院 开 设 的 “经 济 学 原 理",
+  "(Ⅰ )”(课号:02533160,3 学 分)、 “经 济 学 原 理 (Ⅱ )” (课 号:02533170,3 学 分) 三 者 中 的 任 一 课",
+  "程,均可免修本院开设的 “经济学原理”(课号:03232630,3 学分)。",
+  "本专业所有核心课必须选本院开设的课程,外院开设的同名课程不能作为本专业的核",
+  "心课程学分。",
+  "注:“中国政治思想史” 为平行课程,选课学期有 2 个,允许学生自由选择任一学期。",
+  "1)在学科专业范围内选题,选题有理论价值和现实意义。研究问 题 和 论 点 明 确、逻",
+  "辑清晰、内容充实、论据可靠、表述准确、结构合理、行文流畅,有一定的创新性且遵守",
+  "相关学术规范。能对既有相关研究进行文献评析,明确现实作者研究的原创性。能运用相",
+  "关的理论和方法,结合素材分析问题、进行论证或阐释或/并提出解决问题的可能思路。",
+  "2)时间安排:第七学期完成师生双选、确定论文选题并提交论文 报 告,第 八 学 期 的",
+  "三月底完成初稿,四月中旬提交中期报告,四月底完成终稿并提交查重,五月中旬完成装",
+  "订并提交。",
+  "北京大学政府管理学院                 · 367 ·",
+  "3)论文篇幅:一万字以上 (含引注)。",
+  "4)学术规范:学生对提交的论文要做出遵守学术规范的自律声明,引 用 他 人 成 果 时",
+  "必须注明出处,严禁抄袭,学院将使用北京大学毕业设计 (论文) 管理系统进行论文重复",
+  "率核查并做出结论。论文格式需要符合规范。",
+  "5)导师对论文按百分制评定成绩。学院组织论文答辩,答辩委员会根 据 学 生 的 实 际",
+  "答辩情况,有权对导师给 出 的 论 文 成 绩 进 行 更 改, 并 作 为 学 生 毕 业 论 文 最 终 成 绩 记 录 在",
+  "案。论文最终成绩及格,方能获得学分。",
+  "本科四年至少参加 10 场由本 院 教 师 开 设 或 主 持 的 读 书 会,记 录 读 书 会 内 容 并 撰 写 读",
+  "3000 字左右)。由相关助教考勤、收集读 书 报 告、交 由 导 读 教 师 按 百 分 制 评 定 成",
+  "绩并报本科教务备案。每 年 6 月 1 日 前 汇 总 完 毕。 学 生 于 大 四 下 学 期 在 选 课 系 统 中 选 定",
+  "“人文社科经典阅读”(课号:03232910),由任课老师评定课程最终成绩。",
+  "在导师指导下,本科四年到国家机关、公共组织或国有企事业单位至少调研或实践四",
+  "6000 字左右);调研或实 践 报 告 由 导 师 按 百 分 制 予 以 成 绩 评",
+  "定,每年 6 月 1 日前汇总完毕。学 生 于 大 四 下 学 期 在 选 课 系 统 中 选 定 “社 会 调 研 与 实 践”",
+  "(课号:03232930),由任课老师评定课程最终成绩。",
+  "说明: ① 四周的调研时间可分段累计完成。",
+  "② 可用学院开设的 “城市规划治 理 实 践” (课 号:03232950) 进 行 折 抵, 一 旦",
+  "折抵,“城市规划治理实践”课程将不再计入毕业学分。",
+  "1 学院内进阶课程:21 学分,除 标 注 的 限 制 条 件 外, 在 下 列 任 何 类 别 中 选 修 满 足",
+  "学分即可。",
+  "类别        课号              专业选修课     学分   周学时   实践总学时   选课学期",
+  "政治 学     03233050   新政治学             3     3      0       二上",
+  "提升 及                政治科学的理论与研究方法",
+  "(至 少 选   03231080   政治经济导论           3     3      0       二下",
+  "修 3 门) 03231910     当代世界经济与政治        3     3      0       二下",
+  "· 368 ·                  北京大学本科培养方案 (",
+  "类别        课号              专业选修课             学分   周学时   实践总学时   选课学期",
+  "政治 学     03233120   政治心理学 (荣誉课程)             3     3      0      三下",
+  "修 3 门) 03233070                              3     3      0",
+  "政治学学科史                                       三下",
+  "理类       03231470   货币与金融政策                  3     3      0      二下",
+  "北京大学政府管理学院                       · 369 ·",
+  "类别        课号              专业选修课             学分   周学时   实践总学时   选课学期",
+  "行政伦理学",
+  "行政 管     03233010                            3     3      0      三下",
+  "(行政管理专业核心课)",
+  "城市经济学",
+  "城市 管     03232560                            3     3      0      三上",
+  "(城市管理专业核心课)",
+  "行政学研究方法",
+  "(至 少 选   03232640                            3     3      0      二下",
+  "(行政管理专业核心课)",
+  "· 370 ·                  北京大学本科培养方案 (",
+  "类别        课号             专业选修课              学分   周学时   实践总学时   选课学期",
+  "方法类                 人文 社 会 科 学 中 的 质 性 研 究",
+  "修 2 门) 03232470     论文写作与研究方法                3     3      0      三下",
+  "题讨 论     03233250   中国行政体制改革前沿问题             1     4      0",
+  "教师 前                                                             三上",
+  "沿性 英                                                             三下",
+  "(至 少 选   03233270   中国城市发展前沿问题               1     4      0",
+  "科研                                                               三下",
+  "训练                                                               三上",
+  "说明: ① 荣誉课程。荣 誉 课 程 指 的 是 本 科 生 选 修 的 研 究 生 课 程。修 完 该 课 程, 学 生",
+  "在本校攻读研究生期间相关课程可做替换免修。",
+  "选修荣誉课程必须符合下列条件:完成本科公共与基础课程及相关专业的专业核心必",
+  "北京大学政府管理学院                   · 371 ·",
+  "修课程及学分,且绩点排名在本专业前 50% ;最多选修 5 门课,总学分最多 15 学分。",
+  "② 科研训练。学院鼓励学 生 在 导 师 的 指 导 下, 本 科 四 年 完 整 地 参 与 一 项 课 题 (包 括",
+  "纵向、横向和导师自拟课题,相 关 助 研 费 按 有 关 规 定 支 付),可 以 是 独 立 开 展 研 究, 也 可",
+  "以是组成小组开展研究, 但 小 组 成 员 原 则 上 不 得 超 过 3 人, 且 成 员 间 有 明 确 的 分 工 和 任",
+  "务。研修时间:学生能够投入 较 充 足 的 时 间,进 行 科 研 活 动 一 年 以 上 (含 一 年)。 成 绩 评",
+  "定:学生提交结题材料,结题材 料 包 括 结 题 论 文 (或 结 题 报 告)、指 导 教 师 对 学 生 结 题 论",
+  "文 (或结题报告)和科研工作的评价。学院组织开展结题答辩或结题材料评阅,并根据答",
+  "辩或结题材料评阅结果按百分制予以成绩评定,每年 5 月 1 日前汇总完毕。 (结 题 论 文 或",
+  "报告的内容,原则上不能与毕业论文的内容重复使用,3000 字左右)",
+  "① 学校立项的本研项目,通过结题答辩。",
+  "② 参加 “挑战杯”大学生课外学术科技作品竞赛。",
+  "③ 有突出的研究成果,在导师指导下公开发表学术期刊文章 (至少一篇)。",
+  "2 学院外模块课程:12 学分,从下列任何模块课程选修满足学分即可。",
+  "0293008a   民法总论                法学院     3       3        秋季",
+  "0293007a   行政法与行政诉讼法           法学院     4       4        春季",
+  "注:在课程名称不变的前提下,具体开课学期、学分、授 课 教 师 和 授 课 方 式 等 按 照 各 院 系 最 新 版 教 学 计",
+  "划执行,新课程和新课号仍可作为限选课程。若涉及先修要求,学生自行与授课教师协调。",
+  "可根据兴趣和未来发展需要从除毕业要求的专业选修课程中剩余的课程以及学校所开",
+  "放的课程中选择。"
+ ],
+ "warnings": [
+  "第 18917 行：课程行缺少学分：04831435 计 算",
+  "第 19054 行：课程 03232650 缺少课程名，未纳入",
+  "第 19224 行：课程 03232900 缺少课程名，未纳入"
+ ],
+ "source": {
+  "volumeId": "2021-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=158",
+  "lineStart": 18791,
+  "lineEnd": 19417
+ }
+}

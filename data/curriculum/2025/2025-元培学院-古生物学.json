@@ -1,0 +1,837 @@
+{
+ "id": "2025-元培学院-古生物学",
+ "cohort": 2025,
+ "volume": "北京大学本科培养方案（2025）理科卷",
+ "school": "元培学院",
+ "major": "古生物学",
+ "track": null,
+ "title": "古生物学专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "理学学士",
+ "totalCredits": {
+  "min": 130,
+  "max": 130
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 45,
+   "max": 51,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 54,
+   "max": 54,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 25,
+   "max": 25,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "大学英语",
+   "requirement": "2～8 学分",
+   "min": 2,
+   "max": 8,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "思想政治理论必修课",
+   "requirement": "19 学分",
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "1-5",
+   "parent": "1",
+   "name": "信息课程",
+   "requirement": "3 学分",
+   "min": 3,
+   "max": 3,
+   "unit": "学分"
+  },
+  {
+   "id": "1-6",
+   "parent": "1",
+   "name": "军事理论",
+   "requirement": "2 学分",
+   "min": 2,
+   "max": 2,
+   "unit": "学分"
+  },
+  {
+   "id": "1-7",
+   "parent": "1",
+   "name": "体育课",
+   "requirement": "4 学分",
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  },
+  {
+   "id": "1-9",
+   "parent": "1",
+   "name": "大学成长课",
+   "requirement": "3 学分",
+   "min": 3,
+   "max": 3,
+   "unit": "学分"
+  },
+  {
+   "id": "1-10",
+   "parent": "1",
+   "name": "元培通识课",
+   "requirement": "12 学分",
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "24 学分",
+   "min": 24,
+   "max": 24,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "26 学分",
+   "min": 26,
+   "max": 26,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "requirement": "4 学分",
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "20 学分",
+   "min": 20,
+   "max": 20,
+   "unit": "学分"
+  },
+  {
+   "id": "3-3",
+   "parent": "3",
+   "name": "数据结构与算法",
+   "requirement": "3 学分",
+   "min": 3,
+   "max": 3,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 45,
+   "max": 51,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "1.1",
+   "parent": "1",
+   "name": "公共必修课",
+   "courses": [
+    {
+     "name": "计算概论 A",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "04830041"
+    },
+    {
+     "name": "计算概论 A 上机实习课",
+     "nature": "全校必修",
+     "credits": 0,
+     "hours": 34,
+     "practice": 34,
+     "term": null,
+     "code": "04830042"
+    },
+    {
+     "name": "计算概论 A（实验班）",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "04830530"
+    },
+    {
+     "name": "计算概论（B）",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "04831410"
+    },
+    {
+     "name": "计算概论（B）上机",
+     "nature": "全校必修",
+     "credits": 0,
+     "hours": 34,
+     "practice": 34,
+     "term": null,
+     "code": "04831650"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "1.2",
+   "parent": "1",
+   "name": "通识教育课",
+   "min": 12,
+   "max": 12,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "1.3",
+   "parent": "1",
+   "name": "大学成长课",
+   "courses": [
+    {
+     "name": "新生教育实践课程",
+     "nature": "专业任选",
+     "credits": 1,
+     "hours": 32,
+     "practice": 34,
+     "term": "一上",
+     "code": "04631815"
+    },
+    {
+     "name": "书院成长课程",
+     "nature": "专业任选",
+     "credits": 2,
+     "hours": 64,
+     "practice": 64,
+     "term": "二年级",
+     "code": "04631816"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 54,
+   "max": 54,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.1",
+   "parent": "2",
+   "name": "专业基础课",
+   "min": 24,
+   "max": 24,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学（B）（一）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 102,
+     "practice": null,
+     "term": null,
+     "code": "00130201"
+    },
+    {
+     "name": "高等数学（B）（二）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 102,
+     "practice": null,
+     "term": null,
+     "code": "00130202"
+    },
+    {
+     "name": "普通物理（Ⅰ）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00431132"
+    },
+    {
+     "name": "普通物理（Ⅱ）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00431133"
+    },
+    {
+     "name": "普通化学（B）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 64,
+     "practice": null,
+     "term": null,
+     "code": "01034880"
+    },
+    {
+     "name": "普通化学实验（B）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 64,
+     "practice": null,
+     "term": null,
+     "code": "01034920"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2",
+   "parent": "2",
+   "name": "专业核心课",
+   "min": 26,
+   "max": 26,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "遗传学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "生化之后",
+     "code": "01130200"
+    },
+    {
+     "name": "普通生物学实验",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 68,
+     "practice": 68,
+     "term": null,
+     "code": "01130311"
+    },
+    {
+     "name": "普通生物学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "01139381"
+    },
+    {
+     "name": "生物化学",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "01139630"
+    },
+    {
+     "name": "古生物学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": null,
+     "term": "二上",
+     "code": "01231030"
+    },
+    {
+     "name": "地球系统演化",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "一下",
+     "code": "01231882"
+    },
+    {
+     "name": "行星地球科学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "01231941"
+    },
+    {
+     "name": "行星表面过程",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 12,
+     "term": null,
+     "code": "01231944"
+    },
+    {
+     "name": "行星物质科学（二）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": null,
+     "code": "01231948"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "min": 4,
+   "max": 4,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 25,
+   "max": 25,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1",
+   "parent": "3",
+   "name": "专业选修课",
+   "min": 20,
+   "max": 20,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.1",
+   "parent": "3.1",
+   "name": "野外实习组",
+   "min": 4,
+   "max": 4,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "生物学综合野外实习",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 68,
+     "practice": 14,
+     "term": "天",
+     "code": "01134140"
+    },
+    {
+     "name": "普通地质实习 A",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 12,
+     "term": "天",
+     "code": "01231640"
+    },
+    {
+     "name": "沉积地层古生物综合实习",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 34,
+     "term": null,
+     "code": "01231913"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.2",
+   "parent": "3.1",
+   "name": "生物学类组",
+   "courses": [
+    {
+     "name": "微生物学实验",
+     "nature": "任选",
+     "credits": 1,
+     "hours": 34,
+     "practice": 34,
+     "term": "春季",
+     "code": "01130071"
+    },
+    {
+     "name": "细胞生物学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "生化之后",
+     "code": "01130150"
+    },
+    {
+     "name": "细胞生物学实验",
+     "nature": "任选",
+     "credits": 1,
+     "hours": 34,
+     "practice": 34,
+     "term": "细胞同期",
+     "code": "01130160"
+    },
+    {
+     "name": "遗传学实验",
+     "nature": "任选",
+     "credits": 1,
+     "hours": 34,
+     "practice": 34,
+     "term": "遗传同期",
+     "code": "01130210"
+    },
+    {
+     "name": "生理学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "01130370"
+    },
+    {
+     "name": "生物进化论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "春季",
+     "code": "01130780"
+    },
+    {
+     "name": "普通生态学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "秋季",
+     "code": "01130930"
+    },
+    {
+     "name": "分子生物学实验",
+     "nature": "任选",
+     "credits": 1,
+     "hours": 34,
+     "practice": 34,
+     "term": "分子同期",
+     "code": "01132677"
+    },
+    {
+     "name": "分子生物学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "生化之后",
+     "code": "01138540"
+    },
+    {
+     "name": "生物信息学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "分生之后",
+     "code": "01139375"
+    },
+    {
+     "name": "发育生物学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "春季",
+     "code": "01139580"
+    },
+    {
+     "name": "微生物学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "春季",
+     "code": "01139600"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.3",
+   "parent": "3.1",
+   "name": "地学类组",
+   "courses": [
+    {
+     "name": "古海洋学与全球变化",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 6,
+     "term": "春季",
+     "code": "01231370"
+    },
+    {
+     "name": "地层学原理与应用",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 6,
+     "term": "春季",
+     "code": "01231530"
+    },
+    {
+     "name": "沉积学概论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "秋季",
+     "code": "01231540"
+    },
+    {
+     "name": "地球化学",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": 17,
+     "term": "二下",
+     "code": "01231660"
+    },
+    {
+     "name": "地球生物学概论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "春季",
+     "code": "01231820"
+    },
+    {
+     "name": "海洋环境和动力学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "春季",
+     "code": "01231860"
+    },
+    {
+     "name": "冷湖野外联合实习考察",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": "二暑",
+     "code": "01231915"
+    },
+    {
+     "name": "阿 尔卑斯野外综合地质国际对比实习",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 12,
+     "term": "天 四上",
+     "code": "01231921"
+    },
+    {
+     "name": "地球与行星构造",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": "二下",
+     "code": "01231943"
+    },
+    {
+     "name": "行星物质科学讨论班",
+     "nature": "任选",
+     "credits": 0,
+     "hours": 32,
+     "practice": 26,
+     "term": "二上",
+     "code": "01231946"
+    },
+    {
+     "name": "行星物质科学（一）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": null,
+     "code": "01231947"
+    },
+    {
+     "name": "海洋科学导论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "秋季",
+     "code": "01231970"
+    },
+    {
+     "name": "地史学概论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 10,
+     "term": "春季",
+     "code": "01231980"
+    },
+    {
+     "name": "行星科学基础",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 6,
+     "term": "秋季",
+     "code": "01232020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2",
+   "parent": "3",
+   "name": "自主选修课",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.3",
+   "parent": "3",
+   "name": "数据结构与算法",
+   "min": 3,
+   "max": 3,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.3.1",
+   "parent": "3.3",
+   "name": "数据结构与算法 A 组",
+   "courses": [
+    {
+     "name": "数据结构与算法（A）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": 34,
+     "term": null,
+     "code": "04830050"
+    },
+    {
+     "name": "数据结构与算法上机",
+     "nature": "专业必修",
+     "credits": 0,
+     "hours": 34,
+     "practice": 34,
+     "term": null,
+     "code": "04830494"
+    },
+    {
+     "name": "数据结构与算法（A）（实验班）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": 34,
+     "term": null,
+     "code": "04830540"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.3.2",
+   "parent": "3.3",
+   "name": "数据结构与算法 B 组",
+   "courses": [
+    {
+     "name": "数据结构与算法上机",
+     "nature": "专业必修",
+     "credits": 0,
+     "hours": 34,
+     "practice": 34,
+     "term": null,
+     "code": "04830494"
+    },
+    {
+     "name": "数据结构与算法（B）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "04831420"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "要求“思想政治理论选择性必修课”共 1 门、“劳动教育课”累计不少于 32 学时。思",
+  "想政治理论必修课和其他公共必修课按学校要求选课，信息课程见下表。",
+  "通识教育课程系列             各系列学分",
+  "（通识系列课程+新生讨论课）           （通识核心课+通选课）",
+  "通识教育课程系列             各系列学分",
+  "（通识系列课程+新生讨论课）          （通识核心课+通选课）",
+  "Ⅴ. 现代科学                         —",
+  "Ⅵ. 艺术                           —",
+  "新生讨论课                           1分                            1 学分",
+  "（1）新生讨论课选课要求：限本科一年级学生选修；具体课程见学院选课指导",
+  "（2）通识课程选课要求：本科各年级学生均可选修；具体课程见学院通识课程方案。",
+  "模块约束描述：课程组（3.1.2 生物学类, 3.1.3 地学类）的学分之和≥16。",
+  "备注：分为两个方向：生物学方向需选修生物学类课程至少 10 学分；地学方向需选修",
+  "地学类课程至少 10 学分。"
+ ],
+ "warnings": [],
+ "source": {
+  "volumeId": "2025-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=216",
+  "lineStart": 25204,
+  "lineEnd": 25408
+ }
+}

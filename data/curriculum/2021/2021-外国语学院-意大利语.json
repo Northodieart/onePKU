@@ -1,0 +1,691 @@
+{
+ "id": "2021-外国语学院-意大利语",
+ "cohort": 2021,
+ "volume": "北京大学本科培养方案（2021）文科卷",
+ "school": "外国语学院",
+ "major": "意大利语",
+ "track": null,
+ "title": "意大利语专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": null,
+ "totalCredits": null,
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 47,
+   "max": 47,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 56,
+   "max": 56,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 34,
+   "max": 34,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "35 学分",
+   "inferredParent": true,
+   "min": 35,
+   "max": 35,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "24 学分",
+   "inferredParent": true,
+   "min": 24,
+   "max": 24,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "32 学分",
+   "inferredParent": true,
+   "min": 32,
+   "max": 32,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "14 学分",
+   "inferredParent": true,
+   "min": 14,
+   "max": 14,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "20 学分",
+   "inferredParent": true,
+   "min": 20,
+   "max": 20,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 47,
+   "max": 47,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 C",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "“计算 概 论 C” 课 程 后,",
+     "code": "04834470"
+    },
+    {
+     "name": "计算机实习",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "计 算",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上或一下",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 56,
+   "max": 56,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "意大利语 (五)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "三上",
+     "code": "03636015"
+    },
+    {
+     "name": "意大利语 (六)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "三下",
+     "code": "03636016"
+    },
+    {
+     "name": "意大利语语法与写作 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03636061"
+    },
+    {
+     "name": "意大利文学史专题 (一)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上",
+     "code": "03636051"
+    },
+    {
+     "name": "意大利文学史专题 (二)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三下",
+     "code": "03636052"
+    },
+    {
+     "name": "意大利语阅读 (一)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "03636031"
+    },
+    {
+     "name": "意大利语阅读 (二)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03636032"
+    },
+    {
+     "name": "意大利语视听说 (三)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03636023"
+    },
+    {
+     "name": "意大利语视听说 (四)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03636024"
+    },
+    {
+     "name": "意大利社会文化导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上",
+     "code": "03636040"
+    },
+    {
+     "name": "意大利语 (一)",
+     "nature": null,
+     "credits": 6,
+     "hours": 8,
+     "practice": null,
+     "term": "一上",
+     "code": "03636011"
+    },
+    {
+     "name": "意大利语 (二)",
+     "nature": null,
+     "credits": 6,
+     "hours": 8,
+     "practice": null,
+     "term": "一下",
+     "code": "03636012"
+    },
+    {
+     "name": "意大利语 (三)",
+     "nature": null,
+     "credits": 7,
+     "hours": 8,
+     "practice": null,
+     "term": "二上",
+     "code": "03636013"
+    },
+    {
+     "name": "意大利语 (四)",
+     "nature": null,
+     "credits": 7,
+     "hours": 8,
+     "practice": null,
+     "term": "二下",
+     "code": "03636014"
+    },
+    {
+     "name": "意大利语视听说 (一)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上",
+     "code": "03636021"
+    },
+    {
+     "name": "意大利语视听说 (二)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "03636022"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 34,
+   "max": 34,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "意大利史专题 (与历史系合上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "02139410"
+    },
+    {
+     "name": "意大利大思想家 (与历史系合上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "02139411"
+    },
+    {
+     "name": "中欧关系史 (与历史系合授,英语授课)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "02132590"
+    },
+    {
+     "name": "意大利语语法与写作 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03636062"
+    },
+    {
+     "name": "意大利语口译 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03636071"
+    },
+    {
+     "name": "意大利语口译 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03636072"
+    },
+    {
+     "name": "意大利语笔译 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03636081"
+    },
+    {
+     "name": "意大利语笔译 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03636082"
+    },
+    {
+     "name": "语授课)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "02101448"
+    },
+    {
+     "name": "拉丁文书学 (与历史系合授)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02100100"
+    },
+    {
+     "name": "基础拉丁语 (一)(与历史系合授)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "秋季",
+     "code": "02133111"
+    },
+    {
+     "name": "基础拉丁语 (二)(与历史系合授)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "春季",
+     "code": "02133112"
+    },
+    {
+     "name": "西方古典文学与社会",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "03834410"
+    },
+    {
+     "name": "圣经释读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "03833190"
+    },
+    {
+     "name": "罗马法 (与法学院合授,汉语授课)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "02930680"
+    },
+    {
+     "name": "东方文学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季学期",
+     "code": "03530450"
+    },
+    {
+     "name": "西方文学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季学期",
+     "code": "03632990"
+    },
+    {
+     "name": "中国古代史 (上)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": null,
+     "code": "02130011"
+    },
+    {
+     "name": "中国古代史 (下)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": null,
+     "code": "02130012"
+    },
+    {
+     "name": "考古学通论",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": null,
+     "code": "02232210"
+    },
+    {
+     "name": "中国哲学 (上)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "02330092"
+    },
+    {
+     "name": "中国哲学 (下)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "02330096"
+    },
+    {
+     "name": "中国哲学 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02330094"
+    },
+    {
+     "name": "中国哲学 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02330095"
+    },
+    {
+     "name": "哲学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02330001"
+    },
+    {
+     "name": "哲学导论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "02330003"
+    },
+    {
+     "name": "西方哲学 (上)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "02330051"
+    },
+    {
+     "name": "西方哲学 (下)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "02330053"
+    },
+    {
+     "name": "西方哲学 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02330052"
+    },
+    {
+     "name": "西方哲学 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02330054"
+    },
+    {
+     "name": "古代汉语 (上)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": null,
+     "code": "02030021"
+    },
+    {
+     "name": "古典学导论 (历史系,英语授课)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "02133060"
+    },
+    {
+     "name": "西方文明史导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02131250"
+    },
+    {
+     "name": "艺术史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02132710"
+    },
+    {
+     "name": "宗教学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02330162"
+    },
+    {
+     "name": "文化与翻译批评",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03833260"
+    },
+    {
+     "name": "文学形式导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03832020"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "—        思想政治理论必修课             18    —          —",
+  "选课。",
+  "—                             1门     —          —     按学校要求选课。",
+  "需要另 选 该 课 程 的 上 机",
+  "课 (",
+  "实习)。",
+  "时,需要 另 选 该 课 程 的",
+  "机实习)。",
+  "—        体育系列课程               1×4    2                全年",
+  "* 注:大学外语必修大学英语对应级别的学分,不足 8 学 分 部 分,需 用 非 本 专 业 语 言 的 公 共 语 言 课 或 专",
+  "业基础语言课补足 (课程明细见本学院附表 1)。",
+  "核心通识课程:至少 2 学分。",
+  "通选课:每个系列至少 2 学分。",
+  "· 252 ·            北京大学本科培养方案 (",
+  "新开课                                       2     2",
+  "汉语授课)",
+  "新开课       意大利文化史 (与历史系合授)                 2     2",
+  "新开课       但丁的 《神曲》(上)                     3     3     四上",
+  "新开课       但丁的 《神曲》(下)                     3     3     四下",
+  "北京大学外国语学院                  · 253 ·",
+  "新开课                                        3    3",
+  "语授课)",
+  "新开课       意大利语语文学                          2    2     四下",
+  "新开课       意大利艺术史导论                         2    2",
+  "新开课                                        2    2     春季",
+  "以下为推荐课程,其中人文学部课程 (中国文学史、中国古代史、考古学通论、哲学",
+  "导论、中国哲 学、 西 方 哲 学、 艺 术 史 导 论 ) 不 少 于 3 学 分; 东 方 文 学、 西 方 文 学 必 选",
+  "一门。",
+  "新开课       中国文学史                            3    3",
+  "新开课       中国古代史                            4    4",
+  "新开课       艺术史导论                            2    2",
+  "· 254 ·            北京大学本科培养方案 ("
+ ],
+ "warnings": [
+  "未找到“毕业总学分”",
+  "第 13327 行：课程行缺少学分：04831435 计 算"
+ ],
+ "source": {
+  "volumeId": "2021-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=158",
+  "lineStart": 13234,
+  "lineEnd": 13472
+ }
+}

@@ -1,0 +1,63 @@
+{
+ "id": "2023-考古文博学院-考古学-文物建筑方向",
+ "cohort": 2023,
+ "volume": "北京大学本科教学计划（2023）文科卷",
+ "school": "考古文博学院",
+ "major": "考古学",
+ "track": "文物建筑方向",
+ "title": "考古学 (文物建筑方向 ) 专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "历史学学士",
+ "totalCredits": {
+  "min": 141,
+  "max": 141
+ },
+ "topRequirements": [],
+ "requirements": [],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 42,
+   "max": 48,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 61,
+   "max": 61,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 38,
+   "max": 38,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "· 128 ·               北京大学本科培养方案 ("
+ ],
+ "warnings": [
+  "第 7047 行：课程设置出现第二套“1. 公共基础课程”，只保留第一套"
+ ],
+ "source": {
+  "volumeId": "2023-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=196",
+  "lineStart": 6993,
+  "lineEnd": 7465
+ }
+}

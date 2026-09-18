@@ -1,0 +1,493 @@
+{
+ "id": "2021-外国语学院-越南语-2023_年招生",
+ "cohort": 2021,
+ "volume": "北京大学本科培养方案（2021）文科卷",
+ "school": "外国语学院",
+ "major": "越南语",
+ "track": "2023 年招生",
+ "title": "越南语专业 ( 2023 年招生 )",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": null,
+ "totalCredits": null,
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 47,
+   "max": 47,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 58,
+   "max": 58,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 38,
+   "max": 38,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "35 学分",
+   "inferredParent": true,
+   "min": 35,
+   "max": 35,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "24 学分",
+   "inferredParent": true,
+   "min": 24,
+   "max": 24,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "34 学分",
+   "inferredParent": true,
+   "min": 34,
+   "max": 34,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "18 学分",
+   "inferredParent": true,
+   "min": 18,
+   "max": 18,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 47,
+   "max": 47,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 C",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "“计算 概 论 C” 课 程 后,",
+     "code": "04834470"
+    },
+    {
+     "name": "计算机实习",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "计 算",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上或一下",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 58,
+   "max": 58,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "越南国情",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上",
+     "code": "03533280"
+    },
+    {
+     "name": "越南历史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "03533030"
+    },
+    {
+     "name": "越南文化",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03533180"
+    },
+    {
+     "name": "越南文学史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03533070"
+    },
+    {
+     "name": "越南现代小说选读",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "三上",
+     "code": "03533099"
+    },
+    {
+     "name": "越南语语法",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03533060"
+    },
+    {
+     "name": "越南语泛读 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03533051"
+    },
+    {
+     "name": "越南语泛读 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03533052"
+    },
+    {
+     "name": "越译汉教程",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03533080"
+    },
+    {
+     "name": "越南语视听说 (一)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03533101"
+    },
+    {
+     "name": "越南语视听说 (二)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03533102"
+    },
+    {
+     "name": "越南语视听说 (三)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03533103"
+    },
+    {
+     "name": "越南语视听说 (四)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "四下",
+     "code": "03533104"
+    },
+    {
+     "name": "基础越南语 (一)",
+     "nature": null,
+     "credits": 10,
+     "hours": 12,
+     "practice": null,
+     "term": "一上",
+     "code": "03533271"
+    },
+    {
+     "name": "基础越南语 (二)",
+     "nature": null,
+     "credits": 8,
+     "hours": 10,
+     "practice": null,
+     "term": "一下",
+     "code": "03533272"
+    },
+    {
+     "name": "基础越南语 (三)",
+     "nature": null,
+     "credits": 8,
+     "hours": 10,
+     "practice": null,
+     "term": "二上",
+     "code": "03533273"
+    },
+    {
+     "name": "基础越南语 (四)",
+     "nature": null,
+     "credits": 8,
+     "hours": 10,
+     "practice": null,
+     "term": "二下",
+     "code": "03533274"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 38,
+   "max": 38,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "越南语会话 (上)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "03533041"
+    },
+    {
+     "name": "越南语会话 (下)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03533042"
+    },
+    {
+     "name": "越南语报刊选读 (一)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03533141"
+    },
+    {
+     "name": "越南语报刊选读 (二)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03533142"
+    },
+    {
+     "name": "越南语报刊选读 (三)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四下",
+     "code": "03533143"
+    },
+    {
+     "name": "汉越语口译 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03533161"
+    },
+    {
+     "name": "汉越语口译 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03533162"
+    },
+    {
+     "name": "越南文学作品选读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03533179"
+    },
+    {
+     "name": "汉译越教程",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03533150"
+    },
+    {
+     "name": "越南语写作",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03533210"
+    },
+    {
+     "name": "中越关系史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03533290"
+    },
+    {
+     "name": "越南诗歌导读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03533300"
+    },
+    {
+     "name": "高年级越语翻译",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03533310"
+    },
+    {
+     "name": "东南亚文化",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03530370"
+    },
+    {
+     "name": "东南亚历史与现状",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03535760"
+    },
+    {
+     "name": "东方文学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "每年秋季学期",
+     "code": "03530450"
+    },
+    {
+     "name": "西方文学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "每年春季学期",
+     "code": "03632990"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "—       思想政治理论必修课            18     —        —",
+  "选课。",
+  "—                            1门     —        —    按学校要求选课。",
+  "需要另 选 该 课 程 的 上 机",
+  "课 (",
+  "实习)。",
+  "时,需要 另 选 该 课 程 的",
+  "机实习)。",
+  "—       体育系列课程               1×4    2             全年",
+  "* 注:大学外语必修大学英语对应级别的学分,不足 8 学 分 部 分,需 用 非 本 专 业 语 言 的 公 共 语 言 课 或 专",
+  "业基础语言课补足 (课程明细见本学院附表 1)。",
+  "北京大学外国语学院           · 257 ·",
+  "· 258 ·            北京大学本科培养方案 (",
+  "注:东方文学和西方文学必选修其中一门。",
+  "-2 自主选修课:20 学分 (含跨学科课程和辅修专业学分可替代学分)"
+ ],
+ "warnings": [
+  "未找到“毕业总学分”",
+  "第 13570 行：课程行缺少学分：04831435 计 算"
+ ],
+ "source": {
+  "volumeId": "2021-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=158",
+  "lineStart": 13473,
+  "lineEnd": 13662
+ }
+}

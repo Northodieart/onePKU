@@ -1,0 +1,1232 @@
+{
+ "id": "2023-化学与分子工程学院_考古文博学院-化学_+文物保护技术_双学位项目-主修",
+ "cohort": 2023,
+ "volume": "北京大学本科教学计划（2023）理科卷",
+ "school": "化学与分子工程学院/考古文博学院",
+ "major": "化学/+文物保护技术/双学位项目",
+ "track": "主修",
+ "title": "化学专业 (主修 ) +文物保护技术专业双学位项目",
+ "kind": "project",
+ "qualifiers": [],
+ "degree": "理学学士",
+ "totalCredits": {
+  "min": 178,
+  "max": 178
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 42,
+   "max": 48,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 74,
+   "max": 74,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 57,
+   "max": 63,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "30~36 学分",
+   "inferredParent": true,
+   "min": 30,
+   "max": 36,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "20 学分",
+   "inferredParent": true,
+   "min": 20,
+   "max": 20,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "毕业论文",
+   "requirement": "6 学分",
+   "inferredParent": true,
+   "min": 6,
+   "max": 6,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "15~21 学分",
+   "inferredParent": true,
+   "min": 15,
+   "max": 21,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 42,
+   "max": 48,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 B",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "概论 B” 课 程 同 时, 需 要 另 选",
+     "code": "04831410"
+    },
+    {
+     "name": "计算概论 B 上机",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": "概论 B” 课 程 同 时, 需 要 另 选",
+     "code": "04831650"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 59,
+   "max": 59,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学 B (一)",
+     "nature": null,
+     "credits": 5,
+     "hours": 5,
+     "practice": 0,
+     "term": "一上",
+     "code": "00130201"
+    },
+    {
+     "name": "高等数学 B (二)",
+     "nature": null,
+     "credits": 5,
+     "hours": 5,
+     "practice": 0,
+     "term": "一下",
+     "code": "00130202"
+    },
+    {
+     "name": "普通物理 (Ⅰ )",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "一下",
+     "code": "00431132"
+    },
+    {
+     "name": "普通物理 (Ⅱ )",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "二上",
+     "code": "00431133"
+    },
+    {
+     "name": "基础物理实验",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 60,
+     "term": "二上",
+     "code": "00431200"
+    },
+    {
+     "name": "今日化学———新生讨论班",
+     "nature": null,
+     "credits": 1,
+     "hours": 1,
+     "practice": 0,
+     "term": "一上",
+     "code": "01031100"
+    },
+    {
+     "name": "化学实验室安全技术",
+     "nature": null,
+     "credits": 1,
+     "hours": 1,
+     "practice": 0,
+     "term": "一上",
+     "code": "01030200"
+    },
+    {
+     "name": "普通化学",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "一上",
+     "code": "01034310"
+    },
+    {
+     "name": "普通化学实验",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": 60,
+     "term": "一上",
+     "code": "01034322"
+    },
+    {
+     "name": "有机化学 (一)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "一下",
+     "code": "01034371"
+    },
+    {
+     "name": "有机化学实验",
+     "nature": null,
+     "credits": 3,
+     "hours": 6,
+     "practice": 90,
+     "term": "一下",
+     "code": "01035003"
+    },
+    {
+     "name": "定量分析化学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "一下",
+     "code": "01035180"
+    },
+    {
+     "name": "定量分析化学实验",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": 60,
+     "term": "一下",
+     "code": "01035190"
+    },
+    {
+     "name": "有机化学 (二)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二上",
+     "code": "01034373"
+    },
+    {
+     "name": "结构化学 *",
+     "nature": null,
+     "credits": 4,
+     "hours": 5,
+     "practice": 12,
+     "term": "二下",
+     "code": "01030120"
+    },
+    {
+     "name": "物理化学 (一)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "01035200"
+    },
+    {
+     "name": "物理化学 (二)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "01035210"
+    },
+    {
+     "name": "物理化学实验",
+     "nature": null,
+     "credits": 3,
+     "hours": 6,
+     "practice": 90,
+     "term": "三上",
+     "code": "01035021"
+    },
+    {
+     "name": "无机质文物保护及实验 *",
+     "nature": null,
+     "credits": 4,
+     "hours": 6,
+     "practice": null,
+     "term": "秋季",
+     "code": "02230830"
+    },
+    {
+     "name": "有机质文物保护及实验 *",
+     "nature": null,
+     "credits": 4,
+     "hours": 6,
+     "practice": null,
+     "term": "秋季",
+     "code": "02230820"
+    },
+    {
+     "name": "文物保护专业实习 * 3 暑假",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "02231190"
+    },
+    {
+     "name": "文物显微形态学分析",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "02234010"
+    },
+    {
+     "name": "文物分析技术",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "02240410"
+    },
+    {
+     "name": "文物保护材料学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "02230990"
+    },
+    {
+     "name": "不可移动文物保护",
+     "nature": null,
+     "credits": 2,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "02230840"
+    },
+    {
+     "name": "科技考古",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "02230471"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 57,
+   "max": 63,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "仪器分析",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二上",
+     "code": "01034390"
+    },
+    {
+     "name": "仪器分析实验",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": 60,
+     "term": "二上",
+     "code": "01034400"
+    },
+    {
+     "name": "无机化学实验",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": 60,
+     "term": "二下",
+     "code": "01032860"
+    },
+    {
+     "name": "放射化学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上",
+     "code": "01034670"
+    },
+    {
+     "name": "高分子化学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上",
+     "code": "01034460"
+    },
+    {
+     "name": "化工基础",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上",
+     "code": "01034450"
+    },
+    {
+     "name": "生命化学基础 *",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "01034500"
+    },
+    {
+     "name": "无机化学",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "三上",
+     "code": "01035140"
+    },
+    {
+     "name": "材料化学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "01034490"
+    },
+    {
+     "name": "化工制图",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三下",
+     "code": "01035250"
+    },
+    {
+     "name": "高分子物理",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上",
+     "code": "01032530"
+    },
+    {
+     "name": "环境化学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上",
+     "code": "01034630"
+    },
+    {
+     "name": "文物显微形态学分析实验 考古",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "02234020"
+    },
+    {
+     "name": "博物馆学概论 考古",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "02231040"
+    },
+    {
+     "name": "文化遗产学概论 考古",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "02232220"
+    },
+    {
+     "name": "考古学导论 考古",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "02231080"
+    },
+    {
+     "name": "考古学通论 考古",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "春季",
+     "code": "02232210"
+    },
+    {
+     "name": "中国古代陶瓷 考古",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "02230430"
+    },
+    {
+     "name": "中国古代青铜器 考古",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "02230370"
+    },
+    {
+     "name": "中国石窟寺 考古",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "02230411"
+    },
+    {
+     "name": "美术考古 考古",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "不定",
+     "code": "02232200"
+    },
+    {
+     "name": "文物法规与行政管理 考古",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "02230730"
+    },
+    {
+     "name": "中国文物建筑导论 考古",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "02231021"
+    },
+    {
+     "name": "世界史通论 历史",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "秋季",
+     "code": "02132081"
+    },
+    {
+     "name": "动物考古 考古",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "02230261"
+    },
+    {
+     "name": "人体骨骼学 考古",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "02230251"
+    },
+    {
+     "name": "植物考古 考古",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "02230281"
+    },
+    {
+     "name": "中国早期玉器研究 考古",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "02230642"
+    },
+    {
+     "name": "中国文物赏析 考古",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "02231177"
+    },
+    {
+     "name": "考古名家专题 考古",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "02230030"
+    },
+    {
+     "name": "水下考古学概论 考古",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "02232291"
+    },
+    {
+     "name": "古 DNA 与人类历史 考古",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "02232271"
+    },
+    {
+     "name": "馆藏文物修复与保护 考古",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "02231188"
+    },
+    {
+     "name": "考古学和科技史 考古",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "02230970"
+    },
+    {
+     "name": "考古化学 考古",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "02230473"
+    },
+    {
+     "name": "冶金考古 考古",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "02230570"
+    },
+    {
+     "name": "陶瓷工艺学基础 考古",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "02200822"
+    },
+    {
+     "name": "定量考古学 考古",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "02230310"
+    },
+    {
+     "name": "中国美术通史 (上) 艺术",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "04330052"
+    },
+    {
+     "name": "中国美术通史 (下) 艺术",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "04330053"
+    },
+    {
+     "name": "化学信息检索",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二上",
+     "code": "01035080"
+    },
+    {
+     "name": "化学中的数学",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "二上",
+     "code": "01035240"
+    },
+    {
+     "name": "中级有机化学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二上",
+     "code": "01034530"
+    },
+    {
+     "name": "中级有机化学实验",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": 60,
+     "term": "二上",
+     "code": "01035011"
+    },
+    {
+     "name": "应用化学基础",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下",
+     "code": "01034640"
+    },
+    {
+     "name": "通用高分子材料———结构、性能与应用",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下、三下",
+     "code": "01035290"
+    },
+    {
+     "name": "改变世界的药物分子",
+     "nature": null,
+     "credits": 1,
+     "hours": 1,
+     "practice": 0,
+     "term": "三上",
+     "code": "01035310"
+    },
+    {
+     "name": "核磁共振波谱分析基础",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上",
+     "code": "01002153"
+    },
+    {
+     "name": "化学生物学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上",
+     "code": "01035320"
+    },
+    {
+     "name": "色谱分析",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上",
+     "code": "01034580"
+    },
+    {
+     "name": "生物大分子工程",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上",
+     "code": "01035330"
+    },
+    {
+     "name": "分子光谱与分子结构",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三下",
+     "code": "01035420"
+    },
+    {
+     "name": "中级分析化学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上",
+     "code": "01034610"
+    },
+    {
+     "name": "高性能聚合物材料",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上、四上",
+     "code": "01035380"
+    },
+    {
+     "name": "机器学习及其在化学中的应用",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上、四上",
+     "code": "01035370"
+    },
+    {
+     "name": "纳米化学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上、四上",
+     "code": "01035300"
+    },
+    {
+     "name": "多晶 X 射线衍射",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 2,
+     "term": "三下",
+     "code": "01034800"
+    },
+    {
+     "name": "高等电化学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三下",
+     "code": "01035110"
+    },
+    {
+     "name": "化学开发基础",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三下",
+     "code": "01034990"
+    },
+    {
+     "name": "界面化学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三下",
+     "code": "01034710"
+    },
+    {
+     "name": "量子化学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "01014240"
+    },
+    {
+     "name": "理论与计算化学 (Ⅱ )",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "四上",
+     "code": "01016070"
+    },
+    {
+     "name": "立体化学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三下",
+     "code": "01034600"
+    },
+    {
+     "name": "群论与化学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三下",
+     "code": "01014090"
+    },
+    {
+     "name": "软物质与硬科学:微观到宏观的中间世界",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三下",
+     "code": "01035360"
+    },
+    {
+     "name": "生化分析",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三下",
+     "code": "01034650"
+    },
+    {
+     "name": "生物核磁共振波谱分析",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三下",
+     "code": "01002154"
+    },
+    {
+     "name": "生物物理化学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三下",
+     "code": "01034980"
+    },
+    {
+     "name": "中级无机化学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三下",
+     "code": "01035150"
+    },
+    {
+     "name": "中级物理化学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "01034551"
+    },
+    {
+     "name": "化工新概念",
+     "nature": null,
+     "credits": 1,
+     "hours": 1,
+     "practice": 0,
+     "term": "暑期",
+     "code": "01035280"
+    },
+    {
+     "name": "表面物理化学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "四上",
+     "code": "01035100"
+    },
+    {
+     "name": "材料物理",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "四上",
+     "code": "01032390"
+    },
+    {
+     "name": "催化化学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "四上",
+     "code": "01032580"
+    },
+    {
+     "name": "辐射化学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "四上",
+     "code": "01034721"
+    },
+    {
+     "name": "化学动力学选读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "四上",
+     "code": "01030440"
+    },
+    {
+     "name": "胶体化学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "四上",
+     "code": "01034780"
+    },
+    {
+     "name": "物理有机化学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "四上",
+     "code": "01033010"
+    },
+    {
+     "name": "化学生物学实验",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": 60,
+     "term": "三下",
+     "code": "01035340"
+    },
+    {
+     "name": "F 区元素化学",
+     "nature": null,
+     "credits": 1,
+     "hours": 1,
+     "practice": 0,
+     "term": "四上",
+     "code": "01035410"
+    },
+    {
+     "name": "化学生物学整合实验",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": 32,
+     "term": "三下",
+     "code": "01035341"
+    },
+    {
+     "name": "博雅理学讲堂",
+     "nature": null,
+     "credits": 1,
+     "hours": 1,
+     "practice": 0,
+     "term": "一上",
+     "code": "01035390"
+    },
+    {
+     "name": "细胞分子生物学中的物理化学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "08402105"
+    },
+    {
+     "name": "药物化学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "四上",
+     "code": "01035400"
+    },
+    {
+     "name": "高等物理化学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "四上",
+     "code": "01002904"
+    },
+    {
+     "name": "学术道德规范与科技写作",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "四上",
+     "code": "01016010"
+    },
+    {
+     "name": "化学应用与实践",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": 32,
+     "term": "一 ~ 四年级",
+     "code": "01035430"
+    },
+    {
+     "name": "理论与计算化学导论",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": 0,
+     "term": "一上",
+     "code": "01035440"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "-1 公共必修课:30~36 学分 (大学英语不足 8 学分的,在选修课程中补足学分)",
+  "—       大学英语             2~8      —      —     按大学英语教研室要求选课",
+  "—                         19                   按马克思主义学院要求选课",
+  "—                         1门                   按学校要求选课",
+  "—       劳动教育课            32 学时                 按学校要求选课",
+  "该课程 的 上 机 课 “计 算 概 论 B",
+  "上机”。",
+  "该课程 的 上 机 课 “计 算 概 论 B",
+  "上机”。",
+  "—       体育系列课程           1×4      2            全年",
+  "通识教育课程分为四个 系 列: Ⅰ. 人 类 文 明 及 其 传 统, Ⅱ. 现 代 社 会 及 其 问 题, Ⅲ.",
+  "艺术与人文, Ⅳ. 数学、自然与技术,每个系列均包含通识教育核心课、通选课两部分课",
+  "程,具体课程列表详见 《北京大学本科生选课手册》。",
+  "1)至少修读 1 门 “通识教育核心课程” (任一系列),且在四个课程系列中 每个系列",
+  "北京大学化学与分子工程学院/考古文博学院                  · 555 ·",
+  "至少修读 2 学分 (通识教育核心课或通选课均可)。",
+  "2)原则上不允许以专业课替代通识教育课程学分。",
+  "3)本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分。",
+  "4)建议合理分配修读时间,每学期修读 1 门课程。",
+  "00432510) 代替。",
+  "-22 文物保护技术专业核心课程: ≥15 学分 (多出的学分课替代选修课)",
+  "-",
+  "· 556 ·             北京大学本科培养方案 (",
+  "说明: * 为必选课程,请在双学位系统选课。",
+  "-3 毕业论文:6 学分 (可选择在化学学院或考古文博学院文物保护专业完成论文)",
+  "-11 化学学院专业选修课 15 学分 (* 课程为化学专业必修,3 学分)",
+  "-",
+  "-                      -2",
+  "保核心课总学分不少于 42 学分 (超出 42 学分可以计入 32 自主选修课程学分)。",
+  "-",
+  "北京大学化学与分子工程学院/考古文博学院                  · 557 ·",
+  "说明:所修文物保护技术专业核心课程若多于 15 学分,所多学分计入文保选修课学分。请 在 双 学 位",
+  "系统选课。",
+  "3 其他:可以选修理学部其他学院的核心课程及化学学院认定的课程。",
+  "· 558 ·            北京大学本科培养方案 (",
+  "新开课       中级物理化学实验             2     4     60       三下",
+  "新开课       综合化学实验               3     6     90       四上",
+  "本科生科研                12   2~6           二下 ~ 三下",
+  "可以选修理学部、信息与工程科学部、人文学部、社会科学部四个学部开设的核心课",
+  "程以及元培学院的理科核心课程。",
+  "北京大学化学与分子工程学院/考古文博学院        · 559 ·"
+ ],
+ "warnings": [
+  "第 29122 行：课程行缺少学分：02231190   文物保护专业实习 *         3         "
+ ],
+ "source": {
+  "volumeId": "2023-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=195",
+  "lineStart": 28961,
+  "lineEnd": 29297
+ }
+}

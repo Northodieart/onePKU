@@ -1,0 +1,505 @@
+{
+ "id": "2025-外国语学院-多语种国际化卓越外语人才拔尖学生培养实验班项目-英汉互译方向",
+ "cohort": 2025,
+ "volume": "北京大学本科培养方案（2025）文科卷",
+ "school": "外国语学院",
+ "major": "多语种国际化卓越外语人才拔尖学生培养实验班项目",
+ "track": "英汉互译方向",
+ "title": "多语种国际化卓越外语人才拔尖学生培养实验班项目（英汉互译方向）",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": null,
+ "totalCredits": {
+  "min": 32,
+  "max": 32,
+  "inferred": true
+ },
+ "topRequirements": [],
+ "requirements": [],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "项目必修课",
+   "courses": [
+    {
+     "name": "汉英交传",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上",
+     "code": "03834091"
+    },
+    {
+     "name": "英汉交传",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "03834092"
+    },
+    {
+     "name": "大众文化简介与批评",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上",
+     "code": "03834200"
+    },
+    {
+     "name": "中西翻译史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "03834540"
+    },
+    {
+     "name": "汉译英",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03830120"
+    },
+    {
+     "name": "英译汉",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03830110"
+    },
+    {
+     "name": "同声传译",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03834080"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "项目选修课",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "kind": "list",
+   "name": "英汉互译课程：8 学分",
+   "min": 8,
+   "max": 8,
+   "unit": "学分",
+   "requirement": "英汉互译课程：8 学分",
+   "courses": [
+    {
+     "name": "古代汉语（上）",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": null,
+     "code": "02030021"
+    },
+    {
+     "name": "古代汉语（下）",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": null,
+     "code": "02030022"
+    },
+    {
+     "name": "现代汉语（上）",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "02030011"
+    },
+    {
+     "name": "现代汉语（下）",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "02030012"
+    },
+    {
+     "name": "中国古代史（上）",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": null,
+     "code": "02130011"
+    },
+    {
+     "name": "中国古代史（下）",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": null,
+     "code": "02130012"
+    },
+    {
+     "name": "世界史通论",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": null,
+     "code": "02132081"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "kind": "list",
+   "name": "英语加强课程：2～4 学分",
+   "min": 2,
+   "max": 4,
+   "unit": "学分",
+   "requirement": "英语加强课程：2～4 学分",
+   "courses": [
+    {
+     "name": "批判性思维与学术写作",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03835780"
+    },
+    {
+     "name": "英语公众演讲",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03835860"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "kind": "list",
+   "name": "第三外语推荐课程：3～4 学分",
+   "min": 3,
+   "max": 4,
+   "unit": "学分",
+   "requirement": "第三外语推荐课程：3～4 学分",
+   "courses": [
+    {
+     "name": "公共葡萄牙语（一）",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03635011"
+    },
+    {
+     "name": "公共葡萄牙语（二）",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03635012"
+    },
+    {
+     "name": "公共基础意大利语（一）",
+     "nature": null,
+     "credits": 4,
+     "hours": 6,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03530303"
+    },
+    {
+     "name": "公共基础意大利语（二）",
+     "nature": null,
+     "credits": 4,
+     "hours": 6,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03530304"
+    },
+    {
+     "name": "公共基础意大利语（三）",
+     "nature": null,
+     "credits": 4,
+     "hours": 6,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03530305"
+    },
+    {
+     "name": "公共基础意大利语（四）",
+     "nature": null,
+     "credits": 4,
+     "hours": 6,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03530306"
+    },
+    {
+     "name": "公共意大利语（一）",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03531047"
+    },
+    {
+     "name": "公共意大利语（二）",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03531048"
+    },
+    {
+     "name": "公共格鲁吉亚语（一）",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03531053"
+    },
+    {
+     "name": "公共格鲁吉亚语（二）",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03531056"
+    },
+    {
+     "name": "公共乌兹别克语（一）",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03531055"
+    },
+    {
+     "name": "公共乌兹别克语（二）",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03531058"
+    },
+    {
+     "name": "公共阿塞拜疆语（一）",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03531049"
+    },
+    {
+     "name": "公共阿塞拜疆语（二）",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03531054"
+    },
+    {
+     "name": "公共库尔德语（一）",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03530297"
+    },
+    {
+     "name": "公共库尔德语（二）",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03530298"
+    },
+    {
+     "name": "公共希伯来语（一）",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03530301"
+    },
+    {
+     "name": "公共希伯来语（二）",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03530302"
+    },
+    {
+     "name": "公共土耳其语（一）",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03530510"
+    },
+    {
+     "name": "公共土耳其语（二）",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03530520"
+    },
+    {
+     "name": "公共波斯语（一）",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03531029"
+    },
+    {
+     "name": "公共波斯语（二）",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03531050"
+    },
+    {
+     "name": "公共韩国语（一）",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03530441"
+    },
+    {
+     "name": "公共韩国语（二）",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03530442"
+    },
+    {
+     "name": "公共韩国语（三）",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03530443"
+    },
+    {
+     "name": "公共西班牙语（一）",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03633361"
+    },
+    {
+     "name": "公共西班牙语（二）",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "外国语学院",
+     "code": "03633362"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2-4",
+   "parent": "2",
+   "kind": "list",
+   "name": "本科生科研项目：2～6 学分",
+   "min": 2,
+   "max": 6,
+   "unit": "学分",
+   "requirement": "本科生科研项目：2～6 学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2-5",
+   "parent": "2",
+   "kind": "list",
+   "name": "参与翻译实践相关活动：2 学分",
+   "min": 2,
+   "max": 2,
+   "unit": "学分",
+   "requirement": "参与翻译实践相关活动：2 学分",
+   "courses": [],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "新开课       时政文献翻译                   2         2",
+  "新开课       近代翻译史与翻译理论               2         2",
+  "注：表中“选课学期”指参与项目的第一/二年的上/下学期。",
+  "以下为推荐课程但不限于此课程。",
+  "完成“本科生科研训练”项目或“短期本科生科研训练”项目，获得“本科生科研”",
+  "（“本科生科研”项目实施办法、申请条件及立项通知等参照学校教务部网站）。",
+  "选题建议与翻译相关。",
+  "鼓励本项目的学生参与翻译类实践活动，如参与口译实习、翻译视频并配音（20～30",
+  "分钟）或翻译原文 2000 字的作品。"
+ ],
+ "warnings": [],
+ "source": {
+  "volumeId": "2025-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=217",
+  "lineStart": 27856,
+  "lineEnd": 27973
+ }
+}

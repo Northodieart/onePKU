@@ -1,0 +1,39 @@
+{
+ "id": "2025-法学院_国际关系学院-涉外法治与全球治理项目",
+ "cohort": 2025,
+ "volume": "北京大学本科培养方案（2025）文科卷",
+ "school": "法学院/国际关系学院",
+ "major": "涉外法治与全球治理项目",
+ "track": null,
+ "title": "涉外法治与全球治理项目",
+ "kind": "project",
+ "qualifiers": [],
+ "degree": null,
+ "totalCredits": {
+  "min": 20,
+  "max": 20,
+  "inferred": true
+ },
+ "topRequirements": [],
+ "requirements": [
+  {
+   "id": "1-3",
+   "parent": "1",
+   "name": "项目特设实践必修课",
+   "requirement": "3 学分",
+   "min": 3,
+   "max": 3,
+   "unit": "学分"
+  }
+ ],
+ "groups": [],
+ "unparsed": [],
+ "notes": [],
+ "warnings": [],
+ "source": {
+  "volumeId": "2025-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=217",
+  "lineStart": 29076,
+  "lineEnd": 29236
+ }
+}

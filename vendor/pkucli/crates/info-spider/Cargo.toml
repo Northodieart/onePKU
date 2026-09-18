@@ -1,0 +1,39 @@
+[package]
+name = "pkuinfo-spider"
+description = "基于微信公众号后台超链接查找的文章爬虫 CLI"
+readme = "README.md"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+keywords = ["wechat", "crawler", "spider", "cli"]
+categories = ["command-line-utilities", "web-programming"]
+
+[[bin]]
+name = "info-spider"
+path = "src/main.rs"
+
+[dependencies]
+clap.workspace = true
+tokio = { workspace = true, features = ["time", "fs", "signal"] }
+reqwest = { workspace = true, features = ["stream"] }
+reqwest_cookie_store.workspace = true
+cookie_store.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+thiserror = "2"
+tracing.workspace = true
+tracing-subscriber.workspace = true
+directories = "5"
+chrono.workspace = true
+url.workspace = true
+image.workspace = true
+rqrr = "0.9"
+qrcode.workspace = true
+terminal_size = "0.4"
+rand.workspace = true
+urlencoding = "2"
+colored.workspace = true
+html2md = "0.2"

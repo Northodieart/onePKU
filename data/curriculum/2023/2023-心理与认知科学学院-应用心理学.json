@@ -1,0 +1,830 @@
+{
+ "id": "2023-心理与认知科学学院-应用心理学",
+ "cohort": 2023,
+ "volume": "北京大学本科教学计划（2023）理科卷",
+ "school": "心理与认知科学学院",
+ "major": "应用心理学",
+ "track": null,
+ "title": "应用心理学专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "理学学士学位。",
+ "totalCredits": {
+  "min": 144,
+  "max": 144
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 48,
+   "max": 48,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 55,
+   "max": 55,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 41,
+   "max": 41,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "36 学分",
+   "inferredParent": true,
+   "min": 36,
+   "max": 36,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "17 学分",
+   "inferredParent": true,
+   "min": 17,
+   "max": 17,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "34 学分",
+   "inferredParent": true,
+   "min": 34,
+   "max": 34,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "毕业论文",
+   "requirement": "4 学分",
+   "inferredParent": true,
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "20 学分",
+   "inferredParent": true,
+   "min": 20,
+   "max": 20,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "21 学分",
+   "inferredParent": true,
+   "min": 21,
+   "max": 21,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 48,
+   "max": 48,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 B",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "概论 B” 课程同时,需要另选该",
+     "code": "04831410"
+    },
+    {
+     "name": "计算概论 B 上机",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": "概论 B” 课程同时,需要另选该",
+     "code": "04831650"
+    },
+    {
+     "name": "军事理论 *",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "秋季",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 55,
+   "max": 55,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学 ( C)(一)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "一上",
+     "code": "00131421"
+    },
+    {
+     "name": "高等数学 ( C)(二)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "一下",
+     "code": "00131422"
+    },
+    {
+     "name": "线性代数 ( C)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "一上",
+     "code": "00130310"
+    },
+    {
+     "name": "概率统计 ( B)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "一下",
+     "code": "00132380"
+    },
+    {
+     "name": "数据结构与算法 ( B)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "一下",
+     "code": "04831420"
+    },
+    {
+     "name": "普通心理学",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 14,
+     "term": "一上",
+     "code": "01630900"
+    },
+    {
+     "name": "心理统计 ( 1)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 16,
+     "term": "一上",
+     "code": "01630051"
+    },
+    {
+     "name": "心理统计 ( 2)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 16,
+     "term": "一下",
+     "code": "01630708"
+    },
+    {
+     "name": "社会心理学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 10,
+     "term": "一下",
+     "code": "01630047"
+    },
+    {
+     "name": "实验心理学",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 20,
+     "term": "二上",
+     "code": "01630034"
+    },
+    {
+     "name": "实验心理学实验",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": 51,
+     "term": "二上",
+     "code": "01603333"
+    },
+    {
+     "name": "心理测量",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 2,
+     "term": "二下",
+     "code": "01603011"
+    },
+    {
+     "name": "发展心理学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 6,
+     "term": "二下",
+     "code": "01630060"
+    },
+    {
+     "name": "组织管理心理学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 4,
+     "term": "二下",
+     "code": "01630600"
+    },
+    {
+     "name": "生理心理学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 4,
+     "term": "三上",
+     "code": "01630101"
+    },
+    {
+     "name": "认知心理学",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 4,
+     "term": "三上",
+     "code": "01630121"
+    },
+    {
+     "name": "变态心理学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 17,
+     "term": "三上",
+     "code": "01630090"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 41,
+   "max": 41,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "心理学史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "01630330"
+    },
+    {
+     "name": "生理学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "01630735"
+    },
+    {
+     "name": "CNS 解剖",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "01630020"
+    },
+    {
+     "name": "心理学研究方法-MATLAB",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 14,
+     "term": "二下",
+     "code": "01630610"
+    },
+    {
+     "name": "生理心理实验",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": 48,
+     "term": "三上下",
+     "code": "01630220"
+    },
+    {
+     "name": "普通物理",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "春季",
+     "code": "00431121"
+    },
+    {
+     "name": "认知神经科学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上下",
+     "code": "01630140"
+    },
+    {
+     "name": "感觉与知觉",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "01630570"
+    },
+    {
+     "name": "人格心理学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "01630080"
+    },
+    {
+     "name": "教育心理学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "01630350"
+    },
+    {
+     "name": "消费心理学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 4,
+     "term": "春季",
+     "code": "01630170"
+    },
+    {
+     "name": "职业心理学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "01630540"
+    },
+    {
+     "name": "社会冲突与管理",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 2,
+     "term": "秋季",
+     "code": "01630046"
+    },
+    {
+     "name": "心理咨询与治疗引论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 4,
+     "term": "秋季",
+     "code": "01630243"
+    },
+    {
+     "name": "工程心理学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01630180"
+    },
+    {
+     "name": "健康心理学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01630450"
+    },
+    {
+     "name": "临床和社会心理学专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 17,
+     "term": null,
+     "code": "01630690"
+    },
+    {
+     "name": "科学写作与交流",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01630704"
+    },
+    {
+     "name": "运动控制研究专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01630712"
+    },
+    {
+     "name": "心理测量实操专题",
+     "nature": null,
+     "credits": 1,
+     "hours": 1,
+     "practice": 6,
+     "term": null,
+     "code": "01630717"
+    },
+    {
+     "name": "感知运动学习概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01630718"
+    },
+    {
+     "name": "儿童青少年精神医学",
+     "nature": null,
+     "credits": 1,
+     "hours": 1,
+     "practice": null,
+     "term": null,
+     "code": "01630724"
+    },
+    {
+     "name": "系统论与系统式心理治疗",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01630725"
+    },
+    {
+     "name": "爱的心理学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01630740"
+    },
+    {
+     "name": "大学生心理健康",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01635060"
+    },
+    {
+     "name": "神经心理学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01610200"
+    },
+    {
+     "name": "意识的脑机制",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01610226"
+    },
+    {
+     "name": "实验儿童心理学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 6,
+     "term": null,
+     "code": "01630022"
+    },
+    {
+     "name": "异常儿童心理学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 8,
+     "term": null,
+     "code": "01630033"
+    },
+    {
+     "name": "社会性与个性发展",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 4,
+     "term": null,
+     "code": "01630042"
+    },
+    {
+     "name": "婴儿心理学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01630560"
+    },
+    {
+     "name": "老年心理学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01630630"
+    },
+    {
+     "name": "视觉与视觉艺术",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01630640"
+    },
+    {
+     "name": "听视觉言语加工整合及其脑机制",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01630670"
+    },
+    {
+     "name": "暴力行为的脑机制",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01630694"
+    },
+    {
+     "name": "听觉认知神经科学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 6,
+     "term": null,
+     "code": "01630696"
+    },
+    {
+     "name": "计算建模在心理学和神经科学中的应用",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01630697"
+    },
+    {
+     "name": "神经经济学专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01630699"
+    },
+    {
+     "name": "孤独症研究专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01630702"
+    },
+    {
+     "name": "脑中的节奏",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01630705"
+    },
+    {
+     "name": "学习与行为",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01630706"
+    },
+    {
+     "name": "感知觉学习和认知训练专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01630707"
+    },
+    {
+     "name": "情绪心理学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01630711"
+    },
+    {
+     "name": "时间与认知",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01630713"
+    },
+    {
+     "name": "意识研究中的关键问题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01630715"
+    },
+    {
+     "name": "医学心理学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01630716"
+    },
+    {
+     "name": "心理学研究技术与实践",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 14,
+     "term": null,
+     "code": "01630719"
+    },
+    {
+     "name": "视觉与视觉神经科学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01630722"
+    },
+    {
+     "name": "时间知觉研究专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01630728"
+    },
+    {
+     "name": "知觉和注意",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01630729"
+    },
+    {
+     "name": "神经美学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01630733"
+    },
+    {
+     "name": "神经生物学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01630820"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "—       大学英语             2~8      —      —     按大学英语教研室要求选课",
+  "19                   按马克思主义学院要求选课",
+  "—                         1门                   按学校要求选课",
+  "—       劳动教育课            32 学时                 按学校要求选课",
+  "课程的 上 机 课 “计 算 概 论 B 上",
+  "机”。",
+  "课程的 上 机 课 “计 算 概 论 B 上",
+  "机”。",
+  "—       体育系列课程           1×4      2      0     全年",
+  "说明:大学英语应修学分不足 8 学分的学生应从其他院系专业核心课中选修相应学分补足 8 学分。",
+  "通识教育课程分为四个 系 列: Ⅰ. 人 类 文 明 及 其 传 统, Ⅱ. 现 代 社 会 及 其 问 题, Ⅲ.",
+  "艺术与人文, Ⅳ. 数学、自然与技术,每个系列均包含通识教育核心课、通选课两部分课",
+  "程,具体课程列表详见 《北京大学本科生选课手册》。",
+  "北京大学心理与认知科学学院               · 299 ·",
+  "1)至少修读 1 门 “通识教育核心课程” (任一系列),且在四个课程系列中 每个系列",
+  "至少修读 2 学分 (通识教育核心课或通选课均可)。",
+  "2)原则上不允许以专业课替代通识教育课程学分。",
+  "3)本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分。",
+  "4)建议合理分配修读时间,每学期修读 1 门课程。",
+  "· 300 ·            北京大学本科培养方案 (",
+  "本科生科研                2~6",
+  "其他院系开设的专业核心课 (含辅修专业学分),不少于 11 学分。",
+  "2 专业选修课超过规定学分之外的课程。",
+  "北京大学心理与认知科学学院                   · 301 ·",
+  "(1)文献讨论课:2 学分/学期;",
+  "4)科学专题汇报:2 学分/学期。"
+ ],
+ "warnings": [],
+ "source": {
+  "volumeId": "2023-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=195",
+  "lineStart": 15154,
+  "lineEnd": 15489
+ }
+}

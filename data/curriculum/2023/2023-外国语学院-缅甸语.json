@@ -1,0 +1,478 @@
+{
+ "id": "2023-外国语学院-缅甸语",
+ "cohort": 2023,
+ "volume": "北京大学本科教学计划（2023）文科卷",
+ "school": "外国语学院",
+ "major": "缅甸语",
+ "track": null,
+ "title": "缅甸语专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": null,
+ "totalCredits": null,
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 48,
+   "max": 48,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 54,
+   "max": 54,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 46,
+   "max": 46,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "36 学分",
+   "inferredParent": true,
+   "min": 36,
+   "max": 36,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "24 学分",
+   "inferredParent": true,
+   "min": 24,
+   "max": 24,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "30 学分",
+   "inferredParent": true,
+   "min": 30,
+   "max": 30,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "毕业论文",
+   "requirement": "0 学分",
+   "inferredParent": true,
+   "min": 0,
+   "max": 0,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "26 学分",
+   "inferredParent": true,
+   "min": 26,
+   "max": 26,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "20 学分",
+   "inferredParent": true,
+   "min": 20,
+   "max": 20,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 48,
+   "max": 48,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 C",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "04834470"
+    },
+    {
+     "name": "计算机实习",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": "“计 算 概 论 C” 课 程 同 时,",
+     "code": "04831435"
+    },
+    {
+     "name": "计算机实习)。",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上或一下",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 54,
+   "max": 54,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "缅甸概况",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "03534080"
+    },
+    {
+     "name": "缅甸语语法",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03534040"
+    },
+    {
+     "name": "缅甸语会话 (一)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03534261"
+    },
+    {
+     "name": "缅甸语会话 (二)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03534262"
+    },
+    {
+     "name": "缅甸语视听说 (一)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03534251"
+    },
+    {
+     "name": "缅甸语 (五)",
+     "nature": null,
+     "credits": 4,
+     "hours": 6,
+     "practice": null,
+     "term": "三上",
+     "code": "03534015"
+    },
+    {
+     "name": "缅甸文化",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03534120"
+    },
+    {
+     "name": "缅甸报刊选读 (一)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03534211"
+    },
+    {
+     "name": "缅甸语视听说 (二)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03534252"
+    },
+    {
+     "name": "缅甸语口译 (一)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03534271"
+    },
+    {
+     "name": "缅甸语口译 (二)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03534272"
+    },
+    {
+     "name": "缅甸语 (一)",
+     "nature": null,
+     "credits": 9,
+     "hours": 12,
+     "practice": null,
+     "term": "一上",
+     "code": "03534011"
+    },
+    {
+     "name": "缅甸语 (二)",
+     "nature": null,
+     "credits": 9,
+     "hours": 12,
+     "practice": null,
+     "term": "一下",
+     "code": "03534012"
+    },
+    {
+     "name": "缅甸语 (三)",
+     "nature": null,
+     "credits": 6,
+     "hours": 8,
+     "practice": null,
+     "term": "二上",
+     "code": "03534013"
+    },
+    {
+     "name": "缅甸语 (四)",
+     "nature": null,
+     "credits": 6,
+     "hours": 8,
+     "practice": null,
+     "term": "二下",
+     "code": "03534014"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 46,
+   "max": 46,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "缅甸语 (六)",
+     "nature": null,
+     "credits": 4,
+     "hours": 6,
+     "practice": null,
+     "term": "三下",
+     "code": "03534016"
+    },
+    {
+     "name": "缅甸语 (七)",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": null,
+     "term": "四上",
+     "code": "03534017"
+    },
+    {
+     "name": "缅甸语翻译 (一)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03534051"
+    },
+    {
+     "name": "缅甸语翻译 (二)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03534052"
+    },
+    {
+     "name": "缅甸报刊选读 (二)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03534212"
+    },
+    {
+     "name": "缅甸语视听说 (三)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03534253"
+    },
+    {
+     "name": "缅甸语视听说 (四)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03534254"
+    },
+    {
+     "name": "缅甸历史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03534100"
+    },
+    {
+     "name": "缅甸语 (八)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四下",
+     "code": "03534018"
+    },
+    {
+     "name": "缅甸语写作",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四下",
+     "code": "03534170"
+    },
+    {
+     "name": "东南亚上座部佛教导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四下",
+     "code": "03534280"
+    },
+    {
+     "name": "缅甸国情及热点问题研究",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四下",
+     "code": "03534290"
+    },
+    {
+     "name": "东南亚文化",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03530370"
+    },
+    {
+     "name": "东方文学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "每年秋季学期",
+     "code": "03530450"
+    },
+    {
+     "name": "西方文学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "每年春季学期",
+     "code": "03632990"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "—       思想政治理论必修课          19      —         —",
+  "选课。",
+  "—                          1门      —         —     按学校要求选课。",
+  "—       劳动教育课             32 学时                    按学校要求选课",
+  "算 概 论 C” 课 程 后, 需 要",
+  "另选 该 课 程 的 上 机 课",
+  "(",
+  "04831435,计算机实习)。",
+  "需要 另 选 该 课 程 的 上 机 课",
+  "—       体育系列课程             1×4     2               全年",
+  "注:大学外语必修大学英语对应级别的学分,不足 8 学 分 部 分,需 用 非 本 专 业 语 言 的 公 共 语 言 课 或 专 业",
+  "基础语言课补足 (课程明细见本学院附表 1)。",
+  "· 222 ·            北京大学本科培养方案 (",
+  "-3 毕业论文:不计学分,但为毕业必要条件。",
+  "北京大学外国语学院           · 223 ·",
+  "注:东方文学和西方文学必选其中一门。"
+ ],
+ "warnings": [
+  "未找到“毕业总学分”",
+  "第 12162 行：课程行缺少学分：04831435 计算机实习)。"
+ ],
+ "source": {
+  "volumeId": "2023-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=196",
+  "lineStart": 12064,
+  "lineEnd": 12249
+ }
+}

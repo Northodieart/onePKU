@@ -1,0 +1,1128 @@
+{
+ "id": "2024-地球与空间科学学院-地质学_地球化学",
+ "untitled": true,
+ "cohort": 2024,
+ "volume": "北京大学本科培养方案（2024）理科卷",
+ "school": "地球与空间科学学院",
+ "major": "地质学/地球化学",
+ "track": null,
+ "title": "地质学专业地球化学专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "理学学士",
+ "totalCredits": {
+  "min": 145,
+  "max": 145
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 47,
+   "max": 47,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 53,
+   "max": 53,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 45,
+   "max": 45,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "35 学分",
+   "min": 35,
+   "max": 35,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "25 学分",
+   "min": 25,
+   "max": 25,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "24 学分",
+   "min": 24,
+   "max": 24,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "requirement": "4 学分",
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1.1",
+   "parent": "1",
+   "name": "公共必修课",
+   "min": 35,
+   "max": 35,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论（B）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "04831410"
+    },
+    {
+     "name": "计算概论（B）上机",
+     "nature": "专业必修",
+     "credits": 0,
+     "hours": 3,
+     "practice": 32,
+     "term": null,
+     "code": "04831650"
+    },
+    {
+     "name": "数据结构与算法（B）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "课程。学生选“数据",
+     "code": "04831420"
+    },
+    {
+     "name": "数据结构与算法上机",
+     "nature": "专业必修",
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": "算法 B”课程后，需要",
+     "code": "04830494"
+    },
+    {
+     "name": "军事理论",
+     "nature": "全校必修",
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "一上",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "1.2",
+   "parent": "1",
+   "name": "通识教育课",
+   "min": 12,
+   "max": 12,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.1",
+   "parent": "2",
+   "name": "专业基础课",
+   "min": 25,
+   "max": 25,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学（B）（一）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": "一上",
+     "code": "00130201"
+    },
+    {
+     "name": "高等数学（B）（二）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": "一下",
+     "code": "00130202"
+    },
+    {
+     "name": "普通化学",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "一上",
+     "code": "01034310"
+    },
+    {
+     "name": "普通生物学（地球与行星科学基础）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "一下",
+     "code": "01232040"
+    },
+    {
+     "name": "普通物理（Ⅰ）☆",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "一下",
+     "code": "00431132"
+    },
+    {
+     "name": "普通物理（Ⅱ）☆",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "二上",
+     "code": "00431133"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2",
+   "parent": "2",
+   "name": "专业核心课",
+   "min": 24,
+   "max": 24,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "行星地球科学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "一上",
+     "code": "01231941"
+    },
+    {
+     "name": "地球系统演化",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": "一下",
+     "code": "01231882"
+    },
+    {
+     "name": "行星表面过程",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 12,
+     "term": "一下",
+     "code": "01231944"
+    },
+    {
+     "name": "行星物质科学（一）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": "二上",
+     "code": "01231947"
+    },
+    {
+     "name": "行星物质科学（二）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": "二下",
+     "code": "01231948"
+    },
+    {
+     "name": "地球与行星构造",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": "二下",
+     "code": "01231943"
+    },
+    {
+     "name": "古生物学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "二上",
+     "code": "01231030"
+    },
+    {
+     "name": "地球化学",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": 17,
+     "term": "二下",
+     "code": "01231660"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.3",
+   "parent": "2",
+   "name": "毕业论文",
+   "min": 4,
+   "max": 4,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 45,
+   "max": 45,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "普通地质实习 A★",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 12,
+     "term": "天 一暑",
+     "code": "01231640"
+    },
+    {
+     "name": "五台山地区综合地质实习★",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 12,
+     "term": "天 二暑",
+     "code": "01231912"
+    },
+    {
+     "name": "沉积地层古生物综合实习★",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 12,
+     "term": "天 二暑",
+     "code": "01231913"
+    },
+    {
+     "name": "冷湖野外联合实习考察",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 32,
+     "practice": 12,
+     "term": "天 一暑",
+     "code": "01231915"
+    },
+    {
+     "name": "地球系统野外建模*",
+     "nature": "限选",
+     "credits": 0,
+     "hours": 48,
+     "practice": 20,
+     "term": "天 三暑",
+     "code": "01231914"
+    },
+    {
+     "name": "阿尔卑斯野外综合地质国际对比实习",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 12,
+     "term": "天 四上",
+     "code": "01231921"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2.1",
+   "parent": "3.2",
+   "name": "数学类课程组",
+   "min": 1,
+   "max": 1,
+   "unit": "门",
+   "note": "至少",
+   "courses": [
+    {
+     "name": "计算方法（B）",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "秋季",
+     "code": "00130280"
+    },
+    {
+     "name": "线性代数（B）",
+     "nature": "限选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "全年",
+     "code": "00131460"
+    },
+    {
+     "name": "概率统计（B）",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "全年",
+     "code": "00132380"
+    },
+    {
+     "name": "数学物理方法",
+     "nature": "限选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "全年",
+     "code": "00432110"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2.2",
+   "parent": "3.2",
+   "name": "物理模块课程组",
+   "courses": [
+    {
+     "name": "电磁学",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "春季",
+     "code": "00431143"
+    },
+    {
+     "name": "光学",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "秋季",
+     "code": "00431172"
+    },
+    {
+     "name": "电动力学（B）",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "全年",
+     "code": "00432141"
+    },
+    {
+     "name": "理论力学（B）",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "全年",
+     "code": "00432199"
+    },
+    {
+     "name": "普通物理实验（1）",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 68,
+     "practice": 68,
+     "term": "秋季",
+     "code": "00437180"
+    },
+    {
+     "name": "普通物理实验（2）",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 68,
+     "practice": 68,
+     "term": "春季",
+     "code": "00437190"
+    },
+    {
+     "name": "地球介质力学基础",
+     "nature": "限选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "秋季",
+     "code": "01233580"
+    },
+    {
+     "name": "固体力学基础",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": "春季",
+     "code": "01430970"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2.3",
+   "parent": "3.2",
+   "name": "化学模块课程组",
+   "courses": [
+    {
+     "name": "结构化学",
+     "nature": "限选",
+     "credits": 4,
+     "hours": 85,
+     "practice": 23,
+     "term": "春季",
+     "code": "01030120"
+    },
+    {
+     "name": "有机化学（B）",
+     "nature": "限选",
+     "credits": 4,
+     "hours": 68,
+     "practice": 4,
+     "term": "秋季",
+     "code": "01030810"
+    },
+    {
+     "name": "物理化学（B）",
+     "nature": "限选",
+     "credits": 4,
+     "hours": 68,
+     "practice": 10,
+     "term": "秋季",
+     "code": "01030840"
+    },
+    {
+     "name": "仪器分析",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "秋季",
+     "code": "01034390"
+    },
+    {
+     "name": "仪器分析实验",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 68,
+     "practice": 68,
+     "term": "秋季",
+     "code": "01034400"
+    },
+    {
+     "name": "有机化学实验",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 102,
+     "practice": 102,
+     "term": "春季",
+     "code": "01035003"
+    },
+    {
+     "name": "定量分析化学",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "春季",
+     "code": "01035180"
+    },
+    {
+     "name": "定量分析化学实验",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 68,
+     "practice": 68,
+     "term": "春季",
+     "code": "01035190"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2.4",
+   "parent": "3.2",
+   "name": "生物模块课程组",
+   "courses": [
+    {
+     "name": "细胞生物学",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "全年",
+     "code": "01130150"
+    },
+    {
+     "name": "遗传学",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "全年",
+     "code": "01130200"
+    },
+    {
+     "name": "普通生态学",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "春季",
+     "code": "01130930"
+    },
+    {
+     "name": "分子生物学",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "全年",
+     "code": "01138540"
+    },
+    {
+     "name": "发育生物学",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "春季",
+     "code": "01139580"
+    },
+    {
+     "name": "微生物学",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "春季",
+     "code": "01139600"
+    },
+    {
+     "name": "生物化学",
+     "nature": "限选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "全年",
+     "code": "01139630"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.3.1",
+   "parent": "3.3",
+   "name": "地球与行星宜居性",
+   "courses": [
+    {
+     "name": "古海洋学与全球变化",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 6,
+     "term": "秋季",
+     "code": "01231370"
+    },
+    {
+     "name": "地层学原理与应用",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 6,
+     "term": "秋季",
+     "code": "01231530"
+    },
+    {
+     "name": "环境矿物学",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "秋季",
+     "code": "01231580"
+    },
+    {
+     "name": "层序地层学基础▲",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": "春季",
+     "code": "01231710"
+    },
+    {
+     "name": "地球生物学概论▲",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "春季",
+     "code": "01231820"
+    },
+    {
+     "name": "矿床学",
+     "nature": "限选",
+     "credits": 4,
+     "hours": 68,
+     "practice": 20,
+     "term": "春季",
+     "code": "01231840"
+    },
+    {
+     "name": "海洋环境和动力学▲",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "春季",
+     "code": "01231860"
+    },
+    {
+     "name": "海洋科学导论▲",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "秋季",
+     "code": "01231970"
+    },
+    {
+     "name": "行星科学基础",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 6,
+     "term": "秋季",
+     "code": "01232020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.3.2",
+   "parent": "3.3",
+   "name": "地球与行星动力学组",
+   "courses": [
+    {
+     "name": "地貌学与第四纪环境",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "秋季",
+     "code": "01231470"
+    },
+    {
+     "name": "地球系统与环境",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 10,
+     "term": "春季",
+     "code": "01231690"
+    },
+    {
+     "name": "层序地层学基础▲",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": "春季",
+     "code": "01231710"
+    },
+    {
+     "name": "矿床学",
+     "nature": "限选",
+     "credits": 4,
+     "hours": 68,
+     "practice": 20,
+     "term": "春季",
+     "code": "01231840"
+    },
+    {
+     "name": "海洋环境和动力学▲",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "春季",
+     "code": "01231860"
+    },
+    {
+     "name": "行星科学基础",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 6,
+     "term": "秋季",
+     "code": "01232020"
+    },
+    {
+     "name": "地球重力学",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 9,
+     "term": "春季",
+     "code": "01233200"
+    },
+    {
+     "name": "地球物理学导论",
+     "nature": "限选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "春季",
+     "code": "01233591"
+    },
+    {
+     "name": "遥感应用",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 12,
+     "term": "秋季",
+     "code": "01235330"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.3.3",
+   "parent": "3.3",
+   "name": "能源与碳中和方向组",
+   "courses": [
+    {
+     "name": "古海洋学与全球变化",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 6,
+     "term": "秋季",
+     "code": "01231370"
+    },
+    {
+     "name": "地球系统与环境",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 10,
+     "term": "春季",
+     "code": "01231690"
+    },
+    {
+     "name": "层序地层学基础▲",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": "春季",
+     "code": "01231710"
+    },
+    {
+     "name": "地球生物学概论▲",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "春季",
+     "code": "01231820"
+    },
+    {
+     "name": "矿床学",
+     "nature": "限选",
+     "credits": 4,
+     "hours": 68,
+     "practice": 20,
+     "term": "春季",
+     "code": "01231840"
+    },
+    {
+     "name": "海洋环境和动力学▲",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "春季",
+     "code": "01231860"
+    },
+    {
+     "name": "海洋科学导论▲",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "秋季",
+     "code": "01231970"
+    },
+    {
+     "name": "能源资源概论",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "春季",
+     "code": "01232030"
+    },
+    {
+     "name": "地热资源勘探与开发",
+     "nature": "限选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "秋季",
+     "code": "01232050"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.4",
+   "parent": "3",
+   "name": "自主选修课",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.4.1",
+   "parent": "3.4",
+   "name": "本科生科研训练",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.4.2",
+   "parent": "3.4",
+   "name": "专业选修课程",
+   "courses": [
+    {
+     "name": "海洋地质学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "秋季",
+     "code": "01231140"
+    },
+    {
+     "name": "遥感地质学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "春季",
+     "code": "01231170"
+    },
+    {
+     "name": "宝石学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 17,
+     "term": "春季",
+     "code": "01231300"
+    },
+    {
+     "name": "地貌学与第四纪环境",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "秋季",
+     "code": "01231470"
+    },
+    {
+     "name": "古生态学与古环境分析",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 6,
+     "term": "秋季",
+     "code": "01231500"
+    },
+    {
+     "name": "古生物学前沿",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "春季",
+     "code": "01231510"
+    },
+    {
+     "name": "古植物学及孢粉学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 9,
+     "term": "秋季",
+     "code": "01231520"
+    },
+    {
+     "name": "沉积学概论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "秋季",
+     "code": "01231540"
+    },
+    {
+     "name": "岩浆作用理论概述",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 6,
+     "term": "秋季",
+     "code": "01231560"
+    },
+    {
+     "name": "矿物材料学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "秋季",
+     "code": "01231570"
+    },
+    {
+     "name": "高温高压物质科学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "秋季",
+     "code": "01231610"
+    },
+    {
+     "name": "地史学概论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 10,
+     "term": "春季",
+     "code": "01231980"
+    },
+    {
+     "name": "变质作用导论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": "春季",
+     "code": "01232000"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.4.3",
+   "parent": "3.4",
+   "name": "跨院交叉课程",
+   "courses": [],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "—       大学英语        全校必修   2～8    —      —",
+  "思想政治理论                                  按马克思主义学院要",
+  "必修课                                     求选课",
+  "—                   全校必修   1门                   按照学校要求选课",
+  "课程的上机课“计算",
+  "概论（B）上机”。",
+  "课程的上机课“计算",
+  "概论（B）上机”。",
+  "说明：面向理科院系。",
+  "院系可以根据学科特",
+  "结构与算法 B”课程",
+  "的上机课“数据结构",
+  "与算法上机”。",
+  "说明：面向理科院系。",
+  "学生选“数据结构与",
+  "另选该课程的上机课",
+  "“数据结构与算法上",
+  "机”。",
+  "—       体育系列课程      全校必修   1×4       2   0     全年",
+  "说明：思政类课程具体方案以马克思主义学院和学校公布为准。",
+  "公共英文课程如超过 4 个学分，则在选修课程中减少相应的学分数；不足 4 个学分的，",
+  "则在选修课程中增加相应的学分数，毕业所需的总学分仍保持为 145 学分。",
+  "Ⅰ. 人类文明及其传统                         ≥2",
+  "Ⅱ. 现代社会及其问题                         ≥2       1. 不少于 12 学分",
+  "Ⅲ. 艺术与人文                            ≥2       2. 至少修读 1 门“通识核心课”",
+  "Ⅳ. 数学、自然与技术                         ≥2",
+  "（1）具体课程列表详见《北京大学本科生选课手册》 ；",
+  "（2）原则上不允许以专业课替代通识教育课程学分；",
+  "（3）本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分；",
+  "（4）建议合理分配修读时间，每学期修读 1 门课程。",
+  "。",
+  "除了完成上述学分及德智体的诸方面要求外，本专业学生还必须在最后一学年由本专",
+  "业导师指导下完成毕业学位论文/毕业设计，并顺利通过答辩才能获得学士学位。",
+  "说明：★为必修课程，* 为保研必修课程。",
+  "3.2 学科基础强化课程：至少 11 学分，数学+物理/生物/化学",
+  "说明：▲为全英文课程。",
+  "完成“本科生科研训练”结题并通过结题答辩的学生可获得“研究课程”4 学分；在",
+  "专业学术期刊发表第一作者学术论文的学生，可获得 6 学分；其他方面按教务部相关规定",
+  "执行。",
+  "学生可根据兴趣和将来发展需要理学部和工程学部院系专业必修和专业选修课程中进",
+  "行课程选择。"
+ ],
+ "warnings": [
+  "专业名按 2025 版“地质学专业地球化学专业”推断（专业必修课重合度 100%），请核对"
+ ],
+ "source": {
+  "volumeId": "2024-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=209",
+  "lineStart": 8531,
+  "lineEnd": 8892
+ },
+ "titleInference": {
+  "from": 2025,
+  "title": "地质学专业地球化学专业",
+  "overlap": 1
+ }
+}

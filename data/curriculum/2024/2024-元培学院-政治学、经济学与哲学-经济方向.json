@@ -1,0 +1,2782 @@
+{
+ "id": "2024-元培学院-政治学、经济学与哲学-经济方向",
+ "untitled": true,
+ "cohort": 2024,
+ "volume": "北京大学本科培养方案（2024）文科卷",
+ "school": "元培学院",
+ "major": "政治学、经济学与哲学",
+ "track": "经济方向",
+ "title": "政治学、经济学与哲学专业（经济方向）",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "法学学士",
+ "totalCredits": {
+  "min": 130,
+  "max": 130
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 45,
+   "max": 51,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 46,
+   "max": 46,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 33,
+   "max": 33,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "大学英语",
+   "requirement": "2～8 学分",
+   "min": 2,
+   "max": 8,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "思想政治理论必修课",
+   "requirement": "19 学分",
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "1-5",
+   "parent": "1",
+   "name": "信息课程",
+   "requirement": "3 学分",
+   "min": 3,
+   "max": 3,
+   "unit": "学分"
+  },
+  {
+   "id": "1-6",
+   "parent": "1",
+   "name": "军事理论",
+   "requirement": "2 学分",
+   "min": 2,
+   "max": 2,
+   "unit": "学分"
+  },
+  {
+   "id": "1-7",
+   "parent": "1",
+   "name": "体育课",
+   "requirement": "4 学分",
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  },
+  {
+   "id": "1-9",
+   "parent": "1",
+   "name": "元培通识课",
+   "requirement": "12 学分",
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "1-10",
+   "parent": "1",
+   "name": "大学成长课",
+   "requirement": "3 学分",
+   "min": 3,
+   "max": 3,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "18 学分",
+   "min": 18,
+   "max": 18,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "25 学分",
+   "min": 25,
+   "max": 25,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "requirement": "3 学分",
+   "min": 3,
+   "max": 3,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "33 学分",
+   "min": 33,
+   "max": 33,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1.1",
+   "parent": "1",
+   "name": "公共必修课",
+   "courses": [
+    {
+     "name": "计算概论 A",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "04830041"
+    },
+    {
+     "name": "计算概论 A 上机实习课",
+     "nature": "全校必修",
+     "credits": 0,
+     "hours": 34,
+     "practice": 34,
+     "term": null,
+     "code": "04830042"
+    },
+    {
+     "name": "计算概论 A（实验班）",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "04830530"
+    },
+    {
+     "name": "计算概论（B）",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "04831410"
+    },
+    {
+     "name": "计算概论（B）上机",
+     "nature": "全校必修",
+     "credits": 0,
+     "hours": 34,
+     "practice": 34,
+     "term": null,
+     "code": "04831650"
+    },
+    {
+     "name": "计算概论（C）",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "04834470"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "1.2",
+   "parent": "1",
+   "name": "通识教育课",
+   "min": 12,
+   "max": 12,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "1.3",
+   "parent": "1",
+   "name": "大学成长课",
+   "courses": [
+    {
+     "name": "新生教育实践课程",
+     "nature": "专业任选",
+     "credits": 1,
+     "hours": 32,
+     "practice": 34,
+     "term": "一上",
+     "code": "04631815"
+    },
+    {
+     "name": "书院成长课程",
+     "nature": "专业任选",
+     "credits": 2,
+     "hours": 64,
+     "practice": 64,
+     "term": "二年级",
+     "code": "04631816"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.1",
+   "parent": "2",
+   "name": "专业基础课",
+   "min": 18,
+   "max": 18,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.1.1",
+   "parent": "2.1",
+   "name": "哲学研讨班组 0～1 门",
+   "courses": [
+    {
+     "name": "马克思历史哲学专题",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02311231"
+    },
+    {
+     "name": "中华民族现代文明",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02311481"
+    },
+    {
+     "name": "儒家哲学著作选读",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 48,
+     "practice": null,
+     "term": null,
+     "code": "02312060"
+    },
+    {
+     "name": "德语哲学原文选读",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 51,
+     "term": null,
+     "code": "02313013"
+    },
+    {
+     "name": "德意志浪漫主义",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02313221"
+    },
+    {
+     "name": "维特根斯坦《哲学研究》解读",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 51,
+     "term": null,
+     "code": "02313341"
+    },
+    {
+     "name": "《纯粹理性批判》研究",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02313673"
+    },
+    {
+     "name": "机器道德伦理",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02313761"
+    },
+    {
+     "name": "可计算理论基础",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02315032"
+    },
+    {
+     "name": "人工智能时代的人文主义",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 48,
+     "practice": null,
+     "term": null,
+     "code": "02315042"
+    },
+    {
+     "name": "人工智能伦理",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02315043"
+    },
+    {
+     "name": "动态逻辑",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 48,
+     "practice": null,
+     "term": null,
+     "code": "02315280"
+    },
+    {
+     "name": "社会选择理论",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02315340"
+    },
+    {
+     "name": "伦理学方法研究",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02316300"
+    },
+    {
+     "name": "宗教学专题",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 48,
+     "practice": null,
+     "term": null,
+     "code": "02318211"
+    },
+    {
+     "name": "宗教史专题",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02318300"
+    },
+    {
+     "name": "伊斯兰教导论",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02318375"
+    },
+    {
+     "name": "伊斯兰哲学原著选读",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 51,
+     "term": null,
+     "code": "02318394"
+    },
+    {
+     "name": "世界宗教导论",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02318472"
+    },
+    {
+     "name": "宗教与中西文明传统比较研究",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02318500"
+    },
+    {
+     "name": "人学概论",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "02330302"
+    },
+    {
+     "name": "西方马克思主义专题",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02330350"
+    },
+    {
+     "name": "全球化问题研究",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "02330460"
+    },
+    {
+     "name": "中国伊斯兰教典籍选读",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 54,
+     "practice": null,
+     "term": null,
+     "code": "02332026"
+    },
+    {
+     "name": "中世纪哲学的形象与问题",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "02332119"
+    },
+    {
+     "name": "新约问题研究",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "02332132"
+    },
+    {
+     "name": "奥古斯丁思想研究",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "02332270"
+    },
+    {
+     "name": "佛教哲学",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02332410"
+    },
+    {
+     "name": "柏拉图和亚里士多德哲学研究",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02332974"
+    },
+    {
+     "name": "复杂性科学与哲学",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 48,
+     "practice": null,
+     "term": null,
+     "code": "02335122"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.1.2",
+   "parent": "2.1",
+   "name": "应用统计学组",
+   "min": 3,
+   "max": 3,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "应用统计学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 10,
+     "term": null,
+     "code": "03232300"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.1.3",
+   "parent": "2.1",
+   "name": "经济研讨班组 1 门",
+   "courses": [
+    {
+     "name": "数字经济",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": "专业必修",
+     "code": "02535690"
+    },
+    {
+     "name": "可持续发展与经济政策",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "02500250"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.1.4",
+   "parent": "2.1",
+   "name": "高等数学组 2 门",
+   "courses": [
+    {
+     "name": "高等数学（B） （一）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00130201"
+    },
+    {
+     "name": "高等数学（B） （二）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00130202"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.1.5",
+   "parent": "2.1",
+   "name": "政治研讨班组 0～1 门",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.1.6",
+   "parent": "2.1",
+   "name": "PPE 的视野组 0～1 门",
+   "courses": [
+    {
+     "name": "PPE 的视野（政经哲的视野）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "04631813"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2",
+   "parent": "2",
+   "name": "专业核心课",
+   "min": 25,
+   "max": 25,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.2.1",
+   "parent": "2.2",
+   "name": "哲学核心课组",
+   "min": 7,
+   "max": 7,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "哲学导论",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "02330000"
+    },
+    {
+     "name": "哲学导论讨论课",
+     "nature": "专业必修",
+     "credits": 0,
+     "hours": 17,
+     "practice": 17,
+     "term": null,
+     "code": "02330004"
+    },
+    {
+     "name": "西方哲学（上）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": null,
+     "code": "02330051"
+    },
+    {
+     "name": "西方哲学（下）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": null,
+     "code": "02330053"
+    },
+    {
+     "name": "西方哲学（上）讨论课",
+     "nature": "专业必修",
+     "credits": 0,
+     "hours": 17,
+     "practice": 17,
+     "term": null,
+     "code": "02330055"
+    },
+    {
+     "name": "西方哲学（下）讨论课",
+     "nature": "专业必修",
+     "credits": 0,
+     "hours": 17,
+     "practice": 17,
+     "term": null,
+     "code": "02330056"
+    },
+    {
+     "name": "中国哲学（上）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": null,
+     "code": "02330092"
+    },
+    {
+     "name": "中国哲学（上）讨论课",
+     "nature": "专业必修",
+     "credits": 0,
+     "hours": 17,
+     "practice": 17,
+     "term": null,
+     "code": "02330093"
+    },
+    {
+     "name": "中国哲学（下）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": null,
+     "code": "02330096"
+    },
+    {
+     "name": "中国哲学（下）讨论课",
+     "nature": "专业必修",
+     "credits": 0,
+     "hours": 17,
+     "practice": 17,
+     "term": null,
+     "code": "02330097"
+    },
+    {
+     "name": "宗教学导论",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02330161"
+    },
+    {
+     "name": "宗教学导论讨论课",
+     "nature": "专业必修",
+     "credits": 0,
+     "hours": 17,
+     "practice": 17,
+     "term": null,
+     "code": "02330163"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2.2",
+   "parent": "2.2",
+   "name": "政治核心课 1 组",
+   "courses": [
+    {
+     "name": "比较政治学概论",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "03230040"
+    },
+    {
+     "name": "中国地方政府与政治",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": null,
+     "code": "03231750"
+    },
+    {
+     "name": "政治学前沿",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 12,
+     "term": null,
+     "code": "03232600"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2.3",
+   "parent": "2.2",
+   "name": "政治核心课 2 组 1 门",
+   "courses": [
+    {
+     "name": "政治学原理",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 3,
+     "term": null,
+     "code": "03230020"
+    },
+    {
+     "name": "政治学阶梯：体系与问题",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 76,
+     "practice": 8,
+     "term": null,
+     "code": "03233040"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2.4",
+   "parent": "2.2",
+   "name": "经济核心课组",
+   "min": 7,
+   "max": 7,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "微观经济学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": 18,
+     "term": null,
+     "code": "02530060"
+    },
+    {
+     "name": "宏观经济学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": 14,
+     "term": null,
+     "code": "02530070"
+    },
+    {
+     "name": "经济学原理（Ⅰ）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 16,
+     "term": null,
+     "code": "02533160"
+    },
+    {
+     "name": "经济学原理（Ⅰ）讨论课",
+     "nature": "专业必修",
+     "credits": 0,
+     "hours": 17,
+     "practice": 17,
+     "term": null,
+     "code": "02533161"
+    },
+    {
+     "name": "经济学原理（Ⅱ）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": null,
+     "code": "02533170"
+    },
+    {
+     "name": "经济学原理（Ⅱ）讨论课",
+     "nature": "专业必修",
+     "credits": 0,
+     "hours": 17,
+     "practice": 17,
+     "term": null,
+     "code": "02533171"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "min": 3,
+   "max": 3,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.3.1",
+   "parent": "2.3",
+   "name": "毕业论文组",
+   "min": 3,
+   "max": 3,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1",
+   "parent": "3",
+   "name": "专业选修课",
+   "min": 33,
+   "max": 33,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.1",
+   "parent": "3.1",
+   "name": "其他课程组",
+   "courses": [
+    {
+     "name": "中国现代史",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": 12,
+     "term": "春季",
+     "code": "02132030"
+    },
+    {
+     "name": "世界史通论",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "秋季",
+     "code": "02132081"
+    },
+    {
+     "name": "伊斯兰哲学研究专题",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02318373"
+    },
+    {
+     "name": "伊斯兰哲学原著选读",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 51,
+     "term": null,
+     "code": "02318394"
+    },
+    {
+     "name": "哲学导论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02330001"
+    },
+    {
+     "name": "哲学阅读与写作",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 36,
+     "practice": null,
+     "term": null,
+     "code": "02330002"
+    },
+    {
+     "name": "哲学导论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": null,
+     "code": "02330003"
+    },
+    {
+     "name": "哲学导论讨论课",
+     "nature": "任选",
+     "credits": 0,
+     "hours": 17,
+     "practice": 17,
+     "term": null,
+     "code": "02330004"
+    },
+    {
+     "name": "哲学阅读与写作",
+     "nature": "任选",
+     "credits": 1,
+     "hours": 17,
+     "practice": 17,
+     "term": null,
+     "code": "02330005"
+    },
+    {
+     "name": "马克思主义哲学（上）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02330027"
+    },
+    {
+     "name": "马克思主义哲学（下）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02330028"
+    },
+    {
+     "name": "现代西方哲学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02330070"
+    },
+    {
+     "name": "马克思主义哲学（上）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": null,
+     "code": "02330102"
+    },
+    {
+     "name": "马克思主义哲学（上）讨论课",
+     "nature": "任选",
+     "credits": 0,
+     "hours": 17,
+     "practice": 17,
+     "term": null,
+     "code": "02330103"
+    },
+    {
+     "name": "马克思主义哲学（下）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": null,
+     "code": "02330104"
+    },
+    {
+     "name": "马克思主义哲学（下）讨论课",
+     "nature": "任选",
+     "credits": 0,
+     "hours": 17,
+     "practice": 17,
+     "term": null,
+     "code": "02330105"
+    },
+    {
+     "name": "科学哲学导论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02330132"
+    },
+    {
+     "name": "美学原理",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02330152"
+    },
+    {
+     "name": "宗教学导论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02330161"
+    },
+    {
+     "name": "宗教学导论讨论课",
+     "nature": "任选",
+     "credits": 0,
+     "hours": 17,
+     "practice": 17,
+     "term": null,
+     "code": "02330163"
+    },
+    {
+     "name": "科学历史哲学导论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "02330180"
+    },
+    {
+     "name": "耕读实践",
+     "nature": "任选",
+     "credits": 1,
+     "hours": 17,
+     "practice": 17,
+     "term": null,
+     "code": "02330514"
+    },
+    {
+     "name": "柏拉图的《理想国》",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02332972"
+    },
+    {
+     "name": "西方古典思想（Ⅱ）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02332973"
+    },
+    {
+     "name": "基督教伦理学导论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02333911"
+    },
+    {
+     "name": "学年论文",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02335002"
+    },
+    {
+     "name": "中国哲学史（上）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "02335071"
+    },
+    {
+     "name": "中国哲学史（下）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "02335072"
+    },
+    {
+     "name": "知识论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02335100"
+    },
+    {
+     "name": "现代逻辑基础",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 72,
+     "practice": null,
+     "term": null,
+     "code": "02336400"
+    },
+    {
+     "name": "逻辑与论证",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02336401"
+    },
+    {
+     "name": "思想与社会研究方法",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "春季",
+     "code": "02338002"
+    },
+    {
+     "name": "国际政治经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "春季",
+     "code": "02430020"
+    },
+    {
+     "name": "中国政治概论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "秋季",
+     "code": "02430150"
+    },
+    {
+     "name": "美国政治、经济与外交",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": "秋季",
+     "code": "02430220"
+    },
+    {
+     "name": "统计学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 15,
+     "term": null,
+     "code": "02530051"
+    },
+    {
+     "name": "国际贸易",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 10,
+     "term": null,
+     "code": "02530090"
+    },
+    {
+     "name": "国际金融",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02530100"
+    },
+    {
+     "name": "计量经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 68,
+     "practice": 6,
+     "term": null,
+     "code": "02530140"
+    },
+    {
+     "name": "发展经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": null,
+     "code": "02530150"
+    },
+    {
+     "name": "投资学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 10,
+     "term": null,
+     "code": "02530340"
+    },
+    {
+     "name": "国际投资学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 8,
+     "term": null,
+     "code": "02530620"
+    },
+    {
+     "name": "金融经济学导论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": null,
+     "code": "02532240"
+    },
+    {
+     "name": "信息经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 8,
+     "term": null,
+     "code": "02532260"
+    },
+    {
+     "name": "经济学原理（Ⅰ）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 16,
+     "term": null,
+     "code": "02533160"
+    },
+    {
+     "name": "经济学原理（Ⅰ）讨论课",
+     "nature": "任选",
+     "credits": 0,
+     "hours": 17,
+     "practice": 17,
+     "term": null,
+     "code": "02533161"
+    },
+    {
+     "name": "经济学原理（Ⅱ）讨论课",
+     "nature": "任选",
+     "credits": 0,
+     "hours": 17,
+     "practice": 17,
+     "term": null,
+     "code": "02533171"
+    },
+    {
+     "name": "政治经济学（上）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02533180"
+    },
+    {
+     "name": "政治经济学（下）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 58,
+     "practice": 10,
+     "term": null,
+     "code": "02533190"
+    },
+    {
+     "name": "公共经济学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02533250"
+    },
+    {
+     "name": "中国经济思想史",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 9,
+     "term": null,
+     "code": "02533340"
+    },
+    {
+     "name": "外国经济思想史",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 9,
+     "term": null,
+     "code": "02533350"
+    },
+    {
+     "name": "世界经济史",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02533490"
+    },
+    {
+     "name": "预算经济学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 10,
+     "term": null,
+     "code": "02533530"
+    },
+    {
+     "name": "产业组织理论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02533600"
+    },
+    {
+     "name": "国际税收",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": null,
+     "code": "02533840"
+    },
+    {
+     "name": "农业经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": null,
+     "code": "02533850"
+    },
+    {
+     "name": "生态经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 24,
+     "term": null,
+     "code": "02534000"
+    },
+    {
+     "name": "货币银行学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": null,
+     "code": "02534060"
+    },
+    {
+     "name": "风险管理学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 4,
+     "term": null,
+     "code": "02534200"
+    },
+    {
+     "name": "经济增长理论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 9,
+     "term": null,
+     "code": "02534430"
+    },
+    {
+     "name": "公共经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 9,
+     "term": null,
+     "code": "02534500"
+    },
+    {
+     "name": "财政学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 9,
+     "term": null,
+     "code": "02534520"
+    },
+    {
+     "name": "人力资本与经济发展",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 48,
+     "practice": null,
+     "term": null,
+     "code": "02534690"
+    },
+    {
+     "name": "比较税收学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02534760"
+    },
+    {
+     "name": "区域经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 45,
+     "practice": null,
+     "term": null,
+     "code": "02534780"
+    },
+    {
+     "name": "保险学原理",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 3,
+     "term": null,
+     "code": "02534820"
+    },
+    {
+     "name": "人口健康经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02534830"
+    },
+    {
+     "name": "社会实践",
+     "nature": "任选",
+     "credits": 1,
+     "hours": 17,
+     "practice": null,
+     "term": "7天",
+     "code": "02534880"
+    },
+    {
+     "name": "保险经济学导论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": null,
+     "code": "02534960"
+    },
+    {
+     "name": "微观经济学",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 64,
+     "practice": null,
+     "term": null,
+     "code": "02535090"
+    },
+    {
+     "name": "中国经济史",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 9,
+     "term": null,
+     "code": "02535240"
+    },
+    {
+     "name": "外国经济史",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": null,
+     "code": "02535250"
+    },
+    {
+     "name": "《资本论》选读",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 2,
+     "term": null,
+     "code": "02535370"
+    },
+    {
+     "name": "中国对外经济",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 6,
+     "term": null,
+     "code": "02535380"
+    },
+    {
+     "name": "金融会计",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 3,
+     "term": null,
+     "code": "02535390"
+    },
+    {
+     "name": "保险资产管理",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 12,
+     "term": null,
+     "code": "02535400"
+    },
+    {
+     "name": "应用计量经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 4,
+     "term": null,
+     "code": "02535410"
+    },
+    {
+     "name": "能源经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": null,
+     "code": "02535420"
+    },
+    {
+     "name": "新结构经济学导论（上）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02535470"
+    },
+    {
+     "name": "新结构经济学导论（下）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02535480"
+    },
+    {
+     "name": "新结构智库实践",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "5天",
+     "code": "02535510"
+    },
+    {
+     "name": "新结构产业经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 8,
+     "term": null,
+     "code": "02535520"
+    },
+    {
+     "name": "新结构金融学：理论与实践",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 8,
+     "term": null,
+     "code": "02535580"
+    },
+    {
+     "name": "新结构经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 15,
+     "term": null,
+     "code": "02535700"
+    },
+    {
+     "name": "福利经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 11,
+     "term": null,
+     "code": "02535720"
+    },
+    {
+     "name": "R 语言与数据可视化",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 10,
+     "term": null,
+     "code": "02812710"
+    },
+    {
+     "name": "数据科学的 Python 基础",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02812930"
+    },
+    {
+     "name": "社会心理学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 12,
+     "term": null,
+     "code": "02830140"
+    },
+    {
+     "name": "组织与管理",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 54,
+     "practice": null,
+     "term": null,
+     "code": "02831100"
+    },
+    {
+     "name": "组织与管理讨论班",
+     "nature": "任选",
+     "credits": 0,
+     "hours": 34,
+     "practice": 34,
+     "term": null,
+     "code": "02831101"
+    },
+    {
+     "name": "经济学",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "02831110"
+    },
+    {
+     "name": "经济学讨论班",
+     "nature": "任选",
+     "credits": 0,
+     "hours": 34,
+     "practice": 34,
+     "term": null,
+     "code": "02831170"
+    },
+    {
+     "name": "会计学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 10,
+     "term": null,
+     "code": "02831520"
+    },
+    {
+     "name": "金融建模",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 36,
+     "practice": null,
+     "term": null,
+     "code": "02831540"
+    },
+    {
+     "name": "金融经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 68,
+     "practice": 34,
+     "term": null,
+     "code": "02831580"
+    },
+    {
+     "name": "国际金融与国际贸易",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 54,
+     "practice": null,
+     "term": null,
+     "code": "02831600"
+    },
+    {
+     "name": "产业分析的理论与政策",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 54,
+     "practice": null,
+     "term": null,
+     "code": "02831610"
+    },
+    {
+     "name": "微观经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02832110"
+    },
+    {
+     "name": "宏观经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 10,
+     "term": null,
+     "code": "02832120"
+    },
+    {
+     "name": "成本与管理会计",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02832480"
+    },
+    {
+     "name": "财务会计",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 54,
+     "practice": null,
+     "term": null,
+     "code": "02832510"
+    },
+    {
+     "name": "高级管理会计",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": null,
+     "code": "02832540"
+    },
+    {
+     "name": "营销学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 60,
+     "practice": 12,
+     "term": null,
+     "code": "02832640"
+    },
+    {
+     "name": "定价管理",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02832700"
+    },
+    {
+     "name": "货币金融学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 54,
+     "practice": null,
+     "term": null,
+     "code": "02833160"
+    },
+    {
+     "name": "金融市场与金融机构",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": null,
+     "code": "02833230"
+    },
+    {
+     "name": "公司财务管理讨论班",
+     "nature": "任选",
+     "credits": 0,
+     "hours": 34,
+     "practice": 34,
+     "term": null,
+     "code": "02833431"
+    },
+    {
+     "name": "品牌管理",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 50,
+     "practice": 20,
+     "term": null,
+     "code": "02833460"
+    },
+    {
+     "name": "中级财务会计",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": 10,
+     "term": null,
+     "code": "02833540"
+    },
+    {
+     "name": "高级财务会计",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": null,
+     "code": "02833670"
+    },
+    {
+     "name": "计量经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": null,
+     "code": "02833720"
+    },
+    {
+     "name": "证券投资学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02834420"
+    },
+    {
+     "name": "财务报表分析",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02834430"
+    },
+    {
+     "name": "审计学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02834510"
+    },
+    {
+     "name": "概率统计",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": 2,
+     "term": null,
+     "code": "02834720"
+    },
+    {
+     "name": "金融计量经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02836020"
+    },
+    {
+     "name": "财务报表分析",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 36,
+     "practice": null,
+     "term": null,
+     "code": "02838180"
+    },
+    {
+     "name": "渠道管理",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02838350"
+    },
+    {
+     "name": "财务会计",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 54,
+     "practice": null,
+     "term": null,
+     "code": "02838430"
+    },
+    {
+     "name": "国际金融",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 20,
+     "term": null,
+     "code": "02838460"
+    },
+    {
+     "name": "管理科学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": null,
+     "code": "02838470"
+    },
+    {
+     "name": "组织与管理",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": 2,
+     "term": null,
+     "code": "02838500"
+    },
+    {
+     "name": "中国经济改革与发展",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 43,
+     "practice": 10,
+     "term": null,
+     "code": "02839000"
+    },
+    {
+     "name": "新产品开发与管理",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": null,
+     "code": "02839040"
+    },
+    {
+     "name": "行为经济学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": null,
+     "code": "02839250"
+    },
+    {
+     "name": "公共经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02839270"
+    },
+    {
+     "name": "仿真模型与智慧决策",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 5,
+     "term": null,
+     "code": "02839280"
+    },
+    {
+     "name": "税法与税务筹划",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02839330"
+    },
+    {
+     "name": "因果推断与商业应用",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 17,
+     "term": null,
+     "code": "02839380"
+    },
+    {
+     "name": "货币经济学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02839390"
+    },
+    {
+     "name": "营销研究方法",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02839400"
+    },
+    {
+     "name": "运筹优化与最优决策",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": null,
+     "code": "02839410"
+    },
+    {
+     "name": "机器学习与人工智能",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 10,
+     "term": null,
+     "code": "02839440"
+    },
+    {
+     "name": "消费者行为",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": null,
+     "code": "02839500"
+    },
+    {
+     "name": "科学思维与实践论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 20,
+     "term": null,
+     "code": "02839510"
+    },
+    {
+     "name": "公司金融",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02839610"
+    },
+    {
+     "name": "公司金融讨论班",
+     "nature": "任选",
+     "credits": 0,
+     "hours": 16,
+     "practice": null,
+     "term": null,
+     "code": "02839611"
+    },
+    {
+     "name": "刑法总论",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": 17,
+     "term": "春季",
+     "code": "02930152"
+    },
+    {
+     "name": "社会科学的经典与前沿",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 5,
+     "term": "春季",
+     "code": "02930218"
+    },
+    {
+     "name": "刑事诉讼法",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": 17,
+     "term": "春季",
+     "code": "02930920"
+    },
+    {
+     "name": "社会学概论",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "全年",
+     "code": "03130010"
+    },
+    {
+     "name": "社会统计学",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": 12,
+     "term": "全年",
+     "code": "03130120"
+    },
+    {
+     "name": "社会科学方法导论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "秋季",
+     "code": "03130906"
+    },
+    {
+     "name": "社会调查与研究方法",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": 16,
+     "term": "全年",
+     "code": "03131500"
+    },
+    {
+     "name": "社会科学学术研究导论",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "春季",
+     "code": "03131920"
+    },
+    {
+     "name": "田野调查实践",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 34,
+     "term": "秋季",
+     "code": "03132520"
+    },
+    {
+     "name": "美国政府与政治",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "春季",
+     "code": "03231740"
+    },
+    {
+     "name": "社会调查的理论与方法",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 15,
+     "term": "秋季",
+     "code": "03232400"
+    },
+    {
+     "name": "政治学研究方法",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 9,
+     "term": "春季",
+     "code": "03232840"
+    },
+    {
+     "name": "人文社会科学中的质性研究方法",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 9,
+     "term": "秋季",
+     "code": "03232900"
+    },
+    {
+     "name": "社会科学的理论阅读与思维训练",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 3,
+     "term": "秋季",
+     "code": "03233350"
+    },
+    {
+     "name": "社会科学中的计算思维方法",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": "春季",
+     "code": "04832680"
+    },
+    {
+     "name": "社会科学问题研究的计算实践",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "秋季",
+     "code": "04834570"
+    },
+    {
+     "name": "中国经济专题",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "06234900"
+    },
+    {
+     "name": "经济学社会实践",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 80,
+     "practice": 12,
+     "term": "天",
+     "code": "06239083"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.2",
+   "parent": "3.1",
+   "name": "培养方案课程组",
+   "courses": [
+    {
+     "name": "古代汉语（上）",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "秋季",
+     "code": "02030021"
+    },
+    {
+     "name": "古代典籍概要",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "秋季",
+     "code": "02033450"
+    },
+    {
+     "name": "古代汉语（下）",
+     "nature": "任选",
+     "credits": 5,
+     "hours": 102,
+     "practice": null,
+     "term": "春季",
+     "code": "02034432"
+    },
+    {
+     "name": "中国古代史（上）",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "秋季",
+     "code": "02130011"
+    },
+    {
+     "name": "中国古代史（下）",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": 4,
+     "term": "春季",
+     "code": "02130012"
+    },
+    {
+     "name": "古希腊罗马史",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "秋季",
+     "code": "02133620"
+    },
+    {
+     "name": "中世纪欧洲史",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "秋季",
+     "code": "02133630"
+    },
+    {
+     "name": "西方政治思想（现代）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02332213"
+    },
+    {
+     "name": "西方政治思想（中世纪）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02332214"
+    },
+    {
+     "name": "政治哲学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "春季",
+     "code": "02333371"
+    },
+    {
+     "name": "西方政治思想（古代）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02333373"
+    },
+    {
+     "name": "《四书》精读",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 34,
+     "term": "春季",
+     "code": "02335220"
+    },
+    {
+     "name": "国际贸易",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 10,
+     "term": "全年",
+     "code": "02530090"
+    },
+    {
+     "name": "国际金融",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "全年",
+     "code": "02530100"
+    },
+    {
+     "name": "金融经济学导论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": "秋季",
+     "code": "02532240"
+    },
+    {
+     "name": "信息经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 8,
+     "term": "春季",
+     "code": "02532260"
+    },
+    {
+     "name": "环境资源经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 16,
+     "term": "秋季",
+     "code": "02533370"
+    },
+    {
+     "name": "公司金融",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 10,
+     "term": "全年",
+     "code": "02533570"
+    },
+    {
+     "name": "产业组织理论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "春季",
+     "code": "02533600"
+    },
+    {
+     "name": "货币银行学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": "全年",
+     "code": "02534060"
+    },
+    {
+     "name": "风险管理学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 4,
+     "term": "春季",
+     "code": "02534200"
+    },
+    {
+     "name": "经济增长理论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 9,
+     "term": "春季",
+     "code": "02534430"
+    },
+    {
+     "name": "财政学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 9,
+     "term": "春季",
+     "code": "02534520"
+    },
+    {
+     "name": "保险学原理",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 3,
+     "term": "春季",
+     "code": "02534820"
+    },
+    {
+     "name": "应用计量经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 4,
+     "term": "秋季",
+     "code": "02535410"
+    },
+    {
+     "name": "法理学",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": 7,
+     "term": "春季",
+     "code": "02930010"
+    },
+    {
+     "name": "西方法律思想史",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 5,
+     "term": "秋季",
+     "code": "02930040"
+    },
+    {
+     "name": "宪法学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 26,
+     "term": "秋季",
+     "code": "02930060"
+    },
+    {
+     "name": "国际公法",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "春季",
+     "code": "02939994"
+    },
+    {
+     "name": "国外社会学学说（上）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "春/秋",
+     "code": "03100130"
+    },
+    {
+     "name": "国外社会学学说（下）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "春/秋",
+     "code": "03130020"
+    },
+    {
+     "name": "中国社会思想史",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "春季",
+     "code": "03130050"
+    },
+    {
+     "name": "中国社会",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": "春季",
+     "code": "03130590"
+    },
+    {
+     "name": "发展社会学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "秋季",
+     "code": "03130660"
+    },
+    {
+     "name": "社会调查与研究方法",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": 16,
+     "term": "秋季",
+     "code": "03131500"
+    },
+    {
+     "name": "中国政治思想史",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 3,
+     "term": "秋季",
+     "code": "03230780"
+    },
+    {
+     "name": "西方政治思想史",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "春季",
+     "code": "03230790"
+    },
+    {
+     "name": "中国地方政府与政治",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": "春季",
+     "code": "03231750"
+    },
+    {
+     "name": "行政学原理",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "秋季",
+     "code": "03232580"
+    },
+    {
+     "name": "社会经济调查数据分析",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 9,
+     "term": "秋季",
+     "code": "06239104"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.3",
+   "parent": "3.1",
+   "name": "经济方向必修组 3 门",
+   "courses": [
+    {
+     "name": "线性代数（B）",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00131460"
+    },
+    {
+     "name": "概率统计（B）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00132380"
+    },
+    {
+     "name": "计量经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 68,
+     "practice": 6,
+     "term": null,
+     "code": "02530140"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2",
+   "parent": "3",
+   "name": "自主选修课",
+   "courses": [],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "要求“思想政治理论选择性必修课”共 1 门、“劳动教育课”累计不少于 32 学时。思",
+  "想政治理论必修课和其他公共必修课按学校要求选课，信息课程见下表。",
+  "≥1 门         2. 第Ⅰ/Ⅱ类至少选 1 门，第Ⅲ/Ⅳ类",
+  "Ⅴ. 现代科学                         —",
+  "Ⅵ. 艺术                           —",
+  "新生讨论课                          1分                      1 学分",
+  "（1）新生讨论课选课要求：限本科一年级学生选修；具体课程见学院选课指导",
+  "（2）通识课程选课要求：本科各年级学生均可选修；具体课程见学院通识课程方案。",
+  "模块约束描述：课程组（PPE 的视野, 哲学研讨班, 经济研讨班, 政治研讨班）的门数",
+  "之和≥3。",
+  "模块约束描述：课程组（政治核心课 1, 政治核心课 2）的学分之和≥7。",
+  "0293008a   民法总论           任选    3   51     26   秋季",
+  "E2800010   跨文化沟通         任选   2    34    10",
+  "E2800020   中国管理（一）       任选   2    34    10",
+  "E2800030   管理科学与信息管理     任选   3    51    12",
+  "E2800050   经济史           任选   2    34",
+  "E2800070   商务中文 C        任选   2    34",
+  "E2800080   商务中文 B        任选   2    34",
+  "E2800100   中国管理（二）       任选   2    34    10",
+  "E2800120   企业伦理与社会责任     任选   2    34    6",
+  "E2800160   国际经济          任选   2    34",
+  "E2800190   战略管理          任选   3    51",
+  "E2800200   经管学术研讨会       任选   2    34    14",
+  "世界政治经济环境中的",
+  "E2800210                 任选   2    34",
+  "中国",
+  "E2800270   创新理论与实践       任选   2    34    6",
+  "E2800280   计量经济学          任选    3   51     17",
+  "E2800300   沉浸式中国发展探索      任选    2   34     7天",
+  "E2832121   宏观经济学          任选    3   51",
+  "E2834421   证券投资学          任选    3   51",
+  "E2834721   概率统计           任选    4   68",
+  "0293007a    行政法与行政诉讼法     任选   4    68   17   秋季"
+ ],
+ "warnings": [
+  "专业名按 2025 版“政治学、经济学与哲学专业（经济方向）”推断（专业必修课重合度 100%），请核对"
+ ],
+ "source": {
+  "volumeId": "2024-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=210",
+  "lineStart": 25797,
+  "lineEnd": 26315
+ },
+ "titleInference": {
+  "from": 2025,
+  "title": "政治学、经济学与哲学专业（经济方向）",
+  "overlap": 1
+ }
+}

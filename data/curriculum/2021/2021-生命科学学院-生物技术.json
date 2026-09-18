@@ -1,0 +1,788 @@
+{
+ "id": "2021-生命科学学院-生物技术",
+ "cohort": 2021,
+ "volume": "北京大学本科培养方案（2021）理科卷",
+ "school": "生命科学学院",
+ "major": "生物技术",
+ "track": null,
+ "title": "生物技术专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "理学学士学位。",
+ "totalCredits": {
+  "min": 153,
+  "max": 153
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 44,
+   "max": 50,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 82,
+   "max": 82,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 20,
+   "max": 20,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "32~38 学分",
+   "inferredParent": true,
+   "min": 32,
+   "max": 38,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "39 学分",
+   "inferredParent": true,
+   "min": 39,
+   "max": 39,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "35 学分",
+   "inferredParent": true,
+   "min": 35,
+   "max": 35,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "≥20 学分",
+   "inferredParent": true,
+   "min": 20,
+   "max": 20,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 44,
+   "max": 50,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 B",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "算概论 B” 课 程 同 时,需 要 另",
+     "code": "04831410"
+    },
+    {
+     "name": "计算概论 B 上机",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": "算概论 B” 课 程 同 时,需 要 另",
+     "code": "04831650"
+    },
+    {
+     "name": "数据结构与算法 B",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "一下",
+     "code": "04831420"
+    },
+    {
+     "name": "数据结构与算法上机",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": "选 “数据结构 与 算 法 B” 课 程",
+     "code": "04830494"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 82,
+   "max": 82,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学 C (一)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "一上",
+     "code": "00131421"
+    },
+    {
+     "name": "高等数学 C (二)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "一下",
+     "code": "00131422"
+    },
+    {
+     "name": "线性代数 ( C)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "00130310"
+    },
+    {
+     "name": "普通物理 Ⅰ",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "一下",
+     "code": "00431132"
+    },
+    {
+     "name": "普通物理 Ⅱ",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "二上",
+     "code": "00431133"
+    },
+    {
+     "name": "基础物理实验",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": 64,
+     "term": "二上",
+     "code": "00431200"
+    },
+    {
+     "name": "普通化学 B",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "一上",
+     "code": "01034880"
+    },
+    {
+     "name": "普通化学实验 B",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": 64,
+     "term": "一上",
+     "code": "01034920"
+    },
+    {
+     "name": "定量分析化学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "一下",
+     "code": "01035180"
+    },
+    {
+     "name": "定量分析化学实验",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": 64,
+     "term": "一下",
+     "code": "01035190"
+    },
+    {
+     "name": "有机化学 B",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "01032690"
+    },
+    {
+     "name": "有机化学实验 B",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": 64,
+     "term": "二上",
+     "code": "01032711"
+    },
+    {
+     "name": "普通生物学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "一上",
+     "code": "01139381"
+    },
+    {
+     "name": "普通生物学实验",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": 64,
+     "term": "一上",
+     "code": "01130311"
+    },
+    {
+     "name": "生理学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": null,
+     "code": "01139510"
+    },
+    {
+     "name": "生理学实验",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": 32,
+     "term": "生理同期",
+     "code": "01130380"
+    },
+    {
+     "name": "生物化学",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "二上",
+     "code": "01139630"
+    },
+    {
+     "name": "生物化学实验",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": 64,
+     "term": "生化同期",
+     "code": "01139632"
+    },
+    {
+     "name": "遗传学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "生化之后",
+     "code": "01130200"
+    },
+    {
+     "name": "遗传学实验",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": 32,
+     "term": "遗传同期",
+     "code": "01130210"
+    },
+    {
+     "name": "分子生物学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "生化之后",
+     "code": "01138540"
+    },
+    {
+     "name": "分子生物学实验",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": 32,
+     "term": "分子同期",
+     "code": "01132677"
+    },
+    {
+     "name": "细胞生物学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "生化之后",
+     "code": "01130151"
+    },
+    {
+     "name": "细胞生物学实验",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": 32,
+     "term": "细胞同期",
+     "code": "01130160"
+    },
+    {
+     "name": "微生物学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "生化之后",
+     "code": "01139600"
+    },
+    {
+     "name": "微生物学实验",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": 32,
+     "term": "细胞同期",
+     "code": "01130071"
+    },
+    {
+     "name": "生物信息学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 2,
+     "term": "分生之后",
+     "code": "01139375"
+    },
+    {
+     "name": "生物信息学实验",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": 32,
+     "term": "生信同期",
+     "code": "01139376"
+    },
+    {
+     "name": "现代生物技术导论 *",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "秋季",
+     "code": "01139330"
+    },
+    {
+     "name": "生物技术制药基础 *",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "春季",
+     "code": "01131110"
+    },
+    {
+     "name": "工程技术基础与实践",
+     "nature": null,
+     "credits": 2,
+     "hours": 3,
+     "practice": 48,
+     "term": "春季",
+     "code": "01139773"
+    },
+    {
+     "name": "生物学综合野外实习",
+     "nature": null,
+     "credits": 2,
+     "hours": 64,
+     "practice": null,
+     "term": "大一暑期",
+     "code": "01134140"
+    },
+    {
+     "name": "海滨生物学综合实习",
+     "nature": null,
+     "credits": 2,
+     "hours": 64,
+     "practice": null,
+     "term": "大一暑期",
+     "code": "01130911"
+    },
+    {
+     "name": "创意性实践 Ⅰ",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": 64,
+     "term": "秋季",
+     "code": "01132675"
+    },
+    {
+     "name": "创意性实践 Ⅱ",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": 64,
+     "term": "春季",
+     "code": "01139772"
+    },
+    {
+     "name": "高级植物分子生物学实验技术",
+     "nature": null,
+     "credits": 1,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "01131430"
+    },
+    {
+     "name": "细胞的基因编辑技术",
+     "nature": null,
+     "credits": 1,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "01131414"
+    },
+    {
+     "name": "细胞培养实验课",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": 32,
+     "term": "春季",
+     "code": "01131413"
+    },
+    {
+     "name": "发酵工程实验",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": 32,
+     "term": "春季",
+     "code": "01131440"
+    },
+    {
+     "name": "生物技术实验",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": 32,
+     "term": "春季",
+     "code": "01131450"
+    },
+    {
+     "name": "产业实习实践 (至少 180 工时)",
+     "nature": null,
+     "credits": 3,
+     "hours": 180,
+     "practice": null,
+     "term": "二三暑期",
+     "code": "01132679"
+    },
+    {
+     "name": "大学生种植实践",
+     "nature": null,
+     "credits": 3,
+     "hours": 8,
+     "practice": 120,
+     "term": "春季 + 暑期",
+     "code": "01139771"
+    },
+    {
+     "name": "生物化学讨论课",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "生化同期",
+     "code": "01132632"
+    },
+    {
+     "name": "遗传学讨论课",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "遗传同期",
+     "code": "01132022"
+    },
+    {
+     "name": "物理化学 B",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "01032630"
+    },
+    {
+     "name": "物理化学 B 实验",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": 64,
+     "term": "物化同期",
+     "code": "01032720"
+    },
+    {
+     "name": "动物生物学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋季",
+     "code": "01131080"
+    },
+    {
+     "name": "动物生物学实验",
+     "nature": null,
+     "credits": 1,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "01131050"
+    },
+    {
+     "name": "植物生物学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "春季",
+     "code": "01131040"
+    },
+    {
+     "name": "植物生物学实验",
+     "nature": null,
+     "credits": 1,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "01131060"
+    },
+    {
+     "name": "发育生物学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "春季",
+     "code": "01139580"
+    },
+    {
+     "name": "生物进化论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "春季",
+     "code": "01130780"
+    },
+    {
+     "name": "普通生态学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "秋季",
+     "code": "01130930"
+    },
+    {
+     "name": "免疫学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "春季",
+     "code": "01130130"
+    },
+    {
+     "name": "生物学概念与途径",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "春季",
+     "code": "01131161"
+    },
+    {
+     "name": "光合作用与物质循环",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "秋季",
+     "code": "01133160"
+    },
+    {
+     "name": "植物多样性及其演化",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "秋季",
+     "code": "01133025"
+    },
+    {
+     "name": "植物信号转导",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "秋季",
+     "code": "01133038"
+    },
+    {
+     "name": "植物形态建成",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "秋季",
+     "code": "01133032"
+    },
+    {
+     "name": "生物数学建模",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "春季",
+     "code": "01139732"
+    },
+    {
+     "name": "干细胞与再生医学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "秋季",
+     "code": "01133042"
+    },
+    {
+     "name": "生物医药工程及管理",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": 0,
+     "term": "秋季",
+     "code": "01139640"
+    },
+    {
+     "name": "基因组生物学技术",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "春季",
+     "code": "01132663"
+    },
+    {
+     "name": "组学数据分析及其应用",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 16,
+     "term": "暑期",
+     "code": "01133029"
+    },
+    {
+     "name": "基因组学数据分析",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "秋季",
+     "code": "01133037"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "—       大学英语              2~8    —      —      按大学英语教研室要求选课",
+  "思想政治理论必修课         18                   按马克思主义学院要求选课",
+  "选 该 课 程 的 上 机 课 “计 算 概",
+  "论 B 上机”。",
+  "选 该 课 程 的 上 机 课 “计 算 概",
+  "论 B 上机”。",
+  "同 时, 需 要 另 选 该 课 程 的 上",
+  "机课 “数据结构与算法上机”。",
+  "—       体育系列课程            1×4    2      0      —",
+  "通识教育课 程 分 为 四 个 系 列: Ⅰ.人 类 文 明 及 其 传 统, Ⅱ.现 代 社 会 及 其 问 题, Ⅲ.",
+  "· 148 ·             北京大学本科培养方案 (",
+  "艺术与人文, Ⅳ.数学、自然与技术。每个系列均包含通识教 育 核 心 课、通 选 课 两 部 分 课",
+  "程,具体课程列表详见 《北京大学本科生选课手册》。",
+  "1)至少修读 1 门 “通识教育核心课程” (任一系列),且在四个课程系列中 每个系列",
+  "至少修读 2 学分 (通识教育核心课或通选课均可)。",
+  "2)原则上不允许以专业课替代通识教育课程学分。",
+  "3)本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分。",
+  "4)建议合理分配修读时间,每学期修读 1 门课程。",
+  "—       生物统计、概率统计或心理统计     3    3      0     三上",
+  "北京大学生命科学学院                     · 149 ·",
+  "* 至少选 2 学分。",
+  "科研规范与毕业论文            8     8     205    四上",
+  "-11 实习、实践和劳动课程:10 学分 (其中劳动类至少 2 学分,“生物学综合野外实",
+  "-",
+  "综合实验                 2           64     大二、大三",
+  "新开课       技术维修实践               2     4     64",
+  "新开课       生产劳动实践               2     4     64",
+  "-12 在各教研室 (或导师)指导下选修不少于 10 学分 (具体课程计划或模块由各教",
+  "-",
+  "研室建议,不限于下列课程,鼓励跨院系、跨学科优化知识结构和专业技能)",
+  "· 150 ·             北京大学本科培养方案 (",
+  "学生可根据自己兴趣和职业发展需要,在教研室 (或导师) 指导下,在全校范围内选",
+  "择其他课程,并使总学分不少于 153 学分。"
+ ],
+ "warnings": [],
+ "source": {
+  "volumeId": "2021-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=152",
+  "lineStart": 7129,
+  "lineEnd": 7400
+ }
+}

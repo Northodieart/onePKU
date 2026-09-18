@@ -1,0 +1,139 @@
+{
+ "id": "2021-艺术学院_信息科学技术学院-“计算艺术_”_项目",
+ "cohort": 2021,
+ "volume": "北京大学本科培养方案（2021）文科卷",
+ "school": "艺术学院/信息科学技术学院",
+ "major": "“计算艺术/”/项目",
+ "track": null,
+ "title": "“计算艺术 ” 项目",
+ "kind": "project",
+ "qualifiers": [],
+ "degree": null,
+ "totalCredits": {
+  "min": 25,
+  "max": 25,
+  "inferred": true
+ },
+ "topRequirements": [],
+ "requirements": [],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "项目核心课程 (",
+   "courses": [
+    {
+     "name": "计算艺术思维与实践",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "04330331"
+    },
+    {
+     "name": "人工智能技术与应用",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "04834560"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "实践与调研 (",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "结业设计/论文/报告 (",
+   "courses": [
+    {
+     "name": "计算视觉理论、模型与方法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "04802019"
+    },
+    {
+     "name": "机器学习概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "04831730"
+    },
+    {
+     "name": "影视制作 (电影剪辑基础)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "04330088"
+    },
+    {
+     "name": "信息技术与文化产业",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "04330089"
+    },
+    {
+     "name": "可视化与可视化计算概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "04831280"
+    },
+    {
+     "name": "深度生成模型",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "04802052"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "学分要求:总学分 25 学分。",
+  "新开课       计算美学                          3            3",
+  "新开课       计算影像生成技术                      3            3",
+  "· 560 ·             北京大学本科培养方案 (",
+  "参加 “计算艺术”项目的学生,可选择进行相关领域的调研或实践,在老师指导下参",
+  "与计算艺术创作、展览等实践活动,分散累 计 满 64 学 时 或 集 中 累 计 满 2 周,并 撰 写 5000",
+  "字以上的报告,由导师做出成绩评定,计 2 学分。",
+  "参加 “计算艺术”项目的学生,在修完以上要求学分后,通过与导师协商,选择完成",
+  "结业设计、报告或论文,并提交项目负责老师审核 (以合格/不合格方式评定),不需参加",
+  "答辩。",
+  "注:本模块选修课程若属本项目学生所在主修专业的必修课,学生应选列表内的其他课程。"
+ ],
+ "warnings": [
+  "第 30100 行：课程设置出现第二套“2. 任选课程模块”，只保留第一套"
+ ],
+ "source": {
+  "volumeId": "2021-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=158",
+  "lineStart": 30025,
+  "lineEnd": 30136
+ }
+}

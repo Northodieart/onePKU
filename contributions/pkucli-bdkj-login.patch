@@ -1,0 +1,11 @@
+--- a/crates/bdkj/src/login.rs
++++ b/crates/bdkj/src/login.rs
+@@ -17,7 +17,7 @@
+ pub const APP_NAME: &str = "bdkj";
+ 
+ const IAAA_APP_ID: &str = "bdkj";
+-const IAAA_REDIRECT: &str = "http://bdkj.pku.edu.cn/login/oauth";
++const IAAA_REDIRECT: &str = "https://bdkj.pku.edu.cn/login/oauth";
+ 
+ fn iaaa_config() -> IaaaConfig {
+     IaaaConfig {

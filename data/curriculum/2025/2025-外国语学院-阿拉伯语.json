@@ -1,0 +1,872 @@
+{
+ "id": "2025-外国语学院-阿拉伯语",
+ "cohort": 2025,
+ "volume": "北京大学本科培养方案（2025）文科卷",
+ "school": "外国语学院",
+ "major": "阿拉伯语",
+ "track": null,
+ "title": "阿拉伯语专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "文学学士",
+ "totalCredits": {
+  "min": 143,
+  "max": 143
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 48,
+   "max": 48,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 56,
+   "max": 56,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 39,
+   "max": 39,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "大学英语",
+   "requirement": "2～8 学分",
+   "min": 2,
+   "max": 8,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "思想政治理论必修课",
+   "requirement": "19 学分",
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "1-3",
+   "parent": "1",
+   "name": "思想政治理论选择性必修课",
+   "requirement": "1 门",
+   "min": 1,
+   "max": 1,
+   "unit": "门"
+  },
+  {
+   "id": "1-4",
+   "parent": "1",
+   "name": "劳动教育课",
+   "requirement": "32 学时",
+   "min": 32,
+   "max": 32,
+   "unit": "学时"
+  },
+  {
+   "id": "1-5",
+   "parent": "1",
+   "name": "信息课程",
+   "requirement": "3 学分",
+   "min": 3,
+   "max": 3,
+   "unit": "学分"
+  },
+  {
+   "id": "1-6",
+   "parent": "1",
+   "name": "军事理论",
+   "requirement": "2 学分",
+   "min": 2,
+   "max": 2,
+   "unit": "学分"
+  },
+  {
+   "id": "1-7",
+   "parent": "1",
+   "name": "体育课",
+   "requirement": "4 学分",
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  },
+  {
+   "id": "1-8",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "1-9",
+   "parent": "1",
+   "name": "大学外语",
+   "requirement": "0 学分",
+   "min": 0,
+   "max": 0,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "26 学分",
+   "min": 26,
+   "max": 26,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "28 学分",
+   "min": 28,
+   "max": 28,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "requirement": "0 学分",
+   "min": 0,
+   "max": 0,
+   "unit": "学分"
+  },
+  {
+   "id": "2-4",
+   "parent": "2",
+   "name": "学年论文",
+   "requirement": "2 学分",
+   "min": 2,
+   "max": 2,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "19 学分",
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "20 学分",
+   "min": 20,
+   "max": 20,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 48,
+   "max": 48,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "1.1",
+   "parent": "1",
+   "name": "公共必修课",
+   "courses": [
+    {
+     "name": "计算机实习",
+     "nature": "全校必修",
+     "credits": 0,
+     "hours": 34,
+     "practice": 34,
+     "term": "一上",
+     "code": "04831435"
+    },
+    {
+     "name": "计算概论（C）",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "一上",
+     "code": "04834470"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "1.2",
+   "parent": "1",
+   "name": "通识教育课",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 56,
+   "max": 56,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.1",
+   "parent": "2",
+   "name": "专业基础课",
+   "min": 26,
+   "max": 26,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "当代阿拉伯世界",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "一上",
+     "code": "03538210"
+    },
+    {
+     "name": "阿拉伯语视听说（一）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 68,
+     "practice": 34,
+     "term": "一上",
+     "code": "03538401"
+    },
+    {
+     "name": "阿拉伯语视听说（二）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 17,
+     "term": "一下",
+     "code": "03538402"
+    },
+    {
+     "name": "阿拉伯语视听说（三）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 17,
+     "term": "二上",
+     "code": "03538403"
+    },
+    {
+     "name": "阿拉伯语视听说（四）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 68,
+     "practice": 34,
+     "term": "二下",
+     "code": "03538404"
+    },
+    {
+     "name": "阿拉伯文学史",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "二上",
+     "code": "03538190"
+    },
+    {
+     "name": "阿拉伯语语言学入门",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "二下",
+     "code": "03538105"
+    },
+    {
+     "name": "阿拉伯语翻译教程（一）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": "三上",
+     "code": "03538081"
+    },
+    {
+     "name": "阿拉伯语翻译教程（二）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": "三下",
+     "code": "03538082"
+    },
+    {
+     "name": "阿拉伯语阅读（三）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "四上",
+     "code": "03538043"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2",
+   "parent": "2",
+   "name": "专业核心课",
+   "min": 28,
+   "max": 28,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "基础阿拉伯语（一）",
+     "nature": "专业必修",
+     "credits": 8,
+     "hours": 170,
+     "practice": 17,
+     "term": "一上",
+     "code": "03538015"
+    },
+    {
+     "name": "基础阿拉伯语（二）",
+     "nature": "专业必修",
+     "credits": 6,
+     "hours": 136,
+     "practice": 17,
+     "term": "一下",
+     "code": "03538016"
+    },
+    {
+     "name": "基础阿拉伯语（三）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 102,
+     "practice": 17,
+     "term": "二上",
+     "code": "03538017"
+    },
+    {
+     "name": "基础阿拉伯语（四）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 102,
+     "practice": 17,
+     "term": "二下",
+     "code": "03538018"
+    },
+    {
+     "name": "阿拉伯伊斯兰文化",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "一下",
+     "code": "03538180"
+    },
+    {
+     "name": "中东史",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "二上",
+     "code": "03538390"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.3",
+   "parent": "2",
+   "name": "毕业论文",
+   "note": "设计",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.4",
+   "parent": "2",
+   "name": "学年论文",
+   "min": 2,
+   "max": 2,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 39,
+   "max": 39,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1",
+   "parent": "3",
+   "name": "专业选修课",
+   "min": 19,
+   "max": 19,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.1",
+   "parent": "3.1",
+   "name": "新生教育组",
+   "min": 1,
+   "max": 1,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.2",
+   "parent": "3.1",
+   "name": "语言技能模块组",
+   "min": 8,
+   "max": 8,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "阿拉伯语语法",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 0,
+     "term": "二上",
+     "code": "03538050"
+    },
+    {
+     "name": "阿拉伯语写作（一）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": "二下",
+     "code": "03538061"
+    },
+    {
+     "name": "阿拉伯语写作（二）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": "三上",
+     "code": "03538062"
+    },
+    {
+     "name": "阿拉伯语口译（一）",
+     "nature": "任选",
+     "credits": 1,
+     "hours": 34,
+     "practice": 8,
+     "term": "三上",
+     "code": "03538071"
+    },
+    {
+     "name": "阿拉伯语口译（二）",
+     "nature": "任选",
+     "credits": 1,
+     "hours": 34,
+     "practice": 8,
+     "term": "三上",
+     "code": "03538072"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.3",
+   "parent": "3.1",
+   "name": "语言学模块组",
+   "min": 2,
+   "max": 2,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "开罗方言",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": "二下",
+     "code": "03538230"
+    },
+    {
+     "name": "阿拉伯语书法理论与实践",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": "三上",
+     "code": "03538104"
+    },
+    {
+     "name": "叙利亚方言",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": "三下",
+     "code": "03538114"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.4",
+   "parent": "3.1",
+   "name": "文学模块组",
+   "min": 2,
+   "max": 2,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "阿拉伯散文选读",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "三上",
+     "code": "03538096"
+    },
+    {
+     "name": "阿拉伯戏剧与实践",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 17,
+     "term": "三上",
+     "code": "03538095"
+    },
+    {
+     "name": "阿拉伯诗歌选读",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "三下",
+     "code": "03538099"
+    },
+    {
+     "name": "阿拉伯小说选读",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "三下",
+     "code": "03538100"
+    },
+    {
+     "name": "阿拉伯电影赏析",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "四上",
+     "code": "03538110"
+    },
+    {
+     "name": "现当代阿拉伯文学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "四下",
+     "code": "03538094"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.5",
+   "parent": "3.1",
+   "name": "历史文化与中东研究模块组",
+   "min": 2,
+   "max": 2,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "阿拉伯古代史文献选读",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "三上",
+     "code": "03538098"
+    },
+    {
+     "name": "中东中亚研究",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "三上",
+     "code": "03538112"
+    },
+    {
+     "name": "当代中东研究",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "四上",
+     "code": "03530530"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2",
+   "parent": "3",
+   "name": "自主选修课",
+   "min": 20,
+   "max": 20,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "中国古代文学（上）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02035201"
+    },
+    {
+     "name": "中国古代文学（下）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02035202"
+    },
+    {
+     "name": "中国古代史（上）",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "02130011"
+    },
+    {
+     "name": "中国古代史（下）",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 64,
+     "practice": null,
+     "term": null,
+     "code": "02130012"
+    },
+    {
+     "name": "考古学通论",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 64,
+     "practice": null,
+     "term": null,
+     "code": "02232210"
+    },
+    {
+     "name": "哲学导论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "02330001"
+    },
+    {
+     "name": "西方哲学（上）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 48,
+     "practice": null,
+     "term": null,
+     "code": "02330051"
+    },
+    {
+     "name": "西方哲学（上）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "02330052"
+    },
+    {
+     "name": "西方哲学（下）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02330053"
+    },
+    {
+     "name": "西方哲学（下）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02330054"
+    },
+    {
+     "name": "中国哲学（上）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 48,
+     "practice": null,
+     "term": null,
+     "code": "02330092"
+    },
+    {
+     "name": "中国哲学（上）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "02330094"
+    },
+    {
+     "name": "中国哲学（下）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "02330095"
+    },
+    {
+     "name": "中国哲学（下）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 48,
+     "practice": null,
+     "term": null,
+     "code": "02330096"
+    },
+    {
+     "name": "东方文学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "03530450"
+    },
+    {
+     "name": "西方文学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "03632990"
+    },
+    {
+     "name": "艺术史导论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "04330218"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2.2",
+   "parent": "3.2",
+   "name": "专业研究实践组",
+   "courses": [],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "要求“思想政治理论选择性必修课”共 1 门、“劳动教育课”累计不少于 32 学时。思",
+  "想政治理论必修课和其他公共必修课按学校要求选课，信息课程见下表。",
+  "注：不足 8 学分部分，需用波斯语、土耳其语和希伯来语辅修或者公共波斯语、公共",
+  "土耳其语、公共希伯来语、公共库尔德语等中东语言课程来补足学分。",
+  "通识教育课程系列                各系列学分",
+  "（通识核心课+通选课）           （通识核心课+通选课）",
+  "Ⅰ. 人类文明及其传统                    ≥2",
+  "Ⅱ. 现代社会及其问题                    ≥2             1. 不少于 12 学分",
+  "Ⅲ. 艺术与人文                       ≥2             2. 至少修读 1 门“通识核心课”",
+  "Ⅳ. 数学、自然与技术                    ≥2",
+  "（1）具体课程列表详见《北京大学本科生选课手册》 ；",
+  "（2）原则上不允许以专业课替代通识教育课程学分；",
+  "（3）本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分；",
+  "（4）建议合理分配修读时间，每学期修读 1 门课程。",
+  "新开课        阿拉伯语阅读（一）     专业必修   2     34     4      三上",
+  "新开课        阿拉伯语阅读（二）     专业必修   2     34     4      三下",
+  "新开课        阿拉伯语翻译教程（三）   专业必修   2     34     8      四上",
+  "备注：不计学分，但为毕业的必要条件。",
+  "备注：参加各类本科生科学研究项目并获得成绩与学分认定可抵免“学年论文”学分。",
+  "新开课          学年论文        专业必修   2     34     34    三下",
+  "备注：在完成专业选修课全部要求学分后再修得的语言学、文学和历史文化与中东研",
+  "究模块的课程学分，计入自主选修课学分。",
+  "备注：此类需选 1 学分。",
+  "中东研究经典著作导",
+  "新开课                      专业选修    1       34          4       一下",
+  "读与学术写作",
+  "备注：此类需选 8 学分。",
+  "备注：此类需选至少 2 学分。",
+  "新开课        阿拉伯语语言学导论      专业选修       2    34             4    三上",
+  "新开课        阿拉伯语与新媒体       专业选修       2    34             8    三上",
+  "备注：此类需选至少 2 学分。",
+  "备注：此类需选至少 2 学分。",
+  "新开课         中东库尔德问题研究     专业选修       2    34     4      三下",
+  "新开课         大叙利亚问题研究      专业选修       2    34     4      四下",
+  "备注：人文学部课程不少于 5 学分 ，其中人文学部课程（中国文学史、中国古代史、",
+  "考古学通论、哲学导论、中国哲学、西方哲学、艺术史导论）不少于 3 学分；东方文学、",
+  "西方文学必选一门。",
+  "备注：东方文学、西方文学至少选修其中一门。",
+  "备注：建议根据自己的专业发展规划积极选课。",
+  "新开课       中东国家现代化实践研究     专业选修       2         34         34    二下",
+  "新开课       中东国家发展实践研究      专业选修       2         34         34    三上",
+  "新开课       中东国家语言生活研究      专业选修       2         34         34    三上",
+  "中东金融产业与投资实践",
+  "新开课                       专业选修       2         34         34    三下",
+  "研究",
+  "中东国家文学与社会发展",
+  "新开课                       专业选修       2         34         34    三下",
+  "研究",
+  "新开课       阿拉伯语语料库构建与应用    专业选修       2         34         34    四上"
+ ],
+ "warnings": [],
+ "source": {
+  "volumeId": "2025-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=217",
+  "lineStart": 9408,
+  "lineEnd": 9670
+ }
+}

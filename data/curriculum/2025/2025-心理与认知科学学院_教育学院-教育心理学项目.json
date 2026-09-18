@@ -1,0 +1,253 @@
+{
+ "id": "2025-心理与认知科学学院_教育学院-教育心理学项目",
+ "cohort": 2025,
+ "volume": "北京大学本科培养方案（2025）理科卷",
+ "school": "心理与认知科学学院/教育学院",
+ "major": "教育心理学项目",
+ "track": null,
+ "title": "教育心理学项目",
+ "kind": "project",
+ "qualifiers": [],
+ "degree": null,
+ "totalCredits": null,
+ "topRequirements": [],
+ "requirements": [],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "核心课程（",
+   "min": 15,
+   "max": 15,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "普通心理学 心理学院",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 14,
+     "term": "秋/春季",
+     "code": "01630900"
+    },
+    {
+     "name": "实验心理学 心理学院",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 20,
+     "term": "秋/春季",
+     "code": "01630034"
+    },
+    {
+     "name": "教育心理学 心理学院",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "01630350"
+    },
+    {
+     "name": "发展认知神经科学 心理学院",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "01630743"
+    },
+    {
+     "name": "心理与教育测量 教育学院",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "06734060"
+    },
+    {
+     "name": "教育心理学实习与实践 心理学院",
+     "nature": null,
+     "credits": 1,
+     "hours": 1,
+     "practice": 32,
+     "term": "春季",
+     "code": "01630750"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "跨学科选修课（",
+   "min": 8,
+   "max": 8,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "大学生心理健康 心理学院",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "01635060"
+    },
+    {
+     "name": "异常儿童心理学 心理学院",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 8,
+     "term": "秋季",
+     "code": "01630033"
+    },
+    {
+     "name": "学习与行为 心理学院",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "01630706"
+    },
+    {
+     "name": "发展心理学 心理学院",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季/春季",
+     "code": "01630060"
+    },
+    {
+     "name": "社会心理学 心理学院",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季/春季",
+     "code": "01630047"
+    },
+    {
+     "name": "社会性与个性发展 心理学院",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "01630042"
+    },
+    {
+     "name": "心理学院",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "01630747"
+    },
+    {
+     "name": "课程与教学导论 教育学院",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "06735060"
+    },
+    {
+     "name": "在线教育的设计与实施 教育学院",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "06733080"
+    },
+    {
+     "name": "教育与人工智能 教育学院",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 22,
+     "term": "秋季",
+     "code": "06733030"
+    },
+    {
+     "name": "数字媒体创意设计 教育学院",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "06733070"
+    },
+    {
+     "name": "教育与幸福 教育学院",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "06734080"
+    },
+    {
+     "name": "教育实践与教育创新 教育学院",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "06732030"
+    },
+    {
+     "name": "教育学院",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "06734040"
+    },
+    {
+     "name": "教育学院",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "06734170"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "1. 列表中的课程不能计入除 3.2 自主选修课以外的其他主修学分类别，也不能计入双",
+  "专业/辅修的必修课或选修课。",
+  "2. 若主修毕业需要相应课程学分，则需从跨学科选修课中选择教育学院开设的课程",
+  "（含本科生科研）补足对应学分。",
+  "改革",
+  "变迁",
+  "本科生科研（教育学院",
+  "教育学院   2～6",
+  "教师指导）",
+  "1. 列表中的课程不能计入除 3.2 自主选修课以外的其他主修学分类别，也不能计入双",
+  "专业/辅修的必修课或选修课。",
+  "2. 心理学院和教育学院开设的选修课至少各选 2 门。",
+  "3. 选修课列表更新以培养方案系统公布为准。"
+ ],
+ "warnings": [
+  "未找到“毕业总学分”"
+ ],
+ "source": {
+  "volumeId": "2025-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=216",
+  "lineStart": 26169,
+  "lineEnd": 26247
+ }
+}

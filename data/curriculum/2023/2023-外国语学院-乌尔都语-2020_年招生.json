@@ -1,0 +1,551 @@
+{
+ "id": "2023-外国语学院-乌尔都语-2020_年招生",
+ "cohort": 2023,
+ "volume": "北京大学本科教学计划（2023）文科卷",
+ "school": "外国语学院",
+ "major": "乌尔都语",
+ "track": "2020 年招生",
+ "title": "乌尔都语专业 ( 2020 年招生 )",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "文学学士学位。",
+ "totalCredits": {
+  "min": 143,
+  "max": 143
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 48,
+   "max": 48,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 55,
+   "max": 55,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 40,
+   "max": 40,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "36 学分",
+   "inferredParent": true,
+   "min": 36,
+   "max": 36,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "21 学分",
+   "inferredParent": true,
+   "min": 21,
+   "max": 21,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "34 学分",
+   "inferredParent": true,
+   "min": 34,
+   "max": 34,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "20 学分",
+   "inferredParent": true,
+   "min": 20,
+   "max": 20,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "20 学分",
+   "inferredParent": true,
+   "min": 20,
+   "max": 20,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 48,
+   "max": 48,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 C",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "“计算 概 论 C” 课 程 后,",
+     "code": "04834470"
+    },
+    {
+     "name": "计算机实习",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "计 算",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上或一下",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 55,
+   "max": 55,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "巴基斯坦概况",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上",
+     "code": "03536720"
+    },
+    {
+     "name": "巴基斯坦文化",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03537110"
+    },
+    {
+     "name": "乌尔都语语法",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03537050"
+    },
+    {
+     "name": "基础乌尔都语 (五)",
+     "nature": null,
+     "credits": 5,
+     "hours": 8,
+     "practice": null,
+     "term": "三上",
+     "code": "03537355"
+    },
+    {
+     "name": "南亚伊斯兰文化概述",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "93537220"
+    },
+    {
+     "name": "乌尔都语报刊阅读 (一)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03537041"
+    },
+    {
+     "name": "乌尔都语报刊阅读 (二)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03537042"
+    },
+    {
+     "name": "乌尔都语翻译教程 (一)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03537061"
+    },
+    {
+     "name": "乌尔都语翻译教程 (二)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03537062"
+    },
+    {
+     "name": "基础乌尔都语教程 (一)",
+     "nature": null,
+     "credits": 8,
+     "hours": 10,
+     "practice": null,
+     "term": "一上",
+     "code": "03537251"
+    },
+    {
+     "name": "基础乌尔都语教程 (二)",
+     "nature": null,
+     "credits": 8,
+     "hours": 10,
+     "practice": null,
+     "term": "一下",
+     "code": "03537252"
+    },
+    {
+     "name": "基础乌尔都语 (三)",
+     "nature": null,
+     "credits": 9,
+     "hours": 10,
+     "practice": null,
+     "term": "二上",
+     "code": "03537353"
+    },
+    {
+     "name": "基础乌尔都语 (四)",
+     "nature": null,
+     "credits": 9,
+     "hours": 10,
+     "practice": null,
+     "term": "二下",
+     "code": "03537354"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 40,
+   "max": 40,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "乌尔都语视听说 (一)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03537021"
+    },
+    {
+     "name": "乌尔都语视听说 (二)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03537022"
+    },
+    {
+     "name": "乌尔都语口语 (上)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "03537031"
+    },
+    {
+     "name": "乌尔都语口语 (下)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03537032"
+    },
+    {
+     "name": "乌尔都语泛读 (上)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03537281"
+    },
+    {
+     "name": "乌尔都语泛读 (下)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03537282"
+    },
+    {
+     "name": "乌尔都语文学史与文学作品选读 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03537065"
+    },
+    {
+     "name": "印巴英语报刊文章选读 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03537241"
+    },
+    {
+     "name": "印巴英语报刊文章选读 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四下",
+     "code": "03537242"
+    },
+    {
+     "name": "乌尔都语写作教程",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03537390"
+    },
+    {
+     "name": "乌尔都语文章选读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03537370"
+    },
+    {
+     "name": "乌尔都语听力 (上)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03537361"
+    },
+    {
+     "name": "乌尔都语听力 (下)",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03537362"
+    },
+    {
+     "name": "乌尔都语高级听力",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03537270"
+    },
+    {
+     "name": "乌尔都语高级口译教程 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03537231"
+    },
+    {
+     "name": "乌尔都语高级口译教程 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四下",
+     "code": "03537232"
+    },
+    {
+     "name": "乌尔都语戏剧选读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四下",
+     "code": "03537180"
+    },
+    {
+     "name": "巴基斯坦民族与民族文化",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03537320"
+    },
+    {
+     "name": "印度概况",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上",
+     "code": "03536170"
+    },
+    {
+     "name": "印度宗教",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "03536240"
+    },
+    {
+     "name": "南亚现状",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03536960"
+    },
+    {
+     "name": "印度历史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "03536700"
+    },
+    {
+     "name": "印度文学史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03536200"
+    },
+    {
+     "name": "东方文学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "每年秋季学期",
+     "code": "03530450"
+    },
+    {
+     "name": "西方文学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "每年春季学期",
+     "code": "03632990"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "—       思想政治理论必修课             19      —      —",
+  "选课。",
+  "—                             1门      —      —     按学校要求选课。",
+  "—       劳动教育课                32 学时                 按学校要求选课",
+  "需要另 选 该 课 程 的 上 机",
+  "课 (",
+  "实习)。",
+  "时,需要 另 选 该 课 程 的",
+  "机实习)。",
+  "—       体育系列课程               1×4      2            全年",
+  "注:大学外语必修大学英语对应级别的学分,不足 8 学 分 部 分,需 用 非 本 专 业 语 言 的 公 共 语 言 课 或 专 业",
+  "基础语言课补足 (课程明细见本学院附表 1)。",
+  "通识 教 育 课 程 分 为 四 个 系 列: Ⅰ. 人 类 文 明 及 其 传 统; Ⅱ. 现 代 社 会 及 其 问 题;",
+  "Ⅲ. 艺术与人文; Ⅳ. 数学、自然与技术。每个系列均包含通识教育核心课、通选课两部",
+  "分课程,具体课程列表详见 《北京大学本科生选课手册》。",
+  "1)至少修读 1 门 “通识教育核心课程” (任一系列),且在四个课程系列中每个系列",
+  "至少修读 2 学分 (通识教育核心课或通选课均可)。",
+  "2)原则上不允许以专业课替代通识教育课程学分。",
+  "3)本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分。",
+  "4)建议合理分配修读时间,每学期修读 1 门课程。",
+  "北京大学外国语学院          · 241 ·",
+  "新开课       乌尔都语文学史与文学作品选读 (下)     2    2      四上",
+  "注:东方文学和西方文学学院建议选修至少其中一门。",
+  "含跨学科课程和辅修专业学分可替代学分,其中人文学部课程不少于 3 学分,详见本",
+  "学院附表 2。"
+ ],
+ "warnings": [
+  "第 13008 行：课程行缺少学分：04831435 计 算"
+ ],
+ "source": {
+  "volumeId": "2023-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=196",
+  "lineStart": 12911,
+  "lineEnd": 13123
+ }
+}

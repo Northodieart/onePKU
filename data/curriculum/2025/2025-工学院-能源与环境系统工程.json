@@ -1,0 +1,507 @@
+{
+ "id": "2025-工学院-能源与环境系统工程",
+ "cohort": 2025,
+ "volume": "北京大学本科培养方案（2025）理科卷",
+ "school": "工学院",
+ "major": "能源与环境系统工程",
+ "track": null,
+ "title": "能源与环境系统工程专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "工学学士",
+ "totalCredits": {
+  "min": 136,
+  "max": 142
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 45,
+   "max": 51,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 58,
+   "max": 58,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 33,
+   "max": 33,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "大学英语",
+   "requirement": "2～8 学分",
+   "min": 2,
+   "max": 8,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "思想政治理论必修课",
+   "requirement": "19 学分",
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "1-3",
+   "parent": "1",
+   "name": "思想政治理论选择性必修课",
+   "requirement": "1 门",
+   "min": 1,
+   "max": 1,
+   "unit": "门"
+  },
+  {
+   "id": "1-4",
+   "parent": "1",
+   "name": "劳动教育课",
+   "requirement": "32 学时",
+   "min": 32,
+   "max": 32,
+   "unit": "学时"
+  },
+  {
+   "id": "1-5",
+   "parent": "1",
+   "name": "信息课程",
+   "requirement": "6 学分",
+   "min": 6,
+   "max": 6,
+   "unit": "学分"
+  },
+  {
+   "id": "1-6",
+   "parent": "1",
+   "name": "军事理论",
+   "requirement": "2 学分",
+   "min": 2,
+   "max": 2,
+   "unit": "学分"
+  },
+  {
+   "id": "1-7",
+   "parent": "1",
+   "name": "体育课",
+   "requirement": "4 学分",
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  },
+  {
+   "id": "1-8",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "21 学分",
+   "min": 21,
+   "max": 21,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "31 学分",
+   "min": 31,
+   "max": 31,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "requirement": "6 学分",
+   "min": 6,
+   "max": 6,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课程",
+   "requirement": "23 学分",
+   "min": 23,
+   "max": 23,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "10 学分",
+   "min": 10,
+   "max": 10,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 45,
+   "max": 51,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "1.1",
+   "parent": "1",
+   "name": "公共必修课",
+   "courses": [
+    {
+     "name": "计算概论（B）",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 48,
+     "practice": null,
+     "term": "一上",
+     "code": "04831410"
+    },
+    {
+     "name": "数据结构与算法（B）",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 48,
+     "practice": null,
+     "term": "一下",
+     "code": "04831420"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "1.2",
+   "parent": "1",
+   "name": "通识教育课",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 58,
+   "max": 58,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.1",
+   "parent": "2",
+   "name": "专业基础课",
+   "min": 21,
+   "max": 21,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "数学分析（一）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 96,
+     "practice": 28,
+     "term": "大一/上",
+     "code": "00331501"
+    },
+    {
+     "name": "线性代数与几何",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 85,
+     "practice": 17,
+     "term": "大一/上",
+     "code": "00331770"
+    },
+    {
+     "name": "现代工学通论",
+     "nature": "专业必修",
+     "credits": 1,
+     "hours": 34,
+     "practice": null,
+     "term": "大一/上",
+     "code": "00334010"
+    },
+    {
+     "name": "数学分析（二）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 96,
+     "practice": 28,
+     "term": "大一/下",
+     "code": "00331502"
+    },
+    {
+     "name": "普通物理（Ⅰ）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "大一/下",
+     "code": "00431132"
+    },
+    {
+     "name": "普通物理（Ⅱ）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "大二/上",
+     "code": "00431133"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.1-1",
+   "parent": "2.1",
+   "kind": "list",
+   "name": "可用高等数学 B（一、二）替代数学分析",
+   "requirement": "可用高等数学 B（一、二）替代数学分析（一、二）",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.2",
+   "parent": "2",
+   "name": "专业核心课",
+   "min": 31,
+   "max": 31,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "普通化学（B）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": 4,
+     "term": "大一/下",
+     "code": "01034880"
+    },
+    {
+     "name": "新能源技术",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大二/上",
+     "code": "00331970"
+    },
+    {
+     "name": "实验室安全与防护",
+     "nature": "专业必修",
+     "credits": 1,
+     "hours": 17,
+     "practice": null,
+     "term": "大二/上",
+     "code": "00333610"
+    },
+    {
+     "name": "能源与环境工程导论",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大二/上",
+     "code": "00334650"
+    },
+    {
+     "name": "工程热力学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大二/下",
+     "code": "00331960"
+    },
+    {
+     "name": "物理化学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大二/下",
+     "code": "00332190"
+    },
+    {
+     "name": "工程流体力学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大二/下",
+     "code": "00332300"
+    },
+    {
+     "name": "概率与数理统计",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大三/上",
+     "code": "00331900"
+    },
+    {
+     "name": "传热传质学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大三/上",
+     "code": "00332020"
+    },
+    {
+     "name": "能源与环境工程实验",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 36,
+     "term": "大四/上",
+     "code": "00334200"
+    },
+    {
+     "name": "化工原理",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大四/上",
+     "code": "00334580"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "min": 6,
+   "max": 6,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 33,
+   "max": 33,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1",
+   "parent": "3",
+   "name": "专业选修课",
+   "min": 23,
+   "max": 23,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "电路与电子学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 54,
+     "practice": null,
+     "term": "大二/上",
+     "code": "00332510"
+    },
+    {
+     "name": "计算方法",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 85,
+     "practice": 34,
+     "term": "春季/秋季",
+     "code": "00330050"
+    },
+    {
+     "name": "热力学与统计力学导论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大三/上",
+     "code": "00333900"
+    },
+    {
+     "name": "有机化学（B）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 48,
+     "practice": null,
+     "term": "大三/下",
+     "code": "01032690"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.2",
+   "parent": "3.1",
+   "name": "专业拓展课程不少于",
+   "min": 9,
+   "max": 9,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "备注：大学英语学分不足 8 的部分，无需补齐。",
+  "要求“思想政治理论选择性必修课”共 1 门，“劳动教育课”累计不少于 32 学时。思",
+  "想政治理论必修课和其他公共必修课按学校要求选课，信息课程见下表。",
+  "通识教育课程系列              各系列学分",
+  "（通识核心课+通选课）           （通识核心课+通选课）",
+  "Ⅱ. 现代社会及其问题                 ≥2              1. 不少于 12 学分",
+  "Ⅲ. 艺术与人文                    ≥2              2. 至少修读 1 门“通识核心课”",
+  "（1）具体课程列表详见《北京大学本科生选课手册》 ；",
+  "（2）原则上不允许以专业课替代通识教育课程学分；",
+  "（3）本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分；",
+  "（4）建议合理分配修读时间，每学期修读 1 门课程。",
+  "备注：                          ，多余学分计入 3.2 自",
+  "主选修学分；（2）普物（Ⅰ）与电磁学属于同质类课程，普物（Ⅱ）与热学+光学+近代物",
+  "理属于同质类课程，同质类课程不可重复修读。可用电磁学、光学、热学、近代物理中的",
+  "自主选修学分。",
+  "本模块选修课程建议咨询学业导师或科研导师。",
+  "要求：3.1.3 实习实验实践课程和 3.1.4 本科生科研的学分之和≥8。",
+  "备注：建议从 3.1.4 本科生科研和 3.1.3 中的本科生实践大课堂Ⅰ、本科生实践大课堂",
+  "Ⅱ中至少选一门。本专业推荐选择 3.1.3 中的本科生实践大课堂Ⅰ、本科生实践大课堂Ⅱ替",
+  "代 3.1.4 本科生科研。",
+  "备注：可用热力学与统计物理（A）替代热力学与统计力学导论。"
+ ],
+ "warnings": [
+  "第 20594 行：课程组编号 3.1.2 重复出现，之后的内容未纳入"
+ ],
+ "source": {
+  "volumeId": "2025-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=216",
+  "lineStart": 20461,
+  "lineEnd": 20728
+ }
+}

@@ -1,0 +1,1663 @@
+{
+ "id": "2025-物理学院-物理学",
+ "cohort": 2025,
+ "volume": "北京大学本科培养方案（2025）理科卷",
+ "school": "物理学院",
+ "major": "物理学",
+ "track": null,
+ "title": "物理学专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "理学学士",
+ "totalCredits": {
+  "min": 140,
+  "max": 152
+ },
+ "topRequirements": [],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "33～39 学分",
+   "min": 33,
+   "max": 39,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "46 学分",
+   "min": 46,
+   "max": 46,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "毕业论文",
+   "requirement": "6 学分",
+   "min": 6,
+   "max": 6,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "15 学分",
+   "min": 15,
+   "max": 15,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "10 学分",
+   "min": 10,
+   "max": 10,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 45,
+   "max": 51,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "1.1",
+   "parent": "1",
+   "name": "公共必修课",
+   "min": 33,
+   "max": 39,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "思想道德与法治",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大一上",
+     "code": "04031652"
+    },
+    {
+     "name": "中国近现代史纲要",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大一下",
+     "code": "04031661"
+    },
+    {
+     "name": "习近平新时代中国特色社会主义思想概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大二上",
+     "code": "04031762"
+    },
+    {
+     "name": "毛泽东思想和中国特色社会主义理论体系概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大二下",
+     "code": "04031731"
+    },
+    {
+     "name": "马克思主义基本原理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大三上",
+     "code": "04031741"
+    },
+    {
+     "name": "形势与政策",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一学期课堂理论教学、",
+     "code": "04031751"
+    },
+    {
+     "name": "思想政治实践（上）",
+     "nature": null,
+     "credits": 1,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "61130030"
+    },
+    {
+     "name": "思想政治实践（下）",
+     "nature": null,
+     "credits": 1,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "61130040"
+    },
+    {
+     "name": "劳动教育课 32 学时 32 物理应用与实践为物院劳",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00437700"
+    },
+    {
+     "name": "计算概论（B）",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "04831410"
+    },
+    {
+     "name": "计算概论（B）上机",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 34,
+     "term": null,
+     "code": "04831650"
+    },
+    {
+     "name": "数据结构与算法（B）",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "04831420"
+    },
+    {
+     "name": "数据结构与算法上机",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 34,
+     "term": null,
+     "code": "04830494"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "大一上",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "1.2",
+   "parent": "1",
+   "name": "通识教育课",
+   "min": 12,
+   "max": 12,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 70,
+   "max": 76,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.1",
+   "parent": "2",
+   "name": "专业基础课",
+   "min": 46,
+   "max": 46,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学 A（一） 6 大一上",
+     "nature": null,
+     "credits": 10,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00132511"
+    },
+    {
+     "name": "高等数学 A（二） 6 大一下",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00132512"
+    },
+    {
+     "name": "线性代数（B）",
+     "nature": null,
+     "credits": 4,
+     "hours": 5,
+     "practice": null,
+     "term": "大一上",
+     "code": "00131460"
+    },
+    {
+     "name": "力学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大一上",
+     "code": "00431141"
+    },
+    {
+     "name": "热学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "大一下",
+     "code": "00431142"
+    },
+    {
+     "name": "电磁学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大一下",
+     "code": "00431143"
+    },
+    {
+     "name": "光学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大二上",
+     "code": "00431172"
+    },
+    {
+     "name": "近代物理 或",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大二上",
+     "code": "00431165"
+    },
+    {
+     "name": "原子物理学 （任选 1 门） 3 大二",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00431151"
+    },
+    {
+     "name": "普通物理实验（1）",
+     "nature": null,
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "大一上",
+     "code": "00437180"
+    },
+    {
+     "name": "普通物理实验（2）",
+     "nature": null,
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "大一下",
+     "code": "00437190"
+    },
+    {
+     "name": "或",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": null,
+     "code": "00432110"
+    },
+    {
+     "name": "或 或 大二数学物理方法（上）+（下）",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00432108"
+    },
+    {
+     "name": "3+3 3+3",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00432109"
+    },
+    {
+     "name": "理论物理基础Ⅰ 4 大二上",
+     "nature": null,
+     "credits": 8,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00432001"
+    },
+    {
+     "name": "理论物理基础Ⅱ 4 大二下",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00432002"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2",
+   "parent": "2",
+   "name": "专业核心课",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.2-1",
+   "parent": "2.2",
+   "kind": "list",
+   "name": "物理学：24 学分",
+   "min": 24,
+   "max": 24,
+   "unit": "学分",
+   "requirement": "物理学：24 学分",
+   "courses": [
+    {
+     "name": "理论力学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大二下",
+     "code": "00432211"
+    },
+    {
+     "name": "电动力学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大二下",
+     "code": "00432213"
+    },
+    {
+     "name": "量子力学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大三上",
+     "code": "00432148"
+    },
+    {
+     "name": "统计力学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大三上",
+     "code": "00431648"
+    },
+    {
+     "name": "计算物理学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大三上",
+     "code": "00431443"
+    },
+    {
+     "name": "固体物理学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大三下",
+     "code": "00432512"
+    },
+    {
+     "name": "近代物理实验（Ⅰ）",
+     "nature": null,
+     "credits": 3,
+     "hours": 6,
+     "practice": 102,
+     "term": "大三上",
+     "code": "00433327"
+    },
+    {
+     "name": "近代物理实验（Ⅱ）",
+     "nature": null,
+     "credits": 6,
+     "hours": 102,
+     "practice": null,
+     "term": "大三下",
+     "code": "00433328"
+    },
+    {
+     "name": "前沿物理实验",
+     "nature": null,
+     "credits": 6,
+     "hours": 102,
+     "practice": null,
+     "term": "大三下",
+     "code": "00433329"
+    },
+    {
+     "name": "等 本科生科研训练 / 136/204 大二至大四",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "30330033"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2-2",
+   "parent": "2.2",
+   "kind": "list",
+   "name": "应用物理学一（应用物理与技术）：21 学分",
+   "min": 21,
+   "max": 21,
+   "unit": "学分",
+   "requirement": "应用物理学一（应用物理与技术）：21 学分",
+   "courses": [
+    {
+     "name": "理论力学 3 大二下",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00432211"
+    },
+    {
+     "name": "电动力学 3 大二下 至少",
+     "nature": null,
+     "credits": 6,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00432213"
+    },
+    {
+     "name": "量子力学 3 大三上",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00432148"
+    },
+    {
+     "name": "统计力学 3 大三上",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00431648"
+    },
+    {
+     "name": "应用物理中的先进算法",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "大三上",
+     "code": "00432402"
+    },
+    {
+     "name": "近代物理实验（Ⅰ）",
+     "nature": null,
+     "credits": 3,
+     "hours": 6,
+     "practice": 102,
+     "term": "大三上",
+     "code": "00433327"
+    },
+    {
+     "name": "应用物理前沿实验",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 68,
+     "term": "大三下",
+     "code": "00432401"
+    },
+    {
+     "name": "量子束流物理",
+     "nature": null,
+     "credits": 2,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00432403"
+    },
+    {
+     "name": "医学物理导论",
+     "nature": null,
+     "credits": 2,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00432404"
+    },
+    {
+     "name": "电子与光子 至少",
+     "nature": null,
+     "credits": 6,
+     "hours": 2,
+     "practice": null,
+     "term": "大三",
+     "code": "00432405"
+    },
+    {
+     "name": "能源物理基础",
+     "nature": null,
+     "credits": 2,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00432406"
+    },
+    {
+     "name": "核技术及应用导论",
+     "nature": null,
+     "credits": 3,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00418730"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2-3",
+   "parent": "2.2",
+   "kind": "list",
+   "name": "应用物理学二（计算机交叉）   ：20 学分",
+   "min": 20,
+   "max": 20,
+   "unit": "学分",
+   "requirement": "应用物理学二（计算机交叉）   ：20 学分",
+   "courses": [
+    {
+     "name": "算法设计与分析",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 17,
+     "term": "大二下",
+     "code": "04830281"
+    },
+    {
+     "name": "程序设计实习",
+     "nature": null,
+     "credits": 3,
+     "hours": 20,
+     "practice": null,
+     "term": null,
+     "code": "04831750"
+    },
+    {
+     "name": "软件设计实践 （任选 1 门）",
+     "nature": null,
+     "credits": 17,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04835240"
+    },
+    {
+     "name": "人工智能基础",
+     "nature": null,
+     "credits": 3,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04835230"
+    },
+    {
+     "name": "人工智能引论 （任选 1 门）",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04834040"
+    },
+    {
+     "name": "离散数学基础",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大三上",
+     "code": "04835310"
+    },
+    {
+     "name": "编译原理",
+     "nature": null,
+     "credits": 5,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "04834200"
+    },
+    {
+     "name": "操作系统 至少",
+     "nature": null,
+     "credits": 8,
+     "hours": 5,
+     "practice": 34,
+     "term": "大三",
+     "code": "04834260"
+    },
+    {
+     "name": "计算机组织与体系结构",
+     "nature": null,
+     "credits": 3,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04830140"
+    },
+    {
+     "name": "半导体物理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 3,
+     "term": null,
+     "code": "04834690"
+    },
+    {
+     "name": "半导体物理研讨班",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 17,
+     "term": null,
+     "code": "04834691"
+    },
+    {
+     "name": "集成电路器件",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "04834670"
+    },
+    {
+     "name": "集成电路器件讨论班",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "04834671"
+    },
+    {
+     "name": "数字逻辑电路",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": 24,
+     "term": "大二下",
+     "code": "04834790"
+    },
+    {
+     "name": "电路、信号与系统",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "大三上",
+     "code": "04834660"
+    },
+    {
+     "name": "集成电路原理与设计",
+     "nature": null,
+     "credits": 5,
+     "hours": 4,
+     "practice": null,
+     "term": null,
+     "code": "04834700"
+    },
+    {
+     "name": "集成电路原理与设计实践课",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 34,
+     "term": null,
+     "code": "04834701"
+    },
+    {
+     "name": "集成电路制造技术",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 3,
+     "term": null,
+     "code": "04835332"
+    },
+    {
+     "name": "集成电路制造技术实践课",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 34,
+     "term": null,
+     "code": "04835331"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2-5",
+   "parent": "2.2",
+   "kind": "list",
+   "name": "应用物理学四（力学与航空航天交叉）：18 学分",
+   "min": 18,
+   "max": 18,
+   "unit": "学分",
+   "requirement": "应用物理学四（力学与航空航天交叉）：18 学分",
+   "courses": [
+    {
+     "name": "材料力学",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": 8,
+     "term": "大二下",
+     "code": "00330070"
+    },
+    {
+     "name": "弹性力学",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "大三上",
+     "code": "00331540"
+    },
+    {
+     "name": "或",
+     "nature": null,
+     "credits": 3,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00332281"
+    },
+    {
+     "name": "6或3 3 大三",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00332282"
+    },
+    {
+     "name": "工程流体力学",
+     "nature": null,
+     "credits": 3,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00332300"
+    },
+    {
+     "name": "连续介质力学基础 3 大二下",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00332460"
+    },
+    {
+     "name": "计算流体力学 3 大三下",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00330140"
+    },
+    {
+     "name": "飞行器结构力学",
+     "nature": null,
+     "credits": 3,
+     "hours": 9,
+     "practice": null,
+     "term": "大三上",
+     "code": "00332680"
+    },
+    {
+     "name": "飞行器设计与动力 3 大三上",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00333790"
+    },
+    {
+     "name": "空气动力学基础 4 大三下",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00334060"
+    },
+    {
+     "name": "计算固体力学Ⅰ 3 大三下",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00334441"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2-6",
+   "parent": "2.2",
+   "kind": "list",
+   "name": "应用物理学五（地球与行星科学交叉）：19 学分",
+   "min": 19,
+   "max": 19,
+   "unit": "学分",
+   "requirement": "应用物理学五（地球与行星科学交叉）：19 学分",
+   "courses": [
+    {
+     "name": "行星地球科学",
+     "nature": null,
+     "credits": 3,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "01231941"
+    },
+    {
+     "name": "地球系统演化 至少",
+     "nature": null,
+     "credits": 5,
+     "hours": 3,
+     "practice": 17,
+     "term": "大二",
+     "code": "01231882"
+    },
+    {
+     "name": "行星表面过程",
+     "nature": null,
+     "credits": 2,
+     "hours": 12,
+     "practice": null,
+     "term": null,
+     "code": "01231944"
+    },
+    {
+     "name": "行星物质科学（一）",
+     "nature": null,
+     "credits": 3,
+     "hours": 17,
+     "practice": null,
+     "term": null,
+     "code": "01231947"
+    },
+    {
+     "name": "行星物质科学（二）",
+     "nature": null,
+     "credits": 3,
+     "hours": 17,
+     "practice": null,
+     "term": null,
+     "code": "01231948"
+    },
+    {
+     "name": "地球与行星构造",
+     "nature": null,
+     "credits": 4,
+     "hours": 17,
+     "practice": null,
+     "term": null,
+     "code": "01231943"
+    },
+    {
+     "name": "空间科学与技术基础",
+     "nature": null,
+     "credits": 2,
+     "hours": 0,
+     "practice": null,
+     "term": null,
+     "code": "01233610"
+    },
+    {
+     "name": "宇航技术基础 至少",
+     "nature": null,
+     "credits": 10,
+     "hours": 2,
+     "practice": 4,
+     "term": null,
+     "code": "01233410"
+    },
+    {
+     "name": "空间等离子体物理基础",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": null,
+     "term": null,
+     "code": "01233420"
+    },
+    {
+     "name": "地球介质力学基础",
+     "nature": null,
+     "credits": 4,
+     "hours": 0,
+     "practice": null,
+     "term": null,
+     "code": "01233580"
+    },
+    {
+     "name": "遥感概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 21,
+     "practice": null,
+     "term": null,
+     "code": "01230070"
+    },
+    {
+     "name": "测量学概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 10,
+     "practice": null,
+     "term": null,
+     "code": "01235310"
+    },
+    {
+     "name": "冷湖野外联合实习考察 2周",
+     "nature": null,
+     "credits": 34,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "01231915"
+    },
+    {
+     "name": "普通地质实习 A 2周",
+     "nature": null,
+     "credits": 34,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "01231640"
+    },
+    {
+     "name": "沉积古生物综合地质实习 2周",
+     "nature": null,
+     "credits": 34,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "01231913"
+    },
+    {
+     "name": "五台山地区综合地质实习 2周",
+     "nature": null,
+     "credits": 34,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "01231912"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.3",
+   "parent": "2",
+   "name": "毕业论文",
+   "min": 6,
+   "max": 6,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 25,
+   "max": 25,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1",
+   "parent": "3",
+   "name": "专业选修课",
+   "min": 15,
+   "max": 15,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.2",
+   "parent": "3",
+   "name": "自主选修课",
+   "min": 10,
+   "max": 10,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "数学物理方法 (上)",
+     "nature": null,
+     "credits": 6,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00432108"
+    },
+    {
+     "name": "数学物理方法 (下)",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00432109"
+    },
+    {
+     "name": "光学讨论班",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00431149"
+    },
+    {
+     "name": "量子力学讨论班",
+     "nature": null,
+     "credits": 2,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00431641"
+    },
+    {
+     "name": "平衡态统计物理讨论班",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00431651"
+    },
+    {
+     "name": "固体物理讨论班",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00431701"
+    },
+    {
+     "name": "群论Ⅰ",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00400140"
+    },
+    {
+     "name": "量子多体理论",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00400440"
+    },
+    {
+     "name": "等离子体物理实验基础",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00405572"
+    },
+    {
+     "name": "高等等离子体物理 I",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00405582"
+    },
+    {
+     "name": "量子材料前沿讲座",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00405596"
+    },
+    {
+     "name": "激光等离子体物理",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00405611"
+    },
+    {
+     "name": "高能量密度物理导论",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00405641"
+    },
+    {
+     "name": "量子信息物理：原理与应用",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00405647"
+    },
+    {
+     "name": "高等原子核物理",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00405649"
+    },
+    {
+     "name": "凝聚态物理导论",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00405650"
+    },
+    {
+     "name": "高等半导体物理",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00405651"
+    },
+    {
+     "name": "高等原子分子物理",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00405655"
+    },
+    {
+     "name": "高能量密度物理实验基础",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00405659"
+    },
+    {
+     "name": "高等电动力学",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00405663"
+    },
+    {
+     "name": "高能量密度物理数值计算基础",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00405674"
+    },
+    {
+     "name": "核物理与粒子物理实验方法（二）",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00407771"
+    },
+    {
+     "name": "数字图像处理和分析",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00407802"
+    },
+    {
+     "name": "高等量子力学",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00410340"
+    },
+    {
+     "name": "量子统计物理",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00410441"
+    },
+    {
+     "name": "固体理论",
+     "nature": null,
+     "credits": 12,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00410542"
+    },
+    {
+     "name": "量子场论",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00410640"
+    },
+    {
+     "name": "非线性物理专题",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00410644"
+    },
+    {
+     "name": "光学理论",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00410740"
+    },
+    {
+     "name": "非线性光学",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00411040"
+    },
+    {
+     "name": "粒子物理",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00412150"
+    },
+    {
+     "name": "原子核理论",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00412650"
+    },
+    {
+     "name": "等离子体物理",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00413251"
+    },
+    {
+     "name": "固体物理前沿",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00415250"
+    },
+    {
+     "name": "量子光学",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00415450"
+    },
+    {
+     "name": "原子、分子光谱",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00415532"
+    },
+    {
+     "name": "计算等离子体物理",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00415562"
+    },
+    {
+     "name": "高等等离子体物理 II",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00415591"
+    },
+    {
+     "name": "粒子加速器",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00418090"
+    },
+    {
+     "name": "粒子物理与原子核物理",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00418100"
+    },
+    {
+     "name": "高等核物理实验",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00418180"
+    },
+    {
+     "name": "核磁共振成像学",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00418340"
+    },
+    {
+     "name": "医学影像物理",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00418490"
+    },
+    {
+     "name": "粒子束与物质相互作用",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00418740"
+    },
+    {
+     "name": "带电粒子束流光学",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00418760"
+    },
+    {
+     "name": "核物理与粒子物理实验方法(一)",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00431570"
+    },
+    {
+     "name": "生物物理导论",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00432164"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "说明：其中的差异来自英语 2～8 学分。",
+  "备注：劳动课程 32 学时，1 门思政选择性必修课。",
+  "—       大学英语              2～8       —     —",
+  "学期",
+  "至暑假",
+  "任一学期",
+  "任选 1 门     思想政治理论选择性必修     1门          —           详见思政选择性必修课",
+  "列表",
+  "类课程",
+  "可用数据结构与算法 A",
+  "求修 A 类课程",
+  "通识教育课程系列             各系列学分",
+  "（通识核心课+通选课）            （通识核心课+通选课）",
+  "Ⅰ. 人类文明及其传统                        ≥2",
+  "Ⅱ. 现代社会及其问题                        ≥2          1. 不少于 12 学分",
+  "Ⅲ. 艺术与人文                           ≥2          2. 至少修读 1 门“通识核心课”",
+  "Ⅳ. 数学、自然与技术                        ≥2",
+  "（1）具体课程列表详见《北京大学本科生选课手册》 ；",
+  "（2）原则上不允许以专业课替代通识教育课程学分；",
+  "（3）本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分；",
+  "（4）建议合理分配修读时间，每学期修读 1 门课程。",
+  "说明：差异来自不同方向专业核心课程学分差异。",
+  "说明：计算机交叉方向的学生要求修 04830041 计算概论 A 和 04830050 数据结构与算",
+  "法 A 代替公共必修课同名 B 类课程。",
+  "（4）应用物理学三（集成电路交叉）",
+  "：21 学分。",
+  "说明：毕业论文课题必须与专业相关。",
+  "（1）物理学院开设的专业任选课程（不含通识课、公选课，含本科生科研训练）；",
+  "（2）物理学院其他专业、方向的专业必修课程、专业选修课程。",
+  "其他学院专业核心课程。",
+  "（1）思政必修课（思想品德与法治、中国近现代史纲要、习近平新时代中国特色社会",
+  "主义思想概论、毛泽东思想与中国特色社会主义理论体系概论、马克思主义基本原理、形",
+  "势与政策、思政实践） 、军事理论共 21 学分，请按照物理学院的安排修课，以上所有课程",
+  "须在前 6 个学期完成，思想政治理论必修课平均成绩不低于 70 分；",
+  "（2）专业基础课和专业核心课在前 6 个学期完成毕业最低学分要求（详细要求见细则） ，",
+  "成绩合格，总成绩优良；",
+  "（3）其他保送研究生具体要求以物理学院发布的《优秀本科生推免资格遴选工作实施",
+  "细则》为准。",
+  "（1）思想品德好，在校期间没有受过任何纪律处分；",
+  "（2）理论物理基础模块（课号 00432001、00432002）及普物实验模块（00437180、",
+  "00437190）成绩优秀（百分制≥85 分或等级制 A 类，重修不算）；",
+  "（3）完成荣誉课程学分，且成绩优秀（百分制≥85 分或等级制 A 类，重修不算）       ；荣",
+  "（4）专业选修课程至少 18 学分且不可被其他课程替代；",
+  "（5）毕业论文和本科生科研成绩均为优秀（百分制≥85 分或等级制 A 类）",
+  "。"
+ ],
+ "warnings": [
+  "第 4194 行：课程行缺少学分：00437700   劳动教育课          32 学时         ",
+  "第 4235 行：课程行缺少学分：00132512    高等数学 A（二）                   ",
+  "第 4242 行：课程行缺少学分：00431151    原子物理学            （任选 1 门）   ",
+  "第 4248 行：课程行缺少学分：00432108                         或      ",
+  "第 4250 行：课程行缺少学分：00432109                         3+3    ",
+  "第 4253 行：课程行缺少学分：00432002    理论物理基础Ⅱ                     ",
+  "第 4275 行：课程行缺少学分：30330033 等   本科生科研训练                    ",
+  "第 4280 行：课程行缺少学分：00432211    理论力学                        ",
+  "第 4283 行：课程行缺少学分：00432148    量子力学                        ",
+  "第 4284 行：课程行缺少学分：00431648    统计力学                        ",
+  "第 4305 行：课程行缺少学分：04834040    人工智能引论           （任选 1 门）",
+  "第 4341 行：课程行缺少学分：00332282                      6或3       ",
+  "第 4344 行：课程行缺少学分：00332460    连续介质力学基础                    ",
+  "第 4345 行：课程行缺少学分：00330140    计算流体力学                      ",
+  "第 4348 行：课程行缺少学分：00333790    飞行器设计与动力                    ",
+  "第 4349 行：课程行缺少学分：00334060    空气动力学基础                     ",
+  "第 4350 行：课程行缺少学分：00334441    计算固体力学Ⅰ                     ",
+  "第 4409 行：课程行缺少学分：00432109   数学物理方法 (下)",
+  "第 4410 行：课程行缺少学分：00431149   光学讨论班",
+  "第 4413 行：课程行缺少学分：00431651   平衡态统计物理讨论班",
+  "第 4414 行：课程行缺少学分：00431701   固体物理讨论班",
+  "第 4415 行：课程行缺少学分：00400140   群论Ⅰ",
+  "第 4416 行：课程行缺少学分：00400440   量子多体理论",
+  "第 4417 行：课程行缺少学分：00405572   等离子体物理实验基础",
+  "第 4418 行：课程行缺少学分：00405582   高等等离子体物理 I",
+  "第 4419 行：课程行缺少学分：00405596   量子材料前沿讲座",
+  "第 4420 行：课程行缺少学分：00405611   激光等离子体物理",
+  "第 4421 行：课程行缺少学分：00405641   高能量密度物理导论",
+  "第 4426 行：课程行缺少学分：00405647   量子信息物理：原理与应用",
+  "第 4427 行：课程行缺少学分：00405649   高等原子核物理",
+  "第 4428 行：课程行缺少学分：00405650   凝聚态物理导论",
+  "第 4429 行：课程行缺少学分：00405651   高等半导体物理",
+  "第 4430 行：课程行缺少学分：00405655   高等原子分子物理",
+  "第 4431 行：课程行缺少学分：00405659   高能量密度物理实验基础",
+  "第 4432 行：课程行缺少学分：00405663   高等电动力学",
+  "第 4433 行：课程行缺少学分：00405674   高能量密度物理数值计算基础",
+  "第 4434 行：课程行缺少学分：00407771   核物理与粒子物理实验方法（二）",
+  "第 4435 行：课程行缺少学分：00407802   数字图像处理和分析",
+  "第 4436 行：课程行缺少学分：00410340   高等量子力学",
+  "第 4437 行：课程行缺少学分：00410441   量子统计物理",
+  "第 4440 行：课程行缺少学分：00410640   量子场论",
+  "第 4441 行：课程行缺少学分：00410644   非线性物理专题",
+  "第 4442 行：课程行缺少学分：00410740   光学理论",
+  "第 4443 行：课程行缺少学分：00411040   非线性光学",
+  "第 4444 行：课程行缺少学分：00412150   粒子物理",
+  "第 4445 行：课程行缺少学分：00412650   原子核理论",
+  "第 4446 行：课程行缺少学分：00413251   等离子体物理",
+  "第 4447 行：课程行缺少学分：00415250   固体物理前沿",
+  "第 4448 行：课程行缺少学分：00415450   量子光学",
+  "第 4449 行：课程行缺少学分：00415532   原子、分子光谱",
+  "第 4450 行：课程行缺少学分：00415562   计算等离子体物理",
+  "第 4451 行：课程行缺少学分：00415591   高等等离子体物理 II",
+  "第 4452 行：课程行缺少学分：00418090   粒子加速器",
+  "第 4453 行：课程行缺少学分：00418100   粒子物理与原子核物理",
+  "第 4454 行：课程行缺少学分：00418180   高等核物理实验",
+  "第 4455 行：课程行缺少学分：00418340   核磁共振成像学",
+  "第 4456 行：课程行缺少学分：00418490   医学影像物理",
+  "第 4457 行：课程行缺少学分：00418740   粒子束与物质相互作用",
+  "第 4458 行：课程行缺少学分：00418760   带电粒子束流光学",
+  "第 4459 行：课程行缺少学分：00431570   核物理与粒子物理实验方法(一)",
+  "第 4460 行：课程行缺少学分：00432164   生物物理导论",
+  "第 4466 行：课程设置出现第二套“3. 留学生和港澳台学生学分与选课”，只保留第一套"
+ ],
+ "source": {
+  "volumeId": "2025-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=216",
+  "lineStart": 4090,
+  "lineEnd": 4684
+ }
+}

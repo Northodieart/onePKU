@@ -1,0 +1,649 @@
+{
+ "id": "2021-城市与环境学院-自然地理与资源环境",
+ "cohort": 2021,
+ "volume": "北京大学本科培养方案（2021）理科卷",
+ "school": "城市与环境学院",
+ "major": "自然地理与资源环境",
+ "track": null,
+ "title": "自然地理与资源环境专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": null,
+ "totalCredits": {
+  "min": 140,
+  "max": 140
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 41,
+   "max": 47,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 36,
+   "max": 36,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "29~35 学分",
+   "inferredParent": true,
+   "min": 29,
+   "max": 35,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "20 学分",
+   "inferredParent": true,
+   "min": 20,
+   "max": 20,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "23 学分",
+   "inferredParent": true,
+   "min": 23,
+   "max": 23,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "13 学分",
+   "inferredParent": true,
+   "min": 13,
+   "max": 13,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 41,
+   "max": 47,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 B",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "“计算概论 B” 课 程 同 时,",
+     "code": "04831410"
+    },
+    {
+     "name": "计算概论 B 上机",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": "“计算概论 B” 课 程 同 时,",
+     "code": "04831650"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "一上",
+     "code": "60730020"
+    },
+    {
+     "name": "高等数学 C (一)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "一上",
+     "code": "00131421"
+    },
+    {
+     "name": "高等数学 C (二)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "一下",
+     "code": "00131422"
+    },
+    {
+     "name": "线性代数 ( B)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "一上",
+     "code": "00131460"
+    },
+    {
+     "name": "概率统计 ( B)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "一下",
+     "code": "00132380"
+    },
+    {
+     "name": "地球系统科学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上",
+     "code": "12633080"
+    },
+    {
+     "name": "自然地理概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "一上",
+     "code": "01533260"
+    },
+    {
+     "name": "地貌学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "一下",
+     "code": "01531180"
+    },
+    {
+     "name": "气象气候学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "一下",
+     "code": "01531250"
+    },
+    {
+     "name": "地图学与 GI S 基础",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "一下",
+     "code": "12633090"
+    },
+    {
+     "name": "遥感原理与应用",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二上",
+     "code": "12633120"
+    },
+    {
+     "name": "水文学与水资源",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二上",
+     "code": "01534200"
+    },
+    {
+     "name": "土壤学与土壤地理",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "01534300"
+    },
+    {
+     "name": "植物学 (下) 2.",
+     "nature": null,
+     "credits": 5,
+     "hours": 3,
+     "practice": null,
+     "term": "二下",
+     "code": "12632130"
+    },
+    {
+     "name": "地表过程模拟与监测",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上",
+     "code": "12633110"
+    },
+    {
+     "name": "自然地理与资源环境研究方法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三下",
+     "code": "12633050"
+    },
+    {
+     "name": "地貌学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "一下",
+     "code": "01531180"
+    },
+    {
+     "name": "气象气候学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "一下",
+     "code": "01531250"
+    },
+    {
+     "name": "地图学与 GI S 基础",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "一下",
+     "code": "12633090"
+    },
+    {
+     "name": "遥感原理与应用",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二上",
+     "code": "12633120"
+    },
+    {
+     "name": "水文学与水资源",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二上",
+     "code": "01534200"
+    },
+    {
+     "name": "土壤学与土壤地理",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "01534300"
+    },
+    {
+     "name": "植物学 (下) 2.",
+     "nature": null,
+     "credits": 5,
+     "hours": 3,
+     "practice": null,
+     "term": "二下",
+     "code": "12632130"
+    },
+    {
+     "name": "中国自然地理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上",
+     "code": "01531130"
+    },
+    {
+     "name": "综合自然地理学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三下",
+     "code": "01534060"
+    },
+    {
+     "name": "自然资源学原理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上",
+     "code": "01534030"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 36,
+   "max": 36,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "普通地质实习",
+     "nature": null,
+     "credits": 1,
+     "hours": null,
+     "practice": null,
+     "term": "1周 一暑",
+     "code": "01537530"
+    },
+    {
+     "name": "地貌实习",
+     "nature": null,
+     "credits": 2,
+     "hours": null,
+     "practice": null,
+     "term": "2周 一暑",
+     "code": "01539340"
+    },
+    {
+     "name": "植物土壤实习",
+     "nature": null,
+     "credits": 2,
+     "hours": null,
+     "practice": null,
+     "term": "1周 二暑",
+     "code": "01539200"
+    },
+    {
+     "name": "遥感应用野外实习",
+     "nature": null,
+     "credits": 2,
+     "hours": null,
+     "practice": null,
+     "term": "2周 二暑",
+     "code": "12631120"
+    },
+    {
+     "name": "自然地理综合实习",
+     "nature": null,
+     "credits": 2,
+     "hours": null,
+     "practice": null,
+     "term": "2周 三暑",
+     "code": "12633070"
+    },
+    {
+     "name": "普通地质学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "一上",
+     "code": "12633020"
+    },
+    {
+     "name": "生物地理学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "01531290"
+    },
+    {
+     "name": "应用数理统计方法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二上",
+     "code": "01536040"
+    },
+    {
+     "name": "大气物理学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "12631130"
+    },
+    {
+     "name": "气候变化科学概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "12632050"
+    },
+    {
+     "name": "现代自然地理学实验方法",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "01531610"
+    },
+    {
+     "name": "湖沼学原理",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "12633060"
+    },
+    {
+     "name": "城市生态学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "01532480"
+    },
+    {
+     "name": "自然地理与资源环境研究方法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三下",
+     "code": "12633050"
+    },
+    {
+     "name": "自然保护学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "01534230"
+    },
+    {
+     "name": "海洋科学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "12638010"
+    },
+    {
+     "name": "世界自然地理",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "12633040"
+    },
+    {
+     "name": "环境演变与全球变化",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "01531810"
+    },
+    {
+     "name": "全球变化生态学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "12632080"
+    },
+    {
+     "name": "土地评价与管理",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "01534070"
+    },
+    {
+     "name": "人文地理学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上",
+     "code": "12634110"
+    },
+    {
+     "name": "经济地理学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "一下",
+     "code": "01531010"
+    },
+    {
+     "name": "历史地理学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "12639040"
+    },
+    {
+     "name": "城市地理学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二上",
+     "code": "01532420"
+    },
+    {
+     "name": "生态学与自然地理学前沿",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "12632010"
+    },
+    {
+     "name": "环境科学前沿",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "12631030"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "新生入学后根据英语测试结果确定需修读的学分,最多修读 8 学分 (公共必修课总学",
+  "分 35 学分),最少修读 2 学分 (公 共 必 修 课 总 学 分 29 学 分),不 足 35 个 学 分 的 部 分 用 于",
+  "修读除公共必修课外的其他类课程 (通识教育课、专业必修课、选修课)。",
+  "—       大学英语              2~8     —          —",
+  "思想政治 理 论 必                                按马 克 思 主 义 学 院 要 求",
+  "修课                                        选课",
+  "1门                      按学校要求选课",
+  "需要 另 选 该 课 程 的 上 机",
+  "课 “计算概论 B 上机”。",
+  "需要 另 选 该 课 程 的 上 机",
+  "课 “计算概论 B 上机”。",
+  "—       体育系列课程            1×4     2               全年",
+  "通识教育 课 程 分 为 四 个 系 列: Ⅰ.人 类 文 明 及 其 传 统, Ⅱ.现 代 社 会 及 其 问 题,",
+  "Ⅲ.艺术与人文,   Ⅳ.数学、自然与 技 术,每 个 系 列 均 包 含 通 识 教 育 核 心 课、通 选 课 两 部",
+  "分课程,具体课程列表详见 《北京大学本科生选课手册》。",
+  "1)至少修读 1 门 “通识教育核心课程” (任一系列),且在四个课程系列中 每个系列",
+  "北京大学城市与环境学院                · 221 ·",
+  "至少修读 2 学分 (通识教育核心课或通选课均可)。",
+  "2)原则上不允许以专业课替代通识教育课程学分。",
+  "3)本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分。",
+  "4)建议合理分配修读时间,每学期修读 1 门课程。",
+  "块;模块 B:自然资源管理模块),多修课程可转入专业选修课程 (",
+  "1)。",
+  "新开课       古气候与古环境              3       3           三下",
+  "· 222 ·            北京大学本科培养方案 (",
+  "毕业论文安排在四年级进行,学生根据研究兴趣选择 1 名指导教师,鼓励学生结合指",
+  "导教师的科研项目完成毕业论文。毕业论文为学术性研究论文,具体包括国内外相关研究",
+  "进展、研究方法与技术、研究结果、结论与讨论等内容。毕业论文完成后经过答辩及格后",
+  "方可获得学分。",
+  "1)下列课程至少选修 19 学分,其中实习类课程至少选修 6 学分。",
+  "新开课       地球系统模拟实习           2    2周             二暑",
+  "北京大学城市与环境学院                · 223 ·",
+  "(",
+  "2)下列课程至少选修 4 学分。",
+  "-2 自主选修课:13 学分 (含跨学科课程和辅修专业学分可替代学分)",
+  "1)自主选修课程:至少 9 学分。",
+  "可从全校所有专业课程中选择,含跨学科课程和辅修专业学分可替代学分,鼓励选修",
+  "本专业核心课和专业选修课中未修的课程。",
+  "2)本科生科研和拔尖计划:0~4 学分。",
+  "学生选择本科生科研,按时完成科研任务、提交成果,成绩合格的学生,按照北京大",
+  "学本科生 “研究课程”的规定,按照选修课记 4 个学分。",
+  "参加拔尖计划并按照拔尖计 划 实 施 办 法 考 核 通 过 的 学 生,将 按 照 选 修 课 记 4 个 学 分,",
+  "计入大四上学期课程。指导老师根据学生表现决定学分计入情况。",
+  "拔尖计划不能与本科生科研、毕业论文的内容、学分重复使用。",
+  "不选本研或不参加拔尖计划可以选修其他课。"
+ ],
+ "warnings": [],
+ "source": {
+  "volumeId": "2021-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=152",
+  "lineStart": 10617,
+  "lineEnd": 10937
+ }
+}

@@ -1,0 +1,961 @@
+{
+ "id": "2023-环境科学与工程学院-环境科学-大数据方向",
+ "cohort": 2023,
+ "volume": "北京大学本科教学计划（2023）理科卷",
+ "school": "环境科学与工程学院",
+ "major": "环境科学",
+ "track": "大数据方向",
+ "title": "环境科学专业 (大数据方向 )",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": null,
+ "totalCredits": null,
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 45,
+   "max": 51,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 53,
+   "max": 53,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 43,
+   "max": 49,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "33~39 学分",
+   "inferredParent": true,
+   "min": 33,
+   "max": 39,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "24 学分",
+   "inferredParent": true,
+   "min": 24,
+   "max": 24,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "26 学分",
+   "inferredParent": true,
+   "min": 26,
+   "max": 26,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "23 学分",
+   "inferredParent": true,
+   "min": 23,
+   "max": 23,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 45,
+   "max": 51,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 A",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": 32,
+     "term": "时,需 要 另 选 该 课 程 的 上 机",
+     "code": "04830041"
+    },
+    {
+     "name": "计算概论 A 上机实习课",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": null,
+     "code": "04830042"
+    },
+    {
+     "name": "数据结构与算法 ( B)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 32,
+     "term": "选择 C 语 言, 需 要 另 选 该 课",
+     "code": "04831420"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "一上",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2",
+   "parent": "3",
+   "name": "自 主 选 修 课” 补 足 8 学 分, 毕",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 53,
+   "max": 53,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学 A (一)",
+     "nature": null,
+     "credits": 5,
+     "hours": 6,
+     "practice": 0,
+     "term": "秋,一上",
+     "code": "00132511"
+    },
+    {
+     "name": "高等数学 A (二)",
+     "nature": null,
+     "credits": 5,
+     "hours": 6,
+     "practice": 0,
+     "term": "春,一下",
+     "code": "00132512"
+    },
+    {
+     "name": "程序设计实习",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": 32,
+     "term": "春,一下",
+     "code": "04831750"
+    },
+    {
+     "name": "线性代数 A (Ⅰ )",
+     "nature": null,
+     "credits": 4,
+     "hours": 5,
+     "practice": 32,
+     "term": "秋,二上",
+     "code": "00132611"
+    },
+    {
+     "name": "线性代数 A (Ⅱ )",
+     "nature": null,
+     "credits": 4,
+     "hours": 5,
+     "practice": 32,
+     "term": "春,二下",
+     "code": "00132612"
+    },
+    {
+     "name": "概率统计 ( A)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋,二上/春,二下",
+     "code": "00131480"
+    },
+    {
+     "name": "环境问题",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋,一上",
+     "code": "12730030"
+    },
+    {
+     "name": "环境实验室安全",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": 8,
+     "term": "秋,一上",
+     "code": "12733240"
+    },
+    {
+     "name": "环境科学",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "秋,二上",
+     "code": "12732010"
+    },
+    {
+     "name": "环境监测",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋,二上",
+     "code": "12732040"
+    },
+    {
+     "name": "环境工程学一",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "春,二下",
+     "code": "12732150"
+    },
+    {
+     "name": "环境工程学二",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "春,三下",
+     "code": "12732080"
+    },
+    {
+     "name": "环境监测实验",
+     "nature": null,
+     "credits": 3,
+     "hours": 6,
+     "practice": 90,
+     "term": "春,二下",
+     "code": "12732070"
+    },
+    {
+     "name": "环境管理学",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "春,二下",
+     "code": "12732020"
+    },
+    {
+     "name": "水环境模型与数据分析",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "秋,三上",
+     "code": "12732190"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 43,
+   "max": 43,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "地图学与 GI S 基础",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "春,一下",
+     "code": "12633090"
+    },
+    {
+     "name": "气象学基础",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "秋,二上",
+     "code": "12733060"
+    },
+    {
+     "name": "空气污染基础",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "秋,二上",
+     "code": "12733150"
+    },
+    {
+     "name": "环境研究方法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋,三上",
+     "code": "12732160"
+    },
+    {
+     "name": "环境化学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋,三上",
+     "code": "12733010"
+    },
+    {
+     "name": "固体废物处置与资源化基础",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋,三上",
+     "code": "12734080"
+    },
+    {
+     "name": "时间序列分析与环境应用",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "秋,三上",
+     "code": "12733250"
+    },
+    {
+     "name": "遥感基础与图象解译原理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋,三上",
+     "code": "01531230"
+    },
+    {
+     "name": "环境资源经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋,三上",
+     "code": "02533370"
+    },
+    {
+     "name": "环境规划学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "春,三下",
+     "code": "12732060"
+    },
+    {
+     "name": "环境科学与工程前沿",
+     "nature": null,
+     "credits": 2,
+     "hours": 3,
+     "practice": 0,
+     "term": "春,三下",
+     "code": "12735230"
+    },
+    {
+     "name": "文献检索与论文写作入门",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": 0,
+     "term": "秋,一上",
+     "code": "12732180"
+    },
+    {
+     "name": "环境综合实习一",
+     "nature": null,
+     "credits": 1,
+     "hours": 48,
+     "practice": null,
+     "term": "2周 大一暑期",
+     "code": "12739040"
+    },
+    {
+     "name": "环境综合实习二",
+     "nature": null,
+     "credits": 1,
+     "hours": 48,
+     "practice": null,
+     "term": "2周 大二暑期",
+     "code": "12739060"
+    },
+    {
+     "name": "环境测量数据分析与可视化",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "春,三下",
+     "code": "12733200"
+    },
+    {
+     "name": "环境决策案例分析",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "春,三下",
+     "code": "12732170"
+    },
+    {
+     "name": "环境工程实验 (一) 1.",
+     "nature": null,
+     "credits": 5,
+     "hours": 3,
+     "practice": 45,
+     "term": "春,三下",
+     "code": "12734050"
+    },
+    {
+     "name": "环境工程仿真与控制",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "秋,三上",
+     "code": "12735210"
+    },
+    {
+     "name": "环境工程实验 (二) 1.",
+     "nature": null,
+     "credits": 5,
+     "hours": 3,
+     "practice": 45,
+     "term": "秋,四上",
+     "code": "12734060"
+    },
+    {
+     "name": "社会经济调查数据分析",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋季",
+     "code": "06239104"
+    },
+    {
+     "name": "Py thon 数据分析 (含上机)",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": 2,
+     "term": "春,一下",
+     "code": "03033930"
+    },
+    {
+     "name": "运筹学基础",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋,二上",
+     "code": "03033500"
+    },
+    {
+     "name": "机器学习",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋,三上",
+     "code": "03033441"
+    },
+    {
+     "name": "高等数学 A (三)",
+     "nature": null,
+     "credits": 4,
+     "hours": 5,
+     "practice": 0,
+     "term": "秋,二上",
+     "code": "00132513"
+    },
+    {
+     "name": "人工智能引论",
+     "nature": null,
+     "credits": 3,
+     "hours": 2,
+     "practice": 0,
+     "term": "春,一下",
+     "code": "04834040"
+    },
+    {
+     "name": "人工智能引论实践课",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": "春,一下",
+     "code": "04834041"
+    },
+    {
+     "name": "数字信号处理 (含上机)",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": 16,
+     "term": "春,三下",
+     "code": "04830760"
+    },
+    {
+     "name": "机器学习概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 8,
+     "term": "春,三下",
+     "code": "04831740"
+    },
+    {
+     "name": "强化学习",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋,三上",
+     "code": "04834520"
+    },
+    {
+     "name": "自然语言处理导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 4,
+     "term": "春,三下",
+     "code": "04831780"
+    },
+    {
+     "name": "数据库概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "春,三下",
+     "code": "04830220"
+    },
+    {
+     "name": "计算机网络",
+     "nature": null,
+     "credits": 4,
+     "hours": 5,
+     "practice": 32,
+     "term": "三上/三下",
+     "code": "04834210"
+    },
+    {
+     "name": "并行与分布式计算导论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "春,三下",
+     "code": "04832240"
+    },
+    {
+     "name": "大数据管理技术",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "春,三下",
+     "code": "04833520"
+    },
+    {
+     "name": "信息论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "春,二下",
+     "code": "04831210"
+    },
+    {
+     "name": "凸分析与优化方法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "春,三下",
+     "code": "04833410"
+    },
+    {
+     "name": "随机过程引论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "春,三下",
+     "code": "04831200"
+    },
+    {
+     "name": "计算方法 B",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋,二上",
+     "code": "00130280"
+    },
+    {
+     "name": "常微分方程",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "春,二下",
+     "code": "00132340"
+    },
+    {
+     "name": "大数据分析中的算法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋,三上",
+     "code": "00136720"
+    },
+    {
+     "name": "贝叶斯理论与算法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋,四上",
+     "code": "00100877"
+    },
+    {
+     "name": "应用多元统计分析",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋,三上",
+     "code": "00133050"
+    },
+    {
+     "name": "应用时间序列分析",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋,三上",
+     "code": "00133070"
+    },
+    {
+     "name": "深度学习模型与应用",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春",
+     "code": "03066970"
+    },
+    {
+     "name": "偏微分方程",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋,三上",
+     "code": "00132330"
+    },
+    {
+     "name": "测度论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "春,三下",
+     "code": "00133010"
+    },
+    {
+     "name": "应用回归分析",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "春季",
+     "code": "00133110"
+    },
+    {
+     "name": "实变函数",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋季",
+     "code": "00132370"
+    },
+    {
+     "name": "凸优化",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋季",
+     "code": "00136660"
+    },
+    {
+     "name": "复变函数",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋季",
+     "code": "00132320"
+    },
+    {
+     "name": "拓扑学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋季",
+     "code": "00130161"
+    },
+    {
+     "name": "集合论与图论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋,二上",
+     "code": "04830070"
+    },
+    {
+     "name": "计算机系统导论",
+     "nature": null,
+     "credits": 5,
+     "hours": 4,
+     "practice": 0,
+     "term": "秋,二上",
+     "code": "04833040"
+    },
+    {
+     "name": "计算机系统导论讨论班",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": "秋,二上",
+     "code": "04832363"
+    },
+    {
+     "name": "数字图像处理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "春,三下",
+     "code": "04830320"
+    },
+    {
+     "name": "计算方法 B",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋,三上",
+     "code": "00130280"
+    },
+    {
+     "name": "人工智能",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "春季",
+     "code": "00110950"
+    },
+    {
+     "name": "强化学习:理论与算法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "春季",
+     "code": "08408010"
+    },
+    {
+     "name": "经济学原理",
+     "nature": null,
+     "credits": 1,
+     "hours": 3,
+     "practice": 3,
+     "term": "秋,二上",
+     "code": "02533160"
+    },
+    {
+     "name": "经济学原理",
+     "nature": null,
+     "credits": 2,
+     "hours": 3,
+     "practice": 3,
+     "term": "春,二下",
+     "code": "02533170"
+    },
+    {
+     "name": "微观经济学",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": 0,
+     "term": "全年",
+     "code": "02530060"
+    },
+    {
+     "name": "公共经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋,三上",
+     "code": "02534500"
+    },
+    {
+     "name": "能源经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋,三上",
+     "code": "02535420"
+    },
+    {
+     "name": "市场数据分析",
+     "nature": null,
+     "credits": 2,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋,三上",
+     "code": "02838440"
+    },
+    {
+     "name": "数据分析与统计软件",
+     "nature": null,
+     "credits": 2,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋,二上",
+     "code": "02838160"
+    },
+    {
+     "name": "随机分析与应用",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "春,三下",
+     "code": "02838320"
+    },
+    {
+     "name": "数据分析和计量经济学编程",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "秋,三上",
+     "code": "06239121"
+    },
+    {
+     "name": "互联网金融与大数据",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": null,
+     "code": "06238080"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "—       大学英语                 2~8                     按大学英语教研室要求选课",
+  "—       思想政治理论必修课             19                     按马克思主义学院要求选课",
+  "1门                      按学校要求选课",
+  "—       劳动教育课               32 学时                    按学校要求选课",
+  "课 “计 算 概 论 A 上 机 实 习",
+  "课”。",
+  "秋,一上",
+  "课 “计算概论 A 上机”。",
+  "北京大学环境科学与工程学院                      · 503 ·",
+  "春,一下",
+  "程 的 上 机 课 “数 据 结 构 与 算",
+  "—       体育系列课程         1×4    —            全年",
+  "说明:大学英语根据分级结果选修 2~8 学 分,不 足 8 学 分 的 由 “",
+  "业总学分仍为 147。",
+  "通识教育课程分为四个 系 列: Ⅰ. 人 类 文 明 及 其 传 统、 Ⅱ. 现 代 社 会 及 其 问 题、 Ⅲ.",
+  "艺术与人文、 Ⅳ. 数学、自然与技术,每个系列均包含通识教育核心课、通选课两部分课",
+  "程,具体课程列表详见 《北京大学本科生选课手册》。",
+  "1)至少修读 1 门 “通识教育核心课程”(任一系列),且在四个课程系列中每个系列",
+  "3)本院系开设的通识教育课程原则上不计入本院学生毕业所需学分;",
+  "4)建议合理分配修读时间,每学期修读 1 门课程。",
+  "· 504 ·             北京大学本科培养方案 (",
+  "新开课       大气环境模型与数据分析            2         2          0        春,三下",
+  "说明:环境监测为环境监测实验先修课,环境监 测 实 验 为 环 境 综 合 实 习 二 先 修 课, 必 须 修 完 先 修 课",
+  "程才能修读对应的后续课程。",
+  "本专业学生最后一学年必须在本专业方向导师 (或与其他学院联合) 指导下完成毕业",
+  "学位论文/毕业设计,并顺利通过答辩才能获得学士学位。",
+  "新开课       环境健康生物统计原理                 2         2          0    春,三下",
+  "模块二    环境系统实践类课程 (不少于 5 学分)",
+  "北京大学环境科学与工程学院                    · 505 ·",
+  "模块二    环境系统实践类课程 (不少于 5 学分)",
+  "本科生科研训练                   2     —       —",
+  "新开课       深度学习与强化学习                 3     3       0    春,四下",
+  "第一部分 本学院开设课程",
+  "第二部分 各学部各院系的专业必修和专业选修课程 (以下为建议选修)",
+  "· 506 ·              北京大学本科培养方案 (",
+  "第二部分 各学部各院系的专业必修和专业选修课程 (以下为建议选修)"
+ ],
+ "warnings": [
+  "未找到“毕业总学分”"
+ ],
+ "source": {
+  "volumeId": "2023-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=195",
+  "lineStart": 26341,
+  "lineEnd": 26740
+ }
+}

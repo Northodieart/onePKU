@@ -1,0 +1,1123 @@
+{
+ "id": "2021-哲学系宗教学系-哲学-逻辑学与科学技术哲学方向",
+ "cohort": 2021,
+ "volume": "北京大学本科培养方案（2021）文科卷",
+ "school": "哲学系宗教学系",
+ "major": "哲学",
+ "track": "逻辑学与科学技术哲学方向",
+ "title": "哲学专业 (逻辑学与科学技术哲学方向 )",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "哲学学士学位。",
+ "totalCredits": {
+  "min": 132,
+  "max": 132
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 35,
+   "max": 41,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 50,
+   "max": 50,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 41,
+   "max": 47,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "23~29 学分",
+   "inferredParent": true,
+   "min": 23,
+   "max": 29,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "18 学分",
+   "inferredParent": true,
+   "min": 18,
+   "max": 18,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "24 学分",
+   "inferredParent": true,
+   "min": 24,
+   "max": 24,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "写作训练与论文",
+   "requirement": "7 学分",
+   "inferredParent": true,
+   "min": 7,
+   "max": 7,
+   "unit": "学分"
+  },
+  {
+   "id": "2-4",
+   "parent": "2",
+   "name": "实践实习",
+   "requirement": "1 学分",
+   "inferredParent": true,
+   "min": 1,
+   "max": 1,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "20 学分",
+   "inferredParent": true,
+   "min": 20,
+   "max": 20,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "21 学分",
+   "inferredParent": true,
+   "min": 21,
+   "max": 21,
+   "unit": "学分"
+  },
+  {
+   "id": "3-3",
+   "parent": "3",
+   "name": "外语类选修课",
+   "requirement": "0~6 学分",
+   "inferredParent": true,
+   "min": 0,
+   "max": 6,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 35,
+   "max": 41,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 C",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "“计算 概 论 C” 课 程 后,",
+     "code": "04834470"
+    },
+    {
+     "name": "计算机实习",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "计 算",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "军事理论课",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 50,
+   "max": 50,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "哲学导论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 16,
+     "term": "一上",
+     "code": "02330003"
+    },
+    {
+     "name": "逻辑与论证",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "一上",
+     "code": "02336401"
+    },
+    {
+     "name": "高等数学 B (一)",
+     "nature": null,
+     "credits": 5,
+     "hours": 6,
+     "practice": 16,
+     "term": "一上",
+     "code": "00130201"
+    },
+    {
+     "name": "(任选 3 学分)",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04830260"
+    },
+    {
+     "name": "世界史通论",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "二上下",
+     "code": "02132081"
+    },
+    {
+     "name": "马克思主义哲学 (上)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 16,
+     "term": "一下",
+     "code": "02330102"
+    },
+    {
+     "name": "马克思主义哲学 (下)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 16,
+     "term": "二上",
+     "code": "02330104"
+    },
+    {
+     "name": "中国哲学 (上)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 16,
+     "term": "一上",
+     "code": "02330092"
+    },
+    {
+     "name": "中国哲学 (下)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 16,
+     "term": "一下",
+     "code": "02330096"
+    },
+    {
+     "name": "西方哲学 (上)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 16,
+     "term": "一下",
+     "code": "02330051"
+    },
+    {
+     "name": "西方哲学 (下)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 16,
+     "term": "二上",
+     "code": "02330053"
+    },
+    {
+     "name": "伦理学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下",
+     "code": "02330142"
+    },
+    {
+     "name": "美学原理",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二上",
+     "code": "02330152"
+    },
+    {
+     "name": "科学哲学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下",
+     "code": "02330132"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 41,
+   "max": 47,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "现代西方哲学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下或三上下",
+     "code": "02330070"
+    },
+    {
+     "name": "近代哲学研究",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下或三上下",
+     "code": "02332710"
+    },
+    {
+     "name": "启蒙运动研究",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下或三上下",
+     "code": "02332910"
+    },
+    {
+     "name": "德国古典哲学专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下或三上下",
+     "code": "02333090"
+    },
+    {
+     "name": "俄罗斯哲学专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下或三上下",
+     "code": "02333120"
+    },
+    {
+     "name": "亚里士多德与亚里士多德传统",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下或三上下",
+     "code": "02336141"
+    },
+    {
+     "name": "希腊化时期哲学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下或三上下",
+     "code": "02313191"
+    },
+    {
+     "name": "西方古典思想 (一)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下或三上下",
+     "code": "02332971"
+    },
+    {
+     "name": "西方古典思想 (二)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下或三上下",
+     "code": "02332973"
+    },
+    {
+     "name": "西方早期近代哲学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下或三上下",
+     "code": "02332771"
+    },
+    {
+     "name": "法国哲学研究",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下或三上下",
+     "code": "02332811"
+    },
+    {
+     "name": "德国古典哲学原著",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下或三上下",
+     "code": "02333096"
+    },
+    {
+     "name": "中世纪哲学原著",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下或三上下",
+     "code": "02336180"
+    },
+    {
+     "name": "古代西方政治思想",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下或三上下",
+     "code": "02333373"
+    },
+    {
+     "name": "近代欧洲哲学专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下或三上下",
+     "code": "02333070"
+    },
+    {
+     "name": "俄罗斯哲学原著选读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下或三上下",
+     "code": "02333121"
+    },
+    {
+     "name": "中世纪形而上学专题",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下或三上下",
+     "code": "02330342"
+    },
+    {
+     "name": "启蒙哲学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下或三上下",
+     "code": "02332910"
+    },
+    {
+     "name": "古希腊语经典哲学文本阅读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下或三上下",
+     "code": "02313032"
+    },
+    {
+     "name": "古希腊语哲学经典阅读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下或三上下",
+     "code": "02330643"
+    },
+    {
+     "name": "中世纪思想中的自由与责任",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下或三上下",
+     "code": "02313111"
+    },
+    {
+     "name": "当代认识论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02330320"
+    },
+    {
+     "name": "西方自由主义史",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02335092"
+    },
+    {
+     "name": "民主理论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02333431"
+    },
+    {
+     "name": "种族批判哲学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02313880"
+    },
+    {
+     "name": "人工智能时代的人文主义",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02315042"
+    },
+    {
+     "name": "现象学专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02333160"
+    },
+    {
+     "name": "现象学导论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02333161"
+    },
+    {
+     "name": "分析哲学专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02333150"
+    },
+    {
+     "name": "东西方哲学比较",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02333180"
+    },
+    {
+     "name": "比较哲学与多元化哲学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02312341"
+    },
+    {
+     "name": "当代分析哲学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02333141"
+    },
+    {
+     "name": "西方哲学原著选读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02335081"
+    },
+    {
+     "name": "现代欧陆哲学原著选读",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02332720"
+    },
+    {
+     "name": "西方哲学原著导读 (形而上学原理)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02334010"
+    },
+    {
+     "name": "现代法国哲学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02333130"
+    },
+    {
+     "name": "柏拉图原著选读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "四上下",
+     "code": "02332970"
+    },
+    {
+     "name": "亚里士多德原著选读 (《伦理学》 研究)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "四上下",
+     "code": "02332930"
+    },
+    {
+     "name": "柏拉图的 《理想国》",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "四上下",
+     "code": "02332972"
+    },
+    {
+     "name": "黑格尔哲学引论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "四上下",
+     "code": "02332961"
+    },
+    {
+     "name": "康德实践哲学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "四上下",
+     "code": "02336190"
+    },
+    {
+     "name": "康德哲学研究",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "四上下",
+     "code": "02336191"
+    },
+    {
+     "name": "叔本华和尼采的哲学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "四上下",
+     "code": "02336150"
+    },
+    {
+     "name": "柏拉图原著选读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "四上下",
+     "code": "02332970"
+    },
+    {
+     "name": "亚里士多德原著选读 (《伦理学》 研究)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "四上下",
+     "code": "02332930"
+    },
+    {
+     "name": "海德格尔的 《尼采》",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "四上下",
+     "code": "02332940"
+    },
+    {
+     "name": "海德格尔的 《黑格尔的精神现象学》",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "四上下",
+     "code": "02332950"
+    },
+    {
+     "name": "康德 《纯然理性范围内的宗教》",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "四上下",
+     "code": "02336201"
+    },
+    {
+     "name": "罗尔斯 《政治自由主义》 研究",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "四上下",
+     "code": "02335091"
+    },
+    {
+     "name": "维特根斯坦哲学研究",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "四上下",
+     "code": "02332980"
+    },
+    {
+     "name": "笛卡尔哲学研究",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "四上下",
+     "code": "02313810"
+    },
+    {
+     "name": "海德格尔哲学研究",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "四上下",
+     "code": "02332751"
+    },
+    {
+     "name": "形而上学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02330340"
+    },
+    {
+     "name": "知识论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下",
+     "code": "02335100"
+    },
+    {
+     "name": "心灵哲学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02330610"
+    },
+    {
+     "name": "语言哲学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02333391"
+    },
+    {
+     "name": "数理逻辑 *",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "二下",
+     "code": "02331070"
+    },
+    {
+     "name": "集合论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "02331210"
+    },
+    {
+     "name": "模态逻辑",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02331051"
+    },
+    {
+     "name": "一阶逻辑",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02331031"
+    },
+    {
+     "name": "高级模态逻辑",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02315051"
+    },
+    {
+     "name": "知识的逻辑",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02315320"
+    },
+    {
+     "name": "形式语义学导论",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02331121"
+    },
+    {
+     "name": "公理集合论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02331240"
+    },
+    {
+     "name": "模型论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02331221"
+    },
+    {
+     "name": "直觉主义逻辑",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02331160"
+    },
+    {
+     "name": "数学结构",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02331370"
+    },
+    {
+     "name": "逻辑哲学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02331100"
+    },
+    {
+     "name": "逻辑史",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02331181"
+    },
+    {
+     "name": "悖论研究",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02331271"
+    },
+    {
+     "name": "数理逻辑专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02331073"
+    },
+    {
+     "name": "哲学逻辑专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02331191"
+    },
+    {
+     "name": "逻辑应用专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02331260"
+    },
+    {
+     "name": "数学哲学专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02331360"
+    },
+    {
+     "name": "逻辑史与逻辑哲学专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02331320"
+    },
+    {
+     "name": "科学社会学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02330620"
+    },
+    {
+     "name": "科学与宗教",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下或三上下",
+     "code": "02335110"
+    },
+    {
+     "name": "美国环境思想",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下或三上下",
+     "code": "02330501"
+    },
+    {
+     "name": "博物学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下或三上下",
+     "code": "02335350"
+    },
+    {
+     "name": "世界文明中的科学技术",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下或三上下",
+     "code": "02335330"
+    },
+    {
+     "name": "生物学哲学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上下",
+     "code": "02319160"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "—       大学英语                 2~8      —         —",
+  "选课。",
+  "—       思想政治理论必修课            12       —         —",
+  "选课。",
+  "—                            1门       —         —      按学校要求选课。",
+  "需要另 选 该 课 程 的 上 机",
+  "课 (",
+  "实习)。",
+  "时,需要 另 选 该 课 程 的",
+  "机实习)。",
+  "—       体育系列课程               1×4      2                全年",
+  "注: ① 哲学系学生免修思想政治 理 论 必 修 课 中 的 思 想 道 德 与 法 治 (",
+  "6 学分) 替代。港澳台学生、留学生思想政治理 论 必 修 课 修 习",
+  "要求与哲学系学生要求一致。留学生免修军事理论课,免修课程学分须用 “与中国有关的课程” 补足。",
+  "② 新生入学后需参加英语分级考试,根据 考 试 成 绩 编 入 4 个 等 级, 并 修 习 该 级 别 规 定 学 分 的 课 程。",
+  "A 级 8 学分,B 级 6 学分,C 级 4 学分,C+ 级 2 学 分。 本 系 学 生 修 完 相 应 级 别 课 程 后, 未 满 8 学 分 的,",
+  "须选修二外或英语授课的哲学专业课程来补足 8 学分。",
+  "③ 留学生大学英语修课原则:新生入学后需参 加 英 语 分 级 考 试, 根 据 考 试 成 绩 编 入 4 个 等 级, 并 修",
+  "习该级 别 规 定 学 分 的 课 程。A 级 8 学 分,B 级 6 学 分,C 级 4 学 分,C+ 级 2 学 分。 修 完 相 应 级 别 课 程",
+  "后,未满 8 学分的,须选修英语及母语以外的第三种 语 言、中 文 系 语 言 类 课 程 或 英 语 授 课 的 哲 学 专 业 课",
+  "程来补足 8 学分。中文系语言类课程包括:现代汉语、古代汉语、语言学概论。",
+  "通识教育课分为四个系列: Ⅰ.人 类 文 明 及 其 传 统; Ⅱ.现 代 社 会 及 其 问 题; Ⅲ.艺",
+  "术与人文; Ⅳ.数学、自然与技 术。 每 个 系 列 均 包 含 通 识 教 育 核 心 课、 通 选 课 两 部 分 课",
+  "程,具体课程列表详见 《北京大学本科生选课手册》。",
+  "· 152 ·             北京大学本科培养方案 (",
+  "1)至少修读 1 门 “通识教育核心课程” (任一系列),且在四个课程系列中每个系列",
+  "至少修读 2 学分 (通识教育核心课或通选课均可)。",
+  "2)原则上不允许以专业课替代通识教育课程学分。",
+  "3)本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分。",
+  "4)建议合理分配修读时间,每学期修读 1 门课程。",
+  "00132380/   概率统计 B/理论计 算 机 科 学 基 础",
+  "哲学阅读与写作 B                1     2      0     三上下",
+  "学年论文                     1            0      三下",
+  "毕业论文                     5            0     四上下",
+  "1)下设 4 个模块,在每一模块中选修规定学分的课程。",
+  "2)模块中标记 * 的课程为必修。",
+  "北京大学哲学系宗教学系                  · 153 ·",
+  "类别              学分",
+  "外国哲学模块                       2",
+  "理论哲学模块                       2",
+  "逻辑学模块                        8",
+  "科学技术哲学模块                     8",
+  "· 154 ·             北京大学本科培养方案 (",
+  "北京大学哲学系宗教学系                      · 155 ·",
+  "1)选修的非本专业课程一般不超过 10 学分。",
+  "2)如修读辅修专业,选修辅修专业培养方案中的非本专业课程可计 入 本 类 学 分,且",
+  "不超过 10 学分。",
+  "(3)如参加跨学科项目,选修项目培养方案中的非本专业课程可计入 本 类 学 分,且 可",
+  "超过 10 学分。",
+  "4)如开展跨学科科研,确有相关学习需求,经项目或论文指导教 师 同 意,选 修 的 非",
+  "本专业课程可超过 10 学分。",
+  "学生根据入学英语分级考试所确定的等级,修 完 相 应 级 别 的 大 学 英 语 课 程 后,未 满 8",
+  "学分的,须选修二外或英语授课的哲学专业课程来补足 8 学分。"
+ ],
+ "warnings": [
+  "第 8172 行：课程行缺少学分：04831435 计 算",
+  "第 8221 行：课程行缺少学分：04830260    (任选 3 学分)"
+ ],
+ "source": {
+  "volumeId": "2021-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=158",
+  "lineStart": 8085,
+  "lineEnd": 8474
+ }
+}

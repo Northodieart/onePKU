@@ -1,0 +1,801 @@
+{
+ "id": "2025-外国语学院-法语",
+ "cohort": 2025,
+ "volume": "北京大学本科培养方案（2025）文科卷",
+ "school": "外国语学院",
+ "major": "法语",
+ "track": null,
+ "title": "法语专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "文学学士",
+ "totalCredits": {
+  "min": 144,
+  "max": 144
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 48,
+   "max": 48,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 60,
+   "max": 60,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 36,
+   "max": 36,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "大学英语",
+   "requirement": "2～8 学分",
+   "min": 2,
+   "max": 8,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "思想政治理论必修课",
+   "requirement": "19 学分",
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "1-3",
+   "parent": "1",
+   "name": "思想政治理论选择性必修课",
+   "requirement": "1 门",
+   "min": 1,
+   "max": 1,
+   "unit": "门"
+  },
+  {
+   "id": "1-4",
+   "parent": "1",
+   "name": "劳动教育课",
+   "requirement": "32 学时",
+   "min": 32,
+   "max": 32,
+   "unit": "学时"
+  },
+  {
+   "id": "1-5",
+   "parent": "1",
+   "name": "信息课程",
+   "requirement": "3 学分",
+   "min": 3,
+   "max": 3,
+   "unit": "学分"
+  },
+  {
+   "id": "1-6",
+   "parent": "1",
+   "name": "军事理论",
+   "requirement": "2 学分",
+   "min": 2,
+   "max": 2,
+   "unit": "学分"
+  },
+  {
+   "id": "1-7",
+   "parent": "1",
+   "name": "体育课",
+   "requirement": "4 学分",
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  },
+  {
+   "id": "1-8",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "1-9",
+   "parent": "1",
+   "name": "大学外语",
+   "requirement": "0 学分",
+   "min": 0,
+   "max": 0,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "26 学分",
+   "min": 26,
+   "max": 26,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "34 学分",
+   "min": 34,
+   "max": 34,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "requirement": "0 学分",
+   "min": 0,
+   "max": 0,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "16 学分",
+   "min": 16,
+   "max": 16,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "20 学分",
+   "min": 20,
+   "max": 20,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 48,
+   "max": 48,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "1.1",
+   "parent": "1",
+   "name": "公共必修课",
+   "courses": [
+    {
+     "name": "计算机实习",
+     "nature": "全校必修",
+     "credits": 0,
+     "hours": 34,
+     "practice": 34,
+     "term": "一上",
+     "code": "04831435"
+    },
+    {
+     "name": "计算概论（C）",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 0,
+     "term": "一上",
+     "code": "04834470"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "1.2",
+   "parent": "1",
+   "name": "通识教育课",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 60,
+   "max": 60,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.1",
+   "parent": "2",
+   "name": "专业基础课",
+   "min": 26,
+   "max": 26,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "法语精读（五）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 102,
+     "practice": 8,
+     "term": "大三/上",
+     "code": "03631005"
+    },
+    {
+     "name": "法语精读（六）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 102,
+     "practice": 8,
+     "term": "大三/下",
+     "code": "03631006"
+    },
+    {
+     "name": "法语精读（七）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 51,
+     "practice": 15,
+     "term": "大四/上",
+     "code": "03631017"
+    },
+    {
+     "name": "法语精读（八）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 51,
+     "practice": 15,
+     "term": "大四/下",
+     "code": "03631018"
+    },
+    {
+     "name": "法语写作（一）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": "大三/上",
+     "code": "03631035"
+    },
+    {
+     "name": "法语写作（二）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": "大三/下",
+     "code": "03631036"
+    },
+    {
+     "name": "法语写作（三）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": "大四/上",
+     "code": "03631037"
+    },
+    {
+     "name": "法语写作（四）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": "大四/下",
+     "code": "03631038"
+    },
+    {
+     "name": "法语笔译（上）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": "大三/下",
+     "code": "03631043"
+    },
+    {
+     "name": "法语笔译（下）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": "大四/上",
+     "code": "03631044"
+    },
+    {
+     "name": "法语口译（上）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": "大四/上",
+     "code": "03631053"
+    },
+    {
+     "name": "法语口译（下）",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": "大四/下",
+     "code": "03631054"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2",
+   "parent": "2",
+   "name": "专业核心课",
+   "min": 34,
+   "max": 34,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "法语精读（一）",
+     "nature": "专业必修",
+     "credits": 6,
+     "hours": 204,
+     "practice": 60,
+     "term": "大一/上",
+     "code": "03631001"
+    },
+    {
+     "name": "法语精读（二）",
+     "nature": "专业必修",
+     "credits": 6,
+     "hours": 204,
+     "practice": 60,
+     "term": "大一/下",
+     "code": "03631002"
+    },
+    {
+     "name": "法语精读（三）",
+     "nature": "专业必修",
+     "credits": 6,
+     "hours": 204,
+     "practice": 60,
+     "term": "大二/上",
+     "code": "03631003"
+    },
+    {
+     "name": "法语精读（四）",
+     "nature": "专业必修",
+     "credits": 6,
+     "hours": 170,
+     "practice": 40,
+     "term": "大二/下",
+     "code": "03631004"
+    },
+    {
+     "name": "法语视听说（一）",
+     "nature": "专业必修",
+     "credits": 1,
+     "hours": 34,
+     "practice": 8,
+     "term": "大一/上",
+     "code": "03631021"
+    },
+    {
+     "name": "法语视听说（二）",
+     "nature": "专业必修",
+     "credits": 1,
+     "hours": 34,
+     "practice": 8,
+     "term": "大一/下",
+     "code": "03631022"
+    },
+    {
+     "name": "法语视听说（三）",
+     "nature": "专业必修",
+     "credits": 1,
+     "hours": 34,
+     "practice": 8,
+     "term": "大二/上",
+     "code": "03631023"
+    },
+    {
+     "name": "法语视听说（四）",
+     "nature": "专业必修",
+     "credits": 1,
+     "hours": 34,
+     "practice": 8,
+     "term": "大二/下",
+     "code": "03631024"
+    },
+    {
+     "name": "法国文学史和文学选读（上）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": 20,
+     "term": "大三/下",
+     "code": "03631065"
+    },
+    {
+     "name": "法国文学史和文学选读（下）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": 20,
+     "term": "大四/上",
+     "code": "03631066"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.3",
+   "parent": "2",
+   "name": "毕业论文",
+   "note": "设计",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 36,
+   "max": 36,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1",
+   "parent": "3",
+   "name": "专业选修课",
+   "min": 16,
+   "max": 16,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "法语视听说（五）",
+     "nature": "任选",
+     "credits": 1,
+     "hours": 34,
+     "practice": 8,
+     "term": null,
+     "code": "03631025"
+    },
+    {
+     "name": "法语视听说（六）",
+     "nature": "任选",
+     "credits": 1,
+     "hours": 34,
+     "practice": 8,
+     "term": null,
+     "code": "03631026"
+    },
+    {
+     "name": "法语视听说（七）",
+     "nature": "任选",
+     "credits": 1,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "03631027"
+    },
+    {
+     "name": "法语视听说（八）",
+     "nature": "任选",
+     "credits": 1,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "03631028"
+    },
+    {
+     "name": "法语泛读（一）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": null,
+     "code": "03631091"
+    },
+    {
+     "name": "法语泛读（二）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": null,
+     "code": "03631092"
+    },
+    {
+     "name": "法语泛读（三）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": null,
+     "code": "03631093"
+    },
+    {
+     "name": "法国历史",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": null,
+     "code": "03631220"
+    },
+    {
+     "name": "法语国家及地区概况",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": null,
+     "code": "03631230"
+    },
+    {
+     "name": "法国报刊选读（一）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": null,
+     "code": "03631251"
+    },
+    {
+     "name": "法国报刊选读（二）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": null,
+     "code": "03631252"
+    },
+    {
+     "name": "法国报刊选读（三）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": null,
+     "code": "03631253"
+    },
+    {
+     "name": "法国报刊选读（四）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": null,
+     "code": "03631254"
+    },
+    {
+     "name": "法国电影与文化",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": null,
+     "code": "03631620"
+    },
+    {
+     "name": "法国儿童文学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": null,
+     "code": "03631630"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2",
+   "parent": "3",
+   "name": "自主选修课",
+   "min": 20,
+   "max": 20,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "中国古代文学（上）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02035201"
+    },
+    {
+     "name": "中国古代文学（下）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02035202"
+    },
+    {
+     "name": "中国古代史（上）",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "02130011"
+    },
+    {
+     "name": "中国古代史（下）",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 64,
+     "practice": null,
+     "term": null,
+     "code": "02130012"
+    },
+    {
+     "name": "考古学通论",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 64,
+     "practice": null,
+     "term": null,
+     "code": "02232210"
+    },
+    {
+     "name": "哲学导论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "02330001"
+    },
+    {
+     "name": "西方哲学（上）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 48,
+     "practice": null,
+     "term": null,
+     "code": "02330051"
+    },
+    {
+     "name": "西方哲学（上）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "02330052"
+    },
+    {
+     "name": "西方哲学（下）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02330053"
+    },
+    {
+     "name": "西方哲学（下）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02330054"
+    },
+    {
+     "name": "中国哲学（上）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 48,
+     "practice": null,
+     "term": null,
+     "code": "02330092"
+    },
+    {
+     "name": "中国哲学（上）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "02330094"
+    },
+    {
+     "name": "中国哲学（下）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "02330095"
+    },
+    {
+     "name": "中国哲学（下）",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 48,
+     "practice": null,
+     "term": null,
+     "code": "02330096"
+    },
+    {
+     "name": "东方文学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "03530450"
+    },
+    {
+     "name": "西方文学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 32,
+     "practice": null,
+     "term": null,
+     "code": "03632990"
+    },
+    {
+     "name": "艺术史导论",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "04330218"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "要求“思想政治理论选择性必修课”共 1 门、“劳动教育课”累计不少于 32 学时。思",
+  "想政治理论必修课和其他公共必修课按学校要求选课，信息课程见下表。",
+  "备注：大学英语不足 8 学分部分，需用非本专业语言的公共语言课或专业基础语言课",
+  "补足。",
+  "通识教育课程系列                各系列学分",
+  "（通识核心课+通选课）           （通识核心课+通选课）",
+  "Ⅰ. 人类文明及其传统                     ≥2",
+  "Ⅱ. 现代社会及其问题                     ≥2                  1. 不少于 12 学分",
+  "Ⅲ. 艺术与人文                        ≥2                  2. 至少修读 1 门“通识核心课”",
+  "Ⅳ. 数学、自然与技术                     ≥2",
+  "（1）具体课程列表详见《北京大学本科生选课手册》 ；",
+  "（2）原则上不允许以专业课替代通识教育课程学分；",
+  "（3）本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分；",
+  "（4）建议合理分配修读时间，每学期修读 1 门课程。",
+  "备注：不计学分，但为毕业必要条件。",
+  "新开课       法语国家文学选读      任选    2    34      8",
+  "新开课       法语研究学术前沿      任选    2    34      8",
+  "备注：人文学部课程不少于 5 学分 ，其中人文学部课程（中国文学史、中国古代史、",
+  "考古学通论、哲学导论、中国哲学、西方哲学、艺术史导论）不少于 3 学分；东方文学、",
+  "西方文学必选一门。",
+  "备注：东方文学、西方文学至少选修其中一门。"
+ ],
+ "warnings": [],
+ "source": {
+  "volumeId": "2025-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=217",
+  "lineStart": 10572,
+  "lineEnd": 10782
+ }
+}

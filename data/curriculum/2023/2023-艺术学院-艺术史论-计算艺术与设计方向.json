@@ -1,0 +1,540 @@
+{
+ "id": "2023-艺术学院-艺术史论-计算艺术与设计方向",
+ "cohort": 2023,
+ "volume": "北京大学本科教学计划（2023）文科卷",
+ "school": "艺术学院",
+ "major": "艺术史论",
+ "track": "计算艺术与设计方向",
+ "title": "艺术史论 (计算艺术与设计方向 ) 专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "艺术学学士学位。",
+ "totalCredits": {
+  "min": 143,
+  "max": 143
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 48,
+   "max": 48,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 52,
+   "max": 52,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 43,
+   "max": 43,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "36 学分",
+   "inferredParent": true,
+   "min": 36,
+   "max": 36,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "24 学分",
+   "inferredParent": true,
+   "min": 24,
+   "max": 24,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "23 学分",
+   "inferredParent": true,
+   "min": 23,
+   "max": 23,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "20 学分",
+   "inferredParent": true,
+   "min": 20,
+   "max": 20,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "23 学分",
+   "inferredParent": true,
+   "min": 23,
+   "max": 23,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 48,
+   "max": 48,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "(",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04831410"
+    },
+    {
+     "name": "计算机实习",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": "一上",
+     "code": "04831435"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上或一下",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 52,
+   "max": 52,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学 ( D 类)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "秋季",
+     "code": "00137940"
+    },
+    {
+     "name": "普通统计学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "00136700"
+    },
+    {
+     "name": "史学概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "02130110"
+    },
+    {
+     "name": "艺术史导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 1,
+     "term": "春季",
+     "code": "04330218"
+    },
+    {
+     "name": "艺术理论导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 1,
+     "term": "秋季",
+     "code": "04330202"
+    },
+    {
+     "name": "艺术批评导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 2,
+     "term": "秋季",
+     "code": "04330201"
+    },
+    {
+     "name": "艺术管理导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 1,
+     "term": "春季",
+     "code": "04330214"
+    },
+    {
+     "name": "美术概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 2,
+     "term": "秋季",
+     "code": "04333021"
+    },
+    {
+     "name": "电影概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 1,
+     "term": "秋季",
+     "code": "04330101"
+    },
+    {
+     "name": "戏剧艺术概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 1,
+     "term": "春季",
+     "code": "04331570"
+    },
+    {
+     "name": "信息技术与文化产业",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 2,
+     "term": "春季",
+     "code": "04330089"
+    },
+    {
+     "name": "视觉艺术与计算美学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 3,
+     "term": "春季",
+     "code": "04852240"
+    },
+    {
+     "name": "创意管理学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 3,
+     "term": "秋季",
+     "code": "04330037"
+    },
+    {
+     "name": "当代艺术与文化资源",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 3,
+     "term": "春季",
+     "code": "04330204"
+    },
+    {
+     "name": "油画临摹理论与实践",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 3,
+     "term": "春季",
+     "code": "04331304"
+    },
+    {
+     "name": "绘画技法",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 2,
+     "term": "春季",
+     "code": "04332224"
+    },
+    {
+     "name": "毕业论文",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 4,
+     "term": "春季",
+     "code": "04332285"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 43,
+   "max": 43,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "可视计算与交互概论",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "秋季",
+     "code": "04835000"
+    },
+    {
+     "name": "角色动画与运动仿真",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "04834900"
+    },
+    {
+     "name": "计算机视觉导论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "04834920"
+    },
+    {
+     "name": "影视制作 (电影剪辑基础)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "04330088"
+    },
+    {
+     "name": "机器学习概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "04831730"
+    },
+    {
+     "name": "可视化与可视分析",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "04835020"
+    },
+    {
+     "name": "视听语言 (电影语言)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "04331791"
+    },
+    {
+     "name": "文化产业导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "04332350"
+    },
+    {
+     "name": "世界电影专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "04330216"
+    },
+    {
+     "name": "影视导演",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "04330211"
+    },
+    {
+     "name": "艺术博物馆学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "04330206"
+    },
+    {
+     "name": "强化学习",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "04834520"
+    },
+    {
+     "name": "脑与认知科学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "04831320"
+    },
+    {
+     "name": "物联网基础",
+     "nature": null,
+     "credits": 2,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "04833850"
+    },
+    {
+     "name": "智能机器人概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "04834990"
+    },
+    {
+     "name": "互联网数据挖掘",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "04832192"
+    },
+    {
+     "name": "图像处理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "04831300"
+    },
+    {
+     "name": "社会科学中的计算思维方法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "04832680"
+    },
+    {
+     "name": "计算机网络与 WEB 技术",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "04831670"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "—        大学英语               2~8      —   —      按大学英语教研室要求选课。",
+  "—        思想政治理论必修课           19      —   —      按马克思主义学院要求选课。",
+  "—                            1门      —   —      按学校要求选课。",
+  "—        劳动教育课              32 学时               按学校要求选课。",
+  "计算概论 C/B             3      3   0      需要 另 选 该 课 程 的 上 机 课",
+  "04831435,计算机实习)。",
+  "—        体育系列课程             1×4      2          全年",
+  "注:大学英语按英语教研室要求分级选课:Y 级需修 8 学分,A 级需修 8 学分,B 级需修 6 学分,C 级需",
+  "修 4 学分,C+ 级需修 2 学分。本系学生修完 C+ 级课程后,可以选修二外及外语学院开设的其 他 课 程 来",
+  "补足学分。",
+  "通识教育课程分为四个 系 列: Ⅰ. 人 类 文 明 及 其 传 统; Ⅱ. 现 代 社 会 及 其 问 题; Ⅲ.",
+  "艺术与人文; Ⅳ. 数学、自然与技术。每个系列均包含通识教育核心课、通选课两部分课",
+  "程,具体课程列表详见 《北京大学本科生选课手册》。",
+  "1)至少修读 1 门 “通识教育核心课程” (任 一 系 列),且 在 四 个 课 程 系 列 中 每 个 系 列",
+  "至少修读 2 学分 (通识教育核心课或通选课均可)。",
+  "2)原则上不允许以专业课替代通识教育课程学分。",
+  "3)本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分。",
+  "北京大学艺术学院             · 301 ·",
+  "4)建议合理分配修读时间,每学期修读 1 门课程。",
+  "学部内专业基础课程 6 学分、本院系专业基础课程 18 学分。",
+  "1 跨院系专业基础课程:6 学分。",
+  "哲学导论               2/3       2/3    秋季",
+  "2 本院系专业基础课程:18 学分。",
+  "新开课        计算艺术概论             2          2    秋季 2",
+  "新开课        设计概论               2          2    秋季 1",
+  "新开课        设计史                      2    2    春季 2",
+  "新开课        视觉传达设计                   3    3    春季 2",
+  "新开课        产品设计/工业设计                3    3    秋季 3",
+  "新开课        环境艺术设计                   3    3    秋季 3",
+  "· 302 ·             北京大学本科培养方案 (",
+  "新开课       毕业设计与实习             3      3       秋季 4",
+  "本专业选修课程及本院跨方向 “专业核心课程” ≥8 学 分、本 学 部 跨 院 系 专 业 基 础 课",
+  "程 ≥6 学分。",
+  "-11 本专业选修课程及本院跨方向 “专业核心课程”: ≥8 学分。",
+  "-",
+  "新开课       生成模型                                春季",
+  "2 本学部跨院系专业基础课程: ≥6 学分。",
+  "此部分课程可选修本学部其他院系 (中文、历史、考古、哲学、外语) 培养方案中专",
+  "-1 专业基础课中学部专业基础课程重复计算学分。",
+  "北京大学艺术学院                       · 303 ·",
+  "e.超出本教学计划要求之外的其他课程。"
+ ],
+ "warnings": [
+  "第 16105 行：课程行缺少学分：04831410"
+ ],
+ "source": {
+  "volumeId": "2023-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=196",
+  "lineStart": 16014,
+  "lineEnd": 16298
+ }
+}

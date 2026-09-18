@@ -1,0 +1,451 @@
+{
+ "id": "2021-外国语学院-朝鲜_语-韩国",
+ "cohort": 2021,
+ "volume": "北京大学本科培养方案（2021）文科卷",
+ "school": "外国语学院",
+ "major": "朝鲜/语",
+ "track": "韩国",
+ "title": "朝鲜 (韩国 ) 语专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "文学学士学位。",
+ "totalCredits": {
+  "min": 143,
+  "max": 143
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 47,
+   "max": 47,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 56,
+   "max": 56,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 40,
+   "max": 40,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "35 学分",
+   "inferredParent": true,
+   "min": 35,
+   "max": 35,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "24 学分",
+   "inferredParent": true,
+   "min": 24,
+   "max": 24,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "32 学分",
+   "inferredParent": true,
+   "min": 32,
+   "max": 32,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "26 学分",
+   "inferredParent": true,
+   "min": 26,
+   "max": 26,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "14 学分",
+   "inferredParent": true,
+   "min": 14,
+   "max": 14,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 47,
+   "max": 47,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 C",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "“计算 概 论 C” 课 程 后,",
+     "code": "04834470"
+    },
+    {
+     "name": "计算机实习",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "计 算",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上或一下",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 56,
+   "max": 56,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "基础韩国 (朝鲜) 语 (一)",
+     "nature": null,
+     "credits": 8,
+     "hours": 10,
+     "practice": null,
+     "term": "一上",
+     "code": "03531401"
+    },
+    {
+     "name": "基础韩国 (朝鲜) 语 (二)",
+     "nature": null,
+     "credits": 8,
+     "hours": 10,
+     "practice": null,
+     "term": "一下",
+     "code": "03531402"
+    },
+    {
+     "name": "基础韩国 (朝鲜) 语 (三)",
+     "nature": null,
+     "credits": 8,
+     "hours": 10,
+     "practice": null,
+     "term": "二上",
+     "code": "03531403"
+    },
+    {
+     "name": "基础韩国 (朝鲜) 语 (四)",
+     "nature": null,
+     "credits": 8,
+     "hours": 10,
+     "practice": null,
+     "term": "二下",
+     "code": "03531404"
+    },
+    {
+     "name": "中韩 (朝) 翻译",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "四上",
+     "code": "03531589"
+    },
+    {
+     "name": "韩 (朝) 中翻译",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "三下",
+     "code": "03531569"
+    },
+    {
+     "name": "韩国 (朝鲜) 文学简史 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03531611"
+    },
+    {
+     "name": "韩国 (朝鲜) 文学简史 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03531612"
+    },
+    {
+     "name": "韩国 (朝鲜) 历史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03531730"
+    },
+    {
+     "name": "韩国 (朝鲜) 语言学概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03531820"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 40,
+   "max": 40,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "韩国 (朝鲜) 语视听说 (一)",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": null,
+     "term": "一上",
+     "code": "03531801"
+    },
+    {
+     "name": "韩国 (朝鲜) 语视听说 (二)",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": null,
+     "term": "一下",
+     "code": "03531802"
+    },
+    {
+     "name": "韩国 (朝鲜) 语视听说 (三)",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": null,
+     "term": "二上",
+     "code": "03531803"
+    },
+    {
+     "name": "韩国 (朝鲜) 语视听说 (四)",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": null,
+     "term": "二下",
+     "code": "03531804"
+    },
+    {
+     "name": "高级韩国 (朝鲜) 语 (一)",
+     "nature": null,
+     "credits": 5,
+     "hours": 8,
+     "practice": null,
+     "term": "三上",
+     "code": "03531811"
+    },
+    {
+     "name": "高级韩国 (朝鲜) 语 (二)",
+     "nature": null,
+     "credits": 5,
+     "hours": 8,
+     "practice": null,
+     "term": "三下",
+     "code": "03531812"
+    },
+    {
+     "name": "高级韩国 (朝鲜) 语 (三)",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": null,
+     "term": "四上",
+     "code": "03531813"
+    },
+    {
+     "name": "高级韩国 (朝鲜) 语 (四)",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": null,
+     "term": "四下",
+     "code": "03531814"
+    },
+    {
+     "name": "韩国 (朝鲜) 文学作品选读 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03531851"
+    },
+    {
+     "name": "韩国 (朝鲜) 文学作品选读 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03531852"
+    },
+    {
+     "name": "当代韩国 (朝鲜) 政治外交史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03531760"
+    },
+    {
+     "name": "韩国 (朝鲜) 语口译",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03531890"
+    },
+    {
+     "name": "韩国 (朝鲜) 民俗",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03531860"
+    },
+    {
+     "name": "韩国 (朝鲜) 语语法",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03531540"
+    },
+    {
+     "name": "韩国大众媒体与流行文化",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四下",
+     "code": "03530490"
+    },
+    {
+     "name": "东方文学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "每年秋季学期",
+     "code": "03530450"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "—       思想政治理论必修课            18    —        —",
+  "选课。",
+  "—                            1门    —        —    按学校要求选课。",
+  "需要另 选 该 课 程 的 上 机",
+  "课 (",
+  "实习)。",
+  "北京大学外国语学院                           · 179 ·",
+  "时,需要 另 选 该 课 程 的",
+  "机实习)。",
+  "—        体育系列课程          1×4     2                  全年",
+  "注:大学外语必修大学英语对应级别的学分,不足 8 学 分 部 分,需 用 非 本 专 业 语 言 的 公 共 语 言 课 或 专 业",
+  "基础语言课补足学分 (课程明细见本学院附表 1)。",
+  "通识教育课分为四个系列: Ⅰ.人 类 文 明 及 其 传 统; Ⅱ.现 代 社 会 及 其 问 题; Ⅲ.艺",
+  "术与人文; Ⅳ.数学、自然与技 术。 每 个 系 列 均 包 含 通 识 教 育 核 心 课、 通 选 课 两 部 分 课",
+  "程,具体课程列表详见 《北京大学本科生选课手册》。",
+  "1)至少修读 1 门 “通识教育核心课程” (任一系列),且在四个课程系列中每个系列",
+  "至少修读 2 学分 (通识教育核心课或通选课均可)。",
+  "2)原则上不允许以专业课替代通识教育课程学分。",
+  "3)本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分。",
+  "4)建议合理分配修读时间,每学期修读 1 门课程。",
+  "新开课        韩国 (朝鲜) 社会与文化专题             2             2         二下",
+  "新开课        韩国 (朝鲜) 社会与文化导论             2             2         一上",
+  "新开课       韩国 (朝鲜) 语时事新闻解读 (上)   2        2      四上",
+  "新开课       韩国 (朝鲜) 语时事新闻解读 (下)   2        2      四下",
+  "新开课       韩国 (朝鲜) 语阅读与写作        2        2      三上",
+  "新开课       高级韩国 (朝鲜) 语听说 (上)     2        2      三上",
+  "新开课       高级韩国 (朝鲜) 语听说 (下)     2        2      三下",
+  "新开课       韩国 (朝鲜) 政治经济          2        2      二下",
+  "新开课       西方文学                  2        2    每年春季学期",
+  "注:东方文学和西方文学学院建议选修至少其中一门。",
+  "含跨学科课程和辅修专业学分可替代学分,其中人文学部课程不少于 3 学分,详见本",
+  "学院附表 2。",
+  "北京大学外国语学院              · 181 ·"
+ ],
+ "warnings": [
+  "第 9696 行：课程行缺少学分：04831435 计 算"
+ ],
+ "source": {
+  "volumeId": "2021-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=158",
+  "lineStart": 9585,
+  "lineEnd": 9844
+ }
+}

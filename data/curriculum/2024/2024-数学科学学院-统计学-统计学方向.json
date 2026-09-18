@@ -1,0 +1,965 @@
+{
+ "id": "2024-数学科学学院-统计学-统计学方向",
+ "untitled": true,
+ "cohort": 2024,
+ "volume": "北京大学本科培养方案（2024）理科卷",
+ "school": "数学科学学院",
+ "major": "统计学",
+ "track": "统计学方向",
+ "title": "统计学专业（统计学方向）",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "理学学士",
+ "totalCredits": {
+  "min": 138,
+  "max": 138
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 45,
+   "max": 51,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 49,
+   "max": 49,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 44,
+   "max": 44,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "大学英语",
+   "requirement": "2～8 学分",
+   "min": 2,
+   "max": 8,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "思想政治理论必修课",
+   "requirement": "19 学分",
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "1-3",
+   "parent": "1",
+   "name": "思想政治理论选择性必修课",
+   "requirement": "1 门",
+   "min": 1,
+   "max": 1,
+   "unit": "门"
+  },
+  {
+   "id": "1-4",
+   "parent": "1",
+   "name": "劳动教育课",
+   "requirement": "32 学时",
+   "min": 32,
+   "max": 32,
+   "unit": "学时"
+  },
+  {
+   "id": "1-5",
+   "parent": "1",
+   "name": "信息课程",
+   "requirement": "6 学分",
+   "min": 6,
+   "max": 6,
+   "unit": "学分"
+  },
+  {
+   "id": "1-6",
+   "parent": "1",
+   "name": "军事理论",
+   "requirement": "2 学分",
+   "min": 2,
+   "max": 2,
+   "unit": "学分"
+  },
+  {
+   "id": "1-7",
+   "parent": "1",
+   "name": "体育课",
+   "requirement": "4 学分",
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  },
+  {
+   "id": "1-8",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "19 学分",
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "24 学分",
+   "min": 24,
+   "max": 24,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "requirement": "6 学分",
+   "min": 6,
+   "max": 6,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "21 学分",
+   "min": 21,
+   "max": 21,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "23 学分",
+   "min": 23,
+   "max": 23,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1.1",
+   "parent": "1",
+   "name": "公共必修课",
+   "courses": [
+    {
+     "name": "计算概论 A",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "04830041"
+    },
+    {
+     "name": "数据结构与算法（A）",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": 34,
+     "term": null,
+     "code": "04830050"
+    },
+    {
+     "name": "计算概论 A（实验班）",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "04830530"
+    },
+    {
+     "name": "数据结构与算法（A） （实验班）",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": 34,
+     "term": null,
+     "code": "04830540"
+    },
+    {
+     "name": "计算概论（B）",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "04831410"
+    },
+    {
+     "name": "数据结构与算法（B）",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "04831420"
+    },
+    {
+     "name": "计算概论 A 04830530 计算概论 A（实验班）",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04830041"
+    },
+    {
+     "name": "计算概论 A 04831410 计算概论（B）",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04830041"
+    },
+    {
+     "name": "计算概论 A（实验班） 04831410 计算概论（B）",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04830530"
+    },
+    {
+     "name": "数据结构与算法（A）（实验班） 04830050 数据结构与算法（A）",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04830540"
+    },
+    {
+     "name": "数据结构与算法（A）（实验班） 04831420 数据结构与算法（B）",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04830540"
+    },
+    {
+     "name": "数据结构与算法（A） 04831420 数据结构与算法（B）",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04830050"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "1.2",
+   "parent": "1",
+   "name": "通识教育课",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.1",
+   "parent": "2",
+   "name": "专业基础课",
+   "min": 19,
+   "max": 19,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "数学分析（Ⅰ）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00132301"
+    },
+    {
+     "name": "数学分析（Ⅱ）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00132302"
+    },
+    {
+     "name": "高等代数（Ⅰ）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00132321"
+    },
+    {
+     "name": "高等代数（Ⅱ）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00132323"
+    },
+    {
+     "name": "数学分析Ⅰ（实验班）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00132361"
+    },
+    {
+     "name": "数学分析Ⅱ（实验班）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00132362"
+    },
+    {
+     "name": "高等代数Ⅰ（实验班）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00132371"
+    },
+    {
+     "name": "高等代数Ⅱ（实验班）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00132372"
+    },
+    {
+     "name": "高等代数（Ⅱ） 00132372 高等代数Ⅱ（实验班）",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00132323"
+    },
+    {
+     "name": "数学分析Ⅰ（实验班） 00132301 数学分析Ⅰ",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00132361"
+    },
+    {
+     "name": "数学分析Ⅱ（实验班） 00132302 数学分析Ⅱ",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00132362"
+    },
+    {
+     "name": "高等代数（Ⅰ） 00132371 高等代数Ⅰ（实验班）",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00132321"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2",
+   "parent": "2",
+   "name": "专业核心课",
+   "min": 24,
+   "max": 24,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "数学模型",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00130200"
+    },
+    {
+     "name": "概率论",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00131300"
+    },
+    {
+     "name": "数学分析（Ⅲ）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00132304"
+    },
+    {
+     "name": "复变函数",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00132320"
+    },
+    {
+     "name": "常微分方程",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00132340"
+    },
+    {
+     "name": "几何学",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00132341"
+    },
+    {
+     "name": "数学分析Ⅲ（实验班）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00132363"
+    },
+    {
+     "name": "几何学Ⅰ（实验班）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00132381"
+    },
+    {
+     "name": "抽象代数",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00135450"
+    },
+    {
+     "name": "概率论（实验班）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00136780"
+    },
+    {
+     "name": "统计思维",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00137960"
+    },
+    {
+     "name": "代数学（实验班）Ⅰ",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00137971"
+    },
+    {
+     "name": "常微分方程（实验班）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00137991"
+    },
+    {
+     "name": "概率论（实验班） 00131300 概率论",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00136780"
+    },
+    {
+     "name": "常微分方程（实验班） 00132340 常微分方程",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00137991"
+    },
+    {
+     "name": "统计思维 00130200 数学模型",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00137960"
+    },
+    {
+     "name": "数学分析（Ⅲ） 00132363 数学分析Ⅲ（实验班）",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00132304"
+    },
+    {
+     "name": "几何学Ⅰ（实验班） 00132341 几何学",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00132381"
+    },
+    {
+     "name": "代数学（实验班）Ⅰ 00135450 抽象代数",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00137971"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "min": 6,
+   "max": 6,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1",
+   "parent": "3",
+   "name": "专业选修课",
+   "min": 21,
+   "max": 21,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.1",
+   "parent": "3.1",
+   "name": "专业必选组",
+   "min": 6,
+   "max": 6,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "应用随机过程",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00133090"
+    },
+    {
+     "name": "数理统计",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00135460"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.2",
+   "parent": "3.1",
+   "name": "专业限选组",
+   "min": 15,
+   "max": 15,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "贝叶斯理论与算法",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00100877"
+    },
+    {
+     "name": "统计模型和计算方法",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00102516"
+    },
+    {
+     "name": "统计学习",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00102892"
+    },
+    {
+     "name": "深度学习与强化学习",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00103335"
+    },
+    {
+     "name": "实变函数",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00132370"
+    },
+    {
+     "name": "测度论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00133010"
+    },
+    {
+     "name": "应用多元统计分析",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00133050"
+    },
+    {
+     "name": "应用回归分析",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00133110"
+    },
+    {
+     "name": "非参数统计",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00135220"
+    },
+    {
+     "name": "凸优化",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00136660"
+    },
+    {
+     "name": "应用随机分析",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00137110"
+    },
+    {
+     "name": "高维概率论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00137290"
+    },
+    {
+     "name": "试验设计与抽样",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00137912"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2",
+   "parent": "3",
+   "name": "自主选修课",
+   "min": 23,
+   "max": 23,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.2.1",
+   "parent": "3.2",
+   "name": "全校任选组",
+   "min": 3,
+   "max": 3,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.2.2",
+   "parent": "3.2",
+   "name": "理学部非数院课程组",
+   "min": 8,
+   "max": 8,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "普通物理（Ⅰ）",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00431132"
+    },
+    {
+     "name": "普通物理（Ⅱ）",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00431133"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2.3",
+   "parent": "3.2",
+   "name": "理学部课程（统计概率）组",
+   "min": 12,
+   "max": 12,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "现代统计模型",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00101756"
+    },
+    {
+     "name": "高等概率论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00112630"
+    },
+    {
+     "name": "高等统计学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00112640"
+    },
+    {
+     "name": "随机过程论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00112650"
+    },
+    {
+     "name": "数值代数",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00130550"
+    },
+    {
+     "name": "数值分析",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00130560"
+    },
+    {
+     "name": "最优化方法",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00130630"
+    },
+    {
+     "name": "大数据分析中的算法",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00136720"
+    },
+    {
+     "name": "数据科学导引",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "04630790"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "要求“思想政治理论选择性必修课”共 1 门、“劳动教育课”累计不少于 32 学时。思",
+  "想政治理论必修课和其他公共必修课按学校要求选课，信息课程见下表。",
+  "1. 毕业要求修读计算概论 B、数据结构与算法（B）即可，可修读计算概论 A、数据",
+  "结构与算法（A）进行替换。",
+  "2. 计算概论 A、数据结构与算法（A）开设常规班和实验班，均可作为毕业学分，但",
+  "一种课程班型已修读及格后，不能再修读另一种班型。因课号、班型不同，一种班型的及",
+  "格成绩不能覆盖另一种班型的不及格成绩。",
+  "Ⅰ. 人类文明及其传统                  ≥2",
+  "Ⅱ. 现代社会及其问题                  ≥2               1. 不少于 12 学分",
+  "Ⅲ. 艺术与人文                     ≥2               2. 至少修读 1 门“通识核心课”",
+  "Ⅳ. 数学、自然与技术                  ≥2",
+  "（1）具体课程列表详见《北京大学本科生选课手册》 ；",
+  "（2）原则上不允许以专业课替代通识教育课程学分；",
+  "（3）本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分；",
+  "（4）建议合理分配修读时间，每学期修读 1 门课程。",
+  "1. 数学分析Ⅰ、Ⅱ、Ⅲ，高等代数Ⅰ、Ⅱ，几何学，抽象代数，概率论，复变函数，",
+  "常微分方程，同时开设常规班和实验班，均可作为毕业学分。但一种课程班型已修读及格",
+  "后，不能再修读另一种班型。因课号、班型不同，一种班型的及格成绩不能覆盖另一种班",
+  "型的不及格成绩。",
+  "2. 几何学Ⅰ（实验班）  （课号 00132381）可替代几何学（课号 00132341）",
+  "验班）Ⅰ（课号 00137971）可替代抽象代数（课号 00135450）",
+  "。",
+  "3. 可用统计思维（课号 00137960）替代数学模型（课号 00130200） 。",
+  "备注：可以选自理学部中的任何院系，包括数学学院。统计学方向还可以选自信息科",
+  "学技术学院。要求是该院系的专业必修、专业限选或专业任选，不能是通选和公选。",
+  "备注：全校任何课程均可，包括通选和公选。",
+  "备注：8 学分可以全部选普物Ⅰ、Ⅱ，也可以选其他物理课，非物理类课程 4 学分要",
+  "求是该院系的专业必修、专业限选或专业任选，不能是通选和公选（大学化学和普通生物",
+  "学除外，普通生物学 A、B、C 只能选其一修）。"
+ ],
+ "warnings": [
+  "第 3668 行：课程行缺少学分：04830041   计算概论 A                0483053",
+  "第 3669 行：课程行缺少学分：04830041   计算概论 A                0483141",
+  "第 3670 行：课程行缺少学分：04830530   计算概论 A（实验班）           0483141",
+  "第 3671 行：课程行缺少学分：04830540   数据结构与算法（A）（实验班）       0483005",
+  "第 3672 行：课程行缺少学分：04830540   数据结构与算法（A）（实验班）       0483142",
+  "第 3673 行：课程行缺少学分：04830050   数据结构与算法（A）            0483142",
+  "第 3722 行：课程行缺少学分：00132323     高等代数（Ⅱ）             0013237",
+  "第 3723 行：课程行缺少学分：00132361     数学分析Ⅰ（实验班）          0013230",
+  "第 3724 行：课程行缺少学分：00132362     数学分析Ⅱ（实验班）          0013230",
+  "第 3725 行：课程行缺少学分：00132321     高等代数（Ⅰ）             0013237",
+  "第 3749 行：课程行缺少学分：00136780     概率论（实验班）            0013130",
+  "第 3750 行：课程行缺少学分：00137991     常微分方程（实验班）          0013234",
+  "第 3751 行：课程行缺少学分：00137960     统计思维                0013020",
+  "第 3752 行：课程行缺少学分：00132304     数学分析（Ⅲ）             0013236",
+  "第 3753 行：课程行缺少学分：00132381     几何学Ⅰ（实验班）           0013234",
+  "第 3754 行：课程行缺少学分：00137971     代数学（实验班）Ⅰ           0013545",
+  "专业名按 2025 版“统计学专业（统计学方向）”推断（专业必修课重合度 88%），请核对"
+ ],
+ "source": {
+  "volumeId": "2024-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=209",
+  "lineStart": 3581,
+  "lineEnd": 3818
+ },
+ "titleInference": {
+  "from": 2025,
+  "title": "统计学专业（统计学方向）",
+  "overlap": 0.88
+ }
+}

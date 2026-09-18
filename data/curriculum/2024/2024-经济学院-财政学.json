@@ -1,0 +1,1093 @@
+{
+ "id": "2024-经济学院-财政学",
+ "untitled": true,
+ "cohort": 2024,
+ "volume": "北京大学本科培养方案（2024）文科卷",
+ "school": "经济学院",
+ "major": "财政学",
+ "track": null,
+ "title": "财政学专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "经济学学士",
+ "totalCredits": {
+  "min": 131,
+  "max": 131
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 42,
+   "max": 42,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 60,
+   "max": 60,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 23,
+   "max": 23,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "大学英语",
+   "requirement": "2～8 学分",
+   "min": 2,
+   "max": 8,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "思想政治理论必修课",
+   "requirement": "19 学分",
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "1-3",
+   "parent": "1",
+   "name": "思想政治理论选择性必修课",
+   "requirement": "1 门",
+   "min": 1,
+   "max": 1,
+   "unit": "门"
+  },
+  {
+   "id": "1-4",
+   "parent": "1",
+   "name": "劳动教育课",
+   "requirement": "32 学时",
+   "min": 32,
+   "max": 32,
+   "unit": "学时"
+  },
+  {
+   "id": "1-5",
+   "parent": "1",
+   "name": "信息课程",
+   "requirement": "3 学分",
+   "min": 3,
+   "max": 3,
+   "unit": "学分"
+  },
+  {
+   "id": "1-6",
+   "parent": "1",
+   "name": "军事理论",
+   "requirement": "2 学分",
+   "min": 2,
+   "max": 2,
+   "unit": "学分"
+  },
+  {
+   "id": "1-7",
+   "parent": "1",
+   "name": "体育课",
+   "requirement": "4 学分",
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  },
+  {
+   "id": "1-8",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "38 学分",
+   "min": 38,
+   "max": 38,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "19 学分",
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "requirement": "3 学分",
+   "min": 3,
+   "max": 3,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "18 学分",
+   "min": 18,
+   "max": 18,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "5 学分",
+   "min": 5,
+   "max": 5,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1.1",
+   "parent": "1",
+   "name": "公共必修课",
+   "courses": [
+    {
+     "name": "计算机实习",
+     "nature": "全校必修",
+     "credits": 0,
+     "hours": 34,
+     "practice": 34,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "计算概论（C）",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "04834470"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "1.2",
+   "parent": "1",
+   "name": "通识教育课",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.1",
+   "parent": "2",
+   "name": "专业基础课",
+   "min": 38,
+   "max": 38,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.1.1",
+   "parent": "2.1",
+   "name": "数学组",
+   "min": 17,
+   "max": 17,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学（B） （一）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00130201"
+    },
+    {
+     "name": "高等数学（B） （二）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00130202"
+    },
+    {
+     "name": "线性代数（B）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": null,
+     "code": "00131460"
+    },
+    {
+     "name": "概率统计（B）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "00132380"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.1.2",
+   "parent": "2.1",
+   "name": "经济组",
+   "min": 21,
+   "max": 21,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "微观经济学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": 18,
+     "term": null,
+     "code": "02530060"
+    },
+    {
+     "name": "宏观经济学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": 14,
+     "term": null,
+     "code": "02530070"
+    },
+    {
+     "name": "计量经济学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 68,
+     "practice": 6,
+     "term": null,
+     "code": "02530140"
+    },
+    {
+     "name": "经济学原理（Ⅰ）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 16,
+     "term": null,
+     "code": "02533160"
+    },
+    {
+     "name": "经济学原理（Ⅱ）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": null,
+     "code": "02533170"
+    },
+    {
+     "name": "政治经济学（上）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02533180"
+    },
+    {
+     "name": "政治经济学（下）",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 58,
+     "practice": 10,
+     "term": null,
+     "code": "02533190"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2",
+   "parent": "2",
+   "name": "专业核心课",
+   "min": 19,
+   "max": 19,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "统计学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 15,
+     "term": null,
+     "code": "02530051"
+    },
+    {
+     "name": "社会保险",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 6,
+     "term": null,
+     "code": "02531080"
+    },
+    {
+     "name": "预算经济学",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 10,
+     "term": null,
+     "code": "02533530"
+    },
+    {
+     "name": "公司金融",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 10,
+     "term": null,
+     "code": "02533570"
+    },
+    {
+     "name": "公共经济学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 9,
+     "term": null,
+     "code": "02534500"
+    },
+    {
+     "name": "财政学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 9,
+     "term": null,
+     "code": "02534520"
+    },
+    {
+     "name": "福利经济学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 11,
+     "term": null,
+     "code": "02535720"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "min": 3,
+   "max": 3,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1",
+   "parent": "3",
+   "name": "专业选修课",
+   "min": 18,
+   "max": 18,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.1",
+   "parent": "3.1",
+   "name": "专业选修 1 组",
+   "min": 9,
+   "max": 9,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "国际税收",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": null,
+     "code": "02533840"
+    },
+    {
+     "name": "地方财政",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 6,
+     "term": null,
+     "code": "02534260"
+    },
+    {
+     "name": "公共选择理论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": null,
+     "code": "02534750"
+    },
+    {
+     "name": "社会实践",
+     "nature": "任选",
+     "credits": 1,
+     "hours": 17,
+     "practice": null,
+     "term": "7天",
+     "code": "02534880"
+    },
+    {
+     "name": "成本效益分析",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 10,
+     "term": null,
+     "code": "02534970"
+    },
+    {
+     "name": "公共经济学实证研究",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": null,
+     "code": "02535330"
+    },
+    {
+     "name": "数字经济",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 12,
+     "term": null,
+     "code": "02535690"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.2",
+   "parent": "3.1",
+   "name": "专业选修 2 组",
+   "courses": [
+    {
+     "name": "投资中的数据分析方法",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": null,
+     "code": "02500184"
+    },
+    {
+     "name": "国际贸易",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 10,
+     "term": null,
+     "code": "02530090"
+    },
+    {
+     "name": "国际金融",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02530100"
+    },
+    {
+     "name": "发展经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": null,
+     "code": "02530150"
+    },
+    {
+     "name": "数理经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 8,
+     "term": null,
+     "code": "02532250"
+    },
+    {
+     "name": "信息经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 8,
+     "term": null,
+     "code": "02532260"
+    },
+    {
+     "name": "金融工程概论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": null,
+     "code": "02532420"
+    },
+    {
+     "name": "劳动经济学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02532730"
+    },
+    {
+     "name": "环境资源经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 16,
+     "term": null,
+     "code": "02533370"
+    },
+    {
+     "name": "产业组织理论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02533600"
+    },
+    {
+     "name": "会计学原理",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 10,
+     "term": null,
+     "code": "02533710"
+    },
+    {
+     "name": "货币银行学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": null,
+     "code": "02534060"
+    },
+    {
+     "name": "专业英语",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": null,
+     "code": "02534090"
+    },
+    {
+     "name": "风险管理学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 4,
+     "term": null,
+     "code": "02534200"
+    },
+    {
+     "name": "卫生经济学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": null,
+     "code": "02534280"
+    },
+    {
+     "name": "中级财务会计",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02534740"
+    },
+    {
+     "name": "保险学原理",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 3,
+     "term": null,
+     "code": "02534820"
+    },
+    {
+     "name": "金融工程软件编程",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 12,
+     "term": null,
+     "code": "02534870"
+    },
+    {
+     "name": "中国经济史",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 9,
+     "term": null,
+     "code": "02535240"
+    },
+    {
+     "name": "财经素养教育",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "02535340"
+    },
+    {
+     "name": "应用计量经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 4,
+     "term": null,
+     "code": "02535410"
+    },
+    {
+     "name": "经济学研究训练",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": null,
+     "code": "02535500"
+    },
+    {
+     "name": "中国经济",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "02802190"
+    },
+    {
+     "name": "行为经济学",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": null,
+     "code": "02839250"
+    },
+    {
+     "name": "中国经济专题",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": null,
+     "code": "06234900"
+    },
+    {
+     "name": "环境经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 12,
+     "term": null,
+     "code": "06239100"
+    },
+    {
+     "name": "教师指导下的独立研究",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 136,
+     "practice": 136,
+     "term": null,
+     "code": "30330033"
+    },
+    {
+     "name": "教师指导下的小组研究",
+     "nature": "任选",
+     "credits": 4,
+     "hours": 136,
+     "practice": 136,
+     "term": null,
+     "code": "30330043"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2",
+   "parent": "3",
+   "name": "自主选修课",
+   "min": 5,
+   "max": 5,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高级微观经济学（一）",
+     "nature": null,
+     "credits": 3,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "02500010"
+    },
+    {
+     "name": "高级微观经济学（二）",
+     "nature": null,
+     "credits": 3,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "02500011"
+    },
+    {
+     "name": "高级宏观经济学（一）",
+     "nature": null,
+     "credits": 3,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "02518620"
+    },
+    {
+     "name": "高级宏观经济学（二）",
+     "nature": null,
+     "credits": 3,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "02518630"
+    },
+    {
+     "name": "高级计量经济学（一）",
+     "nature": null,
+     "credits": 3,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "02518640"
+    },
+    {
+     "name": "高级计量经济学（二）",
+     "nature": null,
+     "credits": 3,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "02518650"
+    },
+    {
+     "name": "国际贸易理论与政策",
+     "nature": null,
+     "credits": 2,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "02500168"
+    },
+    {
+     "name": "国际投融资实务",
+     "nature": null,
+     "credits": 2,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "02500176"
+    },
+    {
+     "name": "货币经济学",
+     "nature": null,
+     "credits": 2,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "02513080"
+    },
+    {
+     "name": "公共经济学实证研究",
+     "nature": null,
+     "credits": 2,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "02535330"
+    },
+    {
+     "name": "高级公共经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "02513080"
+    },
+    {
+     "name": "应用公共经济学",
+     "nature": null,
+     "credits": 2,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "02517930"
+    },
+    {
+     "name": "保险经济学",
+     "nature": null,
+     "credits": 3,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "02500832"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2-1",
+   "parent": "3.2",
+   "kind": "list",
+   "name": "思想道德与法治 3 学分",
+   "min": 3,
+   "max": 3,
+   "unit": "学分",
+   "requirement": "思想道德与法治 3 学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.2-2",
+   "parent": "3.2",
+   "kind": "list",
+   "name": "中国近现代史纲要 3 学分",
+   "min": 3,
+   "max": 3,
+   "unit": "学分",
+   "requirement": "中国近现代史纲要 3 学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.2-3",
+   "parent": "3.2",
+   "kind": "list",
+   "name": "马克思主义基本原理概论 3 学分",
+   "min": 3,
+   "max": 3,
+   "unit": "学分",
+   "requirement": "马克思主义基本原理概论 3 学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.2-4",
+   "parent": "3.2",
+   "kind": "list",
+   "name": "毛泽东思想与中国特色社会主义理论体系概论 3 学分",
+   "min": 3,
+   "max": 3,
+   "unit": "学分",
+   "requirement": "毛泽东思想与中国特色社会主义理论体系概论 3 学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.2-5",
+   "parent": "3.2",
+   "kind": "list",
+   "name": "习近平新时代中国特色社会主义思想概论 3 学分",
+   "min": 3,
+   "max": 3,
+   "unit": "学分",
+   "requirement": "习近平新时代中国特色社会主义思想概论 3 学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.2-6",
+   "parent": "3.2",
+   "kind": "list",
+   "name": "形势与政策 2 学分",
+   "min": 2,
+   "max": 2,
+   "unit": "学分",
+   "requirement": "形势与政策 2 学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.2-7",
+   "parent": "3.2",
+   "kind": "list",
+   "name": "思政实践（上）1 学分、思政实践（下）1 学分",
+   "min": 1,
+   "max": 1,
+   "unit": "学分",
+   "requirement": "思政实践（上）1 学分、思政实践（下）1 学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.2-8",
+   "parent": "3.2",
+   "kind": "list",
+   "name": "军事理论 2 学分",
+   "min": 2,
+   "max": 2,
+   "unit": "学分",
+   "requirement": "军事理论 2 学分",
+   "courses": [],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "要求“思想政治理论选择性必修课”共 1 门、“劳动教育课”累计不少于 32 学时。思",
+  "想政治理论必修课和其他公共必修课按学校要求选课，信息课程见下表。",
+  "+                     +",
+  "Ⅰ. 人类文明及其传统                        ≥2",
+  "Ⅱ. 现代社会及其问题                        ≥2            1. 不少于 12 学分",
+  "Ⅲ. 艺术与人文                           ≥2            2. 至少修读 1 门“通识核心课”",
+  "Ⅳ. 数学、自然与技术                        ≥2",
+  "（1）具体课程列表详见《北京大学本科生选课手册》 ；",
+  "（2）原则上不允许以专业课替代通识教育课程学分；",
+  "（3）本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分；",
+  "（4）建议合理分配修读时间，每学期修读 1 门课程。",
+  "政治经济学（下）为思政政治理论选择性必修课，该课程可以同时认定为相应课程类",
+  "别学分。",
+  "荣誉学位制度是为培养本科生的学术志趣而设计的培养项目，也是给予本科学生的最",
+  "高学术认可，旨在进一步积极探索优秀学生的多样化成长路径，提升学生学习的挑战性、",
+  "自主性和开放性，坚持让学生成为学习的主体，增加学生学习的自主性，树立学术信心。",
+  "经济学院希望通过设立本科荣誉学位，使学生更大限度运用学校的各类学术资源，打下良",
+  "好基础，开展卓有成效的科研或创新项目，在知识、能力和综合素质方面得到根本性提升，",
+  "从而引领和推动本科教学改革。",
+  "● 德智体美劳全面发展，预计能正常毕业并获得学士学位证书且学习成绩突出，在",
+  "本专业处于前列；",
+  "● 具有学术研究兴趣、社会实践能力和创新精神；",
+  "● 品行优良，无任何违法违纪受纪律处分记录；",
+  "● 完成至少 12 学分荣誉学位课程，每门课程百分制成绩达到 85 分（含 85 分）以上，",
+  "●  本科毕业论文最终成绩达到 90 分（含 90 分）以上；",
+  "●  在学期间完成一项自主选题的本科生科研项目，且结题成绩达到 85 分（含 85 分）",
+  "以上。",
+  "满足上述条件的经济学院本科生（含港澳台学生、留学生，不含元培学院经济方向学",
+  "生），可以向学院提出申请。由教务办公室进行资格初审，符合全部条件者，名单提交经济",
+  "学院本科教学委员会进行审议，形成拟授予名单。拟授予名单人数不得超过该年级经济学",
+  "院本科生总人数的 15%。",
+  "毕业审核时，学院对拟授予名单进行复查并提交学校进行最终审核。通过最终审核者，",
+  "根据北京大学关于荣誉学位的相关规定，颁发荣誉证书；不符合学术标准者取消授予资格。",
+  "1. 港澳台学生、留学生除以下免修课程外，学分完成要求（包括公共基础、专业必修",
+  "课程、专业选修课程等）均与本科生要求一致。政治类免修课程的学分必须由“与中国有",
+  "关课程”补足。",
+  "2. 港澳台学生、留学生可免修全校公共必修课程中的政治类课程包括：",
+  "北京大学光华管理学院前身是成立于 1985 年的北京大学经济管理系，1994 年正式更",
+  "名为光华管理学院。依托北京大学深厚的历史底蕴和文化积淀，以“创造管理知识，培养",
+  "商界领袖，推动社会进步”为使命，光华管理学院已走过 30 余载春秋。学院在科研水平、",
+  "师资建设、人才培养、国际合作等方面位居国内经济管理学院前列，是亚太地区最优秀的",
+  "商学院之一。",
+  "学院有着完整的学科结构，现设有应用经济学系、金融学系、商务统计与经济计量系、",
+  "会计系、市场营销学系、组织与战略管理系、管理科学与信息系统系等 7 个系。其中，应",
+  "用经济学、工商管理学入选“双一流”建设学科；金融学、会计学、营销学入选国家/省级",
+  "一流专业建设点。北京大学应用经济学、工商管理学学科建设均遥遥领先，并迈向世界一",
+  "流。学院设有人工智能与社会科学、管理创新、微观大数据为基础的应用型研究三个交叉",
+  "学科横向发展平台，以及行为科学和政策干预、碳中和经济学和管理学两个交叉创新团队，",
+  "成为学科生长点和创新源。",
+  "学院拥有并持续扩充着一支高水平的师资人才队伍，曾有以厉以宁教授为代表的经济",
+  "学泰斗，也有毕业于国外一流商学院、勇于创新、具备国际学术影响力的中青年学术骨干。",
+  "学院现有全职教研人员 110 余位，70%以上具有海外教育背景，毕业于哈佛大学、斯坦福",
+  "大学等 60 余所国际知名学府。其中，教育部“长江学者”（特聘教授、青年学者）19 位，",
+  "国家杰出青年基金获得者 12 位，国家自然科学基金优秀青年基金获得者/海外优秀青年基",
+  "金获得者/青年拔尖人才 10 位，教育部新世纪人才 9 位，国家十四五规划专家委员会委员 2",
+  "位。授课团队还包括众多学术造诣深厚、实战经验丰富的业界导师。具有不同职业背景的",
+  "企业家、经理人、政府官员，从宏观政策、战略布局到人生规划、职业选择，给予同学们",
+  "个性化的建议与指导。此外，也有来自海外各大顶尖高校的兼职教授和特聘教授，使得同",
+  "学们接触多元化的熏陶与滋养。",
+  "针对如何教育和培养人才，学院提出了“价值引领+科技驱动+产业创新”的新范式。",
+  "其中，“价值引领”强调人才培养坚持“四个面向”，主动服务中国式现代化建设；“科",
+  "技驱动”强调以有效解决科技带来的卡点、难点、堵点问题为重要导向；“产业创新”强",
+  "调人才培养直接面向节点产业，瞄准关键核心技术特别是“卡脖子”问题，深度参与、有",
+  "力引领全球创新链和产业链变革，形成更多创新突破点。以“科学、创新、实践、情怀”",
+  "为理念，学院加强基础、促进交叉，坚持通识教育与专业教育相结合，让学生“懂自己、",
+  "懂社会、懂中国、懂世界”，真正体验到研究型大学的丰富性、多元性、前沿性和广阔性。",
+  "学院目前开设“未来领导者”国际本科项目（工商管理专业）以及本科常规项目。常",
+  "规项目包含金融学专业、金融学专业（金融经济学方向）、会计学专业、市场营销专业、",
+  "市场营销专业（数据科学方向）等三个专业五个方向。学院均按工商管理类进行招生，限",
+  "英语考生，文理兼收，体现交叉学科的特点。",
+  "“未来领导者”国际本科项目（工商管理专业）：为适应经济全球化的发展趋势，学院",
+  "致力于培养国际化人才。学院践行国家“一带一路”倡议，结合学院充分的国际合作资源",
+  "以及比较成熟的本科培养体系，在北京大学的领导下，开设了“一带一路”书院国际本科",
+  "项目。与多所“一带一路”相关国家顶尖大学建立合作联盟，由联盟院校推荐优秀本科生",
+  "和北京大学的学生一起参与该项目，联盟院校推荐的学生在本国度过第一、第二学年。第",
+  "三第四学年在北大度过，完成课程学分要求和语言学习，在学分得到认可后，将获得北京",
+  "大学学士学位以及本国的本科学位。",
+  "本科常规项目（金融学、会计学、市场营销）：学制四年。入学后前两年学生不分专",
+  "业，按照培养方案自由选课，以公共必修课程、通识课程、专业基础课程和专业核心课程",
+  "为主，第三年起根据个人特长与兴趣自由选择专业。常规项目开设金融学、会计学、市场",
+  "营销三个专业。其中，金融学专业包括金融学和金融经济学 2 个方向，市场营销专业包括",
+  "市场营销和数据科学 2 个方向。同时，学院开设 8 个辅修专业：金融学、金融科技、金融",
+  "经济、会计学、市场营销、数据科学、人工智能、战略与领导力，学生在毕业前完成辅修",
+  "专业要求的全部课程，学院将出具相关证明。",
+  "学院非常注重本科生的科研训练，设立“光华未来学术之星”培养计划，为有学术研",
+  "究兴趣的优秀本科生，提供最优的学术资源和系统性支持（如研究导师、“学术启航”系",
+  "列讲座、学术研讨、出国交流等）。学生每年可以申请学校和学院的“科研基金”，在导",
+  "师的指导下进行科研课题的研究。此外，学院为品学兼优的本科学生提供学校、学院、众",
+  "多企业、杰出校友及基金会设立的 40 余种校院级学金奖助支持，每年惠及学生 1000 余人",
+  "次，帮助学生顺利完成学业，及参与国际国内学术与文化交流活动。",
+  "020301K          金融学            Finance               4年          经济学学士",
+  "120203K          会计学           Accounting             4年          管理学学士",
+  "120202        市场营销            Marketing              4年          管理学学士",
+  "120201K        工商管理      Business Administration      4年          管理学学士",
+  "院长           刘俏         62751664          qiao_liu@gsm.pku.edu.cn",
+  "沈俏蔚        62751563           qshen@gsm.pku.edu.cn",
+  "项目主任",
+  "本科研究生项目执行主任            翁翕         62747505         wengxi125@gsm.pku.edu.cn",
+  "本科研究生项目运营主任            安倩         62747016          anqian@gsm.pku.edu.cn"
+ ],
+ "warnings": [
+  "专业名按 2025 版“财政学专业”推断（专业必修课重合度 100%），请核对"
+ ],
+ "source": {
+  "volumeId": "2024-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=210",
+  "lineStart": 21819,
+  "lineEnd": 22164
+ },
+ "titleInference": {
+  "from": 2025,
+  "title": "财政学专业",
+  "overlap": 1
+ }
+}

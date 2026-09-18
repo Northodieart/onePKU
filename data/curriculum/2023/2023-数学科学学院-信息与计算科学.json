@@ -1,0 +1,724 @@
+{
+ "id": "2023-数学科学学院-信息与计算科学",
+ "cohort": 2023,
+ "volume": "北京大学本科教学计划（2023）理科卷",
+ "school": "数学科学学院",
+ "major": "信息与计算科学",
+ "track": null,
+ "title": "信息与计算科学专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "理学学士学位。",
+ "totalCredits": {
+  "min": 138,
+  "max": 144
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 45,
+   "max": 51,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 49,
+   "max": 49,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 44,
+   "max": 44,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "33~39 学分",
+   "inferredParent": true,
+   "min": 33,
+   "max": 39,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "19 学分",
+   "inferredParent": true,
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "24 学分",
+   "inferredParent": true,
+   "min": 24,
+   "max": 24,
+   "unit": "学分"
+  },
+  {
+   "id": "2-4",
+   "parent": "2",
+   "name": "其他非课程必修要求",
+   "requirement": "0 学分",
+   "inferredParent": true,
+   "min": 0,
+   "max": 0,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "21 学分",
+   "inferredParent": true,
+   "min": 21,
+   "max": 21,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "23 学分",
+   "inferredParent": true,
+   "min": 23,
+   "max": 23,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 45,
+   "max": 51,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 B",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "04831410"
+    },
+    {
+     "name": "计算概论 B 上机",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": null,
+     "code": "04831650"
+    },
+    {
+     "name": "数据结构与算法 B",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "04831420"
+    },
+    {
+     "name": "数据结构与算法上机",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": null,
+     "code": "04830494"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "一上或一下",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 49,
+   "max": 49,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "数学分析 Ⅰ",
+     "nature": null,
+     "credits": 5,
+     "hours": 6,
+     "practice": null,
+     "term": "(",
+     "code": "00132301"
+    },
+    {
+     "name": "数学分析 Ⅱ",
+     "nature": null,
+     "credits": 5,
+     "hours": 6,
+     "practice": null,
+     "term": "一下 (一年级春季学期)",
+     "code": "00132302"
+    },
+    {
+     "name": "高等代数 Ⅰ",
+     "nature": null,
+     "credits": 5,
+     "hours": 6,
+     "practice": null,
+     "term": "一上 (一年级秋季学期)",
+     "code": "00132321"
+    },
+    {
+     "name": "高等代数 Ⅱ",
+     "nature": null,
+     "credits": 4,
+     "hours": 5,
+     "practice": null,
+     "term": "一下 (一年级春季学期)",
+     "code": "00132323"
+    },
+    {
+     "name": "数学分析 Ⅲ",
+     "nature": null,
+     "credits": 4,
+     "hours": 5,
+     "practice": null,
+     "term": "二上 (二年级秋季学期)",
+     "code": "00132304"
+    },
+    {
+     "name": "几何学",
+     "nature": null,
+     "credits": 5,
+     "hours": 6,
+     "practice": null,
+     "term": "一上 (一年级秋季学期)",
+     "code": "00132341"
+    },
+    {
+     "name": "抽象代数",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二上 (二年级秋季学期)",
+     "code": "00135450"
+    },
+    {
+     "name": "复变函数",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二下 (二年级春季学期)",
+     "code": "00132320"
+    },
+    {
+     "name": "常微分方程",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二下 (二年级春季学期)",
+     "code": "00132340"
+    },
+    {
+     "name": "概率论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "00131300"
+    },
+    {
+     "name": "机器学习基础",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00137170"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 44,
+   "max": 44,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "数值代数",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上 (三年级秋季学期)",
+     "code": "00130550"
+    },
+    {
+     "name": "数值分析",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三下 (三年级春季学期)",
+     "code": "00130560"
+    },
+    {
+     "name": "最优化方法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上 (三年级秋季学期)",
+     "code": "00130630"
+    },
+    {
+     "name": "实变函数",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上 (三年级秋季学期)",
+     "code": "00132370"
+    },
+    {
+     "name": "偏微分方程",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上 (三年级秋季学期)",
+     "code": "00132330"
+    },
+    {
+     "name": "泛函分析",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三下 (三年级春季学期)",
+     "code": "00132350"
+    },
+    {
+     "name": "大数据分析中的算法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三下 (三年级春季学期)",
+     "code": "00136720"
+    },
+    {
+     "name": "偏微分方程数值解",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "四上 (四年级秋季学期)",
+     "code": "00135520"
+    },
+    {
+     "name": "随机模拟方法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "四上 (四年级秋季学期)",
+     "code": "00113690"
+    },
+    {
+     "name": "图像处理中的数学方法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "四上 (四年级秋季学期)",
+     "code": "00100873"
+    },
+    {
+     "name": "应用偏微分方程",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "四上 (四年级秋季学期)",
+     "code": "00112780"
+    },
+    {
+     "name": "流体力学引论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "四下 (四年级春季学期)",
+     "code": "00130640"
+    },
+    {
+     "name": "计算系统生物学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "四下 (四年级春季学期)",
+     "code": "00100883"
+    },
+    {
+     "name": "计算流体力学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "四下 (四年级春季学期)",
+     "code": "00110820"
+    },
+    {
+     "name": "并行计算 Ⅱ",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "四下 (四年级春季学期)",
+     "code": "00110860"
+    },
+    {
+     "name": "人工智能",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三下 (三年级春季学期)",
+     "code": "00110950"
+    },
+    {
+     "name": "程序设计技术与方法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上 (三年级秋季学期)",
+     "code": "00135040"
+    },
+    {
+     "name": "信息科学基础",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "00130030"
+    },
+    {
+     "name": "数理逻辑",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "00130730"
+    },
+    {
+     "name": "集合论与图论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "00135290"
+    },
+    {
+     "name": "计算机图形学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "00130210"
+    },
+    {
+     "name": "计算机图像处理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "00135590"
+    },
+    {
+     "name": "机器学习基础",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "春季",
+     "code": "00137170"
+    },
+    {
+     "name": "理论计算机科学基础",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "00135050"
+    },
+    {
+     "name": "算法设计与分析",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "00110060"
+    },
+    {
+     "name": "数字信号处理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "00130830"
+    },
+    {
+     "name": "深度学习与强化学习",
+     "nature": null,
+     "credits": 3,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00103335"
+    },
+    {
+     "name": "数理统计",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上 (三年级秋季学期)",
+     "code": "00135460"
+    },
+    {
+     "name": "数据科学导引",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上 (三年级秋季学期)",
+     "code": "04630790"
+    },
+    {
+     "name": "测度论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三下 (三年级春季学期)",
+     "code": "00133010"
+    },
+    {
+     "name": "深度学习:算法与应用",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三下 (三年级春季学期)",
+     "code": "00137130"
+    },
+    {
+     "name": "最优化理论与算法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "四上 (四年级秋季学期)",
+     "code": "00110780"
+    },
+    {
+     "name": "凸优化",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "四上 (四年级秋季学期)",
+     "code": "00136660"
+    },
+    {
+     "name": "高等概率论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "四上 (四年级秋季学期)",
+     "code": "00112630"
+    },
+    {
+     "name": "微分几何",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "四上 (四年级秋季学期)",
+     "code": "00132310"
+    },
+    {
+     "name": "拓扑学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "四上 (四年级秋季学期)",
+     "code": "00130161"
+    },
+    {
+     "name": "泛函分析 (二)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "四上 (四年级秋季学期)",
+     "code": "00110130"
+    },
+    {
+     "name": "数学物理中的反问题",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "四下 (四年级春季学期)",
+     "code": "00112530"
+    },
+    {
+     "name": "随机过程论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "四下 (四年级春季学期)",
+     "code": "00112650"
+    },
+    {
+     "name": "二阶椭圆形方程",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "四下 (四年级春季学期)",
+     "code": "00112710"
+    },
+    {
+     "name": "经典力学的数学方法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "四下 (四年级春季学期)",
+     "code": "00110070"
+    },
+    {
+     "name": "高等深度学习",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "四下 (四年级春季学期)",
+     "code": "00102442"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "—       大学英语                2~8     —   —      按大学英语教研室要求选课。",
+  "—       思想政治理论必修课           19                 按马克思主义学院要求选课。",
+  "—                           1门                 按学校要求选课。",
+  "—       劳动教育课              32 学时               按学校要求选课。",
+  "上机课 “计算概论 B 上机”。",
+  "上机课 “计算概论 B 上机”。",
+  "时,需要另选该 课 程 的 上 机 课 “数",
+  "据结构与算法上机”。",
+  "北京大学数学科学学院                                 · 53 ·",
+  "算法 B”课程同时,需要另选该课程",
+  "的上机课 “数据结构与算法上机”。",
+  "—       体育系列课程           1×4       2         0     全年",
+  "通识教育课程分为四个 系 列: Ⅰ. 人 类 文 明 及 其 传 统, Ⅱ. 现 代 社 会 及 其 问 题, Ⅲ.",
+  "艺术与人文, Ⅳ. 数学、自然与技术。每个系列均包含通识教育核心课、通选课两部分课",
+  "程,具体课程列表详见 《北京大学本科生选课手册》。",
+  "1)至少修读 1 门 “通识教育核心课程” (任一系列),且在四个课程系列中 每个系列",
+  "至少修读 2 学分 (通识教育核心课或通选课均可)。",
+  "(",
+  "2)原则上不允许以专业课替代通识教育课程学分。",
+  "(",
+  "3)本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分。",
+  "(",
+  "4)建议合理分配修读时间,每学期修读 1 门课程。",
+  "00131670/   应用数学导论/            3         3                二下 (二年级春季学期)",
+  "注:数学分析 Ⅰ 、 Ⅱ 、 Ⅲ ,高等代数 Ⅰ 、 Ⅱ ,几 何 学, 概 率 论 都 同 时 开 设 常 规 班 和 实 验 班, 均 可 作",
+  "为毕业学分,但一种课程班型 已 修 读 及 格 后, 不 能 再 修 读 另 一 种 班 型。 因 课 号、 班 型 不 同, 计 算 学 分、",
+  "GPA 时,一种班型的及格成绩 不 能 覆 盖 另 一 种 班 型 的 不 及 格 成 绩。 计 算 数 学 方 向 可 以 用 应 用 数 学 导 论",
+  "(课号 00131670) 替代数学模型,信息科学方向可以用机器学习基础 (课号 00137170) 替代数学模型。",
+  "· 54 ·              北京大学本科培养方案 (",
+  "北京大学数学科学学院                      · 55 ·",
+  "-21 学部课程:12 学分 (非数学院 课 程 要 求 是 该 院 系 的 专 业 必 修、 专 业 限 选 或 专 业",
+  "-",
+  "任选,不能是通选和公选)。",
+  "从数学学院开设的数学类课 程 中 任 选 12 学 分 计 算 系 认 可 的 课 程。 建 议 学 有 余 力 的 同",
+  "量子力学                                四下 (四年级春季学期)",
+  "热力学与统计物理                            大四年级   学期不定",
+  "理学部及信息与工程学部课 程 12 学 分,可 从 数 学 学 院 及 信 息 科 学 技 术 学 院 开 设 的 数",
+  "学与计算机类课程中任选 4 门信息系认可的课程。",
+  "2 理学部的非数学学院课程 8 学分,其中要求物理类课程 4 学分。",
+  "8 学分全部选普物 Ⅰ 、 Ⅱ 也行,也可以选其 他 物 理 课,非 物 理 类 课 程 4 学 分 要 求 是 该",
+  "院系的专业必修、专业 限 选 或 专 业 任 选, 不 能 是 通 选 和 公 选 (大 学 化 学 和 普 通 生 物 学 除",
+  "外,普通生物学 A、B、C 只能选其一修)。",
+  "3 在全校课程中选择其余 3 学分。",
+  "全校任何课程均可,包括通选和公选。"
+ ],
+ "warnings": [
+  "第 2833 行：课程行缺少学分：00137170   机器学习基础"
+ ],
+ "source": {
+  "volumeId": "2023-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=195",
+  "lineStart": 2674,
+  "lineEnd": 3081
+ }
+}

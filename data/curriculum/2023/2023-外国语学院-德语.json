@@ -1,0 +1,953 @@
+{
+ "id": "2023-外国语学院-德语",
+ "cohort": 2023,
+ "volume": "北京大学本科教学计划（2023）文科卷",
+ "school": "外国语学院",
+ "major": "德语",
+ "track": null,
+ "title": "德语专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "文学学士学位。",
+ "totalCredits": {
+  "min": 146,
+  "max": 146
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 48,
+   "max": 48,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 58,
+   "max": 58,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 40,
+   "max": 40,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "36 学分",
+   "inferredParent": true,
+   "min": 36,
+   "max": 36,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "24 学分",
+   "inferredParent": true,
+   "min": 24,
+   "max": 24,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "34 学分",
+   "inferredParent": true,
+   "min": 34,
+   "max": 34,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "30 学分",
+   "inferredParent": true,
+   "min": 30,
+   "max": 30,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "10 学分",
+   "inferredParent": true,
+   "min": 10,
+   "max": 10,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 48,
+   "max": 48,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 C",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "04834470"
+    },
+    {
+     "name": "计算机实习",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": "“计 算 概 论 C” 课 程 同 时,",
+     "code": "04831435"
+    },
+    {
+     "name": "计算机实习)",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "一上或一下",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 58,
+   "max": 58,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "德语视听说 (一)",
+     "nature": null,
+     "credits": 2,
+     "hours": 1,
+     "practice": null,
+     "term": "一上",
+     "code": "03632021"
+    },
+    {
+     "name": "德语视听说 (二)",
+     "nature": null,
+     "credits": 2,
+     "hours": 1,
+     "practice": null,
+     "term": "一下",
+     "code": "03632022"
+    },
+    {
+     "name": "德语视听说 (三)",
+     "nature": null,
+     "credits": 2,
+     "hours": 1,
+     "practice": null,
+     "term": "二上",
+     "code": "03632023"
+    },
+    {
+     "name": "德语视听说 (四)",
+     "nature": null,
+     "credits": 2,
+     "hours": 1,
+     "practice": null,
+     "term": "二下",
+     "code": "03632024"
+    },
+    {
+     "name": "德语笔译 (一)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03632041"
+    },
+    {
+     "name": "德语笔译 (二)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03632042"
+    },
+    {
+     "name": "德语笔译 (三)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03632043"
+    },
+    {
+     "name": "德语笔译 (四)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四下",
+     "code": "03632044"
+    },
+    {
+     "name": "德语口译 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03632053"
+    },
+    {
+     "name": "德语口译 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03632054"
+    },
+    {
+     "name": "德语文学批评选读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03632190"
+    },
+    {
+     "name": "德国历史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03632210"
+    },
+    {
+     "name": "德语国家国情课",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上",
+     "code": "03632220"
+    },
+    {
+     "name": "德语文学研究导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03632410"
+    },
+    {
+     "name": "德语精读 (一)",
+     "nature": null,
+     "credits": 7,
+     "hours": 14,
+     "practice": null,
+     "term": "一上",
+     "code": "03632001"
+    },
+    {
+     "name": "德语精读 (二)",
+     "nature": null,
+     "credits": 7,
+     "hours": 14,
+     "practice": null,
+     "term": "一下",
+     "code": "03632002"
+    },
+    {
+     "name": "德语精读 (三)",
+     "nature": null,
+     "credits": 6,
+     "hours": 12,
+     "practice": null,
+     "term": "二上",
+     "code": "03632003"
+    },
+    {
+     "name": "德语精读 (四)",
+     "nature": null,
+     "credits": 6,
+     "hours": 12,
+     "practice": null,
+     "term": "二下",
+     "code": "03632004"
+    },
+    {
+     "name": "德语国家文学史与选读 (一)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03632621"
+    },
+    {
+     "name": "德语国家文学史与选读 (二)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03632622"
+    },
+    {
+     "name": "德语国家文学史与选读 (三)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03632623"
+    },
+    {
+     "name": "德语国家文学史与选读 (四)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四下",
+     "code": "03632624"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 40,
+   "max": 40,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "德语高级听力",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03632029"
+    },
+    {
+     "name": "德语散文名篇选读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03632089"
+    },
+    {
+     "name": "德语长篇小说专题 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03632103"
+    },
+    {
+     "name": "德语长篇小说专题 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四下",
+     "code": "03632104"
+    },
+    {
+     "name": "德国文化史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03632110"
+    },
+    {
+     "name": "奥地利、瑞士文学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03632130"
+    },
+    {
+     "name": "德语语言学导论 (一)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "03632181"
+    },
+    {
+     "name": "德语语言学导论 (二)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03632182"
+    },
+    {
+     "name": "德语中短篇小说研究",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03632200"
+    },
+    {
+     "name": "德语语法专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03632230"
+    },
+    {
+     "name": "德语国家诗歌",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03632270"
+    },
+    {
+     "name": "德语国家戏剧",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03632280"
+    },
+    {
+     "name": "德语写作 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03632291"
+    },
+    {
+     "name": "德语写作 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03632292"
+    },
+    {
+     "name": "《圣经》 与德语文学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03632331"
+    },
+    {
+     "name": "跨文化交际",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03632340"
+    },
+    {
+     "name": "德语词汇学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03632390"
+    },
+    {
+     "name": "德语思想史名篇选读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03632400"
+    },
+    {
+     "name": "德语语言史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03632420"
+    },
+    {
+     "name": "语言学理论与学派",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03632430"
+    },
+    {
+     "name": "德国研究学术前沿",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "03632440"
+    },
+    {
+     "name": "东方文学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "03530450"
+    },
+    {
+     "name": "中国古代史 (上)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": null,
+     "code": "02130011"
+    },
+    {
+     "name": "中国古代史 (下)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": null,
+     "code": "02130012"
+    },
+    {
+     "name": "考古学通论",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": null,
+     "code": "02232210"
+    },
+    {
+     "name": "中国哲学 (上)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "02330092"
+    },
+    {
+     "name": "中国哲学 (下)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "02330096"
+    },
+    {
+     "name": "中国哲学 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02330094"
+    },
+    {
+     "name": "中国哲学 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02330095"
+    },
+    {
+     "name": "哲学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02330001"
+    },
+    {
+     "name": "哲学导论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "02330003"
+    },
+    {
+     "name": "西方哲学 (上)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "02330051"
+    },
+    {
+     "name": "西方哲学 (下)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "02330053"
+    },
+    {
+     "name": "西方哲学 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02330052"
+    },
+    {
+     "name": "西方哲学 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02330054"
+    },
+    {
+     "name": "德语名家中国著述选读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "03632630"
+    },
+    {
+     "name": "中国古代文学史 ( 1)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "02030031"
+    },
+    {
+     "name": "中国古代文学史 ( 2)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "02030032"
+    },
+    {
+     "name": "中国古代文学史 ( 3)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "02030033"
+    },
+    {
+     "name": "中国古代文学史 ( 4)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "02030034"
+    },
+    {
+     "name": "中国现代文学史",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": null,
+     "code": "02030040"
+    },
+    {
+     "name": "文学原理",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02039200"
+    },
+    {
+     "name": "中国文学理论批评史",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "02033270"
+    },
+    {
+     "name": "比较文学原理",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02030790"
+    },
+    {
+     "name": "古代汉语 (上)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": null,
+     "code": "02030021"
+    },
+    {
+     "name": "古代汉语 (下)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": null,
+     "code": "02030022"
+    },
+    {
+     "name": "语言学概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "02030070"
+    },
+    {
+     "name": "古希腊罗马史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02133620"
+    },
+    {
+     "name": "欧洲史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02133640"
+    },
+    {
+     "name": "中国近代史",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": null,
+     "code": "02130020"
+    },
+    {
+     "name": "中国现代史",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": null,
+     "code": "02132030"
+    },
+    {
+     "name": "史学概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "02130110"
+    },
+    {
+     "name": "西方哲学史 (上)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "02335063"
+    },
+    {
+     "name": "西方哲学史 (下)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "02335065"
+    },
+    {
+     "name": "美学原理",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02330152"
+    },
+    {
+     "name": "宗教学导论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "02330160"
+    },
+    {
+     "name": "中国哲学史 (上)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "02330085"
+    },
+    {
+     "name": "中国哲学史 (下)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "02330087"
+    },
+    {
+     "name": "中国宗教史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02332250"
+    },
+    {
+     "name": "马克思主义哲学史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02330101"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "—       思想政治理论必修课          19      —       —",
+  "选课。",
+  "—                          1门      —       —    按学校要求选课。",
+  "—       劳动教育课             32 学时                 按学校要求选课",
+  "算 概 论 C” 课 程 后, 需 要",
+  "另选 该 课 程 的 上 机 课",
+  "(",
+  "04831435,计算机实习)。",
+  "需要 另 选 该 课 程 的 上 机 课",
+  "—       体育系列课程            1×4      2       0    全年",
+  "注:大学外语必修大学英语对应级别的学分,不足 8 学 分 部 分,需 用 非 本 专 业 语 言 的 公 共 语 言 课 或 专 业",
+  "基础语言课补足学分 (课程明细见本学院附表 1)。",
+  "通识教育课分为四个系列: Ⅰ. 人类文明及其传统; Ⅱ. 现代社会及其问题; Ⅲ. 艺",
+  "· 194 ·            北京大学本科培养方案 (",
+  "术与人文; Ⅳ. 数 学、 自 然 与 技 术。 每 个 系 列 均 包 含 通 识 教 育 核 心 课、 通 选 课 两 部 分 课",
+  "程,具体课程列表详见 《北京大学本科生选课手册》。",
+  "1)至少修读 1 门 “通识教育核心课程” (任一系列),且在四个课程系列中每个系列",
+  "至少修读 2 学分 (通识教育核心课或通选课均可)。",
+  "2)原则上不允许以专业课替代通识教育课程学分。",
+  "3)本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分。",
+  "4)建议合理分配修读时间,每学期修读 1 门课程。",
+  "北京大学外国语学院                   · 195 ·",
+  "以下为推荐课程,其中人文学部课程 (中国文学史、中国古代史、考古学通论、哲学",
+  "导论、中国哲 学、 西 方 哲 学、 艺 术 史 导 论 ) 不 少 于 3 学 分; 东 方 文 学、 西 方 文 学 必 选",
+  "一门。",
+  "新开课       西方文学                     2          2        春季",
+  "新开课       中国文学史                    3          3",
+  "新开课       中国古代史                    4          4",
+  "· 196 ·            北京大学本科培养方案 (",
+  "新开课       艺术史导论                 2        2",
+  "北京大学外国语学院                         · 197 ·"
+ ],
+ "warnings": [
+  "第 10700 行：课程行缺少学分：04831435 计算机实习)"
+ ],
+ "source": {
+  "volumeId": "2023-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=196",
+  "lineStart": 10602,
+  "lineEnd": 10906
+ }
+}

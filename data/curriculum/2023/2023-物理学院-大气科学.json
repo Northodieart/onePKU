@@ -1,0 +1,626 @@
+{
+ "id": "2023-物理学院-大气科学",
+ "cohort": 2023,
+ "volume": "北京大学本科教学计划（2023）理科卷",
+ "school": "物理学院",
+ "major": "大气科学",
+ "track": null,
+ "title": "大气科学专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "理学学士学位。",
+ "totalCredits": {
+  "min": 143,
+  "max": 149
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 45,
+   "max": 51,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 70,
+   "max": 70,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 28,
+   "max": 28,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "33~39 学分",
+   "inferredParent": true,
+   "min": 33,
+   "max": 39,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "33 学分",
+   "inferredParent": true,
+   "min": 33,
+   "max": 33,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "31 学分",
+   "inferredParent": true,
+   "min": 31,
+   "max": 31,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "10 学分",
+   "inferredParent": true,
+   "min": 10,
+   "max": 10,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "18 学分",
+   "inferredParent": true,
+   "min": 18,
+   "max": 18,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 45,
+   "max": 51,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 B",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "算概论 B” 课 程 同 时, 需 要",
+     "code": "04831410"
+    },
+    {
+     "name": "计算概论 B 上机",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": "算概论 B” 课 程 同 时, 需 要",
+     "code": "04831650"
+    },
+    {
+     "name": "数据结构与算法 B",
+     "nature": null,
+     "credits": 3,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04831420"
+    },
+    {
+     "name": "或微 处 理 器 与 接 口",
+     "nature": null,
+     "credits": 3,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04833830"
+    },
+    {
+     "name": "或计算方法 ( B)",
+     "nature": null,
+     "credits": 3,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00130280"
+    },
+    {
+     "name": "数据 结 构 与 算 法上机",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": "据 结 构 与 算 法 B” 课 程 同",
+     "code": "04830494"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "一年级",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 70,
+   "max": 70,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "普通物理实验 Ⅰ",
+     "nature": null,
+     "credits": 4,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00437180"
+    },
+    {
+     "name": "普通物理实验 Ⅱ",
+     "nature": null,
+     "credits": 4,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00437190"
+    },
+    {
+     "name": "高等数学 ( A)(一)",
+     "nature": null,
+     "credits": 6,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00132511"
+    },
+    {
+     "name": "高等数学 ( A)(二)",
+     "nature": null,
+     "credits": 6,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00132512"
+    },
+    {
+     "name": "线性代数 ( B)",
+     "nature": null,
+     "credits": 4,
+     "hours": 5,
+     "practice": null,
+     "term": "一年级",
+     "code": "00131460"
+    },
+    {
+     "name": "数学物理方法",
+     "nature": null,
+     "credits": 4,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00432110"
+    },
+    {
+     "name": "数学物理方法 (上) 至少",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "二年级",
+     "code": "00432108"
+    },
+    {
+     "name": "数学物理方法 (下)",
+     "nature": null,
+     "credits": 3,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00432109"
+    },
+    {
+     "name": "四大 力 学 (理 论 力 学 A/B、 平 衡 至少",
+     "nature": null,
+     "credits": 5,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00432140"
+    },
+    {
+     "name": "态统 计 物 理 [或 热 力 学 与 统 计 物(不含",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00432141"
+    },
+    {
+     "name": "理 A/B]、 电 动 力 学 A/B、 量 子讨论班)",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00432149"
+    },
+    {
+     "name": "力学 A/B)、固体物理",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "00432150"
+    },
+    {
+     "name": "大气科学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一、二年级",
+     "code": "00430191"
+    },
+    {
+     "name": "流体力学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "一、二年级",
+     "code": "00432249"
+    },
+    {
+     "name": "大气探测原理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三年级",
+     "code": "00432248"
+    },
+    {
+     "name": "大气物理学基础",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三年级",
+     "code": "00432247"
+    },
+    {
+     "name": "天气学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三年级",
+     "code": "00432251"
+    },
+    {
+     "name": "大气动力学基础",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "三年级",
+     "code": "00432252"
+    },
+    {
+     "name": "大气物理与探测讨论班",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三年级",
+     "code": "00432278"
+    },
+    {
+     "name": "天气动力学讨论班",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三年级",
+     "code": "00432294"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 28,
+   "max": 28,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "大气物理实验",
+     "nature": null,
+     "credits": 3,
+     "hours": null,
+     "practice": null,
+     "term": "— 春季",
+     "code": "00432253"
+    },
+    {
+     "name": "天气分析与预报",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "00432255"
+    },
+    {
+     "name": "卫星气象学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "00432207"
+    },
+    {
+     "name": "云物理学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "00432275"
+    },
+    {
+     "name": "数值天气预报",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "秋季",
+     "code": "00407780"
+    },
+    {
+     "name": "全球环境与气候变迁",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "00432310"
+    },
+    {
+     "name": "气候学概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "00432292"
+    },
+    {
+     "name": "大气科学中的时间序列分析概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "00432291"
+    },
+    {
+     "name": "学应用",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "00432293"
+    },
+    {
+     "name": "大气化学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "不定期",
+     "code": "00432322"
+    },
+    {
+     "name": "描述性物理海洋学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "不定期",
+     "code": "00432250"
+    },
+    {
+     "name": "教师指导下的小组研究",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": null,
+     "code": "30330043"
+    },
+    {
+     "name": "教师指导下的独立研究",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": null,
+     "code": "30330033"
+    },
+    {
+     "name": "概率统计 ( B)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季",
+     "code": "00132380"
+    },
+    {
+     "name": "计算物理学 ( A)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": null,
+     "code": "00430011"
+    },
+    {
+     "name": "或计算物理学 ( B)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "00430012"
+    },
+    {
+     "name": "实验室安全教育 0.",
+     "nature": null,
+     "credits": 5,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "00414980"
+    },
+    {
+     "name": "物理应用与实践",
+     "nature": null,
+     "credits": 1,
+     "hours": 16,
+     "practice": null,
+     "term": "春、秋季",
+     "code": "00437700"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [
+  {
+   "code": "00431650",
+   "line": 5122,
+   "text": "00431650"
+  },
+  {
+   "code": "00432130",
+   "line": 5123,
+   "text": "00432130"
+  },
+  {
+   "code": "00432230",
+   "line": 5124,
+   "text": "00432230"
+  },
+  {
+   "code": "00432198",
+   "line": 5132,
+   "text": "00432198"
+  },
+  {
+   "code": "00432199",
+   "line": 5133,
+   "text": "00432199"
+  },
+  {
+   "code": "00432510",
+   "line": 5134,
+   "text": "00432510"
+  }
+ ],
+ "notes": [
+  "大气科学专业和强基专业物理学 (大气物理方向)适用。",
+  "说明:其中差异来自英语 2~8 学分。",
+  "—       大学英语              2~8     —       —    按大学英语教研室要求选课",
+  "—                          19                  按马克思主义学院要求选课",
+  "—                         1门                   按学校要求选课",
+  "—       劳动教育课            32 学时                 按学校要求选课",
+  "另选该课程 的 上 机 课 “计 算",
+  "概论 B 上机”。",
+  "另选该课程 的 上 机 课 “计 算",
+  "概论 B 上机”。",
+  "· 98 ·             北京大学本科培养方案 (",
+  "数据结构与算法 B,一下",
+  "据学科特点选 择 是 否 作 为 必",
+  "与算法 B” 课 程 同 时, 需 要",
+  "技术",
+  "门课一、二年级选。",
+  "时,需要另选 该 课 程 的 上 机",
+  "课 “数据结构与算法上机”。",
+  "—       体育系列课程           1×4         2               全年",
+  "通识 教 育 课 程 分 为 四 个 系 列: Ⅰ. 人 类 文 明 及 其 传 统, Ⅱ. 现 代 社 会 及 其 问 题,",
+  "Ⅲ. 艺术与人文, Ⅳ. 数学、自然与技术。每个系列均包含通识教育核心课、通选课两部",
+  "分课程,具体课程列表详见 《北京大学本科生选课手册》。",
+  "1)至少修读 1 门 “通识教育核心课程” (任一系列),且在四个课程系列中 每个系列",
+  "至少修读 2 学分 (通识教育核心课或通选课均可)。",
+  "2)原则上不允许以专业课替代通识教育课程学分。",
+  "3)本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分。",
+  "4)建议合理分配修读时间,每学期修读 1 门课程。",
+  "—                               至少 13     —                   一、二年级",
+  "6                              二年级",
+  "10                             一年级",
+  "北京大学物理学院                       · 99 ·",
+  "-2 自主选修课:13 学分 (含跨学科课程和辅修专业学分可替代学分)",
+  "1)理学部、信息与工程学部以及其他学部的专业核心课程。",
+  "2)上述各类别未包含的物理学院其他专业的专业必修课程、专业选修课程。"
+ ],
+ "warnings": [
+  "第 5122 行：课程 00431650 缺少课程名，未纳入",
+  "第 5123 行：课程 00432130 缺少课程名，未纳入",
+  "第 5124 行：课程 00432230 缺少课程名，未纳入",
+  "第 5127 行：课程行缺少学分：00432141   态统 计 物 理 [或 热 力 学 与 统 计 物",
+  "第 5129 行：课程行缺少学分：00432149   理 A/B]、 电 动 力 学 A/B、 量 子",
+  "第 5131 行：课程行缺少学分：00432150   力学 A/B)、固体物理",
+  "第 5132 行：课程 00432198 缺少课程名，未纳入",
+  "第 5133 行：课程 00432199 缺少课程名，未纳入",
+  "第 5134 行：课程 00432510 缺少课程名，未纳入"
+ ],
+ "source": {
+  "volumeId": "2023-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=195",
+  "lineStart": 4942,
+  "lineEnd": 5264
+ }
+}

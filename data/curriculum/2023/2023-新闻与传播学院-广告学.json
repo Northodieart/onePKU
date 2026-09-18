@@ -1,0 +1,1035 @@
+{
+ "id": "2023-新闻与传播学院-广告学",
+ "cohort": 2023,
+ "volume": "北京大学本科教学计划（2023）文科卷",
+ "school": "新闻与传播学院",
+ "major": "广告学",
+ "track": null,
+ "title": "广告学专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "文学学士学位。",
+ "totalCredits": {
+  "min": 141,
+  "max": 141
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 50,
+   "max": 50,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 51,
+   "max": 51,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 40,
+   "max": 40,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "32~38 学分",
+   "inferredParent": true,
+   "min": 32,
+   "max": 38,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12~18 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 18,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "13 学分",
+   "inferredParent": true,
+   "min": 13,
+   "max": 13,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "28 学分",
+   "inferredParent": true,
+   "min": 28,
+   "max": 28,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "学年研究论文",
+   "requirement": "2 学分",
+   "inferredParent": true,
+   "min": 2,
+   "max": 2,
+   "unit": "学分"
+  },
+  {
+   "id": "2-4",
+   "parent": "2",
+   "name": "毕业论文",
+   "requirement": "4 学分",
+   "inferredParent": true,
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  },
+  {
+   "id": "2-5",
+   "parent": "2",
+   "name": "毕业实习",
+   "requirement": "4 学分",
+   "inferredParent": true,
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "19 学分",
+   "inferredParent": true,
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "21 学分",
+   "inferredParent": true,
+   "min": 21,
+   "max": 21,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 50,
+   "max": 50,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 C",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "04834470"
+    },
+    {
+     "name": "计算机实习",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": "“计 算 概 论 C” 课 程 同 时,",
+     "code": "04831435"
+    },
+    {
+     "name": "计算机实习)。",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上或一下",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 51,
+   "max": 51,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学 ( D 类) 数学学院",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "一上",
+     "code": "00137940"
+    },
+    {
+     "name": "媒介与社会变迁 新闻与传播学院",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "一上",
+     "code": "01834140"
+    },
+    {
+     "name": "新闻理论 新闻与传播学院",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "一下",
+     "code": "01830200"
+    },
+    {
+     "name": "传播学理论 新闻与传播学院",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "一下",
+     "code": "01834200"
+    },
+    {
+     "name": "马克思主义新闻观 新闻与传播学院",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 2,
+     "term": "一上",
+     "code": "01833920"
+    },
+    {
+     "name": "互联网认知",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "一下",
+     "code": "01834160"
+    },
+    {
+     "name": "传播学研究方法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "01833850"
+    },
+    {
+     "name": "传媒伦理与法律法规",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二上",
+     "code": "01833740"
+    },
+    {
+     "name": "广告学概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 2,
+     "term": "二上",
+     "code": "01830480"
+    },
+    {
+     "name": "中外广告史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下",
+     "code": "01834010"
+    },
+    {
+     "name": "市场调查",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下",
+     "code": "01830540"
+    },
+    {
+     "name": "市场营销原理",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下",
+     "code": "01833060"
+    },
+    {
+     "name": "广告媒体研究",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上",
+     "code": "01830490"
+    },
+    {
+     "name": "广告策划与创意",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "01834260"
+    },
+    {
+     "name": "公共传播",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上",
+     "code": "01833830"
+    },
+    {
+     "name": "创意传播管理",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 6,
+     "term": "三下",
+     "code": "01833710"
+    },
+    {
+     "name": "品牌研究",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 2,
+     "term": "四下",
+     "code": "01832420"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 40,
+   "max": 40,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "英语新闻阅读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "一上",
+     "code": "01832760"
+    },
+    {
+     "name": "媒介经营管理",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二上",
+     "code": "01832660"
+    },
+    {
+     "name": "跨文化交流学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二上",
+     "code": "01831990"
+    },
+    {
+     "name": "视听语言",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 3,
+     "term": "二下",
+     "code": "01831740"
+    },
+    {
+     "name": "世界新闻史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下",
+     "code": "01833750"
+    },
+    {
+     "name": "营销传播经典导读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三下",
+     "code": "01833990"
+    },
+    {
+     "name": "视频编辑",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 26,
+     "term": "二下",
+     "code": "01832910"
+    },
+    {
+     "name": "视频采访与写作",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上",
+     "code": "01834240"
+    },
+    {
+     "name": "新闻采访写作",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上",
+     "code": "01834337"
+    },
+    {
+     "name": "视觉传达",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上",
+     "code": "01833820"
+    },
+    {
+     "name": "影视制作",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 4,
+     "term": "三下",
+     "code": "01834280"
+    },
+    {
+     "name": "西方国际关系理论 国际关系学院",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋季 社科学部课程",
+     "code": "02430411"
+    },
+    {
+     "name": "西方政治思想史 政府管理学院",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "秋季 社科学部课程",
+     "code": "03230790"
+    },
+    {
+     "name": "西方社会思想史 社会学系",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "春季 社科学部课程",
+     "code": "03130880"
+    },
+    {
+     "name": "中级宏观经济学 国家发展研究院",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "社科学部课程",
+     "code": "06239084"
+    },
+    {
+     "name": "中级微观经济学 国家发展研究院",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "社科学部课程",
+     "code": "06239085"
+    },
+    {
+     "name": "中国古代史 (上) 历史系",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "人文学部课程",
+     "code": "02130011"
+    },
+    {
+     "name": "中国古代史 (下) 历史系",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "人文学部课程",
+     "code": "02130012"
+    },
+    {
+     "name": "中国历史文化导论 历史系",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "秋季 人文学部课程",
+     "code": "02132040"
+    },
+    {
+     "name": "中国现代文学史 中文系",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "春季 人文学部课程",
+     "code": "02030040"
+    },
+    {
+     "name": "中国古代文学 中文系",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "人文学部课程",
+     "code": "02033940"
+    },
+    {
+     "name": "中国哲学 (上) 哲学系",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "春季 人文学部课程",
+     "code": "02330094"
+    },
+    {
+     "name": "中国哲学 (下) 哲学系",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "秋季 人文学部课程",
+     "code": "02330095"
+    },
+    {
+     "name": "西方哲学 (上) 哲学系",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "春季 人文学部课程",
+     "code": "02330052"
+    },
+    {
+     "name": "西方哲学 (下) 哲学系",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "秋季 人文学部课程",
+     "code": "02330054"
+    },
+    {
+     "name": "新闻传播导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "01833690"
+    },
+    {
+     "name": "网络传播",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季",
+     "code": "01830300"
+    },
+    {
+     "name": "媒介前沿专题",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01834150"
+    },
+    {
+     "name": "近现代出版文化",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01831550"
+    },
+    {
+     "name": "网络采编实务",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01833250"
+    },
+    {
+     "name": "装帧设计",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01831480"
+    },
+    {
+     "name": "传播伦理学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01832360"
+    },
+    {
+     "name": "传播修辞学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01833240"
+    },
+    {
+     "name": "传播学英语经典阅读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01833180"
+    },
+    {
+     "name": "传媒话语分析",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01833890"
+    },
+    {
+     "name": "汉语修辞学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01831610"
+    },
+    {
+     "name": "媒介经济学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01832260"
+    },
+    {
+     "name": "内容分析",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01833900"
+    },
+    {
+     "name": "英语公共演讲",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01833140"
+    },
+    {
+     "name": "英语新闻采写",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01833170"
+    },
+    {
+     "name": "舆论学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01830400"
+    },
+    {
+     "name": "中西新闻比较",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01830230"
+    },
+    {
+     "name": "广播电视新闻作品分析",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01832380"
+    },
+    {
+     "name": "广播影视专题研究",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01834030"
+    },
+    {
+     "name": "纪录片简史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01832250"
+    },
+    {
+     "name": "新闻与中国当代改革",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01832990"
+    },
+    {
+     "name": "影视编导概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01831730"
+    },
+    {
+     "name": "影视文化与批评",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01833940"
+    },
+    {
+     "name": "影视制片",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01833950"
+    },
+    {
+     "name": "影像与中国社会变革",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01833200"
+    },
+    {
+     "name": "CI研究",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01830430"
+    },
+    {
+     "name": "电脑辅助设计",
+     "nature": null,
+     "credits": 3,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01833090"
+    },
+    {
+     "name": "广告管理",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01830630"
+    },
+    {
+     "name": "广告伦理与法规",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01833960"
+    },
+    {
+     "name": "广告心理学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01830580"
+    },
+    {
+     "name": "国际广告研究",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01833970"
+    },
+    {
+     "name": "营销传播类型研究",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01834000"
+    },
+    {
+     "name": "新媒体与社会",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01833370"
+    },
+    {
+     "name": "影像与社会",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01833330"
+    },
+    {
+     "name": "跨文化新闻传播案例分析",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01833490"
+    },
+    {
+     "name": "社会学基础与新媒体传播",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01833350"
+    },
+    {
+     "name": "传播技术",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01833650"
+    },
+    {
+     "name": "世界电影史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01831760"
+    },
+    {
+     "name": "媒体与国际关系",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01832150"
+    },
+    {
+     "name": "媒体与社会",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01830380"
+    },
+    {
+     "name": "中国文化史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01831380"
+    },
+    {
+     "name": "视听传播",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "01833730"
+    },
+    {
+     "name": "国际传播",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "春季",
+     "code": "01830330"
+    },
+    {
+     "name": "中国图书出版史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "01831330"
+    },
+    {
+     "name": "中国古籍资源与整理",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "01831300"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "—       大学英语              2~8      —      —",
+  "选课。",
+  "—       思想政治理论必修课          19      —      —",
+  "选课。",
+  "—                          1门      —      —     按学校要求选课。",
+  "—       劳动教育课             32 学时                 按学校要求选课",
+  "算 概 论 C” 课 程 后, 需 要",
+  "另选 该 课 程 的 上 机 课",
+  "(",
+  "04831435,计算机实习)。",
+  "需要 另 选 该 课 程 的 上 机 课",
+  "—       体育系列课程            1×4      2            全年",
+  "通识 教 育 课 程 分 为 四 个 系 列: Ⅰ. 人 类 文 明 及 其 传 统; Ⅱ. 现 代 社 会 及 其 问 题;",
+  "Ⅲ. 艺术与人文; Ⅳ. 数学、自然与技术。每个系列均包含通识教育核心课、通选课两部",
+  "分课程,具体课程列表详见 《北京大学本科生选课手册》。",
+  "1)至少修读 1 门 “通识教育核心课程” (任一系列),且在四个课程系列中每个系列",
+  "至少修读 2 学分 (通识教育核心课或通选课均可)。",
+  "2)原则上不允许以专业课替代通识教育课程学分。",
+  "3)本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分。",
+  "4)建议合理分配修读时间,每学期修读 1 门课程。",
+  "北京大学新闻与传播学院                                · 449 ·",
+  "注:留学生请选高等数学 (",
+  "D 类基础)。",
+  "新开课        新媒体创作与运营                     2         2           6     三下",
+  "第四学期开始,在专业老师指导下,运用所学专业理论,进行基础的学术训练,写作",
+  "学年论文,于学期结束前上交。",
+  "第七学期。",
+  "第七、八学期。",
+  "· 450 ·             北京大学本科培养方案 (",
+  "新开课       非虚构写作            2        2             2             四下",
+  "实践     选课",
+  "-2-1 学院各专业核心必修课可成 为 非 本 专 业 学 生 的 自 主 选 修 课 及 以 下 课 程 为 自 主 选",
+  "北京大学新闻与传播学院               · 451 ·",
+  "· 452 ·            北京大学本科培养方案 (",
+  "本科生科研训练                         4",
+  "2 跨院系核心必修课可成为自主选修课及辅修专业可替代学分 9 学分",
+  "结合本专业、个人兴趣与未来发展,可选择学校各学部包括理学部、信息与工程科学",
+  "部、人文学部、社会科学学部、经济与管理学部的专业必修课程 9 学分,优化学业构成。"
+ ],
+ "warnings": [
+  "第 23879 行：课程行缺少学分：04831435 计算机实习)。"
+ ],
+ "source": {
+  "volumeId": "2023-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=196",
+  "lineStart": 23789,
+  "lineEnd": 24144
+ }
+}

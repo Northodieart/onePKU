@@ -1,0 +1,620 @@
+{
+ "id": "2021-外国语学院-葡萄牙语",
+ "cohort": 2021,
+ "volume": "北京大学本科培养方案（2021）文科卷",
+ "school": "外国语学院",
+ "major": "葡萄牙语",
+ "track": null,
+ "title": "葡萄牙语专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "文学学士学位。",
+ "totalCredits": {
+  "min": 143,
+  "max": 143
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 47,
+   "max": 47,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 56,
+   "max": 56,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 40,
+   "max": 40,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "35 学分",
+   "inferredParent": true,
+   "min": 35,
+   "max": 35,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "24 学分",
+   "inferredParent": true,
+   "min": 24,
+   "max": 24,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "32 学分",
+   "inferredParent": true,
+   "min": 32,
+   "max": 32,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 47,
+   "max": 47,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 C",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "“计算 概 论 C” 课 程 后,",
+     "code": "04834470"
+    },
+    {
+     "name": "计算机实习",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "计 算",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "04831435"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上或一下",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 56,
+   "max": 56,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "葡萄牙语 (五)",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "三上",
+     "code": "03635045"
+    },
+    {
+     "name": "葡萄牙语 (六)",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "三下",
+     "code": "03635046"
+    },
+    {
+     "name": "葡萄牙语写作 (一)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03635061"
+    },
+    {
+     "name": "葡萄牙语写作 (二)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03635062"
+    },
+    {
+     "name": "巴西文学史和文学选读 (一)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03635071"
+    },
+    {
+     "name": "巴西文学史和文学选读 (二)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四下",
+     "code": "03635072"
+    },
+    {
+     "name": "葡萄牙文学史和文学选读 (一)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03635091"
+    },
+    {
+     "name": "葡萄牙文学史和文学选读 (二)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03635092"
+    },
+    {
+     "name": "葡语国家思想文化经典导读 (上)",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "四上",
+     "code": "03635181"
+    },
+    {
+     "name": "葡语国家思想文化经典导读 (下)",
+     "nature": null,
+     "credits": 4,
+     "hours": 3,
+     "practice": null,
+     "term": "四下",
+     "code": "03635182"
+    },
+    {
+     "name": "葡萄牙语 (一)",
+     "nature": null,
+     "credits": 8,
+     "hours": 6,
+     "practice": null,
+     "term": "一上",
+     "code": "03635151"
+    },
+    {
+     "name": "葡萄牙语 (二)",
+     "nature": null,
+     "credits": 8,
+     "hours": 6,
+     "practice": null,
+     "term": "一下",
+     "code": "03635152"
+    },
+    {
+     "name": "葡萄牙语 (三)",
+     "nature": null,
+     "credits": 8,
+     "hours": 6,
+     "practice": null,
+     "term": "二上",
+     "code": "03635153"
+    },
+    {
+     "name": "葡萄牙语 (四)",
+     "nature": null,
+     "credits": 8,
+     "hours": 6,
+     "practice": null,
+     "term": "二下",
+     "code": "03635154"
+    },
+    {
+     "name": "葡萄牙历史和文化 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上",
+     "code": "03635031"
+    },
+    {
+     "name": "葡萄牙历史和文化 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "03635032"
+    },
+    {
+     "name": "巴西历史和文化 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03635101"
+    },
+    {
+     "name": "巴西历史和文化 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03635102"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 40,
+   "max": 40,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "葡萄牙语笔译 (上)",
+     "nature": null,
+     "credits": 4,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03635113"
+    },
+    {
+     "name": "葡萄牙语笔译 (下)",
+     "nature": null,
+     "credits": 4,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03635114"
+    },
+    {
+     "name": "葡萄牙语口译 (上)",
+     "nature": null,
+     "credits": 4,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03635123"
+    },
+    {
+     "name": "葡萄牙语口译 (下)",
+     "nature": null,
+     "credits": 4,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03635124"
+    },
+    {
+     "name": "葡萄牙语语法 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "03635131"
+    },
+    {
+     "name": "葡萄牙语语法 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下",
+     "code": "03635132"
+    },
+    {
+     "name": "葡语听说 (一)",
+     "nature": null,
+     "credits": 4,
+     "hours": 2,
+     "practice": null,
+     "term": "一上",
+     "code": "03635161"
+    },
+    {
+     "name": "葡语听说 (二)",
+     "nature": null,
+     "credits": 4,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "03635162"
+    },
+    {
+     "name": "葡语听说 (三)",
+     "nature": null,
+     "credits": 4,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03635163"
+    },
+    {
+     "name": "葡语听说 (四)",
+     "nature": null,
+     "credits": 4,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03635164"
+    },
+    {
+     "name": "葡萄牙语阅读 (一)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一下",
+     "code": "03635171"
+    },
+    {
+     "name": "葡萄牙语阅读 (二)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "03635172"
+    },
+    {
+     "name": "葡萄牙语阅读 (三)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "03635173"
+    },
+    {
+     "name": "文学翻译 (一)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上",
+     "code": "03635191"
+    },
+    {
+     "name": "文学翻译 (二)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四下",
+     "code": "03635192"
+    },
+    {
+     "name": "东方文学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "秋季学期",
+     "code": "03530450"
+    },
+    {
+     "name": "中国古代史 (上)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": null,
+     "code": "02130011"
+    },
+    {
+     "name": "中国古代史 (下)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": null,
+     "code": "02130012"
+    },
+    {
+     "name": "考古学通论",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": null,
+     "code": "02232210"
+    },
+    {
+     "name": "中国哲学 (上)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "02330092"
+    },
+    {
+     "name": "中国哲学 (下)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "02330096"
+    },
+    {
+     "name": "中国哲学 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02330094"
+    },
+    {
+     "name": "中国哲学 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02330095"
+    },
+    {
+     "name": "哲学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02330001"
+    },
+    {
+     "name": "哲学导论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "02330003"
+    },
+    {
+     "name": "西方哲学 (上)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "02330051"
+    },
+    {
+     "name": "西方哲学 (下)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": null,
+     "code": "02330053"
+    },
+    {
+     "name": "西方哲学 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02330052"
+    },
+    {
+     "name": "西方哲学 (下)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": null,
+     "code": "02330054"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "—       思想政治理论必修课            18     —         —",
+  "选课。",
+  "—                            1门     —         —    按学校要求选课。",
+  "需要另 选 该 课 程 的 上 机",
+  "课 (",
+  "实习)。",
+  "时,需要 另 选 该 课 程 的",
+  "机实习)。",
+  "—       体育系列课程               1×4    2              全年",
+  "注:大学外语必修大学英语对应级别的学分,不足 8 学 分 部 分,需 用 非 本 专 业 语 言 的 公 共 语 言 课 或 专 业",
+  "基础语言课补足 (课程明细见本学院附表 1)。",
+  "北京大学外国语学院                   · 217 ·",
+  "通识教育 课 程 分 为 四 个 系 列: Ⅰ.人 类 文 明 及 其 传 统; Ⅱ.现 代 社 会 及 其 问 题;",
+  "Ⅲ.艺术与人文; Ⅳ.数学、自然与 技 术。每 个 系 列 均 包 含 通 识 教 育 核 心 课、通 选 课 两 部",
+  "分课程,具体课程列表详见 《北京大学本科生选课手册》。",
+  "1)至少修读 1 门 “通识教育核心课程” (任一系列),且在四个课程系列中每个系列",
+  "至少修读 2 学分 (通识教育核心课或通选课均可)。",
+  "2)原则上不允许以专业课替代通识教育课程学分。",
+  "3)本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分。",
+  "4)建议合理分配修读时间,每学期修读 1 门课程。",
+  "· 218 ·             北京大学本科培养方案 (",
+  "新开课       非洲葡语作家选读                 2          2        四上",
+  "新开课       葡萄牙语诗歌                   2          2        四下",
+  "新开课       葡萄牙语旅行文学                 2          2        四上",
+  "含跨学科课程和辅修专业学分可替代学分。",
+  "以下为推荐课程,其中人文学部课程 (中国文学史、中国古代史、考古学通论、哲学",
+  "导论、中国哲 学、 西 方 哲 学、 艺 术 史 导 论 ) 不 少 于 3 学 分; 东 方 文 学、 西 方 文 学 必 选",
+  "一门。",
+  "新开课       西方文学                     2          2       春季学期",
+  "新开课       中国文学史                    3          3",
+  "新开课       中国古代史                    4          4",
+  "北京大学外国语学院         · 219 ·",
+  "新开课       艺术史导论                  2    2"
+ ],
+ "warnings": [
+  "第 11584 行：课程行缺少学分：04831435 计 算"
+ ],
+ "source": {
+  "volumeId": "2021-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=158",
+  "lineStart": 11484,
+  "lineEnd": 11716
+ }
+}

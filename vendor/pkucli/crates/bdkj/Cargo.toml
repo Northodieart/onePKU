@@ -1,0 +1,32 @@
+[package]
+name = "pku-bdkj"
+description = "北大空间（学术研讨教室预约）CLI 客户端"
+version = "0.1.2"
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+keywords = ["pku", "bdkj", "classroom", "cli"]
+categories = ["command-line-utilities"]
+
+[[bin]]
+name = "bdkj"
+path = "src/main.rs"
+
+[lib]
+name = "pku_bdkj"
+path = "src/lib.rs"
+
+[dependencies]
+pkuinfo-common.workspace = true
+clap.workspace = true
+tokio.workspace = true
+reqwest.workspace = true
+reqwest_cookie_store.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+colored.workspace = true
+chrono.workspace = true
+scraper.workspace = true
+regex.workspace = true

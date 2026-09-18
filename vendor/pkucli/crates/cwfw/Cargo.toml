@@ -1,0 +1,32 @@
+[package]
+name = "pku-cwfw"
+description = "北大财务综合信息门户 CLI 客户端"
+version = "0.1.2"
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+keywords = ["pku", "cwfw", "finance", "cli"]
+categories = ["command-line-utilities"]
+
+[[bin]]
+name = "cwfw"
+path = "src/main.rs"
+
+[dependencies]
+pkuinfo-common = { workspace = true }
+clap = { workspace = true }
+tokio = { workspace = true, features = ["time"] }
+reqwest = { workspace = true }
+reqwest_cookie_store = { workspace = true }
+cookie_store = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+anyhow = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+colored = { workspace = true }
+chrono = { workspace = true }
+base64 = { workspace = true }
+rand = { workspace = true }
+regex = { workspace = true }

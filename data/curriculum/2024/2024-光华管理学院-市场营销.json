@@ -1,0 +1,1043 @@
+{
+ "id": "2024-光华管理学院-市场营销",
+ "untitled": true,
+ "cohort": 2024,
+ "volume": "北京大学本科培养方案（2024）文科卷",
+ "school": "光华管理学院",
+ "major": "市场营销",
+ "track": null,
+ "title": "市场营销专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "管理学学士",
+ "totalCredits": {
+  "min": 129,
+  "max": 135
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 42,
+   "max": 48,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 65,
+   "max": 65,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 22,
+   "max": 22,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "大学英语",
+   "requirement": "2～8 学分",
+   "min": 2,
+   "max": 8,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "思想政治理论必修课",
+   "requirement": "19 学分",
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "1-3",
+   "parent": "1",
+   "name": "思想政治理论选择性必修课",
+   "requirement": "1 门",
+   "min": 1,
+   "max": 1,
+   "unit": "门"
+  },
+  {
+   "id": "1-4",
+   "parent": "1",
+   "name": "劳动教育课",
+   "requirement": "32 学时",
+   "min": 32,
+   "max": 32,
+   "unit": "学时"
+  },
+  {
+   "id": "1-5",
+   "parent": "1",
+   "name": "信息课程",
+   "requirement": "3 学分",
+   "min": 3,
+   "max": 3,
+   "unit": "学分"
+  },
+  {
+   "id": "1-6",
+   "parent": "1",
+   "name": "军事理论",
+   "requirement": "2 学分",
+   "min": 2,
+   "max": 2,
+   "unit": "学分"
+  },
+  {
+   "id": "1-7",
+   "parent": "1",
+   "name": "体育课",
+   "requirement": "4 学分",
+   "min": 4,
+   "max": 4,
+   "unit": "学分"
+  },
+  {
+   "id": "1-8",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "25 学分",
+   "min": 25,
+   "max": 25,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "38 学分",
+   "min": 38,
+   "max": 38,
+   "unit": "学分"
+  },
+  {
+   "id": "2-3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "requirement": "2 学分",
+   "min": 2,
+   "max": 2,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "10 学分",
+   "min": 10,
+   "max": 10,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "12 学分",
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1.1",
+   "parent": "1",
+   "name": "公共必修课",
+   "courses": [
+    {
+     "name": "计算概论（C）",
+     "nature": "全校必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": null,
+     "code": "04834470"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "1.2",
+   "parent": "1",
+   "name": "通识教育课",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.1",
+   "parent": "2",
+   "name": "专业基础课",
+   "min": 25,
+   "max": 25,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.1.1",
+   "parent": "2.1",
+   "name": "专业基础课组",
+   "min": 25,
+   "max": 25,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学（B） （一）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": "大一/上",
+     "code": "00130201"
+    },
+    {
+     "name": "高等数学（B） （二）",
+     "nature": "专业必修",
+     "credits": 5,
+     "hours": 68,
+     "practice": null,
+     "term": "大一/下",
+     "code": "00130202"
+    },
+    {
+     "name": "线性代数（B）",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "大二/上",
+     "code": "00131460"
+    },
+    {
+     "name": "经济学",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": null,
+     "term": "大一/上",
+     "code": "02831110"
+    },
+    {
+     "name": "经济学讨论班",
+     "nature": "专业必修",
+     "credits": 0,
+     "hours": 34,
+     "practice": 34,
+     "term": "大一/上",
+     "code": "02831170"
+    },
+    {
+     "name": "概率统计",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": 2,
+     "term": "大一/下",
+     "code": "02834720"
+    },
+    {
+     "name": "光华第一课",
+     "nature": "专业必修",
+     "credits": 1,
+     "hours": 17,
+     "practice": 6,
+     "term": "大一/上",
+     "code": "02839150"
+    },
+    {
+     "name": "科学思维与实践论",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 20,
+     "term": "大一/下",
+     "code": "02839510"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2",
+   "parent": "2",
+   "name": "专业核心课",
+   "min": 38,
+   "max": 38,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.2.1",
+   "parent": "2.2",
+   "name": "学院核心课组",
+   "min": 30,
+   "max": 30,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "数据科学的 Python 基础",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大二/上",
+     "code": "02812930"
+    },
+    {
+     "name": "社会心理学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 12,
+     "term": "大一/下",
+     "code": "02830140"
+    },
+    {
+     "name": "组织与管理讨论班",
+     "nature": "专业必修",
+     "credits": 0,
+     "hours": 34,
+     "practice": 34,
+     "term": "大一/上",
+     "code": "02831101"
+    },
+    {
+     "name": "会计学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 10,
+     "term": "大一/下",
+     "code": "02831520"
+    },
+    {
+     "name": "微观经济学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大一/下",
+     "code": "02832110"
+    },
+    {
+     "name": "宏观经济学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 10,
+     "term": "大二/上",
+     "code": "02832120"
+    },
+    {
+     "name": "营销学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 60,
+     "practice": 12,
+     "term": "大二/上",
+     "code": "02832640"
+    },
+    {
+     "name": "计量经济学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 17,
+     "term": "大二/下",
+     "code": "02833720"
+    },
+    {
+     "name": "管理科学",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 6,
+     "term": "大二/下",
+     "code": "02838470"
+    },
+    {
+     "name": "组织与管理",
+     "nature": "专业必修",
+     "credits": 4,
+     "hours": 68,
+     "practice": 2,
+     "term": "大一/上",
+     "code": "02838500"
+    },
+    {
+     "name": "公司金融",
+     "nature": "专业必修",
+     "credits": 3,
+     "hours": 51,
+     "practice": 2,
+     "term": "大二/上",
+     "code": "02839610"
+    },
+    {
+     "name": "公司金融讨论班",
+     "nature": "专业必修",
+     "credits": 0,
+     "hours": 34,
+     "practice": 34,
+     "term": "大二/上",
+     "code": "02839611"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.2.2",
+   "parent": "2.2",
+   "name": "市场营销专业必修课组",
+   "min": 8,
+   "max": 8,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "品牌管理",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 50,
+     "practice": 20,
+     "term": "大三/上",
+     "code": "02833460"
+    },
+    {
+     "name": "市场数据分析",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/上",
+     "code": "02838440"
+    },
+    {
+     "name": "营销研究方法",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大二/下",
+     "code": "02839400"
+    },
+    {
+     "name": "消费者行为",
+     "nature": "专业必修",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "大三/上",
+     "code": "02839500"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2.3",
+   "parent": "2",
+   "name": "毕业论文（设计）",
+   "min": 2,
+   "max": 2,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "2.3.1",
+   "parent": "2.3",
+   "name": "毕业论文组",
+   "min": 2,
+   "max": 2,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1",
+   "parent": "3",
+   "name": "专业选修课",
+   "min": 10,
+   "max": 10,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.1.1",
+   "parent": "3.1",
+   "name": "市场营销专业选修课组",
+   "min": 10,
+   "max": 10,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "定价管理",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/上",
+     "code": "02832700"
+    },
+    {
+     "name": "服务业营销",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "大二/下",
+     "code": "02834660"
+    },
+    {
+     "name": "渠道管理",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "大三/下",
+     "code": "02838350"
+    },
+    {
+     "name": "新媒体营销与精准广告",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 10,
+     "term": "大三/上",
+     "code": "02838450"
+    },
+    {
+     "name": "社会影响力营销",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 14,
+     "term": "大三/下",
+     "code": "02838950"
+    },
+    {
+     "name": "新产品开发与管理",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": "大三/上",
+     "code": "02839040"
+    },
+    {
+     "name": "量化营销模型",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "大三/下",
+     "code": "02839070"
+    },
+    {
+     "name": "数字时代的营销研究与决策",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 18,
+     "term": "大三/上",
+     "code": "02839240"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2",
+   "parent": "3",
+   "name": "自主选修课",
+   "min": 12,
+   "max": 12,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3.2.1",
+   "parent": "3.2",
+   "name": "中国系列选修课组",
+   "min": 4,
+   "max": 4,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "中国社会（上）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/上",
+     "code": "02801960"
+    },
+    {
+     "name": "中国社会（下）",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/上",
+     "code": "02801970"
+    },
+    {
+     "name": "中国经济",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/下",
+     "code": "02830150"
+    },
+    {
+     "name": "中国经济改革与发展",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 43,
+     "practice": 10,
+     "term": "大三/下",
+     "code": "02839000"
+    },
+    {
+     "name": "中国金融",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 36,
+     "practice": 4,
+     "term": "大三/下",
+     "code": "02839080"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3.2.2",
+   "parent": "3.2",
+   "name": "学院选修课组",
+   "min": 8,
+   "max": 8,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "大样本统计理论",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大四/上",
+     "code": "02801890"
+    },
+    {
+     "name": "社会分层与流动",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大三/上",
+     "code": "02802260"
+    },
+    {
+     "name": "随机分析与应用",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大三/下",
+     "code": "02806120"
+    },
+    {
+     "name": "中国公司—会计视角",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/下",
+     "code": "02812960"
+    },
+    {
+     "name": "当代量化交易系统的原理与实现",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 36,
+     "practice": 6,
+     "term": "大四/上",
+     "code": "02813030"
+    },
+    {
+     "name": "人力资源管理",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大三/下",
+     "code": "02830110"
+    },
+    {
+     "name": "影子中央银行",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/上/下",
+     "code": "02830260"
+    },
+    {
+     "name": "社会主义政治经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大三/下",
+     "code": "02831888"
+    },
+    {
+     "name": "物流与供应链管理",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 3,
+     "term": "大三/上",
+     "code": "02832690"
+    },
+    {
+     "name": "生产作业管理",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/下",
+     "code": "02833680"
+    },
+    {
+     "name": "企业伦理",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/下",
+     "code": "02834370"
+    },
+    {
+     "name": "战略管理",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/下",
+     "code": "02834390"
+    },
+    {
+     "name": "创业管理",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 16,
+     "term": "大三/下",
+     "code": "02834730"
+    },
+    {
+     "name": "创新管理",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 2,
+     "term": "大三/上",
+     "code": "02834750"
+    },
+    {
+     "name": "综合商业计划书竞赛",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 17,
+     "term": "大三/上",
+     "code": "02834800"
+    },
+    {
+     "name": "可持续创业",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 17,
+     "term": "大三/上",
+     "code": "02834860"
+    },
+    {
+     "name": "创业与创新实践",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 39,
+     "term": "大三/下",
+     "code": "02834870"
+    },
+    {
+     "name": "互联网与商业模式创新",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": 10,
+     "term": "大三/下",
+     "code": "02834890"
+    },
+    {
+     "name": "投资银行",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/下",
+     "code": "02837020"
+    },
+    {
+     "name": "互联网时代营销新模式",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/上",
+     "code": "02837122"
+    },
+    {
+     "name": "中国商务",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 8,
+     "term": "大四/上",
+     "code": "02837140"
+    },
+    {
+     "name": "供应链管理",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 3,
+     "term": "大三/下",
+     "code": "02837190"
+    },
+    {
+     "name": "从案例学习管理",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大三/下",
+     "code": "02838070"
+    },
+    {
+     "name": "中国社会与商业文化",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/下",
+     "code": "02838130"
+    },
+    {
+     "name": "价值投资",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 17,
+     "term": "大四/上",
+     "code": "02838330"
+    },
+    {
+     "name": "共演战略：从创业到企业转型",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 10,
+     "term": "大三/上",
+     "code": "02839030"
+    },
+    {
+     "name": "人口经济学",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大三/下",
+     "code": "02839140"
+    },
+    {
+     "name": "定量推理法",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 7,
+     "term": "大四/上",
+     "code": "02839160"
+    },
+    {
+     "name": "创业思维",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 4,
+     "term": "大三/下",
+     "code": "02839190"
+    },
+    {
+     "name": "人工智能与商业创新",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 5,
+     "term": "大三/上",
+     "code": "02839210"
+    },
+    {
+     "name": "体育营销",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 10,
+     "term": "大三/下",
+     "code": "02839230"
+    },
+    {
+     "name": "传统国学中的管理思想",
+     "nature": "任选",
+     "credits": 1,
+     "hours": 17,
+     "practice": null,
+     "term": "大三/下",
+     "code": "02839260"
+    },
+    {
+     "name": "智能网络与智能场景",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 9,
+     "term": "大三/上",
+     "code": "02839320"
+    },
+    {
+     "name": "真实世界经济学：田野调查",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 80,
+     "practice": 18,
+     "term": "天 大三/下",
+     "code": "02839470"
+    },
+    {
+     "name": "期权波动率和对冲基金",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大四/上",
+     "code": "02839520"
+    },
+    {
+     "name": "国家账本",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 3,
+     "term": "大三/上",
+     "code": "02839540"
+    },
+    {
+     "name": "公共治理专题：研究设计与方法",
+     "nature": "任选",
+     "credits": 3,
+     "hours": 51,
+     "practice": null,
+     "term": "大四/上",
+     "code": "02839560"
+    },
+    {
+     "name": "深度学习与文本分析",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": 6,
+     "term": "大三/下",
+     "code": "02839640"
+    },
+    {
+     "name": "数据驱动模型与运营分析",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 34,
+     "practice": null,
+     "term": "大三/下",
+     "code": "02839650"
+    },
+    {
+     "name": "教师指导下的独立研究",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 68,
+     "practice": 68,
+     "term": "大二/下",
+     "code": "30330031"
+    },
+    {
+     "name": "教师指导下的小组研究",
+     "nature": "任选",
+     "credits": 2,
+     "hours": 68,
+     "practice": 68,
+     "term": "大二/下",
+     "code": "30330041"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "要求“思想政治理论选择性必修课”共 1 门、“劳动教育课”累计不少于 32 学时。思",
+  "想政治理论必修课和其他公共必修课按学校要求选课，信息课程见下表。",
+  "Ⅰ. 人类文明及其传统                     ≥2",
+  "Ⅱ. 现代社会及其问题                     ≥2            1. 不少于 12 学分",
+  "Ⅲ. 艺术与人文                        ≥2            2. 至少修读 1 门“通识核心课”",
+  "Ⅳ. 数学、自然与技术                     ≥2",
+  "（1）具体课程列表详见《北京大学本科生选课手册》 ；",
+  "（2）原则上不允许以专业课替代通识教育课程学分；",
+  "（3）本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分；",
+  "（4）建议合理分配修读时间，每学期修读 1 门课程。",
+  "备注：除以下列表中的课程，学院其他专业开设的专业必修课和专业选修课也可以计",
+  "入学院选修课。随着教学改革的推进，选修课目录可能发生增补，请以项目的通知为准。",
+  "E2832231   商战模拟         任选    2   34     24   大三/上"
+ ],
+ "warnings": [
+  "专业名按 2025 版“市场营销专业”推断（专业必修课重合度 100%），请核对"
+ ],
+ "source": {
+  "volumeId": "2024-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=210",
+  "lineStart": 23283,
+  "lineEnd": 23650
+ },
+ "titleInference": {
+  "from": 2025,
+  "title": "市场营销专业",
+  "overlap": 1
+ }
+}

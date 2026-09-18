@@ -1,0 +1,43 @@
+{
+ "id": "2021-考古文博学院-外国语言与外国历史-考古学方向",
+ "cohort": 2021,
+ "volume": "北京大学本科培养方案（2021）文科卷",
+ "school": "考古文博学院",
+ "major": "外国语言与外国历史",
+ "track": "考古学方向",
+ "title": "外国语言与外国历史 (考古学方向 ) 专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "历史学学士学位。",
+ "totalCredits": {
+  "min": 150,
+  "max": 150
+ },
+ "topRequirements": [],
+ "requirements": [],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 33,
+   "max": 39,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "· 130 ·              北京大学本科培养方案 ("
+ ],
+ "warnings": [
+  "第 6979 行：课程设置出现第二套“1. 公共基础课程”，只保留第一套"
+ ],
+ "source": {
+  "volumeId": "2021-文科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=158",
+  "lineStart": 6926,
+  "lineEnd": 7481
+ }
+}

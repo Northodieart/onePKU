@@ -1,0 +1,1293 @@
+{
+ "id": "2023-生命科学学院-生态学",
+ "cohort": 2023,
+ "volume": "北京大学本科教学计划（2023）理科卷",
+ "school": "生命科学学院",
+ "major": "生态学",
+ "track": null,
+ "title": "生态学专业",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": null,
+ "totalCredits": {
+  "min": 147,
+  "max": 147
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 42,
+   "max": 48,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 50,
+   "max": 50,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 38,
+   "max": 38,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "30~36 学分",
+   "inferredParent": true,
+   "min": 30,
+   "max": 36,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "19 学分",
+   "inferredParent": true,
+   "min": 19,
+   "max": 19,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "25 学分",
+   "inferredParent": true,
+   "min": 25,
+   "max": 25,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "38 学分",
+   "inferredParent": true,
+   "min": 38,
+   "max": 38,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "达到总学分",
+   "inferredParent": true
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 42,
+   "max": 48,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 ( B)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": null,
+     "code": "04831410"
+    },
+    {
+     "name": "计算概论 ( B)上机",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": null,
+     "code": "04831650"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上",
+     "code": "60730030"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 50,
+   "max": 50,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "普通化学 ( B)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "一上",
+     "code": "01034880"
+    },
+    {
+     "name": "高等数学 ( C)(一)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "一上",
+     "code": "00131421"
+    },
+    {
+     "name": "高等数学 ( C)(二)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "一下",
+     "code": "00131422"
+    },
+    {
+     "name": "普通物理",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "一下",
+     "code": "00431121"
+    },
+    {
+     "name": "应用数理统计方法",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "01536040"
+    },
+    {
+     "name": "生物统计学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "01130760"
+    },
+    {
+     "name": "概率统计 ( B)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "00132380"
+    },
+    {
+     "name": "生态学基础与应用",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "一上或二上 * *",
+     "code": "12632040"
+    },
+    {
+     "name": "动物生物学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "一上",
+     "code": "01131080"
+    },
+    {
+     "name": "动物生物学实验 1.",
+     "nature": null,
+     "credits": 5,
+     "hours": 3,
+     "practice": 51,
+     "term": "一上",
+     "code": "01131050"
+    },
+    {
+     "name": "普通生态学",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": 2,
+     "term": "二下",
+     "code": "01536011"
+    },
+    {
+     "name": "普通生态学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 2,
+     "term": "二下",
+     "code": "01536012"
+    },
+    {
+     "name": "生态学实验与方法",
+     "nature": null,
+     "credits": 3,
+     "hours": 6,
+     "practice": 102,
+     "term": "三上",
+     "code": "12632160"
+    },
+    {
+     "name": "普通生态学",
+     "nature": null,
+     "credits": 3,
+     "hours": 2,
+     "practice": 2,
+     "term": "三下",
+     "code": "01536013"
+    },
+    {
+     "name": "微生物学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "01139600"
+    },
+    {
+     "name": "微生物学实验",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "二下",
+     "code": "01130071"
+    },
+    {
+     "name": "植物学 (上)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二上",
+     "code": "01535121"
+    },
+    {
+     "name": "植物学 (下) 2.",
+     "nature": null,
+     "credits": 5,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "12632130"
+    },
+    {
+     "name": "植物生物学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "一下",
+     "code": "01131040"
+    },
+    {
+     "name": "植物生物学实验 1.",
+     "nature": null,
+     "credits": 5,
+     "hours": 3,
+     "practice": 51,
+     "term": "一下",
+     "code": "01131060"
+    },
+    {
+     "name": "生态学科研规范与毕业论文",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 32,
+     "term": "四上",
+     "code": "01139995"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "courses": [
+    {
+     "name": "生物学综合野外实习",
+     "nature": null,
+     "credits": 2,
+     "hours": 68,
+     "practice": null,
+     "term": "一暑",
+     "code": "01134140"
+    },
+    {
+     "name": "野外生态学",
+     "nature": null,
+     "credits": 2,
+     "hours": 68,
+     "practice": null,
+     "term": "二暑",
+     "code": "01535130"
+    },
+    {
+     "name": "生态学野外实践",
+     "nature": null,
+     "credits": 2,
+     "hours": 68,
+     "practice": null,
+     "term": "二暑",
+     "code": "01134110"
+    },
+    {
+     "name": "南海海洋生态学野外实践",
+     "nature": null,
+     "credits": 2,
+     "hours": 68,
+     "practice": null,
+     "term": "二暑",
+     "code": "01130912"
+    },
+    {
+     "name": "生态学控制实验野外实习",
+     "nature": null,
+     "credits": 2,
+     "hours": 68,
+     "practice": null,
+     "term": "三暑",
+     "code": "12632140"
+    },
+    {
+     "name": "灵长类行为生态学实习",
+     "nature": null,
+     "credits": 2,
+     "hours": 68,
+     "practice": null,
+     "term": "三暑",
+     "code": "01132669"
+    },
+    {
+     "name": "自然地理综合实习",
+     "nature": null,
+     "credits": 2,
+     "hours": 68,
+     "practice": null,
+     "term": "三暑",
+     "code": "12633070"
+    },
+    {
+     "name": "普通地质实习",
+     "nature": null,
+     "credits": 1,
+     "hours": 34,
+     "practice": null,
+     "term": "1周 一暑",
+     "code": "01537530"
+    },
+    {
+     "name": "地貌实习",
+     "nature": null,
+     "credits": 2,
+     "hours": 68,
+     "practice": null,
+     "term": "2周 一暑",
+     "code": "01539340"
+    },
+    {
+     "name": "数据结构与算法 ( B)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "一下 √ √ √",
+     "code": "04831420"
+    },
+    {
+     "name": "生态学与环境变化",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一下 √ √ √",
+     "code": "01536830"
+    },
+    {
+     "name": "气象气候学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "一下 √",
+     "code": "01531250"
+    },
+    {
+     "name": "线性代数 ( C)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二下 √ √",
+     "code": "00130310"
+    },
+    {
+     "name": "线性代数 ( B)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "二上 √ √ √",
+     "code": "00131460"
+    },
+    {
+     "name": "线性代数 ( B) 习题课",
+     "nature": null,
+     "credits": 0,
+     "hours": 1,
+     "practice": null,
+     "term": "二上 √ √ √",
+     "code": "00131470"
+    },
+    {
+     "name": "生态学与演化生物学科研实践 3 二上 √ √",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "01139993"
+    },
+    {
+     "name": "生物地理学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上 √",
+     "code": "01531290"
+    },
+    {
+     "name": "自然地理概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二上 √",
+     "code": "01533260"
+    },
+    {
+     "name": "定量分析化学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下 √ √ √",
+     "code": "01035180"
+    },
+    {
+     "name": "定量分析化学实验",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": null,
+     "term": "二下 √ √ √",
+     "code": "01035190"
+    },
+    {
+     "name": "城市生态与环境规划",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下 √ √",
+     "code": "12635230"
+    },
+    {
+     "name": "基础物理实验",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": null,
+     "term": "二下 √ √ √",
+     "code": "00431200"
+    },
+    {
+     "name": "土壤学与土壤地理",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下 √",
+     "code": "01534300"
+    },
+    {
+     "name": "生物化学",
+     "nature": null,
+     "credits": 3,
+     "hours": 4,
+     "practice": null,
+     "term": "二下 √",
+     "code": "01139633"
+    },
+    {
+     "name": "生物化学实验",
+     "nature": null,
+     "credits": 2,
+     "hours": 4,
+     "practice": null,
+     "term": "二下 √",
+     "code": "01139632"
+    },
+    {
+     "name": "分子生物学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下 √",
+     "code": "01138541"
+    },
+    {
+     "name": "分子生物学实验",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "二下 √",
+     "code": "01132677"
+    },
+    {
+     "name": "生物多样性科学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上 √ √ √",
+     "code": "12632090"
+    },
+    {
+     "name": "R 语言应用",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上 √ √ √",
+     "code": "12632120"
+    },
+    {
+     "name": "植物生理学与实验",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上 √ √",
+     "code": "12632150"
+    },
+    {
+     "name": "遥感基础与图象解译原理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上 √ √",
+     "code": "01531230"
+    },
+    {
+     "name": "城市生态学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上 √",
+     "code": "01532480"
+    },
+    {
+     "name": "理论生态学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上 √ √",
+     "code": "12632070"
+    },
+    {
+     "name": "景观生态学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上 √ √ √",
+     "code": "12632190"
+    },
+    {
+     "name": "植物多样性及其演化",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三下 √ √ √",
+     "code": "01133025"
+    },
+    {
+     "name": "分子生态学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下 √ √",
+     "code": "01133120"
+    },
+    {
+     "name": "古气候与古环境",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三下 √ √",
+     "code": "12633160"
+    },
+    {
+     "name": "地球系统科学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上 √ √",
+     "code": "12633080"
+    },
+    {
+     "name": "环境科学概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上",
+     "code": "12631070"
+    },
+    {
+     "name": "环境地学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二下",
+     "code": "01536850"
+    },
+    {
+     "name": "环境化学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上 √ √",
+     "code": "12631080"
+    },
+    {
+     "name": "环境生物学",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "二下 √ √",
+     "code": "12631170"
+    },
+    {
+     "name": "能源与环境",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下 √ √",
+     "code": "12631200"
+    },
+    {
+     "name": "水环境化学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上 √",
+     "code": "01536210"
+    },
+    {
+     "name": "环境毒理学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上 √",
+     "code": "12631020"
+    },
+    {
+     "name": "污染环境修复",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三下 √",
+     "code": "12631010"
+    },
+    {
+     "name": "环境监测与实验",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "三下 √",
+     "code": "12631100"
+    },
+    {
+     "name": "环境污染数值模拟",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下 √",
+     "code": "12631180"
+    },
+    {
+     "name": "污染物水土环境过程",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下 √",
+     "code": "12631210"
+    },
+    {
+     "name": "环境规划学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下 √",
+     "code": "12732060"
+    },
+    {
+     "name": "地理信息系统原理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三下 √ √",
+     "code": "01235240"
+    },
+    {
+     "name": "GI S 实验",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下 √",
+     "code": "01235250"
+    },
+    {
+     "name": "自然保护学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下 √ √",
+     "code": "01534230"
+    },
+    {
+     "name": "遗传学 ( B)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下 √",
+     "code": "01030201"
+    },
+    {
+     "name": "遗传学实验",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "二下 √",
+     "code": "01130210"
+    },
+    {
+     "name": "生理学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下 √",
+     "code": "01139510"
+    },
+    {
+     "name": "生理学实验",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "三下 √",
+     "code": "01130380"
+    },
+    {
+     "name": "群体遗传学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上 √",
+     "code": "01110610"
+    },
+    {
+     "name": "细胞生物学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下 √",
+     "code": "01130151"
+    },
+    {
+     "name": "细胞生物学实验",
+     "nature": null,
+     "credits": 1,
+     "hours": 2,
+     "practice": null,
+     "term": "三下 √",
+     "code": "01130160"
+    },
+    {
+     "name": "行为生态学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下 √ √",
+     "code": "01133080"
+    },
+    {
+     "name": "土地评价与管理",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上 √",
+     "code": "01534070"
+    },
+    {
+     "name": "社会调查与研究方法",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "四上 √",
+     "code": "03131500"
+    },
+    {
+     "name": "社会心理学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "四上 √",
+     "code": "01630047"
+    },
+    {
+     "name": "公民社会与非政府组织",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "四上 √",
+     "code": "03231870"
+    },
+    {
+     "name": "环境气候与国际关系",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "四上 √",
+     "code": "02431651"
+    },
+    {
+     "name": "环境法",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上 √",
+     "code": "12733030"
+    },
+    {
+     "name": "环境管理学",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "四上 √",
+     "code": "12732020"
+    },
+    {
+     "name": "自然保护:思想与实践",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上 √ √",
+     "code": "01130961"
+    },
+    {
+     "name": "环境经济学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四下 √",
+     "code": "12735192"
+    },
+    {
+     "name": "鸟类生态与保护",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四下 √",
+     "code": "01133034"
+    },
+    {
+     "name": "生态学与自然地理学前沿",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四下 √ √ √",
+     "code": "12632010"
+    },
+    {
+     "name": "保护和恢复生态学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上 √ √ √",
+     "code": "12632170"
+    },
+    {
+     "name": "水文学与水资源",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二上 √ √",
+     "code": "01534200"
+    },
+    {
+     "name": "地表过程模拟与监测",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上 √ √",
+     "code": "12633110"
+    },
+    {
+     "name": "地貌学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "一下 √ √",
+     "code": "01531180"
+    },
+    {
+     "name": "地图学与 GI S 基础",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "一下 √ √",
+     "code": "12633090"
+    },
+    {
+     "name": "遥感原理与应用",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二上 √ √",
+     "code": "12633120"
+    },
+    {
+     "name": "中国自然地理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上 √ √",
+     "code": "01531130"
+    },
+    {
+     "name": "综合自然地理学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三下 √ √",
+     "code": "01534060"
+    },
+    {
+     "name": "自然资源学原理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "三上 √ √",
+     "code": "01534030"
+    },
+    {
+     "name": "气候变化科学概论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下 √ √",
+     "code": "12632050"
+    },
+    {
+     "name": "现代自然地理学实验方法",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下 √ √",
+     "code": "01531610"
+    },
+    {
+     "name": "湖沼学原理",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上 √ √",
+     "code": "12633060"
+    },
+    {
+     "name": "海洋科学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下 √ √",
+     "code": "12638010"
+    },
+    {
+     "name": "世界自然地理",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下 √ √",
+     "code": "12633040"
+    },
+    {
+     "name": "环境演变与全球变化",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三下 √ √",
+     "code": "01531810"
+    },
+    {
+     "name": "人文地理学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一上 √ √",
+     "code": "12634110"
+    },
+    {
+     "name": "经济地理学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "一下 √ √",
+     "code": "01531010"
+    },
+    {
+     "name": "历史地理学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上 √ √",
+     "code": "12639040"
+    },
+    {
+     "name": "城市地理学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二上 √ √",
+     "code": "01532420"
+    },
+    {
+     "name": "基因组学数据分析",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上 √",
+     "code": "01133037"
+    },
+    {
+     "name": "脊椎动物比较解剖学及实验",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二下 √",
+     "code": "01139441"
+    },
+    {
+     "name": "生态学科研基本技能",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "一下 √ √",
+     "code": "01130805"
+    },
+    {
+     "name": "生态学与演化生物学研究前沿",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "二上 √ √",
+     "code": "01139990"
+    },
+    {
+     "name": "生态学与演化生物学文献阅读",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上 √ √",
+     "code": "01130941"
+    },
+    {
+     "name": "方法与前沿",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "四上 √",
+     "code": "01131765"
+    },
+    {
+     "name": "细胞分子生物学中的物理化学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "秋季 √",
+     "code": "08402105"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "所有课程向上兼容,即认可更高标准的同名课程学分。",
+  "新生入学后根据英语测试结果确定需修读的学分,最多修读 8 学分 (公共必修课总学",
+  "分 36 学分),最少修读 2 学分 (公 共 必 修 课 总 学 分 30 学 分),不 足 36 个 学 分 的 部 分 用 于",
+  "修读除公共必修课外的其他类课程 (通识教育课、专业必修课、选修课)。",
+  "· 174 ·              北京大学本科培养方案 (",
+  "—                           19                        按马克思主义学院要求选课",
+  "—                          1门                         按学校要求选课",
+  "—        劳动教育课            32 学时                       按学校要求选课",
+  "—        大学英语课            2~8      —                  按大学英语教研室要求选课",
+  "—        体育系列课程           1×4      —                  全年",
+  "程的上机课 “计算概论 B 上机”。",
+  "程的上机课 “计算概论 B 上机”。",
+  "通识教育课程分为四个 系 列: Ⅰ. 人 类 文 明 及 其 传 统、 Ⅱ. 现 代 社 会 及 其 问 题、 Ⅲ.",
+  "艺术与人文、 Ⅳ. 数学、自然与技术,每个系列均包含通识教育核心课、通选课两部分课",
+  "程,具体课程列表详见 《北京大学本科生选课手册》。",
+  "1)至少修读 1 门 “通识教育核心课程”(任一系列),且在四个课程系列中每个系列",
+  "3)本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分;",
+  "4)建议合理分配修读时间,每学期修读 1 门课程。",
+  "-1 专业基础课:19 学分,书院班 (即生科院学生)26 学分",
+  "B) *                    2         4                     一上",
+  "01032690*   有机化学 B*                        3         3                     二上",
+  "B) *                    2         4                     二上",
+  "* 书院班 (即生科院学生) 必修课程。",
+  "北京大学生命科学学院                         · 175 ·",
+  "-2 专业核心课:25 学分,书院班 (即生科院学生)33 学分",
+  "新开课       演化生物学                   2         2                   二上",
+  "01139633*   生物化学 *                  3         4                   二上",
+  "01139632*   生物化学实验 *                2         4                   二上",
+  "01138541*   分子生物学 *                 2         2                   二下",
+  "01132677*   分子生物学实验 *               1         2                   二下",
+  "* 书院班 (即生科院学生) 必修课程。",
+  "** 建议城环学生一上选修,生科学生二上选修。",
+  "以下课程选择 “植物生物学+植物生物学实验”或 “植物学 (上、下)”,共计4.",
+  "-3 毕业论文 6 学分,书院班 (即生科院学生)修科研规范与毕业论文 8 学分,第四学年",
+  "毕业论文安排在四年级进行,一般 15~25 周。学生可在综合实习的基础上完成论文,",
+  "也可另行选定题目,鼓励学生结合指导教师的科研课题完成毕业论文。毕业论文为学术性",
+  "研究论文,内容包括国内外相 关 研 究 进 展、研 究 方 法 与 技 术、研 究 结 果 和 结 论 与 讨 论 等。",
+  "毕业论文完成后经过答辩及格后方可获得学分。",
+  "—       本科生毕业论文                 6         —          192      —",
+  "· 176 ·              北京大学本科培养方案 (",
+  "-1 专业选修课:不少于 38 学分,书院班 (即生科院学生)不少于 24 学分",
+  "A.野外实习课程 (至少选修 4 学分,需要先修生物学野外综合实习或野外生态学)",
+  "新开课       应用生态学野外实习              2                             三暑",
+  "B.模块课程 (至少选修 34 学分 (书院班至少为 20 学分),推荐学生按照兴趣根据如",
+  "下三个模块之一进行选课,也可在导师指导下 跨 模 块 选 课。模 块 1:地 生 态 学 模 块;模 块",
+  "新开课       空间分析与模拟          2     2     二上     √                 √",
+  "北京大学生命科学学院                       · 177 ·",
+  "新开课       分子演化与系统发生学        2     2     三上            √",
+  "新开课       生态学经典书目导读         2     2     三上     √      √      √",
+  "新开课       自然地理研究方法          3     3     三上     √             √",
+  "· 178 ·              北京大学本科培养方案 (",
+  "如已经修完上述要求的各模 块 的 课 程 仍 未 达 到 147 总 学 分 (书 院 班 152 学 分), 可 任",
+  "意选择全校范围内其他课程作为补充。"
+ ],
+ "warnings": [
+  "第 8867 行：课程行缺少学分：01139993    生态学与演化生物学科研实践    3          "
+ ],
+ "source": {
+  "volumeId": "2023-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=195",
+  "lineStart": 8606,
+  "lineEnd": 9050
+ }
+}

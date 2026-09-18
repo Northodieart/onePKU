@@ -1,0 +1,783 @@
+{
+ "id": "2021-城市与环境学院-城乡规划-五年制",
+ "cohort": 2021,
+ "volume": "北京大学本科培养方案（2021）理科卷",
+ "school": "城市与环境学院",
+ "major": "城乡规划",
+ "track": "五年制",
+ "title": "城乡规划专业 (五年制 )",
+ "kind": "major",
+ "qualifiers": [],
+ "degree": "工学学士学位。",
+ "totalCredits": {
+  "min": 160,
+  "max": 160
+ },
+ "topRequirements": [
+  {
+   "id": "1",
+   "name": "公共基础课程",
+   "min": 41,
+   "max": 47,
+   "unit": "学分"
+  },
+  {
+   "id": "2",
+   "name": "专业必修课程",
+   "min": 63,
+   "max": 63,
+   "unit": "学分"
+  },
+  {
+   "id": "3",
+   "name": "选修课程",
+   "min": 50,
+   "max": 50,
+   "unit": "学分"
+  }
+ ],
+ "requirements": [
+  {
+   "id": "1-1",
+   "parent": "1",
+   "name": "公共必修课",
+   "requirement": "29~35 学分",
+   "inferredParent": true,
+   "min": 29,
+   "max": 35,
+   "unit": "学分"
+  },
+  {
+   "id": "1-2",
+   "parent": "1",
+   "name": "通识教育课",
+   "requirement": "12 学分",
+   "inferredParent": true,
+   "min": 12,
+   "max": 12,
+   "unit": "学分"
+  },
+  {
+   "id": "2-1",
+   "parent": "2",
+   "name": "专业基础课",
+   "requirement": "29 学分",
+   "inferredParent": true,
+   "min": 29,
+   "max": 29,
+   "unit": "学分"
+  },
+  {
+   "id": "2-2",
+   "parent": "2",
+   "name": "专业核心课",
+   "requirement": "30 学分",
+   "inferredParent": true,
+   "min": 30,
+   "max": 30,
+   "unit": "学分"
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "name": "专业选修课",
+   "requirement": "25 学分",
+   "inferredParent": true,
+   "min": 25,
+   "max": 25,
+   "unit": "学分"
+  },
+  {
+   "id": "3-2",
+   "parent": "3",
+   "name": "自主选修课",
+   "requirement": "25 学分",
+   "inferredParent": true,
+   "min": 25,
+   "max": 25,
+   "unit": "学分"
+  }
+ ],
+ "groups": [
+  {
+   "id": "1",
+   "parent": null,
+   "name": "公共基础课程",
+   "min": 41,
+   "max": 47,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "计算概论 B",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "“计算概 论 B” 课 程 同 时,",
+     "code": "04831410"
+    },
+    {
+     "name": "计算概论 B 上机",
+     "nature": null,
+     "credits": 0,
+     "hours": 2,
+     "practice": 32,
+     "term": "“计算概 论 B” 课 程 同 时,",
+     "code": "04831650"
+    },
+    {
+     "name": "军事理论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "一上或一下",
+     "code": "60730020"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "name": "专业必修课程",
+   "min": 63,
+   "max": 63,
+   "unit": "学分",
+   "courses": [
+    {
+     "name": "高等数学 C (一)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "一上",
+     "code": "00131421"
+    },
+    {
+     "name": "自然地理概论",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "一上",
+     "code": "01533260"
+    },
+    {
+     "name": "中外城市建设史",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "一上",
+     "code": "01532190"
+    },
+    {
+     "name": "城市规划原理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "一下",
+     "code": "01532450"
+    },
+    {
+     "name": "地貌学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "一下",
+     "code": "01531180"
+    },
+    {
+     "name": "经济地理学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "一下",
+     "code": "01531010"
+    },
+    {
+     "name": "城市地理学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "01532420"
+    },
+    {
+     "name": "建筑设计 (一)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "12635370"
+    },
+    {
+     "name": "国土空间规划",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二上",
+     "code": "12635310"
+    },
+    {
+     "name": "城乡社区空间规划与设计",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "12635130"
+    },
+    {
+     "name": "城市生态与环境规划",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下",
+     "code": "12635230"
+    },
+    {
+     "name": "国土空间规划管理与法规",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下",
+     "code": "12635330"
+    },
+    {
+     "name": "城市道路与交通规划",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "12635250"
+    },
+    {
+     "name": "城市基础设施规划",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "01532350"
+    },
+    {
+     "name": "区域分析与区域规划",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "12635280"
+    },
+    {
+     "name": "社会综合实践调查",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "01533220"
+    },
+    {
+     "name": "详细规划",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "12635290"
+    },
+    {
+     "name": "城市设计",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "四下",
+     "code": "01532370"
+    },
+    {
+     "name": "城乡地域空间认知实习 1 见说明 二暑",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "01533300"
+    },
+    {
+     "name": "综合社会实践实习 1 见说明 三暑",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "12639010"
+    },
+    {
+     "name": "规划设计实习 1 见说明 四暑五上",
+     "nature": null,
+     "credits": null,
+     "hours": null,
+     "practice": null,
+     "term": null,
+     "code": "12635100"
+    }
+   ],
+   "alternatives": []
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "name": "选修课程",
+   "min": 50,
+   "max": 50,
+   "unit": "学分",
+   "courses": [],
+   "alternatives": []
+  },
+  {
+   "id": "3-1",
+   "parent": "3",
+   "kind": "list",
+   "name": "规划应用选修课:不少于  13 学分",
+   "min": 13,
+   "max": 13,
+   "unit": "学分",
+   "requirement": "规划应用选修课:不少于  13 学分",
+   "courses": [
+    {
+     "name": "美术:素描与色彩",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "一下",
+     "code": "12635190"
+    },
+    {
+     "name": "人口地理与规划应用 ( 原人口地理)",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二上",
+     "code": "12635360"
+    },
+    {
+     "name": "景观规划",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "12635340"
+    },
+    {
+     "name": "建筑设计 (二)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": 0,
+     "term": "二暑",
+     "code": "12635180"
+    },
+    {
+     "name": "建设项目可行性研究",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "12635050"
+    },
+    {
+     "name": "房地产开发与估价",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "12635350"
+    },
+    {
+     "name": "现当代建筑赏析",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "三上",
+     "code": "01339220"
+    },
+    {
+     "name": "风景名胜区规划",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三下",
+     "code": "12635240"
+    },
+    {
+     "name": "交通分析模拟与规划",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三下",
+     "code": "12635140"
+    },
+    {
+     "name": "城市形态学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三下",
+     "code": "12635080"
+    },
+    {
+     "name": "城乡游憩与旅游规划",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "四下",
+     "code": "12635270"
+    },
+    {
+     "name": "高等数学 C (二)",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "一下",
+     "code": "00131422"
+    },
+    {
+     "name": "应用统计学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "一下",
+     "code": "03232300"
+    },
+    {
+     "name": "线性代数 ( C)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二上",
+     "code": "00130310"
+    },
+    {
+     "name": "概率统计 ( B)",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": null,
+     "term": "二下",
+     "code": "00132380"
+    },
+    {
+     "name": "人文地理学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "一上",
+     "code": "12634110"
+    },
+    {
+     "name": "地球系统科学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "一上",
+     "code": "12633080"
+    },
+    {
+     "name": "气象气候学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "一下",
+     "code": "01531250"
+    },
+    {
+     "name": "地貌实习",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": null,
+     "term": "2周 一暑",
+     "code": "01539340"
+    },
+    {
+     "name": "计量地理",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二上",
+     "code": "01531690"
+    },
+    {
+     "name": "地图学与 GI S 基础",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "12633090"
+    },
+    {
+     "name": "产业地理学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二上",
+     "code": "12634010"
+    },
+    {
+     "name": "文化地理学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下",
+     "code": "01531710"
+    },
+    {
+     "name": "地理信息系统原理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "01235240"
+    },
+    {
+     "name": "植物学 (下) 2.",
+     "nature": null,
+     "credits": 5,
+     "hours": 3,
+     "practice": 0,
+     "term": "二下",
+     "code": "12632130"
+    },
+    {
+     "name": "土壤学与土壤地理",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "二下",
+     "code": "01534300"
+    },
+    {
+     "name": "历史地理学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上",
+     "code": "12639040"
+    },
+    {
+     "name": "城市社会地理学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上",
+     "code": "01533230"
+    },
+    {
+     "name": "遥感基础与图象解译原理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "01531230"
+    },
+    {
+     "name": "城市生态学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三上",
+     "code": "01532480"
+    },
+    {
+     "name": "中国自然地理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "01531130"
+    },
+    {
+     "name": "社会统计与数据分析",
+     "nature": null,
+     "credits": 4,
+     "hours": 4,
+     "practice": null,
+     "term": "三上",
+     "code": "03130130"
+    },
+    {
+     "name": "人文地理学研究方法",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三下",
+     "code": "01533320"
+    },
+    {
+     "name": "世界自然地理",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三下",
+     "code": "12633040"
+    },
+    {
+     "name": "综合自然地理学",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三下",
+     "code": "01534060"
+    },
+    {
+     "name": "海洋科学导论",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三下",
+     "code": "12638010"
+    },
+    {
+     "name": "自然保护学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "三下",
+     "code": "01534230"
+    },
+    {
+     "name": "自然资源学原理",
+     "nature": null,
+     "credits": 3,
+     "hours": 3,
+     "practice": 0,
+     "term": "三上",
+     "code": "01534030"
+    },
+    {
+     "name": "土地评价与管理",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "四上",
+     "code": "01534070"
+    },
+    {
+     "name": "旅游地理学",
+     "nature": null,
+     "credits": 2,
+     "hours": 2,
+     "practice": 0,
+     "term": "四下",
+     "code": "01535100"
+    }
+   ],
+   "alternatives": []
+  }
+ ],
+ "unparsed": [],
+ "notes": [
+  "新生入学后根据英语测试结果确定需修读的学分,最多修读 8 学分 (公共必修课总学",
+  "分 35 学分),最少修读 2 学分 (公 共 必 修 课 总 学 分 29 学 分),不 足 35 个 学 分 的 部 分 用 于",
+  "修读除公共必修课外的其他类课程 (通识教育课、专业必修课、选修课)。",
+  "—       大学英语                2~8    —          —",
+  "需要另选该课程 的 上 机 课",
+  "“计算概论 B 上机”。",
+  "北京大学城市与环境学院                    · 263 ·",
+  "需要另选该课程 的 上 机 课",
+  "“计算概论 B 上机”。",
+  "—       体育系列课程          1×4    2      0     全年",
+  "通识教育 课 程 分 为 四 个 系 列: Ⅰ.人 类 文 明 及 其 传 统, Ⅱ.现 代 社 会 及 其 问 题,",
+  "Ⅲ.艺术与人文, Ⅳ.数学、自然与 技 术,每 个 系 列 均 包 含 通 识 教 育 核 心 课、通 选 课 两 部",
+  "分课程,具体课程列表详见 《北京大学本科生选课手册》。",
+  "1)至少修读 1 门 “通识教育核心课程” (任一系列),且在四个课程系列中 每个系列",
+  "至少修读 2 学分 (通识教育核心课或通选课均可)。",
+  "2)原则上不允许以专业课替代通识教育课程学分。",
+  "3)本院系开设的通识教育课程不计入学生毕业所需的通识教育课程学分。",
+  "4)建议合理分配修读时间,每学期修读 1 门课程。",
+  "新开课       地理信息系统的规划应用            2      2       0     二下",
+  "· 264 ·            北京大学本科培养方案 (",
+  "新开课       总体规划 (课程设计)             3       3       0     三上",
+  "1)城乡地域空间认知实习:安排在二年级暑期,时间不少于 3 周 工 作 日,由 指 导 老",
+  "师认定是否合格。",
+  "2)综合社会实践实习:安排在三年级暑期进行,时间不少于 3 周 工 作 日。学 生 跟 随",
+  "城乡规划专业有关指导老师,完成一定工作量的调查、分析和规划实践工作,提交相应的",
+  "实习报告,经指导老师评阅后认定是否合格。",
+  "3)规划设计实习:一般安 排 在 四 年 级 暑 期 和 五 年 级 上 学 期 进 行, 时 间 不 少 于 13 周",
+  "3 个月)。学生 选 择 甲 级 资 质 的 规 划 设 计 单 位, 完 成 一 定 工 作 量 的 调 查、 分 析 和 规 划 工",
+  "作。实习结束后,学生应提交由实习单位出具的实习证明材料,经主管老师评阅后认定是",
+  "否合格。",
+  "新开课       美术实习                    2               2周     一暑",
+  "北京大学城市与环境学院                       · 265 ·",
+  "新开课       时空智能技术与规划应用              2        2             四上",
+  "2)规划辅助选修课:选课不少于 8 学分。",
+  "新开课       行为地理学                2        2         0       二下",
+  "新开课       城市与区域经济学             2        2         0       二下",
+  "按时完成本科科研任务、提交成果、成绩合格的学生,按照北京大学本科生 “研究课",
+  "程”的规定,按照专业选修课记 4 个学分。",
+  "· 266 ·             北京大学本科培养方案 (",
+  "参加拔尖计划并按照拔尖计划实施办法考核通过,按照专业选修课计 4 学分。拔尖计",
+  "划不能与本研的内 容、 学 分 重 复 使 用。 同 时 完 成 本 科 科 研 和 拔 尖 计 划 任 务, 只 允 许 计 算",
+  "一项。",
+  "不选本科生科研和拔尖计划,可以选规划应用选修课、规划辅助选修课代替。",
+  "可从全校所有专业课程中选择,含跨学科课程和辅修专业学分可替代学分,鼓励选修",
+  "专业选修课中未修的课程。"
+ ],
+ "warnings": [
+  "第 12761 行：课程行缺少学分：01533300   城乡地域空间认知实习              1    ",
+  "第 12762 行：课程行缺少学分：12639010   综合社会实践实习                1    ",
+  "第 12763 行：课程行缺少学分：12635100   规划设计实习                  1    "
+ ],
+ "source": {
+  "volumeId": "2021-理科",
+  "url": "https://dean.pku.edu.cn/web/download_down.php?type=down&id=152",
+  "lineStart": 12595,
+  "lineEnd": 12934
+ }
+}
