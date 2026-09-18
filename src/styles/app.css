@@ -3978,3 +3978,12 @@ input[type="checkbox"] {
 .update-notes {
   white-space: pre-wrap;
 }
+
+/* 保存位置 */
+.path-value {
+  word-break: break-all;
+  font-weight: 500;
+}
+.storage-location {
+  margin: 4px 0 8px;
+}

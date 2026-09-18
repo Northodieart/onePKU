@@ -13,6 +13,8 @@ import {
   useResource,
   action,
   fmtTime,
+  chooseDownloadFolder,
+  type Preferences,
 } from "../lib/api";
 import {
   emptyProfile,
@@ -38,7 +40,9 @@ export default function Settings({
 }) {
   const client = useQueryClient();
   const [cacheMessage, setCacheMessage] = useState("");
-  const prefs = useResource<{ keepAlive: boolean }>({ kind: "preferences" });
+  const prefs = useResource<Preferences>({ kind: "preferences" });
+  const [storageMessage, setStorageMessage] = useState("");
+  const inApp = "__TAURI_INTERNALS__" in window;
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
   const profileQuery = useProfile();
@@ -237,10 +241,68 @@ export default function Settings({
         <h2>数据与存储</h2>
         <div className="settings-facts">
           <div>
-            <span>资料保存位置</span>
-            <strong>下载 / OnePKU</strong>
+            <span>下载与资料保存位置</span>
+            <strong className="path-value">
+              {prefs.data?.data?.downloadRoot?.replace(
+                /^\/Users\/[^/]+/,
+                "~",
+              ) ?? "下载 / OnePKU"}
+              {prefs.data?.data && !prefs.data.data.downloadRootIsDefault
+                ? ""
+                : "（默认）"}
+            </strong>
           </div>
         </div>
+        <div className="submission-actions storage-location">
+          {inApp && (
+            <Button
+              variant="quiet"
+              onClick={() => {
+                setStorageMessage("");
+                void chooseDownloadFolder()
+                  .then(async (next) => {
+                    if (!next) return;
+                    await prefs.refetch();
+                    setStorageMessage(
+                      "之后的下载与新资料会保存到这里；已下载的文件留在原位置，不会自动搬移。",
+                    );
+                  })
+                  .catch((e: Error) =>
+                    setStorageMessage(`未能更改保存位置：${e.message}`),
+                  );
+              }}
+            >
+              更改位置…
+            </Button>
+          )}
+          {prefs.data?.data && !prefs.data.data.downloadRootIsDefault && (
+            <Button
+              variant="quiet"
+              onClick={() => {
+                setStorageMessage("");
+                void action({ kind: "resetDownloadRoot" })
+                  .then(async () => {
+                    await prefs.refetch();
+                    setStorageMessage("已恢复为默认位置 下载 / OnePKU。");
+                  })
+                  .catch(() => setStorageMessage("未能恢复默认位置，请重试"));
+              }}
+            >
+              恢复默认
+            </Button>
+          )}
+          <Button
+            variant="quiet"
+            onClick={() => void action({ kind: "openDownloadRoot" })}
+          >
+            在访达中打开
+          </Button>
+        </div>
+        {storageMessage && (
+          <p role="status" className="subtle">
+            {storageMessage}
+          </p>
+        )}
         <div className="storage-actions">
           <details className="settings-explanation">
             <summary>数据保存与更新说明</summary>

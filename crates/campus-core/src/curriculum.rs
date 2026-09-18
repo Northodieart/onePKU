@@ -103,9 +103,7 @@ pub async fn pages(id: &str, from: u32, to: u32, title: &str, open: bool) -> Res
             out
         }
     };
-    let dir = directories::UserDirs::new()
-        .and_then(|d| d.download_dir().map(|p| p.join("OnePKU").join("培养方案")))
-        .ok_or_else(|| anyhow!("Downloads unavailable"))?;
+    let dir = crate::downloads::download_root()?.join("培养方案");
     std::fs::create_dir_all(&dir)?;
     let name = format!(
         "{} {}（{} 第{}-{}页）.pdf",
