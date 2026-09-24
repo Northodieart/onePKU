@@ -68,7 +68,7 @@ class CourseRepository @Inject constructor(
                         sem.acquire()
                         try {
                             val fresh = try {
-                                run { listAssignmentsForCourse(course) }
+                                withReauth(auth, Service.COURSE) { api.listAssignmentsForCourse(course) }
                             } catch (e: CancellationException) {
                                 throw e
                             } catch (e: Exception) {
