@@ -3,6 +3,7 @@ package me.petertian.onepku.data.repo
 import android.content.Context
 import android.os.Environment
 import dagger.hilt.android.qualifiers.ApplicationContext
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.async
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.sync.Semaphore
@@ -66,9 +67,14 @@ class CourseRepository @Inject constructor(
                     } else {
                         sem.acquire()
                         try {
-                            runCatching { run { listAssignmentsForCourse(course) } }
-                                .getOrElse { emptyList() }
-                                .also { assignmentsCache[course.id] = CacheEntry(it) }
+                            val fresh = try {
+                                run { listAssignmentsForCourse(course) }
+                            } catch (e: CancellationException) {
+                                throw e
+                            } catch (e: Exception) {
+                                emptyList()
+                            }
+                            fresh.also { assignmentsCache[course.id] = CacheEntry(it) }
                         } finally {
                             sem.release()
                         }
