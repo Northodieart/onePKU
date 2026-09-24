@@ -33,6 +33,9 @@ class SessionExpiredException(message: String = "登录会话已过期") : Excep
 /** 树洞要求短信验证（code 40002）。 */
 class SmsVerificationRequiredException : Exception("树洞需要短信验证")
 
+fun okhttp3.Response.requireBody(): okhttp3.ResponseBody =
+    checkNotNull(body) { "空响应体" }
+
 @Singleton
 class HttpFactory @Inject constructor(@ApplicationContext private val context: Context) {
 

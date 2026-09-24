@@ -4,6 +4,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import me.petertian.onepku.core.network.CookieStores
 import me.petertian.onepku.core.network.HttpFactory
+import me.petertian.onepku.core.network.requireBody
 import me.petertian.onepku.core.network.SessionExpiredException
 import me.petertian.onepku.core.network.Ua
 import me.petertian.onepku.core.session.Credentials
@@ -88,7 +89,7 @@ class AuthManager @Inject constructor(
                 "?_rand=${rand20()}&token=$token"
             client.newCall(Request.Builder().url(url).build()).execute().use { resp ->
                 val finalUrl = resp.request.url.toString()
-                val body = resp.body.string()
+                val body = resp.requireBody().string()
                 if (finalUrl.contains("iaaa.pku.edu.cn") || body.contains("loginForm") || body.contains("id=\"loginBox\"")) {
                     throw IaaaException("教学网会话建立失败")
                 }
@@ -125,7 +126,7 @@ class AuthManager @Inject constructor(
                     val location = it.header("location") ?: throw IaaaException("树洞回调缺少 location")
                     parseTreeholeCallback(location)
                 } else {
-                    it.body.string()
+                    it.requireBody().string()
                     val token = jar.cookieValue("pku_token") ?: throw IaaaException("树洞回调未返回 token")
                     val exp = jar.cookieValue("pku_expires_in")?.toLongOrNull() ?: (nowSec() + 7 * 24 * 3600)
                     Triple(token, exp, jar.cookieValue("pku_uid") ?: username)
@@ -191,20 +192,20 @@ class AuthManager @Inject constructor(
                 "?_rand=${rand20()}&token=$iaaaToken"
             client.newCall(Request.Builder().url(ssoUrl).build()).execute().use {
                 if (!it.isSuccessful && !it.isRedirect) throw IaaaException("门户 SSO 失败: HTTP ${it.code}")
-                it.body.string()
+                it.requireBody().string()
             }
 
             // 2. redirectToCard.do → 302
             val loc1 = client.newCall(
                 Request.Builder().url("https://portal.pku.edu.cn/portal2017/util/redirectToCard.do").build()
             ).execute().use {
-                it.body.string()
+                it.requireBody().string()
                 it.header("location") ?: throw IaaaException("redirectToCard 未重定向(HTTP ${it.code})")
             }
 
             // 3. berserker-auth → 302 带 synjones-auth
             val loc2 = client.newCall(Request.Builder().url(loc1).build()).execute().use {
-                it.body.string()
+                it.requireBody().string()
                 it.header("location") ?: throw IaaaException("berserker-auth 未重定向(HTTP ${it.code})")
             }
 

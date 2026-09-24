@@ -5,6 +5,7 @@ import kotlinx.coroutines.withContext
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import me.petertian.onepku.core.network.HttpFactory
+import me.petertian.onepku.core.network.requireBody
 import me.petertian.onepku.core.network.Ua
 import okhttp3.FormBody
 import okhttp3.Request
@@ -56,7 +57,7 @@ class IaaaApi @Inject constructor(private val httpFactory: HttpFactory) {
                 .build()
         ).execute().use { resp ->
             if (!resp.isSuccessful) throw IaaaException("获取公钥失败: HTTP ${resp.code}")
-            json.decodeFromString(PublicKeyResp.serializer(), resp.body.string())
+            json.decodeFromString(PublicKeyResp.serializer(), resp.requireBody().string())
         }
         val pem = pkResp.key ?: throw IaaaException("获取公钥失败")
 
@@ -82,7 +83,7 @@ class IaaaApi @Inject constructor(private val httpFactory: HttpFactory) {
                 .build()
         ).execute().use { resp ->
             if (!resp.isSuccessful) throw IaaaException("登录请求失败: HTTP ${resp.code}")
-            json.decodeFromString(LoginResp.serializer(), resp.body.string())
+            json.decodeFromString(LoginResp.serializer(), resp.requireBody().string())
         }
 
         if (loginResp.success && loginResp.token != null) {

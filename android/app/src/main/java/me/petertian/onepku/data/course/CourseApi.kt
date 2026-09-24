@@ -8,6 +8,7 @@ import kotlinx.coroutines.sync.withPermit
 import kotlinx.coroutines.withContext
 import me.petertian.onepku.core.network.CookieStores
 import me.petertian.onepku.core.network.HttpFactory
+import me.petertian.onepku.core.network.requireBody
 import me.petertian.onepku.core.network.SessionExpiredException
 import me.petertian.onepku.core.network.Ua
 import me.petertian.onepku.core.session.Service
@@ -46,7 +47,7 @@ class CourseApi @Inject constructor(
         client().newCall(Request.Builder().url(url).build()).execute().use { resp ->
             if (resp.code == 401) throw SessionExpiredException()
             if (!resp.isSuccessful) throw CourseApiException("请求失败: HTTP ${resp.code}")
-            val body = resp.body.string()
+            val body = resp.requireBody().string()
             checkSession(resp, body)
             body
         }
@@ -115,7 +116,7 @@ class CourseApi @Inject constructor(
                 ?.text()?.trim().orEmpty()
 
             val attachments = li.select("ul.attachments li a").mapNotNull { a ->
-                val name = a.text().trim().removePrefix(' ').trim()
+                val name = a.text().replace(' ', ' ').trim()
                 val href = a.absUrl("href")
                 if (name.isEmpty() || href.isEmpty()) null else Attachment(name, href)
             }.toMutableList()
@@ -319,7 +320,7 @@ class CourseApi @Inject constructor(
         client().newCall(Request.Builder().url(url).build()).execute().use { resp ->
             if (!resp.isSuccessful) throw CourseApiException("下载失败: HTTP ${resp.code}")
             dest.parentFile?.mkdirs()
-            resp.body.byteStream().use { input ->
+            resp.requireBody().byteStream().use { input ->
                 dest.outputStream().use { output -> input.copyTo(output) }
             }
             dest

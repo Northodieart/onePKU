@@ -6,7 +6,6 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.async
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.sync.Semaphore
-import kotlinx.coroutines.sync.withPermit
 import me.petertian.onepku.core.session.Service
 import me.petertian.onepku.data.auth.AuthManager
 import me.petertian.onepku.data.course.Announcement
@@ -59,13 +58,21 @@ class CourseRepository @Inject constructor(
             val sem = Semaphore(3)
             courses.map { course ->
                 async {
-                    assignmentsCache[course.id]
+                    val cached = assignmentsCache[course.id]
                         ?.takeIf { !forceRefresh && it.fresh(TTL) }
                         ?.data
-                        ?: runCatching {
-                            sem.withPermit { run { listAssignmentsForCourse(course) } }
-                        }.getOrElse { emptyList() }
-                            .also { assignmentsCache[course.id] = CacheEntry(it) }
+                    if (cached != null) {
+                        cached
+                    } else {
+                        sem.acquire()
+                        try {
+                            runCatching { run { listAssignmentsForCourse(course) } }
+                                .getOrElse { emptyList() }
+                                .also { assignmentsCache[course.id] = CacheEntry(it) }
+                        } finally {
+                            sem.release()
+                        }
+                    }
                 }
             }.flatMap { it.await() }
         }
