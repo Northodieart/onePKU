@@ -5,6 +5,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import me.petertian.onepku.core.network.HttpFactory
+import me.petertian.onepku.core.network.requireBody
 import me.petertian.onepku.core.network.Ua
 import okhttp3.Request
 import java.io.File
@@ -25,8 +26,8 @@ class CalendarApi @Inject constructor(
         val client = httpFactory.client(ua = Ua.NEWS, readTimeoutSec = 60)
         client.newCall(Request.Builder().url(year.url).build()).execute().use { resp ->
             if (!resp.isSuccessful) throw CalendarApiException("校历下载失败: HTTP ${resp.code}")
-            val bytes = resp.body.bytes()
-            if (!bytes.startsWith("%PDF-".toByteArray())) {
+            val bytes = resp.requireBody().bytes()
+            if (bytes.size < 5 || !bytes.copyOf(5).contentEquals("%PDF-".toByteArray(Charsets.US_ASCII))) {
                 throw CalendarApiException("校历文件格式异常")
             }
             dest.writeBytes(bytes)

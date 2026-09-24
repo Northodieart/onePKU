@@ -197,7 +197,7 @@ fun CourseDetailScreen(nav: NavHostController, vm: CourseDetailViewModel = hiltV
 private fun AnnouncementsTab(data: UiData<List<Announcement>>, onRetry: () -> Unit) {
     when (data) {
         is UiData.Loading -> LoadingBox()
-        is UiData.Failure -> ErrorBox(data.message, onRetry)
+        is UiData.Failure -> ErrorBox(data.message, onRetry = onRetry)
         is UiData.Ready -> {
             if (data.value.isEmpty()) {
                 ErrorBox("本课程暂无通知")
@@ -300,7 +300,7 @@ private fun openFile(context: android.content.Context, file: File) {
 private fun GradesTab(data: UiData<List<LearningGrade>>, onRetry: () -> Unit) {
     when (data) {
         is UiData.Loading -> LoadingBox()
-        is UiData.Failure -> ErrorBox(data.message, onRetry)
+        is UiData.Failure -> ErrorBox(data.message, onRetry = onRetry)
         is UiData.Ready -> {
             if (data.value.isEmpty()) {
                 ErrorBox("本课程暂无教学网成绩")

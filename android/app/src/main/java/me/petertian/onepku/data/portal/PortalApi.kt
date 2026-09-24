@@ -8,6 +8,7 @@ import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
 import kotlinx.serialization.json.longOrNull
 import me.petertian.onepku.core.network.HttpFactory
+import me.petertian.onepku.core.network.requireBody
 import me.petertian.onepku.core.network.Ua
 import okhttp3.FormBody
 import okhttp3.Request
@@ -45,7 +46,7 @@ class PortalApi @Inject constructor(private val httpFactory: HttpFactory) {
         val client = httpFactory.client(ua = Ua.NEWS)
         client.newCall(Request.Builder().url(url).build()).execute().use { resp ->
             if (!resp.isSuccessful) throw PortalApiException("请求失败: HTTP ${resp.code}")
-            json.parseToJsonElement(resp.body.string()).jsonObject
+            json.parseToJsonElement(resp.requireBody().string()).jsonObject
         }
     }
 
@@ -54,7 +55,7 @@ class PortalApi @Inject constructor(private val httpFactory: HttpFactory) {
         val body = FormBody.Builder().apply { form.forEach { (k, v) -> add(k, v) } }.build()
         client.newCall(Request.Builder().url(url).post(body).build()).execute().use { resp ->
             if (!resp.isSuccessful) throw PortalApiException("请求失败: HTTP ${resp.code}")
-            json.parseToJsonElement(resp.body.string()).jsonObject
+            json.parseToJsonElement(resp.requireBody().string()).jsonObject
         }
     }
 

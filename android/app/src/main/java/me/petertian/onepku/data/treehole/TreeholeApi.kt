@@ -10,6 +10,7 @@ import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
 import kotlinx.serialization.json.longOrNull
 import me.petertian.onepku.core.network.HttpFactory
+import me.petertian.onepku.core.network.requireBody
 import me.petertian.onepku.core.network.SessionExpiredException
 import me.petertian.onepku.core.network.SmsVerificationRequiredException
 import me.petertian.onepku.core.network.Ua
@@ -68,7 +69,7 @@ class TreeholeApi @Inject constructor(
             headers = mapOf("authorization" to "Bearer $token", "uuid" to uuid),
         )
         client.newCall(Request.Builder().url("$TREEHOLE_BASE$path").build()).execute().use { resp ->
-            val body = resp.body.string()
+            val body = resp.requireBody().string()
             if (resp.code == 401) throw SessionExpiredException()
             val obj = runCatching { json.parseToJsonElement(body).jsonObject }
                 .getOrElse { throw TreeholeApiException("响应无法解析: HTTP ${resp.code}") }
@@ -88,7 +89,7 @@ class TreeholeApi @Inject constructor(
             .post(bodyJson.toRequestBody("application/json".toMediaType()))
             .build()
         client.newCall(request).execute().use { resp ->
-            val body = resp.body.string()
+            val body = resp.requireBody().string()
             val obj = runCatching { json.parseToJsonElement(body).jsonObject }
                 .getOrElse { throw TreeholeApiException("响应无法解析: HTTP ${resp.code}") }
             obj
