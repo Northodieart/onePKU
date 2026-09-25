@@ -31,6 +31,9 @@ data class ScoreEntry(
     val term: String,
 ) {
     val termKey: String get() = "$year-$term"
+
+    /** 手动调整口径时的稳定标识:同一学期同名课程视为一条。 */
+    val scopeKey: String get() = "$termKey|$name"
 }
 
 data class TermGpa(val term: String, val gpa: String)
@@ -38,6 +41,12 @@ data class TermGpa(val term: String, val gpa: String)
 /** 专业必修/限选口径的课程类别判定。 */
 fun ScoreEntry.isMajorRequired(): Boolean =
     category.contains("专业必修") || category.contains("专业限选")
+
+/** 手动调整:有些专业课在学校系统里被标成"任选",按类别自动统计会漏掉。 */
+data class ScopeOverride(val included: Set<String> = emptySet(), val excluded: Set<String> = emptySet())
+
+fun ScoreEntry.countsAsMajor(override: ScopeOverride): Boolean =
+    scopeKey in override.included || (isMajorRequired() && scopeKey !in override.excluded)
 
 enum class GradeScope(val label: String) {
     ALL("全部课程"),
@@ -58,11 +67,12 @@ data class ScoreReport(
     val totalCredits: String?,
     val termGpas: List<TermGpa>,
 ) {
-    fun stats(scope: GradeScope): GradeStats = computeGradeStats(entries, scope)
+    fun stats(scope: GradeScope, override: ScopeOverride = ScopeOverride()): GradeStats =
+        computeGradeStats(entries, scope, override)
 
     /** 学期键(如 "25-26-1")在该口径下的本地统计。 */
-    fun termStats(termKey: String, scope: GradeScope): GradeStats =
-        computeGradeStats(entries.filter { it.termKey == termKey }, scope)
+    fun termStats(termKey: String, scope: GradeScope, override: ScopeOverride = ScopeOverride()): GradeStats =
+        computeGradeStats(entries.filter { it.termKey == termKey }, scope, override)
 }
 
 class TreeholeApiException(message: String) : Exception(message)
@@ -195,13 +205,17 @@ class TreeholeApi @Inject constructor(
  * GPA 按学分加权。排除非数字成绩、学分<=0、毕业论文/综合性考试;重修各次都计入。
  * MAJOR 口径只统计课程类别含"专业必修"或"专业限选"的课程。
  */
-fun computeGradeStats(entries: List<ScoreEntry>, scope: GradeScope): GradeStats {
+fun computeGradeStats(
+    entries: List<ScoreEntry>,
+    scope: GradeScope,
+    override: ScopeOverride = ScopeOverride(),
+): GradeStats {
     var gpaPoints = 0.0
     var scoreSum = 0.0
     var creditSum = 0.0
     var count = 0
     for (e in entries) {
-        if (scope == GradeScope.MAJOR && !e.isMajorRequired()) continue
+        if (scope == GradeScope.MAJOR && !e.countsAsMajor(override)) continue
         if (e.name.contains("毕业论文") || e.category.contains("毕业论文") ||
             e.name.contains("综合性考试") || e.category.contains("综合性考试")
         ) continue
