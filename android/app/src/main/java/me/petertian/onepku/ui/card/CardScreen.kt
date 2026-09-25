@@ -43,7 +43,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import me.petertian.onepku.data.card.CardBalance
-import me.petertian.onepku.data.card.MonthlyExpense
+import me.petertian.onepku.data.card.MonthlyStat
 import me.petertian.onepku.data.card.TurnoverRecord
 import me.petertian.onepku.data.card.fenToYuan
 import me.petertian.onepku.data.repo.CardRepository
@@ -57,7 +57,7 @@ import javax.inject.Inject
 data class CardUiState(
     val refreshing: Boolean = false,
     val balance: UiData<CardBalance> = UiData.Loading,
-    val monthly: UiData<MonthlyExpense> = UiData.Loading,
+    val monthly: UiData<MonthlyStat> = UiData.Loading,
     val records: List<TurnoverRecord> = emptyList(),
     val recordsError: String? = null,
     val page: Int = 1,
@@ -87,7 +87,7 @@ class CardViewModel @Inject constructor(
                 }
                 val monthlyJob = async {
                     try {
-                        UiData.Ready(repo.monthlyExpense())
+                        UiData.Ready(repo.monthly())
                     } catch (e: Exception) {
                         UiData.Failure(e.message ?: "统计加载失败")
                     }
@@ -203,20 +203,34 @@ fun CardScreen(nav: NavHostController, vm: CardViewModel = hiltViewModel()) {
                 item(key = "monthly") {
                     Card(Modifier.fillMaxWidth()) {
                         SectionContent(data = ui.monthly, onRetry = vm::refresh) { m ->
-                            Column(
+                            Row(
                                 Modifier.fillMaxWidth().padding(20.dp),
-                                horizontalAlignment = Alignment.CenterHorizontally,
+                                horizontalArrangement = Arrangement.SpaceEvenly,
                             ) {
-                                Text(
-                                    "¥${fenToYuan(m.expenseFen)}",
-                                    style = MaterialTheme.typography.titleLarge,
-                                    fontWeight = FontWeight.SemiBold,
-                                )
-                                Text(
-                                    "本月支出（消费类）",
-                                    style = MaterialTheme.typography.bodySmall,
-                                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                                )
+                                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                                    Text(
+                                        "¥${fenToYuan(m.rechargeFen)}",
+                                        style = MaterialTheme.typography.titleLarge,
+                                        fontWeight = FontWeight.SemiBold,
+                                    )
+                                    Text(
+                                        "本月充值",
+                                        style = MaterialTheme.typography.bodySmall,
+                                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                    )
+                                }
+                                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                                    Text(
+                                        "¥${fenToYuan(m.expenseFen)}",
+                                        style = MaterialTheme.typography.titleLarge,
+                                        fontWeight = FontWeight.SemiBold,
+                                    )
+                                    Text(
+                                        "本月支出（消费类）",
+                                        style = MaterialTheme.typography.bodySmall,
+                                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                    )
+                                }
                             }
                         }
                     }
