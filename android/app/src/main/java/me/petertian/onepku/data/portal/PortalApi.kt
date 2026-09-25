@@ -7,9 +7,13 @@ import kotlinx.serialization.json.jsonArray
 import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
 import kotlinx.serialization.json.longOrNull
+import me.petertian.onepku.core.network.CookieStores
 import me.petertian.onepku.core.network.HttpFactory
+import me.petertian.onepku.core.network.SessionExpiredException
 import me.petertian.onepku.core.network.requireBody
 import me.petertian.onepku.core.network.Ua
+import me.petertian.onepku.core.session.Service
+import me.petertian.onepku.core.session.SessionStore
 import okhttp3.FormBody
 import okhttp3.Request
 import javax.inject.Inject
@@ -29,6 +33,8 @@ data class PortalNotice(
     val url: String,
 )
 
+data class PortalProfile(val name: String, val department: String)
+
 data class NoticePage(
     val items: List<PortalNotice>,
     val hasMore: Boolean,
@@ -37,8 +43,12 @@ data class NoticePage(
 
 class PortalApiException(message: String) : Exception(message)
 
-/** 门户公开接口:空闲教室、学校/部门通知。无需登录。 */
-class PortalApi @Inject constructor(private val httpFactory: HttpFactory) {
+/** 门户接口:空闲教室与通知无需登录;基本信息(单位/姓名)需 IAAA 登录。 */
+class PortalApi @Inject constructor(
+    private val httpFactory: HttpFactory,
+    private val cookieStores: CookieStores,
+    private val sessionStore: SessionStore,
+) {
 
     private val json = Json { ignoreUnknownKeys = true }
 
@@ -115,6 +125,36 @@ class PortalApi @Inject constructor(private val httpFactory: HttpFactory) {
         }
         return obj["notice"]?.jsonObject?.get("noticeContent")?.jsonPrimitive?.content
             ?: throw PortalApiException("通知正文格式变化")
+    }
+
+    // ---- 登录态:我的信息 ----
+
+    /**
+     * 门户"我的信息"里的单位即用户所在院系。
+     * 未登录时学校返回的是跳转登录的 HTML,据此判定会话过期。
+     */
+    suspend fun basicInfo(): PortalProfile = withContext(Dispatchers.IO) {
+        val session = sessionStore.session(Service.PORTAL)
+            ?: throw SessionExpiredException("校内门户未登录")
+        if (session.isExpired()) throw SessionExpiredException()
+        val client = httpFactory.client(
+            cookieJar = cookieStores.jar(Service.PORTAL.key),
+            ua = Ua.DESKTOP,
+            headers = mapOf("referer" to "$PORTAL2017/", "x-requested-with" to "XMLHttpRequest"),
+        )
+        client.newCall(
+            Request.Builder().url("$PORTAL2017/account/getBasicInfo.do")
+                .post(FormBody.Builder().build()).build()
+        ).execute().use { resp ->
+            val body = resp.requireBody().string()
+            val obj = runCatching { json.parseToJsonElement(body).jsonObject }.getOrNull()
+                ?: throw SessionExpiredException("门户会话已失效")
+            val data = obj["object"]?.jsonObject ?: obj["data"]?.jsonObject ?: obj
+            PortalProfile(
+                name = data["name"]?.jsonPrimitive?.content.orEmpty(),
+                department = data["department"]?.jsonPrimitive?.content.orEmpty(),
+            )
+        }
     }
 
     private fun enc(s: String) = java.net.URLEncoder.encode(s, "UTF-8")
