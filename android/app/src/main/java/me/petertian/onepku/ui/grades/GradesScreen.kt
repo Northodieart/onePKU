@@ -16,6 +16,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
+import androidx.compose.material3.FilterChip
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -49,8 +50,10 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import me.petertian.onepku.core.network.SmsVerificationRequiredException
 import me.petertian.onepku.data.repo.TreeholeRepository
+import me.petertian.onepku.data.treehole.GradeScope
 import me.petertian.onepku.data.treehole.ScoreEntry
 import me.petertian.onepku.data.treehole.ScoreReport
+import me.petertian.onepku.data.treehole.isMajorRequired
 import me.petertian.onepku.ui.components.ErrorBox
 import me.petertian.onepku.ui.components.LoadingBox
 import me.petertian.onepku.ui.components.UiData
@@ -154,7 +157,10 @@ fun GradesScreen(nav: NavHostController, vm: GradesViewModel = hiltViewModel()) 
 
 @Composable
 private fun GradesContent(report: ScoreReport) {
+    var scope by remember { mutableStateOf(GradeScope.ALL) }
+    val stats = report.stats(scope)
     val byTerm = report.entries
+        .filter { scope == GradeScope.ALL || it.isMajorRequired() }
         .sortedByDescending { it.termKey }
         .groupBy { it.termKey }
 
@@ -163,38 +169,64 @@ private fun GradesContent(report: ScoreReport) {
         contentPadding = PaddingValues(16.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp),
     ) {
+        item(key = "scope") {
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                GradeScope.entries.forEach { s ->
+                    FilterChip(
+                        selected = scope == s,
+                        onClick = { scope = s },
+                        label = { Text(s.label) },
+                    )
+                }
+            }
+        }
+
         item(key = "summary") {
             Card(Modifier.fillMaxWidth()) {
                 Row(
                     modifier = Modifier.padding(20.dp).fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceEvenly,
                 ) {
+                    val useSchool = scope == GradeScope.ALL && report.schoolGpa != null
                     SummaryItem(
-                        label = if (report.schoolGpa != null) "GPA" else "GPA(本地计算)",
-                        value = report.schoolGpa ?: (report.localGpa?.let { "%.2f".format(it) } ?: "—"),
+                        label = if (useSchool) "GPA(学校)" else "GPA(本地计算)",
+                        value = if (useSchool) report.schoolGpa!! else (stats.gpa?.let { fmt2(it) } ?: "—"),
                     )
-                    SummaryItem(label = "总学分", value = report.totalCredits ?: "—")
                     SummaryItem(
                         label = "加权平均分",
-                        value = report.localWeightedAvg?.let { "%.2f".format(it) } ?: "—",
+                        value = stats.weightedAvg?.let { fmt2(it) } ?: "—",
+                    )
+                    SummaryItem(
+                        label = if (scope == GradeScope.ALL) "总学分" else "口径内学分",
+                        value = if (scope == GradeScope.ALL) (report.totalCredits ?: "—")
+                        else fmt2(stats.credits),
                     )
                 }
             }
-            if (report.schoolGpa == null && report.localGpa != null) {
-                Text(
-                    "学校未返回 GPA,已按官方规则在本地计算,仅供参考。",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    modifier = Modifier.padding(top = 6.dp, start = 4.dp),
-                )
-            }
+            Text(
+                when {
+                    scope == GradeScope.ALL && report.schoolGpa != null ->
+                        "GPA 来自学校;加权平均分与专业口径均为本地计算,仅供参考。"
+                    scope == GradeScope.ALL ->
+                        "学校未返回 GPA,已按官方规则在本地计算,仅供参考。"
+                    else ->
+                        "口径:课程类别为专业必修或专业限选,共 ${stats.courseCount} 门计入;均为本地计算,仅供参考。"
+                },
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(top = 6.dp, start = 4.dp),
+            )
         }
 
         byTerm.forEach { (term, entries) ->
             item(key = "term-$term") {
-                val termGpa = report.termGpas.firstOrNull { it.term == term }?.gpa
+                val gpa = if (scope == GradeScope.ALL) {
+                    report.termGpas.firstOrNull { it.term == term }?.gpa
+                } else {
+                    report.termStats(term, scope).gpa?.let { fmt2(it) }
+                }
                 Text(
-                    formatTerm(term) + (termGpa?.let { " · GPA $it" } ?: ""),
+                    formatTerm(term) + (gpa?.let { " · GPA $it" } ?: ""),
                     style = MaterialTheme.typography.titleSmall,
                     fontWeight = FontWeight.SemiBold,
                     color = MaterialTheme.colorScheme.primary,
@@ -207,6 +239,8 @@ private fun GradesContent(report: ScoreReport) {
         }
     }
 }
+
+private fun fmt2(v: Double): String = "%.2f".format(java.util.Locale.US, v)
 
 @Composable
 private fun SummaryItem(label: String, value: String) {

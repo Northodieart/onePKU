@@ -35,15 +35,35 @@ data class ScoreEntry(
 
 data class TermGpa(val term: String, val gpa: String)
 
+/** 专业必修/限选口径的课程类别判定。 */
+fun ScoreEntry.isMajorRequired(): Boolean =
+    category.contains("专业必修") || category.contains("专业限选")
+
+enum class GradeScope(val label: String) {
+    ALL("全部课程"),
+    MAJOR("专业必修/限选"),
+}
+
+data class GradeStats(
+    val gpa: Double?,
+    val weightedAvg: Double?,
+    val credits: Double,
+    val courseCount: Int,
+)
+
 data class ScoreReport(
     val entries: List<ScoreEntry>,
-    /** 学校返回的总 GPA;为 null 时 localGpa 是按官方规则本地计算的 */
+    /** 学校返回的总 GPA(仅适用于全部课程口径);为 null 时只能本地计算 */
     val schoolGpa: String?,
     val totalCredits: String?,
     val termGpas: List<TermGpa>,
-    val localGpa: Double?,
-    val localWeightedAvg: Double?,
-)
+) {
+    fun stats(scope: GradeScope): GradeStats = computeGradeStats(entries, scope)
+
+    /** 学期键(如 "25-26-1")在该口径下的本地统计。 */
+    fun termStats(termKey: String, scope: GradeScope): GradeStats =
+        computeGradeStats(entries.filter { it.termKey == termKey }, scope)
+}
 
 class TreeholeApiException(message: String) : Exception(message)
 
@@ -157,44 +177,48 @@ class TreeholeApi @Inject constructor(
             TermGpa(term, gpa)
         }
 
-        val (localGpa, localAvg) = computeLocalGpa(entries)
-
         return ScoreReport(
             entries = entries,
             schoolGpa = schoolGpa?.takeIf { it.toDoubleOrNull()?.let { g -> g in 0.0..4.0 } == true },
             totalCredits = totalCredits,
             termGpas = termGpas,
-            localGpa = localGpa,
-            localWeightedAvg = localAvg,
         )
-    }
-
-    /**
-     * 北大 2019 年 9 月规则:单课程绩点 = 4 - 3(100-x)^2/1600(x>=60,否则 0);
-     * GPA 按学分加权。排除非数字成绩、学分<=0、毕业论文/综合性考试;重修各次都计入。
-     */
-    private fun computeLocalGpa(entries: List<ScoreEntry>): Pair<Double?, Double?> {
-        var gpaPoints = 0.0
-        var scoreSum = 0.0
-        var creditSum = 0.0
-        for (e in entries) {
-            if (e.name.contains("毕业论文") || e.category.contains("毕业论文") ||
-                e.name.contains("综合性考试") || e.category.contains("综合性考试")
-            ) continue
-            val s = e.score.toDoubleOrNull() ?: continue
-            if (s > 100) continue
-            val c = e.credit.toDoubleOrNull() ?: continue
-            if (c <= 0) continue
-            val point = if (s < 60) 0.0 else 4 - 3 * (100 - s).pow(2) / 1600
-            gpaPoints += point * c
-            scoreSum += s * c
-            creditSum += c
-        }
-        if (creditSum <= 0) return null to null
-        return (gpaPoints / creditSum) to (scoreSum / creditSum)
     }
 
     companion object {
         const val TREEHOLE_BASE = "https://treehole.pku.edu.cn"
     }
+}
+
+/**
+ * 北大 2019 年 9 月规则:单课程绩点 = 4 - 3(100-x)^2/1600(x>=60,否则 0);
+ * GPA 按学分加权。排除非数字成绩、学分<=0、毕业论文/综合性考试;重修各次都计入。
+ * MAJOR 口径只统计课程类别含"专业必修"或"专业限选"的课程。
+ */
+fun computeGradeStats(entries: List<ScoreEntry>, scope: GradeScope): GradeStats {
+    var gpaPoints = 0.0
+    var scoreSum = 0.0
+    var creditSum = 0.0
+    var count = 0
+    for (e in entries) {
+        if (scope == GradeScope.MAJOR && !e.isMajorRequired()) continue
+        if (e.name.contains("毕业论文") || e.category.contains("毕业论文") ||
+            e.name.contains("综合性考试") || e.category.contains("综合性考试")
+        ) continue
+        val s = e.score.toDoubleOrNull() ?: continue
+        if (s > 100) continue
+        val c = e.credit.toDoubleOrNull() ?: continue
+        if (c <= 0) continue
+        val point = if (s < 60) 0.0 else 4 - 3 * (100 - s).pow(2) / 1600
+        gpaPoints += point * c
+        scoreSum += s * c
+        creditSum += c
+        count++
+    }
+    return GradeStats(
+        gpa = if (creditSum > 0) gpaPoints / creditSum else null,
+        weightedAvg = if (creditSum > 0) scoreSum / creditSum else null,
+        credits = creditSum,
+        courseCount = count,
+    )
 }
