@@ -65,13 +65,23 @@ class SchoolNoticeApi @Inject constructor(
 
     suspend fun list(department: String): SchoolNotices {
         val site = resolve(department) ?: throw NewsApiException("未识别到院系列表,请在设置里手动选择")
-        return when {
-            site.name == "信息科学技术学院" ->
-                SchoolNotices(site.name, news.list(WebSource.EECS).map(SchoolNoticeItem::FromSite))
-            site.notice != null ->
-                SchoolNotices(site.name, fetchSite(site.notice).map(SchoolNoticeItem::FromSite))
-            else -> SchoolNotices(site.name, portalNotices(site.name).map(SchoolNoticeItem::FromPortal))
+        if (site.name == "信息科学技术学院") {
+            return SchoolNotices(site.name, news.list(WebSource.EECS).map(SchoolNoticeItem::FromSite))
         }
+        val listUrl = site.notice?.let { https(it) }
+        val items = listUrl?.let { url ->
+            // 学院站改版或证书异常时退回门户,而不是让通知页直接空掉。
+            runCatching { fetchSite(url) }.getOrNull()?.map(SchoolNoticeItem::FromSite)
+        }
+        return SchoolNotices(site.name, items ?: portalNotices(site.name).map(SchoolNoticeItem::FromPortal))
+    }
+
+    /** Android 默认禁止明文 HTTP;学校站基本都提供 HTTPS,优先升级。 */
+    private fun https(url: String): String {
+        if (!url.startsWith("http://")) return url
+        val rest = url.removePrefix("http://")
+        val host = rest.substringBefore('/').substringBefore(':')
+        return if (PKU_HOST.containsMatchIn(host)) "https://$rest" else url
     }
 
     private suspend fun fetchSite(listUrl: String): List<NewsItem> = withContext(Dispatchers.IO) {
@@ -159,6 +169,7 @@ class SchoolNoticeApi @Inject constructor(
         val DATE = Regex("(20\\d{2})[-/.](\\d{1,2})[-/.](\\d{1,2})")
         val LEADING_DATE = Regex("^(20\\d{2}[-/.]\\d{1,2}[-/.]\\d{1,2}\\s*[:：]?\\s*)+")
         val WHITESPACE = Regex("\\s+")
+        val PKU_HOST = Regex("(pku|bjmu|pkusz)\\.edu\\.cn$")
         const val PAGES = 10
     }
 }
