@@ -59,6 +59,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import me.petertian.onepku.BuildConfig
 import me.petertian.onepku.data.course.Announcement
+import me.petertian.onepku.data.course.AssignmentSummary
 import me.petertian.onepku.data.course.Attachment
 import me.petertian.onepku.data.course.ContentItem
 import me.petertian.onepku.data.course.ContentType
@@ -68,7 +69,9 @@ import me.petertian.onepku.ui.components.ErrorBox
 import me.petertian.onepku.ui.components.HtmlText
 import me.petertian.onepku.ui.components.LoadingBox
 import me.petertian.onepku.ui.components.UiData
+import me.petertian.onepku.ui.navigation.Routes
 import me.petertian.onepku.ui.navigation.back
+import me.petertian.onepku.ui.today.deadlineLabel
 import java.io.File
 import javax.inject.Inject
 
@@ -77,6 +80,7 @@ data class CourseDetailUiState(
     val courseName: String = "",
     val tab: Int = 0,
     val announcements: UiData<List<Announcement>> = UiData.Loading,
+    val assignments: UiData<List<AssignmentSummary>> = UiData.Loading,
     val materials: UiData<List<ContentItem>> = UiData.Loading,
     val grades: UiData<List<LearningGrade>> = UiData.Loading,
     val downloading: Set<String> = emptySet(),
@@ -99,8 +103,22 @@ class CourseDetailViewModel @Inject constructor(
         _ui.update { it.copy(tab = tab) }
         when (tab) {
             0 -> if (_ui.value.announcements is UiData.Loading) loadAnnouncements()
-            1 -> if (_ui.value.materials is UiData.Loading) loadMaterials()
-            2 -> if (_ui.value.grades is UiData.Loading) loadGrades()
+            1 -> if (_ui.value.assignments is UiData.Loading) loadAssignments()
+            2 -> if (_ui.value.materials is UiData.Loading) loadMaterials()
+            3 -> if (_ui.value.grades is UiData.Loading) loadGrades()
+        }
+    }
+
+    fun loadAssignments() = viewModelScope.launch {
+        _ui.update { it.copy(assignments = UiData.Loading) }
+        _ui.update {
+            it.copy(
+                assignments = try {
+                    UiData.Ready(repo.assignmentsForCourse(courseId, courseName))
+                } catch (e: Exception) {
+                    UiData.Failure(e.message ?: "作业加载失败")
+                },
+            )
         }
     }
 
@@ -160,7 +178,7 @@ class CourseDetailViewModel @Inject constructor(
 @Composable
 fun CourseDetailScreen(nav: NavHostController, vm: CourseDetailViewModel = hiltViewModel()) {
     val ui by vm.ui.collectAsState()
-    val tabs = listOf("通知", "资料", "成绩")
+    val tabs = listOf("通知", "作业", "资料", "成绩")
 
     Scaffold(
         topBar = {
@@ -186,8 +204,9 @@ fun CourseDetailScreen(nav: NavHostController, vm: CourseDetailViewModel = hiltV
             }
             when (ui.tab) {
                 0 -> AnnouncementsTab(ui.announcements, vm::loadAnnouncements)
-                1 -> MaterialsTab(ui, vm)
-                2 -> GradesTab(ui.grades, vm::loadGrades)
+                1 -> AssignmentsTab(ui, vm, nav)
+                2 -> MaterialsTab(ui, vm)
+                3 -> GradesTab(ui.grades, vm::loadGrades)
             }
         }
     }
@@ -275,6 +294,50 @@ private fun MaterialsTab(ui: CourseDetailUiState, vm: CourseDetailViewModel) {
                                     Icon(Icons.Filled.Download, contentDescription = "下载")
                                 }
                             }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun AssignmentsTab(ui: CourseDetailUiState, vm: CourseDetailViewModel, nav: NavHostController) {
+    when (val data = ui.assignments) {
+        is UiData.Loading -> LoadingBox()
+        is UiData.Failure -> ErrorBox(data.message, onRetry = vm::loadAssignments)
+        is UiData.Ready -> {
+            if (data.value.isEmpty()) {
+                ErrorBox("本课程暂无作业")
+                return
+            }
+            val now = System.currentTimeMillis()
+            LazyColumn(contentPadding = PaddingValues(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                items(data.value, key = { it.contentId }) { a ->
+                    Card(
+                        modifier = Modifier.fillMaxWidth().clickable {
+                            nav.navigate(Routes.assignmentDetail(ui.courseId, a.contentId, a.title))
+                        },
+                    ) {
+                        Row(
+                            modifier = Modifier.padding(16.dp).fillMaxWidth(),
+                            verticalAlignment = Alignment.CenterVertically,
+                        ) {
+                            Column(Modifier.weight(1f)) {
+                                Text(a.title, style = MaterialTheme.typography.bodyMedium, maxLines = 2)
+                                Text(
+                                    a.deadlineRaw ?: "无截止时间",
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                )
+                            }
+                            val overdue = a.deadlineEpochMs?.let { it < now } == true
+                            Text(
+                                if (overdue) "已截止" else deadlineLabel(a.deadlineEpochMs).ifBlank { "进行中" },
+                                style = MaterialTheme.typography.labelMedium,
+                                color = if (overdue) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.primary,
+                            )
                         }
                     }
                 }

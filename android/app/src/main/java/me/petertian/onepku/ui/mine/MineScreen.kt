@@ -11,7 +11,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
-import androidx.compose.material.icons.outlined.Assignment
+import androidx.compose.material.icons.automirrored.outlined.Assignment
 import androidx.compose.material.icons.outlined.CalendarMonth
 import androidx.compose.material.icons.outlined.CreditCard
 import androidx.compose.material.icons.outlined.Grade
@@ -69,7 +69,7 @@ fun MineScreen(nav: NavHostController, vm: MineViewModel = hiltViewModel()) {
     val ui by vm.ui.collectAsState()
 
     val entries = listOf(
-        Entry(Routes.ASSIGNMENTS, "作业", "跨课程作业与提交记录", Icons.Outlined.Assignment),
+        Entry(Routes.ASSIGNMENTS, "作业", "跨课程作业与提交记录", Icons.AutoMirrored.Outlined.Assignment),
         Entry(Routes.GRADES, "成绩", "正式成绩与 GPA", Icons.Outlined.Grade),
         Entry(Routes.CARD, "校园卡", "余额、收支与流水", Icons.Outlined.CreditCard),
         Entry(Routes.CLASSROOM, "空闲教室", "按教学楼与节次查询", Icons.Outlined.MeetingRoom),

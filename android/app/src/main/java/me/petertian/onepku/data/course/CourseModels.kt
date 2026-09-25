@@ -74,3 +74,12 @@ data class LearningGrade(
     val updated: String,
     val status: String,
 )
+
+/** 当前尝试页的提交快照:第几次尝试 + 已提交文件。 */
+data class SubmissionSnapshot(val label: String?, val files: List<Attachment>)
+
+/** 提交结果:回执文件与本地文件 SHA-256 一致才算已确认。 */
+sealed interface SubmissionOutcome {
+    data class Confirmed(val fileName: String) : SubmissionOutcome
+    data class Unverified(val reason: String) : SubmissionOutcome
+}

@@ -13,8 +13,11 @@ import me.petertian.onepku.core.network.SessionExpiredException
 import me.petertian.onepku.core.network.Ua
 import me.petertian.onepku.core.session.Service
 import okhttp3.HttpUrl.Companion.toHttpUrl
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
 import okhttp3.OkHttpClient
 import okhttp3.Request
+import okhttp3.RequestBody.Companion.asRequestBody
 import okhttp3.Response
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
@@ -314,6 +317,122 @@ class CourseApi @Inject constructor(
         }
     }
 
+    // ---- 作业提交(写操作;仅在用户明确确认后由 Repository 调用) ----
+
+    /** 读取当前提交记录(不创建尝试)。 */
+    suspend fun submissionSnapshot(courseId: String, contentId: String): SubmissionSnapshot {
+        val doc = getDoc(assignmentUrl(courseId, contentId))
+        val label = doc.select("h3#currentAttempt_label").first()?.text()
+            ?.replace(Regex("\\s+"), " ")?.trim()?.ifEmpty { null }
+        val recognized = label != null ||
+            doc.select("#uploadAssignmentFormId, #pageTitleText, span.title").isNotEmpty()
+        if (!recognized) throw CourseApiException("无法识别提交记录页面")
+        val files = doc.select("#currentAttempt_submissionList a.attachment[href]").mapNotNull { a ->
+            val name = a.text().trim().ifEmpty { return@mapNotNull null }
+            val href = a.absUrl("href").ifEmpty { return@mapNotNull null }
+            Attachment(name, href)
+        }
+        return SubmissionSnapshot(label, files)
+    }
+
+    /** 新尝试表单的隐藏字段。 */
+    private suspend fun submitFormFields(courseId: String, contentId: String): Map<String, String> {
+        val url = "$COURSE_BASE/webapps/assignment/uploadAssignment" +
+            "?action=newAttempt&content_id=$contentId&course_id=$courseId"
+        val doc = getDoc(url)
+        val fields = buildMap {
+            (doc.select("form#uploadAssignmentFormId input") + doc.select("div.field input"))
+                .forEach { input ->
+                    val name = input.attr("name").ifEmpty { return@forEach }
+                    if (!containsKey(name)) put(name, input.attr("value"))
+                }
+        }
+        if (fields["course_id"] != courseId || fields["content_id"] != contentId) {
+            throw CourseApiException("提交表单目标不匹配")
+        }
+        return fields
+    }
+
+    /** 上传单个文件作为一次新提交。成功仅代表学校接受请求,回执需另行核对。 */
+    suspend fun submitAssignment(courseId: String, contentId: String, file: File) =
+        withContext(Dispatchers.IO) {
+            val fields = submitFormFields(courseId, contentId)
+            fun f(name: String): String =
+                fields[name] ?: throw CourseApiException("提交表单字段 '$name' 未找到")
+
+            val filename = file.name
+            val multipart = MultipartBody.Builder().setType(MultipartBody.FORM).apply {
+                listOf(
+                    "attempt_id",
+                    "blackboard.platform.security.NonceUtil.nonce",
+                    "blackboard.platform.security.NonceUtil.nonce.ajax",
+                    "content_id", "course_id", "isAjaxSubmit", "lu_link_id", "mode",
+                    "recallUrl", "remove_file_id",
+                    "studentSubmission.text_f", "studentSubmission.text_w", "studentSubmission.type",
+                    "student_commentstext_f", "student_commentstext_w", "student_commentstype",
+                    "textbox_prefix",
+                ).forEach { addFormDataPart(it, f(it)) }
+                addFormDataPart("studentSubmission.text", "")
+                addFormDataPart("student_commentstext", "")
+                addFormDataPart("dispatch", "submit")
+                addFormDataPart("newFile_artifactFileId", "undefined")
+                addFormDataPart("newFile_artifactType", "undefined")
+                addFormDataPart("newFile_artifactTypeResourceKey", "undefined")
+                addFormDataPart("newFile_attachmentType", "L")
+                addFormDataPart("newFile_fileId", "new")
+                addFormDataPart("newFile_linkTitle", filename)
+                addFormDataPart("newFilefilePickerLastInput", "dummyValue")
+                addFormDataPart(
+                    "newFile_LocalFile0", filename,
+                    file.asRequestBody(mimeTypeOf(filename).toMediaTypeOrNull()),
+                )
+                addFormDataPart("useless", "")
+            }.build()
+
+            val uploadClient = httpFactory.client(
+                cookieJar = cookieStores.jar(Service.COURSE.key),
+                followRedirects = false,
+                ua = Ua.DESKTOP,
+                readTimeoutSec = 45,
+            )
+            val request = Request.Builder()
+                .url("$COURSE_BASE/webapps/assignment/uploadAssignment?action=submit")
+                .header("origin", COURSE_BASE)
+                .header("accept", "*/*")
+                .post(multipart)
+                .build()
+            uploadClient.newCall(request).execute().use { resp ->
+                val reqUrl = resp.request.url
+                if (reqUrl.host == "iaaa.pku.edu.cn" || reqUrl.encodedPath.contains("login")) {
+                    throw SessionExpiredException()
+                }
+                if (!resp.isSuccessful && !resp.isRedirect) {
+                    throw CourseApiException("提交响应未确认: HTTP ${resp.code}")
+                }
+            }
+        }
+
+    /** 下载回执附件用于 SHA-256 核对,上限 25MB。 */
+    suspend fun submittedFileBytes(raw: String, courseId: String): ByteArray = withContext(Dispatchers.IO) {
+        val u = runCatching { raw.toHttpUrl() }.getOrElse { throw CourseApiException("提交附件链接无效") }
+        if (u.scheme != "https" || u.host != "course.pku.edu.cn" ||
+            u.encodedPath != "/webapps/assignment/download" ||
+            u.queryParameter("course_id") != courseId
+        ) {
+            throw CourseApiException("提交附件链接无效")
+        }
+        client().newCall(Request.Builder().url(u).build()).execute().use { resp ->
+            if (!resp.isSuccessful) throw CourseApiException("回执下载失败: HTTP ${resp.code}")
+            val reqUrl = resp.request.url
+            if (reqUrl.host != "course.pku.edu.cn" || reqUrl.encodedPath.contains("login")) {
+                throw SessionExpiredException()
+            }
+            val bytes = resp.requireBody().byteStream().use { it.readBytes() }
+            if (bytes.size > 25 * 1024 * 1024) throw CourseApiException("提交附件超出核对上限")
+            bytes
+        }
+    }
+
     // ---- 下载 ----
 
     suspend fun downloadFile(url: String, dest: File): File = withContext(Dispatchers.IO) {
@@ -332,6 +451,39 @@ class CourseApi @Inject constructor(
 
         fun assignmentUrl(courseId: String, contentId: String) =
             "$COURSE_BASE/webapps/assignment/uploadAssignment?mode=view&content_id=$contentId&course_id=$courseId"
+
+        private val MIME = mapOf(
+            "pdf" to "application/pdf",
+            "doc" to "application/msword",
+            "docx" to "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "xls" to "application/vnd.ms-excel",
+            "xlsx" to "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            "ppt" to "application/vnd.ms-powerpoint",
+            "pptx" to "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+            "zip" to "application/zip",
+            "rar" to "application/vnd.rar",
+            "7z" to "application/x-7z-compressed",
+            "txt" to "text/plain",
+            "md" to "text/markdown",
+            "csv" to "text/csv",
+            "png" to "image/png",
+            "jpg" to "image/jpeg",
+            "jpeg" to "image/jpeg",
+            "gif" to "image/gif",
+            "webp" to "image/webp",
+            "mp4" to "video/mp4",
+            "mp3" to "audio/mpeg",
+            "py" to "text/x-python",
+            "ipynb" to "application/x-ipynb+json",
+            "java" to "text/x-java-source",
+            "c" to "text/x-c",
+            "cpp" to "text/x-c++src",
+            "tex" to "application/x-tex",
+            "html" to "text/html",
+        )
+
+        fun mimeTypeOf(filename: String): String =
+            MIME[filename.substringAfterLast('.', "").lowercase()] ?: "application/octet-stream"
 
         /** 解析 Blackboard 中文截止时间 "2025年3月15日 星期六 下午11:59" → epoch millis(UTC+8)。 */
         fun parseDeadline(raw: String?): Long? {
