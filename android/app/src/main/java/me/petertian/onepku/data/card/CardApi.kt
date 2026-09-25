@@ -9,6 +9,7 @@ import kotlinx.serialization.json.jsonArray
 import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
 import kotlinx.serialization.json.longOrNull
+import kotlin.math.roundToLong
 import me.petertian.onepku.core.network.HttpFactory
 import me.petertian.onepku.core.network.requireBody
 import me.petertian.onepku.core.network.SessionExpiredException
@@ -29,8 +30,8 @@ data class CardBalance(
     val electronicFen: Long,
     val accounts: List<CardAccount>,
 ) {
-    /** 电子账户 + 卡账户合计(分) */
-    val totalFen: Long get() = electronicFen + accounts.sumOf { it.balanceFen }
+    /** 校园卡余额以电子账户为准(分),accinfo 仅作信息展示。 */
+    val totalFen: Long get() = electronicFen
 }
 
 data class TurnoverRecord(
@@ -48,7 +49,7 @@ data class TurnoverPage(
     val pages: Long,
 )
 
-data class MonthlyStat(val incomeYuan: Double, val expensesYuan: Double)
+data class MonthlyExpense(val expenseFen: Long)
 
 class CardApiException(message: String) : Exception(message)
 
@@ -130,18 +131,20 @@ class CardApi @Inject constructor(
         )
     }
 
-    /** 当月收支(元)。 */
-    suspend fun monthlyStat(): MonthlyStat {
+    /**
+     * 本月支出(分)。用分类统计接口 type=2(消费)求和,
+     * 排除充值/转账等非消费转出;statistics/turnover/count 的 expenses 含全部转出类型,会虚高。
+     */
+    suspend fun monthlyExpense(): MonthlyExpense {
         val now = Date()
-        val fmt = SimpleDateFormat("yyyy-MM-dd", Locale.US)
         val from = SimpleDateFormat("yyyy-MM-01", Locale.US).format(now)
-        val to = fmt.format(now)
-        val obj = apiGet("/berserker-search/statistics/turnover/count?timeFrom=$from&timeTo=$to")
-        val data = obj["data"]?.jsonObject
-        return MonthlyStat(
-            incomeYuan = data?.get("income")?.jsonPrimitive?.doubleOrNull ?: 0.0,
-            expensesYuan = data?.get("expenses")?.jsonPrimitive?.doubleOrNull ?: 0.0,
-        )
+        val to = SimpleDateFormat("yyyy-MM-dd", Locale.US).format(now)
+        val obj = apiGet("/berserker-search/statistics/turnover?type=2&timeFrom=$from&timeTo=$to")
+        val rows = obj["data"]?.jsonArray.orEmpty().mapNotNull { el ->
+            runCatching { el.jsonObject }.getOrNull()
+        }
+        val fen = rows.sumOf { it["amount"]?.jsonPrimitive?.doubleOrNull ?: 0.0 }.roundToLong()
+        return MonthlyExpense(expenseFen = fen)
     }
 
     companion object {
