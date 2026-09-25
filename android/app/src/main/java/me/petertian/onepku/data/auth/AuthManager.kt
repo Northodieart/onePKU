@@ -241,17 +241,26 @@ class AuthManager @Inject constructor(
                     .build()
             ).execute().use { it.requireBody().string() }
 
-            // 取一次基本信息确认会话真的建立了,顺便留下院系。
-            val profile = portal.basicInfo()
+            // 先落会话,basicInfo 需要它;验证失败再清掉。
             sessionStore.saveSession(
                 Service.PORTAL,
-                StoredSession(
-                    token = token,
-                    expiresAt = nowSec() + 12 * 3600,
-                    uid = username,
-                    extra = mapOf("department" to profile.department),
-                ),
+                StoredSession(token = token, expiresAt = nowSec() + 12 * 3600, uid = username),
             )
+            try {
+                val profile = portal.basicInfo()
+                sessionStore.saveSession(
+                    Service.PORTAL,
+                    StoredSession(
+                        token = token,
+                        expiresAt = nowSec() + 12 * 3600,
+                        uid = username,
+                        extra = mapOf("department" to profile.department),
+                    ),
+                )
+            } catch (e: Exception) {
+                sessionStore.clear(Service.PORTAL)
+                throw e
+            }
         }
 
     private fun nowSec() = System.currentTimeMillis() / 1000

@@ -15,6 +15,8 @@ import me.petertian.onepku.core.network.Ua
 import me.petertian.onepku.core.session.Service
 import me.petertian.onepku.core.session.SessionStore
 import okhttp3.FormBody
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.RequestBody.Companion.toRequestBody
 import okhttp3.Request
 import javax.inject.Inject
 
@@ -144,15 +146,19 @@ class PortalApi @Inject constructor(
         )
         client.newCall(
             Request.Builder().url("$PORTAL2017/account/getBasicInfo.do")
-                .post(FormBody.Builder().build()).build()
+                // 网页端是 Angular 的 POST,空体 + JSON content-type。
+                .post("".toRequestBody(JSON_TYPE)).build()
         ).execute().use { resp ->
             val body = resp.requireBody().string()
+            // 未登录时学校返回跳转登录的 HTML,而不是 JSON。
             val obj = runCatching { json.parseToJsonElement(body).jsonObject }.getOrNull()
                 ?: throw SessionExpiredException("门户会话已失效")
-            val data = obj["object"]?.jsonObject ?: obj["data"]?.jsonObject ?: obj
+            if (obj["success"]?.jsonPrimitive?.content != "true") {
+                throw PortalApiException("门户未返回用户信息")
+            }
             PortalProfile(
-                name = data["name"]?.jsonPrimitive?.content.orEmpty(),
-                department = data["department"]?.jsonPrimitive?.content.orEmpty(),
+                name = obj["name"]?.jsonPrimitive?.content.orEmpty(),
+                department = obj["department"]?.jsonPrimitive?.content.orEmpty(),
             )
         }
     }
@@ -162,6 +168,7 @@ class PortalApi @Inject constructor(
     companion object {
         const val PORTAL_PUBLIC = "https://portal.pku.edu.cn/publicQuery"
         const val PORTAL2017 = "https://portal.pku.edu.cn/portal2017"
+        private val JSON_TYPE = "application/json; charset=UTF-8".toMediaType()
 
         val BUILDINGS = listOf("一教", "二教", "三教", "四教", "理教", "文史", "哲学", "地学", "国关", "政管")
     }
