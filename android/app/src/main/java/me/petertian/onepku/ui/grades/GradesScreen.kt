@@ -1,5 +1,6 @@
 package me.petertian.onepku.ui.grades
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -16,6 +17,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
+import androidx.compose.material3.Checkbox
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -49,11 +51,13 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import me.petertian.onepku.core.network.SmsVerificationRequiredException
+import me.petertian.onepku.data.repo.GradeScopeStore
 import me.petertian.onepku.data.repo.TreeholeRepository
 import me.petertian.onepku.data.treehole.GradeScope
 import me.petertian.onepku.data.treehole.ScoreEntry
 import me.petertian.onepku.data.treehole.ScoreReport
-import me.petertian.onepku.data.treehole.isMajorRequired
+import me.petertian.onepku.data.treehole.ScopeOverride
+import me.petertian.onepku.data.treehole.countsAsMajor
 import me.petertian.onepku.ui.components.ErrorBox
 import me.petertian.onepku.ui.components.LoadingBox
 import me.petertian.onepku.ui.components.UiData
@@ -63,6 +67,9 @@ import javax.inject.Inject
 data class GradesUiState(
     val refreshing: Boolean = false,
     val report: UiData<ScoreReport> = UiData.Loading,
+    val scope: GradeScope = GradeScope.ALL,
+    val override: ScopeOverride = ScopeOverride(),
+    val editing: Boolean = false,
     val needSms: Boolean = false,
     val smsInfo: String? = null,
 )
@@ -70,13 +77,25 @@ data class GradesUiState(
 @HiltViewModel
 class GradesViewModel @Inject constructor(
     private val repo: TreeholeRepository,
+    private val scopeStore: GradeScopeStore,
 ) : ViewModel() {
     private val _ui = MutableStateFlow(GradesUiState())
     val ui: StateFlow<GradesUiState> = _ui.asStateFlow()
 
-    init { load(false) }
+    init {
+        load(false)
+        viewModelScope.launch { scopeStore.state.collect { o -> _ui.update { it.copy(override = o) } } }
+    }
 
     fun refresh() = load(true)
+
+    fun setScope(scope: GradeScope) = _ui.update { it.copy(scope = scope) }
+
+    fun setEditing(editing: Boolean) = _ui.update { it.copy(editing = editing) }
+
+    fun toggleCourse(entry: ScoreEntry, include: Boolean) = scopeStore.setIncluded(entry, include)
+
+    fun resetScope() = scopeStore.reset()
 
     fun load(force: Boolean) {
         viewModelScope.launch {
@@ -149,20 +168,31 @@ fun GradesScreen(nav: NavHostController, vm: GradesViewModel = hiltViewModel()) 
             when (val data = ui.report) {
                 is UiData.Loading -> LoadingBox()
                 is UiData.Failure -> ErrorBox(data.message, onRetry = vm::refresh)
-                is UiData.Ready -> GradesContent(data.value)
+                is UiData.Ready -> GradesContent(data.value, ui, vm)
             }
         }
     }
 }
 
 @Composable
-private fun GradesContent(report: ScoreReport) {
-    var scope by remember { mutableStateOf(GradeScope.ALL) }
-    val stats = report.stats(scope)
+private fun GradesContent(report: ScoreReport, ui: GradesUiState, vm: GradesViewModel) {
+    val scope = ui.scope
+    val override = ui.override
+    val stats = report.stats(scope, override)
     val byTerm = report.entries
-        .filter { scope == GradeScope.ALL || it.isMajorRequired() }
+        .filter { scope == GradeScope.ALL || it.countsAsMajor(override) }
         .sortedByDescending { it.termKey }
         .groupBy { it.termKey }
+
+    if (ui.editing) {
+        EditScopeDialog(
+            entries = report.entries,
+            override = override,
+            onToggle = vm::toggleCourse,
+            onReset = vm::resetScope,
+            onDismiss = { vm.setEditing(false) },
+        )
+    }
 
     LazyColumn(
         modifier = Modifier.fillMaxSize(),
@@ -174,9 +204,27 @@ private fun GradesContent(report: ScoreReport) {
                 GradeScope.entries.forEach { s ->
                     FilterChip(
                         selected = scope == s,
-                        onClick = { scope = s },
+                        onClick = { vm.setScope(s) },
                         label = { Text(s.label) },
                     )
+                }
+            }
+        }
+
+        if (scope == GradeScope.MAJOR) {
+            item(key = "scope-edit") {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    Text(
+                        "自动按课程类别识别专业必修/限选;标成任选的专业课可手动加入。",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        modifier = Modifier.weight(1f),
+                    )
+                    TextButton(onClick = { vm.setEditing(true) }) { Text("调整范围") }
                 }
             }
         }
@@ -209,8 +257,10 @@ private fun GradesContent(report: ScoreReport) {
                         "GPA 来自学校;加权平均分与专业口径均为本地计算,仅供参考。"
                     scope == GradeScope.ALL ->
                         "学校未返回 GPA,已按官方规则在本地计算,仅供参考。"
-                    else ->
-                        "口径:课程类别为专业必修或专业限选,共 ${stats.courseCount} 门计入;均为本地计算,仅供参考。"
+                    else -> {
+                        val manual = override.included.size + override.excluded.size
+                        "口径:专业必修/限选${if (manual > 0) "(已手动调整 $manual 门)" else ""},共 ${stats.courseCount} 门计入;均为本地计算,仅供参考。"
+                    }
                 },
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -223,7 +273,7 @@ private fun GradesContent(report: ScoreReport) {
                 val gpa = if (scope == GradeScope.ALL) {
                     report.termGpas.firstOrNull { it.term == term }?.gpa
                 } else {
-                    report.termStats(term, scope).gpa?.let { fmt2(it) }
+                    report.termStats(term, scope, override).gpa?.let { fmt2(it) }
                 }
                 Text(
                     formatTerm(term) + (gpa?.let { " · GPA $it" } ?: ""),
@@ -289,6 +339,56 @@ private fun formatTerm(termKey: String): String {
         return "20${parts[0]}-20${parts[1]} 学年 ${termName}季学期"
     }
     return termKey
+}
+
+@Composable
+private fun EditScopeDialog(
+    entries: List<ScoreEntry>,
+    override: ScopeOverride,
+    onToggle: (ScoreEntry, Boolean) -> Unit,
+    onReset: () -> Unit,
+    onDismiss: () -> Unit,
+) {
+    val sorted = entries.sortedWith(compareBy({ it.termKey }, { it.name }))
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text("调整专业课范围") },
+        text = {
+            Column(Modifier.fillMaxWidth()) {
+                Text(
+                    "默认按课程类别识别专业必修/限选。被学校标成\"任选\"的专业课请手动勾上;不想计入的取消勾选。",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+                Spacer(Modifier.height(8.dp))
+                LazyColumn(Modifier.fillMaxWidth().height(360.dp)) {
+                    items(sorted, key = { "${it.scopeKey}|${it.score}" }) { e ->
+                        val checked = e.countsAsMajor(override)
+                        Row(
+                            modifier = Modifier.fillMaxWidth()
+                                .clickable { onToggle(e, !checked) }
+                                .padding(vertical = 4.dp),
+                            verticalAlignment = Alignment.CenterVertically,
+                        ) {
+                            Checkbox(checked = checked, onCheckedChange = { onToggle(e, it) })
+                            Column(Modifier.weight(1f)) {
+                                Text(e.name, style = MaterialTheme.typography.bodyMedium, maxLines = 2)
+                                Text(
+                                    listOf(formatTerm(e.termKey), e.category.ifBlank { "未标注" }, "${e.credit} 学分")
+                                        .joinToString(" · "),
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                )
+                            }
+                            Text(e.score, style = MaterialTheme.typography.bodyMedium)
+                        }
+                    }
+                }
+            }
+        },
+        confirmButton = { TextButton(onClick = onDismiss) { Text("完成") } },
+        dismissButton = { TextButton(onClick = onReset) { Text("恢复自动识别") } },
+    )
 }
 
 @Composable
