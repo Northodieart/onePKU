@@ -86,15 +86,23 @@ fun CourseListScreen(nav: NavHostController, vm: CoursesViewModel = hiltViewMode
                 is UiData.Loading -> LoadingBox()
                 is UiData.Failure -> ErrorBox(data.message, onRetry = vm::refresh)
                 is UiData.Ready -> {
-                    val grouped = data.value
-                        .sortedByDescending { it.semester }
+                    val groups = data.value
                         .groupBy { it.semester }
+                        .toList()
+                        .sortedWith(Comparator { a, b ->
+                            val aOther = a.first == "其他"
+                            val bOther = b.first == "其他"
+                            when {
+                                aOther != bOther -> if (aOther) 1 else -1
+                                else -> b.first.compareTo(a.first)
+                            }
+                        })
                     LazyColumn(
                         modifier = Modifier.fillMaxSize(),
                         contentPadding = PaddingValues(16.dp),
                         verticalArrangement = Arrangement.spacedBy(8.dp),
                     ) {
-                        grouped.forEach { (semester, list) ->
+                        groups.forEach { (semester, list) ->
                             item(key = "sem-$semester") {
                                 Text(
                                     semester,

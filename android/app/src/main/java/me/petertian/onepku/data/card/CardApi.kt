@@ -49,7 +49,7 @@ data class TurnoverPage(
     val pages: Long,
 )
 
-data class MonthlyExpense(val expenseFen: Long)
+data class MonthlyStat(val expenseFen: Long, val rechargeFen: Long)
 
 class CardApiException(message: String) : Exception(message)
 
@@ -132,19 +132,25 @@ class CardApi @Inject constructor(
     }
 
     /**
-     * 本月支出(分)。用分类统计接口 type=2(消费)求和,
-     * 排除充值/转账等非消费转出;statistics/turnover/count 的 expenses 含全部转出类型,会虚高。
+     * 本月统计。支出用分类统计接口 type=2(消费)求和,排除充值/转账等非消费转出;
+     * 充值用 turnover/count 的 income。两个接口的金额单位都是分。
      */
-    suspend fun monthlyExpense(): MonthlyExpense {
+    suspend fun monthlyStat(): MonthlyStat {
         val now = Date()
         val from = SimpleDateFormat("yyyy-MM-01", Locale.US).format(now)
         val to = SimpleDateFormat("yyyy-MM-dd", Locale.US).format(now)
-        val obj = apiGet("/berserker-search/statistics/turnover?type=2&timeFrom=$from&timeTo=$to")
-        val rows = obj["data"]?.jsonArray.orEmpty().mapNotNull { el ->
+
+        val categories = apiGet("/berserker-search/statistics/turnover?type=2&timeFrom=$from&timeTo=$to")
+        val rows = categories["data"]?.jsonArray.orEmpty().mapNotNull { el ->
             runCatching { el.jsonObject }.getOrNull()
         }
-        val fen = rows.sumOf { it["amount"]?.jsonPrimitive?.doubleOrNull ?: 0.0 }.roundToLong()
-        return MonthlyExpense(expenseFen = fen)
+        val expenseFen = rows.sumOf { it["amount"]?.jsonPrimitive?.doubleOrNull ?: 0.0 }.roundToLong()
+
+        val count = apiGet("/berserker-search/statistics/turnover/count?timeFrom=$from&timeTo=$to")
+        val rechargeFen = count["data"]?.jsonObject?.get("income")
+            ?.jsonPrimitive?.doubleOrNull?.roundToLong() ?: 0L
+
+        return MonthlyStat(expenseFen = expenseFen, rechargeFen = rechargeFen)
     }
 
     companion object {
