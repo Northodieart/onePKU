@@ -1,5 +1,6 @@
 package me.petertian.onepku.ui.settings
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -7,7 +8,9 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.Logout
@@ -43,6 +46,8 @@ import kotlinx.coroutines.launch
 import me.petertian.onepku.BuildConfig
 import me.petertian.onepku.core.session.Service
 import me.petertian.onepku.data.auth.AuthManager
+import me.petertian.onepku.data.news.SchoolNoticeApi
+import me.petertian.onepku.data.repo.DepartmentStore
 import me.petertian.onepku.ui.navigation.back
 import me.petertian.onepku.ui.navigation.toLogin
 import javax.inject.Inject
@@ -50,6 +55,9 @@ import javax.inject.Inject
 data class SettingsUiState(
     val username: String? = null,
     val services: Map<Service, Boolean> = emptyMap(),
+    val department: String? = null,
+    val schools: List<String> = emptyList(),
+    val pickingSchool: Boolean = false,
     val busy: Boolean = false,
     val message: String? = null,
 )
@@ -57,9 +65,11 @@ data class SettingsUiState(
 @HiltViewModel
 class SettingsViewModel @Inject constructor(
     private val auth: AuthManager,
+    private val departments: DepartmentStore,
+    schoolNotices: SchoolNoticeApi,
 ) : ViewModel() {
 
-    private val _ui = MutableStateFlow(SettingsUiState())
+    private val _ui = MutableStateFlow(SettingsUiState(schools = schoolNotices.schools()))
     val ui: StateFlow<SettingsUiState> = _ui.asStateFlow()
 
     init { reload() }
@@ -69,8 +79,16 @@ class SettingsViewModel @Inject constructor(
             it.copy(
                 username = auth.storedUsername(),
                 services = Service.entries.associateWith { s -> auth.isLoggedIn(s) },
+                department = departments.current(),
             )
         }
+    }
+
+    fun setPickingSchool(picking: Boolean) = _ui.update { it.copy(pickingSchool = picking) }
+
+    fun chooseSchool(school: String?) {
+        departments.select(school)
+        _ui.update { it.copy(pickingSchool = false, department = departments.current()) }
     }
 
     fun reconnect(service: Service) {
@@ -117,6 +135,36 @@ fun SettingsScreen(nav: NavHostController, vm: SettingsViewModel = hiltViewModel
             },
             dismissButton = {
                 TextButton(onClick = { confirmLogout = false }) { Text("取消") }
+            },
+        )
+    }
+
+    if (ui.pickingSchool) {
+        AlertDialog(
+            onDismissRequest = { vm.setPickingSchool(false) },
+            title = { Text("选择院系") },
+            text = {
+                LazyColumn(Modifier.fillMaxWidth().height(360.dp)) {
+                    items(ui.schools) { school ->
+                        Row(
+                            modifier = Modifier.fillMaxWidth()
+                                .clickable { vm.chooseSchool(school) }
+                                .padding(vertical = 10.dp),
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                        ) {
+                            Text(school, style = MaterialTheme.typography.bodyMedium)
+                            if (school == ui.department) {
+                                Text("当前", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.primary)
+                            }
+                        }
+                    }
+                }
+            },
+            confirmButton = {
+                TextButton(onClick = { vm.chooseSchool(null) }) { Text("清除手动选择") }
+            },
+            dismissButton = {
+                TextButton(onClick = { vm.setPickingSchool(false) }) { Text("关闭") }
             },
         )
     }
@@ -169,6 +217,26 @@ fun SettingsScreen(nav: NavHostController, vm: SettingsViewModel = hiltViewModel
                                 Text("断开")
                             }
                         }
+                    }
+                }
+            }
+
+            item(key = "department") {
+                Card(Modifier.fillMaxWidth()) {
+                    Row(
+                        modifier = Modifier.padding(16.dp).fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        Column(Modifier.weight(1f)) {
+                            Text("本院通知", style = MaterialTheme.typography.bodyLarge)
+                            Text(
+                                ui.department?.takeIf { it.isNotBlank() }
+                                    ?: "未识别到院系,可手动选择",
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            )
+                        }
+                        TextButton(onClick = { vm.setPickingSchool(true) }) { Text("选择院系") }
                     }
                 }
             }

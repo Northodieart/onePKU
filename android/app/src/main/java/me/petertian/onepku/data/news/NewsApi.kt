@@ -51,6 +51,7 @@ class NewsApi @Inject constructor(private val httpFactory: HttpFactory) {
         WebSource.DEAN -> deanList()
         WebSource.EECS -> eecsList()
         WebSource.LIBRARY -> libraryList()
+        WebSource.SCHOOL -> throw NewsApiException("本院通知请按院系选择")
     }
 
     // ---- 教务部 ----
@@ -155,6 +156,9 @@ class NewsApi @Inject constructor(private val httpFactory: HttpFactory) {
             WebSource.DEAN -> ".newsinfo_box"
             WebSource.EECS -> ".Section1, .v_news_content, .article"
             WebSource.LIBRARY -> ".article"
+            // 各院系 CMS 不一,取候选容器里正文最多的那个。
+            WebSource.SCHOOL -> ".v_news_content, .article-p, .article, #vsb_content, " +
+                ".TRS_Editor, .newscontent, .content, .details, .article-body"
         }
         val container = doc.select(selector).maxByOrNull { it.text().length }
             ?: throw NewsApiException("正文暂不可用,请阅读原文")
@@ -184,4 +188,6 @@ enum class WebSource(val label: String, val home: String) {
     DEAN("教务部", "https://dean.pku.edu.cn/web/notice.php"),
     EECS("信科", "https://eecs.pku.edu.cn/tzgg.htm"),
     LIBRARY("图书馆", "https://www.lib.pku.edu.cn/hdrl/index.htm"),
+    /** 本院通知:站点随院系变化,详情见 SchoolNoticeApi。 */
+    SCHOOL("本院", ""),
 }

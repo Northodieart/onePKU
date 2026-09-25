@@ -13,6 +13,7 @@ import me.petertian.onepku.core.session.SessionStore
 import me.petertian.onepku.core.session.StoredSession
 import me.petertian.onepku.data.iaaa.IaaaApi
 import me.petertian.onepku.data.iaaa.IaaaException
+import me.petertian.onepku.data.portal.PortalApi
 import okhttp3.HttpUrl.Companion.toHttpUrl
 import okhttp3.Request
 import java.util.UUID
@@ -30,6 +31,7 @@ class AuthManager @Inject constructor(
     private val httpFactory: HttpFactory,
     private val sessionStore: SessionStore,
     private val cookieStores: CookieStores,
+    private val portal: PortalApi,
 ) {
 
     fun isLoggedIn(service: Service): Boolean = sessionStore.isLoggedIn(service)
@@ -47,6 +49,7 @@ class AuthManager @Inject constructor(
                 Service.COURSE -> loginCourse(username, password, otpCode)
                 Service.TREEHOLE -> loginTreehole(username, password, otpCode)
                 Service.CARD -> loginCard(username, password, otpCode)
+                Service.PORTAL -> loginPortal(username, password, otpCode)
             }
         } catch (e: Exception) {
             sessionStore.clear(service)
@@ -215,6 +218,39 @@ class AuthManager @Inject constructor(
             sessionStore.saveSession(
                 Service.CARD,
                 StoredSession(token = jwt, expiresAt = nowSec() + 24 * 3600, uid = username),
+            )
+        }
+
+    // ---- 校内门户(院系识别) ----
+
+    private suspend fun loginPortal(username: String, password: String, otpCode: String?) =
+        withContext(Dispatchers.IO) {
+            val token = iaaa.login(
+                appId = "portal2017",
+                redirectUrl = "https://portal.pku.edu.cn/portal2017/ssoLogin.do",
+                username = username,
+                password = password,
+                otpCode = otpCode,
+            )
+            val jar = cookieStores.jar(Service.PORTAL.key)
+            jar.clear()
+            val client = httpFactory.client(cookieJar = jar, ua = Ua.DESKTOP)
+            client.newCall(
+                Request.Builder()
+                    .url("https://portal.pku.edu.cn/portal2017/ssoLogin.do?_rand=${rand20()}&token=$token")
+                    .build()
+            ).execute().use { it.requireBody().string() }
+
+            // 取一次基本信息确认会话真的建立了,顺便留下院系。
+            val profile = portal.basicInfo()
+            sessionStore.saveSession(
+                Service.PORTAL,
+                StoredSession(
+                    token = token,
+                    expiresAt = nowSec() + 12 * 3600,
+                    uid = username,
+                    extra = mapOf("department" to profile.department),
+                ),
             )
         }
 

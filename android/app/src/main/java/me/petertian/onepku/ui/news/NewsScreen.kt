@@ -36,7 +36,10 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import me.petertian.onepku.data.news.NewsApi
 import me.petertian.onepku.data.news.NewsItem
+import me.petertian.onepku.data.news.SchoolNoticeApi
+import me.petertian.onepku.data.news.SchoolNoticeItem
 import me.petertian.onepku.data.news.WebSource
+import me.petertian.onepku.data.repo.DepartmentStore
 import me.petertian.onepku.data.portal.NoticeSource
 import me.petertian.onepku.data.portal.PortalApi
 import me.petertian.onepku.data.portal.PortalNotice
@@ -66,12 +69,14 @@ sealed interface NewsEntry {
 }
 
 enum class NewsTab(val label: String) {
-    SCHOOL("学校"), DEPARTMENT("部门"), DEAN("教务部"), EECS("信科"), LIBRARY("图书馆"),
+    SCHOOL("学校"), DEPARTMENT("部门"), OUR_SCHOOL("本院"), DEAN("教务部"), LIBRARY("图书馆"),
 }
 
 data class NewsUiState(
     val tab: NewsTab = NewsTab.SCHOOL,
     val items: UiData<List<NewsEntry>> = UiData.Loading,
+    val school: String? = null,
+    val fromPortal: Boolean = false,
     val page: Int = 1,
     val hasMore: Boolean = false,
     val loadingMore: Boolean = false,
@@ -81,6 +86,8 @@ data class NewsUiState(
 class NewsViewModel @Inject constructor(
     private val portal: PortalApi,
     private val news: NewsApi,
+    private val schoolNotices: SchoolNoticeApi,
+    private val departments: DepartmentStore,
 ) : ViewModel() {
 
     private val _ui = MutableStateFlow(NewsUiState())
@@ -133,7 +140,21 @@ class NewsViewModel @Inject constructor(
         NewsTab.DEPARTMENT -> portal.notices(NoticeSource.DEPARTMENT, page)
             .let { it.items.map(NewsEntry::Portal) to it.hasMore }
         NewsTab.DEAN -> news.list(WebSource.DEAN).map(NewsEntry::Web) to false
-        NewsTab.EECS -> news.list(WebSource.EECS).map(NewsEntry::Web) to false
+        NewsTab.OUR_SCHOOL -> {
+            val notices = schoolNotices.list(departments.current() ?: "")
+            _ui.update {
+                it.copy(
+                    school = notices.school,
+                    fromPortal = notices.items.any { e -> e is SchoolNoticeItem.FromPortal },
+                )
+            }
+            notices.items.map { entry ->
+                when (entry) {
+                    is SchoolNoticeItem.FromSite -> NewsEntry.Web(entry.item)
+                    is SchoolNoticeItem.FromPortal -> NewsEntry.Portal(entry.notice)
+                }
+            } to false
+        }
         NewsTab.LIBRARY -> news.list(WebSource.LIBRARY).map(NewsEntry::Web) to false
     }
 }
@@ -151,9 +172,23 @@ fun NewsScreen(nav: NavHostController, vm: NewsViewModel = hiltViewModel()) {
                     Tab(
                         selected = ui.tab == tab,
                         onClick = { vm.load(tab) },
-                        text = { Text(tab.label) },
+                        text = {
+                            Text(
+                                if (tab == NewsTab.OUR_SCHOOL && ui.school != null &&
+                                    ui.school != "信息科学技术学院"
+                                ) ui.school ?: tab.label else tab.label,
+                            )
+                        },
                     )
                 }
+            }
+            if (ui.tab == NewsTab.OUR_SCHOOL && ui.fromPortal) {
+                Text(
+                    "本院官网暂未适配,以下来自校内门户部门通知。",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 6.dp),
+                )
             }
             when (val data = ui.items) {
                 is UiData.Loading -> LoadingBox()
