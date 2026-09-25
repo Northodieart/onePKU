@@ -4,14 +4,15 @@ import android.graphics.Bitmap
 import android.graphics.pdf.PdfRenderer
 import android.os.ParcelFileDescriptor
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.gestures.rememberTransformableState
+import androidx.compose.foundation.gestures.transformable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowLeft
@@ -22,17 +23,29 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableFloatStateOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clipToBounds
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.ViewModel
@@ -189,22 +202,77 @@ fun CalendarScreen(nav: NavHostController, vm: CalendarViewModel = hiltViewModel
                                 Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, contentDescription = "下一页")
                             }
                         }
-                        Column(
-                            Modifier
-                                .fillMaxSize()
-                                .verticalScroll(rememberScrollState())
-                                .padding(horizontal = 8.dp),
-                        ) {
-                            ui.bitmap?.let { bmp ->
-                                Image(
-                                    bitmap = bmp.asImageBitmap(),
-                                    contentDescription = "校历第 ${ui.page + 1} 页",
-                                    modifier = Modifier.fillMaxWidth(),
-                                    contentScale = ContentScale.FillWidth,
-                                )
-                            } ?: LoadingBox(message = "渲染中…")
-                        }
+                        ZoomablePage(
+                            page = ui.page,
+                            bitmap = ui.bitmap,
+                            modifier = Modifier.fillMaxSize(),
+                        )
                     }
+                }
+            }
+        }
+    }
+}
+
+/** 双指缩放 + 拖动查看;翻页时复位。 */
+@Composable
+private fun ZoomablePage(page: Int, bitmap: Bitmap?, modifier: Modifier = Modifier) {
+    var scale by remember { mutableFloatStateOf(1f) }
+    var pan by remember { mutableStateOf(Offset.Zero) }
+    var viewport by remember { mutableStateOf(IntSize.Zero) }
+
+    val state = rememberTransformableState { zoomChange, panChange, _ ->
+        val next = (scale * zoomChange).coerceIn(1f, 5f)
+        if (next <= 1f) {
+            scale = 1f
+            pan = Offset.Zero
+        } else {
+            val maxX = viewport.width * (next - 1f) / 2f
+            val maxY = viewport.height * (next - 1f) / 2f
+            scale = next
+            pan = Offset(
+                (pan.x + panChange.x * next).coerceIn(-maxX, maxX),
+                (pan.y + panChange.y * next).coerceIn(-maxY, maxY),
+            )
+        }
+    }
+
+    LaunchedEffect(page) {
+        scale = 1f
+        pan = Offset.Zero
+    }
+
+    Box(
+        modifier = modifier
+            .fillMaxSize()
+            .onSizeChanged { viewport = it }
+            .clipToBounds()
+            .graphicsLayer {
+                scaleX = scale
+                scaleY = scale
+                translationX = pan.x
+                translationY = pan.y
+            }
+            .transformable(state),
+        contentAlignment = Alignment.Center,
+    ) {
+        bitmap?.let {
+            Image(
+                bitmap = it.asImageBitmap(),
+                contentDescription = "校历第 ${page + 1} 页",
+                modifier = Modifier.fillMaxSize().padding(8.dp),
+                contentScale = ContentScale.Fit,
+            )
+        } ?: LoadingBox(message = "渲染中…")
+
+        if (scale > 1.01f) {
+            Surface(
+                modifier = Modifier.align(Alignment.BottomCenter).padding(bottom = 12.dp),
+                shape = MaterialTheme.shapes.small,
+                tonalElevation = 2.dp,
+            ) {
+                TextButton(onClick = { scale = 1f; pan = Offset.Zero }) {
+                    Text("重置缩放")
                 }
             }
         }
