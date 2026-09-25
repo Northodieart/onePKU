@@ -4,7 +4,7 @@ import me.petertian.onepku.core.session.Service
 import me.petertian.onepku.data.auth.AuthManager
 import me.petertian.onepku.data.card.CardApi
 import me.petertian.onepku.data.card.CardBalance
-import me.petertian.onepku.data.card.MonthlyStat
+import me.petertian.onepku.data.card.MonthlyExpense
 import me.petertian.onepku.data.card.TurnoverPage
 import me.petertian.onepku.data.treehole.ScoreReport
 import me.petertian.onepku.data.treehole.TreeholeApi
@@ -49,7 +49,7 @@ class CardRepository @Inject constructor(
 
     suspend fun turnover(page: Int): TurnoverPage = withReauth(auth, Service.CARD) { api.turnover(page) }
 
-    suspend fun monthly(): MonthlyStat = withReauth(auth, Service.CARD) { api.monthlyStat() }
+    suspend fun monthlyExpense(): MonthlyExpense = withReauth(auth, Service.CARD) { api.monthlyExpense() }
 
     companion object {
         private const val TTL = 5 * 60 * 1000L
