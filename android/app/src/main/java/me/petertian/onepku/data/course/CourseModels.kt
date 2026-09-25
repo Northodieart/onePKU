@@ -44,6 +44,10 @@ data class AssignmentSummary(
     val deadlineRaw: String?,
     val deadlineEpochMs: Long?,
     val status: String,
+    /** 学校提交记录或成绩中心显示已提交;Blackboard 的 .status 文本不可靠。 */
+    val submitted: Boolean = false,
+    /** 成绩中心给出的分数原文;缺失时不假设为 0。 */
+    val scoreText: String? = null,
 )
 
 data class AssignmentDetail(
@@ -76,7 +80,9 @@ data class LearningGrade(
 )
 
 /** 当前尝试页的提交快照:第几次尝试 + 已提交文件。 */
-data class SubmissionSnapshot(val label: String?, val files: List<Attachment>)
+data class SubmissionSnapshot(val label: String?, val files: List<Attachment>) {
+    val submitted: Boolean get() = label != null || files.isNotEmpty()
+}
 
 /** 提交结果:回执文件与本地文件 SHA-256 一致才算已确认。 */
 sealed interface SubmissionOutcome {

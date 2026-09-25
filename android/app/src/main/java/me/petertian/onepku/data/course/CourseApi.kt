@@ -208,8 +208,7 @@ class CourseApi @Inject constructor(
 
     // ---- 作业 ----
 
-    suspend fun getAssignment(courseId: String, contentId: String): AssignmentDetail {
-        val doc = getDoc(assignmentUrl(courseId, contentId))
+    private fun parseAssignment(doc: Document): AssignmentDetail {
         val title = (doc.select("span.title").first() ?: doc.select("#pageTitleText").first())
             ?.text()?.trim().orEmpty()
         val deadlineRaw = doc.select(".itemdates").first()?.text()?.trim()
@@ -224,23 +223,41 @@ class CourseApi @Inject constructor(
         return AssignmentDetail(title, deadlineRaw, parseDeadline(deadlineRaw), instructions, attachments, status)
     }
 
+    suspend fun getAssignment(courseId: String, contentId: String): AssignmentDetail =
+        parseAssignment(getDoc(assignmentUrl(courseId, contentId)))
+
+    /** 一次抓取同时取到作业说明与当前提交情况。 */
+    suspend fun assignmentOverview(courseId: String, contentId: String): Pair<AssignmentDetail, SubmissionSnapshot> {
+        val doc = getDoc(assignmentUrl(courseId, contentId))
+        return parseAssignment(doc) to runCatching { parseSubmission(doc) }.getOrDefault(SubmissionSnapshot(null, emptyList()))
+    }
+
     /** 汇总一门课的全部作业(递归发现 + 逐个详情)。 */
     suspend fun listAssignmentsForCourse(course: CourseInfo): List<AssignmentSummary> = coroutineScope {
         val content = listAllContentRecursive(course.id)
         val assignments = content.filter { it.type == ContentType.ASSIGNMENT && it.id.isNotEmpty() }
+        // 成绩中心按标题匹配,提供提交与评分的第二个来源;读不到不影响作业列表。
+        val gradeCenter = runCatching { learningGrades(course.id) }.getOrNull().orEmpty()
+            .associateBy { it.title.trim() }
         val sem = Semaphore(3)
         assignments.map { item ->
             async(Dispatchers.IO) {
                 sem.withPermit {
-                    runCatching { getAssignment(course.id, item.id) }.getOrNull()?.let { detail ->
+                    runCatching { assignmentOverview(course.id, item.id) }.getOrNull()?.let { (detail, submission) ->
+                        val title = detail.title.ifEmpty { item.title }
+                        val grade = gradeCenter[title.trim()]
+                        val graded = grade?.score?.trim()?.takeUnless { it.isEmpty() || it == "-" || it == "—" }
                         AssignmentSummary(
                             courseId = course.id,
                             courseName = course.name,
                             contentId = item.id,
-                            title = detail.title.ifEmpty { item.title },
+                            title = title,
                             deadlineRaw = detail.deadlineRaw,
                             deadlineEpochMs = detail.deadlineEpochMs,
                             status = detail.status,
+                            submitted = submission.submitted ||
+                                grade?.status?.contains("已提交") == true || graded != null,
+                            scoreText = graded,
                         )
                     }
                 }
@@ -253,6 +270,17 @@ class CourseApi @Inject constructor(
     suspend fun listAttempts(courseId: String, contentId: String): List<FeedbackAttempt> = coroutineScope {
         val base = assignmentUrl(courseId, contentId)
         val doc = getDoc(base)
+        val currentLabel = doc.select("h3#currentAttempt_label").first()?.text()
+            ?.replace(Regex("\\s+"), " ")?.trim()?.ifEmpty { null }
+        val currentId = doc.select(
+            "#currentAttempt_attemptList li.current a[href], #currentAttempt_attemptList a.current[href]",
+        ).firstOrNull()?.absUrl("href")
+            ?.let { runCatching { it.toHttpUrl().queryParameter("attempt_id") }.getOrNull() }
+
+        // 只提交过一次时学校不渲染历史链接,当前尝试就在本页面上。
+        val current = currentLabel?.let { label ->
+            runCatching { parseAttemptPage(doc, currentId ?: "current:$label", label, base) }.getOrNull()
+        }
         val links = doc.select("#currentAttempt_attemptList a[href]")
             .mapNotNull { a ->
                 val href = a.absUrl("href")
@@ -260,10 +288,10 @@ class CourseApi @Inject constructor(
                 if (id.isNullOrEmpty()) null else id to a.text().trim()
             }
             .distinctBy { it.first }
-        if (links.isEmpty()) return@coroutineScope emptyList()
+            .filter { it.first != currentId }
 
         val sem = Semaphore(3)
-        links.map { (id, label) ->
+        val history = links.map { (id, label) ->
             async(Dispatchers.IO) {
                 sem.withPermit {
                     val url = "$base&attempt_id=$id"
@@ -271,13 +299,18 @@ class CourseApi @Inject constructor(
                 }
             }
         }.mapNotNull { it.await() }
+
+        (listOfNotNull(current) + history).distinctBy { it.id }
     }
 
     private fun parseAttemptPage(doc: Document, id: String, label: String, url: String): FeedbackAttempt {
         fun text(sel: String): String? = doc.select(sel).first()?.text()
             ?.replace(Regex("\\s+"), " ")?.trim()?.ifEmpty { null }
 
-        val score = text("#currentAttempt_grade")?.takeUnless { it == "-" || it == "—" }
+        // 分数在 <input id="currentAttempt_grade" value="..."> 上,取属性而非文本。
+        val gradeEl = doc.select("#currentAttempt_grade").first()
+        val score = (gradeEl?.attr("value")?.ifBlank { null } ?: text("#currentAttempt_grade"))
+            ?.trim()?.takeUnless { it == "-" || it == "—" || it.isEmpty() }
         val points = text("#currentAttempt_pointsPossible")?.removePrefix("/")?.trim()
         val feedback = doc.select("#currentAttempt_feedback .vtbegenerated").first()?.text()?.trim()
         val files = doc.select("#currentAttempt_submissionList a.attachment[href]").mapNotNull { a ->
@@ -320,8 +353,10 @@ class CourseApi @Inject constructor(
     // ---- 作业提交(写操作;仅在用户明确确认后由 Repository 调用) ----
 
     /** 读取当前提交记录(不创建尝试)。 */
-    suspend fun submissionSnapshot(courseId: String, contentId: String): SubmissionSnapshot {
-        val doc = getDoc(assignmentUrl(courseId, contentId))
+    suspend fun submissionSnapshot(courseId: String, contentId: String): SubmissionSnapshot =
+        parseSubmission(getDoc(assignmentUrl(courseId, contentId)))
+
+    private fun parseSubmission(doc: Document): SubmissionSnapshot {
         val label = doc.select("h3#currentAttempt_label").first()?.text()
             ?.replace(Regex("\\s+"), " ")?.trim()?.ifEmpty { null }
         val recognized = label != null ||

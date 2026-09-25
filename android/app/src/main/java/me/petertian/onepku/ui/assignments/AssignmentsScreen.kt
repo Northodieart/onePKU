@@ -27,6 +27,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.ViewModel
@@ -50,7 +51,7 @@ import me.petertian.onepku.ui.today.deadlineLabel
 import javax.inject.Inject
 
 enum class AssignmentFilter(val label: String) {
-    PENDING("待交"), ALL("全部"), CLOSED("已截止"),
+    PENDING("待交"), SUBMITTED("已提交"), CLOSED("已截止"), ALL("全部"),
 }
 
 data class AssignmentsUiState(
@@ -131,8 +132,11 @@ fun AssignmentsScreen(nav: NavHostController, vm: AssignmentsViewModel = hiltVie
                         val now = System.currentTimeMillis()
                         val filtered = data.value.filter { a ->
                             when (ui.filter) {
-                                AssignmentFilter.PENDING -> (a.deadlineEpochMs ?: Long.MAX_VALUE) >= now
-                                AssignmentFilter.CLOSED -> (a.deadlineEpochMs ?: 0L) < now
+                                AssignmentFilter.PENDING -> !a.submitted &&
+                                    (a.deadlineEpochMs ?: Long.MAX_VALUE) >= now
+                                AssignmentFilter.SUBMITTED -> a.submitted
+                                AssignmentFilter.CLOSED -> !a.submitted &&
+                                    (a.deadlineEpochMs ?: 0L) < now
                                 AssignmentFilter.ALL -> true
                             }
                         }
@@ -163,13 +167,29 @@ fun AssignmentsScreen(nav: NavHostController, vm: AssignmentsViewModel = hiltVie
                                                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                                                 )
                                             }
-                                            Text(
-                                                deadlineLabel(a.deadlineEpochMs),
-                                                style = MaterialTheme.typography.bodySmall,
-                                                color = if ((a.deadlineEpochMs ?: Long.MAX_VALUE) - now < 24 * 3600_000 &&
-                                                    (a.deadlineEpochMs ?: 0L) >= now
-                                                ) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.onSurfaceVariant,
-                                            )
+                                            Column(horizontalAlignment = Alignment.End) {
+                                                Text(
+                                                    if (a.submitted) "已提交" else "未提交",
+                                                    style = MaterialTheme.typography.labelMedium,
+                                                    color = if (a.submitted) MaterialTheme.colorScheme.primary
+                                                    else MaterialTheme.colorScheme.error,
+                                                )
+                                                a.scoreText?.let {
+                                                    Text(
+                                                        it,
+                                                        style = MaterialTheme.typography.titleSmall,
+                                                        fontWeight = FontWeight.SemiBold,
+                                                        color = MaterialTheme.colorScheme.primary,
+                                                    )
+                                                }
+                                                Text(
+                                                    deadlineLabel(a.deadlineEpochMs),
+                                                    style = MaterialTheme.typography.bodySmall,
+                                                    color = if ((a.deadlineEpochMs ?: Long.MAX_VALUE) - now < 24 * 3600_000 &&
+                                                        (a.deadlineEpochMs ?: 0L) >= now && !a.submitted
+                                                    ) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.onSurfaceVariant,
+                                                )
+                                            }
                                         }
                                     }
                                 }
