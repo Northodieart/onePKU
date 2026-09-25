@@ -333,11 +333,29 @@ private fun AssignmentsTab(ui: CourseDetailUiState, vm: CourseDetailViewModel, n
                                 )
                             }
                             val overdue = a.deadlineEpochMs?.let { it < now } == true
-                            Text(
-                                if (overdue) "已截止" else deadlineLabel(a.deadlineEpochMs).ifBlank { "进行中" },
-                                style = MaterialTheme.typography.labelMedium,
-                                color = if (overdue) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.primary,
-                            )
+                            Column(horizontalAlignment = Alignment.End) {
+                                Text(
+                                    when {
+                                        a.submitted -> "已提交"
+                                        overdue -> "已截止"
+                                        else -> deadlineLabel(a.deadlineEpochMs).ifBlank { "进行中" }
+                                    },
+                                    style = MaterialTheme.typography.labelMedium,
+                                    color = when {
+                                        a.submitted -> MaterialTheme.colorScheme.primary
+                                        overdue -> MaterialTheme.colorScheme.error
+                                        else -> MaterialTheme.colorScheme.onSurfaceVariant
+                                    },
+                                )
+                                a.scoreText?.let {
+                                    Text(
+                                        it,
+                                        style = MaterialTheme.typography.titleSmall,
+                                        fontWeight = FontWeight.SemiBold,
+                                        color = MaterialTheme.colorScheme.primary,
+                                    )
+                                }
+                            }
                         }
                     }
                 }

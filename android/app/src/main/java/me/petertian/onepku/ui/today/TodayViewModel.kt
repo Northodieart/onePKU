@@ -67,7 +67,7 @@ class TodayViewModel @Inject constructor(
                 assignments = try {
                     val list = courses.courses().filter { c -> c.isCurrent }
                     courses.assignments(list)
-                        .filter { a -> (a.deadlineEpochMs ?: Long.MAX_VALUE) >= System.currentTimeMillis() }
+                        .filter { a -> !a.submitted && (a.deadlineEpochMs ?: Long.MAX_VALUE) >= System.currentTimeMillis() }
                         .sortedBy { a -> a.deadlineEpochMs ?: Long.MAX_VALUE }
                         .let { ready -> UiData.Ready(ready) }
                 } catch (e: Exception) {
