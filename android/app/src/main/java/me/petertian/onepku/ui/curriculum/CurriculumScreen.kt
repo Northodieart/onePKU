@@ -18,6 +18,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
@@ -42,9 +43,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableFloatStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -58,7 +62,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.Dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -165,6 +168,9 @@ fun CurriculumScreen(nav: NavHostController, vm: CurriculumViewModel = hiltViewM
         )
     }
 
+    // 重新计算完成度时保持当前页,归入一门课后不会跳回第一页。
+    var lastPage by rememberSaveable { mutableIntStateOf(0) }
+
     Scaffold(
         topBar = {
             TopAppBar(
@@ -185,7 +191,13 @@ fun CurriculumScreen(nav: NavHostController, vm: CurriculumViewModel = hiltViewM
         when (val data = ui.content) {
             is UiData.Loading -> if (ui.hasProfile) LoadingBox(message = "方案读取中…") else NoProfile(padding, nav)
             is UiData.Failure -> ErrorBox(data.message, onRetry = vm::reload)
-            is UiData.Ready -> ProgressPager(data.value.second, padding, vm)
+            is UiData.Ready -> ProgressPager(
+                progress = data.value.second,
+                padding = padding,
+                vm = vm,
+                startPage = lastPage,
+                onStartPageChange = { lastPage = it },
+            )
         }
     }
 }
@@ -211,14 +223,25 @@ private fun NoProfile(padding: PaddingValues, nav: NavHostController) {
 }
 
 @Composable
-private fun ProgressPager(progress: Progress, padding: PaddingValues, vm: CurriculumViewModel) {
+private fun ProgressPager(
+    progress: Progress,
+    padding: PaddingValues,
+    vm: CurriculumViewModel,
+    startPage: Int,
+    onStartPageChange: (Int) -> Unit,
+) {
     // 第一页毕业总学分,之后每个大类一页,最后按需确认页收尾。
     val titles = buildList {
         add("毕业总学分")
         progress.sections.forEach { add(it.name) }
-        if (progress.pending.isNotEmpty() || progress.ignored.isNotEmpty()) add("待确认与不计入")
+        if (progress.pending.isNotEmpty() || progress.ignored.isNotEmpty()) add("待确认")
     }
-    val pagerState = rememberPagerState(pageCount = { titles.size })
+    // 归入一门课后会重新计算完成度,页面不能跳回第一页,所以页码记在调用方。
+    val pagerState = rememberPagerState(
+        initialPage = startPage.coerceIn(0, maxOf(0, titles.size - 1)),
+        pageCount = { titles.size },
+    )
+    LaunchedEffect(pagerState.currentPage) { onStartPageChange(pagerState.currentPage) }
 
     Column(Modifier.padding(padding).fillMaxSize()) {
         Text(
@@ -233,7 +256,7 @@ private fun ProgressPager(progress: Progress, padding: PaddingValues, vm: Curric
         HorizontalPager(state = pagerState, modifier = Modifier.fillMaxSize()) { page ->
             when {
                 page == 0 -> TotalPage(progress)
-                page <= progress.sections.size -> SectionPage(progress.sections[page - 1], vm)
+                page <= progress.sections.size -> SectionPage(progress.sections[page - 1])
                 else -> PendingPage(progress, vm)
             }
         }
@@ -271,13 +294,15 @@ private fun TotalPage(progress: Progress) {
         verticalArrangement = Arrangement.spacedBy(12.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        item { CurriculumRing(progress.earned, progress.inProgress, progress.required) }
         item {
-            Text(
-                "已获 ${CurriculumEngine.fmt(progress.earned)} / " +
-                    (progress.required?.let { "${CurriculumEngine.fmt(it)} 学分" } ?: "未写明总学分") +
-                    (if (progress.inProgress > 0) " · 在修 ${CurriculumEngine.fmt(progress.inProgress)}" else ""),
-                style = MaterialTheme.typography.bodyMedium,
+            RingHeader(
+                value = progress.earned,
+                target = progress.required,
+                unit = "学分",
+                requirement = progress.plan.totalCredits?.let {
+                    if (it.max > it.min) "${fmt(it.min)}～${fmt(it.max)} 学分" else "${fmt(it.min)} 学分"
+                },
+                gap = progress.required?.let { maxOf(0.0, it - progress.earned) },
             )
         }
         if (progress.required == null) {
@@ -303,53 +328,32 @@ private fun TotalPage(progress: Progress) {
             Card(Modifier.fillMaxWidth()) {
                 Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
                     Text("各大类", style = MaterialTheme.typography.titleSmall)
-                    progress.sections.forEach {
-                        val (value, pending) = measure(it)
-                        SectionBar(it, value, pending)
-                    }
+                    progress.sections.forEach { SectionBar(it, valueOf(it)) }
                 }
             }
         }
+        courseLists(counted(progress.sections), inProgressOf(progress.sections), showOwner = true)
     }
 }
 
 @Composable
-private fun SectionPage(section: Section, vm: CurriculumViewModel) {
-    val (value, pending) = measure(section)
-    val gap = gapOf(section, value, pending)
+private fun SectionPage(section: Section) {
+    val value = valueOf(section)
+    val gap = section.min?.let { maxOf(0.0, it - value) }
     LazyColumn(
         Modifier.fillMaxSize(),
         contentPadding = PaddingValues(16.dp),
-        verticalArrangement = Arrangement.spacedBy(10.dp),
+        verticalArrangement = Arrangement.spacedBy(12.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         item {
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                CurriculumRing(
-                    value = if (section.unit == "门") section.passedCount.toDouble() else section.earned,
-                    pending = pending,
-                    target = section.min,
-                    diameter = 96.dp,
-                    strokeWidth = 9.dp,
-                )
-                Spacer(Modifier.width(16.dp))
-                Column {
-                    Text(
-                        "${CurriculumEngine.fmt(value)} / ${section.min?.let { CurriculumEngine.fmt(it) } ?: "—"} ${section.unit ?: "学分"}",
-                        style = MaterialTheme.typography.titleMedium,
-                        fontWeight = FontWeight.SemiBold,
-                    )
-                    gap?.let {
-                        Text(
-                            if (it <= 0.0) "已满足" else "还差 ${CurriculumEngine.fmt(it)} ${section.unit ?: "学分"}",
-                            style = MaterialTheme.typography.bodySmall,
-                            color = if (it <= 0.0) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.error,
-                        )
-                    }
-                    section.requirement?.let {
-                        Text(it, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                    }
-                }
-            }
+            RingHeader(
+                value = value,
+                target = section.min,
+                unit = section.unit ?: "学分",
+                requirement = section.requirement,
+                gap = if (section.unit == "学时") null else gap,
+            )
         }
         section.note?.let {
             item {
@@ -361,28 +365,54 @@ private fun SectionPage(section: Section, vm: CurriculumViewModel) {
                 Card(Modifier.fillMaxWidth()) {
                     Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
                         Text("子系列", style = MaterialTheme.typography.titleSmall)
-                        section.children.forEach { child ->
-                            val (cv, cp) = measure(child)
-                            SectionBar(child, cv, cp)
-                        }
+                        section.children.forEach { SectionBar(it, valueOf(it)) }
                     }
                 }
             }
         }
-        if (section.courses.isNotEmpty()) {
-            item { Text("已计入课程 ${section.courses.size} 门", style = MaterialTheme.typography.titleSmall) }
-            items(section.courses, key = { it.key }) { CourseRow(it) }
-        } else {
-            item {
-                Text(
-                    "这一类还没有计入的课程",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                )
-            }
+        courseLists(counted(listOf(section)), inProgressOf(listOf(section)), showOwner = section.children.isNotEmpty())
+    }
+}
+
+/** 圆环居中,数值、缺口与要求依次写在下方;大类页与子系列页共用同一套排版。 */
+@Composable
+private fun RingHeader(
+    value: Double,
+    target: Double?,
+    unit: String,
+    requirement: String?,
+    gap: Double?,
+) {
+    Column(
+        Modifier.fillMaxWidth(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.spacedBy(4.dp),
+    ) {
+        CurriculumRing(value, target)
+        Text(
+            target?.let { "已获 ${fmt(value)} / ${fmt(it)} $unit" } ?: "已获 ${fmt(value)} $unit",
+            style = MaterialTheme.typography.titleMedium,
+            fontWeight = FontWeight.SemiBold,
+        )
+        gap?.let {
+            Text(
+                if (it <= 0.0) "已满足" else "还差 ${fmt(it)} $unit",
+                style = MaterialTheme.typography.bodySmall,
+                color = if (it <= 0.0) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.error,
+            )
+        }
+        requirement?.let {
+            Text(
+                it,
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                textAlign = TextAlign.Center,
+            )
         }
     }
 }
+
+private fun fmt(value: Double?): String = CurriculumEngine.fmt(value)
 
 @Composable
 private fun PendingPage(progress: Progress, vm: CurriculumViewModel) {
@@ -392,13 +422,6 @@ private fun PendingPage(progress: Progress, vm: CurriculumViewModel) {
         contentPadding = PaddingValues(16.dp),
         verticalArrangement = Arrangement.spacedBy(10.dp),
     ) {
-        item {
-            Text(
-                "这些课程没能对上学分系列。归入某一类,或标记为不计入;判断不了就留着,不猜。",
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
-        }
         if (progress.pending.isEmpty()) {
             item { Text("没有待确认的课程", style = MaterialTheme.typography.bodyMedium) }
         } else {
@@ -482,29 +505,68 @@ private fun ClassifierDialog(
 }
 
 @Composable
-private fun SectionBar(section: Section, value: Double, pending: Double) {
+private fun SectionBar(section: Section, value: Double) {
+    val target = section.min
+    val unit = section.unit ?: "学分"
     Column {
         Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
             Text(section.name, style = MaterialTheme.typography.bodySmall)
             Text(
-                "${CurriculumEngine.fmt(value)} / ${section.min?.let { CurriculumEngine.fmt(it) } ?: "—"}" +
-                    (section.unit?.let { " $it" } ?: ""),
+                target?.let { "${fmt(value)} / ${fmt(it)} $unit" } ?: "${fmt(value)} $unit",
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
         }
-        val target = section.min
         if (target != null && target > 0) {
             LinearProgressIndicator(
-                progress = { (((value + pending) / target).toFloat()).coerceIn(0f, 1f) },
+                progress = { (value / target).toFloat().coerceIn(0f, 1f) },
                 modifier = Modifier.fillMaxWidth().height(6.dp),
             )
         }
     }
 }
 
+/** 已计入与在修两份列表;父级页面把子系列的课一并列出,并标注归属。 */
+private fun LazyListScope.courseLists(
+    courses: List<Pair<MatchedCourse, String>>,
+    doing: List<Pair<MatchedCourse, String>>,
+    showOwner: Boolean,
+) {
+    if (courses.isEmpty() && doing.isEmpty()) {
+        item {
+            Text(
+                "这一类还没有计入的课程",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+        }
+        return
+    }
+    if (courses.isNotEmpty()) {
+        item { Text("已计入课程 ${courses.size} 门", style = MaterialTheme.typography.titleSmall) }
+        items(courses, key = { it.first.key }) { CourseRow(it.first, if (showOwner) it.second else null) }
+    }
+    if (doing.isNotEmpty()) {
+        item {
+            Text(
+                "在修 ${doing.size} 门（不计入统计）",
+                style = MaterialTheme.typography.titleSmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+        }
+        items(doing, key = { "doing-${it.first.key}" }) { CourseRow(it.first, if (showOwner) it.second else null) }
+    }
+}
+
+/** 系列及其子系列下已计入的课程,附带所属系列名。 */
+private fun counted(sections: List<Section>): List<Pair<MatchedCourse, String>> =
+    sections.flatMap { s -> s.courses.map { it to s.name } + counted(s.children) }
+
+private fun inProgressOf(sections: List<Section>): List<Pair<MatchedCourse, String>> =
+    sections.flatMap { s -> s.inProgressCourses.map { it to s.name } + inProgressOf(s.children) }
+
 @Composable
-private fun CourseRow(course: MatchedCourse) {
+private fun CourseRow(course: MatchedCourse, owner: String? = null) {
     Card(Modifier.fillMaxWidth()) {
         Row(
             Modifier.padding(horizontal = 16.dp, vertical = 10.dp).fillMaxWidth(),
@@ -513,11 +575,12 @@ private fun CourseRow(course: MatchedCourse) {
             Column(Modifier.weight(1f)) {
                 Text(course.name, style = MaterialTheme.typography.bodyMedium, maxLines = 2)
                 Text(
-                    listOf(
+                    listOfNotNull(
+                        owner,
                         course.term,
-                        course.score.ifBlank { "在修" },
-                        course.credits?.let { "${CurriculumEngine.fmt(it)} 学分" },
-                    ).filterNotNull().filter { it.isNotBlank() }.joinToString(" · "),
+                        course.score.ifBlank { null },
+                        course.credits?.let { "${fmt(it)} 学分" },
+                    ).filter { it.isNotBlank() }.joinToString(" · "),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
@@ -535,37 +598,22 @@ private fun statusLabel(course: MatchedCourse): String = when (course.status) {
     CurriculumEngine.CourseStatus.OTHER -> "其他"
 }
 
-/** 单位决定度量:按门数、按学时还是按学分。 */
-private fun measure(section: Section): Pair<Double, Double> =
-    if (section.unit == "门") section.passedCount.toDouble() to 0.0
-    else section.earned to section.inProgress
+/** 单位决定度量:按门数的系列看点数,其余看学分。 */
+private fun valueOf(section: Section): Double =
+    if (section.unit == "门") section.passedCount.toDouble() else section.earned
 
-private fun gapOf(section: Section, value: Double, pending: Double): Double? {
-    val min = section.min ?: return null
-    if (section.unit == "学时") return null
-    return maxOf(0.0, min - value - pending)
-}
-
-/** 圆环:已获为实色弧,在修为淡色弧延伸,达标换成功色。 */
+/** 圆环:达标换成功色,没有总额时只画底环。 */
 @Composable
-private fun CurriculumRing(
-    value: Double,
-    pending: Double,
-    target: Double?,
-    diameter: Dp = 128.dp,
-    strokeWidth: Dp = 11.dp,
-) {
+private fun CurriculumRing(value: Double, target: Double?) {
     val done = MaterialTheme.colorScheme.primary
     val success = MaterialTheme.colorScheme.tertiary
     val track = MaterialTheme.colorScheme.surfaceVariant
     val ratio = if (target != null && target > 0) (value / target).toFloat().coerceIn(0f, 1f) else 0f
-    val withPending =
-        if (target != null && target > 0) ((value + pending) / target).toFloat().coerceIn(0f, 1f) else 0f
     val reached = target != null && value >= target
 
     Box(contentAlignment = Alignment.Center) {
-        Canvas(Modifier.size(diameter)) {
-            val stroke = strokeWidth.toPx()
+        Canvas(Modifier.size(128.dp)) {
+            val stroke = 11.dp.toPx()
             val arcSize = Size(size.width - stroke, size.height - stroke)
             val origin = Offset(stroke / 2, stroke / 2)
             fun arc(color: androidx.compose.ui.graphics.Color, sweep: Float) {
@@ -577,21 +625,22 @@ private fun CurriculumRing(
                 )
             }
             arc(track, 360f)
-            if (withPending > ratio) arc(done.copy(alpha = 0.28f), 360f * withPending)
             arc(if (reached) success else done, 360f * ratio)
         }
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Text(
-                CurriculumEngine.fmt(value),
+                fmt(value),
                 style = MaterialTheme.typography.headlineSmall,
                 fontWeight = FontWeight.Bold,
                 color = if (reached) success else MaterialTheme.colorScheme.primary,
             )
-            Text(
-                target?.let { "/ ${CurriculumEngine.fmt(it)}" } ?: "—",
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
+            target?.let {
+                Text(
+                    "/ ${fmt(it)}",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            }
         }
     }
 }
