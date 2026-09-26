@@ -243,7 +243,6 @@ class CurriculumEngineTest {
         assertEquals(0.0, major.inProgress, 0.001)
         assertEquals(1, major.passedCount)
         assertEquals(0, p.unknownCredits)
-        assertTrue(p.hasInProgress)
     }
 
     @Test

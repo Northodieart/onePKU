@@ -60,8 +60,6 @@ object CurriculumEngine {
         val inProgress: Double,
         val unknownCredits: Int,
         val usesRequirements: Boolean,
-        /** 有没有在修的课程,决定要不要显示"待确认"这一页(那里填学分)。 */
-        val hasInProgress: Boolean,
     )
 
     /** 成绩表里的一行;term 用于展示(如 "25-26·1"),year 用于推断入学年份(如 "25-26")。 */
@@ -591,7 +589,6 @@ object CurriculumEngine {
             inProgress = sections.sumOf { it.inProgress },
             unknownCredits = unknownCredits,
             usesRequirements = usesRequirements,
-            hasInProgress = matched.any { it.status == CourseStatus.IN_PROGRESS },
         )
     }
 
