@@ -32,7 +32,6 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
-import androidx.compose.material3.Button
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -353,9 +352,15 @@ private fun SectionLabel(text: String) {
 
 @Composable
 private fun <T> ChipRow(options: List<Pair<T, String>>, selected: T, label: String, onPick: (T, String) -> Unit) {
-    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+    // 手机上选项常常有六七个,横向排会挤成两行,一律一行一个纵向排。
+    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
         options.forEach { (value, text) ->
-            FilterChip(selected = value == selected, onClick = { onPick(value, text) }, label = { Text(text) })
+            FilterChip(
+                selected = value == selected,
+                onClick = { onPick(value, text) },
+                label = { Text(text, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center) },
+                modifier = Modifier.fillMaxWidth(),
+            )
         }
     }
 }

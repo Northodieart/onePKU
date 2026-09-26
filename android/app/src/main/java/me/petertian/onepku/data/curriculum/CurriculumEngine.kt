@@ -3,8 +3,11 @@ package me.petertian.onepku.data.curriculum
 import java.text.Normalizer
 
 /**
- * 培养方案完成度计算。规则逐条对齐桌面端 src/lib/curriculum.ts,
+ * 培养方案完成度计算。匹配规则逐条对齐桌面端 src/lib/curriculum.ts,
  * 两边改了同一套规则时应当一起改。匹配不上的课程进入"待确认",不做猜测。
+ *
+ * 两处与桌面端不同:一是有些方案不写大类总额(如 2025 物理学院-物理学),
+ * 这里回退到课程组的 min/max;二是"在修"的课程不计入任何统计,只单独列出。
  */
 object CurriculumEngine {
 
@@ -36,9 +39,11 @@ object CurriculumEngine {
         var note: String? = null,
     ) {
         var earned = 0.0
-        var inProgress = 0.0
         var passedCount = 0
+
+        /** 已计入统计的课程(已通过或未通过);在修的另存在 [inProgressCourses]。 */
         val courses = mutableListOf<MatchedCourse>()
+        val inProgressCourses = mutableListOf<MatchedCourse>()
         val children = mutableListOf<Section>()
     }
 
@@ -49,7 +54,6 @@ object CurriculumEngine {
         val ignored: List<MatchedCourse>,
         val required: Double?,
         val earned: Double,
-        val inProgress: Double,
         val unknownCredits: Int,
         val usesRequirements: Boolean,
     )
@@ -64,19 +68,19 @@ object CurriculumEngine {
         val year: String,
     )
 
-    /** 教学网课程;只有在读课程参与"在修"统计。 */
+    /** 教学网课程;在读课程单独列出,不参与统计。 */
     data class CurrentCourse(val id: String, val name: String, val semester: String?, val current: Boolean)
 
     data class EnglishLevel(val id: String, val label: String, val credits: Int)
 
-    /** 2025 版《北京大学大学英语课程培养方案》表 1;免修按同文件第 3 条获 2 学分。 */
+    /** 2025 版《北京大学大学英语课程培养方案》表 1。免修拿不到大学英语学分,记 0 分。 */
     val ENGLISH_LEVELS = listOf(
         EnglishLevel("Y", "Y 级", 8),
         EnglishLevel("A", "A 级", 8),
         EnglishLevel("B", "B 级", 6),
         EnglishLevel("C", "C 级", 4),
         EnglishLevel("C+", "C+ 级", 2),
-        EnglishLevel("exempt", "免修", 2),
+        EnglishLevel("exempt", "免修", 0),
     )
     const val ENGLISH_FULL_CREDITS = 8
 
@@ -172,17 +176,56 @@ object CurriculumEngine {
     private fun section(id: String, name: String, requirement: String?, min: Double?, max: Double?, unit: String?, note: String? = null) =
         Section(id, name, requirement, min, max, unit, note)
 
+    /** 分组 id "2.2" 对应要求 id "2-2";只补这一层,更深的模块组仍归到所属子系列。 */
+    private val SECOND_LEVEL_GROUP = Regex("^[123]\\.\\d+$")
+
+    private fun compareSectionIds(a: String, b: String): Int {
+        val pa = a.split('-')
+        val pb = b.split('-')
+        for (i in 0 until maxOf(pa.size, pb.size)) {
+            val na = pa.getOrNull(i)?.toIntOrNull() ?: -1
+            val nb = pb.getOrNull(i)?.toIntOrNull() ?: -1
+            if (na != nb) return na.compareTo(nb)
+        }
+        return a.compareTo(b)
+    }
+
+    /** 方案只在父级给了总额、恰好一个子系列没写学分要求时,用差额推出该子系列的下限。 */
+    private fun deriveMissingTotals(parent: Section) {
+        val min = parent.min ?: return
+        val missing = parent.children.filter { it.min == null }
+        if (missing.size != 1) return
+        val known = parent.children.filter { it.min != null }.sumOf { it.min!! }
+        val rest = min - known
+        if (rest <= 0) return
+        val s = missing.single()
+        s.min = rest
+        val ceiling = parent.max?.let { it - known }?.takeIf { it >= rest }
+        s.max = ceiling ?: rest
+        s.requirement = if (ceiling != null && ceiling != rest) "${fmt(rest)}～${fmt(ceiling)} 学分" else "${fmt(rest)} 学分"
+        s.note = "方案把这一类按方向或模块分列,没有统一的学分要求;这里按「${parent.name} ${fmt(min)} 学分」扣除其余子系列推出"
+    }
+
     /** 把方案整理成两层学分系列,并建立课程名索引。 */
     private fun buildSections(plan: Plan): Triple<List<Section>, Index, Boolean> {
         val usesRequirements = plan.requirements.size >= 4
         val flat = LinkedHashMap<String, Section>()
         val sections = mutableListOf<Section>()
         val topNames = mapOf("1" to "公共基础课程", "2" to "专业必修课程", "3" to "选修课程")
+        // 有些方案(如 2025 物理学院-物理学)没给出三大类总额,但课程组里写了 min/max。
+        val groupById = plan.groups.associateBy { it.id.replace('.', '-') }
 
         if (usesRequirements) {
             for (id in listOf("1", "2", "3")) {
                 val top = plan.topRequirements.firstOrNull { it.id == id }
-                val s = section(id, top?.name ?: topNames[id] ?: id, null, top?.min, top?.max, top?.unit)
+                val g = groupById[id]?.takeIf { it.parent == null }
+                val total = top?.min ?: g?.min
+                val ceiling = top?.max ?: g?.max
+                val s = section(
+                    id,
+                    top?.name ?: g?.name ?: topNames[id] ?: id,
+                    null, total, ceiling, top?.unit ?: g?.unit,
+                )
                 sections.add(s)
                 flat[id] = s
             }
@@ -192,6 +235,18 @@ object CurriculumEngine {
                 parent.children.add(s)
                 flat[r.id] = s
             }
+            // 要求表漏掉、只在课程组里出现的子系列(如物理学院的专业核心课)补回来,
+            // 否则这些课只能挂到大类本身,界面上看不到单独一类。
+            for (g in plan.groups.filter { SECOND_LEVEL_GROUP.matches(it.id) }) {
+                val rid = g.id.replace('.', '-')
+                if (flat.containsKey(rid)) continue
+                val parent = flat[rid.substringBefore('-')] ?: continue
+                val s = section(rid, g.name.ifBlank { rid }, g.requirement, g.min, g.max, g.unit, g.note)
+                parent.children.add(s)
+                flat[rid] = s
+            }
+            sections.forEach { top -> top.children.sortWith { a, b -> compareSectionIds(a.id, b.id) } }
+            sections.forEach(::deriveMissingTotals)
         } else {
             for (g in plan.groups.filter { it.parent == null }) {
                 val s = section(g.id, g.name, g.requirement, g.min, g.max, g.unit, g.note)
@@ -208,6 +263,7 @@ object CurriculumEngine {
                 if (parent != null) parent.children.add(s) else sections.add(s)
                 flat[g.id] = s
             }
+            sections.forEach(::deriveMissingTotals)
         }
 
         fun findChild(re: Regex): Section? =
@@ -392,14 +448,14 @@ object CurriculumEngine {
             if (m.status == CourseStatus.WITHDRAWN || m.status == CourseStatus.OTHER) { ignored.add(m); continue }
             val section = m.sectionId?.let { index.flat[it] }
             if (section == null) { pending.add(m); continue }
+            // 在修的课学分还没定,统一不计入统计,只单独列出。
+            if (m.status == CourseStatus.IN_PROGRESS) { section.inProgressCourses.add(m); continue }
             section.courses.add(m)
             when (m.status) {
                 CourseStatus.PASSED -> {
                     section.passedCount += 1
                     if (m.credits != null) section.earned += m.credits!! else unknownCredits += 1
                 }
-                CourseStatus.IN_PROGRESS ->
-                    if (m.credits != null) section.inProgress += m.credits!! else unknownCredits += 1
                 else -> Unit
             }
         }
@@ -408,7 +464,6 @@ object CurriculumEngine {
             for (child in s.children) {
                 rollup(child)
                 s.earned += child.earned
-                s.inProgress += child.inProgress
                 s.passedCount += child.passedCount
             }
         }
@@ -420,7 +475,6 @@ object CurriculumEngine {
             ignored = ignored,
             required = plan.totalCredits?.min,
             earned = sections.sumOf { it.earned },
-            inProgress = sections.sumOf { it.inProgress },
             unknownCredits = unknownCredits,
             usesRequirements = usesRequirements,
         )

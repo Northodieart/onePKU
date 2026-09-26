@@ -65,10 +65,39 @@ class CurriculumEngineTest {
         ),
     )
 
-    private fun section(progress: Progress, id: String): Section =
-        progress.sections.flatMap { listOf(it) + it.children }.first { it.id == id }
+    /**
+     * 仿 2025 物理学院-物理学:三大类总额只在课程组里写,专业核心课只按方向分列,
+     * 要求树里既没有 2-2 也没有大类总额。
+     */
+    private fun physicsPlan() = Plan(
+        id = "2025-物理学院-物理学",
+        cohort = 2025,
+        school = "物理学院",
+        major = "物理学",
+        title = "物理学",
+        totalCredits = CreditRange(140.0, 152.0),
+        requirements = listOf(
+            PlanRequirement("1-1", "1", "公共必修课", "33～39 学分", 33.0, 39.0, "学分"),
+            PlanRequirement("1-2", "1", "通识教育课", "12 学分", 12.0, 12.0, "学分"),
+            PlanRequirement("2-1", "2", "专业基础课", "46 学分", 46.0, 46.0, "学分"),
+            PlanRequirement("2-3", "2", "毕业论文", "6 学分", 6.0, 6.0, "学分"),
+            PlanRequirement("3-1", "3", "专业选修课", "15 学分", 15.0, 15.0, "学分"),
+        ),
+        groups = listOf(
+            PlanGroup("1", null, name = "公共基础课程", min = 45.0, max = 51.0, unit = "学分"),
+            PlanGroup("2", null, name = "专业必修课程", min = 70.0, max = 76.0, unit = "学分"),
+            PlanGroup("3", null, name = "选修课程", min = 25.0, max = 25.0, unit = "学分"),
+            PlanGroup("2.1", "2", name = "专业基础课", min = 46.0, max = 46.0, unit = "学分"),
+            PlanGroup("2.2", "2", name = "专业核心课"),
+            PlanGroup(
+                "2.2-1", "2.2", name = "物理学：24 学分", min = 24.0, max = 24.0, unit = "学分",
+                courses = listOf(PlanCourse(name = "量子力学", credits = 4.0)),
+            ),
+        ),
+    )
 
-    @Test
+    private fun section(progress: Progress, id: String): Section =
+        progress.sections.flatMap { listOf(it) + it.children }.first { it.id == id }    @Test
     fun `课程名规范化统一全角括号序号与空白`() {
         assertEquals("高等数学a(1)", CurriculumEngine.normalizeCourseName("高等数学A（一）"))
         assertEquals("高等数学a(1)", CurriculumEngine.normalizeCourseName("高等数学 A (Ⅰ) "))
@@ -192,7 +221,7 @@ class CurriculumEngineTest {
     }
 
     @Test
-    fun `在修课程计入在修学分且与成绩去重`() {
+    fun `在修课程单独列出且不计入统计`() {
         val p = CurriculumEngine.computeProgress(
             plan(),
             listOf(score("力学", "3", "80", "专业必修")),
@@ -202,9 +231,23 @@ class CurriculumEngineTest {
             ),
         )
         val major = section(p, "2-1")
-        assertEquals(2, major.courses.size)
+        // 在修的那门已与成绩表去重,只剩一门;它不进 courses,也不进 earned。
+        assertEquals(1, major.courses.size)
+        assertEquals(1, major.inProgressCourses.size)
+        assertEquals("高等数学A（一）", major.inProgressCourses.single().name)
         assertEquals(3.0, major.earned, 0.001)
-        assertEquals(5.0, major.inProgress, 0.001)
+        assertEquals(1, major.passedCount)
+        assertEquals(0, p.unknownCredits)
+    }
+
+    @Test
+    fun `成绩未公布的课也不计入统计`() {
+        val p = CurriculumEngine.computeProgress(plan(), listOf(score("力学", "3", "未公布", "专业必修")), emptyList())
+        val major = section(p, "2-1")
+        assertEquals(0, major.courses.size)
+        assertEquals(1, major.inProgressCourses.size)
+        assertEquals(0.0, major.earned, 0.001)
+        assertEquals(0, p.unknownCredits)
     }
 
     @Test
@@ -232,10 +275,44 @@ class CurriculumEngineTest {
     }
 
     @Test
-    fun `免修按 2 学分计,差额 6 学分补进通识`() {
+    fun `免修拿不到英语学分,差额 8 学分补进通识`() {
         val p = CurriculumEngine.computeProgress(plan(), emptyList(), emptyList(), englishLevel = "exempt")
-        assertEquals(2.0, section(p, "1-1").min!!, 0.001)
-        assertEquals(18.0, section(p, "3-1").min!!, 0.001)
+        assertEquals(0.0, section(p, "1-1").min!!, 0.001)
+        assertEquals(20.0, section(p, "3-1").min!!, 0.001)
+    }
+
+    @Test
+    fun `C 级与 C+ 级在分级表里`() {
+        assertEquals(4, CurriculumEngine.englishLevelInfo("C")?.credits)
+        assertEquals(2, CurriculumEngine.englishLevelInfo("C+")?.credits)
+        assertEquals(0, CurriculumEngine.englishLevelInfo("exempt")?.credits)
+    }
+
+    @Test
+    fun `方案没写大类总额时退回课程组的学分`() {
+        val p = CurriculumEngine.computeProgress(physicsPlan(), emptyList(), emptyList())
+        assertEquals(45.0, section(p, "1").min!!, 0.001)
+        assertEquals(70.0, section(p, "2").min!!, 0.001)
+        assertEquals(25.0, section(p, "3").min!!, 0.001)
+    }
+
+    @Test
+    fun `要求表缺失的子系列按课程组补回,总额取大类余额`() {
+        val p = CurriculumEngine.computeProgress(physicsPlan(), emptyList(), emptyList())
+        val core = section(p, "2-2")
+        assertEquals("专业核心课", core.name)
+        // 专业必修 70 学分,专业基础课 46 + 毕业论文 6,剩下的都归专业核心课。
+        assertEquals(18.0, core.min!!, 0.001)
+        assertEquals(24.0, core.max!!, 0.001)
+        assertEquals("18～24 学分", core.requirement)
+
+        val hit = CurriculumEngine.computeProgress(
+            physicsPlan(), listOf(score("量子力学", "4", "90", "专业必修")), emptyList(),
+        )
+        // 方向课表挂在 2.2-1 下,课程应落到补出来的 2-2,而不是堆在大类本身。
+        assertEquals(4.0, section(hit, "2-2").earned, 0.001)
+        assertEquals(4.0, section(hit, "2").earned, 0.001)
+        assertTrue(section(hit, "2").courses.isEmpty())
     }
 
     @Test
@@ -295,6 +372,32 @@ class CurriculumEngineTest {
         assertEquals(2024, inferred.cohort)
         assertEquals(2021, inferred.version)
         assertTrue(inferred.evidence.any { it.contains("请手动选择专业") })
+    }
+
+    @Test
+    fun `真实方案数据里物理学院的专业核心课能补齐`() {
+        // 这份是随应用打包的离线数据,路径随 Gradle 工作目录变化,找不到就跳过。
+        val file = listOf(
+            "../../data/curriculum/2025/2025-物理学院-物理学.json",
+            "../data/curriculum/2025/2025-物理学院-物理学.json",
+        ).map { java.io.File(it) }.firstOrNull { it.isFile }
+        org.junit.Assume.assumeTrue("离线方案数据不在工作目录里", file != null)
+        val real = kotlinx.serialization.json.Json { ignoreUnknownKeys = true }
+            .decodeFromString(Plan.serializer(), file!!.readText())
+        val coreCourse = real.groups.first { it.id == "2.2-1" }.courses.first().name
+        val p = CurriculumEngine.computeProgress(
+            real, listOf(score(coreCourse, "4", "90", "专业必修")), emptyList(),
+        )
+
+        assertEquals(listOf("1", "2", "3"), p.sections.map { it.id })
+        assertEquals(45.0, section(p, "1").min!!, 0.001)
+        assertEquals(70.0, section(p, "2").min!!, 0.001)
+        assertEquals(listOf("2-1", "2-2", "2-3"), section(p, "2").children.map { it.id })
+        assertEquals("专业核心课", section(p, "2-2").name)
+        assertEquals(18.0, section(p, "2-2").min!!, 0.001)
+        // 方向课表挂在 2.2-1 下,课程要归到补出来的 2-2,不能散在大类本身。
+        assertEquals(4.0, section(p, "2-2").earned, 0.001)
+        assertTrue(section(p, "2").courses.isEmpty())
     }
 
     private fun index(): List<PlanIndexEntry> = listOf(
