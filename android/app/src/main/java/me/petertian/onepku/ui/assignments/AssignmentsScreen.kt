@@ -135,8 +135,9 @@ fun AssignmentsScreen(nav: NavHostController, vm: AssignmentsViewModel = hiltVie
                                 AssignmentFilter.PENDING -> !a.submitted &&
                                     (a.deadlineEpochMs ?: Long.MAX_VALUE) >= now
                                 AssignmentFilter.SUBMITTED -> a.submitted
+                                // 没有截止时间就不算已截止,与"待交"一样按不设限处理
                                 AssignmentFilter.CLOSED -> !a.submitted &&
-                                    (a.deadlineEpochMs ?: 0L) < now
+                                    (a.deadlineEpochMs ?: Long.MAX_VALUE) < now
                                 AssignmentFilter.ALL -> true
                             }
                         }
