@@ -620,7 +620,7 @@ private fun ProgressTrack(fraction: Float, withPending: Float) {
     }
 }
 
-/** 已修与在修两份列表;父级页面把子系列的课一并列出,并标注归属。 */
+/** 在修与已修两份列表,在修在前;父级页面把子系列的课一并列出,并标注归属。 */
 private fun LazyListScope.courseLists(
     courses: List<Pair<MatchedCourse, String>>,
     doing: List<Pair<MatchedCourse, String>>,
@@ -637,10 +637,6 @@ private fun LazyListScope.courseLists(
         }
         return
     }
-    if (courses.isNotEmpty()) {
-        item { Text("已修课程 ${courses.size} 门", style = MaterialTheme.typography.titleSmall) }
-        items(courses, key = { it.first.key }) { CourseRow(it.first, if (showOwner) it.second else null, vm) }
-    }
     if (doing.isNotEmpty()) {
         val missing = doing.count { it.first.credits == null }
         item {
@@ -648,7 +644,7 @@ private fun LazyListScope.courseLists(
                 Text("在修课程 ${doing.size} 门", style = MaterialTheme.typography.titleSmall)
                 if (missing > 0) {
                     Text(
-                        "点课程卡填学分,填了才算进圆环和缺口",
+                        "点课程卡填学分",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.error,
                     )
@@ -656,6 +652,10 @@ private fun LazyListScope.courseLists(
             }
         }
         items(doing, key = { "doing-${it.first.key}" }) { CourseRow(it.first, if (showOwner) it.second else null, vm) }
+    }
+    if (courses.isNotEmpty()) {
+        item { Text("已修课程 ${courses.size} 门", style = MaterialTheme.typography.titleSmall) }
+        items(courses, key = { it.first.key }) { CourseRow(it.first, if (showOwner) it.second else null, vm) }
     }
 }
 

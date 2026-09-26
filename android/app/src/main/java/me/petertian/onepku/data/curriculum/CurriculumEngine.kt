@@ -136,6 +136,9 @@ object CurriculumEngine {
 
     private val DECIMAL = Regex("^\\d+(\\.\\d+)?$")
 
+    /** 习题课不算独立的一门课:教学网把它和正课并排列进在修,算进来就是重复计数。 */
+    private val EXERCISE = Regex("习题")
+
     fun decimal(value: String): Double? {
         val t = value.trim()
         return if (DECIMAL.matches(t)) t.toDoubleOrNull() else null
@@ -565,6 +568,7 @@ object CurriculumEngine {
         }
         for (c in courses) {
             if (!c.current) continue
+            if (EXERCISE.containsMatchIn(c.name)) continue
             val key = normalizeCourseName(c.name)
             if (!seen.add(key)) continue
             matched.add(
@@ -573,7 +577,7 @@ object CurriculumEngine {
                     MatchedCourse(
                         key = "course:${c.id}",
                         name = c.name,
-                        credits = manualCredits[key],
+                        credits = null,
                         status = CourseStatus.IN_PROGRESS,
                         term = c.semester ?: "本学期",
                         category = "在修",
@@ -592,7 +596,8 @@ object CurriculumEngine {
         val ignored = mutableListOf<MatchedCourse>()
         var unknownCredits = 0
         for (raw in matched) {
-            val m = if (raw.credits == null) raw.copy(credits = manualCredits[normalizeCourseName(raw.name)]) else raw
+            // 手填过就以手填为准:成绩源自带的学分与方案口径不一致时(0 学分课),改了就得生效。
+            val m = manualCredits[normalizeCourseName(raw.name)]?.let { raw.copy(credits = it) } ?: raw
             if (m.sectionId == IGNORE) { ignored.add(m); continue }
             if (m.status == CourseStatus.WITHDRAWN || m.status == CourseStatus.OTHER) { ignored.add(m); continue }
             val section = m.sectionId?.let { index.flat[it] }
