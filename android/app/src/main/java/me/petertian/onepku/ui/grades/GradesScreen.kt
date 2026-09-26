@@ -392,7 +392,7 @@ private fun EditScopeDialog(
 }
 
 @Composable
-private fun SmsDialog(
+internal fun SmsDialog(
     info: String?,
     onSend: () -> Unit,
     onVerify: (String) -> Unit,
