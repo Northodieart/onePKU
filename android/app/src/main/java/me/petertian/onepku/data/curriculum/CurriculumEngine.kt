@@ -77,16 +77,21 @@ object CurriculumEngine {
 
     data class EnglishLevel(val id: String, val label: String, val credits: Int)
 
-    /** 2025 版《北京大学大学英语课程培养方案》表 1。免修拿不到大学英语学分,记 0 分。 */
+    /**
+     * 入学分级考试成绩决定"公共必修课"里大学英语的学分要求:Y/A/B/C/C+ = 8/8/6/4/2 分
+     * (《北京大学大学英语课程培养方案(2025 年 6 月修订)》二、修读要求第 1 条),
+     * 免修按第 3 条获 2 分。英语专业学生与留学生按同条豁免。
+     */
     val ENGLISH_LEVELS = listOf(
         EnglishLevel("Y", "Y 级", 8),
         EnglishLevel("A", "A 级", 8),
         EnglishLevel("B", "B 级", 6),
         EnglishLevel("C", "C 级", 4),
         EnglishLevel("C+", "C+ 级", 2),
-        EnglishLevel("exempt", "免修", 0),
+        EnglishLevel("exempt", "免修", 2),
     )
-    const val ENGLISH_FULL_CREDITS = 8
+    const val ENGLISH_MIN_CREDITS = 2
+    const val ENGLISH_MAX_CREDITS = 8
 
     fun englishLevelInfo(level: String?): EnglishLevel? = ENGLISH_LEVELS.firstOrNull { it.id == level }
 
@@ -271,16 +276,28 @@ object CurriculumEngine {
         return skip
     }
 
-    /** 方向定了以后,大类的总额按各子系列求和;落在方案原本给的区间内才敢改。 */
+    /**
+     * 方向或分级定了以后,大类的总额按各子系列求和。
+     * 按门/按学时的子系列不计入(方案自己也没把它们算进学分总数),
+     * 而且求和结果落在方案原本给的区间内才敢改。
+     */
     private fun recomputeTopTotal(top: Section, floor: Double, ceiling: Double) {
-        if (top.children.isEmpty()) return
-        if (top.children.any { it.min == null }) return
-        val min = top.children.sumOf { it.min!! }
-        val max = top.children.sumOf { it.max ?: it.min!! }
+        val counted = top.children.filter { it.unit == null || it.unit == "学分" }
+        if (counted.isEmpty() || counted.any { it.min == null }) return
+        val min = counted.sumOf { it.min!! }
+        val max = counted.sumOf { it.max ?: it.min!! }
         if (min < floor || min > ceiling) return
         top.min = min
         top.max = max
         top.requirement = if (max > min) "${fmt(min)}～${fmt(max)} 学分" else "${fmt(min)} 学分"
+    }
+
+    /** 各大类都定死后,毕业总学分也按求和落一次;同样只在方案自述的区间内才采用。 */
+    private fun recomputeRequired(plan: Plan, sections: List<Section>): Double? {
+        val stated = plan.totalCredits ?: return null
+        if (sections.any { (it.unit ?: "学分") != "学分" } || sections.any { it.min == null }) return stated.min
+        val sum = sections.sumOf { it.min!! }
+        return if (sum in stated.min..stated.max) sum else stated.min
     }
 
     /** 把方案整理成两层学分系列,并建立课程名索引。 */
@@ -457,33 +474,59 @@ object CurriculumEngine {
         return course.copy(sectionId = null, via = null)
     }
 
-    /** 按分级把"大学英语 2~8 学分"固定下来;不足 8 学分的差额按通识教育课计。 */
-    private fun applyEnglishLevel(sections: List<Section>, index: Index, level: String) {
-        val info = englishLevelInfo(level) ?: return
-        val english = index.flat.values.firstOrNull {
-            it.children.isEmpty() && Regex("大学英语|英语").containsMatchIn(it.name)
-        } ?: return
-        if (english.min == null) return
-        val full = english.max ?: ENGLISH_FULL_CREDITS.toDouble()
-        english.min = info.credits.toDouble()
-        english.max = info.credits.toDouble()
-        english.requirement = "${info.credits} 学分（${info.label}）"
+    /** 原文第 1 条把英语专业学生和留学生排除在分级之外。 */
+    private fun isEnglishExempt(plan: Plan): Boolean {
+        val blob = listOfNotNull(plan.title, plan.major, plan.track, plan.degree, plan.school).joinToString(" ")
+        return blob.contains("留学生") || (blob.contains("英语") && blob.contains("外国语学院"))
+    }
 
-        val shortfall = maxOf(0.0, full - info.credits)
-        if (shortfall > 0) {
-            val general = index.general?.let { index.flat[it] }
-            if (general != null && general.min != null) {
-                general.min = general.min!! + shortfall
-                general.max = (general.max ?: general.min!! - shortfall) + shortfall
-                general.requirement = "${fmt(general.min)} 学分（含补齐大学英语 ${fmt(shortfall)} 学分）"
-                general.note = "方案允许用专业或通识选修补齐英语差额，这里按通识计"
-            }
+    /**
+     * 找出该被分级定住的那一类:方案单列了"大学英语"就用它;
+     * 方案把英语折进"公共必修课"时,那一类的区间跨度恰好是英语弹性 8-2=6。
+     * 候选不唯一就不动,宁可不改。
+     */
+    private fun englishSeries(index: Index): Pair<Section, Boolean>? {
+        val named = index.flat.values.firstOrNull {
+            it.children.isEmpty() && it.min != null &&
+                Regex("大学英语|公共英语|大学外语").containsMatchIn(it.name)
         }
-        val top = sections.firstOrNull { english in it.children }
-        if (top != null && top.min != null && top.max != null && top.min != top.max) {
-            top.min = top.max
-            top.requirement = "${fmt(top.max)} 学分"
+        if (named != null) return named to true
+        val root = index.flat["1"] ?: return null
+        val span = (ENGLISH_MAX_CREDITS - ENGLISH_MIN_CREDITS).toDouble()
+        val candidates = root.children.filter {
+            it.children.isEmpty() && it.min != null && it.max != null &&
+                kotlin.math.abs(it.max!! - it.min!! - span) < 0.001 &&
+                Regex("公共必修|外语|英语").containsMatchIn(it.name)
         }
+        return if (candidates.size == 1) candidates.single() to false else null
+    }
+
+    /**
+     * 分级决定"公共必修课"里大学英语要修多少分:单列英语系列的直接定成该分档,
+     * 折在公共必修课里的按「下限 +(所选-2)」落在方案自己给的区间内。
+     * 之后大类总额按子系列求和、毕业总学分按大类求和,都带方案自述区间的围栏。
+     */
+    private fun applyEnglishLevel(plan: Plan, sections: List<Section>, index: Index, level: String) {
+        if (isEnglishExempt(plan)) return
+        val info = englishLevelInfo(level) ?: return
+        val (series, isEnglish) = englishSeries(index) ?: return
+        val floor = series.min ?: return
+        val ceiling = series.max ?: floor
+        val pinned = if (isEnglish) {
+            info.credits.toDouble().coerceIn(floor, ceiling)
+        } else {
+            floor + (info.credits - ENGLISH_MIN_CREDITS)
+        }
+        series.min = pinned
+        series.max = pinned
+        series.requirement = "${fmt(pinned)} 学分（${info.label}）"
+        if (!isEnglish) {
+            series.note = "方案把大学英语折在这一类里,弹性 ${ENGLISH_MIN_CREDITS}～${ENGLISH_MAX_CREDITS} 学分;" +
+                "按${info.label}算作 ${fmt(pinned)} 学分"
+        }
+        val top = sections.firstOrNull { series in it.children } ?: return
+        val before = top.min ?: return
+        recomputeTopTotal(top, before, top.max ?: before)
     }
 
     fun computeProgress(
@@ -496,7 +539,7 @@ object CurriculumEngine {
         manualCredits: Map<String, Double> = emptyMap(),
     ): Progress {
         val (sections, index, usesRequirements) = buildSections(plan, directions)
-        if (!englishLevel.isNullOrEmpty() && usesRequirements) applyEnglishLevel(sections, index, englishLevel)
+        if (!englishLevel.isNullOrEmpty()) applyEnglishLevel(plan, sections, index, englishLevel)
 
         val seen = HashSet<String>()
         val matched = mutableListOf<MatchedCourse>()
@@ -584,7 +627,7 @@ object CurriculumEngine {
             sections = sections,
             pending = pending,
             ignored = ignored,
-            required = plan.totalCredits?.min,
+            required = recomputeRequired(plan, sections),
             earned = sections.sumOf { it.earned },
             inProgress = sections.sumOf { it.inProgress },
             unknownCredits = unknownCredits,
