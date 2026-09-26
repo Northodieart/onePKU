@@ -33,9 +33,10 @@ class CurriculumEngineTest {
         cohort = 2025,
         major = "测试专业",
         title = "测试专业",
-        totalCredits = CreditRange(144.0, 144.0),
+        // 大类总额与子系列对得上,才测得出分级后的求和;选修课程故意少于大类(自主选修没写要求)。
+        totalCredits = CreditRange(92.0, 102.0),
         topRequirements = listOf(
-            TopRequirement("1", "公共基础课程", 52.0, 58.0, "学分"),
+            TopRequirement("1", "公共基础课程", 22.0, 28.0, "学分"),
             TopRequirement("2", "专业必修课程", 40.0, 40.0, "学分"),
             TopRequirement("3", "选修课程", 30.0, 40.0, "学分"),
         ),
@@ -290,34 +291,70 @@ class CurriculumEngineTest {
     }
 
     @Test
-    fun `英语分级锁定学分并把差额补进通识`() {
+    fun `英语分级把这一类定住,大类按子系列求和`() {
         val p = CurriculumEngine.computeProgress(plan(), emptyList(), emptyList(), englishLevel = "C")
         val english = section(p, "1-1")
         assertEquals(4.0, english.min!!, 0.001)
         assertEquals(4.0, english.max!!, 0.001)
         assertEquals("4 学分（C 级）", english.requirement)
 
-        val general = section(p, "3-1")
-        assertEquals(16.0, general.min!!, 0.001)   // 12 + 差额 4
-        assertEquals(16.0, general.max!!, 0.001)
-        assertTrue(general.requirement!!.contains("含补齐大学英语 4 学分"))
-
-        // 公共基础大类原本是 52~58 的区间,英语定级后按上限固定。
-        assertEquals(58.0, section(p, "1").min!!, 0.001)
+        // 公共基础课程原本 22~28,英语定成 4 之后就是 4 + 体育 4 + 思政 16。
+        assertEquals(24.0, section(p, "1").min!!, 0.001)
+        assertEquals(24.0, section(p, "1").max!!, 0.001)
+        // 毕业总学分:24 + 40 + 30。选修大类求和只有 12,不在方案写的 30~40 内,保留方案值。
+        assertEquals(30.0, section(p, "3").min!!, 0.001)
+        assertEquals(94.0, p.required!!, 0.001)
     }
 
     @Test
-    fun `免修拿不到英语学分,差额 8 学分补进通识`() {
-        val p = CurriculumEngine.computeProgress(plan(), emptyList(), emptyList(), englishLevel = "exempt")
-        assertEquals(0.0, section(p, "1-1").min!!, 0.001)
-        assertEquals(20.0, section(p, "3-1").min!!, 0.001)
+    fun `英语差额不再补进通识教育课`() {
+        val p = CurriculumEngine.computeProgress(plan(), emptyList(), emptyList(), englishLevel = "C")
+        assertEquals(12.0, section(p, "3-1").min!!, 0.001)
+        val texts = (p.sections + p.sections.flatMap { it.children }).map { "${it.requirement}|${it.note}" }
+        assertFalse(texts.any { it.contains("补齐") })
     }
 
     @Test
-    fun `C 级与 C+ 级在分级表里`() {
+    fun `分级两端不越出方案自述的区间`() {
+        val top = CurriculumEngine.computeProgress(plan(), emptyList(), emptyList(), englishLevel = "Y")
+        assertEquals(8.0, section(top, "1-1").min!!, 0.001)
+        assertEquals(28.0, section(top, "1").min!!, 0.001)   // 原本的上限
+        val bottom = CurriculumEngine.computeProgress(plan(), emptyList(), emptyList(), englishLevel = "C+")
+        assertEquals(2.0, section(bottom, "1-1").min!!, 0.001)
+        assertEquals(22.0, section(bottom, "1").min!!, 0.001) // 原本的下限
+    }
+
+    @Test
+    fun `免修按第 3 条获 2 学分,与 C+ 同级`() {
         assertEquals(4, CurriculumEngine.englishLevelInfo("C")?.credits)
         assertEquals(2, CurriculumEngine.englishLevelInfo("C+")?.credits)
-        assertEquals(0, CurriculumEngine.englishLevelInfo("exempt")?.credits)
+        assertEquals(2, CurriculumEngine.englishLevelInfo("exempt")?.credits)
+        val p = CurriculumEngine.computeProgress(plan(), emptyList(), emptyList(), englishLevel = "exempt")
+        // 按 0 分会把公共基础压到 20,低于方案自己写的下限 22,那是错的。
+        assertEquals(2.0, section(p, "1-1").min!!, 0.001)
+        assertEquals(22.0, section(p, "1").min!!, 0.001)
+    }
+
+    @Test
+    fun `英语折在公共必修课里时按弹性六分定住`() {
+        val p = CurriculumEngine.computeProgress(physicsPlan(), emptyList(), emptyList(), englishLevel = "B")
+        // 这份方案没有单列英语;公共必修课 33~39 那 6 分跨度正是英语弹性,唯一候选才敢认定。
+        assertEquals(37.0, section(p, "1-1").min!!, 0.001)
+        assertTrue(section(p, "1-1").note!!.contains("弹性 2～8"))
+        assertEquals(49.0, section(p, "1").min!!, 0.001)      // 37 + 通识 12
+        assertEquals(144.0, p.required!!, 0.001)              // 49 + 70 + 25,在方案的 140~152 内
+    }
+
+    @Test
+    fun `英语专业与留学生不套用分级`() {
+        listOf(
+            plan().copy(title = "汉语言文学（留学生）", track = "留学生"),
+            plan().copy(title = "英语", major = "英语", school = "外国语学院"),
+        ).forEach { tweaked ->
+            val p = CurriculumEngine.computeProgress(tweaked, emptyList(), emptyList(), englishLevel = "C")
+            assertEquals(2.0, section(p, "1-1").min!!, 0.001)
+            assertEquals(22.0, section(p, "1").min!!, 0.001)
+        }
     }
 
     @Test
@@ -440,6 +477,15 @@ class CurriculumEngineTest {
         )
         assertEquals(24.0, section(withTrack, "2-2").min!!, 0.001)
         assertEquals(46.0 + 24.0 + 6.0, section(withTrack, "2").min!!, 0.001)
+
+        // 英语折在公共必修课里,分级同样能定住这一类,并把大类与毕业总学分一起落下来。
+        val graded = CurriculumEngine.computeProgress(
+            real, emptyList(), emptyList(), englishLevel = "B", directions = mapOf("2-2" to "2.2-1"),
+        )
+        assertEquals(37.0, section(graded, "1-1").min!!, 0.001)   // 33 + (6 - 2)
+        assertEquals(49.0, section(graded, "1").min!!, 0.001)     // 37 + 通识 12
+        assertEquals(76.0, section(graded, "2").min!!, 0.001)
+        assertEquals(150.0, graded.required!!, 0.001)             // 49 + 76 + 25,在方案的 140~152 内
     }
 
     @Test

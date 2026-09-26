@@ -337,7 +337,9 @@ fun CurriculumProfileScreen(nav: NavHostController, vm: CurriculumProfileViewMod
             }
             item {
                 Text(
-                    "选定分级后,大学英语按该学分固定;不足 8 学分的差额按方案要求计入通识教育课。",
+                    "分级决定“公共必修课”里大学英语要修多少分（8/8/6/4/2，免修获 2 分）。" +
+                        "方案把英语单列成一类的就直接定住；折在公共必修课里的，按这份方案给的区间定住，" +
+                        "大类和毕业总学分跟着重算。英语专业和留学生按原文不分级，选了也不生效。",
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
