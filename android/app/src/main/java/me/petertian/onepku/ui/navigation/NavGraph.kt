@@ -32,6 +32,8 @@ import me.petertian.onepku.ui.card.CardScreen
 import me.petertian.onepku.ui.classroom.ClassroomScreen
 import me.petertian.onepku.ui.courses.CourseDetailScreen
 import me.petertian.onepku.ui.courses.CourseListScreen
+import me.petertian.onepku.ui.curriculum.CurriculumProfileScreen
+import me.petertian.onepku.ui.curriculum.CurriculumScreen
 import me.petertian.onepku.ui.grades.GradesScreen
 import me.petertian.onepku.ui.login.LoginScreen
 import me.petertian.onepku.ui.mine.MineScreen
@@ -51,6 +53,8 @@ object Routes {
     const val ASSIGNMENTS = "assignments"
     const val ASSIGNMENT_DETAIL = "assignment/{courseId}/{contentId}?title={title}"
     const val GRADES = "grades"
+    const val CURRICULUM = "curriculum"
+    const val CURRICULUM_PROFILE = "curriculumProfile"
     const val CARD = "card"
     const val CLASSROOM = "classroom"
     const val CALENDAR = "calendar"
@@ -135,6 +139,8 @@ fun AppNavHost() {
             ) { AssignmentDetailScreen(nav) }
 
             composable(Routes.GRADES) { GradesScreen(nav) }
+            composable(Routes.CURRICULUM) { CurriculumScreen(nav) }
+            composable(Routes.CURRICULUM_PROFILE) { CurriculumProfileScreen(nav) }
             composable(Routes.CARD) { CardScreen(nav) }
             composable(Routes.CLASSROOM) { ClassroomScreen(nav) }
             composable(Routes.CALENDAR) { CalendarScreen(nav) }
