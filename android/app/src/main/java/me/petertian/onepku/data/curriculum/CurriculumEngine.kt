@@ -6,8 +6,10 @@ import java.text.Normalizer
  * 培养方案完成度计算。匹配规则逐条对齐桌面端 src/lib/curriculum.ts,
  * 两边改了同一套规则时应当一起改。匹配不上的课程进入"待确认",不做猜测。
  *
- * 两处与桌面端不同:一是有些方案不写大类总额(如 2025 物理学院-物理学),
- * 这里回退到课程组的 min/max;二是"在修"的课程不计入任何统计,只单独列出。
+ * 三处与桌面端不同:有些方案(如 2025 物理学院-物理学)不写大类总额、也不给
+ * 按方向分列的那一类的学分要求,这里回退到课程组的 min/max,并允许选定细分方向;
+ * 在修课程的学分不从方案回填(教学网课程列表没有学分字段,方案里那些行大多也没
+ * 解析出来),由用户在待确认页手工填,填了才按桌面端的方式算淡色弧与缺口。
  */
 object CurriculumEngine {
 
@@ -39,6 +41,7 @@ object CurriculumEngine {
         var note: String? = null,
     ) {
         var earned = 0.0
+        var inProgress = 0.0
         var passedCount = 0
 
         /** 已计入统计的课程(已通过或未通过);在修的另存在 [inProgressCourses]。 */
@@ -54,8 +57,11 @@ object CurriculumEngine {
         val ignored: List<MatchedCourse>,
         val required: Double?,
         val earned: Double,
+        val inProgress: Double,
         val unknownCredits: Int,
         val usesRequirements: Boolean,
+        /** 有没有在修的课程,决定要不要显示"待确认"这一页(那里填学分)。 */
+        val hasInProgress: Boolean,
     )
 
     /** 成绩表里的一行;term 用于展示(如 "25-26·1"),year 用于推断入学年份(如 "25-26")。 */
@@ -203,11 +209,87 @@ object CurriculumEngine {
         val ceiling = parent.max?.let { it - known }?.takeIf { it >= rest }
         s.max = ceiling ?: rest
         s.requirement = if (ceiling != null && ceiling != rest) "${fmt(rest)}～${fmt(ceiling)} 学分" else "${fmt(rest)} 学分"
-        s.note = "方案把这一类按方向或模块分列,没有统一的学分要求;这里按「${parent.name} ${fmt(min)} 学分」扣除其余子系列推出"
+        s.note = "方案把这一类按方向或模块分列,没有统一的学分要求;这里按「${parent.name} ${fmt(min)} 学分」扣除其余子系列推出。选定方向即可按该方向计算"
+    }
+
+    data class DirectionOption(val groupId: String, val name: String, val min: Double, val max: Double?)
+
+    /**
+     * 方案把某一类按方向分列、自己不给总额(如物理学院的专业核心课:六个方向 18~24 学分)。
+     * 不选方向就不知道这一类要修多少,也只能把各方向的课混在一起。
+     * 父类已有总额的(如信科的专业选修课)不算分裂,那是模块清单而非互斥方向。
+     */
+    data class DirectionSplit(val sectionId: String, val name: String, val options: List<DirectionOption>)
+
+    fun directionSplits(plan: Plan): List<DirectionSplit> {
+        val usesRequirements = plan.requirements.size >= 4
+        val parentIds = plan.groups.map { it.id }.toSet()
+        return plan.groups.filter { it.min == null && parentIds.contains(it.parent) }.mapNotNull { parent ->
+            val options = plan.groups.filter {
+                it.parent == parent.id && it.min != null &&
+                    (it.id.startsWith("${parent.id}-") || it.id.startsWith("${parent.id}."))
+            }
+            if (options.size < 2) return@mapNotNull null
+            val sectionId = if (usesRequirements) parent.id.replace('.', '-') else parent.id
+            DirectionSplit(
+                sectionId,
+                parent.name.trim(),
+                options.map { DirectionOption(it.id, tidy(it.name), it.min!!, it.max) },
+            )
+        }
+    }
+
+    /** 方案 PDF 里的对齐空格会变成"应用物理学二（计算机交叉）   ：20 学分"。 */
+    private fun tidy(name: String): String =
+        name.replace(Regex("\\s*：\\s*"), "：").replace(Regex("\\s+"), " ").trim()
+
+    /** 用户选定方向后,这一类按该方向的学分计;其余方向独有的课不再算进这一类。 */
+    private fun applyDirection(
+        split: DirectionSplit,
+        flat: Map<String, Section>,
+        plan: Plan,
+        chosen: String,
+    ): Set<String> {
+        val section = flat[split.sectionId] ?: return emptySet()
+        val option = split.options.firstOrNull { it.groupId == chosen } ?: return emptySet()
+        section.min = option.min
+        section.max = option.max ?: option.min
+        section.requirement = "${fmt(option.min)} 学分"
+        section.note = "已选方向「${option.name}」,这一类按 ${fmt(option.min)} 学分计"
+
+        val group = plan.groups.first { it.id == option.groupId }
+        val kept = (group.courses.map { normalizeCourseName(it.name) } +
+            group.alternatives.map { normalizeCourseName(it.name) }).toSet()
+        val skip = HashSet<String>()
+        for (sibling in plan.groups.filter {
+            it.parent == group.parent && it.id != group.id && split.options.any { o -> o.groupId == it.id }
+        }) {
+            val others = sibling.courses.map { normalizeCourseName(it.name) } +
+                sibling.alternatives.map { normalizeCourseName(it.name) }
+            for (key in others) {
+                if (key.isNotEmpty() && !kept.contains(key)) skip.add(key)
+            }
+        }
+        return skip
+    }
+
+    /** 方向定了以后,大类的总额按各子系列求和;落在方案原本给的区间内才敢改。 */
+    private fun recomputeTopTotal(top: Section, floor: Double, ceiling: Double) {
+        if (top.children.isEmpty()) return
+        if (top.children.any { it.min == null }) return
+        val min = top.children.sumOf { it.min!! }
+        val max = top.children.sumOf { it.max ?: it.min!! }
+        if (min < floor || min > ceiling) return
+        top.min = min
+        top.max = max
+        top.requirement = if (max > min) "${fmt(min)}～${fmt(max)} 学分" else "${fmt(min)} 学分"
     }
 
     /** 把方案整理成两层学分系列,并建立课程名索引。 */
-    private fun buildSections(plan: Plan): Triple<List<Section>, Index, Boolean> {
+    private fun buildSections(
+        plan: Plan,
+        directions: Map<String, String>,
+    ): Triple<List<Section>, Index, Boolean> {
         val usesRequirements = plan.requirements.size >= 4
         val flat = LinkedHashMap<String, Section>()
         val sections = mutableListOf<Section>()
@@ -246,7 +328,6 @@ object CurriculumEngine {
                 flat[rid] = s
             }
             sections.forEach { top -> top.children.sortWith { a, b -> compareSectionIds(a.id, b.id) } }
-            sections.forEach(::deriveMissingTotals)
         } else {
             for (g in plan.groups.filter { it.parent == null }) {
                 val s = section(g.id, g.name, g.requirement, g.min, g.max, g.unit, g.note)
@@ -263,7 +344,20 @@ object CurriculumEngine {
                 if (parent != null) parent.children.add(s) else sections.add(s)
                 flat[g.id] = s
             }
-            sections.forEach(::deriveMissingTotals)
+        }
+        sections.forEach(::deriveMissingTotals)
+
+        // 选定细分方向后,这一类按该方向的学分计,其余方向独有的课不再算进来。
+        val skip = HashSet<String>()
+        val touched = mutableListOf<Section>()
+        for (split in directionSplits(plan)) {
+            val chosen = directions[split.sectionId] ?: continue
+            skip += applyDirection(split, flat, plan, chosen)
+            sections.firstOrNull { top -> top.children.any { it.id == split.sectionId } }?.let(touched::add)
+        }
+        touched.forEach { top ->
+            val floor = top.min ?: return@forEach
+            recomputeTopTotal(top, floor, top.max ?: floor)
         }
 
         fun findChild(re: Regex): Section? =
@@ -305,12 +399,13 @@ object CurriculumEngine {
                 val sectionId = sectionForGroup(g, c.name) ?: continue
                 if (c.name.isEmpty()) continue
                 val key = normalizeCourseName(c.name)
+                if (skip.contains(key)) continue
                 if (!byName.containsKey(key)) byName[key] = Hit(sectionId, c.credits, MatchVia.NAME)
             }
             for (a in g.alternatives) {
                 if (a.name.isEmpty()) continue
                 val key = normalizeCourseName(a.name)
-                if (byName.containsKey(key)) continue
+                if (byName.containsKey(key) || skip.contains(key)) continue
                 val replaced = a.replaces?.let { byName[normalizeCourseName(it)] }
                 val sectionId = replaced?.sectionId ?: sectionForGroup(g, a.name) ?: continue
                 byName[key] = Hit(sectionId, a.credits, MatchVia.ALTERNATIVE)
@@ -320,7 +415,15 @@ object CurriculumEngine {
     }
 
     /** 六级瀑布:手动归类 → 精确名 → 变体基名 → 反向变体 → 公共课关键词 → 课程类别。 */
-    private fun assign(course: MatchedCourse, index: Index, overrides: Map<String, String>): MatchedCourse {
+    private fun assign(
+        course: MatchedCourse,
+        index: Index,
+        overrides: Map<String, String>,
+        backfill: Boolean = true,
+    ): MatchedCourse {
+        /** 在修课程的学分只认用户填的,不从方案回填(方案数据里那些行大多没解析出学分)。 */
+        fun creditsOf(fallback: Double?): Double? = if (backfill) course.credits ?: fallback else course.credits
+
         val key = normalizeCourseName(course.name)
         overrides[key]?.let { override ->
             return course.copy(
@@ -329,17 +432,17 @@ object CurriculumEngine {
             )
         }
         index.byName[key]?.let {
-            return course.copy(sectionId = it.sectionId, via = it.via, credits = course.credits ?: it.credits)
+            return course.copy(sectionId = it.sectionId, via = it.via, credits = creditsOf(it.credits))
         }
         val base = variantBase(key)
         if (base != key) {
             index.byName[base]?.let {
-                return course.copy(sectionId = it.sectionId, via = MatchVia.VARIANT, credits = course.credits ?: it.credits)
+                return course.copy(sectionId = it.sectionId, via = MatchVia.VARIANT, credits = creditsOf(it.credits))
             }
         }
         for ((k, v) in index.byName) {
             if (variantBase(k) == key) {
-                return course.copy(sectionId = v.sectionId, via = MatchVia.VARIANT, credits = course.credits ?: v.credits)
+                return course.copy(sectionId = v.sectionId, via = MatchVia.VARIANT, credits = creditsOf(v.credits))
             }
         }
         if (!Regex("专业").containsMatchIn(course.category)) {
@@ -391,8 +494,10 @@ object CurriculumEngine {
         courses: List<CurrentCourse>,
         overrides: Map<String, String> = emptyMap(),
         englishLevel: String? = null,
+        directions: Map<String, String> = emptyMap(),
+        manualCredits: Map<String, Double> = emptyMap(),
     ): Progress {
-        val (sections, index, usesRequirements) = buildSections(plan)
+        val (sections, index, usesRequirements) = buildSections(plan, directions)
         if (!englishLevel.isNullOrEmpty() && usesRequirements) applyEnglishLevel(sections, index, englishLevel)
 
         val seen = HashSet<String>()
@@ -422,11 +527,12 @@ object CurriculumEngine {
             val key = normalizeCourseName(c.name)
             if (!seen.add(key)) continue
             matched.add(
+                // 教学网课程列表不含学分,在修课程的学分由用户在待确认页手工填。
                 assign(
                     MatchedCourse(
                         key = "course:${c.id}",
                         name = c.name,
-                        credits = null,
+                        credits = manualCredits[key],
                         status = CourseStatus.IN_PROGRESS,
                         term = c.semester ?: "本学期",
                         category = "在修",
@@ -436,6 +542,7 @@ object CurriculumEngine {
                     ),
                     index,
                     overrides,
+                    backfill = false,
                 ),
             )
         }
@@ -443,13 +550,18 @@ object CurriculumEngine {
         val pending = mutableListOf<MatchedCourse>()
         val ignored = mutableListOf<MatchedCourse>()
         var unknownCredits = 0
-        for (m in matched) {
+        for (raw in matched) {
+            val m = if (raw.credits == null) raw.copy(credits = manualCredits[normalizeCourseName(raw.name)]) else raw
             if (m.sectionId == IGNORE) { ignored.add(m); continue }
             if (m.status == CourseStatus.WITHDRAWN || m.status == CourseStatus.OTHER) { ignored.add(m); continue }
             val section = m.sectionId?.let { index.flat[it] }
             if (section == null) { pending.add(m); continue }
-            // 在修的课学分还没定,统一不计入统计,只单独列出。
-            if (m.status == CourseStatus.IN_PROGRESS) { section.inProgressCourses.add(m); continue }
+            if (m.status == CourseStatus.IN_PROGRESS) {
+                section.inProgressCourses.add(m)
+                // 桌面端把在修算作淡色弧与缺口抵扣;学分没填就只是列出。
+                if (m.credits != null) section.inProgress += m.credits!!
+                continue
+            }
             section.courses.add(m)
             when (m.status) {
                 CourseStatus.PASSED -> {
@@ -464,6 +576,7 @@ object CurriculumEngine {
             for (child in s.children) {
                 rollup(child)
                 s.earned += child.earned
+                s.inProgress += child.inProgress
                 s.passedCount += child.passedCount
             }
         }
@@ -475,8 +588,10 @@ object CurriculumEngine {
             ignored = ignored,
             required = plan.totalCredits?.min,
             earned = sections.sumOf { it.earned },
+            inProgress = sections.sumOf { it.inProgress },
             unknownCredits = unknownCredits,
             usesRequirements = usesRequirements,
+            hasInProgress = matched.any { it.status == CourseStatus.IN_PROGRESS },
         )
     }
 

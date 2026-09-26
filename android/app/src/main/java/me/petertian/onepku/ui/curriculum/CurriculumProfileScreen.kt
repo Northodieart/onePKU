@@ -81,6 +81,10 @@ data class ProfileUiState(
     val versions: List<Int> = emptyList(),
     val schools: List<String> = emptyList(),
     val plans: List<PlanIndexEntry> = emptyList(),
+    /** 当前方案里按方向分列的那些类。 */
+    val splits: List<CurriculumEngine.DirectionSplit> = emptyList(),
+    /** 学分系列 id → 选中的方向课程组 id。 */
+    val directions: Map<String, String> = emptyMap(),
 )
 
 @HiltViewModel
@@ -101,6 +105,7 @@ class CurriculumProfileViewModel @Inject constructor(
                 planId = saved.planId,
                 secondaryPlanId = saved.secondaryPlanId,
                 englishLevel = saved.englishLevel,
+                directions = profiles.directionsFor(saved.planId),
             )
         }
         // index.json 有 700 多 KB,首次读盘放 IO 线程,避免卡住界面。
@@ -114,7 +119,18 @@ class CurriculumProfileViewModel @Inject constructor(
                 )
             }
             refreshLists()
+            loadSplits()
             infer()
+        }
+    }
+
+    /** 选定方案后读它有没有按方向分列的类;读盘放 IO 线程。 */
+    private fun loadSplits() {
+        val planId = _ui.value.planId
+        viewModelScope.launch(kotlinx.coroutines.Dispatchers.IO) {
+            val splits = if (planId == null) emptyList() else CurriculumEngine.directionSplits(repo.plans.plan(planId))
+            if (_ui.value.planId != planId) return@launch
+            _ui.update { it.copy(splits = splits, directions = profiles.directionsFor(planId)) }
         }
     }
 
@@ -180,29 +196,46 @@ class CurriculumProfileViewModel @Inject constructor(
         refreshLists()
     }
 
-    fun setPlan(id: String?) = _ui.update { it.copy(planId = id) }
+    fun setPlan(id: String?) {
+        _ui.update { it.copy(planId = id, directions = if (id == null) emptyMap() else it.directions) }
+        loadSplits()
+    }
 
     fun setSecondary(id: String?) = _ui.update { it.copy(secondaryPlanId = id) }
 
     fun setEnglish(level: String?) = _ui.update { it.copy(englishLevel = level) }
+
+    /** 方向只改草稿,点保存才落盘;传 null 表示不选。 */
+    fun setDirection(sectionId: String, groupId: String?) {
+        _ui.update {
+            it.copy(directions = it.directions.toMutableMap().apply { if (groupId == null) remove(sectionId) else put(sectionId, groupId) })
+        }
+    }
 
     /** 直接采用推断给出的候选。 */
     fun applyCandidate(candidate: CurriculumEngine.Candidate) {
         val entry = repo.plans.entry(candidate.id) ?: return
         _ui.update { it.copy(version = entry.cohort, school = entry.school, planId = entry.id) }
         refreshLists()
+        loadSplits()
     }
 
     fun save(onDone: () -> Unit) {
         val state = _ui.value
         val planId = state.planId ?: return
+        val saved = profiles.current()
+        val prefix = "$planId|"
         profiles.save(
             CurriculumProfile(
                 cohort = state.cohort,
                 planId = planId,
                 secondaryPlanId = state.secondaryPlanId?.takeIf { it != planId },
                 englishLevel = state.englishLevel,
-                overrides = profiles.current().overrides,
+                overrides = saved.overrides,
+                // 方向按方案隔离,换方案时别的方案的选择要留着。
+                directions = saved.directions.filterKeys { !it.startsWith(prefix) } +
+                    state.directions.mapKeys { (sectionId, _) -> "$prefix$sectionId" },
+                manualCredits = saved.manualCredits,
                 inferred = state.inference?.candidates?.isNotEmpty() == true,
             ),
         )
@@ -257,6 +290,22 @@ fun CurriculumProfileScreen(nav: NavHostController, vm: CurriculumProfileViewMod
             } else {
                 items(ui.plans, key = { "main-${it.id}" }) { entry ->
                     PlanRow(entry, selected = ui.planId == entry.id, onPick = { vm.setPlan(entry.id) })
+                }
+            }
+            // 方案把某一类按方向分列时,不选方向就不知道该按多少学分算。
+            ui.splits.forEach { split ->
+                item { SectionLabel("${split.name} · 细分方向") }
+                item {
+                    Text(
+                        "方案里这一类按方向分列、没有统一的学分要求,选准才算得对。",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
+                item {
+                    ChipRow(split.options.map { it.groupId to it.name }, ui.directions[split.sectionId], "方向") { g, _ ->
+                        vm.setDirection(split.sectionId, g)
+                    }
                 }
             }
             item { SectionLabel("双学位 / 辅修（可选）") }
