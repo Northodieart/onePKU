@@ -4,6 +4,7 @@ import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -35,6 +36,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -59,6 +61,7 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
@@ -67,11 +70,15 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavHostController
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import me.petertian.onepku.data.curriculum.CurriculumEngine
 import me.petertian.onepku.data.curriculum.CurriculumEngine.MatchedCourse
 import me.petertian.onepku.data.curriculum.CurriculumEngine.Progress
@@ -101,21 +108,21 @@ class CurriculumViewModel @Inject constructor(
 ) : ViewModel() {
     private val _ui = MutableStateFlow(CurriculumUiState())
     val ui: StateFlow<CurriculumUiState> = _ui.asStateFlow()
+    private var settle: Job? = null
 
     init { reload() }
 
-    fun reload() {
+    /** silent = 保留上一次结果,不闪 loading。 */
+    fun reload(silent: Boolean = false) {
         val planId = profiles.current().planId
         if (planId.isNullOrEmpty()) {
             _ui.update { it.copy(hasProfile = false, content = UiData.Loading, planTitle = "") }
             return
         }
-        _ui.update { it.copy(hasProfile = true, content = UiData.Loading) }
+        if (!silent) _ui.update { it.copy(hasProfile = true, content = UiData.Loading) }
         viewModelScope.launch {
             // index.json 有 700 多 KB,读盘与方案解析都放 IO 线程。
-            val title = kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.IO) {
-                repo.plans.entry(planId)?.title.orEmpty()
-            }
+            val title = withContext(Dispatchers.IO) { repo.plans.entry(planId)?.title.orEmpty() }
             _ui.update {
                 it.copy(
                     planTitle = title,
@@ -133,8 +140,21 @@ class CurriculumViewModel @Inject constructor(
     fun classify(courseName: String, sectionId: String?) {
         profiles.setOverride(courseName, sectionId)
         closeChooser()
-        reload()
+        reload(silent = true)
     }
+
+    /** 在修课程的学分:教学网给不出,只能填。边打字边重算太费网络,停一下再算。 */
+    fun setCredit(courseName: String, credits: Double?) {
+        profiles.setManualCredit(courseName, credits)
+        settle?.cancel()
+        settle = viewModelScope.launch {
+            delay(600)
+            reload(silent = true)
+        }
+    }
+
+    fun creditOf(courseName: String): Double? =
+        profiles.current().manualCredits[CurriculumEngine.normalizeCourseName(courseName)]
 
     fun openChooser(name: String) = _ui.update { it.copy(choosingFor = name) }
 
@@ -190,7 +210,7 @@ fun CurriculumScreen(nav: NavHostController, vm: CurriculumViewModel = hiltViewM
     ) { padding ->
         when (val data = ui.content) {
             is UiData.Loading -> if (ui.hasProfile) LoadingBox(message = "方案读取中…") else NoProfile(padding, nav)
-            is UiData.Failure -> ErrorBox(data.message, onRetry = vm::reload)
+            is UiData.Failure -> ErrorBox(data.message, onRetry = { vm.reload() })
             is UiData.Ready -> ProgressPager(
                 progress = data.value.second,
                 padding = padding,
@@ -234,7 +254,7 @@ private fun ProgressPager(
     val titles = buildList {
         add("毕业总学分")
         progress.sections.forEach { add(it.name) }
-        if (progress.pending.isNotEmpty() || progress.ignored.isNotEmpty()) add("待确认")
+        if (progress.pending.isNotEmpty() || progress.ignored.isNotEmpty() || progress.hasInProgress) add("待确认")
     }
     // 归入一门课后会重新计算完成度,页面不能跳回第一页,所以页码记在调用方。
     val pagerState = rememberPagerState(
@@ -297,12 +317,13 @@ private fun TotalPage(progress: Progress) {
         item {
             RingHeader(
                 value = progress.earned,
+                pending = progress.inProgress,
                 target = progress.required,
                 unit = "学分",
                 requirement = progress.plan.totalCredits?.let {
                     if (it.max > it.min) "${fmt(it.min)}～${fmt(it.max)} 学分" else "${fmt(it.min)} 学分"
                 },
-                gap = progress.required?.let { maxOf(0.0, it - progress.earned) },
+                gap = progress.required?.let { maxOf(0.0, it - progress.earned - progress.inProgress) },
             )
         }
         if (progress.required == null) {
@@ -328,7 +349,7 @@ private fun TotalPage(progress: Progress) {
             Card(Modifier.fillMaxWidth()) {
                 Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
                     Text("各大类", style = MaterialTheme.typography.titleSmall)
-                    progress.sections.forEach { SectionBar(it, valueOf(it)) }
+                    progress.sections.forEach { SectionBar(it) }
                 }
             }
         }
@@ -339,7 +360,8 @@ private fun TotalPage(progress: Progress) {
 @Composable
 private fun SectionPage(section: Section) {
     val value = valueOf(section)
-    val gap = section.min?.let { maxOf(0.0, it - value) }
+    val pending = pendingOf(section)
+    val gap = if (section.unit == "学时") null else section.min?.let { maxOf(0.0, it - value - pending) }
     LazyColumn(
         Modifier.fillMaxSize(),
         contentPadding = PaddingValues(16.dp),
@@ -349,10 +371,11 @@ private fun SectionPage(section: Section) {
         item {
             RingHeader(
                 value = value,
+                pending = pending,
                 target = section.min,
                 unit = section.unit ?: "学分",
                 requirement = section.requirement,
-                gap = if (section.unit == "学时") null else gap,
+                gap = gap,
             )
         }
         section.note?.let {
@@ -365,7 +388,7 @@ private fun SectionPage(section: Section) {
                 Card(Modifier.fillMaxWidth()) {
                     Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
                         Text("子系列", style = MaterialTheme.typography.titleSmall)
-                        section.children.forEach { SectionBar(it, valueOf(it)) }
+                        section.children.forEach { SectionBar(it) }
                     }
                 }
             }
@@ -378,6 +401,7 @@ private fun SectionPage(section: Section) {
 @Composable
 private fun RingHeader(
     value: Double,
+    pending: Double,
     target: Double?,
     unit: String,
     requirement: String?,
@@ -388,9 +412,13 @@ private fun RingHeader(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(4.dp),
     ) {
-        CurriculumRing(value, target)
+        CurriculumRing(value, pending, target)
         Text(
-            target?.let { "已获 ${fmt(value)} / ${fmt(it)} $unit" } ?: "已获 ${fmt(value)} $unit",
+            buildString {
+                append("已修 ${fmt(value)}")
+                if (pending > 0) append(" + 在修 ${fmt(pending)}")
+                target?.let { append(" / ${fmt(it)} $unit") } ?: append(" $unit")
+            },
             style = MaterialTheme.typography.titleMedium,
             fontWeight = FontWeight.SemiBold,
         )
@@ -417,11 +445,34 @@ private fun fmt(value: Double?): String = CurriculumEngine.fmt(value)
 @Composable
 private fun PendingPage(progress: Progress, vm: CurriculumViewModel) {
     var showIgnored by remember { mutableStateOf(false) }
+    // 在修的课程不管有没有归上类,都在这页填学分——教学网不给学分,方案里那些行也大多没解析出来。
+    val doing = inProgressOf(progress.sections) +
+        progress.pending.filter { it.status == CurriculumEngine.CourseStatus.IN_PROGRESS }.map { it to "未归类" }
     LazyColumn(
         Modifier.fillMaxSize(),
         contentPadding = PaddingValues(16.dp),
         verticalArrangement = Arrangement.spacedBy(10.dp),
     ) {
+        if (doing.isNotEmpty()) {
+            item {
+                Text(
+                    "在修课程学分",
+                    style = MaterialTheme.typography.titleSmall,
+                    modifier = Modifier.fillMaxWidth(),
+                )
+            }
+            item {
+                Text(
+                    "教学网的课程列表里没有学分这一项,填过的课才会算进圆环和缺口。",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.fillMaxWidth(),
+                )
+            }
+            items(doing, key = { "credit-${it.first.key}" }) { (course, owner) ->
+                CreditRow(course, owner, vm)
+            }
+        }
         if (progress.pending.isEmpty()) {
             item { Text("没有待确认的课程", style = MaterialTheme.typography.bodyMedium) }
         } else {
@@ -505,28 +556,35 @@ private fun ClassifierDialog(
 }
 
 @Composable
-private fun SectionBar(section: Section, value: Double) {
+private fun SectionBar(section: Section) {
+    val value = valueOf(section)
+    val pending = pendingOf(section)
     val target = section.min
     val unit = section.unit ?: "学分"
     Column {
         Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
             Text(section.name, style = MaterialTheme.typography.bodySmall)
             Text(
-                target?.let { "${fmt(value)} / ${fmt(it)} $unit" } ?: "${fmt(value)} $unit",
+                buildString {
+                    append(fmt(value))
+                    if (pending > 0) append(" + ${fmt(pending)}")
+                    target?.let { append(" / ${fmt(it)}") }
+                    append(" $unit")
+                },
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
         }
         if (target != null && target > 0) {
             LinearProgressIndicator(
-                progress = { (value / target).toFloat().coerceIn(0f, 1f) },
+                progress = { ((value + pending) / target).toFloat().coerceIn(0f, 1f) },
                 modifier = Modifier.fillMaxWidth().height(6.dp),
             )
         }
     }
 }
 
-/** 已计入与在修两份列表;父级页面把子系列的课一并列出,并标注归属。 */
+/** 已修与在修两份列表;父级页面把子系列的课一并列出,并标注归属。 */
 private fun LazyListScope.courseLists(
     courses: List<Pair<MatchedCourse, String>>,
     doing: List<Pair<MatchedCourse, String>>,
@@ -543,16 +601,22 @@ private fun LazyListScope.courseLists(
         return
     }
     if (courses.isNotEmpty()) {
-        item { Text("已计入课程 ${courses.size} 门", style = MaterialTheme.typography.titleSmall) }
+        item { Text("已修课程 ${courses.size} 门", style = MaterialTheme.typography.titleSmall) }
         items(courses, key = { it.first.key }) { CourseRow(it.first, if (showOwner) it.second else null) }
     }
     if (doing.isNotEmpty()) {
+        val missing = doing.count { it.first.credits == null }
         item {
-            Text(
-                "在修 ${doing.size} 门（不计入统计）",
-                style = MaterialTheme.typography.titleSmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
+            Column(Modifier.fillMaxWidth()) {
+                Text("在修课程 ${doing.size} 门", style = MaterialTheme.typography.titleSmall)
+                if (missing > 0) {
+                    Text(
+                        "其中 $missing 门还没填学分,未计入圆环;在末页逐门填写",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.error,
+                    )
+                }
+            }
         }
         items(doing, key = { "doing-${it.first.key}" }) { CourseRow(it.first, if (showOwner) it.second else null) }
     }
@@ -575,41 +639,86 @@ private fun CourseRow(course: MatchedCourse, owner: String? = null) {
             Column(Modifier.weight(1f)) {
                 Text(course.name, style = MaterialTheme.typography.bodyMedium, maxLines = 2)
                 Text(
-                    listOfNotNull(
-                        owner,
-                        course.term,
-                        course.score.ifBlank { null },
-                        course.credits?.let { "${fmt(it)} 学分" },
-                    ).filter { it.isNotBlank() }.joinToString(" · "),
+                    listOfNotNull(owner, course.term, course.score.ifBlank { null })
+                        .filter { it.isNotBlank() }.joinToString(" · "),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
             }
-            Text(statusLabel(course), style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.primary)
+            Text(
+                statusLabel(course),
+                style = MaterialTheme.typography.labelMedium,
+                color = MaterialTheme.colorScheme.primary,
+            )
         }
     }
 }
 
-private fun statusLabel(course: MatchedCourse): String = when (course.status) {
-    CurriculumEngine.CourseStatus.IN_PROGRESS -> "在修"
-    CurriculumEngine.CourseStatus.PASSED -> "已获"
-    CurriculumEngine.CourseStatus.FAILED -> "未通过"
-    CurriculumEngine.CourseStatus.WITHDRAWN -> "退课"
-    CurriculumEngine.CourseStatus.OTHER -> "其他"
+/** 在修课程的学分输入框;填完即写入本机并重算,不用等保存按钮。 */
+@Composable
+private fun CreditRow(course: MatchedCourse, owner: String, vm: CurriculumViewModel) {
+    var text by remember(course.key) { mutableStateOf(course.credits?.let { fmt(it) } ?: "") }
+    Card(Modifier.fillMaxWidth()) {
+        Row(
+            Modifier.padding(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 8.dp).fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Column(Modifier.weight(1f)) {
+                Text(course.name, style = MaterialTheme.typography.bodyMedium, maxLines = 2)
+                Text(
+                    listOfNotNull(owner, course.term).joinToString(" · "),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            }
+            OutlinedTextField(
+                value = text,
+                onValueChange = { raw ->
+                    val v = raw.filter { it.isDigit() || it == '.' }.take(5)
+                    val parsed = v.toDoubleOrNull()
+                    text = v
+                    // "3." 这种半截不算改;清空表示撤销。
+                    if (v.isEmpty() || parsed != null) vm.setCredit(course.name, parsed)
+                },
+                singleLine = true,
+                suffix = { Text("学分") },
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
+                modifier = Modifier.width(112.dp),
+            )
+        }
+    }
+}
+
+/** 右侧优先显示拿到多少学分,拿不到才退回状态词。 */
+private fun statusLabel(course: MatchedCourse): String {
+    val credits = course.credits
+    if (credits != null && course.status != CurriculumEngine.CourseStatus.FAILED) return "${fmt(credits)} 学分"
+    return when (course.status) {
+        CurriculumEngine.CourseStatus.IN_PROGRESS -> "在修·待填学分"
+        CurriculumEngine.CourseStatus.PASSED -> "已获"
+        CurriculumEngine.CourseStatus.FAILED -> "未通过"
+        CurriculumEngine.CourseStatus.WITHDRAWN -> "退课"
+        CurriculumEngine.CourseStatus.OTHER -> "其他"
+    }
 }
 
 /** 单位决定度量:按门数的系列看点数,其余看学分。 */
 private fun valueOf(section: Section): Double =
     if (section.unit == "门") section.passedCount.toDouble() else section.earned
 
-/** 圆环:达标换成功色,没有总额时只画底环。 */
+/** 按门计数的系列不画在修弧——门数和学分不是一个量纲。 */
+private fun pendingOf(section: Section): Double =
+    if (section.unit == "门") 0.0 else section.inProgress
+
+/** 圆环:已修为实色弧,在修按桌面端配色画成淡色弧延伸,达标换成功色。 */
 @Composable
-private fun CurriculumRing(value: Double, target: Double?) {
+private fun CurriculumRing(value: Double, pending: Double, target: Double?) {
     val done = MaterialTheme.colorScheme.primary
     val success = MaterialTheme.colorScheme.tertiary
     val track = MaterialTheme.colorScheme.surfaceVariant
     val ratio = if (target != null && target > 0) (value / target).toFloat().coerceIn(0f, 1f) else 0f
-    val reached = target != null && value >= target
+    val withPending = if (target != null && target > 0) ((value + pending) / target).toFloat().coerceIn(0f, 1f) else 0f
+    val reached = target != null && value + pending >= target
 
     Box(contentAlignment = Alignment.Center) {
         Canvas(Modifier.size(128.dp)) {
@@ -625,6 +734,7 @@ private fun CurriculumRing(value: Double, target: Double?) {
                 )
             }
             arc(track, 360f)
+            if (withPending > ratio) arc(done.copy(alpha = 0.28f), 360f * withPending)
             arc(if (reached) success else done, 360f * ratio)
         }
         Column(horizontalAlignment = Alignment.CenterHorizontally) {

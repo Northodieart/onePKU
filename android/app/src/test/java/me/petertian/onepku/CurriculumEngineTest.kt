@@ -93,6 +93,10 @@ class CurriculumEngineTest {
                 "2.2-1", "2.2", name = "物理学：24 学分", min = 24.0, max = 24.0, unit = "学分",
                 courses = listOf(PlanCourse(name = "量子力学", credits = 4.0)),
             ),
+            PlanGroup(
+                "2.2-2", "2.2", name = "应用物理学一（应用物理与技术）：21 学分", min = 21.0, max = 21.0, unit = "学分",
+                courses = listOf(PlanCourse(name = "固体物理", credits = 3.0), PlanCourse(name = "量子力学", credits = 4.0)),
+            ),
         ),
     )
 
@@ -221,7 +225,7 @@ class CurriculumEngineTest {
     }
 
     @Test
-    fun `在修课程单独列出且不计入统计`() {
+    fun `在修课程没填学分就不进统计`() {
         val p = CurriculumEngine.computeProgress(
             plan(),
             listOf(score("力学", "3", "80", "专业必修")),
@@ -231,22 +235,51 @@ class CurriculumEngineTest {
             ),
         )
         val major = section(p, "2-1")
-        // 在修的那门已与成绩表去重,只剩一门;它不进 courses,也不进 earned。
+        // 在修的那门已与成绩表去重,只剩一门;没填学分就不进 earned 也不进 inProgress。
         assertEquals(1, major.courses.size)
         assertEquals(1, major.inProgressCourses.size)
         assertEquals("高等数学A（一）", major.inProgressCourses.single().name)
         assertEquals(3.0, major.earned, 0.001)
+        assertEquals(0.0, major.inProgress, 0.001)
         assertEquals(1, major.passedCount)
         assertEquals(0, p.unknownCredits)
+        assertTrue(p.hasInProgress)
     }
 
     @Test
-    fun `成绩未公布的课也不计入统计`() {
+    fun `填了学分的在修课程按桌面端计入在修弧`() {
+        val p = CurriculumEngine.computeProgress(
+            plan(),
+            listOf(score("力学", "3", "80", "专业必修")),
+            listOf(CurrentCourse("c2", "高等数学A（一）", "25-26 学年第 1 学期", true)),
+            manualCredits = mapOf(CurriculumEngine.normalizeCourseName("高等数学A（一）") to 5.0),
+        )
+        val major = section(p, "2-1")
+        assertEquals(5.0, major.inProgress, 0.001)
+        assertEquals(3.0, major.earned, 0.001)
+        assertEquals(5.0, section(p, "2").inProgress, 0.001)
+        assertEquals(5.0, p.inProgress, 0.001)
+        assertEquals(3.0, p.earned, 0.001)
+    }
+
+    @Test
+    fun `在修课程的学分不从方案回填`() {
+        // 方案里"高等数学A（一）"写着 5 分,但在修的课只认用户填的。
+        val p = CurriculumEngine.computeProgress(
+            plan(), emptyList(), listOf(CurrentCourse("c2", "高等数学A（一）", "25-26 学年第 1 学期", true)),
+        )
+        assertEquals(null, section(p, "2-1").inProgressCourses.single().credits)
+        assertEquals(0.0, p.inProgress, 0.001)
+    }
+
+    @Test
+    fun `成绩未公布的课算在修不算已修`() {
         val p = CurriculumEngine.computeProgress(plan(), listOf(score("力学", "3", "未公布", "专业必修")), emptyList())
         val major = section(p, "2-1")
         assertEquals(0, major.courses.size)
         assertEquals(1, major.inProgressCourses.size)
         assertEquals(0.0, major.earned, 0.001)
+        assertEquals(3.0, major.inProgress, 0.001)
         assertEquals(0, p.unknownCredits)
     }
 
@@ -398,6 +431,64 @@ class CurriculumEngineTest {
         // 方向课表挂在 2.2-1 下,课程要归到补出来的 2-2,不能散在大类本身。
         assertEquals(4.0, section(p, "2-2").earned, 0.001)
         assertTrue(section(p, "2").courses.isEmpty())
+
+        // 真实方案把专业核心课分了五个方向;选定物理学方向后按 24 学分,大类回到 76。
+        val splits = CurriculumEngine.directionSplits(real)
+        assertEquals(listOf("2-2"), splits.map { it.sectionId })
+        assertEquals(5, splits.single().options.size)
+        val withTrack = CurriculumEngine.computeProgress(
+            real, emptyList(), emptyList(), directions = mapOf("2-2" to "2.2-1"),
+        )
+        assertEquals(24.0, section(withTrack, "2-2").min!!, 0.001)
+        assertEquals(46.0 + 24.0 + 6.0, section(withTrack, "2").min!!, 0.001)
+    }
+
+    @Test
+    fun `选定细分方向后按该方向的学分要求算,大类总额随之重算`() {
+        val splits = CurriculumEngine.directionSplits(physicsPlan())
+        assertEquals(1, splits.size)
+        assertEquals("2-2", splits.single().sectionId)
+        assertEquals("专业核心课", splits.single().name)
+        assertEquals(listOf("2.2-1", "2.2-2"), splits.single().options.map { it.groupId })
+
+        val p = CurriculumEngine.computeProgress(
+            physicsPlan(), emptyList(), emptyList(), directions = mapOf("2-2" to "2.2-1"),
+        )
+        assertEquals(24.0, section(p, "2-2").min!!, 0.001)
+        // 46 + 24 + 6 = 76,落在方案给的 70~76 区间里才敢改大类总额。
+        assertEquals(76.0, section(p, "2").min!!, 0.001)
+        assertEquals(76.0, section(p, "2").max!!, 0.001)
+        assertTrue(section(p, "2-2").note!!.contains("物理学"))
+
+        val other = CurriculumEngine.computeProgress(
+            physicsPlan(), emptyList(), emptyList(), directions = mapOf("2-2" to "2.2-2"),
+        )
+        assertEquals(21.0, section(other, "2-2").min!!, 0.001)
+        assertEquals(73.0, section(other, "2").min!!, 0.001)
+    }
+
+    @Test
+    fun `没选的方向独有的课不计入这一类,共享的课照旧`() {
+        val directions = mapOf("2-2" to "2.2-1")
+        val rows = listOf(score("固体物理", "3", "90", "专业必修"), score("量子力学", "4", "90", "专业必修"))
+        val p = CurriculumEngine.computeProgress(physicsPlan(), rows, emptyList(), directions = directions)
+        // 量子力学两个方向表里都有,选了物理学方向仍算专业核心课。
+        assertEquals(4.0, section(p, "2-2").earned, 0.001)
+        // 固体物理只在应用物理学一的方向表里,不能替物理学方向凑学分。
+        assertTrue(p.pending.any { it.name == "固体物理" })
+    }
+
+    @Test
+    fun `父类已有总额的模块清单不当成方向`() {
+        // 信科那种"专业选修课 20 学分 + 六个模块"的方案不该冒出方向选择。
+        val grouped = plan().copy(
+            groups = plan().groups + listOf(
+                PlanGroup("3.2", "3", name = "模块清单", min = 12.0, max = 12.0, unit = "学分"),
+                PlanGroup("3.2-1", "3.2", name = "模块一", min = 6.0, max = 6.0, unit = "学分"),
+                PlanGroup("3.2-2", "3.2", name = "模块二", min = 6.0, max = 6.0, unit = "学分"),
+            ),
+        )
+        assertTrue(CurriculumEngine.directionSplits(grouped).isEmpty())
     }
 
     private fun index(): List<PlanIndexEntry> = listOf(

@@ -25,6 +25,10 @@ data class CurriculumProfile(
     val secondaryPlanId: String? = null,
     val englishLevel: String? = null,
     val overrides: Map<String, String> = emptyMap(),
+    /** 细分方向:学分系列 id → 选中的课程组 id(如 "2-2" → "2.2-1")。 */
+    val directions: Map<String, String> = emptyMap(),
+    /** 在修课程的学分:规范化课程名 → 学分。教学网不给学分,只能手填。 */
+    val manualCredits: Map<String, Double> = emptyMap(),
     val inferred: Boolean = false,
 )
 
@@ -71,6 +75,29 @@ class CurriculumProfileStore @Inject constructor(@ApplicationContext context: Co
         }
     }
 
+    /** 方向选择按方案隔离:"2-2" 在不同方案里指的是不同的一类。 */
+    fun setDirection(planId: String, sectionId: String, groupId: String?) {
+        val key = "$planId|$sectionId"
+        val next = current().directions.toMutableMap()
+        if (groupId == null) next.remove(key) else next[key] = groupId
+        save(current().copy(directions = next))
+    }
+
+    fun directionsFor(planId: String?): Map<String, String> {
+        if (planId.isNullOrEmpty()) return emptyMap()
+        val prefix = "$planId|"
+        return current().directions.filterKeys { it.startsWith(prefix) }
+            .mapKeys { it.key.removePrefix(prefix) }
+    }
+
+    /** 在修课程的学分只能手填:教学网课程列表里没有这个字段。 */
+    fun setManualCredit(courseName: String, credits: Double?) {
+        val key = CurriculumEngine.normalizeCourseName(courseName)
+        val next = current().manualCredits.toMutableMap()
+        if (credits == null || credits <= 0) next.remove(key) else next[key] = credits
+        save(current().copy(manualCredits = next))
+    }
+
     private fun load(): CurriculumProfile = try {
         prefs.getString(KEY, null)?.let { json.decodeFromString(CurriculumProfile.serializer(), it) }
             ?: CurriculumProfile()
@@ -112,12 +139,15 @@ class CurriculumRepository @Inject constructor(
     /** 指定方案的完成度;成绩读取失败会抛出,由界面分块显示。 */
     suspend fun progress(planId: String): Pair<Plan, Progress> {
         val plan = store.plan(planId)
+        val profile = profiles.current()
         val progress = CurriculumEngine.computeProgress(
             plan = plan,
             scores = scoreRows(),
             courses = currentRows(),
             overrides = profiles.overridesFor(planId),
-            englishLevel = profiles.current().englishLevel,
+            englishLevel = profile.englishLevel,
+            directions = profiles.directionsFor(planId),
+            manualCredits = profile.manualCredits,
         )
         return plan to progress
     }
