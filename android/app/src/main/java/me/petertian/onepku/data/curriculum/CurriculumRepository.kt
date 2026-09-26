@@ -90,11 +90,11 @@ class CurriculumProfileStore @Inject constructor(@ApplicationContext context: Co
             .mapKeys { it.key.removePrefix(prefix) }
     }
 
-    /** 在修课程的学分只能手填:教学网课程列表里没有这个字段。 */
+    /** 在修课程的学分只能手填:教学网课程列表里没有这个字段。0 分是有效值(习题课、部分思政课)。 */
     fun setManualCredit(courseName: String, credits: Double?) {
         val key = CurriculumEngine.normalizeCourseName(courseName)
         val next = current().manualCredits.toMutableMap()
-        if (credits == null || credits <= 0) next.remove(key) else next[key] = credits
+        if (credits == null) next.remove(key) else next[key] = credits
         save(current().copy(manualCredits = next))
     }
 

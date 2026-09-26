@@ -273,6 +273,44 @@ class CurriculumEngineTest {
     }
 
     @Test
+    fun `在修课程填 0 学分算填过了`() {
+        // 习题课与部分思政课确实是 0 分,0 不能当成"没填"。
+        val p = CurriculumEngine.computeProgress(
+            plan(), emptyList(), listOf(CurrentCourse("c2", "高等数学A（一）", "25-26 学年第 1 学期", true)),
+            manualCredits = mapOf(CurriculumEngine.normalizeCourseName("高等数学A（一）") to 0.0),
+        )
+        val major = section(p, "2-1")
+        assertEquals(0.0, major.inProgressCourses.single().credits!!, 0.001)
+        assertEquals(0.0, major.inProgress, 0.001)
+    }
+
+    @Test
+    fun `手填学分优先于成绩源自带的学分`() {
+        val p = CurriculumEngine.computeProgress(
+            plan(), listOf(score("力学", "3", "80", "专业必修")), emptyList(),
+            manualCredits = mapOf(CurriculumEngine.normalizeCourseName("力学") to 0.0),
+        )
+        val major = section(p, "2-1")
+        assertEquals(0.0, major.courses.single().credits!!, 0.001)
+        assertEquals(0.0, major.earned, 0.001)
+        assertEquals(1, major.passedCount)
+    }
+
+    @Test
+    fun `习题课不认作在修课程`() {
+        val p = CurriculumEngine.computeProgress(
+            plan(), emptyList(),
+            listOf(
+                CurrentCourse("c2", "高等数学A（一）", "25-26 学年第 1 学期", true),
+                CurrentCourse("c3", "高等数学A（一）习题课", "25-26 学年第 1 学期", true),
+            ),
+        )
+        val major = section(p, "2-1")
+        assertEquals(listOf("高等数学A（一）"), major.inProgressCourses.map { it.name })
+        assertTrue(p.pending.none { it.name.contains("习题") })
+    }
+
+    @Test
     fun `成绩未公布的课算在修不算已修`() {
         val p = CurriculumEngine.computeProgress(plan(), listOf(score("力学", "3", "未公布", "专业必修")), emptyList())
         val major = section(p, "2-1")
