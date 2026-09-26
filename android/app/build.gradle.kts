@@ -7,9 +7,29 @@ plugins {
     alias(libs.plugins.hilt)
 }
 
+// 培养方案数据由仓库根的 data/curriculum 提供,构建时同步进 assets,不在 android/ 下再存一份副本。
+// 与 src-tauri 引用 ../dist、../crates 是同一种仓库内依赖。
+val curriculumAssetsDir = layout.buildDirectory.dir("generated/curriculumAssets")
+
+val syncCurriculumAssets by tasks.registering(Copy::class) {
+    from(File(rootProject.projectDir, "../data/curriculum")) {
+        into("curriculum")
+    }
+    into(curriculumAssetsDir)
+}
+
+// 让资源合并任务等同步完成,否则 srcDir 只声明路径、不会触发拷贝。
+tasks.configureEach {
+    if (name.startsWith("merge") && name.endsWith("Assets")) {
+        dependsOn(syncCurriculumAssets)
+    }
+}
+
 android {
     namespace = "me.petertian.onepku"
     compileSdk = 35
+
+    sourceSets.getByName("main").assets.srcDir(curriculumAssetsDir)
 
     defaultConfig {
         applicationId = "me.petertian.onepku"
@@ -72,4 +92,6 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.kotlinx.coroutines.android)
     debugImplementation(libs.androidx.compose.ui.tooling)
+    testImplementation("junit:junit:4.13.2")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.9.0")
 }
