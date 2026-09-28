@@ -61,7 +61,7 @@ fun TodayScreen(nav: NavHostController, vm: TodayViewModel = hiltViewModel()) {
                             data = ui.assignments,
                             onRetry = vm::refresh,
                             isEmpty = { it.isEmpty() },
-                            emptyMessage = "没有临近截止的作业",
+                            emptyMessage = "暂无临近截止的作业",
                         ) { list ->
                             Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                                 list.take(5).forEach { a ->
@@ -178,5 +178,5 @@ fun deadlineLabel(epochMs: Long?): String {
     if (hours < 24) return "剩 ${hours} 小时"
     val days = hours / 24
     if (days < 7) return "剩 ${days} 天"
-    return SimpleDateFormat("M月d日 HH:mm", Locale.CHINA).format(Date(epochMs))
+    return SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.US).format(Date(epochMs))
 }

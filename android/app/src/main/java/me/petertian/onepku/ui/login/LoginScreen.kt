@@ -95,7 +95,7 @@ fun LoginScreen(nav: NavHostController, vm: LoginViewModel = hiltViewModel()) {
             if (ui.loggingIn) {
                 CircularProgressIndicator(Modifier.size(18.dp), strokeWidth = 2.dp)
                 Spacer(Modifier.size(8.dp))
-                Text("正在登录…")
+                Text("登录中…")
             } else {
                 Text("登录")
             }

@@ -61,6 +61,7 @@ import me.petertian.onepku.data.treehole.countsAsMajor
 import me.petertian.onepku.ui.components.ErrorBox
 import me.petertian.onepku.ui.components.LoadingBox
 import me.petertian.onepku.ui.components.UiData
+import me.petertian.onepku.ui.components.formatTerm
 import me.petertian.onepku.ui.navigation.back
 import javax.inject.Inject
 
@@ -324,21 +325,6 @@ private fun ScoreRow(e: ScoreEntry) {
             )
         }
     }
-}
-
-private fun formatTerm(termKey: String): String {
-    // termKey 形如 "25-26-1"
-    val parts = termKey.split("-")
-    if (parts.size == 3) {
-        val termName = when (parts[2]) {
-            "1" -> "秋"
-            "2" -> "春"
-            "3" -> "夏"
-            else -> parts[2]
-        }
-        return "20${parts[0]}-20${parts[1]} 学年 ${termName}季学期"
-    }
-    return termKey
 }
 
 @Composable

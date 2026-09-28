@@ -86,9 +86,11 @@ import me.petertian.onepku.data.curriculum.CurriculumEngine.Section
 import me.petertian.onepku.data.curriculum.CurriculumProfileStore
 import me.petertian.onepku.data.curriculum.CurriculumRepository
 import me.petertian.onepku.data.curriculum.Plan
+import me.petertian.onepku.ui.components.EmptyBox
 import me.petertian.onepku.ui.components.ErrorBox
 import me.petertian.onepku.ui.components.LoadingBox
 import me.petertian.onepku.ui.components.UiData
+import me.petertian.onepku.ui.components.formatTerm
 import me.petertian.onepku.ui.navigation.Routes
 import me.petertian.onepku.ui.navigation.back
 import kotlin.math.roundToInt
@@ -365,7 +367,7 @@ private fun TotalPage(progress: Progress, vm: CurriculumViewModel) {
         if (progress.unknownCredits > 0) {
             item {
                 Text(
-                    "另有 ${progress.unknownCredits} 门课程学分未知,未计入合计",
+                    "另有 ${progress.unknownCredits} 门学分未知,未计入合计",
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.error,
                 )
@@ -482,7 +484,7 @@ private fun PendingPage(progress: Progress, vm: CurriculumViewModel) {
         verticalArrangement = Arrangement.spacedBy(10.dp),
     ) {
         if (progress.pending.isEmpty()) {
-            item { Text("没有待确认的课程", style = MaterialTheme.typography.bodyMedium) }
+            item { EmptyBox("暂无待确认的课程", Modifier.fillMaxWidth()) }
         } else {
             // 整张卡可点,进同一个编辑框;不再在条目里塞一排按钮。
             items(progress.pending, key = { it.key }) { course ->
@@ -628,13 +630,7 @@ private fun LazyListScope.courseLists(
     vm: CurriculumViewModel,
 ) {
     if (courses.isEmpty() && doing.isEmpty()) {
-        item {
-            Text(
-                "这一类还没有计入的课程",
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
-        }
+        item { EmptyBox("这一类暂无计入的课程", Modifier.fillMaxWidth()) }
         return
     }
     if (doing.isNotEmpty()) {
@@ -679,7 +675,7 @@ private fun CourseRow(course: MatchedCourse, note: String? = null, vm: Curriculu
             Column(Modifier.weight(1f)) {
                 Text(course.name, style = MaterialTheme.typography.bodyMedium, maxLines = 2)
                 Text(
-                    listOfNotNull(note, course.term, course.score.ifBlank { null })
+                    listOfNotNull(note, formatTerm(course.term), course.score.ifBlank { null })
                         .filter { it.isNotBlank() }.joinToString(" · "),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,

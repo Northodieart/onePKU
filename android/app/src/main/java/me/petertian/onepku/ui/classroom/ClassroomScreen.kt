@@ -151,7 +151,7 @@ fun ClassroomScreen(nav: NavHostController, vm: ClassroomViewModel = hiltViewMod
                 is UiData.Failure -> ErrorBox(data.message, onRetry = vm::load)
                 is UiData.Ready -> {
                     if (data.value.isEmpty()) {
-                        EmptyBox("没有查到教室数据")
+                        EmptyBox("暂无教室数据")
                     } else {
                         LazyColumn(
                             modifier = Modifier.fillMaxSize(),

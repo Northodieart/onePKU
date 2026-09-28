@@ -142,7 +142,7 @@ fun AssignmentsScreen(nav: NavHostController, vm: AssignmentsViewModel = hiltVie
                             }
                         }
                         if (filtered.isEmpty()) {
-                            EmptyBox("没有符合条件的作业")
+                            EmptyBox("暂无符合条件的作业")
                         } else {
                             LazyColumn(
                                 modifier = Modifier.fillMaxSize(),

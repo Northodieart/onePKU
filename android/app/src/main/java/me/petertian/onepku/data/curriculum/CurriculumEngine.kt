@@ -697,7 +697,7 @@ object CurriculumEngine {
         val version = defaultVersion(index, cohort)
         val evidence = mutableListOf<String>()
         if (cohort != null) {
-            evidence += "最早的成绩或课程学期为 ${cohort}-${(cohort + 1).toString().takeLast(2)} 学年,据此推断为 ${cohort} 级"
+            evidence += "最早的成绩或课程学期为 ${cohort}-${cohort + 1} 学年,据此推断为 ${cohort} 级"
         }
         if (cohort != null && version != null && version != cohort) {
             evidence += "无 ${cohort} 版培养方案,默认使用 ${version} 版"

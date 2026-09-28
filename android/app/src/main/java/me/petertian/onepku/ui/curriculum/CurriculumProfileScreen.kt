@@ -41,7 +41,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -62,6 +61,7 @@ import me.petertian.onepku.data.curriculum.CurriculumProfile
 import me.petertian.onepku.data.curriculum.CurriculumProfileStore
 import me.petertian.onepku.data.curriculum.CurriculumRepository
 import me.petertian.onepku.data.repo.TreeholeRepository
+import me.petertian.onepku.ui.components.SectionLabel
 import me.petertian.onepku.ui.grades.SmsDialog
 import me.petertian.onepku.ui.navigation.back
 import javax.inject.Inject
@@ -362,14 +362,14 @@ private fun InferenceCard(ui: ProfileUiState, vm: CurriculumProfileViewModel) {
             Text("推断结果", style = MaterialTheme.typography.titleSmall)
             Spacer(Modifier.height(6.dp))
             when {
-                ui.inferring -> Text("正在按成绩与在修课程推断…", style = MaterialTheme.typography.bodySmall)
+                ui.inferring -> Text("按成绩与在修课程推断中…", style = MaterialTheme.typography.bodySmall)
                 ui.inferenceError != null -> {
                     Text(
                         ui.inferenceError ?: "",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.error,
                     )
-                    TextButtonRow("重试推断", vm::infer)
+                    TextButtonRow("重试", vm::infer)
                 }
                 else -> {
                     ui.inference?.evidence?.forEach {
@@ -392,11 +392,6 @@ private fun InferenceCard(ui: ProfileUiState, vm: CurriculumProfileViewModel) {
             }
         }
     }
-}
-
-@Composable
-private fun SectionLabel(text: String) {
-    Text(text, style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold)
 }
 
 @Composable

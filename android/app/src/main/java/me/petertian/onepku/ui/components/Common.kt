@@ -19,6 +19,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.toArgb
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
@@ -63,8 +64,8 @@ fun ErrorBox(message: String, modifier: Modifier = Modifier, onRetry: (() -> Uni
 }
 
 @Composable
-fun EmptyBox(message: String, modifier: Modifier = Modifier) {
-    Box(modifier.fillMaxSize().padding(24.dp), contentAlignment = Alignment.Center) {
+fun EmptyBox(message: String, modifier: Modifier = Modifier.fillMaxSize()) {
+    Box(modifier.padding(24.dp), contentAlignment = Alignment.Center) {
         Text(
             message,
             style = MaterialTheme.typography.bodyMedium,
@@ -133,4 +134,28 @@ fun <T> SectionContent(
             content(data.value)
         }
     }
+}
+
+/** 区块小标题,各页面共用。 */
+@Composable
+fun SectionLabel(text: String) {
+    Text(text, style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold)
+}
+
+private val TERM_KEY = Regex("^(\\d{2,4})-(\\d{2,4})-(\\d)$")
+private val TERM_DOT = Regex("^(\\d{2,4})-(\\d{2,4})·(\\d)$")
+private val TERM_CN = Regex("^(\\d{2,4})-(\\d{2,4})\\s*学年第\\s*(\\d)\\s*学期$")
+
+private fun fullYear(value: String) = if (value.length == 2) "20$value" else value
+
+/** 各来源的学期写法不一,统一显示为"2024-2025 学年秋季学期";认不出的原样返回。 */
+fun formatTerm(raw: String?): String {
+    val text = raw?.trim().orEmpty()
+    if (text.isEmpty()) return ""
+    for (pattern in listOf(TERM_KEY, TERM_DOT, TERM_CN)) {
+        val (from, to, term) = (pattern.matchEntire(text) ?: continue).destructured
+        val season = when (term) { "1" -> "秋"; "2" -> "春"; "3" -> "夏"; else -> term }
+        return "${fullYear(from)}-${fullYear(to)} 学年${season}季学期"
+    }
+    return text
 }

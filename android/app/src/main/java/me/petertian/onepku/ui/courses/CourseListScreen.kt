@@ -39,6 +39,7 @@ import me.petertian.onepku.data.repo.CourseRepository
 import me.petertian.onepku.ui.components.ErrorBox
 import me.petertian.onepku.ui.components.LoadingBox
 import me.petertian.onepku.ui.components.UiData
+import me.petertian.onepku.ui.components.formatTerm
 import me.petertian.onepku.ui.navigation.Routes
 import javax.inject.Inject
 
@@ -105,7 +106,7 @@ fun CourseListScreen(nav: NavHostController, vm: CoursesViewModel = hiltViewMode
                         groups.forEach { (semester, list) ->
                             item(key = "sem-$semester") {
                                 Text(
-                                    semester,
+                                    formatTerm(semester),
                                     style = MaterialTheme.typography.titleSmall,
                                     fontWeight = FontWeight.SemiBold,
                                     color = MaterialTheme.colorScheme.primary,
