@@ -3,6 +3,7 @@ package me.petertian.onepku.ui.today
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.async
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -42,16 +43,24 @@ class TodayViewModel @Inject constructor(
         if (!auth.hasCredentials()) {
             _ui.update { it.copy(loggedOut = true) }
         } else {
-            refresh()
+            load(force = false, silent = false)
         }
     }
 
-    fun refresh() {
-        if (_ui.value.refreshing) return
-        _ui.update { it.copy(refreshing = true) }
-        viewModelScope.launch {
+    /** 下拉刷新与重试:绕过缓存重新拉取。 */
+    fun refresh() = load(force = true, silent = false)
+
+    /** 回到本页时静默刷新:走缓存,只补拉刚作废的条目,不显示刷新指示。 */
+    fun refreshQuietly() = load(force = false, silent = true)
+
+    private var job: Job? = null
+
+    private fun load(force: Boolean, silent: Boolean) {
+        if (job?.isActive == true) return
+        if (!silent) _ui.update { it.copy(refreshing = true) }
+        job = viewModelScope.launch {
             coroutineScope {
-                val assignmentsJob = async { loadAssignments() }
+                val assignmentsJob = async { loadAssignments(force) }
                 val announcementsJob = async { loadAnnouncements() }
                 val cardJob = async { loadCard() }
                 assignmentsJob.await(); announcementsJob.await(); cardJob.await()
@@ -60,13 +69,13 @@ class TodayViewModel @Inject constructor(
         }
     }
 
-    private suspend fun loadAssignments() {
+    private suspend fun loadAssignments(force: Boolean) {
         if (!auth.isLoggedIn(Service.COURSE) && !auth.hasCredentials()) return
         _ui.update {
             it.copy(
                 assignments = try {
-                    val list = courses.courses().filter { c -> c.isCurrent }
-                    courses.assignments(list)
+                    val list = courses.courses(force).filter { c -> c.isCurrent }
+                    courses.assignments(list, force)
                         .filter { a -> !a.submitted && (a.deadlineEpochMs ?: Long.MAX_VALUE) >= System.currentTimeMillis() }
                         .sortedBy { a -> a.deadlineEpochMs ?: Long.MAX_VALUE }
                         .let { ready -> UiData.Ready(ready) }

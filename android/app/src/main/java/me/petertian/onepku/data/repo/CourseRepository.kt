@@ -128,16 +128,27 @@ class CourseRepository @Inject constructor(
         } catch (e: Exception) {
             staged.delete(); throw e
         }
-        // 上传已被接受;核对失败不回滚,只如实报告。
+        // 上传已被接受;核对只读不写,失败不回滚也不重发。作业缓存作废,今日与作业页才看得到已提交。
+        assignmentsCache.remove(courseId)
         val snapshot = tryOrNull { run { submissionSnapshot(courseId, contentId) } }
         val receipt = snapshot?.files?.lastOrNull()
-        val remote = receipt?.let { tryOrNull { run { submittedFileBytes(it.url, courseId) } } }
+        var reason: String? = null
+        val remote = receipt?.let {
+            try {
+                run { submittedFileBytes(it.url, courseId) }
+            } catch (e: CancellationException) {
+                throw e
+            } catch (e: Exception) {
+                reason = e.message ?: e.javaClass.simpleName
+                null
+            }
+        }
         staged.delete()
         if (receipt == null) {
             return SubmissionOutcome.Unverified("学校已接收提交,但未获取到回执附件,请在教学网核对")
         }
         if (remote == null) {
-            return SubmissionOutcome.Unverified("回执已出现(${receipt.name}),但下载核对失败")
+            return SubmissionOutcome.Unverified("回执已出现(${receipt.name}),但下载核对失败:${reason ?: "原因未知"}")
         }
         return if (sha256(remote) == localSha) SubmissionOutcome.Confirmed(receipt.name)
         else SubmissionOutcome.Unverified("回执 ${receipt.name} 与本地校验值不一致,请人工核对")

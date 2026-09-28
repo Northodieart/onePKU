@@ -56,7 +56,7 @@ class CourseApi @Inject constructor(
         }
     }
 
-    private suspend fun getDoc(url: String): Document = Jsoup.parse(get(url), COURSE_BASE)
+    private suspend fun getDoc(url: String): Document = Jsoup.parse(get(url), url)
 
     // ---- 课程列表 ----
 
@@ -356,20 +356,6 @@ class CourseApi @Inject constructor(
     suspend fun submissionSnapshot(courseId: String, contentId: String): SubmissionSnapshot =
         parseSubmission(getDoc(assignmentUrl(courseId, contentId)))
 
-    private fun parseSubmission(doc: Document): SubmissionSnapshot {
-        val label = doc.select("h3#currentAttempt_label").first()?.text()
-            ?.replace(Regex("\\s+"), " ")?.trim()?.ifEmpty { null }
-        val recognized = label != null ||
-            doc.select("#uploadAssignmentFormId, #pageTitleText, span.title").isNotEmpty()
-        if (!recognized) throw CourseApiException("无法识别提交记录页面")
-        val files = doc.select("#currentAttempt_submissionList a.attachment[href]").mapNotNull { a ->
-            val name = a.text().trim().ifEmpty { return@mapNotNull null }
-            val href = a.absUrl("href").ifEmpty { return@mapNotNull null }
-            Attachment(name, href)
-        }
-        return SubmissionSnapshot(label, files)
-    }
-
     /** 新尝试表单的隐藏字段。 */
     private suspend fun submitFormFields(courseId: String, contentId: String): Map<String, String> {
         val url = "$COURSE_BASE/webapps/assignment/uploadAssignment" +
@@ -486,6 +472,28 @@ class CourseApi @Inject constructor(
 
         fun assignmentUrl(courseId: String, contentId: String) =
             "$COURSE_BASE/webapps/assignment/uploadAssignment?mode=view&content_id=$contentId&course_id=$courseId"
+
+        /**
+         * 解析提交记录页。一行里文件名与下载是两个 a:名字取 a.attachment,
+         * 下载地址优先 a.dwnldBtn 或指向 assignment/download 的链接,取不到才回退到文件名链接。
+         * 与桌面端 vendor/pkucli 的 submitted_files 一致;取错链接会导致回执下载核对必然失败。
+         */
+        internal fun parseSubmission(doc: Document): SubmissionSnapshot {
+            val label = doc.select("h3#currentAttempt_label").first()?.text()
+                ?.replace(Regex("\\s+"), " ")?.trim()?.ifEmpty { null }
+            val recognized = label != null ||
+                doc.select("#uploadAssignmentFormId, #pageTitleText, span.title").isNotEmpty()
+            if (!recognized) throw CourseApiException("无法识别提交记录页面")
+            val files = doc.select("#currentAttempt_submissionList > li").mapNotNull { row ->
+                val nameAnchor = row.select("a.attachment").first() ?: return@mapNotNull null
+                val name = nameAnchor.text().trim().ifEmpty { return@mapNotNull null }
+                val download = row.select("a.dwnldBtn[href], a[href*='/webapps/assignment/download']").first()
+                    ?: nameAnchor
+                val href = download.absUrl("href").ifEmpty { return@mapNotNull null }
+                Attachment(name, href)
+            }
+            return SubmissionSnapshot(label, files)
+        }
 
         private val MIME = mapOf(
             "pdf" to "application/pdf",
