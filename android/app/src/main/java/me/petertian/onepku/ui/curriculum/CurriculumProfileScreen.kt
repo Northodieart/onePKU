@@ -337,9 +337,7 @@ fun CurriculumProfileScreen(nav: NavHostController, vm: CurriculumProfileViewMod
             }
             item {
                 Text(
-                    "分级决定“公共必修课”里大学英语要修多少分（8/8/6/4/2，免修获 2 分）。" +
-                        "方案把英语单列成一类的就直接定住；折在公共必修课里的，按这份方案给的区间定住，" +
-                        "大类和毕业总学分跟着重算。英语专业和留学生按原文不分级，选了也不生效。",
+                    "分级决定“公共必修课”里大学英语要修多少分（8/8/6/4/2，免修获 2 分）。",
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
