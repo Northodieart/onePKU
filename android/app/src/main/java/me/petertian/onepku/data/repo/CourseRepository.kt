@@ -134,7 +134,7 @@ class CourseRepository @Inject constructor(
         val remote = receipt?.let { tryOrNull { run { submittedFileBytes(it.url, courseId) } } }
         staged.delete()
         if (receipt == null) {
-            return SubmissionOutcome.Unverified("学校已接受提交,但未读到回执附件,请在教学网核对")
+            return SubmissionOutcome.Unverified("学校已接收提交,但未获取到回执附件,请在教学网核对")
         }
         if (remote == null) {
             return SubmissionOutcome.Unverified("回执已出现(${receipt.name}),但下载核对失败")

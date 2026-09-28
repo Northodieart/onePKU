@@ -201,7 +201,7 @@ fun AssignmentDetailScreen(nav: NavHostController, vm: AssignmentDetailViewModel
                         }
                         Spacer(Modifier.height(6.dp))
                         Text(
-                            "单个文件,不超过 25 MB。上传后应用会重新读取提交记录并核对回执文件的 SHA-256;失败不会自动重发。",
+                            "限单个文件,大小不超过 25 MB;上传后应用将重新读取提交记录并核对回执文件的 SHA-256,核对失败不会自动重发",
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                         )
@@ -289,7 +289,7 @@ private fun PendingSubmitDialog(pending: PendingSubmit, onDismiss: () -> Unit, o
         title = { Text("确认提交作业") },
         text = {
             Column {
-                Text("提交后学校会记录一次新的尝试,请核对以下内容。")
+                Text("提交后学校将新增一次尝试记录,请核对以下内容")
                 Spacer(Modifier.height(12.dp))
                 Text("文件:${pending.name}", style = MaterialTheme.typography.bodyMedium)
                 Text(
@@ -322,9 +322,9 @@ private fun SubmitResultDialog(result: SubmissionOutcome, onDismiss: () -> Unit)
             Text(
                 when (result) {
                     is SubmissionOutcome.Confirmed ->
-                        "学校回执「${result.fileName}」与本地文件校验值一致,提交已确认。"
+                        "学校回执「${result.fileName}」与本地文件校验值一致,提交已确认"
                     is SubmissionOutcome.Unverified ->
-                        "${result.reason}\n请在教学网原页面核对,不要盲目重复提交。"
+                        "${result.reason}\n请在教学网原页面核对,勿重复提交"
                 },
             )
         },

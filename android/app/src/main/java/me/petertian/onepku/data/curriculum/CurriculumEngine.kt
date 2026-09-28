@@ -215,7 +215,8 @@ object CurriculumEngine {
         val ceiling = parent.max?.let { it - known }?.takeIf { it >= rest }
         s.max = ceiling ?: rest
         s.requirement = if (ceiling != null && ceiling != rest) "${fmt(rest)}～${fmt(ceiling)} 学分" else "${fmt(rest)} 学分"
-        s.note = "方案把这一类按方向或模块分列,没有统一的学分要求;这里按「${parent.name} ${fmt(min)} 学分」扣除其余子系列推出。选定方向即可按该方向计算"
+        s.note = "该类在方案中按方向或模块分列,未给出统一学分要求;此处由「${parent.name} ${fmt(min)} 学分」" +
+            "扣除其余子系列推得,选定方向后即按该方向计算"
     }
 
     data class DirectionOption(val groupId: String, val name: String, val min: Double, val max: Double?)
@@ -261,7 +262,7 @@ object CurriculumEngine {
         section.min = option.min
         section.max = option.max ?: option.min
         section.requirement = "${fmt(option.min)} 学分"
-        section.note = "已选方向「${option.name}」,这一类按 ${fmt(option.min)} 学分计"
+        section.note = "已选方向「${option.name}」,该类按 ${fmt(option.min)} 学分计算"
 
         val group = plan.groups.first { it.id == option.groupId }
         val kept = (group.courses.map { normalizeCourseName(it.name) } +
@@ -522,10 +523,10 @@ object CurriculumEngine {
         }
         series.min = pinned
         series.max = pinned
-        series.requirement = "${fmt(pinned)} 学分（${info.label}）"
+        series.requirement = "${fmt(pinned)} 学分(${info.label})"
         if (!isEnglish) {
-            series.note = "方案把大学英语折在这一类里,弹性 ${ENGLISH_MIN_CREDITS}～${ENGLISH_MAX_CREDITS} 学分;" +
-                "按${info.label}算作 ${fmt(pinned)} 学分"
+            series.note = "大学英语计入本类,学分要求弹性为 ${ENGLISH_MIN_CREDITS}～${ENGLISH_MAX_CREDITS};" +
+                "按${info.label}计为 ${fmt(pinned)} 学分"
         }
         val top = sections.firstOrNull { series in it.children } ?: return
         val before = top.min ?: return
@@ -696,10 +697,10 @@ object CurriculumEngine {
         val version = defaultVersion(index, cohort)
         val evidence = mutableListOf<String>()
         if (cohort != null) {
-            evidence += "最早的成绩或课程学期是 ${cohort}-${(cohort + 1).toString().takeLast(2)} 学年，按此推断 ${cohort} 级"
+            evidence += "最早的成绩或课程学期为 ${cohort}-${(cohort + 1).toString().takeLast(2)} 学年,据此推断为 ${cohort} 级"
         }
         if (cohort != null && version != null && version != cohort) {
-            evidence += "没有 ${cohort} 版培养方案，默认使用 ${version} 版"
+            evidence += "无 ${cohort} 版培养方案,默认使用 ${version} 版"
         }
 
         val taken = HashSet<String>()
@@ -725,7 +726,7 @@ object CurriculumEngine {
         val school = pool.firstOrNull { sameSchool(it.school, department) }?.school
         var candidates = if (school != null) ranked(pool.filter { it.school == school }) else emptyList()
         if (candidates.isEmpty() && school != null) {
-            evidence += "门户登记的院系是「$school」，但本院系没有重合的专业必修课，改按全校方案排序"
+            evidence += "门户登记院系为「$school」,但该院系无重合的专业必修课,改按全校方案排序"
             candidates = ranked(pool)
         } else if (school != null) {
             evidence += "已按门户登记的院系「$school」限定候选范围"
@@ -737,10 +738,10 @@ object CurriculumEngine {
             evidence += "与「${candidates[0].title}」的专业必修课重合 ${candidates[0].matched} 门"
             val ties = candidates.drop(1).filter { it.matched == candidates[0].matched }
             if (ties.isNotEmpty()) {
-                evidence += "「${ties.joinToString("」「") { it.title }}」重合门数相同，请核对是否选对了专业"
+                evidence += "「${ties.joinToString("」「") { it.title }}」重合门数相同,请核对所选专业"
             }
         } else {
-            evidence += "没有一门课与任何方案的专业必修课重合，请手动选择专业"
+            evidence += "已修与在修课程与各方案的专业必修课均无重合,请手动选择专业"
         }
         return Inference(cohort, version, candidates, evidence, school)
     }

@@ -334,7 +334,7 @@ class CurriculumEngineTest {
         val english = section(p, "1-1")
         assertEquals(4.0, english.min!!, 0.001)
         assertEquals(4.0, english.max!!, 0.001)
-        assertEquals("4 学分（C 级）", english.requirement)
+        assertEquals("4 学分(C 级)", english.requirement)
 
         // 公共基础课程原本 22~28,英语定成 4 之后就是 4 + 体育 4 + 思政 16。
         assertEquals(24.0, section(p, "1").min!!, 0.001)
@@ -378,7 +378,7 @@ class CurriculumEngineTest {
         val p = CurriculumEngine.computeProgress(physicsPlan(), emptyList(), emptyList(), englishLevel = "B")
         // 这份方案没有单列英语;公共必修课 33~39 那 6 分跨度正是英语弹性,唯一候选才敢认定。
         assertEquals(37.0, section(p, "1-1").min!!, 0.001)
-        assertTrue(section(p, "1-1").note!!.contains("弹性 2～8"))
+        assertTrue(section(p, "1-1").note!!.contains("弹性为 2～8"))
         assertEquals(49.0, section(p, "1").min!!, 0.001)      // 37 + 通识 12
         assertEquals(144.0, p.required!!, 0.001)              // 49 + 70 + 25,在方案的 140~152 内
     }

@@ -126,7 +126,7 @@ fun SettingsScreen(nav: NavHostController, vm: SettingsViewModel = hiltViewModel
         AlertDialog(
             onDismissRequest = { confirmLogout = false },
             title = { Text("退出登录") },
-            text = { Text("将清除本机保存的凭证与全部服务会话。") },
+            text = { Text("将清除本机保存的凭证与全部服务会话") },
             confirmButton = {
                 TextButton(onClick = {
                     confirmLogout = false
@@ -231,7 +231,7 @@ fun SettingsScreen(nav: NavHostController, vm: SettingsViewModel = hiltViewModel
                             Text("本院通知", style = MaterialTheme.typography.bodyLarge)
                             Text(
                                 ui.department?.takeIf { it.isNotBlank() }
-                                    ?: "未识别到院系,可手动选择",
+                                    ?: "未能识别院系,可手动选择",
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                             )
@@ -294,7 +294,7 @@ fun SettingsScreen(nav: NavHostController, vm: SettingsViewModel = hiltViewModel
                     Column(Modifier.padding(16.dp)) {
                         Text("OnePKU Android", style = MaterialTheme.typography.bodyLarge)
                         Text(
-                            "版本 ${BuildConfig.VERSION_NAME}\n数据仅保存在本机;学校数据归北京大学及各原站所有。",
+                            "版本 ${BuildConfig.VERSION_NAME}\n数据仅保存在本机;学校数据归北京大学及各原站所有",
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                         )

@@ -219,7 +219,7 @@ private fun GradesContent(report: ScoreReport, ui: GradesUiState, vm: GradesView
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
                     Text(
-                        "自动按课程类别识别专业必修/限选;标成任选的专业课可手动加入。",
+                        "按课程类别自动识别专业必修/限选,被标为\"任选\"的专业课可手动加入",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                         modifier = Modifier.weight(1f),
@@ -254,12 +254,12 @@ private fun GradesContent(report: ScoreReport, ui: GradesUiState, vm: GradesView
             Text(
                 when {
                     scope == GradeScope.ALL && report.schoolGpa != null ->
-                        "GPA 来自学校;加权平均分与专业口径均为本地计算,仅供参考。"
+                        "GPA 来自学校;加权平均分与专业口径均为本地计算,仅供参考"
                     scope == GradeScope.ALL ->
-                        "学校未返回 GPA,已按官方规则在本地计算,仅供参考。"
+                        "学校未返回 GPA,已按官方规则在本地计算,仅供参考"
                     else -> {
                         val manual = override.included.size + override.excluded.size
-                        "口径:专业必修/限选${if (manual > 0) "(已手动调整 $manual 门)" else ""},共 ${stats.courseCount} 门计入;均为本地计算,仅供参考。"
+                        "口径:专业必修/限选${if (manual > 0) "(已手动调整 $manual 门)" else ""},共 ${stats.courseCount} 门计入;均为本地计算,仅供参考"
                     }
                 },
                 style = MaterialTheme.typography.bodySmall,
@@ -356,7 +356,7 @@ private fun EditScopeDialog(
         text = {
             Column(Modifier.fillMaxWidth()) {
                 Text(
-                    "默认按课程类别识别专业必修/限选。被学校标成\"任选\"的专业课请手动勾上;不想计入的取消勾选。",
+                    "默认按课程类别识别专业必修/限选,被学校标为\"任选\"的专业课请手动勾选,不计入的可取消勾选",
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
@@ -404,7 +404,7 @@ internal fun SmsDialog(
         title = { Text("树洞短信验证") },
         text = {
             Column {
-                Text("树洞要求定期短信验证。点击发送验证码,输入短信中的 4-8 位数字。")
+                Text("树洞需定期短信验证,点击发送验证码后输入短信中的 4-8 位数字")
                 Spacer(Modifier.height(12.dp))
                 OutlinedTextField(
                     value = code,

@@ -125,7 +125,7 @@ fun LoginScreen(nav: NavHostController, vm: LoginViewModel = hiltViewModel()) {
 
         Spacer(Modifier.height(24.dp))
         Text(
-            "密码加密存储于本机 Keystore,仅用于会话过期后自动重登,不会外传。",
+            "密码加密存储于本机 Keystore,仅用于会话过期后自动重登,不向第三方传输",
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
         )

@@ -258,7 +258,7 @@ private fun NoProfile(padding: PaddingValues, nav: NavHostController) {
         Text("尚未选择培养方案", style = MaterialTheme.typography.titleMedium)
         Spacer(Modifier.height(8.dp))
         Text(
-            "会根据成绩与在修课程推断年级和专业,也可以自己选。",
+            "将依据成绩与在修课程推断年级与专业,也可手动选择",
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             textAlign = TextAlign.Center,
@@ -355,7 +355,7 @@ private fun TotalPage(progress: Progress, vm: CurriculumViewModel) {
         if (progress.required == null) {
             item {
                 Text(
-                    "这份方案没有明确写出毕业总学分,因此只显示已获学分,不显示完成比例。",
+                    "该方案未写明毕业总学分要求,仅显示已获学分,不显示完成比例",
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     textAlign = TextAlign.Center,
@@ -365,7 +365,7 @@ private fun TotalPage(progress: Progress, vm: CurriculumViewModel) {
         if (progress.unknownCredits > 0) {
             item {
                 Text(
-                    "${progress.unknownCredits} 门课的学分未知,未计入合计。",
+                    "另有 ${progress.unknownCredits} 门课程学分未知,未计入合计",
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.error,
                 )
@@ -455,7 +455,7 @@ private fun RingHeader(
         )
         gap?.let {
             Text(
-                if (it <= 0.0) "已满足" else "还差 ${fmt(it)} $unit",
+                if (it <= 0.0) "已满足" else "尚缺 ${fmt(it)} $unit",
                 style = MaterialTheme.typography.bodySmall,
                 color = if (it <= 0.0) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.error,
             )
@@ -531,7 +531,7 @@ private fun CourseEditor(
                 OutlinedTextField(
                     value = text,
                     onValueChange = { raw -> text = raw.filter { it.isDigit() || it == '.' }.take(5) },
-                    label = { Text(if (draft.credits == null) "学分（教学网不给,手填）" else "学分") },
+                    label = { Text(if (draft.credits == null) "学分(教学网未提供,请手动填写)" else "学分") },
                     singleLine = true,
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
                     modifier = Modifier.fillMaxWidth(),
@@ -644,7 +644,7 @@ private fun LazyListScope.courseLists(
                 Text("在修课程 ${doing.size} 门", style = MaterialTheme.typography.titleSmall)
                 if (missing > 0) {
                     Text(
-                        "点课程卡填学分",
+                        "点击课程卡填写学分",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.error,
                     )

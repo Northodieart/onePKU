@@ -226,7 +226,7 @@ fun CardScreen(nav: NavHostController, vm: CardViewModel = hiltViewModel()) {
                                         fontWeight = FontWeight.SemiBold,
                                     )
                                     Text(
-                                        "本月支出（消费类）",
+                                        "本月支出(消费类)",
                                         style = MaterialTheme.typography.bodySmall,
                                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                                     )

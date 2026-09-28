@@ -73,7 +73,7 @@ fun MineScreen(nav: NavHostController, vm: MineViewModel = hiltViewModel()) {
         Entry(Routes.ASSIGNMENTS, "作业", "跨课程作业与提交记录", Icons.AutoMirrored.Outlined.Assignment),
         Entry(Routes.GRADES, "成绩", "正式成绩与 GPA", Icons.Outlined.Grade),
         Entry(Routes.CURRICULUM, "培养方案", "毕业要求与各大类完成度", Icons.Outlined.MenuBook),
-        Entry(Routes.CARD, "校园卡", "余额、收支与流水", Icons.Outlined.CreditCard),
+        Entry(Routes.CARD, "校园卡", "余额,收支与流水", Icons.Outlined.CreditCard),
         Entry(Routes.CLASSROOM, "空闲教室", "按教学楼与节次查询", Icons.Outlined.MeetingRoom),
         Entry(Routes.CALENDAR, "校历", "学校官方校历 PDF", Icons.Outlined.CalendarMonth),
         Entry(Routes.SETTINGS, "设置", "服务连接与账号", Icons.Outlined.Settings),

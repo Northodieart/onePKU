@@ -282,7 +282,7 @@ fun CurriculumProfileScreen(nav: NavHostController, vm: CurriculumProfileViewMod
             if (ui.plans.isEmpty()) {
                 item {
                     Text(
-                        "当前条件下没有可选方案,试试换版本或院系。",
+                        "当前条件下无可选方案,请调整版本或院系",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
@@ -297,7 +297,7 @@ fun CurriculumProfileScreen(nav: NavHostController, vm: CurriculumProfileViewMod
                 item { SectionLabel("${split.name} · 细分方向") }
                 item {
                     Text(
-                        "方案里这一类按方向分列、没有统一的学分要求,选准才算得对。",
+                        "该类在方案中按方向分列,无统一学分要求,需选定方向后方可计算",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
@@ -308,13 +308,13 @@ fun CurriculumProfileScreen(nav: NavHostController, vm: CurriculumProfileViewMod
                     }
                 }
             }
-            item { SectionLabel("双学位 / 辅修（可选）") }
+            item { SectionLabel("双学位 / 辅修(可选)") }
             item {
                 OutlinedButton(onClick = { vm.setSecondary(null) }) { Text("不选") }
             }
             item {
                 Text(
-                    "在下方列表里点选一份方案作为双学位;它的成绩单独计算归类。",
+                    "可在下方选择一份方案作为双学位,其成绩单独计算与归类",
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
@@ -327,7 +327,7 @@ fun CurriculumProfileScreen(nav: NavHostController, vm: CurriculumProfileViewMod
                     onPick = { vm.setSecondary(if (ui.secondaryPlanId == entry.id) null else entry.id) },
                 )
             }
-            item { SectionLabel("大学英语分级（可选）") }
+            item { SectionLabel("大学英语分级(可选)") }
             item {
                 ChipRow(
                     listOf(null to "不选") + CurriculumEngine.ENGLISH_LEVELS.map { it.id to "${it.label} ${it.credits} 分" },
@@ -337,7 +337,7 @@ fun CurriculumProfileScreen(nav: NavHostController, vm: CurriculumProfileViewMod
             }
             item {
                 Text(
-                    "分级决定“公共必修课”里大学英语要修多少分（8/8/6/4/2，免修获 2 分）。",
+                    "大学英语分级决定\"公共必修课\"中大学英语的学分要求(Y/A/B/C/C+/免修 = 8/8/6/4/2/2 学分)",
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
@@ -381,7 +381,7 @@ private fun InferenceCard(ui: ProfileUiState, vm: CurriculumProfileViewModel) {
                         Spacer(Modifier.height(4.dp))
                         cands.forEach { c ->
                             Text(
-                                "${c.title}（重合 ${c.matched}/${c.total} 门）",
+                                "${c.title}(重合 ${c.matched}/${c.total} 门)",
                                 style = MaterialTheme.typography.bodyMedium,
                                 color = MaterialTheme.colorScheme.primary,
                                 modifier = Modifier.fillMaxWidth().clickable { vm.applyCandidate(c) }.padding(vertical = 8.dp),

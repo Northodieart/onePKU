@@ -64,7 +64,7 @@ class SchoolNoticeApi @Inject constructor(
         name.removeSuffix("学院").removeSuffix("大学").removeSuffix("系").removeSuffix("研究所")
 
     suspend fun list(department: String): SchoolNotices {
-        val site = resolve(department) ?: throw NewsApiException("未识别到院系列表,请在设置里手动选择")
+        val site = resolve(department) ?: throw NewsApiException("未能识别院系列表,请在设置中手动选择")
         if (site.name == "信息科学技术学院") {
             return SchoolNotices(site.name, news.list(WebSource.EECS).map(SchoolNoticeItem::FromSite))
         }

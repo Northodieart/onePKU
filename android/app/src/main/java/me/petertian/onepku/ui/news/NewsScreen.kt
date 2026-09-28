@@ -184,7 +184,7 @@ fun NewsScreen(nav: NavHostController, vm: NewsViewModel = hiltViewModel()) {
             }
             if (ui.tab == NewsTab.OUR_SCHOOL && ui.fromPortal) {
                 Text(
-                    "本院官网暂未适配,以下来自校内门户部门通知。",
+                    "本院官网暂未适配,以下内容来自校内门户部门通知",
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(horizontal = 16.dp, vertical = 6.dp),
