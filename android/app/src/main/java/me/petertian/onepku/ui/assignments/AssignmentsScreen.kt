@@ -78,10 +78,7 @@ class AssignmentsViewModel @Inject constructor(
             _ui.update { it.copy(refreshing = true) }
             val result = try {
                 val list = repo.courses(force).filter { c -> c.isCurrent }
-                UiData.Ready(
-                    repo.assignments(list, force)
-                        .sortedBy { a -> a.deadlineEpochMs ?: Long.MAX_VALUE },
-                )
+                UiData.Ready(repo.assignments(list, force))
             } catch (e: Exception) {
                 UiData.Failure(e.message ?: "作业加载失败")
             }
@@ -144,12 +141,21 @@ fun AssignmentsScreen(nav: NavHostController, vm: AssignmentsViewModel = hiltVie
                         if (filtered.isEmpty()) {
                             EmptyBox("暂无符合条件的作业")
                         } else {
+                            // 待交按最快到期在上;其余筛选按最近提交在上,没有提交时间的退回截止时间倒序。
+                            val ordered = filtered.sortedWith(
+                                if (ui.filter == AssignmentFilter.PENDING) {
+                                    compareBy { a: AssignmentSummary -> a.deadlineEpochMs ?: Long.MAX_VALUE }
+                                } else {
+                                    compareByDescending<AssignmentSummary> { a -> a.submittedAtEpochMs ?: -1L }
+                                        .thenByDescending { a -> a.deadlineEpochMs ?: -1L }
+                                },
+                            )
                             LazyColumn(
                                 modifier = Modifier.fillMaxSize(),
                                 contentPadding = PaddingValues(16.dp),
                                 verticalArrangement = Arrangement.spacedBy(8.dp),
                             ) {
-                                items(filtered, key = { "${it.courseId}-${it.contentId}" }) { a ->
+                                items(ordered, key = { "${it.courseId}-${it.contentId}" }) { a ->
                                     Card(
                                         Modifier.fillMaxWidth().clickable {
                                             nav.navigate(Routes.assignmentDetail(a.courseId, a.contentId, a.title))

@@ -48,6 +48,8 @@ data class AssignmentSummary(
     val submitted: Boolean = false,
     /** 成绩中心给出的分数原文;缺失时不假设为 0。 */
     val scoreText: String? = null,
+    /** 当前尝试的提交时刻;学校页面没给出时为空,不拿截止时间冒充。 */
+    val submittedAtEpochMs: Long? = null,
 )
 
 data class AssignmentDetail(
@@ -80,7 +82,12 @@ data class LearningGrade(
 )
 
 /** 当前尝试页的提交快照:第几次尝试 + 已提交文件。 */
-data class SubmissionSnapshot(val label: String?, val files: List<Attachment>) {
+data class SubmissionSnapshot(
+    val label: String?,
+    val files: List<Attachment>,
+    /** 尝试行的提交时刻,如 "26-9-28 下午10:22";认不出时为空。 */
+    val submittedAtEpochMs: Long? = null,
+) {
     val submitted: Boolean get() = label != null || files.isNotEmpty()
 }
 

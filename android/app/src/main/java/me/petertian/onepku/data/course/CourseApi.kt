@@ -258,6 +258,7 @@ class CourseApi @Inject constructor(
                             submitted = submission.submitted ||
                                 grade?.status?.contains("已提交") == true || graded != null,
                             scoreText = graded,
+                            submittedAtEpochMs = submission.submittedAtEpochMs,
                         )
                     }
                 }
@@ -313,11 +314,7 @@ class CourseApi @Inject constructor(
             ?.trim()?.takeUnless { it == "-" || it == "—" || it.isEmpty() }
         val points = text("#currentAttempt_pointsPossible")?.removePrefix("/")?.trim()
         val feedback = doc.select("#currentAttempt_feedback .vtbegenerated").first()?.text()?.trim()
-        val files = doc.select("#currentAttempt_submissionList a.attachment[href]").mapNotNull { a ->
-            val name = a.text().trim()
-            val href = a.absUrl("href")
-            if (name.isEmpty() || href.isEmpty()) null else Attachment(name, href)
-        }
+        val files = submissionFiles(doc)
         return FeedbackAttempt(id, label, score, points, feedback, files, url)
     }
 
@@ -474,9 +471,10 @@ class CourseApi @Inject constructor(
             "$COURSE_BASE/webapps/assignment/uploadAssignment?mode=view&content_id=$contentId&course_id=$courseId"
 
         /**
-         * 解析提交记录页。一行里文件名与下载是两个 a:名字取 a.attachment,
-         * 下载地址优先 a.dwnldBtn 或指向 assignment/download 的链接,取不到才回退到文件名链接。
-         * 与桌面端 vendor/pkucli 的 submitted_files 一致;取错链接会导致回执下载核对必然失败。
+         * 解析提交记录页。一行里文件名与下载是两个 a:名字取 a.attachment,下载地址优先
+         * a.dwnldBtn,其次是指向 assignment/download 的链接,取不到才回退到文件名链接
+         * (桌面端 vendor/pkucli 的 submitted_files 同源,这里把优先级排得更明确)。
+         * 取错链接会导致回执下载核对必然失败。
          */
         internal fun parseSubmission(doc: Document): SubmissionSnapshot {
             val label = doc.select("h3#currentAttempt_label").first()?.text()
@@ -484,15 +482,37 @@ class CourseApi @Inject constructor(
             val recognized = label != null ||
                 doc.select("#uploadAssignmentFormId, #pageTitleText, span.title").isNotEmpty()
             if (!recognized) throw CourseApiException("无法识别提交记录页面")
-            val files = doc.select("#currentAttempt_submissionList > li").mapNotNull { row ->
+            // 只在当前尝试这一块里找时间,避免把别处的紧凑日期误当成提交时刻。
+            val body = doc.body()
+            val region = doc.getElementById("currentAttempt")
+                ?: doc.selectFirst("#currentAttempt_label")?.parent()?.takeIf { it !== body }
+            return SubmissionSnapshot(label, submissionFiles(doc), region?.let { parseAttemptAt(it.text()) })
+        }
+
+        private fun submissionFiles(doc: Document): List<Attachment> =
+            doc.select("#currentAttempt_submissionList > li").mapNotNull { row ->
                 val nameAnchor = row.select("a.attachment").first() ?: return@mapNotNull null
                 val name = nameAnchor.text().trim().ifEmpty { return@mapNotNull null }
-                val download = row.select("a.dwnldBtn[href], a[href*='/webapps/assignment/download']").first()
+                // 逐级取,不用并集选择器:并集按文档顺序返回,文件名链接会抢在下载按钮前面。
+                val download = row.select("a.dwnldBtn[href]").first()
+                    ?: row.select("a[href*='/webapps/assignment/download']").first()
                     ?: nameAnchor
                 val href = download.absUrl("href").ifEmpty { return@mapNotNull null }
                 Attachment(name, href)
             }
-            return SubmissionSnapshot(label, files)
+
+        /** 尝试行的紧凑时间 "26-9-28 下午10:22";与截止时间的"2025年3月15日 星期六 下午11:59"是两种体例。 */
+        private val ATTEMPT_AT = Regex("(\\d{2})-(\\d{1,2})-(\\d{1,2})\\s*(上午|下午)(\\d{1,2}):(\\d{2})")
+
+        private fun parseAttemptAt(text: String): Long? {
+            val (yy, month, day, ampm, hourStr, minuteStr) = ATTEMPT_AT.find(text)?.destructured ?: return null
+            var hour = hourStr.toInt()
+            if (ampm == "下午" && hour < 12) hour += 12
+            if (ampm == "上午" && hour == 12) hour = 0
+            val cal = Calendar.getInstance(TimeZone.getTimeZone("Asia/Shanghai"))
+            cal.clear()
+            cal.set(yy.toInt() + 2000, month.toInt() - 1, day.toInt(), hour, minuteStr.toInt())
+            return cal.timeInMillis
         }
 
         private val MIME = mapOf(
