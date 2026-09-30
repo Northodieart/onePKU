@@ -131,7 +131,7 @@ fun TodayScreen(nav: NavHostController, vm: TodayViewModel = hiltViewModel()) {
                 }
 
                 item(key = "card") {
-                    TodaySection(title = "校园卡", action = "详情" to { nav.navigate(Routes.CARD) }) {
+                    TodaySection(title = "校园卡", onClick = { nav.navigate(Routes.CARD) }) {
                         SectionContent(data = ui.cardBalance, onRetry = vm::refresh) { balance ->
                             Row(
                                 modifier = Modifier.fillMaxWidth(),
@@ -155,8 +155,18 @@ fun TodayScreen(nav: NavHostController, vm: TodayViewModel = hiltViewModel()) {
 }
 
 @Composable
-private fun TodaySection(title: String, action: Pair<String, () -> Unit>?, content: @Composable () -> Unit) {
-    Card(Modifier.fillMaxWidth()) {
+private fun TodaySection(
+    title: String,
+    action: Pair<String, () -> Unit>? = null,
+    onClick: (() -> Unit)? = null,
+    content: @Composable () -> Unit,
+) {
+    // 整张卡可点时不再放"详情"按钮:见 docs/UX-CONTRACT.md「内部阅读行与导航无需外链箭头」。
+    val cardModifier = onClick?.let { handler ->
+        Modifier.fillMaxWidth().clickable(onClickLabel = "查看$title") { handler() }
+    } ?: Modifier.fillMaxWidth()
+
+    Card(cardModifier) {
         Column(Modifier.padding(16.dp)) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
