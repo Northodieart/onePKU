@@ -1,6 +1,6 @@
 # OnePKU Android
 
-北大校园服务的 Android 客户端，与 macOS 桌面版同源的独立实现。Kotlin + Jetpack Compose（Material 3）、MVVM（ViewModel + StateFlow）、Hilt 依赖注入，最低 Android 8.0（API 26）。当前版本 v0.3.0，逐版改动见仓库根 [CHANGELOG.md](../CHANGELOG.md)。
+北大校园服务的 Android 客户端，与 macOS 桌面版同源的独立实现。Kotlin + Jetpack Compose（Material 3）、MVVM（ViewModel + StateFlow）、Hilt 依赖注入，最低 Android 8.0（API 26）。当前版本 v0.3.1，逐版改动见仓库根 [CHANGELOG.md](../CHANGELOG.md)。
 
 ## 功能
 
