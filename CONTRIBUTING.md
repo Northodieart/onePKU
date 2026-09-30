@@ -13,6 +13,17 @@ npm run tauri -- dev
 
 浏览器验收（真实后端）：`npm run build && npm run preview:live`，打开 `http://127.0.0.1:1421`。
 
+### Android 端
+
+`android/` 是独立的 Kotlin + Compose 实现，下面那串桌面验收命令覆盖不到它。需要 JDK 17 与 Android SDK（`compileSdk` 35），提交前跑：
+
+```sh
+cd android
+./gradlew testDebugUnitTest
+```
+
+调试 APK 用 `./gradlew assembleDebug`，产物在 `android/app/build/outputs/apk/debug/`；推送 `Android` 分支时 CI 会构建并上传同名产物，见 `.github/workflows/android.yml`。培养方案数据不在 `android/` 下，构建时由 Gradle 从仓库根 `data/curriculum/` 同步，所以要连着整个仓库一起构建。改了仓库根的 Markdown 仍要跑 `npm run format:check`——Android 分支同样受 Prettier 约束。
+
 提交前跑一遍：
 
 ```sh
