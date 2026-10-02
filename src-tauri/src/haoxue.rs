@@ -75,8 +75,9 @@ fn open(app: &tauri::AppHandle, target: &str, android: bool) -> Result<(), Strin
     Ok(())
 }
 
+/// 必须是 async：同步命令在主线程执行，而建窗口又要等主线程，直接把自己锁死。
 #[tauri::command]
-pub(crate) fn open_haoxue_login(window: tauri::WebviewWindow) -> Result<(), String> {
+pub(crate) async fn open_haoxue_login(window: tauri::WebviewWindow) -> Result<(), String> {
     if window.label() != "main" {
         return Err("此窗口不可执行本地操作".into());
     }
@@ -85,7 +86,7 @@ pub(crate) fn open_haoxue_login(window: tauri::WebviewWindow) -> Result<(), Stri
 
 /// 中转页在桌面身份下不调用桥时，改用安卓 WebView 身份重开同一页。
 #[tauri::command]
-pub(crate) fn haoxue_login_retry(window: tauri::WebviewWindow) -> Result<(), String> {
+pub(crate) async fn haoxue_login_retry(window: tauri::WebviewWindow) -> Result<(), String> {
     if window.label() != LABEL {
         return Err("此窗口不可更改登录方式".into());
     }

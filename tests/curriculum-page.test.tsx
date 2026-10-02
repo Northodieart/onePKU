@@ -236,7 +236,11 @@ it("edits an earned course's credits from its own row", async () => {
   await screen.findByLabelText(`主修方案：${ai.title}`);
   fireEvent.click(screen.getByRole("tab", { name: /专业必修课程/ }));
   const panel = await screen.findByRole("tabpanel");
-  fireEvent.click(within(panel).getAllByRole("button", { name: /门课/ })[0]);
+  // 当前类别直接摊开在修与已修，不需要再点「N 门课」。
+  expect(
+    within(panel).getAllByRole("button", { name: /收起/ }).length,
+  ).toBeGreaterThan(0);
+  expect(within(panel).getAllByText(/已修课程/).length).toBeGreaterThan(0);
   const input = await screen.findByLabelText("学分 高等数学 A（一）");
   fireEvent.change(input, { target: { value: "3" } });
   fireEvent.blur(input);

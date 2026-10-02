@@ -598,7 +598,7 @@ function ProgressView({
         {current ? (
           current.children.length > 0 ? (
             current.children.map((c) => (
-              <DetailRow key={c.id} section={c} editor={editor} />
+              <DetailRow key={c.id} section={c} autoOpen editor={editor} />
             ))
           ) : (
             <CourseList courses={current.courses} editor={editor} />
@@ -765,13 +765,19 @@ function RingCard({
 function DetailRow({
   section,
   top = false,
+  autoOpen = false,
   editor,
 }: {
   section: ProgressSection;
   top?: boolean;
+  /** 选中的类别下面直接摊开在修与已修，不用再点一次「N 门课」。 */
+  autoOpen?: boolean;
   editor: Editor;
 }) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(autoOpen);
+  useEffect(() => {
+    if (autoOpen) setOpen(true);
+  }, [autoOpen]);
   const m = measure(section);
   const target = section.min ?? null;
   const ratio = (n: number) => (target ? Math.min(100, (100 * n) / target) : 0);
