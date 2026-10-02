@@ -1333,6 +1333,28 @@ tbody tr:last-child td {
   min-width: 0;
   flex: 1;
 }
+.auth-form label {
+  display: block;
+  font-size: 13px;
+  margin-top: 12px;
+}
+.auth-form input {
+  width: 100%;
+  margin-top: 4px;
+}
+.auth-form .auth-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+.auth-form .auth-check input {
+  width: auto;
+  margin: 0;
+}
+.auth-switch {
+  margin-top: 16px;
+}
 .inline-error {
   font-size: 12px;
   color: var(--danger);

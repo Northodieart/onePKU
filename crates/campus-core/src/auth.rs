@@ -10,6 +10,107 @@ pub struct Attempt {
     expires: std::time::Instant,
 }
 impl Core {
+    /// 账号密码登录：一次提交把四个服务依次换成各自的会话，与安卓端一致。
+    /// 密码只在这一次调用里用到，不进缓存键，也不写进本机快照。
+    pub(crate) async fn auth_password(
+        &self,
+        services: &[String],
+        username: &str,
+        password: &str,
+        otp: Option<&str>,
+    ) -> Result<Value> {
+        let username = username.trim();
+        if username.is_empty() || password.is_empty() {
+            bail!("请填写校园账号与密码");
+        }
+        let wanted: Vec<&str> = if services.is_empty() {
+            vec!["course", "treehole", "campuscard", "bdkj"]
+        } else {
+            services
+                .iter()
+                .map(|service| service.as_str())
+                .filter(|service| {
+                    matches!(
+                        *service,
+                        "course" | "treehole" | "campuscard" | "bdkj"
+                    )
+                })
+                .collect()
+        };
+        if wanted.is_empty() {
+            bail!("没有可登录的服务");
+        }
+        let mut done: Vec<String> = vec![];
+        let mut failed: Vec<Value> = vec![];
+        for service in wanted {
+            match self.login_with_password(service, username, password, otp).await {
+                Ok(()) => done.push(service.to_string()),
+                Err(error) => {
+                    let p = problem(error);
+                    failed.push(json!({
+                        "service": service,
+                        "code": p.code,
+                        "message": p.message,
+                    }));
+                }
+            }
+        }
+        if done.is_empty() {
+            bail!(
+                "{}",
+                failed.first().and_then(|f| f["message"].as_str()).unwrap_or("统一身份认证失败")
+            );
+        }
+        Ok(json!({ "state": "success", "done": done, "failed": failed }))
+    }
+    async fn login_with_password(
+        &self,
+        service: &str,
+        username: &str,
+        password: &str,
+        otp: Option<&str>,
+    ) -> Result<()> {
+        let store = Store::new(service)?;
+        let device = if service == "treehole" {
+            pku_treehole::login::get_device_uuid(&store)
+        } else {
+            String::new()
+        };
+        let config = match service {
+            "course" => pku_course::login::iaaa_config(),
+            "bdkj" => pku_bdkj::login::iaaa_config(),
+            "treehole" => pku_treehole::login::iaaa_config(&device),
+            "campuscard" => pku_campuscard::login::iaaa_config(),
+            _ => bail!("invalid service"),
+        };
+        let client = pku_course::client::build_simple()?;
+        let token = pkuinfo_common::iaaa::login_password(
+            &client, &config, username, password, otp,
+        )
+        .await?
+        .token;
+        self.complete_service_login(service, &store, &token, &device)
+            .await
+    }
+    /// 拿到 iaaa 票据后将各服务换成自己的会话；扫码与密码两条路共用。
+    async fn complete_service_login(
+        &self,
+        service: &str,
+        store: &Store,
+        token: &str,
+        device: &str,
+    ) -> Result<()> {
+        match service {
+            "course" => pku_course::login::complete_bb_login(store, token).await?,
+            "bdkj" => pku_bdkj::login::complete_bdkj_login(store, token, "").await?,
+            "campuscard" => pku_campuscard::login::complete_login(store, token, "").await?,
+            _ => pku_treehole::login::complete_gui_login(store, token, device).await?,
+        }
+        if service == "course" {
+            let _ = self.subtitle_account(&fingerprint("course")).await;
+        }
+        Ok(())
+    }
     pub(crate) async fn auth_begin(&self, service: &str) -> Result<Value> {
         let store = Store::new(match service {
             "course" | "treehole" | "campuscard" | "bdkj" => service,
@@ -107,15 +208,8 @@ impl Core {
             }
             let token = v["token"].as_str().ok_or_else(|| anyhow!("empty token"))?;
             let store = Store::new(&a.service)?;
-            match a.service.as_str() {
-                "course" => pku_course::login::complete_bb_login(&store, token).await?,
-                "bdkj" => pku_bdkj::login::complete_bdkj_login(&store, token, "").await?,
-                "campuscard" => pku_campuscard::login::complete_login(&store, token, "").await?,
-                _ => pku_treehole::login::complete_gui_login(&store, token, &a.device).await?,
-            }
-            if a.service == "course" {
-                let _ = self.subtitle_account(&fingerprint("course")).await;
-            }
+            self.complete_service_login(&a.service, &store, &token, &a.device)
+                .await?;
             Ok(json!({"state":"success"}))
         } else {
             let code = v["errors"]["code"].as_str().unwrap_or("");

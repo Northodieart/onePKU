@@ -237,6 +237,15 @@ pub enum Request {
     },
     BookingApplications,
     Calendar,
+    /// 账号密码登录：`services` 为空时一次换回四个服务的会话，与安卓端一致。
+    /// 密码只在本次调用里存在：不进缓存键，也不写进本机快照。
+    AuthPassword {
+        username: String,
+        password: String,
+        #[serde(default)]
+        services: Vec<String>,
+        otp: Option<String>,
+    },
     AuthBegin {
         service: String,
     },
@@ -462,7 +471,13 @@ impl Core {
     async fn execute(self: &Arc<Self>, req: Request) -> Envelope {
         let service = owner(&req);
         let generation = fingerprint(service);
-        let key = format!("{}:{}", generation, serde_json::to_string(&req).unwrap());
+        let key = match &req {
+            // 密码登录的键里不能带凭证，只记账号与目标服务。
+            Request::AuthPassword {
+                username, services, ..
+            } => format!("{generation}:authPassword:{username}:{services:?}"),
+            other => format!("{generation}:{}", serde_json::to_string(other).unwrap()),
+        };
         let result = tokio::time::timeout(Duration::from_secs(75), self.dispatch(&req))
             .await
             .map_err(|_| anyhow!("超时"))
@@ -519,7 +534,10 @@ impl Core {
                     .is_none_or(|r| owner(&r) != service)
             });
         }
-        if matches!(req, Request::AuthPoll { .. } | Request::SmsVerify { .. })
+        if matches!(
+            req,
+            Request::AuthPoll { .. } | Request::SmsVerify { .. } | Request::AuthPassword { .. }
+        )
             && out.data.as_ref().is_some_and(|d| d["state"] == "success")
         {
             cache.clear();
@@ -855,6 +873,12 @@ impl Core {
                 .iter()
                 .map(|c| json!({"year":c.year,"first":c.first_semester,"second":c.second_semester}))
                 .collect::<Vec<_>>()),
+            Request::AuthPassword {
+                username,
+                password,
+                services,
+                otp,
+            } => self.auth_password(services, username, password, otp.as_deref()).await?,
             Request::AuthBegin { service } => self.auth_begin(service).await?,
             Request::AuthPoll { id } => self.auth_poll(id).await?,
             Request::AuthCancel { id } => {
@@ -964,6 +988,26 @@ mod tests {
         assert!(!storage::cacheable(&write));
         assert!(serde_json::from_value::<Request>(json!({"kind": "haoxueRecord", "course": "1"}))
             .is_err());
+    }
+    #[test]
+    fn password_login_is_named_and_never_cached() {
+        let login = serde_json::from_value::<Request>(json!({
+            "kind": "authPassword", "username": "2200000000",
+            "password": "secret", "services": ["course"]
+        }))
+        .unwrap();
+        assert!(matches!(login, Request::AuthPassword { .. }));
+        // 凭证不能进本机快照，也不能被当成可缓存的读取。
+        assert!(!storage::cacheable(&login));
+        // 一次登录全部服务时 services 可以省略；账号或密码缺了就不收。
+        assert!(serde_json::from_value::<Request>(json!({
+            "kind": "authPassword", "username": "a", "password": "b"
+        }))
+        .is_ok());
+        assert!(serde_json::from_value::<Request>(json!({
+            "kind": "authPassword", "username": "a"
+        }))
+        .is_err());
     }
     #[test]
     fn department_setting_requests_are_named() {
