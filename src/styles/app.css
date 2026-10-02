@@ -3950,6 +3950,16 @@ input[type="checkbox"] {
   min-width: 0;
   text-align: right;
 }
+.course-group {
+  color: var(--muted);
+  font-size: 12px;
+  padding-top: 10px;
+}
+.detail-note {
+  grid-column: 1 / -1;
+  margin: 6px 0 0;
+  font-size: 12px;
+}
 .course-status {
   font-size: 13px;
   color: var(--muted);

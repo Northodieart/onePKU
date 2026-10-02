@@ -21,6 +21,7 @@ import {
 import {
   emptyProfile,
   normalizeProfile,
+  overridesForPlan,
   saveProfile,
   useProfile,
   type Profile,
@@ -381,19 +382,10 @@ function PlanProgress({
     staleTime: Infinity,
   });
   const entry = planIndex.find((p) => p.id === planId);
-  const overrides = useMemo(() => {
-    if (!secondary) {
-      return Object.fromEntries(
-        Object.entries(profile.overrides).filter(([k]) => !k.includes(":")),
-      );
-    }
-    const prefix = `${planId}:`;
-    return Object.fromEntries(
-      Object.entries(profile.overrides)
-        .filter(([k]) => k.startsWith(prefix))
-        .map(([k, v]) => [k.slice(prefix.length), v]),
-    );
-  }, [profile.overrides, planId, secondary]);
+  const overrides = useMemo(
+    () => overridesForPlan(profile, planId),
+    [profile, planId],
+  );
   const progress = useMemo(
     () =>
       plan.data
@@ -598,6 +590,7 @@ function ProgressView({
         role="tabpanel"
         aria-label={current ? `${current.name}明细` : "全部学分系列明细"}
       >
+        {current?.note && <p className="subtle detail-note">{current.note}</p>}
         {current ? (
           current.children.length > 0 ? (
             current.children.map((c) => (
@@ -630,6 +623,16 @@ function ProgressView({
                       : " · 学分未知"}
                   </span>
                 </div>
+                <input
+                  className="course-credit"
+                  aria-label={`学分 ${c.name}`}
+                  title="教学网在修课程列表不提供学分，手填后才计入合计"
+                  inputMode="decimal"
+                  placeholder="?"
+                  defaultValue={c.credits ?? ""}
+                  key={`pending:${c.key}:${c.credits ?? ""}`}
+                  onBlur={(e) => onCredit(c.name, parseCredits(e.target.value))}
+                />
                 <select
                   aria-label={`归类 ${c.name}`}
                   value=""
@@ -804,6 +807,7 @@ function DetailRow({
           {gapText(section)}
         </span>
       </div>
+      {section.note && <p className="subtle detail-note">{section.note}</p>}
       {(hasCourses || hasChildren) && (
         <button
           type="button"
@@ -840,62 +844,78 @@ function CourseList({
   editor: Editor;
 }) {
   if (courses.length === 0)
-    return <p className="subtle course-list-empty">还没有归到这里的课。</p>;
+    return <p className="subtle course-list-empty">这一类暂无计入的课程。</p>;
+  const doing = courses.filter((c) => c.status === "inProgress");
+  const done = courses.filter((c) => c.status !== "inProgress");
+  const missing = doing.filter((c) => c.credits === null).length;
+  const row = (c: MatchedCourse) => {
+    const key = normalizeCourseName(c.name);
+    const pinned = editor.pinned[key];
+    return (
+      <li key={c.key}>
+        <span className="course-name">{c.name}</span>
+        <span className="subtle">
+          {c.term}
+          {c.via ? ` · ${viaLabel[c.via]}` : ""}
+        </span>
+        <span className={`course-status ${c.status}`}>
+          {statusLabel[c.status]}
+          {c.score && c.status !== "inProgress" ? ` ${c.score}` : ""}
+        </span>
+        <input
+          className="course-credit"
+          aria-label={`学分 ${c.name}`}
+          title={
+            c.credits === null
+              ? c.status === "inProgress"
+                ? "教学网在修课程列表不提供学分，手填后才计入合计"
+                : "成绩记录与当前培养方案均未提供可用学分"
+              : "手填学分以这里为准，清空即回到成绩或方案的口径"
+          }
+          inputMode="decimal"
+          placeholder="?"
+          defaultValue={c.credits ?? ""}
+          key={`${c.key}:${c.credits ?? ""}`}
+          onBlur={(e) => editor.onCredit(c.name, parseCredits(e.target.value))}
+        />
+        <select
+          aria-label={`归类 ${c.name}`}
+          value={pinned ?? AUTO}
+          onChange={(e) =>
+            editor.onOverride(
+              key,
+              e.target.value === AUTO ? null : e.target.value,
+            )
+          }
+        >
+          <option value={AUTO}>按方案自动</option>
+          {editor.choices.map((choice) => (
+            <option key={choice.id} value={choice.id}>
+              {choice.label}
+            </option>
+          ))}
+          <option value={IGNORE}>不计入</option>
+        </select>
+      </li>
+    );
+  };
   return (
-    <ul className="course-list">
-      {courses.map((c) => {
-        const key = normalizeCourseName(c.name);
-        const pinned = editor.pinned[key];
-        return (
-          <li key={c.key}>
-            <span className="course-name">{c.name}</span>
-            <span className="subtle">
-              {c.term}
-              {c.via ? ` · ${viaLabel[c.via]}` : ""}
-            </span>
-            <span className={`course-status ${c.status}`}>
-              {statusLabel[c.status]}
-              {c.score && c.status !== "inProgress" ? ` ${c.score}` : ""}
-            </span>
-            <input
-              className="course-credit"
-              aria-label={`学分 ${c.name}`}
-              title={
-                c.credits === null
-                  ? c.status === "inProgress"
-                    ? "教学网在修课程列表不提供学分，手填后才计入合计"
-                    : "成绩记录与当前培养方案均未提供可用学分"
-                  : "手填学分以这里为准，清空即回到成绩或方案的口径"
-              }
-              inputMode="decimal"
-              placeholder="?"
-              defaultValue={c.credits ?? ""}
-              key={`${c.key}:${c.credits ?? ""}`}
-              onBlur={(e) =>
-                editor.onCredit(c.name, parseCredits(e.target.value))
-              }
-            />
-            <select
-              aria-label={`归类 ${c.name}`}
-              value={pinned ?? AUTO}
-              onChange={(e) =>
-                editor.onOverride(
-                  key,
-                  e.target.value === AUTO ? null : e.target.value,
-                )
-              }
-            >
-              <option value={AUTO}>按方案自动</option>
-              {editor.choices.map((choice) => (
-                <option key={choice.id} value={choice.id}>
-                  {choice.label}
-                </option>
-              ))}
-              <option value={IGNORE}>不计入</option>
-            </select>
-          </li>
-        );
-      })}
-    </ul>
+    <>
+      {missing > 0 && (
+        <p className="subtle curriculum-hint">
+          在修 {doing.length} 门里有 {missing} 门没填学分，填了才计入合计。
+        </p>
+      )}
+      <ul className="course-list">
+        {doing.length > 0 && (
+          <li className="course-group">在修课程 {doing.length} 门</li>
+        )}
+        {doing.map(row)}
+        {done.length > 0 && (
+          <li className="course-group">已修课程 {done.length} 门</li>
+        )}
+        {done.map(row)}
+      </ul>
+    </>
   );
 }

@@ -82,6 +82,31 @@ export function normalizeProfile(value: unknown): Profile | null {
   };
 }
 
+/**
+ * 取某个方案该用的手动归类：双学位的键带「辅修方案 id:」前缀，取用时剥掉；
+ * 没有辅修时，含冒号的键仍属于主修，不能一概判给双学位。
+ */
+export function overridesForPlan(
+  profile: Profile,
+  planId: string | null,
+): Overrides {
+  const secondary = profile.secondaryPlanId;
+  if (planId !== null && secondary !== null && planId === secondary) {
+    const prefix = `${secondary}:`;
+    return Object.fromEntries(
+      Object.entries(profile.overrides)
+        .filter(([key]) => key.startsWith(prefix))
+        .map(([key, value]) => [key.slice(prefix.length), value]),
+    );
+  }
+  return Object.fromEntries(
+    Object.entries(profile.overrides).filter(
+      ([key]) =>
+        !key.includes(":") || !secondary || !key.startsWith(`${secondary}:`),
+    ),
+  );
+}
+
 export async function saveProfile(profile: Profile): Promise<Profile> {
   const next = { ...profile, updatedAt: new Date().toISOString() };
   await action({ kind: "setProfile", profile: next });

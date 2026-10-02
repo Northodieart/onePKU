@@ -299,7 +299,7 @@ it("offers to pick a plan when the profile was saved without one", async () => {
 });
 
 it("lists in-progress courses without credits instead of counting them as unknown", async () => {
-  mount(
+  const calls = mount(
     {
       cohort: 2025,
       planId: ai.id,
@@ -320,11 +320,29 @@ it("lists in-progress courses without credits instead of counting them as unknow
   expect(
     screen.getByLabelText("归类 待确认测试课程").closest("li"),
   ).toHaveTextContent("学分未知");
+  // 待确认那一行也能直接填学分，填了才计入在修。
+  const credit = screen.getByLabelText("学分 待确认测试课程");
+  fireEvent.change(credit, { target: { value: "2" } });
+  fireEvent.blur(credit);
+  const key = normalizeCourseName("待确认测试课程");
+  await waitFor(() =>
+    expect(
+      calls.some(
+        (c) =>
+          c.kind === "setProfile" &&
+          JSON.stringify(
+            (c.profile as { manualCredits: unknown }).manualCredits,
+          ) === JSON.stringify({ [key]: 2 }),
+      ),
+    ).toBe(true),
+  );
   fireEvent.change(screen.getByLabelText("归类 待确认测试课程"), {
     target: { value: "3-2" },
   });
   expect(screen.queryByText(/已归类课程中有/)).not.toBeInTheDocument();
-  expect(screen.getByRole("tab", { name: /毕业总学分/ })).toHaveTextContent(
-    "在修 0",
+  await waitFor(() =>
+    expect(screen.getByRole("tab", { name: /毕业总学分/ })).toHaveTextContent(
+      "在修 2",
+    ),
   );
 });
