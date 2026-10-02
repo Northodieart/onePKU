@@ -422,11 +422,7 @@ function ProgressView({
   const unknownCourses = sections
     .flatMap((s) => [s, ...s.children])
     .flatMap((s) => s.courses)
-    .filter(
-      (c) =>
-        c.credits === null &&
-        (c.status === "passed" || c.status === "inProgress"),
-    );
+    .filter((c) => c.credits === null && c.status === "passed");
   const [selected, setSelected] = useState<string>("total");
   const [sourceOpen, setSourceOpen] = useState(false);
   const inferredTitle = plan.titleInference;
@@ -538,15 +534,16 @@ function ProgressView({
       </div>
       {totals.unknownCredits > 0 && (
         <p className="subtle">
-          已归类课程中有 {totals.unknownCredits} 门课的学分未知，未计入合计：
+          已归类课程中有 {totals.unknownCredits}{" "}
+          门已通过的课学分未知，未计入合计：
           {unknownCourses.map((c) => c.name).join("、")}。
-          学分优先使用成绩记录，缺失时使用当前方案的匹配课程；教学网在修课程列表不提供学分，无法匹配时保留未知。
+          学分优先取成绩记录，缺失时取当前方案的匹配课程。
         </p>
       )}
       {hasEnglishRange && !englishChosen && (
         <p className="subtle curriculum-hint">
           大学英语按分级修 2～8
-          学分。在“修改年级与专业”里选择你的英语分级后，这里会按分级固定英语学分，差额计入通识教育课。
+          学分。在“修改年级与专业”里选择你的英语分级后，这里会按分级固定英语学分，大类总额随之按各子系列求和。
         </p>
       )}
       <div
@@ -803,7 +800,9 @@ function CourseList({ courses }: { courses: MatchedCourse[] }) {
             aria-label={c.credits === null ? `${c.name}：学分未知` : undefined}
             title={
               c.credits === null
-                ? "成绩记录与当前培养方案均未提供可用学分，未计入合计"
+                ? c.status === "inProgress"
+                  ? "教学网在修课程列表不提供学分，未计入合计"
+                  : "成绩记录与当前培养方案均未提供可用学分，未计入合计"
                 : undefined
             }
           >

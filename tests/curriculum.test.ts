@@ -243,7 +243,8 @@ describe("computeProgress", () => {
         .flatMap((s) => [s, ...s.children])
         .find((s) => s.id === id)!;
     expect(find("2-1").earned).toBe(5);
-    expect(find("2-1").inProgress).toBe(4);
+    // 在修课程的学分不由方案回填：教学网列表里根本没有学分那一列。
+    expect(find("2-1").inProgress).toBe(0);
     expect(find("1-5").earned).toBe(3);
     expect(find("1-5").courses[0].via).toBe("variant");
     expect(find("1-2").earned).toBe(3);
@@ -251,7 +252,7 @@ describe("computeProgress", () => {
     expect(find("1-1").earned).toBe(2);
     expect(find("1-8").earned).toBe(2);
     expect(find("1").earned).toBe(3 + 3 + 1 + 2 + 2);
-    expect(find("3-1").inProgress).toBe(3);
+    expect(find("3-1").inProgress).toBe(0);
     expect(progress.pending.map((p) => p.name)).toEqual([
       "数学分析（Ⅱ）",
       "量子计算",
@@ -260,7 +261,7 @@ describe("computeProgress", () => {
     expect(progress.totals).toMatchObject({
       required: 140,
       earned: 16,
-      inProgress: 7,
+      inProgress: 0,
       unknownCredits: 0,
     });
     expect(find("2").children.map((c) => c.id)).toEqual(["2-1", "2-2"]);
@@ -281,12 +282,12 @@ describe("computeProgress", () => {
     expect(progress.ignored.map((c) => c.name)).toContain("量子计算");
     expect(sectionChoices(progress).map((c) => c.id)).toContain("3-2");
   });
-  it("keeps matched credits when manually assigning exact, alternative and variant courses", () => {
-    for (const [name, credits] of [
-      ["高等数学 A（一）", 5],
-      ["数学分析（Ⅰ）", 5],
-      ["计算概论 A（实验班）", 3],
-    ] as const) {
+  it("lets a manual assignment win outright without taking credits from the plan", () => {
+    for (const name of [
+      "高等数学 A（一）",
+      "数学分析（Ⅰ）",
+      "计算概论 A（实验班）",
+    ]) {
       const overrides = { [normalizeCourseName(name)]: "3-2" };
       const progress = computeProgress(
         plan,
@@ -298,11 +299,11 @@ describe("computeProgress", () => {
         .flatMap((s) => s.children)
         .find((s) => s.id === "3-2")!;
       expect(assigned.courses[0]).toMatchObject({
-        credits,
+        credits: null,
         via: "override",
         sectionId: "3-2",
       });
-      expect(progress.totals.inProgress).toBe(credits);
+      expect(progress.totals.inProgress).toBe(0);
       expect(progress.totals.unknownCredits).toBe(0);
       const graded = computeProgress(
         plan,
@@ -311,24 +312,40 @@ describe("computeProgress", () => {
         overrides,
       );
       expect(graded.totals.earned).toBe(2);
+      // 成绩单没给学分时也不回填方案学分，改由手填那条路补。
       const missing = computeProgress(
         plan,
         [score(name, "", "P", "任选")],
         [],
         overrides,
       );
-      expect(missing.totals.earned).toBe(credits);
+      expect(missing.totals.earned).toBe(0);
+      expect(missing.totals.unknownCredits).toBe(1);
       const ignored = computeProgress(
         plan,
         [],
         [{ id: "current", name, current: true }],
-        {
-          [normalizeCourseName(name)]: "ignore",
-        },
+        { [normalizeCourseName(name)]: "ignore" },
       );
       expect(ignored.totals.inProgress).toBe(0);
-      expect(ignored.ignored[0].credits).toBe(credits);
+      expect(ignored.ignored[0].credits).toBeNull();
     }
+  });
+  it("does not count an exercise course alongside its main course", () => {
+    const progress = computeProgress(
+      plan,
+      [],
+      [
+        { id: "main", name: "线性代数 A（Ⅰ）", current: true },
+        { id: "exercise", name: "线性代数 A（Ⅰ）习题", current: true },
+      ],
+    );
+    const rows = progress.sections
+      .flatMap((s) => [s, ...s.children])
+      .flatMap((s) => s.courses)
+      .filter((c) => c.status === "inProgress");
+    // 教学网把习题课和正课并排列进在修，算两遍就是重复计数。
+    expect(rows.map((c) => c.name)).toEqual(["线性代数 A（Ⅰ）"]);
   });
   it("does not invent credits from a public-course keyword or a manual category", () => {
     const courses = [
@@ -336,7 +353,8 @@ describe("computeProgress", () => {
       { id: "unknown", name: "待确认测试课程", current: true },
     ];
     const progress = computeProgress(plan, [], courses);
-    expect(progress.totals).toMatchObject({ inProgress: 0, unknownCredits: 1 });
+    // 在修没填学分只是列出，不算成「缺学分」。
+    expect(progress.totals).toMatchObject({ inProgress: 0, unknownCredits: 0 });
     expect(progress.pending[0]).toMatchObject({
       name: "待确认测试课程",
       credits: null,
@@ -344,7 +362,7 @@ describe("computeProgress", () => {
     const manual = computeProgress(plan, [], courses, {
       待确认测试课程: "3-2",
     });
-    expect(manual.totals).toMatchObject({ inProgress: 0, unknownCredits: 2 });
+    expect(manual.totals).toMatchObject({ inProgress: 0, unknownCredits: 0 });
     expect(manual.pending).toEqual([]);
   });
   it("fixes the English series by level without touching general education", () => {

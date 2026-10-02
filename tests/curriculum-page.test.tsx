@@ -162,12 +162,12 @@ it("shows earned, in-progress and pending courses and persists a manual assignme
   });
   const section = await screen.findByLabelText(`主修方案：${ai.title}`);
   expect(section).toBeInTheDocument();
-  // 高数 5 + 人工智能引论 3 + 人工智能中的数学 4 + 通选 2 = 14 已获；线代 4 在修；神秘学导论待确认。
+  // 高数 5 + 人工智能引论 3 + 人工智能中的数学 4 + 通选 2 = 14 已获；线代在修但不带学分；神秘学导论待确认。
   expect(await screen.findByText("待确认（1）")).toBeInTheDocument();
   const total = screen.getByRole("tab", { name: /毕业总学分/ });
   expect(within(total).getByText("14")).toBeInTheDocument();
   expect(within(total).getByText("/ 140")).toBeInTheDocument();
-  expect(total).toHaveTextContent("在修 4 · 还差 122");
+  expect(total).toHaveTextContent("在修 0 · 还差 126");
   const major = screen.getByRole("tab", { name: /专业必修课程/ });
   expect(within(major).getByText("12")).toBeInTheDocument();
   fireEvent.click(major);
@@ -234,7 +234,7 @@ it("offers to pick a plan when the profile was saved without one", async () => {
   expect(screen.getByLabelText("培养方案版本")).toHaveValue("2024");
 });
 
-it("names unknown-credit courses and separately labels pending courses without credits", async () => {
+it("lists in-progress courses without credits instead of counting them as unknown", async () => {
   mount(
     {
       cohort: 2025,
@@ -250,18 +250,16 @@ it("names unknown-credit courses and separately labels pending courses without c
       { id: "unknown", name: "待确认测试课程", current: true },
     ],
   );
-  const warning = await screen.findByText(/已归类课程中有 1 门课的学分未知/);
-  expect(warning).toHaveTextContent("太极拳");
-  expect(warning).not.toHaveTextContent("待确认测试课程");
-  expect(warning).toHaveTextContent("教学网在修课程列表不提供学分");
+  // 教学网的在修列表不含学分，缺学分不再算成「学分未知」，只在课目里列出。
+  await screen.findByLabelText(`主修方案：${ai.title}`);
+  expect(screen.queryByText(/已归类课程中有/)).not.toBeInTheDocument();
   expect(
     screen.getByLabelText("归类 待确认测试课程").closest("li"),
   ).toHaveTextContent("学分未知");
   fireEvent.change(screen.getByLabelText("归类 待确认测试课程"), {
     target: { value: "3-2" },
   });
-  const updated = await screen.findByText(/已归类课程中有 2 门课的学分未知/);
-  expect(updated).toHaveTextContent("太极拳、待确认测试课程");
+  expect(screen.queryByText(/已归类课程中有/)).not.toBeInTheDocument();
   expect(screen.getByRole("tab", { name: /毕业总学分/ })).toHaveTextContent(
     "在修 0",
   );

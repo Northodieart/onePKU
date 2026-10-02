@@ -664,22 +664,30 @@ function buildSections(
   };
 }
 
+/**
+ * 六级瀑布：手动归类 → 精确名 → 变体基名 → 反向变体 → 公共课关键词 → 课程类别。
+ * 手动归类到此为止，不再从方案回填学分；在修课程也只认用户填的学分，
+ * 因为方案数据里那些行大多没有解析出学分。
+ */
 function assign(
   course: MatchedCourse,
   index: SectionIndex,
   overrides: Overrides,
+  backfill = true,
 ): MatchedCourse {
-  // 归类覆盖只改变学分系列，不应丢掉课程表中已经匹配到的学分。
-  const assigned = assignByPlan(course, index);
-  const override = overrides[normalizeCourseName(course.name)];
-  return override
-    ? { ...assigned, sectionId: override, via: "override" }
-    : assigned;
+  const creditsOf = (fallback: number | null | undefined) =>
+    backfill ? (course.credits ?? fallback ?? null) : course.credits;
+  const key = normalizeCourseName(course.name);
+  const override = overrides[key];
+  if (override) return { ...course, sectionId: override, via: "override" };
+  const assigned = assignByPlan(course, index, creditsOf);
+  return assigned;
 }
 
 function assignByPlan(
   course: MatchedCourse,
   index: SectionIndex,
+  creditsOf: (fallback: number | null | undefined) => number | null,
 ): MatchedCourse {
   const key = normalizeCourseName(course.name);
   const exact = index.byName.get(key);
@@ -688,7 +696,7 @@ function assignByPlan(
       ...course,
       sectionId: exact.sectionId,
       via: exact.via,
-      credits: course.credits ?? exact.credits,
+      credits: creditsOf(exact.credits),
     };
   const base = variantBase(key);
   if (base !== key) {
@@ -698,7 +706,7 @@ function assignByPlan(
         ...course,
         sectionId: variant.sectionId,
         via: "variant",
-        credits: course.credits ?? variant.credits,
+        credits: creditsOf(variant.credits),
       };
   }
   for (const [k, v] of index.byName) {
@@ -707,7 +715,7 @@ function assignByPlan(
         ...course,
         sectionId: v.sectionId,
         via: "variant",
-        credits: course.credits ?? v.credits,
+        credits: creditsOf(v.credits),
       };
   }
   const publicHit = index.publicChildren.find((p) =>
@@ -847,10 +855,13 @@ export function computeProgress(
   });
   for (const c of courses) {
     if (!c.current) continue;
+    // 习题课不算独立一门课：教学网把它和正课并排列进在修，算进来就是重复计数。
+    if (/习题/.test(c.name)) continue;
     const key = normalizeCourseName(c.name);
     if (seen.has(key)) continue;
     seen.add(key);
     matched.push(
+      // 教学网课程列表不含学分，在修课程的学分不由方案回填。
       assign(
         {
           key: `course:${c.id}`,
@@ -865,6 +876,7 @@ export function computeProgress(
         },
         index,
         overrides,
+        false,
       ),
     );
   }
@@ -891,8 +903,8 @@ export function computeProgress(
       if (m.credits !== null) section.earned += m.credits;
       else unknownCredits += 1;
     } else if (m.status === "inProgress") {
+      // 在修没填学分就只是列出，不计成「缺学分」的方案缺口。
       if (m.credits !== null) section.inProgress += m.credits;
-      else unknownCredits += 1;
     }
   }
   // 父级汇总子级。
