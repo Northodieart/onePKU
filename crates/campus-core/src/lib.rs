@@ -50,6 +50,11 @@ pub enum Request {
         source: String,
         id: String,
     },
+    /// 本院通知按手动选择的院系定位；门户登录打通前不做自动识别。
+    Departments,
+    SetDepartment {
+        value: String,
+    },
     OpenLink {
         url: String,
     },
@@ -594,6 +599,8 @@ impl Core {
                 news::open_item(source, &item)?;
                 json!({"opened":true})
             }
+            Request::Departments => news::department_state(),
+            Request::SetDepartment { value } => news::set_department(value)?,
             Request::CalendarPdf { year } => news::calendar_pdf(year).await?,
             Request::CurriculumPages {
                 volume,
@@ -957,6 +964,28 @@ mod tests {
         assert!(!storage::cacheable(&write));
         assert!(serde_json::from_value::<Request>(json!({"kind": "haoxueRecord", "course": "1"}))
             .is_err());
+    }
+    #[test]
+    fn department_setting_requests_are_named() {
+        assert!(matches!(
+            serde_json::from_value::<Request>(json!({ "kind": "departments" })).unwrap(),
+            Request::Departments
+        ));
+        assert!(matches!(
+            serde_json::from_value::<Request>(json!({
+                "kind": "setDepartment", "value": "数学科学学院"
+            }))
+            .unwrap(),
+            Request::SetDepartment { .. }
+        ));
+        // 本院通知走公开的 news 通道，页签标识必须与前端 sources 里的 id 一致。
+        assert!(matches!(
+            serde_json::from_value::<Request>(json!({
+                "kind": "news", "source": "college", "page": 1
+            }))
+            .unwrap(),
+            Request::News { .. }
+        ));
     }
     #[test]
     fn authentication_has_distinct_recovery() {

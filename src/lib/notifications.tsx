@@ -16,6 +16,11 @@ export const sources = [
     name: "各单位公告",
     description: "门户汇集的院系与部门公告",
   },
+  {
+    id: "college",
+    name: "本院通知",
+    description: "按设置里选择的院系读官网，读不到再回退门户部门公告",
+  },
   { id: "dean", name: "教务部", description: "选课、考试、培养与交流" },
   { id: "eecs", name: "信息科学技术学院", description: "学院、教务与学工通知" },
   { id: "library", name: "图书馆活动", description: "讲座、阅读活动与培训" },
@@ -86,7 +91,10 @@ export function NotificationProvider({ children }: { children: ReactNode }) {
   const [enabled, setEnabledState] = useState<string[]>(() =>
     saved(
       "onepku.news.sources.v1",
-      sources.filter((s) => s.id !== "library").map((s) => s.id),
+      // 本院通知要先在设置里选院系，图书馆只在手动订阅时读取。
+      sources
+        .filter((s) => !["library", "college"].includes(s.id))
+        .map((s) => s.id),
     ),
   );
   const [read, setRead] = useState<string[]>(() =>
@@ -109,6 +117,10 @@ export function NotificationProvider({ children }: { children: ReactNode }) {
     { kind: "news", source: "department", page: 1 },
     enabled.includes("department"),
   );
+  const college = useResource<NewsFeed>(
+    { kind: "news", source: "college", page: 1 },
+    enabled.includes("college"),
+  );
   const dean = useResource<NewsFeed>(
     { kind: "news", source: "dean", page: 1 },
     enabled.includes("dean"),
@@ -121,7 +133,7 @@ export function NotificationProvider({ children }: { children: ReactNode }) {
     { kind: "news", source: "library", page: 1 },
     enabled.includes("library"),
   );
-  const feeds = { school, department, dean, eecs, library };
+  const feeds = { school, department, college, dean, eecs, library };
   const all = { course, ...feeds };
   const readSet = useMemo(() => new Set(read), [read]);
   function store(key: string, value: unknown) {

@@ -43,6 +43,7 @@ const serviceScope: Record<Service, string> = {
   bdkj: "场地预约",
 };
 const REPO_URL = "https://github.com/PeterTianbuhan/onePKU";
+type DepartmentState = { selected: string; options: string[] };
 
 function stateText(state?: string) {
   switch (state) {
@@ -79,6 +80,24 @@ export default function Settings({
   const [cacheError, setCacheError] = useState("");
   const [haoxueError, setHaoxueError] = useState("");
   const haoxue = useResource<Haoxue>({ kind: "haoxueStatus" });
+  const college = useResource<DepartmentState>({ kind: "departments" });
+  const [collegeDraft, setCollegeDraft] = useState<string>();
+  const [collegeMessage, setCollegeMessage] = useState("");
+  const [collegeError, setCollegeError] = useState("");
+  useEffect(() => {
+    const loaded = college.data?.data?.selected;
+    if (collegeDraft === undefined && loaded !== undefined)
+      setCollegeDraft(loaded);
+  }, [college.data, collegeDraft]);
+  function persistDepartment(value: string) {
+    setCollegeError("");
+    void action<DepartmentState>({ kind: "setDepartment", value })
+      .then(() =>
+        setCollegeMessage(value ? `本院已设为 ${value}` : "已取消选择本院"),
+      )
+      .catch(() => setCollegeError("未能保存院系，请重试"))
+      .finally(() => void college.refetch());
+  }
   const learner = haoxue.data?.data;
 
   const profileQuery = useProfile();
@@ -238,6 +257,46 @@ export default function Settings({
               : undefined)
           }
         />
+        <SettingRow
+          label="本院通知"
+          description="通知页的「本院」按这里选择的院系读取：已适配的学院读官网通知页，读不到时回退到门户部门通知按院系过滤。只保存在本机。"
+          stacked
+          control={
+            <Button
+              variant="primary"
+              disabled={
+                collegeDraft === undefined ||
+                collegeDraft === (college.data?.data?.selected ?? "")
+              }
+              onClick={() =>
+                collegeDraft !== undefined && persistDepartment(collegeDraft)
+              }
+            >
+              保存
+            </Button>
+          }
+          status={collegeMessage || undefined}
+          error={collegeError || undefined}
+        >
+          {collegeDraft === undefined ? (
+            <div className="skeleton" aria-label="正在读取院系列表">
+              <i />
+            </div>
+          ) : (
+            <select
+              aria-label="本院（院系）"
+              value={collegeDraft}
+              onChange={(e) => setCollegeDraft(e.target.value)}
+            >
+              <option value="">未选择</option>
+              {(college.data?.data?.options ?? []).map((name) => (
+                <option key={name} value={name}>
+                  {name}
+                </option>
+              ))}
+            </select>
+          )}
+        </SettingRow>
       </section>
 
       <section className="resource settings-section" aria-label="年级与专业">
