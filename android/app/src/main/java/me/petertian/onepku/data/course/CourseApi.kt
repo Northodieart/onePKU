@@ -211,7 +211,7 @@ class CourseApi @Inject constructor(
     private fun parseAssignment(doc: Document): AssignmentDetail {
         val title = (doc.select("span.title").first() ?: doc.select("#pageTitleText").first())
             ?.text()?.trim().orEmpty()
-        val deadlineRaw = doc.select(".itemdates").first()?.text()?.trim()
+        val deadlineRaw = deadlineText(doc)
         val instructions = doc.select("div.vtbegenerated").first()?.text()?.trim().orEmpty()
         val attachments = doc.select("ul.attachments li a").mapNotNull { a ->
             val name = a.text().trim()
@@ -547,6 +547,19 @@ class CourseApi @Inject constructor(
 
         fun mimeTypeOf(filename: String): String =
             MIME[filename.substringAfterLast('.', "").lowercase()] ?: "application/octet-stream"
+
+        /**
+         * 取作业到期日期。新版教学网写在 `.metaField` 里,时间还嵌在其中的 `.metaSubInfo`,
+         * 同一排还有"满分"等别的 metaField,所以只认那个真能解析成日期的;
+         * 旧版页面是 `.itemdates`,仍按原样兜着。
+         */
+        fun deadlineText(doc: Document): String? {
+            doc.select(".metaField").asSequence()
+                .map { it.text().trim() }
+                .firstOrNull { parseDeadline(it) != null }
+                ?.let { return it }
+            return doc.select(".itemdates").first()?.text()?.trim()?.takeIf { it.isNotEmpty() }
+        }
 
         /** 解析 Blackboard 中文截止时间 "2025年3月15日 星期六 下午11:59" → epoch millis(UTC+8)。 */
         fun parseDeadline(raw: String?): Long? {
