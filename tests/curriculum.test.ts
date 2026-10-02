@@ -9,6 +9,7 @@ import {
   variantBase,
   type Plan,
   type PlanIndexEntry,
+  type Progress,
 } from "../src/lib/curriculum";
 import type { GradeCourse } from "../src/lib/grades";
 
@@ -395,6 +396,163 @@ describe("computeProgress", () => {
   });
 });
 
+describe("plan totals follow the plan's own arithmetic", () => {
+  const makePlan = (over: Partial<Plan> = {}): Plan => ({
+    id: "2025-测试学院-测试专业",
+    cohort: 2025,
+    volume: "v",
+    school: "测试学院",
+    major: "测试专业",
+    track: null,
+    title: "t",
+    kind: "major",
+    degree: null,
+    totalCredits: { min: 130, max: 160 },
+    topRequirements: [
+      { id: "1", name: "公共基础课程", min: 45, max: 51, unit: "学分" },
+      { id: "2", name: "专业必修课程", min: 55, max: 55, unit: "学分" },
+      { id: "3", name: "选修课程", min: 40, max: 40, unit: "学分" },
+    ],
+    requirements: [
+      {
+        id: "1-1",
+        parent: "1",
+        name: "思想政治理论必修课",
+        requirement: "19 学分",
+        min: 19,
+        max: 19,
+        unit: "学分",
+      },
+      { id: "1-2", parent: "1", name: "英语", requirement: "", unit: "学分" },
+      {
+        id: "2-9",
+        parent: "2",
+        name: "专业核心课",
+        requirement: "30 学分",
+        min: 30,
+        max: 30,
+        unit: "学分",
+      },
+      {
+        id: "3-1",
+        parent: "3",
+        name: "自主选修课",
+        requirement: "40 学分",
+        min: 40,
+        max: 40,
+        unit: "学分",
+      },
+    ],
+    groups: [],
+    notes: [],
+    warnings: [],
+    source: { volumeId: "2025-测试", url: "", lineStart: 1, lineEnd: 2 },
+    ...over,
+  });
+  const leaf = (progress: Progress, id: string) => {
+    for (const top of progress.sections) {
+      if (top.id === id) return top;
+      const hit = top.children.find((child) => child.id === id);
+      if (hit) return hit;
+    }
+    return null;
+  };
+  it("derives the only missing sub-series from the parent total", () => {
+    const progress = computeProgress(makePlan(), [], []);
+    // 大类一是 45～51 学分，其余子系列 19 学分，差额 26，上限 51-19=32。
+    expect(leaf(progress, "1-2")?.min).toBe(26);
+    expect(leaf(progress, "1-2")?.max).toBe(32);
+    expect(leaf(progress, "1-2")?.requirement).toBe("26～32 学分");
+    expect(leaf(progress, "1-2")?.note).toContain("扣除其余子系列推得");
+  });
+  it("does not invent a total when two or more sub-series are missing", () => {
+    const progress = computeProgress(
+      makePlan({
+        requirements: [
+          ...makePlan().requirements,
+          {
+            id: "1-3",
+            parent: "1",
+            name: "体育课",
+            requirement: "",
+            unit: "学分",
+          },
+        ],
+      }),
+      [],
+      [],
+    );
+    expect(leaf(progress, "1-2")?.min).toBeUndefined();
+    expect(leaf(progress, "1-3")?.min).toBeUndefined();
+  });
+  it("restores a sub-series that only appears among course groups, in numeric id order", () => {
+    const progress = computeProgress(
+      makePlan({
+        groups: [
+          {
+            id: "2.2",
+            parent: "2",
+            name: "专业选修课",
+            min: 12,
+            max: 12,
+            unit: "学分",
+            note: "只在课程组里出现",
+            courses: [course("04834041", "人工智能伦理", "任选", 2)],
+            alternatives: [],
+          },
+        ],
+      }),
+      [],
+      [],
+    );
+    expect(
+      progress.sections.find((s) => s.id === "2")?.children.map((c) => c.id),
+    ).toEqual(["2-2", "2-9"]);
+    expect(leaf(progress, "2-2")?.min).toBe(12);
+    expect(leaf(progress, "2-2")?.note).toBe("只在课程组里出现");
+  });
+  it("takes a top-level total from the plan groups when the requirement table omits it", () => {
+    const progress = computeProgress(
+      makePlan({
+        topRequirements: makePlan().topRequirements.filter((t) => t.id !== "2"),
+        groups: [
+          {
+            id: "2",
+            parent: null,
+            name: "专业必修课程",
+            min: 55,
+            max: 55,
+            unit: "学分",
+            courses: [],
+            alternatives: [],
+          },
+        ],
+      }),
+      [],
+      [],
+    );
+    expect(progress.sections.find((s) => s.id === "2")?.min).toBe(55);
+  });
+  it("accepts a summed graduation total only inside the plan's own range", () => {
+    // 三个大类合计 140，方案自述 130～160，因此采用合计而不是下限。
+    expect(computeProgress(makePlan(), [], []).totals.required).toBe(140);
+    const stated = makePlan({ totalCredits: { min: 150, max: 160 } });
+    expect(computeProgress(stated, [], []).totals.required).toBe(150);
+    const hours = makePlan({
+      topRequirements: [
+        { id: "1", name: "公共基础课程", min: 45, max: 51, unit: "学分" },
+        { id: "2", name: "专业必修课程", min: 55, max: 55, unit: "学分" },
+        { id: "3", name: "选修课程", min: 40, max: 40, unit: "学时" },
+      ],
+    });
+    expect(computeProgress(hours, [], []).totals.required).toBe(130);
+    const unknown = makePlan({
+      topRequirements: makePlan().topRequirements.filter((t) => t.id !== "3"),
+      requirements: makePlan().requirements.filter((r) => r.id !== "3-1"),
+    });
+    expect(computeProgress(unknown, [], []).totals.required).toBe(130);
+  });
+});
 describe("inferProfile", () => {
   const index: PlanIndexEntry[] = [
     {

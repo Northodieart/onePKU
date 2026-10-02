@@ -297,6 +297,65 @@ function makeSection(
   };
 }
 
+/** 分组 id「2.2」对应要求 id「2-2」；只补这一层，更深的模块组仍归到所属子系列。 */
+const SECOND_LEVEL_GROUP = /^[123]\.\d+$/;
+function fmtCredits(value: number): string {
+  return Number.isInteger(value) ? String(value) : value.toFixed(1);
+}
+function sectionIdPart(part: string | undefined): number {
+  if (part === undefined) return -1;
+  const value = Number(part);
+  return Number.isInteger(value) ? value : -1;
+}
+function compareSectionIds(a: string, b: string): number {
+  const pa = a.split("-");
+  const pb = b.split("-");
+  for (let i = 0; i < Math.max(pa.length, pb.length); i += 1) {
+    const na = sectionIdPart(pa[i]);
+    const nb = sectionIdPart(pb[i]);
+    if (na !== nb) return na - nb;
+  }
+  return a < b ? -1 : a > b ? 1 : 0;
+}
+/** 方案只在父级给了总额、恰好一个子系列没写学分要求时，用差额推出该子系列的下限。 */
+function deriveMissingTotals(parent: ProgressSection) {
+  if (parent.min === undefined) return;
+  const missing = parent.children.filter((child) => child.min === undefined);
+  if (missing.length !== 1) return;
+  const known = parent.children
+    .filter((child) => child.min !== undefined)
+    .reduce((sum, child) => sum + (child.min as number), 0);
+  const rest = parent.min - known;
+  if (rest <= 0) return;
+  const target = missing[0];
+  const rawCeiling = parent.max === undefined ? undefined : parent.max - known;
+  const ceiling =
+    rawCeiling !== undefined && rawCeiling >= rest ? rawCeiling : undefined;
+  target.min = rest;
+  target.max = ceiling ?? rest;
+  target.requirement =
+    ceiling !== undefined && ceiling > rest
+      ? `${fmtCredits(rest)}～${fmtCredits(ceiling)} 学分`
+      : `${fmtCredits(rest)} 学分`;
+  target.note =
+    `该类在方案中按方向或模块分列，未给出统一学分要求；此处由「${parent.name} ${fmtCredits(parent.min)} 学分` +
+    "扣除其余子系列推得，选定方向后即按该方向计算";
+}
+/** 各大类都定死后，毕业总学分也按求和落一次；同样只在方案自述的区间内才采用。 */
+function recomputeRequired(
+  plan: Plan,
+  sections: ProgressSection[],
+): number | null {
+  const stated = plan.totalCredits;
+  if (!stated) return null;
+  if (
+    sections.some((s) => (s.unit ?? "学分") !== "学分") ||
+    sections.some((s) => s.min === undefined)
+  )
+    return stated.min;
+  const sum = sections.reduce((n, s) => n + (s.min as number), 0);
+  return sum >= stated.min && sum <= stated.max ? sum : stated.min;
+}
 /** 把方案整理成两层的学分系列，并建立课程名索引。 */
 function buildSections(plan: Plan): {
   sections: ProgressSection[];
@@ -312,9 +371,18 @@ function buildSections(plan: Plan): {
     "3": "选修课程",
   };
   if (usesRequirements) {
+    // 有些方案（如 2025 物理学院-物理学）没给出三大类总额，但课程组里写了 min/max。
+    const groupById = new Map<string, PlanGroup>();
+    for (const g of plan.groups) groupById.set(g.id.replace(/\./g, "-"), g);
     for (const id of ["1", "2", "3"]) {
       const top = plan.topRequirements.find((t) => t.id === id);
-      const s = makeSection(id, top?.name ?? topNames[id], top ?? {});
+      const group = groupById.get(id);
+      const g = group && group.parent === null ? group : undefined;
+      const s = makeSection(id, top?.name ?? g?.name ?? topNames[id] ?? id, {
+        min: top?.min ?? g?.min,
+        max: top?.max ?? g?.max,
+        unit: top?.unit ?? g?.unit,
+      });
       sections.push(s);
       flat.set(id, s);
     }
@@ -324,6 +392,26 @@ function buildSections(plan: Plan): {
       parent.children.push(s);
       flat.set(r.id, s);
     }
+    // 要求表漏掉、只在课程组里出现的子系列（如物理学院的专业核心课）补回来，
+    // 否则这些课只能挂到大类本身，界面上看不到单独一类。
+    for (const g of plan.groups) {
+      if (!SECOND_LEVEL_GROUP.test(g.id)) continue;
+      const rid = g.id.replace(/\./g, "-");
+      if (flat.has(rid)) continue;
+      const parent = flat.get(rid.split("-")[0]);
+      if (!parent) continue;
+      const s = makeSection(rid, g.name.trim() ? g.name : rid, {
+        requirement: g.requirement,
+        min: g.min,
+        max: g.max,
+        unit: g.unit,
+        note: g.note,
+      });
+      parent.children.push(s);
+      flat.set(rid, s);
+    }
+    for (const top of sections)
+      top.children.sort((a, b) => compareSectionIds(a.id, b.id));
   } else {
     for (const g of plan.groups.filter((g) => g.parent === null)) {
       const s = makeSection(g.id, g.name, g);
@@ -343,6 +431,7 @@ function buildSections(plan: Plan): {
       flat.set(g.id, s);
     }
   }
+  for (const top of sections) deriveMissingTotals(top);
 
   const findChild = (re: RegExp) =>
     [...flat.values()].find(
@@ -631,7 +720,7 @@ export function computeProgress(
     pending,
     ignored,
     totals: {
-      required: plan.totalCredits?.min ?? null,
+      required: recomputeRequired(plan, sections),
       earned,
       inProgress,
       unknownCredits,
