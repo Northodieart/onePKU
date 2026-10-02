@@ -1,0 +1,115 @@
+//! 好学课堂实录登录窗口。学校把令牌交给页面里的原生桥，本模块只负责注入桥、
+//! 把原始载荷交给核心解析，并在校验通过后关闭窗口。密码始终只留在学校页面里。
+use super::*;
+
+const LABEL: &str = "haoxue-login";
+const LOGIN: &str = "https://passport.pku.edu.cn/auth/login?redirect=https%3A%2F%2Fpassport.pku.edu.cn%2Fauth%2Fapp-login";
+const RELAY: &str = "https://passport.pku.edu.cn/auth/app-login";
+/// 令牌中转页只对安卓 WebView 身份调用原生桥，与好学安卓客户端的行为一致。
+const ANDROID_UA: &str = "Mozilla/5.0 (Linux; Android 13; Pixel 7 Build/TQ3A.230805.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/120.0.0.0 Mobile Safari/537.36";
+
+/// 桥接约定：页面调用 `bridge.PKULoginSuccess(payload)`。桌面身份下中转页不会调用
+/// 桥，注入脚本发现停在 relay 页就请求以安卓身份重开该页；relay 窗口不再重试。
+const BRIDGE: &str = r#"(function () {
+  var internals = window.__TAURI_INTERNALS__;
+  if (!internals || !internals.invoke) return;
+  var settled = false;
+  var bridge = {
+    PKULoginSuccess: function (payload) {
+      settled = true;
+      internals.invoke('haoxue_login', { payload: String(payload) }).catch(function () {});
+    },
+  };
+  try {
+    Object.defineProperty(window, 'bridge', {
+      configurable: false,
+      enumerable: true,
+      get: function () { return bridge; },
+      set: function () {},
+    });
+  } catch (error) {
+    window.bridge = bridge;
+  }
+  var relay = location.href.indexOf('https://passport.pku.edu.cn/auth/app-login') === 0;
+  var retried = sessionStorage.getItem('onpku-relay-retry') === '1';
+  if (relay && !retried && !window.__onpkuAndroid) {
+    sessionStorage.setItem('onpku-relay-retry', '1');
+    setTimeout(function () {
+      if (!settled) internals.invoke('haoxue_login_retry', {}).catch(function () {});
+    }, 1500);
+  }
+})();"#;
+
+fn passport(url: &tauri::Url) -> bool {
+    url.as_str().starts_with("https://passport.pku.edu.cn/")
+}
+
+fn open(app: &tauri::AppHandle, target: &str, android: bool) -> Result<(), String> {
+    if let Some(existing) = app.get_webview_window(LABEL) {
+        let _ = existing.close();
+    }
+    let mut builder = tauri::WebviewWindowBuilder::new(
+        app,
+        LABEL,
+        tauri::WebviewUrl::External(target.parse().map_err(|_| "登录地址无效")?),
+    )
+    .title("课堂实录 · 统一身份认证")
+    .inner_size(980.0, 760.0)
+    .min_inner_size(620.0, 520.0)
+    .on_navigation(passport);
+    if android {
+        builder = builder.user_agent(ANDROID_UA);
+    }
+    // 安卓身份下仍要先注入桥，否则中转页找不到原生接口。
+    let window = builder.build().map_err(|_| "无法打开课堂实录登录窗口")?;
+    if android {
+        let _ = window.eval("window.__onpkuAndroid = true;");
+    }
+    window.set_focus().map_err(|_| "登录窗口无法激活")?;
+    Ok(())
+}
+
+#[tauri::command]
+pub(crate) fn open_haoxue_login(window: tauri::WebviewWindow) -> Result<(), String> {
+    if window.label() != "main" {
+        return Err("此窗口不可执行本地操作".into());
+    }
+    open(&window.app_handle().clone(), LOGIN, false)
+}
+
+/// 中转页在桌面身份下不调用桥时，改用安卓 WebView 身份重开同一页。
+#[tauri::command]
+pub(crate) fn haoxue_login_retry(window: tauri::WebviewWindow) -> Result<(), String> {
+    if window.label() != LABEL {
+        return Err("此窗口不可更改登录方式".into());
+    }
+    open(&window.app_handle().clone(), RELAY, true)
+}
+
+/// 只有本窗口的载荷可以写入会话；载荷原样交给核心解析与保存。
+#[tauri::command]
+pub(crate) async fn haoxue_login(
+    window: tauri::WebviewWindow,
+    state: tauri::State<'_, Arc<campus_core::Core>>,
+    payload: String,
+) -> Result<(), String> {
+    if window.label() != LABEL {
+        return Err("此窗口不可写入登录状态".into());
+    }
+    let core = state.inner().clone();
+    let parsed = serde_json::from_str(&payload).unwrap_or(serde_json::Value::String(payload));
+    let envelope = tauri::async_runtime::spawn_blocking(move || {
+        core.call(campus_core::Request::HaoxueLogin { payload: parsed })
+    })
+    .await
+    .map_err(|_| "服务暂不可用".to_string())?;
+    if envelope.error.is_some() {
+        return Err(
+            envelope.error
+                .map(|problem| problem.message)
+                .unwrap_or_else(|| "登录未完成".to_string()),
+        );
+    }
+    let _ = window.close();
+    Ok(())
+}

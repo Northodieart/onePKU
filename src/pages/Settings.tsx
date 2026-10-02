@@ -14,6 +14,8 @@ import {
   action,
   fmtTime,
   chooseDownloadFolder,
+  connectHaoxue,
+  type Haoxue,
   type Preferences,
 } from "../lib/api";
 import {
@@ -75,6 +77,9 @@ export default function Settings({
   const [storageError, setStorageError] = useState("");
   const [cacheMessage, setCacheMessage] = useState("");
   const [cacheError, setCacheError] = useState("");
+  const [haoxueError, setHaoxueError] = useState("");
+  const haoxue = useResource<Haoxue>({ kind: "haoxueStatus" });
+  const learner = haoxue.data?.data;
 
   const profileQuery = useProfile();
   const savedProfile = normalizeProfile(profileQuery.data?.data ?? null);
@@ -196,6 +201,41 @@ export default function Settings({
           error={
             keepAliveError ||
             (prefs.error || prefs.data?.error ? "设置暂时无法读取" : undefined)
+          }
+        />
+        <SettingRow
+          label="课堂实录"
+          description="回放与课次来自北大好学课堂实录。登录在学校统一身份认证页面完成，应用不经手密码，只保存学校交回的令牌。"
+          control={
+            <Button
+              variant={learner?.connected ? "" : "primary"}
+              disabled={!inApp}
+              onClick={() => {
+                setHaoxueError("");
+                if (learner?.connected) {
+                  void action({ kind: "haoxueLogout" })
+                    .then(() => haoxue.refetch())
+                    .catch(() => setHaoxueError("未能退出，请重试"));
+                  return;
+                }
+                void connectHaoxue().catch(() =>
+                  setHaoxueError("登录窗口未能打开，请重试"),
+                );
+              }}
+            >
+              {learner?.connected ? "退出登录" : "连接…"}
+            </Button>
+          }
+          status={
+            learner?.connected
+              ? `${learner.name || "已连接"} · ${learner.account}`
+              : undefined
+          }
+          error={
+            haoxueError ||
+            (!learner?.connected && !inApp
+              ? "请在桌面应用中连接课堂实录"
+              : undefined)
           }
         />
       </section>

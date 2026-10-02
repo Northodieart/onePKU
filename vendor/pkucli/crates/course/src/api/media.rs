@@ -218,7 +218,37 @@ impl Drop for TemporaryDirectory {
 impl CourseApi {
     /// Resolve one authorized replay. Signing URLs and AES keys stay in memory.
     pub async fn playback_media(&self, video: &VideoInfo) -> Result<PlaybackMedia> {
-        let detail = self.get_video_detail(video).await?;
+        self.parts_from(self.get_video_detail(video).await?).await
+    }
+    /// 好学课堂实录直接给出播放列表地址，没有教学网的页面跳转与换票环节。
+    pub async fn playback_media_at(&self, playlist: &str) -> Result<PlaybackMedia> {
+        let base_url = url::Url::parse(playlist).context("解析播放列表地址失败")?;
+        let raw = self
+            .bounded_media_bytes(&base_url, 2 * 1024 * 1024)
+            .await
+            .map_err(|error| anyhow!("视频播放列表获取失败：{error}"))?;
+        let (_, parsed) = m3u8_rs::parse_playlist(&raw)
+            .map_err(|error| anyhow!("解析 m3u8 失败: {error}"))?;
+        let playlist = match parsed {
+            m3u8_rs::Playlist::MediaPlaylist(playlist) => playlist,
+            m3u8_rs::Playlist::MasterPlaylist(_) => {
+                return Err(anyhow!("暂不支持 Master Playlist 格式"))
+            }
+        };
+        self.parts_from(VideoDetail { base_url, playlist }).await
+    }
+    /// 好学 app-login 令牌只用于媒体与密钥请求，不进入教学网请求、日志或返回值。
+    pub fn with_media_token(mut self, token: &str) -> Self {
+        self.media_cookie = (!token.is_empty()).then(|| format!("_token={token}"));
+        self
+    }
+    pub(super) fn media_request(&self, request: reqwest::RequestBuilder) -> reqwest::RequestBuilder {
+        match &self.media_cookie {
+            Some(cookie) => request.header("Cookie", cookie.clone()),
+            None => request,
+        }
+    }
+    async fn parts_from(&self, detail: VideoDetail) -> Result<PlaybackMedia> {
         media_url(&detail.base_url)?;
         if !detail.playlist.end_list
             || detail.playlist.segments.is_empty()
@@ -306,8 +336,7 @@ impl CourseApi {
     async fn bounded_media_bytes_once(&self, url: &url::Url, limit: usize) -> Result<Vec<u8>> {
         media_url(url)?;
         let mut response = self
-            .client
-            .get(url.clone())
+            .media_request(self.client.get(url.clone()))
             .timeout(std::time::Duration::from_secs(45))
             .send()
             .await?

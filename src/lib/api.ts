@@ -47,9 +47,12 @@ export function useResource<T>(request: Request, enabled = true) {
     refetchInterval:
       request.kind === "localMaterials"
         ? 5000
-        : ["news", "notices", "assignments"].includes(request.kind)
-          ? 5 * 60 * 1000
-          : false,
+        : // 登录窗口关闭后设置页要自己显出账号，不能等用户手动刷新。
+          request.kind === "haoxueStatus"
+          ? 3000
+          : ["news", "notices", "assignments"].includes(request.kind)
+            ? 5 * 60 * 1000
+            : false,
     refetchIntervalInBackground: true,
     gcTime: 15 * 60 * 1000,
     refetchOnWindowFocus: true,
@@ -236,6 +239,14 @@ export async function chooseDownloadFolder(): Promise<Preferences | null> {
   const { invoke } = await import("@tauri-apps/api/core");
   return invoke<Preferences | null>("choose_download_folder");
 }
+/** 打开学校统一身份认证窗口连接课堂实录；令牌由学校页面直接交给应用。 */
+export async function connectHaoxue(): Promise<void> {
+  if (!("__TAURI_INTERNALS__" in window))
+    throw Error("请在 OnePKU 桌面应用中连接课堂实录");
+  const { invoke } = await import("@tauri-apps/api/core");
+  return invoke("open_haoxue_login");
+}
+export type Haoxue = { connected: boolean; name: string; account: string };
 export type MaterialImport = {
   added: { name: string; bytes: number }[];
   reused: number;

@@ -169,14 +169,14 @@ impl Core {
     }
     pub(crate) async fn videos(&self, course: &str, warnings: &mut Vec<String>) -> Result<Value> {
         let c = self.find_course(course).await?;
-        let videos = self
-            .course_api()?
-            .list_videos(course, c["name"].as_str().unwrap_or(""))
-            .await?;
-        if videos.len() >= 100 {
-            warnings.push("当前显示前 100 条回放，完整列表请在教学网查看".into());
+        let (_, rows, waiting) = crate::haoxue::replays(c["name"].as_str().unwrap_or("课程")).await?;
+        if waiting > 0 {
+            warnings.push(format!("另有 {waiting} 节课堂记录没有可播放回放"));
         }
-        Ok(serde_json::to_value(videos)?)
+        if rows.len() >= 100 {
+            warnings.push("当前显示首页回放，完整列表请在原站查看".into());
+        }
+        Ok(Value::Array(rows))
     }
     pub(crate) async fn exams(&self) -> Result<Value> {
         let rows = pku_treehole::api::TreeholeApi::from_session_noninteractive()

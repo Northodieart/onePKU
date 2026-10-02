@@ -13,6 +13,7 @@ mod accounts;
 mod bookings;
 mod curriculum;
 mod downloads;
+mod haoxue;
 mod maintenance;
 mod materials;
 mod news;
@@ -63,6 +64,12 @@ pub enum Request {
         open: bool,
     },
     Preferences,
+    /// 课堂实录登录态：载荷由学校 app-login 页面交给原生桥，原样透传解析。
+    HaoxueLogin {
+        payload: Value,
+    },
+    HaoxueStatus,
+    HaoxueLogout,
     /// 只能恢复默认；更改到某个目录必须经过桌面容器的系统选择框，前端不能传路径。
     ResetDownloadRoot,
     OpenDownloadRoot,
@@ -577,6 +584,12 @@ impl Core {
                 let mut v = downloads::download_root_info();
                 v["keepAlive"] = json!(self.keep_alive.load(std::sync::atomic::Ordering::Relaxed));
                 v
+            }
+            Request::HaoxueLogin { payload } => haoxue::save_session(payload)?,
+            Request::HaoxueStatus => haoxue::status(),
+            Request::HaoxueLogout => {
+                haoxue::clear_session()?;
+                json!({ "connected": false })
             }
             Request::ResetDownloadRoot => downloads::set_download_root(None)?,
             Request::OpenDownloadRoot => {

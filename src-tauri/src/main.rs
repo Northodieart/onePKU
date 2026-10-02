@@ -3,6 +3,7 @@
 use std::sync::Arc;
 use tauri::Manager;
 mod browser;
+mod haoxue;
 #[tauri::command]
 async fn campus(
     window: tauri::WebviewWindow,
@@ -186,7 +187,10 @@ fn main() {
             choose_download_folder,
             choose_subtitle_file,
             open_booking,
-            browser::open_browser
+            browser::open_browser,
+            haoxue::open_haoxue_login,
+            haoxue::haoxue_login_retry,
+            haoxue::haoxue_login
         ])
         .run(tauri::generate_context!())
         .expect("OnePKU startup failed");

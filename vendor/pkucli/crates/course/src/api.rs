@@ -453,6 +453,8 @@ pub struct CourseApi {
     client: reqwest::Client,
     cookie_store: std::sync::Arc<reqwest_cookie_store::CookieStoreMutex>,
     session_token: String,
+    /// 好学课堂实录的媒体鉴权令牌；只附加在媒体与密钥请求上。
+    media_cookie: Option<String>,
 }
 
 #[derive(Clone, Debug, serde::Serialize, serde::Deserialize)]
@@ -479,6 +481,7 @@ impl CourseApi {
             client,
             cookie_store,
             session_token: session.token,
+            media_cookie: None,
         })
     }
 
@@ -491,6 +494,7 @@ impl CourseApi {
             client: client::build(cookie_store.clone())?,
             cookie_store,
             session_token: session.token,
+            media_cookie: None,
         })
     }
 
@@ -500,6 +504,7 @@ impl CourseApi {
             client: client::build(self.cookie_store.clone())?,
             cookie_store: self.cookie_store.clone(),
             session_token: self.session_token.clone(),
+            media_cookie: self.media_cookie.clone(),
         })
     }
 
@@ -1541,8 +1546,7 @@ impl CourseApi {
     /// 下载单个视频片段（原始数据，可能是加密的）
     pub async fn download_segment(&self, url: &str) -> Result<bytes::Bytes> {
         let resp = self
-            .client
-            .get(url)
+            .media_request(self.client.get(url))
             .send()
             .await
             .context("下载视频片段失败")?;
@@ -1555,8 +1559,7 @@ impl CourseApi {
     /// 获取 AES-128 密钥
     pub async fn get_aes_key(&self, url: &str) -> Result<[u8; 16]> {
         let resp = self
-            .client
-            .get(url)
+            .media_request(self.client.get(url))
             .send()
             .await
             .context("获取 AES 密钥失败")?;
