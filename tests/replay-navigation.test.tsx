@@ -50,7 +50,13 @@ function mount(video?: string) {
   history.replaceState(
     null,
     "",
-    `/#${encodeURIComponent(pageLink("课程", { course: "art", ...(video ? { video } : {}) }))}`,
+    `/#${encodeURIComponent(
+      pageLink("课程", {
+        course: "art",
+        tab: "videos",
+        ...(video ? { video } : {}),
+      }),
+    )}`,
   );
   const requests: { kind: string; video?: string }[] = [];
   const status = {
@@ -154,7 +160,9 @@ it("closes playback when navigation removes the selected replay", async () => {
     history.replaceState(
       null,
       "",
-      `/#${encodeURIComponent(pageLink("课程", { course: "art" }))}`,
+      `/#${encodeURIComponent(
+        pageLink("课程", { course: "art", tab: "videos" }),
+      )}`,
     );
     window.dispatchEvent(new HashChangeEvent("hashchange"));
   });

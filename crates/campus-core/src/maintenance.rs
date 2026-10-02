@@ -177,6 +177,15 @@ impl Core {
             json!({"service":name,"state":state,"generation":generation,"verifiedAt":h.and_then(|h|h.verified.clone()),"message":h.and_then(|h|h.error.clone())})
         }))
     }
+    /// 断开某个服务的登录。只清这个服务的会话与 cookie，本机缓存留给下次登录。
+    pub(crate) fn service_logout(service: &str) -> Result<Value> {
+        let store = Store::new(match service {
+            "course" | "treehole" | "campuscard" | "bdkj" => service,
+            _ => bail!("invalid service"),
+        })?;
+        store.clear()?;
+        Ok(json!({ "state": "loggedOut", "service": service }))
+    }
     pub(crate) fn save_preference(&self, enabled: bool) -> Result<()> {
         write_preference("keepAlive", json!(enabled))?;
         self.keep_alive.store(enabled, Ordering::Relaxed);

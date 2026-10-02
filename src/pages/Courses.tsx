@@ -1,5 +1,6 @@
 import ReplayPlayer, { type Replay } from "../components/ReplayPlayer";
 import { useEffect, useState } from "react";
+import { AssignmentWorkspace } from "./Assignments";
 import Classroom from "./Classroom";
 import CourseNotices from "../components/CourseNotices";
 import LearningGrades from "../components/LearningGrades";
@@ -108,7 +109,12 @@ export default function Courses({ login }: { login: Login }) {
                     open={!!search.trim() || termIndex === 0}
                   >
                     <summary className="course-semester-heading">
-                      <h3>{term}</h3>
+                      <h3>
+                        {term}
+                        {rows.some((c) => c.current) && (
+                          <span className="badge">本学期</span>
+                        )}
+                      </h3>
                       <span>{rows.length} 门课程</span>
                     </summary>
                     <div className="course-grid">
@@ -147,7 +153,8 @@ function CourseDetail({
   login: Login;
 }) {
   const [params, navigate] = usePageParams("课程");
-  const tab = params.get("tab") ?? "videos";
+  // 与安卓端一致：默认落在课程通知；只有深链带着回放参数时才直接进回放。
+  const tab = params.get("tab") ?? (params.get("video") ? "videos" : "notices");
   const setTab = (value: string) => navigate({ tab: value, video: null });
   const [search, setSearch] = useState("");
 
@@ -176,6 +183,12 @@ function CourseDetail({
           课程通知
         </button>
         <button
+          className={tab === "assignments" ? "active" : ""}
+          onClick={() => setTab("assignments")}
+        >
+          作业
+        </button>
+        <button
           className={tab === "materials" ? "active" : ""}
           onClick={() => setTab("materials")}
         >
@@ -194,7 +207,9 @@ function CourseDetail({
           教学网成绩
         </button>
       </div>
-      {tab === "materials" ? (
+      {tab === "assignments" ? (
+        <AssignmentWorkspace login={login} course={course.id} />
+      ) : tab === "materials" ? (
         <>
           <Search value={search} onChange={setSearch} placeholder="搜索资料" />
           <LocalMaterials course={course.id} search={search} login={login} />

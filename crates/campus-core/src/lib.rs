@@ -79,6 +79,10 @@ pub enum Request {
     },
     HaoxueStatus,
     HaoxueLogout,
+    /// 断开某个服务的登录：只清这个服务的会话与 cookie，其它服务不受影响。
+    ServiceLogout {
+        service: String,
+    },
     /// 好学课堂实录目录：按课程浏览，`search` 用原站的搜索语义。
     HaoxueCourses {
         page: u32,
@@ -665,6 +669,7 @@ impl Core {
             Request::PortalStatus => news::portal_status().await?,
             Request::PortalDetect => news::portal_detect().await?,
             Request::PortalLogout => news::portal_logout()?,
+            Request::ServiceLogout { service } => Self::service_logout(service)?,
             Request::SetDepartment { value } => news::set_department(value)?,
             Request::CalendarPdf { year } => news::calendar_pdf(year).await?,
             Request::CurriculumPages {
@@ -1085,6 +1090,22 @@ mod tests {
             "kind": "authPassword", "username": "a"
         }))
         .is_err());
+    }
+    #[test]
+    fn service_logout_is_named_and_not_cached() {
+        let request = serde_json::from_value::<Request>(
+            json!({ "kind": "serviceLogout", "service": "course" }),
+        )
+        .unwrap();
+        assert!(!storage::cacheable(&request));
+        // 白名单之外的服务名要能解析出来但落不了地。
+        assert!(matches!(
+            serde_json::from_value::<Request>(
+                json!({ "kind": "serviceLogout", "service": "portal" })
+            )
+            .unwrap(),
+            Request::ServiceLogout { .. }
+        ));
     }
     #[test]
     fn portal_requests_are_named_and_not_cached() {

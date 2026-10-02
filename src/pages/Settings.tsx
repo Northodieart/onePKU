@@ -8,6 +8,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import { Button, type Login } from "../components/ui";
 import {
   openOfficial,
+  resetService,
   serviceNames,
   type Service,
   useResource,
@@ -220,6 +221,23 @@ export default function Settings({
                 >
                   {connected ? "重新登录" : "连接"}
                 </Button>
+                {connected && (
+                  <Button
+                    title="只断开这个服务，本机缓存与偏好保留"
+                    onClick={() =>
+                      void action({ kind: "serviceLogout", service: s })
+                        .then(() => {
+                          resetService(queryClient, s);
+                          void queryClient.invalidateQueries({
+                            queryKey: ["resource", { kind: "sessions" }],
+                          });
+                        })
+                        .catch(() => {})
+                    }
+                  >
+                    断开
+                  </Button>
+                )}
               </div>
             );
           })}
