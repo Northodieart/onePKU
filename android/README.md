@@ -1,6 +1,6 @@
 # OnePKU Android
 
-北大校园服务的 Android 客户端，与 macOS 桌面版同源的独立实现。Kotlin + Jetpack Compose（Material 3）、MVVM（ViewModel + StateFlow）、Hilt 依赖注入，最低 Android 8.0（API 26）。当前版本 v0.3.1，逐版改动见仓库根 [CHANGELOG.md](../CHANGELOG.md)。
+北大校园服务的 Android 客户端，与 macOS 桌面版同源的独立实现。Kotlin + Jetpack Compose（Material 3）、MVVM（ViewModel + StateFlow）、Hilt 依赖注入，最低 Android 8.0（API 26）。当前版本 v0.3.2，逐版改动见仓库根 [CHANGELOG.md](../CHANGELOG.md)。
 
 ## 功能
 
@@ -38,7 +38,7 @@ cd android
 
 培养方案数据不在本目录，构建时由 Gradle 从仓库根的 `data/curriculum/` 同步进 assets，因此必须连着整个仓库一起构建，不能只拷 `android/` 出去。
 
-单元测试：`./gradlew testDebugUnitTest`，覆盖培养方案完成度引擎。
+单元测试：`./gradlew testDebugUnitTest`，覆盖培养方案完成度引擎与作业页的 HTML 解析。
 
 ## 从 GitHub 下载 APK
 
