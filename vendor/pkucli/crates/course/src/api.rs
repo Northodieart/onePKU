@@ -138,6 +138,9 @@ pub struct AssignmentSummary {
     pub deadline_raw: Option<String>,
     /// 截止时间（解析后）
     pub deadline: Option<chrono::DateTime<chrono::Local>>,
+    /// 成绩中心里按标题匹配到的分数；读不到或还没评分就是 None。
+    #[serde(default)]
+    pub score: Option<String>,
     /// 附件列表
     pub attachments: Vec<Attachment>,
     /// 说明
@@ -770,6 +773,11 @@ impl CourseApi {
             .filter(|item| item.item_type == ContentType::Assignment)
             .collect();
 
+        // 成绩中心按标题匹配，提供提交与评分的第二个来源；读不到不影响作业列表。
+        let grades = self
+            .learning_grades(&course.id)
+            .await
+            .unwrap_or_default();
         let mut summaries = Vec::new();
         for item in &assignments {
             let hash_id = compute_hash_id(&[&course.id, &item.id]);
@@ -808,6 +816,7 @@ impl CourseApi {
                     vec![item.description.clone()]
                 },
                 last_attempt: attempt,
+                score: graded_score(&grades, &item.title),
                 detail_error,
             });
         }
@@ -815,6 +824,48 @@ impl CourseApi {
         Ok(summaries)
     }
 
+}
+
+/// 按标题从成绩中心匹配分数：空串、-、— 都算还没评分。
+fn graded_score(grades: &[crate::api::learning::LearningGrade], title: &str) -> Option<String> {
+    let title = title.trim();
+    let score = grades
+        .iter()
+        .find(|g| g.title.trim() == title)?
+        .score
+        .trim();
+    if score.is_empty() || score == "-" || score == "—" {
+        None
+    } else {
+        Some(score.to_string())
+    }
+}
+
+#[cfg(test)]
+mod score_tests {
+    use super::*;
+    use crate::api::learning::LearningGrade;
+    fn grade(title: &str, score: &str) -> LearningGrade {
+        LearningGrade {
+            id: String::new(),
+            title: title.to_string(),
+            category: String::new(),
+            score: score.to_string(),
+            activity: String::new(),
+            updated: String::new(),
+            status: String::new(),
+        }
+    }
+    #[test]
+    fn graded_score_matches_trimmed_titles_and_skips_placeholders() {
+        let grades = [grade(" 作业一 ", "92"), grade("作业二", "-"), grade("作业三", "—")];
+        assert_eq!(graded_score(&grades, "作业一").as_deref(), Some("92"));
+        assert_eq!(graded_score(&grades, "作业二"), None);
+        assert_eq!(graded_score(&grades, "作业三"), None);
+        assert_eq!(graded_score(&grades, "作业四"), None);
+    }
+}
+impl CourseApi {
     /// 获取作业详情
     pub async fn get_assignment(
         &self,

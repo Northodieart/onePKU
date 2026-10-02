@@ -127,7 +127,10 @@ export function AssignmentWorkspace({
                     onClick={() => select(a.hash_id)}
                   >
                     <strong>{a.title}</strong>
-                    <small>{a.course_name}</small>
+                    <small>
+                      {a.course_name}
+                      {a.score ? ` · 分数 ${a.score}` : ""}
+                    </small>
                     <span
                       className={state === "overdue" ? "overdue" : "subtle"}
                     >

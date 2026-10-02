@@ -7,6 +7,7 @@ import {
   SlidersHorizontal,
 } from "lucide-react";
 import {
+  htmlToText,
   useNotifications,
   sources,
   newsDate,
@@ -84,10 +85,16 @@ export function NoticeReader({
       )}
       {item.source === "course" ? (
         <div className="article-body">
-          <p>
-            {item.body ||
-              "这条通知的正文未提取到，请打开教学网查看图片或附件。"}
-          </p>
+          {(() => {
+            const body = htmlToText(item.body ?? "");
+            return body ? (
+              body
+                .split(/\n\n+/)
+                .map((paragraph, i) => <p key={i}>{paragraph}</p>)
+            ) : (
+              <p>这条通知的正文未提取到，请打开教学网查看图片或附件。</p>
+            );
+          })()}
           {item.author && <p className="subtle">{item.author}</p>}
         </div>
       ) : (

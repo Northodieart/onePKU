@@ -110,6 +110,8 @@ export type Assignment = {
   deadline_raw: string | null;
   deadline: string | null;
   last_attempt: string | null;
+  /** 成绩中心按标题匹配到的分数；还没评分就是 null。 */
+  score?: string | null;
   detail_error: boolean;
   descriptions: string[];
   attachments: Attachment[];

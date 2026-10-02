@@ -19,39 +19,25 @@ import {
 
 function GradeSummary({
   data,
-  semester,
   scope,
   override,
 }: {
   data: Scores;
-  semester: string;
   scope: GradeScope;
   override: ScopeOverride;
 }) {
   const [openError, setOpenError] = useState("");
-  const courses = data.courses.filter(
-    (c) => semester === "all" || `${c.xnd}-${c.xq}` === semester,
-  );
+  const courses = data.courses;
   const calculated = calculateGrades(courses, scope, override);
   // 学校只返回全部课程的累计 GPA，专业口径只能本地算。
-  const official =
-    scope === "major"
-      ? null
-      : officialGpa(
-          semester === "all"
-            ? data.overall_gpa
-            : data.semester_gpas.find((s) => s.xndxq === semester)?.gpa,
-        );
+  const official = scope === "major" ? null : officialGpa(data.overall_gpa);
   const gpa = official ?? calculated.gpa;
   return (
     <>
       <div className="study-metrics grade-metrics">
         <div>
           <div className="grade-label">
-            <span>
-              {gradeScopeLabels[scope]} ·{" "}
-              {semester === "all" ? "累计 GPA" : "学期 GPA"}
-            </span>
+            <span>{gradeScopeLabels[scope]} · 累计 GPA</span>
             <details
               className="grade-help"
               onBlur={(e) => {
@@ -116,7 +102,6 @@ export default function Grades({ login }: { login: Login }) {
   const scores = useResource<Scores>({ kind: "scores" });
   const stored = useResource<ScopeOverride>({ kind: "gradesScope" });
   const override = normalizeScope(stored.data?.data);
-  const [semester, setSemester] = useState("all");
   const [scope, setScope] = useState<GradeScope>("all");
   const [editing, setEditing] = useState(false);
   function adjust(course: GradeCourse, want: boolean) {
@@ -160,18 +145,6 @@ export default function Grades({ login }: { login: Login }) {
                 </button>
               ))}
             </div>
-            <select
-              aria-label="成绩学期"
-              value={semester}
-              onChange={(e) => setSemester(e.target.value)}
-            >
-              <option value="all">全部学期</option>
-              {terms.map((t) => (
-                <option key={t} value={t}>
-                  {t.replace(/-(\d)$/, " 学年第$1学期")}
-                </option>
-              ))}
-            </select>
             {scope === "major" && (
               <Button
                 variant="quiet"
@@ -196,61 +169,76 @@ export default function Grades({ login }: { login: Login }) {
       >
         {(data) => (
           <>
-            <GradeSummary
-              data={data}
-              semester={semester}
-              scope={scope}
-              override={override}
-            />
+            <GradeSummary data={data} scope={scope} override={override} />
             {data.courses.length ? (
-              <div className="table-scroll">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>课程</th>
-                      {semester === "all" && <th>学期</th>}
-                      <th>类别</th>
-                      <th className="numeric">学分</th>
-                      <th className="numeric">成绩</th>
-                      {editing && <th className="numeric">计入专业</th>}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {data.courses
-                      .filter(
-                        (c) =>
-                          semester === "all" || `${c.xnd}-${c.xq}` === semester,
-                      )
-                      .map((c, i) => (
-                        <tr key={i}>
-                          <td>
-                            <strong>{c.kcmc}</strong>
-                          </td>
-                          {semester === "all" && (
-                            <td className="subtle">
-                              {c.xnd} · {c.xq}
-                            </td>
-                          )}
-                          <td className="subtle">{c.kclbmc}</td>
-                          <td className="numeric">{c.xf || "—"}</td>
-                          <td className="numeric">
-                            <strong>{c.xqcj || "未公布"}</strong>
-                          </td>
-                          {editing && (
-                            <td className="numeric">
-                              <input
-                                type="checkbox"
-                                aria-label={`计入专业成绩 ${c.kcmc} ${c.xnd}-${c.xq}`}
-                                checked={inScope(c, "major", override)}
-                                onChange={(e) => adjust(c, e.target.checked)}
-                              />
-                            </td>
-                          )}
-                        </tr>
-                      ))}
-                  </tbody>
-                </table>
-              </div>
+              terms.map((term) => {
+                const rows = data.courses.filter(
+                  (c) => `${c.xnd}-${c.xq}` === term,
+                );
+                const termStats = calculateGrades(rows, scope, override);
+                // 每学期先用学校给的 GPA，专业口径与缺失时本地计算。
+                const official =
+                  scope === "major"
+                    ? null
+                    : officialGpa(
+                        data.semester_gpas.find((s) => s.xndxq === term)?.gpa,
+                      );
+                const gpa = official ?? termStats.gpa;
+                return (
+                  <section
+                    key={term}
+                    className="grade-term"
+                    aria-label={term.replace(/-(\d)$/, " 学年第$1学期")}
+                  >
+                    <h3>
+                      {term.replace(/-(\d)$/, " 学年第$1学期")}
+                      <span className="subtle">
+                        GPA {gpa?.toFixed(2) ?? "—"} · 平均{" "}
+                        {termStats.average?.toFixed(2) ?? "—"}
+                      </span>
+                    </h3>
+                    <div className="table-scroll">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>课程</th>
+                            <th>类别</th>
+                            <th className="numeric">学分</th>
+                            <th className="numeric">成绩</th>
+                            {editing && <th className="numeric">计入专业</th>}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {rows.map((c, i) => (
+                            <tr key={i}>
+                              <td>
+                                <strong>{c.kcmc}</strong>
+                              </td>
+                              <td className="subtle">{c.kclbmc}</td>
+                              <td className="numeric">{c.xf || "—"}</td>
+                              <td className="numeric">
+                                <strong>{c.xqcj || "未公布"}</strong>
+                              </td>
+                              {editing && (
+                                <td className="numeric">
+                                  <input
+                                    type="checkbox"
+                                    aria-label={`计入专业成绩 ${c.kcmc} ${c.xnd}-${c.xq}`}
+                                    checked={inScope(c, "major", override)}
+                                    onChange={(e) =>
+                                      adjust(c, e.target.checked)
+                                    }
+                                  />
+                                </td>
+                              )}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </section>
+                );
+              })
             ) : (
               <Empty>学校尚未返回成绩记录</Empty>
             )}

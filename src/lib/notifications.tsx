@@ -57,6 +57,26 @@ export function noticeKey(n: Notice, generation: string) {
 export function legacyNoticeKey(n: Notice, generation: string) {
   return `course:${generation}:${n.course_name}:${n.announcement.title}:${n.announcement.date}`;
 }
+/** 教学网通知的正文是 HTML：应用内只展示文字，脚本样式与标签一律去掉。 */
+export function htmlToText(html: string): string {
+  return html
+    .replace(/<(script|style)[\s\S]*?<\/\1>/gi, " ")
+    .replace(/<\/(p|div|li|h[1-6]|blockquote|tr)>/gi, "\n\n")
+    .replace(/<br\s*\/?>/gi, "\n")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&nbsp;/gi, " ")
+    .replace(/&amp;/gi, "&")
+    .replace(/&lt;/gi, "<")
+    .replace(/&gt;/gi, ">")
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;|&apos;/gi, "'")
+    .replace(/[ \t]+/g, " ")
+    .replace(/[ \t]+\n/g, "\n")
+    .replace(/\n[ \t]+/g, "\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
 export function newsDate(s: string) {
   const m = s.match(/(\d{4})[-年](\d{1,2})[-月](\d{1,2})/);
   return m ? `${m[1]}-${m[2].padStart(2, "0")}-${m[3].padStart(2, "0")}` : s;
