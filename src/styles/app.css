@@ -1811,6 +1811,15 @@ tbody tr:last-child td {
 .news-tabs {
   margin-top: 12px;
 }
+.grade-tools {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.grade-tools .tabs {
+  margin: 0;
+}
 
 .source-tabs {
   display: flex;

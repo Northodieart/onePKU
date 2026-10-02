@@ -103,6 +103,11 @@ pub enum Request {
     SetProfile {
         profile: Value,
     },
+    /// 成绩口径（专业必修/限选的手动纳入与排除）。只存本机。
+    GradesScope,
+    SetGradesScope {
+        scope: Value,
+    },
     SubtitleSettings,
     SetSubtitleModel {
         model: String,
@@ -700,6 +705,8 @@ impl Core {
                 self.save_preference(*enabled)?;
                 json!({"keepAlive":enabled})
             }
+            Request::GradesScope => Self::grades_scope(),
+            Request::SetGradesScope { scope } => self.save_grades_scope(scope)?,
             Request::Profile => self.profile()?,
             Request::SetProfile { profile } => self.save_profile(profile)?,
             Request::OpenArchive { course } => {
