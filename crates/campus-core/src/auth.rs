@@ -12,17 +12,52 @@ pub struct Attempt {
 impl Core {
     /// 账号密码登录：一次提交把四个服务依次换成各自的会话，与安卓端一致。
     /// 密码只在这一次调用里用到，不进缓存键，也不写进本机快照。
+    /// 本机钥匙串里的统一认证账号；只报账号，绝不返回密码。
+    pub(crate) fn credentials_status() -> Value {
+        let stored = pkuinfo_common::credential::keyring_username();
+        json!({ "stored": stored.is_some(), "username": stored.unwrap_or_default() })
+    }
+    /// 记住就写进系统加密存储（macOS 钥匙串 / Windows 凭据管理器），不记就清掉。
+    pub(crate) fn set_credentials(
+        username: &str,
+        password: &str,
+        remember: bool,
+    ) -> Result<Value> {
+        if !remember {
+            pkuinfo_common::credential::keyring_clear()?;
+            return Ok(Self::credentials_status());
+        }
+        let username = username.trim();
+        if username.is_empty() || password.is_empty() {
+            bail!("要记住登录，请填写完整的校园账号与密码");
+        }
+        pkuinfo_common::credential::keyring_store(username, password)?;
+        Ok(Self::credentials_status())
+    }
+    pub(crate) fn clear_credentials() -> Result<Value> {
+        pkuinfo_common::credential::keyring_clear()?;
+        Ok(json!({ "stored": false, "username": "" }))
+    }
     pub(crate) async fn auth_password(
         &self,
         services: &[String],
         username: &str,
         password: &str,
         otp: Option<&str>,
+        remember: bool,
     ) -> Result<Value> {
-        let username = username.trim();
-        if username.is_empty() || password.is_empty() {
-            bail!("请填写校园账号与密码");
-        }
+        // 表单留空就是用已记住的账号；安卓端也是拿存下的凭据静默换票。
+        let (username, password) =
+            if username.trim().is_empty() || password.is_empty() {
+                match pkuinfo_common::credential::keyring_credential() {
+                    Some(credential) => (credential.username, credential.password),
+                    None => bail!("请填写校园账号与密码"),
+                }
+            } else {
+                (username.trim().to_string(), password.to_string())
+            };
+        let username = username.as_str();
+        let password = password.as_str();
         let wanted: Vec<&str> = if services.is_empty() {
             vec!["course", "treehole", "campuscard", "bdkj"]
         } else {
@@ -58,10 +93,23 @@ impl Core {
         if done.is_empty() {
             bail!(
                 "{}",
-                failed.first().and_then(|f| f["message"].as_str()).unwrap_or("统一身份认证失败")
+                failed
+                    .first()
+                    .and_then(|f| f["message"].as_str())
+                    .unwrap_or("统一身份认证失败")
             );
         }
-        Ok(json!({ "state": "success", "done": done, "failed": failed }))
+        // 记住失败不影响这次登录，只如实说明。
+        let remembered = match Self::set_credentials(username, password, remember) {
+            Ok(_) => true,
+            Err(_) => false,
+        };
+        Ok(json!({
+            "state": "success",
+            "done": done,
+            "failed": failed,
+            "remembered": remembered,
+        }))
     }
     async fn login_with_password(
         &self,

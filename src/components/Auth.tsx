@@ -1,7 +1,13 @@
 import { useEffect, useState, useRef } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import { CheckCircle2, RefreshCw } from "lucide-react";
-import { action, serviceNames, resetService, type Service } from "../lib/api";
+import {
+  action,
+  serviceNames,
+  resetService,
+  useResource,
+  type Service,
+} from "../lib/api";
 import { Button, Modal } from "./ui";
 export default function Auth({
   service,
@@ -25,6 +31,11 @@ export default function Auth({
   const [otp, setOtp] = useState("");
   const [everywhere, setEverywhere] = useState(true);
   const [partial, setPartial] = useState<string[]>([]);
+  // 与安卓端一样：账号密码可以存进系统加密存储，会话过期后自动换票。
+  const [remember, setRemember] = useState(true);
+  const stored = useResource<{ stored: boolean; username: string }>({
+    kind: "credentials",
+  });
   const active = useRef(true);
   const smsInput = useRef<HTMLInputElement>(null);
   const currentId = useRef<string | undefined>(undefined);
@@ -137,15 +148,22 @@ export default function Auth({
       const result = await action<{
         done: string[];
         failed?: { message: string }[];
+        remembered?: boolean;
       }>({
         kind: "authPassword",
         username: user,
         password,
         otp: otp.trim() || null,
         services: everywhere ? [] : [service],
+        remember,
       });
       for (const name of result.done) resetService(client, name as Service);
-      setPartial((result.failed ?? []).map((f) => f.message));
+      setPartial([
+        ...(result.failed ?? []).map((f) => f.message),
+        ...(remember && result.remembered === false
+          ? ["系统钥匙串不可用，这次没有记住账号"]
+          : []),
+      ]);
       setState("success");
     } catch (e) {
       setError(e instanceof Error ? e.message : "登录失败，请重试");
@@ -262,6 +280,19 @@ export default function Auth({
             />
             一次连接全部服务（教学网、树洞、校园卡、北大空间）
           </label>
+          <label className="auth-check">
+            <input
+              type="checkbox"
+              checked={remember}
+              onChange={(e) => setRemember(e.target.checked)}
+            />
+            记住账号密码（存在系统钥匙串里，过期自动重连）
+          </label>
+          {stored.data?.data?.stored && (
+            <p className="subtle">
+              已记住 {stored.data.data.username}；账号与密码留空就直接用它登录。
+            </p>
+          )}
           <Button
             type="submit"
             variant="primary"

@@ -245,7 +245,18 @@ pub enum Request {
         #[serde(default)]
         services: Vec<String>,
         otp: Option<String>,
+        /// 记住就写进系统加密存储；不记就清掉之前记住的。
+        #[serde(default)]
+        remember: bool,
     },
+    /// 本机是否记住了统一认证账号（只回账号，不回密码）。
+    Credentials,
+    SaveCredentials {
+        username: String,
+        password: String,
+        remember: bool,
+    },
+    ClearCredentials,
     AuthBegin {
         service: String,
     },
@@ -476,12 +487,37 @@ impl Core {
             Request::AuthPassword {
                 username, services, ..
             } => format!("{generation}:authPassword:{username}:{services:?}"),
+            Request::SaveCredentials { username, .. } => {
+                format!("{generation}:saveCredentials:{username}")
+            }
             other => format!("{generation}:{}", serde_json::to_string(other).unwrap()),
         };
-        let result = tokio::time::timeout(Duration::from_secs(75), self.dispatch(&req))
+        let mut result = tokio::time::timeout(Duration::from_secs(75), self.dispatch(&req))
             .await
             .map_err(|_| anyhow!("超时"))
             .and_then(|v| v);
+        // 会话过期就用在手钥匙串里的账号静默换一次票再重试；写操作绝不自动重放。
+        let expired = result
+            .as_ref()
+            .err()
+            .map(|e| problem(anyhow!("{e}")))
+            .is_some_and(|p| p.code == "auth");
+        if expired
+            && storage::cacheable(&req)
+            && matches!(service, "course" | "treehole" | "campuscard" | "bdkj")
+            && pkuinfo_common::credential::keyring_credential().is_some()
+        {
+            if self
+                .auth_password(&[service.to_string()], "", "", None, false)
+                .await
+                .is_ok()
+            {
+                result = tokio::time::timeout(Duration::from_secs(75), self.dispatch(&req))
+                    .await
+                    .map_err(|_| anyhow!("超时"))
+                    .and_then(|v| v);
+            }
+        }
         if generation != fingerprint(service) {
             return Envelope {
                 data: None,
@@ -878,7 +914,18 @@ impl Core {
                 password,
                 services,
                 otp,
-            } => self.auth_password(services, username, password, otp.as_deref()).await?,
+                remember,
+            } => {
+                self.auth_password(services, username, password, otp.as_deref(), *remember)
+                    .await?
+            }
+            Request::Credentials => Self::credentials_status(),
+            Request::SaveCredentials {
+                username,
+                password,
+                remember,
+            } => Self::set_credentials(username, password, *remember)?,
+            Request::ClearCredentials => Self::clear_credentials()?,
             Request::AuthBegin { service } => self.auth_begin(service).await?,
             Request::AuthPoll { id } => self.auth_poll(id).await?,
             Request::AuthCancel { id } => {
@@ -999,6 +1046,23 @@ mod tests {
         assert!(matches!(login, Request::AuthPassword { .. }));
         // 凭证不能进本机快照，也不能被当成可缓存的读取。
         assert!(!storage::cacheable(&login));
+        assert!(matches!(
+            login,
+            Request::AuthPassword {
+                remember: false,
+                ..
+            }
+        ));
+        for kind in [
+            json!({ "kind": "credentials" }),
+            json!({ "kind": "clearCredentials" }),
+            json!({
+                "kind": "saveCredentials", "username": "a", "password": "b", "remember": true
+            }),
+        ] {
+            let request = serde_json::from_value::<Request>(kind).unwrap();
+            assert!(!storage::cacheable(&request));
+        }
         // 一次登录全部服务时 services 可以省略；账号或密码缺了就不收。
         assert!(serde_json::from_value::<Request>(json!({
             "kind": "authPassword", "username": "a", "password": "b"

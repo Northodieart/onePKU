@@ -24,6 +24,7 @@ Additional implemented fixes:
 - Atomic 0600 cookie and session writes; remove response-body excerpts from relevant parse errors and user identity logging from the GUI treehole callback.
 - IAAA QR responses are recognized by PNG/JPEG signatures; the live JPEG response misleadingly uses an HTML Content-Type.
 - Add a replay entry point that starts from a school playlist URL instead of the Blackboard video page (`playback_media_at`), and attach the classroom-recording token to segment, key and playlist requests only (`with_media_token`); teaching-site requests keep their own cookies and the token never enters URLs, logs or results.
+- Expose keyring-only credential readers (`keyring_credential`, `keyring_username`) so the desktop app can re-login silently; the CLI helpers fall back to environment variables and interactive prompts, which must never run inside a GUI.
 - Split the MP4 export so it can start from a playlist URL too: the ffmpeg probe (`require_ffmpeg`) and the segment transfer (`download_detail`) are separated from the Blackboard page hop, so `download_media_at` archives classroom recordings without the teaching-site video page.
 
 Native app commands are explicitly allowlisted in `campus-core::Request`. Financial amounts follow the source transaction type; a positive raw amount is not assumed to be income. The bundled library contains additional upstream commands; the GUI exposes only the explicit first-assignment submission flow described below.

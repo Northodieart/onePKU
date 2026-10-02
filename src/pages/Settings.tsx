@@ -80,6 +80,11 @@ export default function Settings({
   const [cacheError, setCacheError] = useState("");
   const [haoxueError, setHaoxueError] = useState("");
   const haoxue = useResource<Haoxue>({ kind: "haoxueStatus" });
+  const credentials = useResource<{ stored: boolean; username: string }>({
+    kind: "credentials",
+  });
+  const [credentialMessage, setCredentialMessage] = useState("");
+  const [credentialError, setCredentialError] = useState("");
   const college = useResource<DepartmentState>({ kind: "departments" });
   const [collegeDraft, setCollegeDraft] = useState<string>();
   const [collegeMessage, setCollegeMessage] = useState("");
@@ -256,6 +261,32 @@ export default function Settings({
               ? "请在桌面应用中连接课堂实录"
               : undefined)
           }
+        />
+        <SettingRow
+          label="统一身份认证"
+          description="用账号密码登录后可以记住凭据，存在系统加密存储里（macOS 钥匙串 / Windows 凭据管理器）。会话过期时应用会用它静默重连，只读页面不用你再扫码或再输一次密码；作业提交等写操作绝不自动重放。"
+          control={
+            <Button
+              onClick={() => {
+                setCredentialError("");
+                void action({ kind: "clearCredentials" })
+                  .then(() => {
+                    setCredentialMessage("已清除记住的账号");
+                    void credentials.refetch();
+                  })
+                  .catch(() => setCredentialError("未能清除，请重试"));
+              }}
+              disabled={!credentials.data?.data?.stored}
+            >
+              清除
+            </Button>
+          }
+          status={
+            credentials.data?.data?.stored
+              ? `已记住 ${credentials.data.data.username}`
+              : credentialMessage || undefined
+          }
+          error={credentialError || undefined}
         />
         <SettingRow
           label="本院通知"
