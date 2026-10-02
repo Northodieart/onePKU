@@ -54,7 +54,16 @@ function lessonLabel(lesson: Lesson) {
 }
 
 export default function Classroom({ login }: { login: Login }) {
-  const [params, navigate] = usePageParams("课堂实录");
+  const [raw, update] = usePageParams("课程");
+  // 目录挂在「课程 → 课程回放」里，与课程页共用地址栏，
+  // 键统一加 hx 前缀，翻页与选课次时不会互相覆盖。
+  const params = { get: (key: string) => raw.get(`hx${key}`) };
+  const navigate = (values: Record<string, string | null>) =>
+    update(
+      Object.fromEntries(
+        Object.entries(values).map(([key, value]) => [`hx${key}`, value]),
+      ),
+    );
   const status = useResource<Haoxue>({ kind: "haoxueStatus" });
   const connected = status.data?.data?.connected ?? false;
   const mode = params.get("mode") === "date" ? "date" : "course";

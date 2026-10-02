@@ -1,5 +1,6 @@
 import ReplayPlayer, { type Replay } from "../components/ReplayPlayer";
 import { useEffect, useState } from "react";
+import Classroom from "./Classroom";
 import CourseNotices from "../components/CourseNotices";
 import LearningGrades from "../components/LearningGrades";
 import LocalMaterials from "../components/LocalMaterials";
@@ -211,6 +212,11 @@ function Videos({ course, login }: { course: Course; login: Login }) {
     generation: string;
   }>();
   const [params, navigate] = usePageParams("课程");
+  // 全目录默认收起；地址栏里已经带着目录的翻页状态时展开，刷新不丢位置。
+  const [catalogue, setCatalogue] = useState(
+    () => !!params.get("hxvideo") || !!params.get("hxcourse"),
+  );
+
   const videoId = params.get("video");
   useEffect(() => {
     setPlaying((current) => {
@@ -285,6 +291,16 @@ function Videos({ course, login }: { course: Course; login: Login }) {
           }
         </Resource>
       )}
+      <details
+        className="classroom-catalogue"
+        open={catalogue}
+        onToggle={(e) => setCatalogue((e.target as HTMLDetailsElement).open)}
+      >
+        <summary>
+          课堂实录全目录：按课程搜索翻页，或按日期看当天的全部课堂
+        </summary>
+        <Classroom login={login} />
+      </details>
     </>
   );
 }

@@ -40,8 +40,12 @@ const BRIDGE: &str = r#"(function () {
   }
 })();"#;
 
-fn passport(url: &tauri::Url) -> bool {
-    url.as_str().starts_with("https://passport.pku.edu.cn/")
+/// 认证页会把登录交给学校统一身份认证，两个域都要放行，否则跳转被拦下就是一片空白。
+/// 只有 passport 的中转页会把令牌交给原生桥，能力配置里的 remote.urls 仍只放 passport。
+fn allowed_navigation(url: &tauri::Url) -> bool {
+    ["https://passport.pku.edu.cn/", "https://iaaa.pku.edu.cn/"]
+        .iter()
+        .any(|prefix| url.as_str().starts_with(prefix))
 }
 
 fn open(app: &tauri::AppHandle, target: &str, android: bool) -> Result<(), String> {
@@ -58,7 +62,7 @@ fn open(app: &tauri::AppHandle, target: &str, android: bool) -> Result<(), Strin
     .min_inner_size(620.0, 520.0)
     // 桥必须在地道脚本之前注入，否则中转页找不到 `bridge.PKULoginSuccess`。
     .initialization_script(BRIDGE)
-    .on_navigation(passport);
+    .on_navigation(allowed_navigation);
     if android {
         builder = builder.user_agent(ANDROID_UA);
     }
@@ -114,4 +118,28 @@ pub(crate) async fn haoxue_login(
     }
     let _ = window.close();
     Ok(())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn the_login_window_follows_the_unified_auth_redirect() {
+        let ok = [
+            "https://passport.pku.edu.cn/auth/login?redirect=x",
+            "https://iaaa.pku.edu.cn/iaaa/oauth.jsp",
+        ];
+        let blocked = [
+            "https://evil.test/auth/login",
+            "https://passport.pku.edu.cn.evil.test/",
+            "http://passport.pku.edu.cn/auth/login",
+            "https://example.com/",
+        ];
+        for url in ok {
+            assert!(allowed_navigation(&url.parse().unwrap()), "{url}");
+        }
+        for url in blocked {
+            assert!(!allowed_navigation(&url.parse().unwrap()), "{url}");
+        }
+    }
 }
