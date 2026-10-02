@@ -219,8 +219,7 @@ class CourseApi @Inject constructor(
             if (name.isEmpty() || href.isEmpty() || href.startsWith("javascript:") || href == "#") null
             else Attachment(name, href)
         }
-        val status = doc.select(".status").first()?.text()?.trim() ?: "未知"
-        return AssignmentDetail(title, deadlineRaw, parseDeadline(deadlineRaw), instructions, attachments, status)
+        return AssignmentDetail(title, deadlineRaw, parseDeadline(deadlineRaw), instructions, attachments)
     }
 
     suspend fun getAssignment(courseId: String, contentId: String): AssignmentDetail =
@@ -254,7 +253,6 @@ class CourseApi @Inject constructor(
                             title = title,
                             deadlineRaw = detail.deadlineRaw,
                             deadlineEpochMs = detail.deadlineEpochMs,
-                            status = detail.status,
                             submitted = submission.submitted ||
                                 grade?.status?.contains("已提交") == true || graded != null,
                             scoreText = graded,

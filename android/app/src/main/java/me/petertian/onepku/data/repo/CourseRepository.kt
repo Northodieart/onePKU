@@ -104,6 +104,14 @@ class CourseRepository @Inject constructor(
         return run { downloadFile(attachment.url, dest) }
     }
 
+    /** 预览用:落到缓存的 previews 目录,不混进课程资料;同名文件不重复下载。 */
+    suspend fun cachedFile(attachment: Attachment): File {
+        val dir = File(context.cacheDir, "previews").apply { mkdirs() }
+        val dest = File(dir, sanitize(attachment.name))
+        if (dest.exists() && dest.length() > 0) return dest
+        return run { downloadFile(attachment.url, dest) }
+    }
+
     private fun sanitize(name: String): String =
         name.replace(Regex("[\\\\/:*?\"<>|]"), "_").take(80)
 

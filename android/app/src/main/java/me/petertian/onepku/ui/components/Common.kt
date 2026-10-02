@@ -1,7 +1,10 @@
 package me.petertian.onepku.ui.components
 
+import android.content.Context
+import android.content.Intent
 import android.text.method.LinkMovementMethod
 import android.widget.TextView
+import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -23,7 +26,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
+import androidx.core.content.FileProvider
 import androidx.core.text.HtmlCompat
+import java.io.File
+import me.petertian.onepku.BuildConfig
 
 /** 页面级异步数据状态。 */
 sealed interface UiData<out T> {
@@ -158,4 +164,18 @@ fun formatTerm(raw: String?): String {
         return "${fullYear(from)}-${fullYear(to)} 学年${season}季学期"
     }
     return text
+}
+
+/** 用系统里能处理该类型的应用打开文件;没有这样的应用时退一步告知文件位置。 */
+fun openFile(context: Context, file: File) {
+    runCatching {
+        val uri = FileProvider.getUriForFile(context, "${BuildConfig.APPLICATION_ID}.fileprovider", file)
+        val intent = Intent(Intent.ACTION_VIEW).apply {
+            setDataAndType(uri, context.contentResolver.getType(uri) ?: "*/*")
+            addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_ACTIVITY_NEW_TASK)
+        }
+        context.startActivity(Intent.createChooser(intent, file.name).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+    }.onFailure {
+        Toast.makeText(context, "本机没有能打开 ${file.name} 的应用;文件在 ${file.absolutePath}", Toast.LENGTH_LONG).show()
+    }
 }

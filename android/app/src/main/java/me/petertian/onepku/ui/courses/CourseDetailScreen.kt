@@ -1,7 +1,5 @@
 package me.petertian.onepku.ui.courses
 
-import android.content.Intent
-import android.widget.Toast
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -43,7 +41,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.core.content.FileProvider
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
@@ -57,7 +54,6 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import me.petertian.onepku.BuildConfig
 import me.petertian.onepku.data.course.Announcement
 import me.petertian.onepku.data.course.AssignmentSummary
 import me.petertian.onepku.data.course.Attachment
@@ -68,6 +64,7 @@ import me.petertian.onepku.data.repo.CourseRepository
 import me.petertian.onepku.ui.components.ErrorBox
 import me.petertian.onepku.ui.components.HtmlText
 import me.petertian.onepku.ui.components.LoadingBox
+import me.petertian.onepku.ui.components.openFile
 import me.petertian.onepku.ui.components.UiData
 import me.petertian.onepku.ui.navigation.Routes
 import me.petertian.onepku.ui.navigation.back
@@ -361,19 +358,6 @@ private fun AssignmentsTab(ui: CourseDetailUiState, vm: CourseDetailViewModel, n
                 }
             }
         }
-    }
-}
-
-private fun openFile(context: android.content.Context, file: File) {
-    runCatching {
-        val uri = FileProvider.getUriForFile(context, "${BuildConfig.APPLICATION_ID}.fileprovider", file)
-        val intent = Intent(Intent.ACTION_VIEW).apply {
-            setDataAndType(uri, context.contentResolver.getType(uri) ?: "*/*")
-            addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_ACTIVITY_NEW_TASK)
-        }
-        context.startActivity(Intent.createChooser(intent, file.name).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
-    }.onFailure {
-        Toast.makeText(context, "已下载:${file.absolutePath}", Toast.LENGTH_LONG).show()
     }
 }
 

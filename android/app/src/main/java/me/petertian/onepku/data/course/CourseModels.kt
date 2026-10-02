@@ -43,8 +43,7 @@ data class AssignmentSummary(
     val title: String,
     val deadlineRaw: String?,
     val deadlineEpochMs: Long?,
-    val status: String,
-    /** 学校提交记录或成绩中心显示已提交;Blackboard 的 .status 文本不可靠。 */
+    /** 提交与否只看学校提交记录与成绩中心,不信作业页文案。 */
     val submitted: Boolean = false,
     /** 成绩中心给出的分数原文;缺失时不假设为 0。 */
     val scoreText: String? = null,
@@ -58,7 +57,6 @@ data class AssignmentDetail(
     val deadlineEpochMs: Long?,
     val instructions: String,
     val attachments: List<Attachment>,
-    val status: String,
 )
 
 data class FeedbackAttempt(

@@ -1,7 +1,9 @@
 package me.petertian.onepku.ui.assignments
 
+import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -48,14 +50,17 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import me.petertian.onepku.data.course.AssignmentDetail
+import me.petertian.onepku.data.course.Attachment
 import me.petertian.onepku.data.course.FeedbackAttempt
 import me.petertian.onepku.data.course.SubmissionOutcome
 import me.petertian.onepku.data.repo.CourseRepository
 import me.petertian.onepku.ui.components.ErrorBox
 import me.petertian.onepku.ui.components.LoadingBox
+import me.petertian.onepku.ui.components.openFile
 import me.petertian.onepku.ui.components.UiData
 import me.petertian.onepku.ui.navigation.back
 import me.petertian.onepku.ui.today.deadlineLabel
+import java.io.File
 import javax.inject.Inject
 
 data class PendingSubmit(val uri: android.net.Uri, val name: String, val sizeBytes: Long)
@@ -66,6 +71,8 @@ data class AssignmentDetailUiState(
     val attempts: UiData<List<FeedbackAttempt>> = UiData.Loading,
     val pending: PendingSubmit? = null,
     val submitting: Boolean = false,
+    /** 正在取回预览的文件地址;非空时该行显示"打开中…"。 */
+    val openingUrl: String? = null,
     val submitResult: SubmissionOutcome? = null,
 )
 
@@ -102,6 +109,22 @@ class AssignmentDetailViewModel @Inject constructor(
                 }
                 _ui.update { it.copy(detail = detailJob.await(), attempts = attemptsJob.await()) }
             }
+        }
+    }
+
+    /** 点开已提交的文件:取回缓存后交给系统查看器;同名文件不重复下载。 */
+    fun openSubmission(file: Attachment, onDone: (File) -> Unit, onError: (String) -> Unit) {
+        if (_ui.value.openingUrl != null) return
+        _ui.update { it.copy(openingUrl = file.url) }
+        viewModelScope.launch {
+            try {
+                onDone(repo.cachedFile(file))
+            } catch (e: kotlinx.coroutines.CancellationException) {
+                throw e
+            } catch (e: Exception) {
+                onError("无法打开 ${file.name}:${e.message ?: "网络或学校页面变动"}")
+            }
+            _ui.update { it.copy(openingUrl = null) }
         }
     }
 
@@ -230,7 +253,15 @@ fun AssignmentDetailScreen(nav: NavHostController, vm: AssignmentDetailViewModel
                             )
                         }
                     } else {
-                        items(attempts.value, key = { it.id }) { attempt -> AttemptCard(attempt) }
+                        items(attempts.value, key = { it.id }) { attempt ->
+                            AttemptCard(attempt, ui.openingUrl) { file ->
+                                vm.openSubmission(
+                                    file,
+                                    onDone = { openFile(context, it) },
+                                    onError = { Toast.makeText(context, it, Toast.LENGTH_SHORT).show() },
+                                )
+                            }
+                        }
                     }
                 }
             }
@@ -262,11 +293,6 @@ private fun DetailCard(detail: AssignmentDetail, fallbackTitle: String) {
                     color = MaterialTheme.colorScheme.primary,
                 )
             }
-            Text(
-                "状态:${detail.status}",
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
             if (detail.instructions.isNotBlank()) {
                 Spacer(Modifier.height(8.dp))
                 Text(detail.instructions, style = MaterialTheme.typography.bodyMedium)
@@ -347,7 +373,11 @@ private fun queryDocument(context: android.content.Context, uri: android.net.Uri
 }
 
 @Composable
-private fun AttemptCard(attempt: FeedbackAttempt) {
+private fun AttemptCard(
+    attempt: FeedbackAttempt,
+    openingUrl: String?,
+    onOpen: (Attachment) -> Unit,
+) {
     Card(Modifier.fillMaxWidth()) {
         Column(Modifier.padding(16.dp)) {
             Row(
@@ -374,7 +404,25 @@ private fun AttemptCard(attempt: FeedbackAttempt) {
             if (attempt.files.isNotEmpty()) {
                 Spacer(Modifier.height(6.dp))
                 attempt.files.forEach { f ->
-                    Text("· ${f.name}", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                    Row(
+                        modifier = Modifier.fillMaxWidth().clickable { onOpen(f) },
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        Text(
+                            f.name,
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.primary,
+                            maxLines = 1,
+                        )
+                        if (openingUrl == f.url) {
+                            Text(
+                                "打开中…",
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            )
+                        }
+                    }
                 }
             }
         }

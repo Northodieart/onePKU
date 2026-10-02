@@ -169,7 +169,7 @@ fun AssignmentsScreen(nav: NavHostController, vm: AssignmentsViewModel = hiltVie
                                             Column(Modifier.weight(1f)) {
                                                 Text(a.title, style = MaterialTheme.typography.bodyLarge, maxLines = 2)
                                                 Text(
-                                                    "${a.courseName} · ${a.status}",
+                                                    a.courseName,
                                                     style = MaterialTheme.typography.bodySmall,
                                                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                                                 )
