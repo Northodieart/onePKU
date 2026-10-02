@@ -1808,6 +1808,10 @@ tbody tr:last-child td {
 .news-filters {
   margin: 0 0 20px;
 }
+.news-tabs {
+  margin-top: 12px;
+}
+
 .source-tabs {
   display: flex;
   gap: 3px;
