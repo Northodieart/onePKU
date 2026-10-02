@@ -2,8 +2,17 @@ name: Desktop checks and packages
 
 on:
   pull_request:
+    paths-ignore:
+      - "docs/**"
+      - "**.md"
+      - ".gitignore"
   push:
-    branches: [main]
+    # 桌面端在 Windows 分支上迭代：推上去就要直接出安装包，与安卓端的 APK 一致
+    branches: [main, "feat/windows-support"]
+    paths-ignore:
+      - "docs/**"
+      - "**.md"
+      - ".gitignore"
   workflow_dispatch:
 
 permissions:
