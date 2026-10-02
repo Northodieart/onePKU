@@ -22,6 +22,7 @@ import {
   GraduationCap,
   PanelLeftClose,
   PanelLeftOpen,
+  Clapperboard,
 } from "lucide-react";
 import { call, resetService, type Service } from "./lib/api";
 import type { Login } from "./components/ui";
@@ -32,6 +33,7 @@ import Courses from "./pages/Courses";
 import Assignments from "./pages/Assignments";
 import Grades from "./pages/Grades";
 import Curriculum from "./pages/Curriculum";
+import Classroom from "./pages/Classroom";
 import { normalizeProfile, onboardingSeenKey } from "./lib/profile";
 import { CardPage, Rooms } from "./pages/Life";
 import Notices from "./pages/Notices";
@@ -48,6 +50,7 @@ const pages = [
   "校历",
   "成绩",
   "培养方案",
+  "课堂实录",
   "空闲教室",
   "校园卡",
   "设置",
@@ -61,6 +64,7 @@ const groups = [
       { name: "作业", icon: FileCheck2 },
       { name: "成绩", icon: BookOpenText },
       { name: "培养方案", icon: GraduationCap },
+      { name: "课堂实录", icon: Clapperboard },
     ],
   },
   {
@@ -294,6 +298,8 @@ export default function App() {
               <Grades login={login} />
             ) : page === "培养方案" ? (
               <Curriculum login={login} navigate={navigate} />
+            ) : page === "课堂实录" ? (
+              <Classroom login={login} />
             ) : page === "通知" ? (
               <Notices login={login} />
             ) : page === "校历" ? (

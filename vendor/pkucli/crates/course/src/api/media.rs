@@ -221,8 +221,9 @@ impl CourseApi {
         self.parts_from(self.get_video_detail(video).await?).await
     }
     /// 好学课堂实录直接给出播放列表地址，没有教学网的页面跳转与换票环节。
-    pub async fn playback_media_at(&self, playlist: &str) -> Result<PlaybackMedia> {
+    pub async fn detail_at(&self, playlist: &str) -> Result<VideoDetail> {
         let base_url = url::Url::parse(playlist).context("解析播放列表地址失败")?;
+        media_url(&base_url)?;
         let raw = self
             .bounded_media_bytes(&base_url, 2 * 1024 * 1024)
             .await
@@ -235,7 +236,10 @@ impl CourseApi {
                 return Err(anyhow!("暂不支持 Master Playlist 格式"))
             }
         };
-        self.parts_from(VideoDetail { base_url, playlist }).await
+        Ok(VideoDetail { base_url, playlist })
+    }
+    pub async fn playback_media_at(&self, playlist: &str) -> Result<PlaybackMedia> {
+        self.parts_from(self.detail_at(playlist).await?).await
     }
     /// 好学 app-login 令牌只用于媒体与密钥请求，不进入教学网请求、日志或返回值。
     pub fn with_media_token(mut self, token: &str) -> Self {
@@ -354,6 +358,24 @@ impl CourseApi {
         }
         Ok(data)
     }
+    async fn require_ffmpeg(ffmpeg: &Path) -> Result<()> {
+        // Detect a missing desktop dependency before transferring a whole lesson.
+        let mut probe = tokio::process::Command::new(ffmpeg);
+        #[cfg(windows)]
+        probe.creation_flags(0x08000000);
+        let status = probe
+            .arg("-version")
+            .stdout(std::process::Stdio::null())
+            .stderr(std::process::Stdio::null())
+            .kill_on_drop(true)
+            .status()
+            .await
+            .context("无法启动 ffmpeg，请先安装 ffmpeg")?;
+        if !status.success() {
+            return Err(anyhow!("视频转换工具 ffmpeg 无法运行，请检查安装"));
+        }
+        Ok(())
+    }
     pub async fn download_video_to<F, R>(
         &self,
         video: &VideoInfo,
@@ -371,28 +393,68 @@ impl CourseApi {
         if output.exists() {
             return Err(anyhow!("目标文件已存在"));
         }
-        // Detect a missing desktop dependency before transferring a whole lesson.
-        let mut probe = tokio::process::Command::new(ffmpeg);
-        #[cfg(windows)]
-        probe.creation_flags(0x08000000);
-        let status = probe
-            .arg("-version")
-            .stdout(std::process::Stdio::null())
-            .stderr(std::process::Stdio::null())
-            .kill_on_drop(true)
-            .status()
-            .await
-            .context("无法启动 ffmpeg，请先安装 ffmpeg")?;
-        if !status.success() {
-            return Err(anyhow!("视频转换工具 ffmpeg 无法运行，请检查安装"));
+        Self::require_ffmpeg(ffmpeg).await?;
+        self.download_detail(
+            &self.get_video_detail(video).await?,
+            output,
+            resume_root,
+            ffmpeg,
+            cancel,
+            progress,
+            reuse,
+        )
+        .await
+    }
+    /// 好学的课次已经给出播放列表地址，存档时不需要教学网的页面跳转与换票。
+    pub async fn download_media_at<F, R>(
+        &self,
+        playlist: &str,
+        output: &Path,
+        resume_root: &Path,
+        ffmpeg: &Path,
+        cancel: &AtomicBool,
+        progress: F,
+        reuse: R,
+    ) -> Result<()>
+    where
+        F: Fn(MediaProgress),
+        R: Fn(&str, &str, usize, &Path) -> Result<()>,
+    {
+        if output.exists() {
+            return Err(anyhow!("目标文件已存在"));
         }
+        Self::require_ffmpeg(ffmpeg).await?;
+        self.download_detail(
+            &self.detail_at(playlist).await?,
+            output,
+            resume_root,
+            ffmpeg,
+            cancel,
+            progress,
+            reuse,
+        )
+        .await
+    }
+    async fn download_detail<F, R>(
+        &self,
+        detail: &VideoDetail,
+        output: &Path,
+        resume_root: &Path,
+        ffmpeg: &Path,
+        cancel: &AtomicBool,
+        progress: F,
+        reuse: R,
+    ) -> Result<()>
+    where
+        F: Fn(MediaProgress),
+        R: Fn(&str, &str, usize, &Path) -> Result<()>,
+    {
         progress(MediaProgress {
             phase: "preparing",
             bytes: 0,
             completed: 0,
             total: 0,
         });
-        let detail = self.get_video_detail(video).await?;
         media_url(&detail.base_url)?;
         if detail.playlist.segments.is_empty() || !detail.playlist.end_list {
             return Err(anyhow!("当前不是完整回放，请稍后下载"));

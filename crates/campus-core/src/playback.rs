@@ -638,10 +638,9 @@ impl Core {
         video_id: &str,
     ) -> Result<(CourseApi, PlaybackMedia, Manifest)> {
         let api = self.course_api()?;
-        let c = self.find_course(course).await?;
-        let lesson = haoxue::lesson(c["name"].as_str().unwrap_or("课程"), video_id).await?;
+        // 课程标识与课次标识直接来自好学，解析回放不再回教学网列表认领课次。
         let learner = haoxue::Haoxue::from_session()?;
-        let replay = learner.replay(&lesson.course, &lesson.episode).await?;
+        let replay = learner.replay(course, video_id).await?;
         let playlist = replay
             .sources
             .first()
@@ -649,11 +648,16 @@ impl Core {
         // 分片与密钥要带好学 app-login 令牌；教学网 Cookie 换不到这些地址。
         let api = api.with_media_token(&learner.cookie_token);
         let media = api.fresh_client()?.playback_media_at(&playlist.url).await?;
+        let title = if replay.time.is_empty() {
+            replay.title.clone()
+        } else {
+            format!("{} · {}", replay.title, replay.time)
+        };
         let manifest = Manifest {
             version: 1,
             course: course.into(),
             video: video_id.into(),
-            title: format!("{} · {}", lesson.title, lesson.time),
+            title,
             signature: media.legacy_signature.clone(),
             cache_signature: Some(media.cache_signature.clone()),
             parts: media

@@ -102,13 +102,12 @@ pub(crate) fn state(value: &Value) -> (String, bool) {
 pub(crate) fn courses(body: &Value) -> Result<Vec<Value>> {
     Ok(array(&payload(body)?, "lists"))
 }
-pub(crate) fn episodes(body: &Value) -> Result<Vec<Value>> {
-    let data = payload(body)?;
-    let rows = array(&data, "sub_list");
+fn episodes_of(data: &Value) -> Vec<Value> {
+    let rows = array(data, "sub_list");
     if rows.is_empty() {
-        return Ok(array(&data, "lists"));
+        return array(data, "lists");
     }
-    Ok(rows)
+    rows
 }
 /// `sub_content` 在按课次详情的接口里是对象，在换票接口里是 JSON 字符串。
 fn sub_content(data: &Value) -> Option<Value> {
@@ -230,40 +229,92 @@ fn beijing(seconds: &str) -> String {
         .format("%Y-%m-%d %H:%M")
         .to_string()
 }
-/// 课次沿用教学网回放列表的字段形状，播放器与课程页不需要为新源加分支；
-/// `hash_id` 仍用「课程标识 + 标题 + 时间」按同一算法计算，换源后保持稳定。
-pub(crate) fn replay_rows(course: &str, course_name: &str, rows: &[Value]) -> (Vec<Value>, usize) {
+fn pick(row: &Value, keys: &[&str]) -> String {
+    keys.iter()
+        .map(|key| scalar(row, key))
+        .find(|text| !text.is_empty())
+        .unwrap_or_default()
+}
+/// 一次课次的回放行。`hash_id` 就是好学的课次标识，与 `courseId` 一起构成缓存键，
+/// 所以从「课程」页还是「课堂实录」页进入同一节课，命中的是同一份分片缓存。
+/// `course_name` 传空串表示按行自带的课程名显示（按日期浏览时）。
+fn replay_row(course: &str, course_name: &str, row: &Value) -> Option<Value> {
+    let (_, playable) = state(row);
+    let episode = pick(row, &["sub_id", "id"]);
+    let title = pick(row, &["sub_title", "sub_name", "course_name"]);
+    let time = beijing(&pick(row, &["class_begin", "start_at"]));
+    if !playable || episode.is_empty() || title.is_empty() || time.is_empty() {
+        return None;
+    }
+    Some(json!({
+        "title": title,
+        "time": time,
+        // 独立录播站的课堂页，按数字课程与课次标识定位；不是媒体地址。
+        "url": lesson_page(course, &episode),
+        // 回放解析与缓存都要用它向好学定位课次；前端界面只读 courseId/hash_id。
+        "episodeId": episode,
+        "courseId": course,
+        "course_name": if course_name.is_empty() {
+            pick(row, &["course_name"])
+        } else {
+            course_name.to_string()
+        },
+        "room": pick(row, &["room_name"]),
+        "hash_id": episode,
+    }))
+}
+fn counted(rows: &[Value], build: impl Fn(&Value) -> Option<Value>) -> (Vec<Value>, usize) {
     let mut out = vec![];
     let mut waiting = 0;
     for row in rows {
-        let (_, playable) = state(row);
-        if !playable {
-            waiting += 1;
-            continue;
+        match build(row) {
+            Some(value) => out.push(value),
+            None => waiting += 1,
         }
-        let episode = if scalar(row, "sub_id").is_empty() {
-            scalar(row, "id")
-        } else {
-            scalar(row, "sub_id")
-        };
-        let title = scalar(row, "sub_title");
-        let time = beijing(&scalar(row, "class_begin"));
-        if episode.is_empty() || title.is_empty() || time.is_empty() {
-            waiting += 1;
-            continue;
-        }
-        out.push(json!({
-            "title": title,
-            "time": time,
-            // 独立录播站的课堂页，按数字课程与课次标识定位；不是媒体地址。
-            "url": format!("https://onlineroomse.pku.edu.cn/livingroom?course_id={course}&sub_id={episode}"),
-            // 回放解析要用它向好学取播放列表，前端界面不读这个字段。
-            "episodeId": episode,
-            "course_name": course_name,
-            "hash_id": pku_course::api::compute_hash_id(&[course, &title, &time]),
-        }));
     }
     (out, waiting)
+}
+pub(crate) fn replay_rows(course: &str, course_name: &str, rows: &[Value]) -> (Vec<Value>, usize) {
+    counted(rows, |row| replay_row(course, course_name, row))
+}
+/// 「按日期」的每一行自带课程标识，所以逐行取课程名与教室。
+pub(crate) fn dated_rows(rows: &[Value]) -> (Vec<Value>, usize) {
+    counted(rows, |row| {
+        let course = pick(row, &["course_id"]);
+        let name = pick(row, &["course_name"]);
+        replay_row(&course, &name, row)
+    })
+}
+/// 「按课程」目录行：课程名、教师、院系与学期，供课堂实录首页列表使用。
+pub(crate) fn course_rows(rows: &[Value]) -> Vec<Value> {
+    rows.iter()
+        .filter_map(|row| {
+            let id = pick(row, &["course_id", "id"]);
+            if id.is_empty() {
+                return None;
+            }
+            Some(json!({
+                "courseId": id,
+                "name": pick(row, &["course_name", "title", "sub_name"]),
+                "teacher": pick(row, &["course_teacher", "teacher"]),
+                "college": pick(row, &["course_college", "information"]),
+                "term": pick(row, &["course_term", "term"]),
+            }))
+        })
+        .collect()
+}
+/// 好学原站的课堂页地址；只在原站核对时用，不是媒体地址。
+pub(crate) fn lesson_page(course: &str, episode: &str) -> String {
+    format!("https://onlineroomse.pku.edu.cn/livingroom?course_id={course}&sub_id={episode}")
+}
+/// 分页翻页与原站一致：下一页只看返回是否还有内容，上一页由页码决定。
+pub(crate) fn page_shape(page: u32, rows: &[Value]) -> Value {
+    json!({
+        "page": page,
+        "rows": rows,
+        "hasPrev": page > 1,
+        "hasNext": !rows.is_empty(),
+    })
 }
 /// app-login 交给原生桥的载荷形态不稳定：可能是对象、JSON 文本，或被再编码
 /// 一层；与haoxue 同样最多展开四层，再在其中找带令牌的节点。
@@ -379,44 +430,138 @@ pub(crate) fn search_keys(name: &str) -> Vec<String> {
     out
 }
 /// 教学网课程名 → 好学课次列表。认领失败必须显式报出来，不能显示成「没有回放」。
-pub(crate) async fn replays(name: &str) -> Result<(String, Vec<Value>, usize)> {
+/// 搜索是按页返回的，只翻第一页就会漏掉排在后面的课程，所以按页扫到空为止；
+/// 每页行数原站没有文档，退化成「比上一页少就认为到底」，并设最多 10 页的上限。
+pub(crate) async fn replays(name: &str) -> Result<(Vec<Value>, usize)> {
     let learner = Haoxue::from_session()?;
     let mut miss = None;
     for key in search_keys(name) {
-        let rows = learner.list_courses(1, &key).await?;
-        match match_course(name, &rows) {
+        let mut found: Vec<Value> = vec![];
+        let mut previous = usize::MAX;
+        for page in 1..=10u32 {
+            let rows = learner.list_courses(page, &key).await?;
+            if rows.is_empty() || rows.len() < previous {
+                found.extend(rows);
+                break;
+            }
+            previous = rows.len();
+            found.extend(rows);
+        }
+        match match_course(name, &found) {
             Ok(claimed) => {
                 let course = scalar(&claimed, "course_id");
                 if course.is_empty() {
                     bail!("课堂实录未收录这门课，请在原站核对");
                 }
                 let (rows, waiting) = replay_rows(&course, name, &learner.list_episodes(&course).await?);
-                return Ok((course, rows, waiting));
+                return Ok((rows, waiting));
             }
             Err(error) => miss = Some(error),
         }
     }
     Err(miss.unwrap_or_else(|| anyhow!("课堂实录未收录这门课，请在原站核对")))
 }
-pub(crate) struct Lesson {
+/// 好学原生目录：按课程浏览，带原站的搜索与翻页。
+pub(crate) async fn catalogue(page: u32, search: &str) -> Result<Value> {
+    let learner = Haoxue::from_session()?;
+    let page = page.max(1);
+    Ok(page_shape(
+        page,
+        &course_rows(&learner.list_courses(page, search).await?),
+    ))
+}
+/// 好学原生目录：按日期浏览当天全部课堂记录，每行都能直接播放。
+pub(crate) async fn by_date(date: &str, page: u32) -> Result<Value> {
+    let learner = Haoxue::from_session()?;
+    let page = page.max(1);
+    let (rows, waiting) = dated_rows(&learner.list_dates(date, page).await?);
+    let mut shape = page_shape(page, &rows);
+    shape["waiting"] = waiting.into();
+    Ok(shape)
+}
+/// 一门课的全部课次；`course` 是好学的课程标识。
+pub(crate) async fn course_episodes(course: &str) -> Result<Value> {
+    let learner = Haoxue::from_session()?;
+    let detail = learner.course_detail(course).await?;
+    let name = pick(&detail, &["course_name", "title"]);
+    let (rows, waiting) = replay_rows(course, &name, &episodes_of(&detail));
+    Ok(json!({
+        "courseId": course,
+        "name": name,
+        "teacher": pick(&detail, &["course_teacher", "teacher"]),
+        "term": pick(&detail, &["term_name", "course_term", "term"]),
+        "thumb": scalar(&detail, "thumb"),
+        "rows": rows,
+        "waiting": waiting,
+    }))
+}
+/// 存档一次回放所需的稳定信息。播放列表地址会过期，所以只在真正下载时
+/// 再向好学取一次，队列里只留课程与课次标识。
+#[derive(Clone, Debug)]
+pub(crate) struct ReplayRef {
     pub course: String,
     pub episode: String,
     pub title: String,
     pub time: String,
+    pub name: String,
+    pub semester: String,
 }
-/// 按列表里的 `hash_id` 认领一次课次；找不到就说明列表已经刷新过。
-pub(crate) async fn lesson(name: &str, video_id: &str) -> Result<Lesson> {
-    let (course, rows, _) = replays(name).await?;
-    let row = rows
-        .iter()
-        .find(|row| row["hash_id"].as_str() == Some(video_id))
-        .ok_or_else(|| anyhow!("回放已变化，请刷新课程列表"))?;
-    Ok(Lesson {
-        course,
-        episode: scalar(row, "episodeId"),
-        title: scalar(row, "title"),
-        time: scalar(row, "time"),
+pub(crate) async fn replay_ref(course: &str, episode: &str) -> Result<ReplayRef> {
+    let learner = Haoxue::from_session()?;
+    let detail = learner.course_detail(course).await?;
+    let lesson = learner.replay(course, episode).await?;
+    let row = episodes_of(&detail)
+        .into_iter()
+        .find(|row| pick(row, &["sub_id", "id"]) == episode)
+        .unwrap_or_default();
+    let label = |value: &str, fallback: String| {
+        if value.is_empty() {
+            fallback
+        } else {
+            value.to_string()
+        }
+    };
+    Ok(ReplayRef {
+        course: course.into(),
+        episode: episode.into(),
+        title: label(&pick(&row, &["sub_title", "sub_name"]), lesson.title),
+        time: label(&beijing(&pick(&row, &["class_begin", "start_at"])), lesson.time),
+        name: label(&pick(&detail, &["course_name", "title"]), lesson.course),
+        semester: label(
+            &pick(&detail, &["term_name", "course_term", "term"]),
+            "课堂实录".into(),
+        ),
     })
+}
+/// 观看进度回写好学，与原站一样按「距上次上报的秒数 + 当前播放位置」上报。
+pub(crate) async fn record(
+    course: &str,
+    episode: &str,
+    play_time: u64,
+    seconds: u64,
+) -> Result<Value> {
+    let learner = Haoxue::from_session()?;
+    let now = chrono::Utc::now().timestamp();
+    // 单次上报最多按六小时计，避免本机时钟或前端状态异常把观看时长写成负数或天文数字。
+    let watched = i64::try_from(seconds.min(6 * 3600)).unwrap_or(0).min(now);
+    let start = now - watched;
+    let value = learner
+        .call(
+            "v2/learn-record/save-learn-record",
+            &[
+                ("course_id", course),
+                ("sub_id", episode),
+                ("enter_time", &start.to_string()),
+                ("start_time", &start.to_string()),
+                ("last_time", &now.to_string()),
+                ("learn_live_duration", ""),
+                ("learn_video_duration", &watched.to_string()),
+                ("play_time", &play_time.to_string()),
+            ],
+            true,
+        )
+        .await?;
+    Ok(json!({ "saved": true, "echo": value }))
 }
 pub(crate) struct Haoxue {
     token: String,
@@ -497,15 +642,17 @@ impl Haoxue {
             .await?;
         courses(&body)
     }
+    /// 一门课的原始详情：`term_name`、`sub_list` 等字段都在这里。
+    pub(crate) async fn course_detail(&self, course: &str) -> Result<Value> {
+        self.call(
+            "v3/course/get-course-detail",
+            &[("course_id", course)],
+            false,
+        )
+        .await
+    }
     pub(crate) async fn list_episodes(&self, course: &str) -> Result<Vec<Value>> {
-        let body = self
-            .call(
-                "v3/course/get-course-detail",
-                &[("course_id", course)],
-                false,
-            )
-            .await?;
-        episodes(&body)
+        Ok(episodes_of(&self.course_detail(course).await?))
     }
     /// 一次课次的可播放线路与学校记录的观看位置。
     pub(crate) async fn replay(&self, course: &str, episode: &str) -> Result<Replay> {
@@ -516,26 +663,21 @@ impl Haoxue {
                 false,
             )
             .await?;
-        let resume_at = data
-            .get("play_time")
-            .and_then(Value::as_f64)
-            .filter(|value| value.is_finite() && *value >= 0.0)
-            .unwrap_or(0.0);
         Ok(Replay {
             sources: sources(&data)?,
-            resume_at,
             title: scalar(&data, "title"),
             course: scalar(&data, "course_name"),
+            time: beijing(&pick(&data, &["class_begin", "start_at"])),
         })
     }
 }
 #[derive(Clone, Debug)]
 pub(crate) struct Replay {
     pub sources: Vec<Source>,
-    /// 观看位置由学校返回，续播时用它起播。
-    pub resume_at: f64,
     pub title: String,
     pub course: String,
+    /// 上课时间可能不在课次详情里，取不到就是空串。
+    pub time: String,
 }
 
 #[cfg(test)]
@@ -685,10 +827,10 @@ mod tests {
         let detail = json!({"data": {"sub_list": [
             {"id": "12", "sub_title": "第 1 节", "sub_status": "6"}
         ]}});
-        assert_eq!(episodes(&detail).unwrap()[0]["id"], "12");
+        assert_eq!(episodes_of(&payload(&detail).unwrap())[0]["id"], "12");
         // 目录接口在部分版本里同样返回 lists，两种形态都要能读。
         let alt = json!({"data": {"lists": [{"id": "13"}]}});
-        assert_eq!(episodes(&alt).unwrap()[0]["id"], "13");
+        assert_eq!(episodes_of(&payload(&alt).unwrap())[0]["id"], "13");
     }
     #[test]
     fn course_claim_is_exact_or_explicitly_ambiguous() {
@@ -735,13 +877,48 @@ mod tests {
             row["url"],
             "https://onlineroomse.pku.edu.cn/livingroom?course_id=91&sub_id=1201"
         );
-        // 同一课次在任何一次列表里都必须得到同一个标识，缓存与续播位置靠它对齐。
+        // 缓存与续播位置认的是好学的课程与课次标识，列表刷新也不会换键。
+        assert_eq!(row["courseId"], "91");
+        assert_eq!(row["episodeId"], "1201");
+        assert_eq!(row["hash_id"], "1201");
         let again = replay_rows("91", "高等数学B", &rows).0;
         assert_eq!(row["hash_id"], again[0]["hash_id"]);
-        assert_eq!(
-            row["hash_id"],
-            pku_course::api::compute_hash_id(&["91", "第 3 次课", time])
-        );
+    }
+    #[test]
+    fn dated_rows_carry_their_own_course_teacher_and_room() {
+        let rows = vec![
+            json!({"course_id": "42", "sub_id": "9001", "sub_name": "第 5 次课",
+                   "course_name": "结构化学", "room_name": "理科一",
+                   "start_at": "1760000000", "sub_status": "6"}),
+            json!({"course_id": "42", "sub_id": "9002", "sub_name": "第 6 次课",
+                   "course_name": "结构化学", "start_at": "1760086400", "sub_status": "2"}),
+        ];
+        let (videos, waiting) = dated_rows(&rows);
+        assert_eq!(waiting, 1);
+        assert_eq!(videos.len(), 1);
+        assert_eq!(videos[0]["title"], "第 5 次课");
+        assert_eq!(videos[0]["course_name"], "结构化学");
+        assert_eq!(videos[0]["room"], "理科一");
+        assert_eq!(videos[0]["courseId"], "42");
+        assert_eq!(videos[0]["hash_id"], "9001");
+    }
+    #[test]
+    fn catalogue_rows_and_paging_follow_the_original_site() {
+        let rows = course_rows(&[
+            json!({"course_id": "9", "course_name": "高等数学", "course_teacher": "李老师",
+                   "course_college": "数学科学学院", "course_term": "2025-2026 上学期"}),
+            json!({"course_id": "", "course_name": "缺标识的行"}),
+        ]);
+        assert_eq!(rows.len(), 1);
+        assert_eq!(rows[0]["name"], "高等数学");
+        assert_eq!(rows[0]["college"], "数学科学学院");
+        assert_eq!(rows[0]["term"], "2025-2026 上学期");
+        let first = page_shape(1, &rows);
+        assert_eq!(first["hasPrev"], false);
+        assert_eq!(first["hasNext"], true);
+        let last = page_shape(2, &[]);
+        assert_eq!(last["hasPrev"], true);
+        assert_eq!(last["hasNext"], false);
     }
     #[test]
     fn login_payload_expands_until_a_token_appears() {

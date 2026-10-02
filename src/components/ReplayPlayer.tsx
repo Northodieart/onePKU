@@ -27,6 +27,10 @@ export type Replay = {
   time: string;
   url: string;
   hash_id: string;
+  /** 好学的课程标识；回放解析、缓存与进度回写都以它为准。 */
+  courseId?: string;
+  course_name?: string;
+  room?: string;
 };
 type CacheStatus = {
   completed: number;
@@ -74,10 +78,13 @@ export default function ReplayPlayer({
 }) {
   const element = useRef<HTMLVideoElement>(null);
   const surface = useRef<HTMLDivElement>(null);
-  const storageKey = `onepku.playback.${generation}.${course}.${video.hash_id}`;
+  // 好学的课程标识才是回放的真实身份：缓存、续播位置与进度回写都按它对齐。
+  const lesson = video.courseId ?? course;
+  const storageKey = `onepku.playback.${generation}.${lesson}.${video.hash_id}`;
   const position = useRef(savedPosition(storageKey));
   const mediaReady = useRef(false);
   const lastSaved = useRef(0);
+  const reportedAt = useRef(Math.floor(Date.now() / 1000));
   const [playback, setPlayback] = useState<Playback>();
   const subtitles = useReplaySubtitles(playback?.id);
   const subtitleKey = `${storageKey}.subtitles`;
@@ -149,7 +156,7 @@ export default function ReplayPlayer({
     setError("");
     void action<Playback>({
       kind: "playbackPrepare",
-      course,
+      course: lesson,
       video: video.hash_id,
       refresh: retry > 0,
       position: position.current,
@@ -181,7 +188,35 @@ export default function ReplayPlayer({
       live = false;
       if (id) void action({ kind: "playbackClose", id }).catch(() => {});
     };
-  }, [course, video.hash_id, retry]);
+  }, [lesson, video.hash_id, retry]);
+  // 观看进度按原站口径回写：暂停、关闭，以及每 60 秒一次心跳。
+  useEffect(() => {
+    if (!playback || !video.courseId) return;
+    const report = () => {
+      const el = element.current;
+      const now = Math.floor(Date.now() / 1000);
+      const seconds = Math.max(0, now - reportedAt.current);
+      reportedAt.current = now;
+      if (seconds < 5) return;
+      void action({
+        kind: "haoxueRecord",
+        course: video.courseId as string,
+        episode: video.hash_id,
+        playTime: Math.floor(el?.currentTime || 0),
+        seconds,
+      }).catch(() => {
+        /* 进度回写失败不影响观看。 */
+      });
+    };
+    const el = element.current;
+    el?.addEventListener("pause", report);
+    const timer = setInterval(report, 60000);
+    return () => {
+      el?.removeEventListener("pause", report);
+      clearInterval(timer);
+      report();
+    };
+  }, [playback, video.courseId, video.hash_id]);
   useEffect(() => {
     if (!playback) return;
     let live = true;

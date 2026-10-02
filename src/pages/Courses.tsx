@@ -231,7 +231,7 @@ function Videos({ course, login }: { course: Course; login: Login }) {
     <>
       {playing && (
         <ReplayPlayer
-          key={`${course.id}:${playing.video.hash_id}:${playing.generation}`}
+          key={`${playing.video.courseId ?? course.id}:${playing.video.hash_id}:${playing.generation}`}
           course={course.id}
           video={playing.video}
           generation={playing.generation}
@@ -263,7 +263,7 @@ function Videos({ course, login }: { course: Course; login: Login }) {
                     icon={<Play size={18} />}
                     request={{
                       kind: "downloadVideo",
-                      course: course.id,
+                      course: v.courseId ?? course.id,
                       video: v.hash_id,
                     }}
                     extra={
@@ -278,7 +278,9 @@ function Videos({ course, login }: { course: Course; login: Login }) {
                 ))}
               </div>
             ) : (
-              <Empty>该课程回放列表暂未列出视频，可在教学网核对。</Empty>
+              <Empty>
+                这门课的课堂实录还没有可播放的回放，可在「课堂实录」页按日期核对。
+              </Empty>
             )
           }
         </Resource>

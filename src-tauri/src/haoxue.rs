@@ -56,6 +56,8 @@ fn open(app: &tauri::AppHandle, target: &str, android: bool) -> Result<(), Strin
     .title("课堂实录 · 统一身份认证")
     .inner_size(980.0, 760.0)
     .min_inner_size(620.0, 520.0)
+    // 桥必须在地道脚本之前注入，否则中转页找不到 `bridge.PKULoginSuccess`。
+    .initialization_script(BRIDGE)
     .on_navigation(passport);
     if android {
         builder = builder.user_agent(ANDROID_UA);

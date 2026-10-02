@@ -169,12 +169,9 @@ impl Core {
     }
     pub(crate) async fn videos(&self, course: &str, warnings: &mut Vec<String>) -> Result<Value> {
         let c = self.find_course(course).await?;
-        let (_, rows, waiting) = crate::haoxue::replays(c["name"].as_str().unwrap_or("课程")).await?;
+        let (rows, waiting) = crate::haoxue::replays(c["name"].as_str().unwrap_or("课程")).await?;
         if waiting > 0 {
             warnings.push(format!("另有 {waiting} 节课堂记录没有可播放回放"));
-        }
-        if rows.len() >= 100 {
-            warnings.push("当前显示首页回放，完整列表请在原站查看".into());
         }
         Ok(Value::Array(rows))
     }

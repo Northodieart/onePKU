@@ -16,6 +16,9 @@ struct Saved {
     entries: HashMap<String, Envelope>,
     files: HashMap<String, downloads::FileRef>,
 }
+/// 回放列表改用好学的课程与课次标识之后，旧快照里的行既播不出也对不上缓存，
+/// 整体作废比混合显示更安全；下一次写入会用新版本号覆盖同一个文件。
+const SNAPSHOT_VERSION: u32 = 2;
 fn path() -> Result<PathBuf> {
     Ok(directories::ProjectDirs::from("me", "petertian", "OnePKU")
         .ok_or_else(|| anyhow!("无法定位缓存目录"))?
@@ -28,6 +31,9 @@ pub(crate) fn cacheable(req: &Request) -> bool {
         Request::Courses
             | Request::AllCourses
             | Request::Videos { .. }
+            | Request::HaoxueCourses { .. }
+            | Request::HaoxueByDate { .. }
+            | Request::HaoxueEpisodes { .. }
             | Request::Scores
             | Request::Exams
             | Request::CardStats { .. }
@@ -115,7 +121,7 @@ impl Core {
         }) else {
             return;
         };
-        if saved.version != 1 {
+        if saved.version != SNAPSHOT_VERSION {
             return;
         }
         let now = chrono::Utc::now().timestamp();

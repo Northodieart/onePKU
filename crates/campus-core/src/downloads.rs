@@ -35,9 +35,7 @@ pub struct Job {
 pub(crate) enum DownloadSource {
     File(FileRef),
     Video {
-        course: String,
-        semester: String,
-        video: pku_course::api::VideoInfo,
+        replay: crate::haoxue::ReplayRef,
     },
 }
 pub(crate) struct Task {
@@ -424,7 +422,7 @@ impl Core {
             r=tokio::time::timeout(Duration::from_secs(seconds),async {
                 match task.source {
                     DownloadSource::File(f)=>self.save_file(id,f,cancel.clone()).await,
-                    DownloadSource::Video{course,semester,video}=>self.save_video(id,&course,&semester,&video,&task.generation,cancel.clone()).await,
+                    DownloadSource::Video{replay}=>self.save_video(id,&replay,&task.generation,cancel.clone()).await,
                 }
             })=>r.map_err(|_|anyhow!("下载超时，请重试")).and_then(|v|v),
             _=cancelled(&cancel)=>Err(anyhow!("cancelled"))
@@ -508,36 +506,31 @@ impl Core {
         course: &str,
         video_id: &str,
     ) -> Result<Value> {
-        let c = self.find_course(course).await?;
-        let video = self
-            .course_api()?
-            .list_videos(course, c["name"].as_str().unwrap_or("课程"))
-            .await?
-            .into_iter()
-            .find(|v| v.hash_id == video_id)
-            .ok_or_else(|| anyhow!("回放已变化，请刷新列表"))?;
-        let semester = c["semester"].as_str().unwrap_or("未标注学期").to_string();
+        let replay = crate::haoxue::replay_ref(course, video_id).await?;
         self.enqueue_download(
             format!("video:{course}:{video_id}"),
-            format!("{} · {}", video.course_name, video.time),
-            DownloadSource::Video {
-                course: course.into(),
-                semester,
-                video,
-            },
+            format!("{} · {}", replay.name, replay.time),
+            DownloadSource::Video { replay },
         )
     }
     async fn save_video(
         &self,
         id: &str,
-        course: &str,
-        semester: &str,
-        video: &pku_course::api::VideoInfo,
+        replay: &crate::haoxue::ReplayRef,
         generation: &str,
         cancel: Arc<AtomicBool>,
     ) -> Result<String> {
-        let api = self.course_api()?;
-        let dir = archive_directory(semester, &format!("{} {}", video.course_name, course))?
+        let lesson = crate::haoxue::Haoxue::from_session()?;
+        // 播放列表地址会过期，队列里只存课程与课次标识，这里再向好学取一次。
+        let media = lesson.replay(&replay.course, &replay.episode).await?;
+        let playlist = media
+            .sources
+            .first()
+            .ok_or_else(|| anyhow!("该课堂没有可用的录像地址"))?
+            .url
+            .clone();
+        let api = self.course_api()?.with_media_token(&lesson.cookie_token);
+        let dir = archive_directory(&replay.semester, &format!("{} {}", replay.name, replay.course))?
             .join("课程回放");
         std::fs::create_dir_all(&dir)?;
         let temp = dir.join(format!(".onepku-{id}.mp4"));
@@ -549,11 +542,11 @@ impl Core {
         }
         let _cleanup = Cleanup(temp.clone());
         let account = self.course_account(generation).await.unwrap_or_else(|_| generation.into());
-        let resume = playback::shared_cache_root(&account, course, &video.hash_id)?;
+        let resume = playback::shared_cache_root(&account, &replay.course, &replay.episode)?;
         let dirs = directories::ProjectDirs::from("me", "petertian", "OnePKU")
             .ok_or_else(|| anyhow!("无法定位回放缓存"))?;
         let playback_cache = playback::adopt_account_cache(&dirs.cache_dir().join("playback-v1"),
-            &accounts::root()?, &account, course, &video.hash_id)?;
+            &accounts::root()?, &account, &replay.course, &replay.episode)?;
         let ffmpeg = [
             "/opt/homebrew/bin/ffmpeg",
             "/usr/local/bin/ffmpeg",
@@ -563,22 +556,27 @@ impl Core {
         .map(PathBuf::from)
         .find(|p| p.is_file())
         .unwrap_or_else(|| PathBuf::from("ffmpeg"));
-        api.download_video_to(video,&temp,&resume,&ffmpeg,&cancel,|p| {if generation!=fingerprint("course") {cancel.store(true,Ordering::Relaxed);}if let Some(j)=self.jobs.lock().unwrap().get_mut(id) {j.state=json!({"state":"running","phase":p.phase,"bytes":p.bytes,"completed":p.completed,"segments":p.total});}},
-            |signature, legacy, count, shared| playback::reuse_playback_parts(&playback_cache,shared,course,&video.hash_id,signature,legacy,count)).await?;
+        api.download_media_at(&playlist,&temp,&resume,&ffmpeg,&cancel,|p| {if generation!=fingerprint("course") {cancel.store(true,Ordering::Relaxed);}if let Some(j)=self.jobs.lock().unwrap().get_mut(id) {j.state=json!({"state":"running","phase":p.phase,"bytes":p.bytes,"completed":p.completed,"segments":p.total});}},
+            |signature, legacy, count, shared| playback::reuse_playback_parts(&playback_cache,shared,&replay.course,&replay.episode,signature,legacy,count)).await?;
         if cancel.load(Ordering::Relaxed) || generation != fingerprint("course") {
             bail!("cancelled")
         }
         let filename = format!(
-            "{} {}.mp4",
-            folder_component(&video.title),
-            folder_component(&video.time)
+            "{}.mp4",
+            folder_component(
+                &vec![replay.title.as_str(), replay.time.as_str()]
+                    .into_iter()
+                    .filter(|text| !text.is_empty())
+                    .collect::<Vec<_>>()
+                    .join(" ")
+            )
         );
         let hash = file_digest(&temp)?;
         if cancel.load(Ordering::Relaxed) || generation != fingerprint("course") {
             bail!("cancelled")
         }
         let path = finish_archive(&temp, &dir, &filename, &hash)?;
-        let meta = json!({"title":video.title,"time":video.time,"course":course,"semester":semester,"source":"教学网课堂实录","recordingId":video.hash_id,"sha256":hash,"downloadedAt":chrono::Utc::now().to_rfc3339()});
+        let meta = json!({"title":replay.title,"time":replay.time,"course":replay.course,"semester":replay.semester,"source":"好学课堂实录","recordingId":replay.episode,"sha256":hash,"downloadedAt":chrono::Utc::now().to_rfc3339()});
         let sidecar = path.with_file_name(format!(
             "{}.source.json",
             path.file_name().unwrap().to_string_lossy()

@@ -28,7 +28,7 @@ pub use downloads::safe_filename;
 pub use study::CourseBrowserCookie;
 
 #[derive(Clone, Deserialize, Serialize)]
-#[serde(tag = "kind", rename_all = "camelCase")]
+#[serde(tag = "kind", rename_all = "camelCase", rename_all_fields = "camelCase")]
 pub enum Request {
     Reminders,
     SetReminders {
@@ -70,6 +70,27 @@ pub enum Request {
     },
     HaoxueStatus,
     HaoxueLogout,
+    /// 好学课堂实录目录：按课程浏览，`search` 用原站的搜索语义。
+    HaoxueCourses {
+        page: u32,
+        search: String,
+    },
+    /// 好学课堂实录目录：按日期浏览当天的全部课次，每行都可直接播放。
+    HaoxueByDate {
+        date: String,
+        page: u32,
+    },
+    /// 一门好学课程的全部课次。
+    HaoxueEpisodes {
+        course: String,
+    },
+    /// 观看进度回写好学；`seconds` 是距上次上报的观看秒数。
+    HaoxueRecord {
+        course: String,
+        episode: String,
+        play_time: u64,
+        seconds: u64,
+    },
     /// 只能恢复默认；更改到某个目录必须经过桌面容器的系统选择框，前端不能传路径。
     ResetDownloadRoot,
     OpenDownloadRoot,
@@ -317,6 +338,10 @@ fn owner(req: &Request) -> &'static str {
         | Request::Courses
         | Request::AllCourses
         | Request::Videos { .. }
+        | Request::HaoxueCourses { .. }
+        | Request::HaoxueByDate { .. }
+        | Request::HaoxueEpisodes { .. }
+        | Request::HaoxueRecord { .. }
         | Request::Recordings { .. }
         | Request::RecordingSessions { .. }
         | Request::LearningGrades { .. }
@@ -500,6 +525,9 @@ impl Core {
                 Request::Courses
                     | Request::AllCourses
                     | Request::Videos { .. }
+                    | Request::HaoxueCourses { .. }
+                    | Request::HaoxueByDate { .. }
+                    | Request::HaoxueEpisodes { .. }
                     | Request::Scores
                     | Request::Exams
                     | Request::CardStats { .. }
@@ -591,6 +619,15 @@ impl Core {
                 haoxue::clear_session()?;
                 json!({ "connected": false })
             }
+            Request::HaoxueCourses { page, search } => haoxue::catalogue(*page, search).await?,
+            Request::HaoxueByDate { date, page } => haoxue::by_date(date, *page).await?,
+            Request::HaoxueEpisodes { course } => haoxue::course_episodes(course).await?,
+            Request::HaoxueRecord {
+                course,
+                episode,
+                play_time,
+                seconds,
+            } => haoxue::record(course, episode, *play_time, *seconds).await?,
             Request::ResetDownloadRoot => downloads::set_download_root(None)?,
             Request::OpenDownloadRoot => {
                 let dir = downloads::download_root()?;
@@ -894,6 +931,32 @@ mod tests {
         assert!(official_target("https://evil.test").is_err());
         assert!(official_target("portal").is_ok());
         assert!(valid_id("x&mode=delete").is_err());
+    }
+    #[test]
+    fn classroom_catalogue_requests_are_named_and_split() {
+        // 前端用的 kind 字符串与 Rust 字段名必须成对，写错就是静默失效。
+        let list: Request = serde_json::from_value(json!({
+            "kind": "haoxueCourses", "page": 2, "search": "高等数学"
+        }))
+        .unwrap();
+        assert!(matches!(list, Request::HaoxueCourses { page: 2, .. }));
+        assert_eq!(owner(&list), "course");
+        assert!(storage::cacheable(&list));
+        for kind in [
+            json!({"kind": "haoxueByDate", "date": "2026-03-01", "page": 1}),
+            json!({"kind": "haoxueEpisodes", "course": "123"}),
+        ] {
+            let read = serde_json::from_value::<Request>(kind).unwrap();
+            assert!(storage::cacheable(&read));
+        }
+        // 进度回写是出站写操作：不进缓存，也少一个字段都不收。
+        let write = serde_json::from_value::<Request>(json!({
+            "kind": "haoxueRecord", "course": "1", "episode": "2", "playTime": 90, "seconds": 30
+        }))
+        .unwrap();
+        assert!(!storage::cacheable(&write));
+        assert!(serde_json::from_value::<Request>(json!({"kind": "haoxueRecord", "course": "1"}))
+            .is_err());
     }
     #[test]
     fn authentication_has_distinct_recovery() {
