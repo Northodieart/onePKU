@@ -5,6 +5,8 @@ import { action, useResource, type Course } from "../lib/api";
 import type { Scores } from "../lib/grades";
 import {
   computeProgress,
+  directionSplits,
+  directionsFor,
   IGNORE,
   inferProfile,
   loadPlan,
@@ -71,6 +73,19 @@ function gapText(s: ProgressSection) {
   const g = gap(s);
   if (g === null) return "";
   return g === 0 ? "已满足" : `还差 ${fmt(g)} ${measure(s).unit}`;
+}
+/** 方向选择按「<方案 id>|<系列 id>」存，主修与双学位各写各的键。 */
+function withDirection(
+  saved: Profile,
+  planId: string,
+  sectionId: string,
+  groupId: string | null,
+): Profile {
+  const directions = { ...saved.directions };
+  const key = `${planId}|${sectionId}`;
+  if (groupId) directions[key] = groupId;
+  else delete directions[key];
+  return { ...saved, directions };
 }
 
 export default function Curriculum({
@@ -251,6 +266,11 @@ export default function Curriculum({
               else delete overrides[key];
               void persist({ ...saved, overrides });
             }}
+            onDirection={(sectionId, groupId) =>
+              void persist(
+                withDirection(saved, saved.planId!, sectionId, groupId),
+              )
+            }
           />
           {saved.secondaryPlanId && (
             <PlanProgress
@@ -266,6 +286,16 @@ export default function Curriculum({
                 else delete overrides[`${saved.secondaryPlanId}:${key}`];
                 void persist({ ...saved, overrides });
               }}
+              onDirection={(sectionId, groupId) =>
+                void persist(
+                  withDirection(
+                    saved,
+                    saved.secondaryPlanId!,
+                    sectionId,
+                    groupId,
+                  ),
+                )
+              }
             />
           )}
           <p className="subtle curriculum-footnote">
@@ -297,6 +327,7 @@ function PlanProgress({
   courseRows,
   secondary = false,
   onOverride,
+  onDirection,
 }: {
   planId: string;
   profile: Profile;
@@ -304,6 +335,7 @@ function PlanProgress({
   courseRows: Course[];
   secondary?: boolean;
   onOverride: (key: string, sectionId: string | null) => void;
+  onDirection: (sectionId: string, groupId: string | null) => void;
 }) {
   const plan = useQuery({
     queryKey: ["plan", planId],
@@ -329,9 +361,18 @@ function PlanProgress({
       plan.data
         ? computeProgress(plan.data, scoreRows, courseRows, overrides, {
             englishLevel: profile.englishLevel,
+            directions: directionsFor(planId, profile.directions),
           })
         : null,
-    [plan.data, scoreRows, courseRows, overrides, profile.englishLevel],
+    [
+      plan.data,
+      scoreRows,
+      courseRows,
+      overrides,
+      profile.englishLevel,
+      profile.directions,
+      planId,
+    ],
   );
   if (plan.isPending)
     return (
@@ -353,6 +394,8 @@ function PlanProgress({
       progress={progress}
       secondary={secondary}
       englishChosen={profile.englishLevel !== null}
+      directions={directionsFor(planId, profile.directions)}
+      onDirection={onDirection}
       onOverride={onOverride}
     />
   );
@@ -362,14 +405,19 @@ function ProgressView({
   progress,
   secondary,
   englishChosen,
+  directions,
+  onDirection,
   onOverride,
 }: {
   progress: Progress;
   secondary: boolean;
   englishChosen: boolean;
+  directions: Record<string, string>;
+  onDirection: (sectionId: string, groupId: string | null) => void;
   onOverride: (key: string, sectionId: string | null) => void;
 }) {
   const { plan, sections, pending, ignored, totals } = progress;
+  const splits = directionSplits(plan);
   const choices = sectionChoices(progress);
   const unknownCourses = sections
     .flatMap((s) => [s, ...s.children])
@@ -423,6 +471,29 @@ function ProgressView({
         open={sourceOpen}
         onClose={() => setSourceOpen(false)}
       />
+      {splits.length > 0 && (
+        <div className="toolbar">
+          {splits.map((split) => (
+            <label key={split.sectionId}>
+              <span className="subtle">{split.name}方向</span>
+              <select
+                aria-label={`${split.name}按哪个方向计算`}
+                value={directions[split.sectionId] ?? ""}
+                onChange={(e) =>
+                  onDirection(split.sectionId, e.target.value || null)
+                }
+              >
+                <option value="">未选择方向</option>
+                {split.options.map((option) => (
+                  <option key={option.groupId} value={option.groupId}>
+                    {option.name} · {fmt(option.min)} 学分
+                  </option>
+                ))}
+              </select>
+            </label>
+          ))}
+        </div>
+      )}
       <div className="ring-grid" role="tablist" aria-label="学分系列">
         <RingCard
           id="total"

@@ -7,7 +7,10 @@ import {
   scoreStatus,
   sectionChoices,
   variantBase,
+  directionSplits,
+  directionsFor,
   type Plan,
+  type PlanGroup,
   type PlanIndexEntry,
   type Progress,
 } from "../src/lib/curriculum";
@@ -551,6 +554,164 @@ describe("plan totals follow the plan's own arithmetic", () => {
       requirements: makePlan().requirements.filter((r) => r.id !== "3-1"),
     });
     expect(computeProgress(unknown, [], []).totals.required).toBe(130);
+  });
+  describe("direction splits", () => {
+    const groups: PlanGroup[] = [
+      {
+        id: "2",
+        parent: null,
+        name: "专业必修课程",
+        min: 18,
+        max: 24,
+        unit: "学分",
+        courses: [],
+        alternatives: [],
+      },
+      {
+        id: "2.1",
+        parent: "2",
+        name: "专业核心课",
+        courses: [],
+        alternatives: [],
+      },
+      {
+        id: "2.1-1",
+        parent: "2.1",
+        name: "理论方向",
+        min: 18,
+        max: 18,
+        unit: "学分",
+        courses: [course("a1", "量子力学", "专业必修", 3)],
+        alternatives: [],
+      },
+      {
+        id: "2.1-2",
+        parent: "2.1",
+        name: "应用方向",
+        min: 20,
+        max: 20,
+        unit: "学分",
+        courses: [course("a2", "半导体物理", "专业必修", 4)],
+        alternatives: [],
+      },
+    ];
+    const requirements = [
+      {
+        id: "1-1",
+        parent: "1",
+        name: "思想政治理论必修课",
+        requirement: "19 学分",
+        min: 19,
+        max: 19,
+        unit: "学分",
+      },
+      {
+        id: "1-2",
+        parent: "1",
+        name: "英语",
+        requirement: "8 学分",
+        min: 8,
+        max: 8,
+        unit: "学分",
+      },
+      {
+        id: "3-1",
+        parent: "3",
+        name: "专业选修课",
+        requirement: "20 学分",
+        min: 20,
+        max: 20,
+        unit: "学分",
+      },
+      {
+        id: "3-2",
+        parent: "3",
+        name: "自主选修课",
+        requirement: "20 学分",
+        min: 20,
+        max: 20,
+        unit: "学分",
+      },
+    ];
+    const splitPlan = makePlan({
+      totalCredits: { min: 80, max: 120 },
+      groups,
+      requirements,
+      topRequirements: [
+        { id: "1", name: "公共基础课程", min: 27, max: 27, unit: "学分" },
+        { id: "3", name: "选修课程", min: 40, max: 40, unit: "学分" },
+      ],
+    });
+    const rows = [
+      score("量子力学", "3", "90", "专业必修"),
+      score("半导体物理", "4", "88", "专业必修"),
+    ];
+    it("lists a direction group only when the parent itself has no total", () => {
+      const splits = directionSplits(splitPlan);
+      expect(splits).toHaveLength(1);
+      expect(splits[0]).toMatchObject({
+        sectionId: "2-1",
+        name: "专业核心课",
+        options: [
+          { groupId: "2.1-1", name: "理论方向", min: 18 },
+          { groupId: "2.1-2", name: "应用方向", min: 20 },
+        ],
+      });
+      // 父类自己给了总额的，是模块清单而不是互斥方向。
+      expect(
+        directionSplits(
+          makePlan({
+            groups: groups.map((g) => (g.id === "2.1" ? { ...g, min: 18 } : g)),
+            requirements,
+            topRequirements: splitPlan.topRequirements,
+          }),
+        ),
+      ).toEqual([]);
+    });
+    it("mixes every direction's courses while no direction is chosen", () => {
+      const progress = computeProgress(splitPlan, rows, []);
+      const core = progress.sections
+        .find((s) => s.id === "2")!
+        .children.find((c) => c.id === "2-1")!;
+      // 子系列唯一的缺口由大类总额推得，课还来不及分方向。
+      expect(core.min).toBe(18);
+      expect(core.max).toBe(24);
+      expect(core.note).toContain("推得");
+      expect(core.courses.map((c) => c.name)).toEqual([
+        "量子力学",
+        "半导体物理",
+      ]);
+    });
+    it("counts only the chosen direction and re-sums the parent total", () => {
+      const progress = computeProgress(
+        splitPlan,
+        rows,
+        [],
+        {},
+        {
+          directions: { "2-1": "2.1-2" },
+        },
+      );
+      const major = progress.sections.find((s) => s.id === "2")!;
+      const core = major.children.find((c) => c.id === "2-1")!;
+      expect(core.min).toBe(20);
+      expect(core.requirement).toBe("20 学分");
+      expect(core.note).toContain("已选方向「应用方向」");
+      expect(core.courses.map((c) => c.name)).toEqual(["半导体物理"]);
+      // 另一个方向独有的课不再算进这一类，落到待确认里。
+      expect(progress.pending.map((c) => c.name)).toEqual(["量子力学"]);
+      expect(major.min).toBe(20);
+      expect(major.requirement).toBe("20 学分");
+      expect(progress.totals.required).toBe(87);
+    });
+    it("reads only the current plan's direction choices", () => {
+      expect(
+        directionsFor("2025-a-b", {
+          "2025-a-b|2-1": "2.1-2",
+          "2025-c-d|1-1": "1.1",
+        }),
+      ).toEqual({ "2-1": "2.1-2" });
+    });
   });
 });
 describe("inferProfile", () => {

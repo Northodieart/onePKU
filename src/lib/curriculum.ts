@@ -356,8 +356,140 @@ function recomputeRequired(
   const sum = sections.reduce((n, s) => n + (s.min as number), 0);
   return sum >= stated.min && sum <= stated.max ? sum : stated.min;
 }
+/** 方案 PDF 里的对齐空格会变成「应用物理学二（计算机交叉）   ：20 学分」。 */
+function tidy(name: string): string {
+  return name
+    .replace(/\s*：\s*/g, "：")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+export type DirectionOption = {
+  groupId: string;
+  name: string;
+  min: number;
+  max?: number;
+};
+/**
+ * 方案把某一类按方向分列、自己不给总额（如物理学院的专业核心课：六个方向 18~24 学分）。
+ * 不选方向就不知道这一类要修多少，也只能把各方向的课混在一起。
+ * 父类已有总额的（如信科的专业选修课）不算分裂，那是模块清单而非互斥方向。
+ */
+export type DirectionSplit = {
+  sectionId: string;
+  name: string;
+  options: DirectionOption[];
+};
+export function directionSplits(plan: Plan): DirectionSplit[] {
+  const usesRequirements = plan.requirements.length >= 4;
+  const parentIds = new Set(plan.groups.map((g) => g.id));
+  const out: DirectionSplit[] = [];
+  for (const parent of plan.groups) {
+    if (parent.min !== undefined) continue;
+    if (parent.parent === null || !parentIds.has(parent.parent)) continue;
+    const options = plan.groups
+      .filter(
+        (child) =>
+          child.parent === parent.id &&
+          child.min !== undefined &&
+          (child.id.startsWith(`${parent.id}-`) ||
+            child.id.startsWith(`${parent.id}.`)),
+      )
+      .map((child) => ({
+        groupId: child.id,
+        name: tidy(child.name),
+        min: child.min as number,
+        max: child.max,
+      }));
+    if (options.length < 2) continue;
+    out.push({
+      sectionId: usesRequirements ? parent.id.replace(/\./g, "-") : parent.id,
+      name: tidy(parent.name),
+      options,
+    });
+  }
+  return out;
+}
+/** 方向选择按「<方案 id>|<系列 id>」保存，这里读回当前方案的这一份。 */
+export function directionsFor(
+  planId: string,
+  directions: Record<string, string>,
+): Record<string, string> {
+  const prefix = `${planId}|`;
+  const out: Record<string, string> = {};
+  for (const [key, value] of Object.entries(directions))
+    if (key.startsWith(prefix)) out[key.slice(prefix.length)] = value;
+  return out;
+}
+/** 用户选定方向后，这一类按该方向的学分计；其余方向独有的课不再算进这一类。 */
+function applyDirection(
+  split: DirectionSplit,
+  flat: Map<string, ProgressSection>,
+  plan: Plan,
+  chosen: string,
+): Set<string> {
+  const section = flat.get(split.sectionId);
+  const option = split.options.find((o) => o.groupId === chosen);
+  if (!section || !option) return new Set();
+  section.min = option.min;
+  section.max = option.max ?? option.min;
+  section.requirement = `${fmtCredits(option.min)} 学分`;
+  section.note = `已选方向「${option.name}」，该类按 ${fmtCredits(option.min)} 学分计算`;
+  const group = plan.groups.find((g) => g.id === option.groupId);
+  if (!group) return new Set();
+  const kept = new Set([
+    ...group.courses.map((c) => normalizeCourseName(c.name)),
+    ...group.alternatives.map((a) => normalizeCourseName(a.name)),
+  ]);
+  const skip = new Set<string>();
+  for (const sibling of plan.groups) {
+    if (
+      sibling.parent !== group.parent ||
+      sibling.id === group.id ||
+      !split.options.some((o) => o.groupId === sibling.id)
+    )
+      continue;
+    for (const key of [
+      ...sibling.courses.map((c) => normalizeCourseName(c.name)),
+      ...sibling.alternatives.map((a) => normalizeCourseName(a.name)),
+    ]) {
+      if (key && !kept.has(key)) skip.add(key);
+    }
+  }
+  return skip;
+}
+/**
+ * 方向或分级定了以后，大类的总额按各子系列求和。
+ * 按门/按学时的子系列不计入（方案自己也没把它们算进学分总数），
+ * 而且求和结果落在方案原本给的区间内才敢改。
+ */
+function recomputeTopTotal(
+  top: ProgressSection,
+  floor: number,
+  ceiling: number,
+) {
+  const counted = top.children.filter(
+    (child) => child.unit === undefined || child.unit === "学分",
+  );
+  if (!counted.length || counted.some((child) => child.min === undefined))
+    return;
+  const min = counted.reduce((sum, child) => sum + (child.min as number), 0);
+  const max = counted.reduce(
+    (sum, child) => sum + (child.max ?? child.min!),
+    0,
+  );
+  if (min < floor || min > ceiling) return;
+  top.min = min;
+  top.max = max;
+  top.requirement =
+    max > min
+      ? `${fmtCredits(min)}～${fmtCredits(max)} 学分`
+      : `${fmtCredits(min)} 学分`;
+}
 /** 把方案整理成两层的学分系列，并建立课程名索引。 */
-function buildSections(plan: Plan): {
+function buildSections(
+  plan: Plan,
+  directions: Record<string, string> = {},
+): {
   sections: ProgressSection[];
   index: SectionIndex;
   usesRequirements: boolean;
@@ -433,6 +565,23 @@ function buildSections(plan: Plan): {
   }
   for (const top of sections) deriveMissingTotals(top);
 
+  // 选定细分方向后，这一类按该方向的学分计，其余方向独有的课不再算进来。
+  const skip = new Set<string>();
+  const touched: ProgressSection[] = [];
+  for (const split of directionSplits(plan)) {
+    const chosen = directions[split.sectionId];
+    if (!chosen) continue;
+    for (const key of applyDirection(split, flat, plan, chosen)) skip.add(key);
+    const top = sections.find((s) =>
+      s.children.some((child) => child.id === split.sectionId),
+    );
+    if (top) touched.push(top);
+  }
+  for (const top of touched) {
+    if (top.min === undefined) continue;
+    recomputeTopTotal(top, top.min, top.max ?? top.min);
+  }
+
   const findChild = (re: RegExp) =>
     [...flat.values()].find(
       (s) => s.children.length === 0 && re.test(s.name),
@@ -491,13 +640,14 @@ function buildSections(plan: Plan): {
       const sectionId = sectionForGroup(g, c);
       if (!sectionId || !c.name) continue;
       const key = normalizeCourseName(c.name);
+      if (skip.has(key)) continue;
       if (!byName.has(key))
         byName.set(key, { sectionId, credits: c.credits, via: "name" });
     }
     for (const a of g.alternatives) {
       if (!a.name) continue;
       const key = normalizeCourseName(a.name);
-      if (byName.has(key)) continue;
+      if (byName.has(key) || skip.has(key)) continue;
       const replaced = a.replaces
         ? byName.get(normalizeCourseName(a.replaces))
         : undefined;
@@ -577,7 +727,11 @@ function assignByPlan(
   return { ...course, sectionId: null, via: null };
 }
 
-export type ProgressOptions = { englishLevel?: EnglishLevel | null };
+export type ProgressOptions = {
+  englishLevel?: EnglishLevel | null;
+  /** 按方向分列的类别，键是 `<方案 id>|<系列 id>` 里的系列 id，值是选定的课程组 id。 */
+  directions?: Record<string, string>;
+};
 
 /** 按分级把"大学英语 2～8 学分"固定下来；不足 8 学分的部分方案要求用专业或通识选修补齐，这里按通识教育课计。 */
 function applyEnglishLevel(
@@ -626,7 +780,10 @@ export function computeProgress(
   overrides: Overrides = {},
   options: ProgressOptions = {},
 ): Progress {
-  const { sections, index, usesRequirements } = buildSections(plan);
+  const { sections, index, usesRequirements } = buildSections(
+    plan,
+    options.directions ?? {},
+  );
   if (options.englishLevel && usesRequirements)
     applyEnglishLevel(sections, index, options.englishLevel);
   const seen = new Set<string>();

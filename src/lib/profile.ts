@@ -13,6 +13,8 @@ export type Profile = {
   /** 大学英语分级；null 表示未选择，按方案的 2～8 学分区间显示。 */
   englishLevel: EnglishLevel | null;
   overrides: Overrides;
+  /** 按方向分列的类别选了哪个方向：键是「<方案 id>|<系列 id>」，值是课程组 id。 */
+  directions: Record<string, string>;
   inferred: boolean;
   updatedAt: string;
 };
@@ -23,6 +25,7 @@ export const emptyProfile: Profile = {
   secondaryPlanId: null,
   englishLevel: null,
   overrides: {},
+  directions: {},
   inferred: false,
   updatedAt: "",
 };
@@ -47,6 +50,15 @@ export function normalizeProfile(value: unknown): Profile | null {
         ? Object.fromEntries(
             Object.entries(v.overrides).filter(
               ([, s]) => typeof s === "string",
+            ),
+          )
+        : {},
+    directions:
+      v.directions && typeof v.directions === "object"
+        ? Object.fromEntries(
+            Object.entries(v.directions).filter(
+              ([key, value]) =>
+                typeof key === "string" && typeof value === "string",
             ),
           )
         : {},
