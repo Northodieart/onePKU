@@ -3933,7 +3933,7 @@ input[type="checkbox"] {
 }
 .course-list li {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto auto 44px;
+  grid-template-columns: minmax(0, 1fr) auto auto 68px minmax(120px, auto);
   align-items: baseline;
   gap: 14px;
   padding: 7px 0;
@@ -3945,6 +3945,10 @@ input[type="checkbox"] {
 }
 .course-list .subtle {
   font-size: 12px;
+}
+.course-credit {
+  min-width: 0;
+  text-align: right;
 }
 .course-status {
   font-size: 13px;

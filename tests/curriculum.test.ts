@@ -331,6 +331,37 @@ describe("computeProgress", () => {
       expect(ignored.ignored[0].credits).toBeNull();
     }
   });
+  it("lets a manually entered credit count win over the score and the plan", () => {
+    const name = "高等数学 A（一）";
+    const key = normalizeCourseName(name);
+    const graded = computeProgress(
+      plan,
+      [score(name, "5", "92", "专业必修")],
+      [],
+      {},
+      { manualCredits: { [key]: 3 } },
+    );
+    expect(graded.totals.earned).toBe(3);
+    // 0 学分课是真实存在的：手填 0 就必须按 0 计，不能当成没填。
+    const zero = computeProgress(
+      plan,
+      [score(name, "5", "92", "专业必修")],
+      [],
+      {},
+      { manualCredits: { [key]: 0 } },
+    );
+    expect(zero.totals.earned).toBe(0);
+    // 在修课程没有学分来源，手填后才计入。
+    const filled = computeProgress(
+      plan,
+      [],
+      [{ id: "c", name, current: true }],
+      {},
+      { manualCredits: { [key]: 4 } },
+    );
+    expect(filled.totals.inProgress).toBe(4);
+    expect(filled.totals.unknownCredits).toBe(0);
+  });
   it("does not count an exercise course alongside its main course", () => {
     const progress = computeProgress(
       plan,

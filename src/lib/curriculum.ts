@@ -740,6 +740,8 @@ export type ProgressOptions = {
   englishLevel?: EnglishLevel | null;
   /** 按方向分列的类别，键是 `<方案 id>|<系列 id>` 里的系列 id，值是选定的课程组 id。 */
   directions?: Record<string, string>;
+  /** 手填学分，键是规范化课程名；已修与在修都以此为准，0 也是有效值。 */
+  manualCredits?: Record<string, number>;
 };
 
 /** 原文第 1 条把英语专业学生和留学生排除在分级之外。 */
@@ -883,7 +885,10 @@ export function computeProgress(
   const pending: MatchedCourse[] = [];
   const ignored: MatchedCourse[] = [];
   let unknownCredits = 0;
-  for (const m of matched) {
+  for (const raw of matched) {
+    // 手填过就以手填为准：成绩自带的学分与方案口径不一致时（0 学分课），改了就得生效。
+    const manual = options.manualCredits?.[normalizeCourseName(raw.name)];
+    const m = manual === undefined ? raw : { ...raw, credits: manual };
     if (m.sectionId === IGNORE) {
       ignored.push(m);
       continue;

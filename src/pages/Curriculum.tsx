@@ -69,10 +69,40 @@ function gap(s: ProgressSection) {
   const m = measure(s);
   return Math.max(0, s.min - m.value - m.pending);
 }
+/** 「恢复自动判断」的哨兵，不会与真实系列 id 冲突。 */
+const AUTO = "__auto__";
+/** 只认数字与小数点，最多五位；清空表示不再手填。 */
+function parseCredits(raw: string): number | null {
+  const text = raw
+    .replace(/[^0-9.]/g, "")
+    .slice(0, 5)
+    .replace(/\.?$/, "");
+  if (!text) return null;
+  const value = Number(text);
+  return Number.isFinite(value) ? value : null;
+}
+type Editor = {
+  choices: { id: string; label: string }[];
+  pinned: Record<string, string>;
+  onCredit: (name: string, credits: number | null) => void;
+  onOverride: (key: string, sectionId: string | null) => void;
+};
 function gapText(s: ProgressSection) {
   const g = gap(s);
   if (g === null) return "";
   return g === 0 ? "已满足" : `还差 ${fmt(g)} ${measure(s).unit}`;
+}
+/** 手填学分以规范化课程名为键；清空就是不再手填，回到成绩或方案的口径。 */
+function withManualCredit(
+  saved: Profile,
+  name: string,
+  credits: number | null,
+): Profile {
+  const manualCredits = { ...saved.manualCredits };
+  const key = normalizeCourseName(name);
+  if (credits === null) delete manualCredits[key];
+  else manualCredits[key] = credits;
+  return { ...saved, manualCredits };
 }
 /** 方向选择按「<方案 id>|<系列 id>」存，主修与双学位各写各的键。 */
 function withDirection(
@@ -271,6 +301,9 @@ export default function Curriculum({
                 withDirection(saved, saved.planId!, sectionId, groupId),
               )
             }
+            onCredit={(name, credits) =>
+              void persist(withManualCredit(saved, name, credits))
+            }
           />
           {saved.secondaryPlanId && (
             <PlanProgress
@@ -295,6 +328,9 @@ export default function Curriculum({
                     groupId,
                   ),
                 )
+              }
+              onCredit={(name, credits) =>
+                void persist(withManualCredit(saved, name, credits))
               }
             />
           )}
@@ -328,6 +364,7 @@ function PlanProgress({
   secondary = false,
   onOverride,
   onDirection,
+  onCredit,
 }: {
   planId: string;
   profile: Profile;
@@ -336,6 +373,7 @@ function PlanProgress({
   secondary?: boolean;
   onOverride: (key: string, sectionId: string | null) => void;
   onDirection: (sectionId: string, groupId: string | null) => void;
+  onCredit: (name: string, credits: number | null) => void;
 }) {
   const plan = useQuery({
     queryKey: ["plan", planId],
@@ -362,6 +400,7 @@ function PlanProgress({
         ? computeProgress(plan.data, scoreRows, courseRows, overrides, {
             englishLevel: profile.englishLevel,
             directions: directionsFor(planId, profile.directions),
+            manualCredits: profile.manualCredits,
           })
         : null,
     [
@@ -371,6 +410,7 @@ function PlanProgress({
       overrides,
       profile.englishLevel,
       profile.directions,
+      profile.manualCredits,
       planId,
     ],
   );
@@ -395,7 +435,9 @@ function PlanProgress({
       secondary={secondary}
       englishChosen={profile.englishLevel !== null}
       directions={directionsFor(planId, profile.directions)}
+      pinned={overrides}
       onDirection={onDirection}
+      onCredit={onCredit}
       onOverride={onOverride}
     />
   );
@@ -406,19 +448,24 @@ function ProgressView({
   secondary,
   englishChosen,
   directions,
+  pinned,
   onDirection,
+  onCredit,
   onOverride,
 }: {
   progress: Progress;
   secondary: boolean;
   englishChosen: boolean;
   directions: Record<string, string>;
+  pinned: Record<string, string>;
   onDirection: (sectionId: string, groupId: string | null) => void;
+  onCredit: (name: string, credits: number | null) => void;
   onOverride: (key: string, sectionId: string | null) => void;
 }) {
   const { plan, sections, pending, ignored, totals } = progress;
   const splits = directionSplits(plan);
   const choices = sectionChoices(progress);
+  const editor: Editor = { choices, pinned, onCredit, onOverride };
   const unknownCourses = sections
     .flatMap((s) => [s, ...s.children])
     .flatMap((s) => s.courses)
@@ -553,12 +600,16 @@ function ProgressView({
       >
         {current ? (
           current.children.length > 0 ? (
-            current.children.map((c) => <DetailRow key={c.id} section={c} />)
+            current.children.map((c) => (
+              <DetailRow key={c.id} section={c} editor={editor} />
+            ))
           ) : (
-            <CourseList courses={current.courses} />
+            <CourseList courses={current.courses} editor={editor} />
           )
         ) : (
-          sections.map((s) => <DetailRow key={s.id} section={s} top />)
+          sections.map((s) => (
+            <DetailRow key={s.id} section={s} top editor={editor} />
+          ))
         )}
       </div>
       {pending.length > 0 && (
@@ -707,9 +758,11 @@ function RingCard({
 function DetailRow({
   section,
   top = false,
+  editor,
 }: {
   section: ProgressSection;
   top?: boolean;
+  editor: Editor;
 }) {
   const [open, setOpen] = useState(false);
   const m = measure(section);
@@ -768,48 +821,81 @@ function DetailRow({
       {open && hasChildren && (
         <div className="detail-children">
           {section.children.map((c) => (
-            <DetailRow key={c.id} section={c} />
+            <DetailRow key={c.id} section={c} editor={editor} />
           ))}
         </div>
       )}
       {open && !hasChildren && hasCourses && (
-        <CourseList courses={section.courses} />
+        <CourseList courses={section.courses} editor={editor} />
       )}
     </div>
   );
 }
 
-function CourseList({ courses }: { courses: MatchedCourse[] }) {
+function CourseList({
+  courses,
+  editor,
+}: {
+  courses: MatchedCourse[];
+  editor: Editor;
+}) {
   if (courses.length === 0)
     return <p className="subtle course-list-empty">还没有归到这里的课。</p>;
   return (
     <ul className="course-list">
-      {courses.map((c) => (
-        <li key={c.key}>
-          <span className="course-name">{c.name}</span>
-          <span className="subtle">
-            {c.term}
-            {c.via ? ` · ${viaLabel[c.via]}` : ""}
-          </span>
-          <span className={`course-status ${c.status}`}>
-            {statusLabel[c.status]}
-            {c.score && c.status !== "inProgress" ? ` ${c.score}` : ""}
-          </span>
-          <strong
-            className="course-credits"
-            aria-label={c.credits === null ? `${c.name}：学分未知` : undefined}
-            title={
-              c.credits === null
-                ? c.status === "inProgress"
-                  ? "教学网在修课程列表不提供学分，未计入合计"
-                  : "成绩记录与当前培养方案均未提供可用学分，未计入合计"
-                : undefined
-            }
-          >
-            {c.credits !== null ? fmt(c.credits) : "?"}
-          </strong>
-        </li>
-      ))}
+      {courses.map((c) => {
+        const key = normalizeCourseName(c.name);
+        const pinned = editor.pinned[key];
+        return (
+          <li key={c.key}>
+            <span className="course-name">{c.name}</span>
+            <span className="subtle">
+              {c.term}
+              {c.via ? ` · ${viaLabel[c.via]}` : ""}
+            </span>
+            <span className={`course-status ${c.status}`}>
+              {statusLabel[c.status]}
+              {c.score && c.status !== "inProgress" ? ` ${c.score}` : ""}
+            </span>
+            <input
+              className="course-credit"
+              aria-label={`学分 ${c.name}`}
+              title={
+                c.credits === null
+                  ? c.status === "inProgress"
+                    ? "教学网在修课程列表不提供学分，手填后才计入合计"
+                    : "成绩记录与当前培养方案均未提供可用学分"
+                  : "手填学分以这里为准，清空即回到成绩或方案的口径"
+              }
+              inputMode="decimal"
+              placeholder="?"
+              defaultValue={c.credits ?? ""}
+              key={`${c.key}:${c.credits ?? ""}`}
+              onBlur={(e) =>
+                editor.onCredit(c.name, parseCredits(e.target.value))
+              }
+            />
+            <select
+              aria-label={`归类 ${c.name}`}
+              value={pinned ?? AUTO}
+              onChange={(e) =>
+                editor.onOverride(
+                  key,
+                  e.target.value === AUTO ? null : e.target.value,
+                )
+              }
+            >
+              <option value={AUTO}>按方案自动</option>
+              {editor.choices.map((choice) => (
+                <option key={choice.id} value={choice.id}>
+                  {choice.label}
+                </option>
+              ))}
+              <option value={IGNORE}>不计入</option>
+            </select>
+          </li>
+        );
+      })}
     </ul>
   );
 }

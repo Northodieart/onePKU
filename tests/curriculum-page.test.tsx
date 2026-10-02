@@ -10,7 +10,12 @@ import {
 } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Curriculum from "../src/pages/Curriculum";
-import { planIndex, type CurrentCourse } from "../src/lib/curriculum";
+import {
+  IGNORE,
+  normalizeCourseName,
+  planIndex,
+  type CurrentCourse,
+} from "../src/lib/curriculum";
 
 const ai = planIndex.find(
   (p) => p.cohort === 2025 && p.title === "智能科学与技术专业",
@@ -214,6 +219,65 @@ it("fixes the English requirement by level without inflating general education",
   expect(panel).toHaveTextContent("12 学分");
   expect(panel.textContent).not.toMatch("含补齐大学英语");
   expect(screen.queryByText(/选择你的英语分级/)).not.toBeInTheDocument();
+});
+
+it("edits an earned course's credits from its own row", async () => {
+  const calls = mount({
+    cohort: 2025,
+    planId: ai.id,
+    secondaryPlanId: null,
+    englishLevel: null,
+    overrides: {},
+    directions: {},
+    manualCredits: {},
+    inferred: true,
+    updatedAt: "x",
+  });
+  await screen.findByLabelText(`主修方案：${ai.title}`);
+  fireEvent.click(screen.getByRole("tab", { name: /专业必修课程/ }));
+  const panel = await screen.findByRole("tabpanel");
+  fireEvent.click(within(panel).getAllByRole("button", { name: /门课/ })[0]);
+  const input = await screen.findByLabelText("学分 高等数学 A（一）");
+  fireEvent.change(input, { target: { value: "3" } });
+  fireEvent.blur(input);
+  const key = normalizeCourseName("高等数学 A（一）");
+  await waitFor(() =>
+    expect(
+      calls.some(
+        (c) =>
+          c.kind === "setProfile" &&
+          JSON.stringify(
+            (c.profile as { manualCredits: unknown }).manualCredits,
+          ) === JSON.stringify({ [key]: 3 }),
+      ),
+    ).toBe(true),
+  );
+  // 手填学分直接改合计：专业必修从 12 变成 10。
+  await waitFor(() =>
+    expect(screen.getByRole("tab", { name: /专业必修课程/ })).toHaveTextContent(
+      "10",
+    ),
+  );
+  // 已识别的课也能改归类；改成不计入后这一行就不再出现在系列里。
+  fireEvent.change(screen.getByLabelText("归类 高等数学 A（一）"), {
+    target: { value: IGNORE },
+  });
+  await waitFor(() =>
+    expect(
+      calls.some(
+        (c) =>
+          c.kind === "setProfile" &&
+          (c.profile as { overrides: Record<string, string> }).overrides[
+            key
+          ] === IGNORE,
+      ),
+    ).toBe(true),
+  );
+  await waitFor(() =>
+    expect(
+      screen.queryByLabelText("学分 高等数学 A（一）"),
+    ).not.toBeInTheDocument(),
+  );
 });
 
 it("offers to pick a plan when the profile was saved without one", async () => {
