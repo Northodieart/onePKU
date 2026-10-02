@@ -664,16 +664,43 @@ export type Inference = {
     total: number;
   }[];
   evidence: string[];
+  /** 实际用于限定候选范围的方案 school 值；没有登记院系或没匹配上时为 null。 */
+  narrowedBySchool: string | null;
 };
 function startYear(term: string): number | null {
   const m = /^(\d{2})-\d{2}/.exec(term.trim());
   return m ? 2000 + Number(m[1]) : null;
 }
-/** 从成绩与课程学期推断入学年份，再用专业必修课重合度排出候选方案。 */
+/** 门户登记的「单位」与方案 school 写法不完全一致，如「生命学院」与「生命科学学院」。 */
+function schoolCore(name: string): string {
+  let value = name;
+  for (const suffix of ["学院", "大学", "系", "研究所"])
+    value = value.endsWith(suffix)
+      ? value.slice(0, value.length - suffix.length)
+      : value;
+  return value;
+}
+function sameSchool(a: string | null, b: string | null): boolean {
+  if (!a?.trim() || !b?.trim()) return false;
+  if (a === b) return true;
+  const ca = schoolCore(a);
+  const cb = schoolCore(b);
+  return (
+    ca.length >= 2 &&
+    cb.length >= 2 &&
+    (a.includes(b) ||
+      b.includes(a) ||
+      ca === cb ||
+      ca.startsWith(cb) ||
+      cb.startsWith(ca))
+  );
+}
+/** 从成绩与课程学期推断入学年份，再按门户登记的院系限定范围，用专业必修课重合度排候选。 */
 export function inferProfile(
   scores: GradeCourse[],
   courses: CurrentCourse[],
   index: PlanIndexEntry[] = planIndex,
+  department: string | null = null,
 ): Inference {
   const years: number[] = [];
   for (const s of scores) {
@@ -699,27 +726,39 @@ export function inferProfile(
   const pool = index.filter(
     (p) => p.kind !== "project" && (version === null || p.cohort === version),
   );
-  const candidates = pool
-    .map((p) => {
-      const core = p.core.map(normalizeCourseName);
-      const matched = core.filter(
-        (n) => taken.has(n) || taken.has(variantBase(n)),
-      ).length;
-      return {
-        id: p.id,
-        title: p.title,
-        school: p.school,
-        matched,
-        total: core.length,
-      };
-    })
-    .filter((c) => c.matched > 0)
-    .sort(
-      (a, b) =>
-        b.matched - a.matched ||
-        b.matched / Math.max(1, b.total) - a.matched / Math.max(1, a.total),
-    )
-    .slice(0, 5);
+  const ranked = (rows: PlanIndexEntry[]) =>
+    rows
+      .map((p) => {
+        const core = p.core.map(normalizeCourseName);
+        return {
+          id: p.id,
+          title: p.title,
+          school: p.school,
+          matched: core.filter((n) => taken.has(n) || taken.has(variantBase(n)))
+            .length,
+          total: core.length,
+        };
+      })
+      .filter((c) => c.matched > 0)
+      .sort(
+        (a, b) =>
+          b.matched - a.matched ||
+          b.matched / Math.max(1, b.total) - a.matched / Math.max(1, a.total),
+      )
+      .slice(0, 5);
+  // 先在登记院系内排序，该院系一门都不重合时退回全校，不做「猜不动就空着」。
+  const school =
+    pool.find((p) => sameSchool(p.school, department))?.school ?? null;
+  let candidates: Inference["candidates"] = [];
+  if (school) {
+    candidates = ranked(pool.filter((p) => p.school === school));
+    if (!candidates.length) {
+      evidence.push(
+        `门户登记院系为“${school}”，但该院系没有重合的专业必修课，改按全校方案排序`,
+      );
+      candidates = ranked(pool);
+    } else evidence.push(`已按门户登记的院系“${school}”限定候选范围`);
+  } else candidates = ranked(pool);
   if (candidates.length) {
     evidence.push(
       `与“${candidates[0].title}”的专业必修课重合 ${candidates[0].matched} 门`,
@@ -732,6 +771,13 @@ export function inferProfile(
         `“${ties.map((c) => c.title).join("”“")}”重合门数相同，请核对是否选对了专业`,
       );
     }
-  } else evidence.push("没有一门课与任何方案的专业必修课重合，请手动选择专业");
-  return { cohort, version, candidates, evidence };
+  } else
+    evidence.push("已修与在修课程与各方案的专业必修课均无重合，请手动选择专业");
+  return {
+    cohort,
+    version,
+    candidates,
+    evidence,
+    narrowedBySchool: school,
+  };
 }

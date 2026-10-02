@@ -86,9 +86,13 @@ export default function Curriculum({
   const saved = normalizeProfile(profileQuery.data?.data ?? null);
   const scoreRows = scores.data?.data?.courses ?? [];
   const courseRows = courses.data?.data ?? [];
+  const college = useResource<{ selected: string; options: string[] }>({
+    kind: "departments",
+  });
+  const department = college.data?.data?.selected || null;
   const inference = useMemo(
-    () => inferProfile(scoreRows, courseRows),
-    [scoreRows, courseRows],
+    () => inferProfile(scoreRows, courseRows, planIndex, department),
+    [scoreRows, courseRows, department],
   );
   const [draft, setDraft] = useState<Profile | null>(null);
   const [saving, setSaving] = useState(false);

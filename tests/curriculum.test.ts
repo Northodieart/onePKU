@@ -504,5 +504,84 @@ describe("inferProfile", () => {
     expect(result.cohort).toBeNull();
     expect(result.candidates).toEqual([]);
     expect(result.evidence[0]).toContain("手动选择");
+    expect(result.narrowedBySchool).toBeNull();
+  });
+  describe("department narrowing", () => {
+    const entry = (over: Partial<PlanIndexEntry>): PlanIndexEntry => ({
+      id: "id",
+      cohort: 2025,
+      school: "信科",
+      major: "m",
+      track: null,
+      title: "t",
+      kind: "major",
+      degree: null,
+      totalCredits: null,
+      volume: "",
+      file: "f.json",
+      courses: 1,
+      warnings: 0,
+      core: [],
+      ...over,
+    });
+    const plans: PlanIndexEntry[] = [
+      entry({
+        id: "2025-w-物理",
+        school: "物理学院",
+        title: "物理学专业",
+        core: ["力学", "热学"],
+      }),
+      entry({
+        id: "2025-w-数学",
+        school: "数学科学学院",
+        title: "数学专业",
+        core: ["力学", "热学", "量子力学"],
+      }),
+    ];
+    const taken = [
+      score("力学", "5", "90", "专业必修", "25-26", "1"),
+      score("热学", "4", "88", "专业必修", "25-26", "1"),
+      score("量子力学", "3", "91", "专业必修", "25-26", "2"),
+    ];
+    it("keeps candidates inside the department registered at the portal", () => {
+      const result = inferProfile(taken, [], plans, "物理学院");
+      expect(result.narrowedBySchool).toBe("物理学院");
+      expect(result.candidates.map((c) => c.id)).toEqual(["2025-w-物理"]);
+      expect(
+        result.evidence.some((line) => line.includes("限定候选范围")),
+      ).toBe(true);
+    });
+    it("matches the same school written differently", () => {
+      expect(inferProfile(taken, [], plans, "数学科学").narrowedBySchool).toBe(
+        "数学科学学院",
+      );
+      expect(inferProfile(taken, [], plans, "物理").narrowedBySchool).toBe(
+        "物理学院",
+      );
+    });
+    it("falls back to the whole school when the department has no overlap", () => {
+      const chemistry = entry({
+        id: "2025-w-化学",
+        school: "化学与分子工程学院",
+        title: "化学专业",
+        core: ["无机化学"],
+      });
+      const result = inferProfile(
+        taken,
+        [],
+        [...plans, chemistry],
+        "化学与分子工程学院",
+      );
+      expect(result.narrowedBySchool).toBe("化学与分子工程学院");
+      expect(result.candidates.length).toBeGreaterThan(0);
+      expect(
+        result.evidence.some((line) => line.includes("改按全校方案排序")),
+      ).toBe(true);
+    });
+    it("ranks across the whole school when no department is chosen", () => {
+      const result = inferProfile(taken, [], plans);
+      expect(result.narrowedBySchool).toBeNull();
+      expect(result.candidates[0].id).toBe("2025-w-数学");
+    });
   });
 });
