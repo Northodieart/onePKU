@@ -222,9 +222,6 @@ class CourseApi @Inject constructor(
         return AssignmentDetail(title, deadlineRaw, parseDeadline(deadlineRaw), instructions, attachments)
     }
 
-    suspend fun getAssignment(courseId: String, contentId: String): AssignmentDetail =
-        parseAssignment(getDoc(assignmentUrl(courseId, contentId)))
-
     /** 一次抓取同时取到作业说明与当前提交情况。 */
     suspend fun assignmentOverview(courseId: String, contentId: String): Pair<AssignmentDetail, SubmissionSnapshot> {
         val doc = getDoc(assignmentUrl(courseId, contentId))

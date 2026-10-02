@@ -55,6 +55,7 @@ import me.petertian.onepku.data.course.FeedbackAttempt
 import me.petertian.onepku.data.course.SubmissionOutcome
 import me.petertian.onepku.data.repo.CourseRepository
 import me.petertian.onepku.ui.components.ErrorBox
+import me.petertian.onepku.ui.components.formatDateTime
 import me.petertian.onepku.ui.components.LoadingBox
 import me.petertian.onepku.ui.components.openFile
 import me.petertian.onepku.ui.components.UiData
@@ -69,6 +70,8 @@ data class AssignmentDetailUiState(
     val title: String = "",
     val detail: UiData<AssignmentDetail> = UiData.Loading,
     val attempts: UiData<List<FeedbackAttempt>> = UiData.Loading,
+    /** 当前尝试的提交时刻;学校页面没给出时为空,不拿截止时间冒充。 */
+    val submittedAtEpochMs: Long? = null,
     val pending: PendingSubmit? = null,
     val submitting: Boolean = false,
     /** 正在取回预览的文件地址;非空时该行显示"打开中…"。 */
@@ -93,11 +96,16 @@ class AssignmentDetailViewModel @Inject constructor(
     fun load() {
         viewModelScope.launch {
             coroutineScope {
+                var detailState: UiData<AssignmentDetail> = UiData.Loading
+                var submittedAt: Long? = null
                 val detailJob = async {
                     try {
-                        UiData.Ready(repo.assignmentDetail(courseId, contentId))
+                        // 一次抓取同时得到作业详情与当前尝试的提交时刻。
+                        val (assignment, snapshot) = repo.assignmentOverview(courseId, contentId)
+                        detailState = UiData.Ready(assignment)
+                        submittedAt = snapshot.submittedAtEpochMs
                     } catch (e: Exception) {
-                        UiData.Failure(e.message ?: "作业详情加载失败")
+                        detailState = UiData.Failure(e.message ?: "作业详情加载失败")
                     }
                 }
                 val attemptsJob = async {
@@ -107,7 +115,15 @@ class AssignmentDetailViewModel @Inject constructor(
                         UiData.Failure(e.message ?: "提交记录加载失败")
                     }
                 }
-                _ui.update { it.copy(detail = detailJob.await(), attempts = attemptsJob.await()) }
+                detailJob.await()
+                val attemptsState = attemptsJob.await()
+                _ui.update {
+                    it.copy(
+                        detail = detailState,
+                        submittedAtEpochMs = submittedAt,
+                        attempts = attemptsState,
+                    )
+                }
             }
         }
     }
@@ -208,7 +224,7 @@ fun AssignmentDetailScreen(nav: NavHostController, vm: AssignmentDetailViewModel
                         color = MaterialTheme.colorScheme.error,
                         style = MaterialTheme.typography.bodySmall,
                     )
-                    is UiData.Ready -> DetailCard(d.value, ui.title)
+                    is UiData.Ready -> DetailCard(d.value, ui.title, ui.submittedAtEpochMs)
                 }
             }
 
@@ -270,7 +286,7 @@ fun AssignmentDetailScreen(nav: NavHostController, vm: AssignmentDetailViewModel
 }
 
 @Composable
-private fun DetailCard(detail: AssignmentDetail, fallbackTitle: String) {
+private fun DetailCard(detail: AssignmentDetail, fallbackTitle: String, submittedAtEpochMs: Long?) {
     Card(Modifier.fillMaxWidth()) {
         Column(Modifier.padding(16.dp)) {
             Text(
@@ -278,20 +294,29 @@ private fun DetailCard(detail: AssignmentDetail, fallbackTitle: String) {
                 style = MaterialTheme.typography.titleLarge,
             )
             Spacer(Modifier.height(8.dp))
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-            ) {
+            // 已提交的作业页面上不再写到期日期(学校把那一栏换成了提交与评分),那就报页面上真有的信息。
+            if (detail.deadlineRaw == null && submittedAtEpochMs != null) {
                 Text(
-                    "截止:${detail.deadlineRaw ?: "未知"}",
+                    "已于 ${formatDateTime(submittedAtEpochMs)} 提交",
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
-                Text(
-                    deadlineLabel(detail.deadlineEpochMs),
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.primary,
-                )
+            } else {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                ) {
+                    Text(
+                        "截止:${detail.deadlineRaw ?: "未知"}",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                    Text(
+                        deadlineLabel(detail.deadlineEpochMs),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.primary,
+                    )
+                }
             }
             if (detail.instructions.isNotBlank()) {
                 Spacer(Modifier.height(8.dp))

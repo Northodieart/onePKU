@@ -29,6 +29,10 @@ import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.FileProvider
 import androidx.core.text.HtmlCompat
 import java.io.File
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
+import java.util.TimeZone
 import me.petertian.onepku.BuildConfig
 
 /** 页面级异步数据状态。 */
@@ -179,3 +183,9 @@ fun openFile(context: Context, file: File) {
         Toast.makeText(context, "本机没有能打开 ${file.name} 的应用;文件在 ${file.absolutePath}", Toast.LENGTH_LONG).show()
     }
 }
+
+/** 学校给出的时刻一律按北京时间显示,与设备所在时区无关。 */
+fun formatDateTime(epochMs: Long): String =
+    SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.US).apply {
+        timeZone = TimeZone.getTimeZone("Asia/Shanghai")
+    }.format(Date(epochMs))

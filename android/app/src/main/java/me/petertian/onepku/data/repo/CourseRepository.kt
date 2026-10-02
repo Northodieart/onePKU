@@ -23,6 +23,7 @@ import me.petertian.onepku.data.course.CourseInfo
 import me.petertian.onepku.data.course.FeedbackAttempt
 import me.petertian.onepku.data.course.LearningGrade
 import me.petertian.onepku.data.course.SubmissionOutcome
+import me.petertian.onepku.data.course.SubmissionSnapshot
 import java.io.File
 import java.security.MessageDigest
 import javax.inject.Inject
@@ -51,8 +52,9 @@ class CourseRepository @Inject constructor(
 
     suspend fun content(courseId: String): List<ContentItem> = run { listAllContentRecursive(courseId) }
 
-    suspend fun assignmentDetail(courseId: String, contentId: String): AssignmentDetail =
-        run { getAssignment(courseId, contentId) }
+    /** 一次抓取同时拿到作业详情与当前尝试的提交快照。 */
+    suspend fun assignmentOverview(courseId: String, contentId: String): Pair<AssignmentDetail, SubmissionSnapshot> =
+        run { assignmentOverview(courseId, contentId) }
 
     suspend fun attempts(courseId: String, contentId: String): List<FeedbackAttempt> =
         run { listAttempts(courseId, contentId) }
