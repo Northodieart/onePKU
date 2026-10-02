@@ -195,7 +195,7 @@ it("shows earned, in-progress and pending courses and persists a manual assignme
   ).toBeInTheDocument();
 });
 
-it("fixes the English requirement by level and moves the shortfall into general education", async () => {
+it("fixes the English requirement by level without inflating general education", async () => {
   mount({
     cohort: 2025,
     planId: ai.id,
@@ -209,7 +209,10 @@ it("fixes the English requirement by level and moves the shortfall into general 
   fireEvent.click(screen.getByRole("tab", { name: /公共基础课程/ }));
   const panel = screen.getByRole("tabpanel", { name: "公共基础课程明细" });
   expect(panel).toHaveTextContent("4 学分（C 级）");
-  expect(panel).toHaveTextContent("16 学分（含补齐大学英语 4 学分）");
+  // 英语差额不再补进通识教育课，通识仍按方案自己写的学分要求计。
+  expect(panel).toHaveTextContent("通识教育课");
+  expect(panel).toHaveTextContent("12 学分");
+  expect(panel.textContent).not.toMatch("含补齐大学英语");
   expect(screen.queryByText(/选择你的英语分级/)).not.toBeInTheDocument();
 });
 

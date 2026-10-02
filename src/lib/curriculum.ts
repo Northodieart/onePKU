@@ -77,7 +77,8 @@ export const ENGLISH_LEVELS = [
   { id: "exempt", label: "免修", credits: 2 },
 ] as const;
 export type EnglishLevel = (typeof ENGLISH_LEVELS)[number]["id"];
-export const ENGLISH_FULL_CREDITS = 8;
+export const ENGLISH_MIN_CREDITS = 2;
+export const ENGLISH_MAX_CREDITS = 8;
 export function englishLevelInfo(level: EnglishLevel | null | undefined) {
   return ENGLISH_LEVELS.find((l) => l.id === level) ?? null;
 }
@@ -733,44 +734,79 @@ export type ProgressOptions = {
   directions?: Record<string, string>;
 };
 
-/** 按分级把"大学英语 2～8 学分"固定下来；不足 8 学分的部分方案要求用专业或通识选修补齐，这里按通识教育课计。 */
+/** 原文第 1 条把英语专业学生和留学生排除在分级之外。 */
+function isEnglishExempt(plan: Plan): boolean {
+  const blob = [plan.title, plan.major, plan.track, plan.degree, plan.school]
+    .filter((text): text is string => typeof text === "string")
+    .join(" ");
+  return (
+    blob.includes("留学生") ||
+    (blob.includes("英语") && blob.includes("外国语学院"))
+  );
+}
+/**
+ * 找出该被分级定住的那一类：方案单列了「大学英语」就用它；
+ * 方案把英语折进「公共必修课」时，那一类的区间跨度恰好是英语弹性的 8-2=6。
+ * 候选不唯一就不动，宁可不改。
+ */
+function englishSeries(
+  index: SectionIndex,
+): { section: ProgressSection; named: boolean } | null {
+  const named = [...index.flat.values()].find(
+    (s) =>
+      s.children.length === 0 &&
+      s.min !== undefined &&
+      /大学英语|公共英语|大学外语/.test(s.name),
+  );
+  if (named) return { section: named, named: true };
+  const root = index.flat.get("1");
+  if (!root) return null;
+  const span = ENGLISH_MAX_CREDITS - ENGLISH_MIN_CREDITS;
+  const candidates = root.children.filter(
+    (s) =>
+      s.children.length === 0 &&
+      s.min !== undefined &&
+      s.max !== undefined &&
+      Math.abs(s.max - s.min - span) < 0.001 &&
+      /公共必修|外语|英语/.test(s.name),
+  );
+  return candidates.length === 1
+    ? { section: candidates[0], named: false }
+    : null;
+}
+/**
+ * 分级决定「公共必修课」里大学英语要修多少学分：单列英语系列的直接定成该分档，
+ * 折在公共必修课里的按「下限 +（所选 - 2）」落在方案自己给的区间内。
+ * 之后大类总额按子系列求和、毕业总学分按大类求和，都带方案自述区间的围栏。
+ */
 function applyEnglishLevel(
+  plan: Plan,
   sections: ProgressSection[],
   index: SectionIndex,
   level: EnglishLevel,
 ) {
+  if (isEnglishExempt(plan)) return;
   const info = englishLevelInfo(level);
   if (!info) return;
-  const english = [...index.flat.values()].find(
-    (s) => s.children.length === 0 && /大学英语|英语/.test(s.name),
-  );
-  if (!english || english.min === undefined) return;
-  const full = english.max ?? ENGLISH_FULL_CREDITS;
-  english.min = info.credits;
-  english.max = info.credits;
-  english.requirement = `${info.credits} 学分（${info.label}）`;
-  const shortfall = Math.max(0, full - info.credits);
-  if (shortfall > 0) {
-    const general = index.categoryTargets.general
-      ? index.flat.get(index.categoryTargets.general)
-      : undefined;
-    if (general && general.min !== undefined) {
-      general.min += shortfall;
-      general.max = (general.max ?? general.min - shortfall) + shortfall;
-      general.requirement = `${general.min} 学分（含补齐大学英语 ${shortfall} 学分）`;
-      general.note = "方案允许用专业或通识选修补齐英语差额，这里按通识计";
-    }
-  }
-  const top = sections.find((s) => s.children.includes(english));
-  if (
-    top &&
-    top.min !== undefined &&
-    top.max !== undefined &&
-    top.min !== top.max
-  ) {
-    top.min = top.max;
-    top.requirement = `${top.max} 学分`;
-  }
+  const found = englishSeries(index);
+  if (!found) return;
+  const series = found.section;
+  if (series.min === undefined) return;
+  const floor = series.min;
+  const ceiling = series.max ?? floor;
+  const pinned = found.named
+    ? Math.min(Math.max(info.credits, floor), ceiling)
+    : floor + (info.credits - ENGLISH_MIN_CREDITS);
+  series.min = pinned;
+  series.max = pinned;
+  series.requirement = `${fmtCredits(pinned)} 学分（${info.label}）`;
+  if (!found.named)
+    series.note =
+      `大学英语计入本类，学分要求弹性为 ${ENGLISH_MIN_CREDITS}～${ENGLISH_MAX_CREDITS}；` +
+      `按${info.label}计为 ${fmtCredits(pinned)} 学分`;
+  const top = sections.find((s) => s.children.includes(series));
+  if (!top || top.min === undefined) return;
+  recomputeTopTotal(top, top.min, top.max ?? top.min);
 }
 
 export function computeProgress(
@@ -784,8 +820,8 @@ export function computeProgress(
     plan,
     options.directions ?? {},
   );
-  if (options.englishLevel && usesRequirements)
-    applyEnglishLevel(sections, index, options.englishLevel);
+  if (options.englishLevel)
+    applyEnglishLevel(plan, sections, index, options.englishLevel);
   const seen = new Set<string>();
   const matched: MatchedCourse[] = [];
   scores.forEach((row, i) => {

@@ -347,7 +347,7 @@ describe("computeProgress", () => {
     expect(manual.totals).toMatchObject({ inProgress: 0, unknownCredits: 2 });
     expect(manual.pending).toEqual([]);
   });
-  it("fixes English credits by level and adds the shortfall to general education", () => {
+  it("fixes the English series by level without touching general education", () => {
     const progress = computeProgress(
       plan,
       scores,
@@ -363,9 +363,10 @@ describe("computeProgress", () => {
       max: 6,
       requirement: "6 学分（B 级）",
     });
-    expect(general).toMatchObject({ min: 14, max: 14 });
-    expect(general.note).toMatch(/专业或通识选修/);
-    expect(pub).toMatchObject({ min: 51, max: 51 });
+    // 差额不再补进通识教育课，大类总额改为按各子系列求和。
+    expect(general).toMatchObject({ min: 12, max: 12 });
+    expect(general.note ?? "").not.toMatch("英语差额");
+    expect(pub).toMatchObject({ min: 47, max: 47 });
     const full = computeProgress(
       plan,
       scores,
@@ -373,15 +374,67 @@ describe("computeProgress", () => {
       {},
       { englishLevel: "Y" },
     );
-    expect(
-      full.sections
-        .find((s) => s.id === "1")!
-        .children.find((c) => c.id === "1-8")!.min,
-    ).toBe(12);
+    const fullTop = full.sections.find((s) => s.id === "1")!;
+    expect(fullTop.children.find((c) => c.id === "1-1")!.min).toBe(8);
+    expect(fullTop.min).toBe(49);
     const untouched = computeProgress(plan, scores, courses);
     expect(
       untouched.sections
         .find((s) => s.id === "1")!
+        .children.find((c) => c.id === "1-1"),
+    ).toMatchObject({ min: 2, max: 8 });
+  });
+  it("folds the level into 公共必修课 when English is not a series of its own", () => {
+    const folded: Plan = {
+      ...structuredClone(plan),
+      requirements: plan.requirements.map((r) =>
+        r.id === "1-1" ? { ...r, name: "公共必修课（含外语）" } : r,
+      ),
+    };
+    const progress = computeProgress(
+      folded,
+      [],
+      [],
+      {},
+      {
+        englishLevel: "C",
+      },
+    );
+    const series = progress.sections
+      .find((s) => s.id === "1")!
+      .children.find((c) => c.id === "1-1")!;
+    // 弹性 2～8 折在公共必修课里：下限 2 +（C 级 4 - 2）= 4。
+    expect(series.min).toBe(4);
+    expect(series.max).toBe(4);
+    expect(series.note).toContain("大学英语计入本类");
+  });
+  it("leaves English credits alone for English majors and international students", () => {
+    const englishMajor: Plan = {
+      ...structuredClone(plan),
+      major: "英语",
+      school: "外国语学院",
+    };
+    const progress = computeProgress(
+      englishMajor,
+      [],
+      [],
+      {},
+      {
+        englishLevel: "B",
+      },
+    );
+    expect(
+      progress.sections
+        .find((s) => s.id === "1")!
+        .children.find((c) => c.id === "1-1"),
+    ).toMatchObject({ min: 2, max: 8 });
+    const international: Plan = {
+      ...structuredClone(plan),
+      title: "留学生预科理科培养方案",
+    };
+    expect(
+      computeProgress(international, [], [], {}, { englishLevel: "B" })
+        .sections.find((s) => s.id === "1")!
         .children.find((c) => c.id === "1-1"),
     ).toMatchObject({ min: 2, max: 8 });
   });
