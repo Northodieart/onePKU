@@ -310,26 +310,79 @@ async fn portal_rows(
         value["results"].clone(),
     ))
 }
-/// 本院以设置里手动选择的院系为准。
-pub(crate) fn department_setting() -> Result<String> {
-    let selected = super::maintenance::read_preferences()
+/// 本院按哪个院系读：手动选择优先，其次才是校内门户识别到的单位。
+pub(crate) fn department_effective() -> (String, &'static str) {
+    let prefs = super::maintenance::read_preferences();
+    let manual = prefs
         .get("department")
         .and_then(Value::as_str)
         .unwrap_or_default()
         .trim()
         .to_string();
-    if selected.is_empty() {
-        bail!("请先在设置里选择本院（院系）");
+    if !manual.is_empty() {
+        return (manual, "手动选择");
     }
-    Ok(selected)
+    let detected = prefs
+        .get("departmentDetected")
+        .and_then(Value::as_str)
+        .unwrap_or_default()
+        .trim()
+        .to_string();
+    if !detected.is_empty() {
+        return (detected, "校内门户");
+    }
+    (String::new(), "")
+}
+pub(crate) fn department_setting() -> Result<String> {
+    let (department, _) = department_effective();
+    if department.is_empty() {
+        bail!("请先在设置里连接校内门户识别院系，或手动选择本院");
+    }
+    Ok(department)
+}
+/// 校内门户连接状态：能读到基本资料才算连着，识别到的院系只作兜底。
+pub(crate) async fn portal_status() -> Result<Value> {
+    let store = Store::new("portal")?;
+    if store.load_session()?.is_none() {
+        return Ok(json!({ "connected": false, "name": "", "department": "" }));
+    }
+    Ok(pku_portal::login::status(&store).await)
+}
+/// 读一次门户「单位」并记下来，供本院通知与培养方案推断使用。
+pub(crate) async fn portal_detect() -> Result<Value> {
+    let info = pku_portal::login::basic_info(&Store::new("portal")?).await?;
+    let department = pku_portal::login::department_of(&info);
+    if department.is_empty() {
+        bail!("门户没有返回院系信息，请在设置里手动选择本院");
+    }
+    super::maintenance::write_preference(
+        "departmentDetected",
+        Value::String(department.clone()),
+    )?;
+    Ok(json!({
+        "connected": true,
+        "name": pku_portal::login::name_of(&info),
+        "department": department,
+    }))
+}
+pub(crate) fn portal_logout() -> Result<Value> {
+    Store::new("portal")?.clear()?;
+    Ok(json!({ "connected": false }))
 }
 /// 已选院系与候选清单，供设置页选择器使用。
 pub(crate) fn department_state() -> Value {
+    let (effective, source) = department_effective();
     json!({
         "selected": super::maintenance::read_preferences()
             .get("department")
             .and_then(Value::as_str)
             .unwrap_or_default(),
+        "detected": super::maintenance::read_preferences()
+            .get("departmentDetected")
+            .and_then(Value::as_str)
+            .unwrap_or_default(),
+        "effective": effective,
+        "source": source,
         "options": department_list(),
     })
 }

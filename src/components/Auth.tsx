@@ -154,7 +154,8 @@ export default function Auth({
         username: user,
         password,
         otp: otp.trim() || null,
-        services: everywhere ? [] : [service],
+        // 门户只是用来认院系的，不参与「一次连全部数据服务」。
+        services: everywhere && service !== "portal" ? [] : [service],
         remember,
       });
       for (const name of result.done) resetService(client, name as Service);
@@ -272,14 +273,16 @@ export default function Auth({
             value={otp}
             onChange={(e) => setOtp(e.target.value)}
           />
-          <label className="auth-check">
-            <input
-              type="checkbox"
-              checked={everywhere}
-              onChange={(e) => setEverywhere(e.target.checked)}
-            />
-            一次连接全部服务（教学网、树洞、校园卡、北大空间）
-          </label>
+          {service !== "portal" && (
+            <label className="auth-check">
+              <input
+                type="checkbox"
+                checked={everywhere}
+                onChange={(e) => setEverywhere(e.target.checked)}
+              />
+              一次连接全部服务（教学网、树洞、校园卡、北大空间）
+            </label>
+          )}
           <label className="auth-check">
             <input
               type="checkbox"

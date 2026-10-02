@@ -1,5 +1,5 @@
 import { useQuery, type QueryClient } from "@tanstack/react-query";
-export type Service = "course" | "treehole" | "campuscard" | "bdkj";
+export type Service = "course" | "treehole" | "campuscard" | "bdkj" | "portal";
 export type Request = {
   kind: string;
   [key: string]:
@@ -75,6 +75,7 @@ export const serviceNames: Record<Service, string> = {
   course: "教学网",
   treehole: "树洞",
   campuscard: "校园卡",
+  portal: "校内门户",
 };
 export const fmtTime = (value: string | number) =>
   new Date(typeof value === "number" ? value * 1000 : value).toLocaleString(

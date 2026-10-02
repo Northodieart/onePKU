@@ -52,6 +52,10 @@ pub enum Request {
     },
     /// 本院通知按手动选择的院系定位；门户登录打通前不做自动识别。
     Departments,
+    /// 校内门户连接状态与识别到的院系（用来兜底判断本院）。
+    PortalStatus,
+    PortalDetect,
+    PortalLogout,
     SetDepartment {
         value: String,
     },
@@ -659,6 +663,9 @@ impl Core {
                 json!({"opened":true})
             }
             Request::Departments => news::department_state(),
+            Request::PortalStatus => news::portal_status().await?,
+            Request::PortalDetect => news::portal_detect().await?,
+            Request::PortalLogout => news::portal_logout()?,
             Request::SetDepartment { value } => news::set_department(value)?,
             Request::CalendarPdf { year } => news::calendar_pdf(year).await?,
             Request::CurriculumPages {
@@ -1079,6 +1086,17 @@ mod tests {
             "kind": "authPassword", "username": "a"
         }))
         .is_err());
+    }
+    #[test]
+    fn portal_requests_are_named_and_not_cached() {
+        for kind in [
+            json!({ "kind": "portalStatus" }),
+            json!({ "kind": "portalDetect" }),
+            json!({ "kind": "portalLogout" }),
+        ] {
+            let request = serde_json::from_value::<Request>(kind).unwrap();
+            assert!(!storage::cacheable(&request));
+        }
     }
     #[test]
     fn department_setting_requests_are_named() {

@@ -132,10 +132,14 @@ export default function Curriculum({
   const saved = normalizeProfile(profileQuery.data?.data ?? null);
   const scoreRows = scores.data?.data?.courses ?? [];
   const courseRows = courses.data?.data ?? [];
-  const college = useResource<{ selected: string; options: string[] }>({
-    kind: "departments",
-  });
-  const department = college.data?.data?.selected || null;
+  const college = useResource<{
+    selected: string;
+    detected: string;
+    effective: string;
+    options: string[];
+  }>({ kind: "departments" });
+  // 手动选择优先，其次用校内门户识别到的单位。
+  const department = college.data?.data?.effective || null;
   const inference = useMemo(
     () => inferProfile(scoreRows, courseRows, planIndex, department),
     [scoreRows, courseRows, department],

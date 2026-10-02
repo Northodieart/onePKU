@@ -100,9 +100,12 @@ export function NoticeReader({
 export default function Notices({ login }: { login: Login }) {
   const news = useNotifications();
   // 本院标签直接写院系列，与安卓端一样一眼看出当前按哪个院系读通知。
-  const college = useResource<{ selected: string; options: string[] }>({
-    kind: "departments",
-  });
+  const college = useResource<{
+    selected: string;
+    detected: string;
+    effective: string;
+    options: string[];
+  }>({ kind: "departments" });
   const [source, setSource] = useState("all");
   const [search, setSearch] = useState("");
   const [unreadOnly, setUnreadOnly] = useState(false);
@@ -221,7 +224,7 @@ export default function Notices({ login }: { login: Login }) {
                 }}
               >
                 {s.id === "college"
-                  ? college.data?.data?.selected || s.name
+                  ? college.data?.data?.effective || s.name
                   : s.name}
               </button>
             ))}

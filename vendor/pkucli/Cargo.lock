@@ -2539,6 +2539,7 @@ dependencies = [
  "colored",
  "pkuinfo-common",
  "qrcode",
+ "rand 0.8.5",
  "regex",
  "reqwest",
  "reqwest_cookie_store",

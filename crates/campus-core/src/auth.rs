@@ -1,5 +1,15 @@
 use super::*;
 use base64::Engine;
+/// 每个服务向学校换票时用的应用标识与回调地址；树洞还要带设备号。
+fn iaaa_config_for(service: &str, device: &str) -> pkuinfo_common::iaaa::IaaaConfig {
+    match service {
+        "course" => pku_course::login::iaaa_config(),
+        "bdkj" => pku_bdkj::login::iaaa_config(),
+        "campuscard" => pku_campuscard::login::iaaa_config(),
+        "portal" => pku_portal::login::iaaa_config(),
+        _ => pku_treehole::login::iaaa_config(device),
+    }
+}
 #[derive(Clone)]
 pub struct Attempt {
     client: reqwest::Client,
@@ -124,13 +134,7 @@ impl Core {
         } else {
             String::new()
         };
-        let config = match service {
-            "course" => pku_course::login::iaaa_config(),
-            "bdkj" => pku_bdkj::login::iaaa_config(),
-            "treehole" => pku_treehole::login::iaaa_config(&device),
-            "campuscard" => pku_campuscard::login::iaaa_config(),
-            _ => bail!("invalid service"),
-        };
+        let config = iaaa_config_for(service, &device);
         let client = pku_course::client::build_simple()?;
         let token = pkuinfo_common::iaaa::login_password(
             &client, &config, username, password, otp,
@@ -152,6 +156,7 @@ impl Core {
             "course" => pku_course::login::complete_bb_login(store, token).await?,
             "bdkj" => pku_bdkj::login::complete_bdkj_login(store, token, "").await?,
             "campuscard" => pku_campuscard::login::complete_login(store, token, "").await?,
+            "portal" => pku_portal::login::complete_portal_login(store, token).await?,
             _ => pku_treehole::login::complete_gui_login(store, token, device).await?,
         }
         if service == "course" {
@@ -161,7 +166,7 @@ impl Core {
     }
     pub(crate) async fn auth_begin(&self, service: &str) -> Result<Value> {
         let store = Store::new(match service {
-            "course" | "treehole" | "campuscard" | "bdkj" => service,
+            "course" | "treehole" | "campuscard" | "bdkj" | "portal" => service,
             _ => bail!("invalid service"),
         })?;
         let device = if service == "treehole" {
@@ -169,12 +174,7 @@ impl Core {
         } else {
             String::new()
         };
-        let config = match service {
-            "course" => pku_course::login::iaaa_config(),
-            "bdkj" => pku_bdkj::login::iaaa_config(),
-            "treehole" => pku_treehole::login::iaaa_config(&device),
-            _ => pku_campuscard::login::iaaa_config(),
-        };
+        let config = iaaa_config_for(service, &device);
         let client = pku_course::client::build_simple()?;
         client
             .get("https://iaaa.pku.edu.cn/iaaa/oauth.jsp")

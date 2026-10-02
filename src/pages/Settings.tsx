@@ -41,9 +41,21 @@ const serviceScope: Record<Service, string> = {
   treehole: "成绩",
   campuscard: "余额与收支",
   bdkj: "场地预约",
+  portal: "识别院系列",
 };
 const REPO_URL = "https://github.com/PeterTianbuhan/onePKU";
-type DepartmentState = { selected: string; options: string[] };
+type DepartmentState = {
+  selected: string;
+  detected: string;
+  effective: string;
+  source: string;
+  options: string[];
+};
+type PortalDepartment = {
+  connected: boolean;
+  name: string;
+  department: string;
+};
 
 function stateText(state?: string) {
   switch (state) {
@@ -86,6 +98,12 @@ export default function Settings({
   const [credentialMessage, setCredentialMessage] = useState("");
   const [credentialError, setCredentialError] = useState("");
   const college = useResource<DepartmentState>({ kind: "departments" });
+  const portal = useResource<PortalDepartment>({ kind: "portalStatus" });
+  const queryClient = useQueryClient();
+  const portalDepartment = portal.data?.data?.department ?? "";
+  const [detecting, setDetecting] = useState(false);
+  const [portalMessage, setPortalMessage] = useState("");
+  const [portalError, setPortalError] = useState("");
   const [collegeDraft, setCollegeDraft] = useState<string>();
   const [collegeMessage, setCollegeMessage] = useState("");
   const [collegeError, setCollegeError] = useState("");
@@ -289,8 +307,51 @@ export default function Settings({
           error={credentialError || undefined}
         />
         <SettingRow
+          label="校内门户"
+          description="连接校内门户后可以直接读出你的「单位」，用来自动判断本院：通知页的「本院」标签与培养方案的年级专业推断都会用它，手动选择仍然优先。学院名与姓名只保存在本机。"
+          control={
+            <div className="row-actions">
+              <Button
+                variant="primary"
+                disabled={!inApp}
+                onClick={() => login("portal")}
+              >
+                连接…
+              </Button>
+              <Button
+                disabled={detecting}
+                onClick={() => {
+                  setDetecting(true);
+                  setPortalError("");
+                  void action<PortalDepartment>({ kind: "portalDetect" })
+                    .then((value) => {
+                      setPortalMessage(`识别到本院：${value.department}`);
+                      void portal.refetch();
+                      void college.refetch();
+                      void queryClient.invalidateQueries({
+                        queryKey: ["resource"],
+                      });
+                    })
+                    .catch((error: Error) =>
+                      setPortalError(error.message || "门户识别失败"),
+                    )
+                    .finally(() => setDetecting(false));
+                }}
+              >
+                识别学院
+              </Button>
+            </div>
+          }
+          status={
+            portal.data?.data?.connected
+              ? `已连接${portalDepartment ? ` · ${portalDepartment}` : ""}`
+              : portalMessage || undefined
+          }
+          error={portalError || undefined}
+        />
+        <SettingRow
           label="本院通知"
-          description="通知页的「本院」按这里选择的院系读取：已适配的学院读官网通知页，读不到时回退到门户部门通知按院系过滤。只保存在本机。"
+          description="手动指定本院（院系）：已适配的学院读官网通知页，读不到时回退到门户部门通知按院系过滤。留空就用上面校内门户识别到的单位；只保存在本机。"
           stacked
           control={
             <Button
