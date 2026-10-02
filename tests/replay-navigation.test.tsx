@@ -18,7 +18,10 @@ const replay = {
   time: "2026-09-21",
   url: "https://example.test/replay",
 };
-const videosKey = ["resource", { kind: "videos", course: "art" }];
+const videosKey = [
+  "resource",
+  { kind: "videos", course: "视觉艺术与计算美学" },
+];
 const envelope = (data: unknown, generation = "account") => ({
   data,
   generation,
@@ -67,19 +70,21 @@ function mount(video?: string) {
       const data =
         request.kind === "allCourses"
           ? [{ id: "art", name: "视觉艺术与计算美学" }]
-          : request.kind === "videos"
-            ? [replay]
-            : request.kind === "playbackPrepare"
-              ? {
-                  id: "session",
-                  url: "http://127.0.0.1:4567/media/test/index.m3u8",
-                  duration: 7200,
-                  title: replay.title,
-                  status,
-                }
-              : request.kind === "playbackStatus"
-                ? status
-                : {};
+          : request.kind === "haoxueStatus"
+            ? { connected: true }
+            : request.kind === "videos"
+              ? [replay]
+              : request.kind === "playbackPrepare"
+                ? {
+                    id: "session",
+                    url: "http://127.0.0.1:4567/media/test/index.m3u8",
+                    duration: 7200,
+                    title: replay.title,
+                    status,
+                  }
+                : request.kind === "playbackStatus"
+                  ? status
+                  : {};
       return { ok: true, json: async () => envelope(data) };
     }),
   );

@@ -6,7 +6,12 @@ import LearningGrades from "../components/LearningGrades";
 import LocalMaterials from "../components/LocalMaterials";
 import CourseReviews from "../components/CourseReviews";
 import { ArrowLeft, BookOpen, ChevronRight, Play } from "lucide-react";
-import { useResource, openOfficial, type Course } from "../lib/api";
+import {
+  connectHaoxue,
+  openOfficial,
+  useResource,
+  type Course,
+} from "../lib/api";
 import {
   Button,
   Empty,
@@ -206,7 +211,12 @@ function CourseDetail({
 }
 
 function Videos({ course, login }: { course: Course; login: Login }) {
-  const q = useResource<Replay[]>({ kind: "videos", course: course.id });
+  // 回放只要好学源：直接拿课名去课堂实录查，不再要求连接教学网。
+  const q = useResource<Replay[]>({ kind: "videos", course: course.name });
+  const haoxue = useResource<{ connected: boolean }>({ kind: "haoxueStatus" });
+  const connected = haoxue.data?.data?.connected ?? false;
+  const [connecting, setConnecting] = useState(false);
+  const [connectError, setConnectError] = useState("");
   const [playing, setPlaying] = useState<{
     video: Replay;
     generation: string;
@@ -233,6 +243,40 @@ function Videos({ course, login }: { course: Course; login: Login }) {
       return video ? { video, generation: generation ?? "" } : undefined;
     });
   }, [videoId, q.data?.data, q.data?.generation]);
+  if (!connected && !haoxue.data?.error && !haoxue.isFetching) {
+    return (
+      <>
+        <Empty>
+          课程回放由课堂实录提供。连接后这门课的每节课堂都能直接播放。
+        </Empty>
+        <Button
+          variant="primary"
+          disabled={connecting}
+          onClick={() => {
+            setConnectError("");
+            setConnecting(true);
+            void connectHaoxue()
+              .catch((error: unknown) =>
+                setConnectError(
+                  error instanceof Error ? error.message : "无法打开认证窗口",
+                ),
+              )
+              .finally(() => {
+                setConnecting(false);
+                void haoxue.refetch();
+              });
+          }}
+        >
+          连接课堂实录
+        </Button>
+        {connectError && (
+          <p className="inline-error" role="alert">
+            {connectError}
+          </p>
+        )}
+      </>
+    );
+  }
   return (
     <>
       {playing && (
@@ -252,8 +296,6 @@ function Videos({ course, login }: { course: Course; login: Login }) {
           title="课程回放"
           q={q}
           login={login}
-          service="course"
-          officialTarget="course"
           className="resource-plain"
           heading={
             <span className="subtle">{q.data?.data?.length ?? 0} 节回放</span>
@@ -285,7 +327,7 @@ function Videos({ course, login }: { course: Course; login: Login }) {
               </div>
             ) : (
               <Empty>
-                这门课的课堂实录还没有可播放的回放，可在「课堂实录」页按日期核对。
+                这门课的课堂实录还没有可播放的回放，可以在下方全目录里按日期核对。
               </Empty>
             )
           }
@@ -299,7 +341,7 @@ function Videos({ course, login }: { course: Course; login: Login }) {
         <summary>
           课堂实录全目录：按课程搜索翻页，或按日期看当天的全部课堂
         </summary>
-        <Classroom login={login} />
+        {catalogue && <Classroom login={login} />}
       </details>
     </>
   );

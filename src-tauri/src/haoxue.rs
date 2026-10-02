@@ -11,6 +11,10 @@ const ANDROID_UA: &str = "Mozilla/5.0 (Linux; Android 13; Pixel 7 Build/TQ3A.230
 /// 桥接约定：页面调用 `bridge.PKULoginSuccess(payload)`。桌面身份下中转页不会调用
 /// 桥，注入脚本发现停在 relay 页就请求以安卓身份重开该页；relay 窗口不再重试。
 const BRIDGE: &str = r#"(function () {
+  // 只有中转页会把令牌交给原生桥；其余页面一概不注入，
+  // 不碰学校页面自己的全局对象与 sessionStorage。
+  var relay = location.href.indexOf('https://passport.pku.edu.cn/auth/app-login') === 0;
+  if (!relay) return;
   var internals = window.__TAURI_INTERNALS__;
   if (!internals || !internals.invoke) return;
   var settled = false;
@@ -30,9 +34,8 @@ const BRIDGE: &str = r#"(function () {
   } catch (error) {
     window.bridge = bridge;
   }
-  var relay = location.href.indexOf('https://passport.pku.edu.cn/auth/app-login') === 0;
   var retried = sessionStorage.getItem('onpku-relay-retry') === '1';
-  if (relay && !retried && !window.__onpkuAndroid) {
+  if (!retried && !window.__onpkuAndroid) {
     sessionStorage.setItem('onpku-relay-retry', '1');
     setTimeout(function () {
       if (!settled) internals.invoke('haoxue_login_retry', {}).catch(function () {});
@@ -43,6 +46,11 @@ const BRIDGE: &str = r#"(function () {
 /// 认证页会把登录交给学校统一身份认证，两个域都要放行，否则跳转被拦下就是一片空白。
 /// 只有 passport 的中转页会把令牌交给原生桥，能力配置里的 remote.urls 仍只放 passport。
 fn allowed_navigation(url: &tauri::Url) -> bool {
+    // about:blank 必须放行：WebView2 在建窗口与重开时会先经过空白文档，
+    // 拦掉它整个页面就再也起不来（浏览器原文窗口曾因此白屏）。
+    if url.as_str() == "about:blank" {
+        return true;
+    }
     ["https://passport.pku.edu.cn/", "https://iaaa.pku.edu.cn/"]
         .iter()
         .any(|prefix| url.as_str().starts_with(prefix))
@@ -62,7 +70,25 @@ fn open(app: &tauri::AppHandle, target: &str, android: bool) -> Result<(), Strin
     .min_inner_size(620.0, 520.0)
     // 桥必须在地道脚本之前注入，否则中转页找不到 `bridge.PKULoginSuccess`。
     .initialization_script(BRIDGE)
-    .on_navigation(allowed_navigation);
+    .on_navigation(allowed_navigation)
+    .on_page_load(|window, payload| {
+        if payload.event() != tauri::webview::PageLoadEvent::Finished {
+            return;
+        }
+        if !allowed_navigation(payload.url()) || payload.url().as_str() == "about:blank" {
+            return;
+        }
+        let _ = window.eval(
+            r#"setTimeout(function () {
+              var body = document.body;
+              var blank = !body || body.innerText.replace(/\s+/g, '').length === 0;
+              if (!blank) return;
+              if (sessionStorage.getItem('onpku-blank-reload') === '1') return;
+              sessionStorage.setItem('onpku-blank-reload', '1');
+              location.reload();
+            }, 3000);"#,
+        );
+    });
     if android {
         builder = builder.user_agent(ANDROID_UA);
     }
@@ -129,6 +155,7 @@ mod tests {
         let ok = [
             "https://passport.pku.edu.cn/auth/login?redirect=x",
             "https://iaaa.pku.edu.cn/iaaa/oauth.jsp",
+            "about:blank",
         ];
         let blocked = [
             "https://evil.test/auth/login",

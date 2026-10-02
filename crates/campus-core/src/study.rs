@@ -167,9 +167,13 @@ impl Core {
             .cloned()
             .ok_or_else(|| anyhow!("课程不在当前账号列表中"))
     }
-    pub(crate) async fn videos(&self, course: &str, warnings: &mut Vec<String>) -> Result<Value> {
-        let c = self.find_course(course).await?;
-        let (rows, waiting) = crate::haoxue::replays(c["name"].as_str().unwrap_or("课程")).await?;
+    /// 回放只要好学源：直接拿课名去课堂实录里查，不再经过教学网账号。
+    pub(crate) async fn videos(&self, name: &str, warnings: &mut Vec<String>) -> Result<Value> {
+        let name = name.trim();
+        if name.is_empty() || name.chars().count() > 200 {
+            bail!("invalid course");
+        }
+        let (rows, waiting) = crate::haoxue::replays(name).await?;
         if waiting > 0 {
             warnings.push(format!("另有 {waiting} 节课堂记录没有可播放回放"));
         }

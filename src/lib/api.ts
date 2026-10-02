@@ -149,7 +149,6 @@ export function serviceFor(request: Request): Service | undefined {
     [
       "courses",
       "allCourses",
-      "videos",
       "haoxueCourses",
       "haoxueByDate",
       "haoxueEpisodes",

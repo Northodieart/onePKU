@@ -371,7 +371,6 @@ fn owner(req: &Request) -> &'static str {
         | Request::OpenAssignment { .. }
         | Request::Courses
         | Request::AllCourses
-        | Request::Videos { .. }
         | Request::HaoxueCourses { .. }
         | Request::HaoxueByDate { .. }
         | Request::HaoxueEpisodes { .. }
