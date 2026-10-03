@@ -384,6 +384,126 @@ pub(crate) fn parse_payload(payload: &Value) -> Result<(String, String, String, 
         scalar(found, "account"),
     ))
 }
+/// 安卓 WebView 身份的中转页 HTML 里就有令牌：页面把它交给原生桥，参数写在源码中。
+/// 依次尝试 `PKULoginSuccess(` 后的引号字符串与平衡花括号块，再退到全文第一个
+/// 能解出令牌的花括号块；解不出来就是这次跳转没带令牌。
+pub(crate) fn extract_payload(html: &str) -> Option<String> {
+    let mut candidates: Vec<String> = vec![];
+    if let Some(pos) = html.find("PKULoginSuccess") {
+        let tail = &html[pos..];
+        if let Some(raw) = quoted_argument(tail) {
+            candidates.push(raw);
+        }
+        candidates.extend(brace_blocks(tail).into_iter().take(2));
+    }
+    candidates.extend(brace_blocks(html).into_iter().take(6));
+    candidates
+        .into_iter()
+        .find(|raw| parse_payload(&Value::String(raw.clone())).is_ok())
+}
+/// `PKULoginSuccess('...')` 或 `("...")` 的引号参数，原样取出不反转义：
+/// 后续的 unwrap 管线自己会解 URI 编码与层层 JSON。
+fn quoted_argument(tail: &str) -> Option<String> {
+    let open = tail.find('(')?;
+    let bytes = tail.as_bytes();
+    let mut i = open + 1;
+    while i < bytes.len() && bytes[i].is_ascii_whitespace() {
+        i += 1;
+    }
+    let quote = *bytes.get(i)?;
+    if quote != b'\'' && quote != b'"' {
+        return None;
+    }
+    let mut end = i + 1;
+    while end < bytes.len() {
+        if bytes[end] == quote && bytes[end - 1] != b'\\' {
+            return Some(tail[i + 1..end].to_string());
+        }
+        end += 1;
+    }
+    None
+}
+/// 字符串感知的平衡花括号块，按出现顺序产出。
+fn brace_blocks(text: &str) -> Vec<String> {
+    let bytes = text.as_bytes();
+    let mut out = vec![];
+    let mut depth = 0usize;
+    let mut start = 0usize;
+    let mut string: Option<u8> = None;
+    let mut escaped = false;
+    for (i, byte) in bytes.iter().enumerate() {
+        if let Some(q) = string {
+            if escaped {
+                escaped = false;
+            } else if *byte == b'\\' {
+                escaped = true;
+            } else if *byte == q {
+                string = None;
+            }
+            continue;
+        }
+        match byte {
+            b'\'' | b'"' => string = Some(*byte),
+            b'{' => {
+                if depth == 0 {
+                    start = i;
+                }
+                depth += 1;
+            }
+            b'}' => {
+                depth = depth.saturating_sub(1);
+                if depth == 0 {
+                    out.push(text[start..=i].to_string());
+                    if out.len() >= 6 {
+                        return out;
+                    }
+                }
+            }
+            _ => {}
+        }
+    }
+    out
+}
+/// 好学安卓客户端的 WebView 身份：中转页按 UA 决定要不要交出令牌。
+pub(crate) const ANDROID_UA: &str = "Mozilla/5.0 (Linux; Android 13; Pixel 7 Build/TQ3A.230805.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/120.0.0.0 Mobile Safari/537.36";
+/// 浏览器窗口完成统一认证后落在中转页：拿窗口里的会话 cookie、以安卓身份
+/// 再取一次中转页，直接从源码里解出令牌，与好学的实现同一条路径。
+pub(crate) async fn relay_login(url: &str, cookies: &[(String, String)]) -> Result<Value> {
+    let url = url::Url::parse(url).map_err(|_| anyhow!("中转页地址无效"))?;
+    if url.scheme() != "https" || url.host_str() != Some("passport.pku.edu.cn") {
+        bail!("中转页地址无效");
+    }
+    if cookies.len() > 100 {
+        bail!("中转会话异常，请重新登录");
+    }
+    let header = cookies
+        .iter()
+        .map(|(name, value)| {
+            format!(
+                "{}={}",
+                name.replace(['\r', '\n', ';'], ""),
+                value.replace(['\r', '\n', ';'], "")
+            )
+        })
+        .collect::<Vec<_>>()
+        .join("; ");
+    let client = reqwest::Client::builder()
+        .timeout(Duration::from_secs(20))
+        .redirect(reqwest::redirect::Policy::limited(5))
+        .build()?;
+    let text = client
+        .get(url.as_str())
+        .header("User-Agent", ANDROID_UA)
+        .header("Accept", "text/html")
+        .header("Cookie", header)
+        .send()
+        .await?
+        .text()
+        .await?;
+    let candidate = extract_payload(&text)
+        .ok_or_else(|| anyhow!("登录中转页没有返回令牌，请重新登录"))?;
+    save_session(&Value::String(candidate))
+}
 /// 好学会话单独保存；令牌与 Cookie 只落在这份私有会话里，不进返回值。
 pub(crate) fn save_session(payload: &Value) -> Result<Value> {
     let (token, cookie_token, name, account) = parse_payload(payload)?;
@@ -680,6 +800,32 @@ pub(crate) struct Replay {
     pub time: String,
 }
 
+#[cfg(test)]
+mod extract_tests {
+    use super::*;
+    #[test]
+    fn extracts_the_bridge_argument_from_the_relay_page() {
+        let html = r#"<html><script>
+          var data = {"account":"23001","_token":"abc123","_cookieToken":"ck"};
+          window.bridge.PKULoginSuccess(JSON.stringify(data));
+        </script></html>"#;
+        let found = extract_payload(html).expect("应当解出令牌");
+        let (token, cookie, _, account) = parse_payload(&Value::String(found)).unwrap();
+        assert_eq!(token, "abc123");
+        assert_eq!(cookie, "ck");
+        assert_eq!(account, "23001");
+    }
+    #[test]
+    fn extracts_a_quoted_payload_and_tolerates_noise() {
+        let html = r#"<div>{}</div><script>bridge.PKULoginSuccess('{"token":"t9","account":"1"}');</script>"#;
+        let found = extract_payload(html).expect("引号形式也应当解出");
+        let (token, _, _, _) = parse_payload(&Value::String(found)).unwrap();
+        assert_eq!(token, "t9");
+        // 没有令牌的页面不硬解。
+        assert!(extract_payload("<html><body>请登录</body></html>").is_none());
+        assert!(extract_payload(r#"{"other": 1}"#).is_none());
+    }
+}
 #[cfg(test)]
 mod tests {
     use super::*;

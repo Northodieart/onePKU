@@ -79,6 +79,11 @@ pub enum Request {
     },
     HaoxueStatus,
     HaoxueLogout,
+    /// 统一认证完成后：以安卓身份重取中转页，用窗口 cookie 解出令牌。
+    HaoxueRelay {
+        url: String,
+        cookies: Vec<(String, String)>,
+    },
     /// 断开某个服务的登录：只清这个服务的会话与 cookie，其它服务不受影响。
     ServiceLogout {
         service: String,
@@ -670,6 +675,7 @@ impl Core {
             Request::PortalDetect => news::portal_detect().await?,
             Request::PortalLogout => news::portal_logout()?,
             Request::ServiceLogout { service } => Self::service_logout(service)?,
+            Request::HaoxueRelay { url, cookies } => haoxue::relay_login(url, cookies).await?,
             Request::SetDepartment { value } => news::set_department(value)?,
             Request::CalendarPdf { year } => news::calendar_pdf(year).await?,
             Request::CurriculumPages {

@@ -189,7 +189,6 @@ fn main() {
             open_booking,
             browser::open_browser,
             haoxue::open_haoxue_login,
-            haoxue::haoxue_login_retry,
             haoxue::haoxue_login
         ])
         .run(tauri::generate_context!())
