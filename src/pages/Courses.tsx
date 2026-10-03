@@ -386,7 +386,7 @@ function Videos({ course, login }: { course: Course; login: Login }) {
           className="resource-plain"
           heading={
             <span className="subtle">
-              课堂实录按课程名自动匹配 · {q.data?.data?.length ?? 0} 节回放
+              课堂实录按课程名匹配 · {q.data?.data?.length ?? 0} 节回放
             </span>
           }
         >
@@ -416,7 +416,8 @@ function Videos({ course, login }: { course: Course; login: Login }) {
               </div>
             ) : (
               <Empty>
-                这门课的课堂实录还没有可播放的回放，可以在下方全目录里按日期核对。
+                这门课在课堂实录里还没有可播放的回放（目录与近 45
+                天的课堂记录都查过）。
               </Empty>
             )
           }

@@ -646,7 +646,61 @@ pub(crate) async fn replays(name: &str) -> Result<(Vec<Value>, usize)> {
             Err(error) => miss = Some(error),
         }
     }
+    // 好学的「按课程」目录本身不全：不少课只出现在按日期流里（日期流是本人
+    // 的课堂记录，天然完整、没有同名歧义）。目录没认下来时先回扫日期流，
+    // 扫到就用，扫不到再报目录侧的说明（同名候选或未收录）。
+    if let Ok((rows, waiting)) = replays_from_dates(&learner, name).await {
+        if !rows.is_empty() {
+            return Ok((rows, waiting));
+        }
+    }
     Err(miss.unwrap_or_else(|| anyhow!("课堂实录未收录这门课，请在原站核对")))
+}
+/// 回扫最近 45 天的「按日期」流，取属于这门课的课堂，按时间倒序。
+/// 并行分批发起，避免一次课程页打开就串行等几十次网络。
+async fn replays_from_dates(learner: &Haoxue, name: &str) -> Result<(Vec<Value>, usize)> {
+    let key = normalize(name);
+    let today = chrono::Local::now().date_naive();
+    let days: Vec<String> = (0..45i64)
+        .map(|back| {
+            (today - chrono::Duration::days(back))
+                .format("%Y-%m-%d")
+                .to_string()
+        })
+        .collect();
+    let mut rows: Vec<Value> = vec![];
+    for chunk in days.chunks(6) {
+        let found = futures::future::join_all(chunk.iter().map(|date| {
+            let key = key.clone();
+            async move {
+            let mut day_rows = learner.list_dates(date, 1).await.unwrap_or_default();
+            if day_rows.len() >= 10 {
+                if let Ok(more) = learner.list_dates(date, 2).await {
+                    day_rows.extend(more);
+                }
+            }
+            day_rows
+                .into_iter()
+                .filter(|row| normalize(&pick(row, &["course_name"])) == key)
+                .collect::<Vec<_>>()
+            }
+        }))
+        .await;
+        for day in found {
+            rows.extend(day);
+        }
+    }
+    if rows.is_empty() {
+        return Ok((vec![], 0));
+    }
+    let (mut out, waiting) = dated_rows(&rows);
+    out.sort_by(|a, b| {
+        b["time"]
+            .as_str()
+            .unwrap_or_default()
+            .cmp(a["time"].as_str().unwrap_or_default())
+    });
+    Ok((out, waiting))
 }
 /// 同名课程的候选：课程页让用户认一次是哪一门，之后按记住的那一门走。
 pub(crate) async fn candidates(name: &str) -> Result<Value> {
