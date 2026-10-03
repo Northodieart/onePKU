@@ -5,6 +5,8 @@ import { action, useResource, type Course } from "../lib/api";
 import type { Scores } from "../lib/grades";
 import {
   computeProgress,
+  directionSplits,
+  directionsFor,
   IGNORE,
   inferProfile,
   loadPlan,
@@ -19,6 +21,7 @@ import {
 import {
   emptyProfile,
   normalizeProfile,
+  overridesForPlan,
   saveProfile,
   useProfile,
   type Profile,
@@ -67,10 +70,53 @@ function gap(s: ProgressSection) {
   const m = measure(s);
   return Math.max(0, s.min - m.value - m.pending);
 }
+/** 「恢复自动判断」的哨兵，不会与真实系列 id 冲突。 */
+const AUTO = "__auto__";
+/** 只认数字与小数点，最多五位；清空表示不再手填。 */
+function parseCredits(raw: string): number | null {
+  const text = raw
+    .replace(/[^0-9.]/g, "")
+    .slice(0, 5)
+    .replace(/\.?$/, "");
+  if (!text) return null;
+  const value = Number(text);
+  return Number.isFinite(value) ? value : null;
+}
+type Editor = {
+  choices: { id: string; label: string }[];
+  pinned: Record<string, string>;
+  onCredit: (name: string, credits: number | null) => void;
+  onOverride: (key: string, sectionId: string | null) => void;
+};
 function gapText(s: ProgressSection) {
   const g = gap(s);
   if (g === null) return "";
   return g === 0 ? "已满足" : `还差 ${fmt(g)} ${measure(s).unit}`;
+}
+/** 手填学分以规范化课程名为键；清空就是不再手填，回到成绩或方案的口径。 */
+function withManualCredit(
+  saved: Profile,
+  name: string,
+  credits: number | null,
+): Profile {
+  const manualCredits = { ...saved.manualCredits };
+  const key = normalizeCourseName(name);
+  if (credits === null) delete manualCredits[key];
+  else manualCredits[key] = credits;
+  return { ...saved, manualCredits };
+}
+/** 方向选择按「<方案 id>|<系列 id>」存，主修与双学位各写各的键。 */
+function withDirection(
+  saved: Profile,
+  planId: string,
+  sectionId: string,
+  groupId: string | null,
+): Profile {
+  const directions = { ...saved.directions };
+  const key = `${planId}|${sectionId}`;
+  if (groupId) directions[key] = groupId;
+  else delete directions[key];
+  return { ...saved, directions };
 }
 
 export default function Curriculum({
@@ -86,9 +132,17 @@ export default function Curriculum({
   const saved = normalizeProfile(profileQuery.data?.data ?? null);
   const scoreRows = scores.data?.data?.courses ?? [];
   const courseRows = courses.data?.data ?? [];
+  const college = useResource<{
+    selected: string;
+    detected: string;
+    effective: string;
+    options: string[];
+  }>({ kind: "departments" });
+  // 手动选择优先，其次用校内门户识别到的单位。
+  const department = college.data?.data?.effective || null;
   const inference = useMemo(
-    () => inferProfile(scoreRows, courseRows),
-    [scoreRows, courseRows],
+    () => inferProfile(scoreRows, courseRows, planIndex, department),
+    [scoreRows, courseRows, department],
   );
   const [draft, setDraft] = useState<Profile | null>(null);
   const [saving, setSaving] = useState(false);
@@ -247,6 +301,14 @@ export default function Curriculum({
               else delete overrides[key];
               void persist({ ...saved, overrides });
             }}
+            onDirection={(sectionId, groupId) =>
+              void persist(
+                withDirection(saved, saved.planId!, sectionId, groupId),
+              )
+            }
+            onCredit={(name, credits) =>
+              void persist(withManualCredit(saved, name, credits))
+            }
           />
           {saved.secondaryPlanId && (
             <PlanProgress
@@ -262,6 +324,19 @@ export default function Curriculum({
                 else delete overrides[`${saved.secondaryPlanId}:${key}`];
                 void persist({ ...saved, overrides });
               }}
+              onDirection={(sectionId, groupId) =>
+                void persist(
+                  withDirection(
+                    saved,
+                    saved.secondaryPlanId!,
+                    sectionId,
+                    groupId,
+                  ),
+                )
+              }
+              onCredit={(name, credits) =>
+                void persist(withManualCredit(saved, name, credits))
+              }
             />
           )}
           <p className="subtle curriculum-footnote">
@@ -293,6 +368,8 @@ function PlanProgress({
   courseRows,
   secondary = false,
   onOverride,
+  onDirection,
+  onCredit,
 }: {
   planId: string;
   profile: Profile;
@@ -300,6 +377,8 @@ function PlanProgress({
   courseRows: Course[];
   secondary?: boolean;
   onOverride: (key: string, sectionId: string | null) => void;
+  onDirection: (sectionId: string, groupId: string | null) => void;
+  onCredit: (name: string, credits: number | null) => void;
 }) {
   const plan = useQuery({
     queryKey: ["plan", planId],
@@ -307,27 +386,29 @@ function PlanProgress({
     staleTime: Infinity,
   });
   const entry = planIndex.find((p) => p.id === planId);
-  const overrides = useMemo(() => {
-    if (!secondary) {
-      return Object.fromEntries(
-        Object.entries(profile.overrides).filter(([k]) => !k.includes(":")),
-      );
-    }
-    const prefix = `${planId}:`;
-    return Object.fromEntries(
-      Object.entries(profile.overrides)
-        .filter(([k]) => k.startsWith(prefix))
-        .map(([k, v]) => [k.slice(prefix.length), v]),
-    );
-  }, [profile.overrides, planId, secondary]);
+  const overrides = useMemo(
+    () => overridesForPlan(profile, planId),
+    [profile, planId],
+  );
   const progress = useMemo(
     () =>
       plan.data
         ? computeProgress(plan.data, scoreRows, courseRows, overrides, {
             englishLevel: profile.englishLevel,
+            directions: directionsFor(planId, profile.directions),
+            manualCredits: profile.manualCredits,
           })
         : null,
-    [plan.data, scoreRows, courseRows, overrides, profile.englishLevel],
+    [
+      plan.data,
+      scoreRows,
+      courseRows,
+      overrides,
+      profile.englishLevel,
+      profile.directions,
+      profile.manualCredits,
+      planId,
+    ],
   );
   if (plan.isPending)
     return (
@@ -349,6 +430,10 @@ function PlanProgress({
       progress={progress}
       secondary={secondary}
       englishChosen={profile.englishLevel !== null}
+      directions={directionsFor(planId, profile.directions)}
+      pinned={overrides}
+      onDirection={onDirection}
+      onCredit={onCredit}
       onOverride={onOverride}
     />
   );
@@ -358,15 +443,29 @@ function ProgressView({
   progress,
   secondary,
   englishChosen,
+  directions,
+  pinned,
+  onDirection,
+  onCredit,
   onOverride,
 }: {
   progress: Progress;
   secondary: boolean;
   englishChosen: boolean;
+  directions: Record<string, string>;
+  pinned: Record<string, string>;
+  onDirection: (sectionId: string, groupId: string | null) => void;
+  onCredit: (name: string, credits: number | null) => void;
   onOverride: (key: string, sectionId: string | null) => void;
 }) {
   const { plan, sections, pending, ignored, totals } = progress;
+  const splits = directionSplits(plan);
   const choices = sectionChoices(progress);
+  const editor: Editor = { choices, pinned, onCredit, onOverride };
+  const unknownCourses = sections
+    .flatMap((s) => [s, ...s.children])
+    .flatMap((s) => s.courses)
+    .filter((c) => c.credits === null && c.status === "passed");
   const [selected, setSelected] = useState<string>("total");
   const [sourceOpen, setSourceOpen] = useState(false);
   const inferredTitle = plan.titleInference;
@@ -411,6 +510,29 @@ function ProgressView({
         open={sourceOpen}
         onClose={() => setSourceOpen(false)}
       />
+      {splits.length > 0 && (
+        <div className="toolbar">
+          {splits.map((split) => (
+            <label key={split.sectionId}>
+              <span className="subtle">{split.name}方向</span>
+              <select
+                aria-label={`${split.name}按哪个方向计算`}
+                value={directions[split.sectionId] ?? ""}
+                onChange={(e) =>
+                  onDirection(split.sectionId, e.target.value || null)
+                }
+              >
+                <option value="">未选择方向</option>
+                {split.options.map((option) => (
+                  <option key={option.groupId} value={option.groupId}>
+                    {option.name} · {fmt(option.min)} 学分
+                  </option>
+                ))}
+              </select>
+            </label>
+          ))}
+        </div>
+      )}
       <div className="ring-grid" role="tablist" aria-label="学分系列">
         <RingCard
           id="total"
@@ -455,13 +577,16 @@ function ProgressView({
       </div>
       {totals.unknownCredits > 0 && (
         <p className="subtle">
-          有 {totals.unknownCredits} 门课的学分未知，未计入合计。
+          已归类课程中有 {totals.unknownCredits}{" "}
+          门已通过的课学分未知，未计入合计：
+          {unknownCourses.map((c) => c.name).join("、")}。
+          学分优先取成绩记录，缺失时取当前方案的匹配课程。
         </p>
       )}
       {hasEnglishRange && !englishChosen && (
         <p className="subtle curriculum-hint">
           大学英语按分级修 2～8
-          学分。在“修改年级与专业”里选择你的英语分级后，这里会按分级固定英语学分，差额计入通识教育课。
+          学分。在“修改年级与专业”里选择你的英语分级后，这里会按分级固定英语学分，大类总额随之按各子系列求和。
         </p>
       )}
       <div
@@ -469,21 +594,26 @@ function ProgressView({
         role="tabpanel"
         aria-label={current ? `${current.name}明细` : "全部学分系列明细"}
       >
+        {current?.note && <p className="subtle detail-note">{current.note}</p>}
         {current ? (
           current.children.length > 0 ? (
-            current.children.map((c) => <DetailRow key={c.id} section={c} />)
+            current.children.map((c) => (
+              <DetailRow key={c.id} section={c} autoOpen editor={editor} />
+            ))
           ) : (
-            <CourseList courses={current.courses} />
+            <CourseList courses={current.courses} editor={editor} />
           )
         ) : (
-          sections.map((s) => <DetailRow key={s.id} section={s} top />)
+          sections.map((s) => (
+            <DetailRow key={s.id} section={s} top editor={editor} />
+          ))
         )}
       </div>
       {pending.length > 0 && (
         <div className="curriculum-pending">
           <h3>待确认（{pending.length}）</h3>
           <p className="subtle">
-            这些课在方案课程表里没有同名条目，也无法按类别判断。归类只保存在本机，可随时改。
+            这些课在方案课程表里没有同名条目，也无法按类别判断。归类只保存在本机，可随时改；归类不会自动补齐未知学分。
           </p>
           <ul>
             {pending.map((c) => (
@@ -492,9 +622,21 @@ function ProgressView({
                   <strong>{c.name}</strong>
                   <span className="subtle">
                     {c.term} · {c.category} · {statusLabel[c.status]}
-                    {c.credits !== null ? ` · ${fmt(c.credits)} 学分` : ""}
+                    {c.credits !== null
+                      ? ` · ${fmt(c.credits)} 学分`
+                      : " · 学分未知"}
                   </span>
                 </div>
+                <input
+                  className="course-credit"
+                  aria-label={`学分 ${c.name}`}
+                  title="教学网在修课程列表不提供学分，手填后才计入合计"
+                  inputMode="decimal"
+                  placeholder="?"
+                  defaultValue={c.credits ?? ""}
+                  key={`pending:${c.key}:${c.credits ?? ""}`}
+                  onBlur={(e) => onCredit(c.name, parseCredits(e.target.value))}
+                />
                 <select
                   aria-label={`归类 ${c.name}`}
                   value=""
@@ -623,11 +765,19 @@ function RingCard({
 function DetailRow({
   section,
   top = false,
+  autoOpen = false,
+  editor,
 }: {
   section: ProgressSection;
   top?: boolean;
+  /** 选中的类别下面直接摊开在修与已修，不用再点一次「N 门课」。 */
+  autoOpen?: boolean;
+  editor: Editor;
 }) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(autoOpen);
+  useEffect(() => {
+    if (autoOpen) setOpen(true);
+  }, [autoOpen]);
   const m = measure(section);
   const target = section.min ?? null;
   const ratio = (n: number) => (target ? Math.min(100, (100 * n) / target) : 0);
@@ -667,6 +817,7 @@ function DetailRow({
           {gapText(section)}
         </span>
       </div>
+      {section.note && <p className="subtle detail-note">{section.note}</p>}
       {(hasCourses || hasChildren) && (
         <button
           type="button"
@@ -684,38 +835,97 @@ function DetailRow({
       {open && hasChildren && (
         <div className="detail-children">
           {section.children.map((c) => (
-            <DetailRow key={c.id} section={c} />
+            <DetailRow key={c.id} section={c} editor={editor} />
           ))}
         </div>
       )}
       {open && !hasChildren && hasCourses && (
-        <CourseList courses={section.courses} />
+        <CourseList courses={section.courses} editor={editor} />
       )}
     </div>
   );
 }
 
-function CourseList({ courses }: { courses: MatchedCourse[] }) {
+function CourseList({
+  courses,
+  editor,
+}: {
+  courses: MatchedCourse[];
+  editor: Editor;
+}) {
   if (courses.length === 0)
-    return <p className="subtle course-list-empty">还没有归到这里的课。</p>;
+    return <p className="subtle course-list-empty">这一类暂无计入的课程。</p>;
+  const doing = courses.filter((c) => c.status === "inProgress");
+  const done = courses.filter((c) => c.status !== "inProgress");
+  const missing = doing.filter((c) => c.credits === null).length;
+  const row = (c: MatchedCourse) => {
+    const key = normalizeCourseName(c.name);
+    const pinned = editor.pinned[key];
+    return (
+      <li key={c.key}>
+        <span className="course-name">{c.name}</span>
+        <span className="subtle">
+          {c.term}
+          {c.via ? ` · ${viaLabel[c.via]}` : ""}
+        </span>
+        <span className={`course-status ${c.status}`}>
+          {statusLabel[c.status]}
+          {c.score && c.status !== "inProgress" ? ` ${c.score}` : ""}
+        </span>
+        <input
+          className="course-credit"
+          aria-label={`学分 ${c.name}`}
+          title={
+            c.credits === null
+              ? c.status === "inProgress"
+                ? "教学网在修课程列表不提供学分，手填后才计入合计"
+                : "成绩记录与当前培养方案均未提供可用学分"
+              : "手填学分以这里为准，清空即回到成绩或方案的口径"
+          }
+          inputMode="decimal"
+          placeholder="?"
+          defaultValue={c.credits ?? ""}
+          key={`${c.key}:${c.credits ?? ""}`}
+          onBlur={(e) => editor.onCredit(c.name, parseCredits(e.target.value))}
+        />
+        <select
+          aria-label={`归类 ${c.name}`}
+          value={pinned ?? AUTO}
+          onChange={(e) =>
+            editor.onOverride(
+              key,
+              e.target.value === AUTO ? null : e.target.value,
+            )
+          }
+        >
+          <option value={AUTO}>按方案自动</option>
+          {editor.choices.map((choice) => (
+            <option key={choice.id} value={choice.id}>
+              {choice.label}
+            </option>
+          ))}
+          <option value={IGNORE}>不计入</option>
+        </select>
+      </li>
+    );
+  };
   return (
-    <ul className="course-list">
-      {courses.map((c) => (
-        <li key={c.key}>
-          <span className="course-name">{c.name}</span>
-          <span className="subtle">
-            {c.term}
-            {c.via ? ` · ${viaLabel[c.via]}` : ""}
-          </span>
-          <span className={`course-status ${c.status}`}>
-            {statusLabel[c.status]}
-            {c.score && c.status !== "inProgress" ? ` ${c.score}` : ""}
-          </span>
-          <strong className="course-credits">
-            {c.credits !== null ? fmt(c.credits) : "?"}
-          </strong>
-        </li>
-      ))}
-    </ul>
+    <>
+      {missing > 0 && (
+        <p className="subtle curriculum-hint">
+          在修 {doing.length} 门里有 {missing} 门没填学分，填了才计入合计。
+        </p>
+      )}
+      <ul className="course-list">
+        {doing.length > 0 && (
+          <li className="course-group">在修课程 {doing.length} 门</li>
+        )}
+        {doing.map(row)}
+        {done.length > 0 && (
+          <li className="course-group">已修课程 {done.length} 门</li>
+        )}
+        {done.map(row)}
+      </ul>
+    </>
   );
 }
