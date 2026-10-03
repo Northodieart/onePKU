@@ -106,6 +106,9 @@ pub enum Request {
     /// 只能恢复默认；更改到某个目录必须经过桌面容器的系统选择框，前端不能传路径。
     ResetDownloadRoot,
     OpenDownloadRoot,
+    /// 回放缓存位置；同样只由桌面容器的系统选择框更改。
+    ResetCacheRoot,
+    OpenCacheRoot,
     Profile,
     SetProfile {
         profile: Value,
@@ -484,6 +487,9 @@ impl Core {
     pub fn set_download_root(&self, path: &std::path::Path) -> Result<Value> {
         downloads::set_download_root(Some(path))
     }
+    pub fn set_cache_root(&self, path: &std::path::Path) -> Result<Value> {
+        downloads::set_cache_root(Some(path))
+    }
 
     pub fn call(self: &Arc<Self>, req: Request) -> Envelope {
         let runtime = tokio::runtime::Builder::new_current_thread()
@@ -688,6 +694,10 @@ impl Core {
             Request::SetSubtitleModel { model } => self.set_subtitle_model(model)?,
             Request::Preferences => {
                 let mut v = downloads::download_root_info();
+                let cache = downloads::cache_root_info();
+                for key in ["cacheRoot", "cacheRootIsDefault"] {
+                    v[key] = cache[key].clone();
+                }
                 v["keepAlive"] = json!(self.keep_alive.load(std::sync::atomic::Ordering::Relaxed));
                 v
             }
@@ -706,6 +716,13 @@ impl Core {
             Request::ResetDownloadRoot => downloads::set_download_root(None)?,
             Request::OpenDownloadRoot => {
                 let dir = downloads::download_root()?;
+                std::fs::create_dir_all(&dir)?;
+                platform::open(dir.as_os_str())?;
+                json!({"opened":true})
+            }
+            Request::ResetCacheRoot => downloads::set_cache_root(None)?,
+            Request::OpenCacheRoot => {
+                let dir = downloads::cache_root()?;
                 std::fs::create_dir_all(&dir)?;
                 platform::open(dir.as_os_str())?;
                 json!({"opened":true})

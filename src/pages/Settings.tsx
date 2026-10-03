@@ -15,6 +15,7 @@ import {
   action,
   fmtTime,
   chooseDownloadFolder,
+  chooseCacheFolder,
   connectHaoxue,
   type Haoxue,
   type Preferences,
@@ -150,6 +151,8 @@ export default function Settings({
   const [keepAliveError, setKeepAliveError] = useState("");
   const [storageMessage, setStorageMessage] = useState("");
   const [storageError, setStorageError] = useState("");
+  const [cacheRootMessage, setCacheRootMessage] = useState("");
+  const [cacheRootError, setCacheRootError] = useState("");
   const [cacheMessage, setCacheMessage] = useState("");
   const [cacheError, setCacheError] = useState("");
   const [haoxueError, setHaoxueError] = useState("");
@@ -256,6 +259,10 @@ export default function Settings({
     ? root.downloadRoot.replace(/^\/Users\/[^/]+/, "~")
     : "~/Downloads/OnePKU";
   const rootIsDefault = root ? root.downloadRootIsDefault !== false : true;
+  const cacheText = root?.cacheRoot
+    ? root.cacheRoot.replace(/^\/Users\/[^/]+/, "~")
+    : "应用缓存目录";
+  const cacheIsDefault = root ? root.cacheRootIsDefault !== false : true;
   // 统一身份认证的服务按安卓端顺序排，课堂实测与校内门户各自跟在后面。
   const cards = (["course", "treehole", "campuscard", "bdkj"] as Service[]).map(
     (service) => {
@@ -578,6 +585,76 @@ export default function Settings({
           }
           status={storageMessage || undefined}
           error={storageError || undefined}
+        />
+        <SettingRow
+          label="回放缓存位置"
+          description={
+            <>
+              <span className="path-value">{cacheText}</span>
+              {cacheIsDefault ? "（默认）" : ""}
+              。缓存播放的分片存在这里，退出播放就清掉；「下载
+              MP4」的成片仍存在上面的保存位置。
+            </>
+          }
+          control={
+            <>
+              {!cacheIsDefault && (
+                <button
+                  className="text-button"
+                  onClick={() => {
+                    setCacheRootMessage("");
+                    setCacheRootError("");
+                    void action({ kind: "resetCacheRoot" })
+                      .then(async () => {
+                        await prefs.refetch();
+                        setCacheRootMessage("已恢复为默认位置。");
+                      })
+                      .catch(() =>
+                        setCacheRootError("未能恢复默认位置，请重试"),
+                      );
+                  }}
+                >
+                  恢复默认
+                </button>
+              )}
+              <Button
+                onClick={() => {
+                  setCacheRootError("");
+                  void action({ kind: "openCacheRoot" }).catch((e: unknown) =>
+                    setCacheRootError(
+                      "未能打开缓存位置：" +
+                        (e instanceof Error ? e.message : String(e)),
+                    ),
+                  );
+                }}
+              >
+                打开
+              </Button>
+              {inApp && (
+                <Button
+                  onClick={() => {
+                    setCacheRootMessage("");
+                    setCacheRootError("");
+                    void chooseCacheFolder()
+                      .then(async (next) => {
+                        if (!next) return;
+                        await prefs.refetch();
+                        setCacheRootMessage(
+                          "之后的回放缓存存在这里；原位置的缓存已清掉。",
+                        );
+                      })
+                      .catch((e: Error) =>
+                        setCacheRootError(`未能更改缓存位置：${e.message}`),
+                      );
+                  }}
+                >
+                  更改…
+                </Button>
+              )}
+            </>
+          }
+          status={cacheRootMessage || undefined}
+          error={cacheRootError || undefined}
         />
         <SettingRow
           label="页面缓存"

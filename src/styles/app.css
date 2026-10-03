@@ -2747,6 +2747,20 @@ input[type="checkbox"] {
 .replay-cache p {
   color: var(--muted);
 }
+.replay-cache-play {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 18px 0;
+  font-size: 12px;
+}
+.replay-cache-play span {
+  display: grid;
+  gap: 2px;
+}
+.replay-cache-play small {
+  color: var(--muted);
+}
 .replay-error {
   display: flex;
   align-items: center;

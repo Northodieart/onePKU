@@ -940,7 +940,9 @@ pub(crate) struct ReplayRef {
 }
 pub(crate) async fn replay_ref(course: &str, episode: &str) -> Result<ReplayRef> {
     let learner = Haoxue::from_session()?;
-    let detail = learner.course_detail(course).await?;
+    // 课程详情只是补充标题与学期：只出现在按日期流里的课（量子力学这类）这个接口
+    // 会失败，但课次本身可播可下载，不能因此把整次下载报成「暂时无法获取」。
+    let detail = learner.course_detail(course).await.unwrap_or_default();
     let lesson = learner.replay(course, episode).await?;
     let row = episodes_of(&detail)
         .into_iter()

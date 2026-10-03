@@ -56,9 +56,7 @@ pub(crate) struct Session {
     pub(crate) subtitle_active: AtomicBool,
 }
 fn cache_dir(generation: &str, course: &str, video: &str) -> Result<PathBuf> {
-    Ok(directories::ProjectDirs::from("me", "petertian", "OnePKU")
-        .ok_or_else(|| anyhow!("无法定位回放缓存"))?
-        .cache_dir()
+    Ok(crate::downloads::cache_root()?
         .join("playback-v1")
         .join(generation)
         .join(format!("{:x}", Sha256::digest(format!("{course}|{video}")))))
@@ -165,9 +163,7 @@ pub(crate) fn adopt_account_cache(
     Ok(destination)
 }
 pub(crate) fn shared_cache_root(account: &str, course: &str, video: &str) -> Result<PathBuf> {
-    Ok(directories::ProjectDirs::from("me", "petertian", "OnePKU")
-        .ok_or_else(|| anyhow!("无法定位回放缓存"))?
-        .cache_dir()
+    Ok(crate::downloads::cache_root()?
         .join("video-downloads-v1")
         .join(account)
         .join(format!("{:x}", Sha256::digest(format!("{course}|{video}")))))
@@ -814,10 +810,8 @@ impl Core {
                     .unwrap_or_else(|_| generation.clone())
             };
         let directory = if subtitle_account != generation {
-            let dirs = directories::ProjectDirs::from("me", "petertian", "OnePKU")
-                .ok_or_else(|| anyhow!("无法定位回放缓存"))?;
             adopt_account_cache(
-                &dirs.cache_dir().join("playback-v1"),
+                &crate::downloads::cache_root()?.join("playback-v1"),
                 &accounts::root()?,
                 &subtitle_account,
                 course,

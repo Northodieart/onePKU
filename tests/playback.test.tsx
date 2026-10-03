@@ -146,7 +146,78 @@ it("plays a loopback stream, resumes position, controls cache, and closes withou
   ).toBe(false);
   mounted.unmount();
   await waitFor(() =>
-    expect(requests).toContainEqual({ kind: "playbackClose", id: "session" }),
+    expect(requests).toContainEqual({
+      kind: "playbackClose",
+      id: "session",
+      // 退出播放就把这一节的缓存清掉，不再长期占着磁盘。
+      clear: true,
+    }),
+  );
+});
+it("keeps the whole-section prefetch off when 缓存播放 is off", async () => {
+  const requests: Record<string, unknown>[] = [];
+  localStorage.setItem("onepku.replay.cache.v1", "off");
+  const status = {
+    completed: 3,
+    segments: 719,
+    bytes: 1000000,
+    complete: false,
+    downloading: false,
+    offline: false,
+    message: "",
+  };
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(async (_url, options) => {
+      const request = JSON.parse(options.body);
+      requests.push(request);
+      return {
+        ok: true,
+        json: async () => ({
+          data:
+            request.kind === "playbackPrepare"
+              ? {
+                  id: "quiet",
+                  url: "http://127.0.0.1:4567/media/token/index.m3u8",
+                  title: "Lecture",
+                  duration: 300,
+                  status,
+                }
+              : status,
+          error: null,
+          stale: false,
+          warnings: [],
+          generation: "account",
+          updatedAt: new Date().toISOString(),
+        }),
+      };
+    }),
+  );
+  const mounted = render(
+    <ReplayPlayer
+      course="1"
+      video={{
+        title: "Lecture",
+        time: "2026-09-08",
+        url: "https://onlineroomse.pku.edu.cn/livingroom",
+        hash_id: "abc",
+      }}
+      generation="account"
+      close={() => {}}
+    />,
+  );
+  await screen.findByLabelText("Lecture 视频");
+  // 没开「缓存播放」，就不该有人替我把整节拉下来。
+  expect(requests.some((r) => r.kind === "playbackControl")).toBe(false);
+  fireEvent.click(screen.getByRole("button", { name: "更多播放选项" }));
+  expect(screen.getByRole("checkbox", { name: /缓存播放/ })).not.toBeChecked();
+  mounted.unmount();
+  await waitFor(() =>
+    expect(requests).toContainEqual({
+      kind: "playbackClose",
+      id: "quiet",
+      clear: true,
+    }),
   );
 });
 it("closes a late preparation after the viewer has left", async () => {
@@ -186,7 +257,11 @@ it("closes a late preparation after the viewer has left", async () => {
     }),
   });
   await waitFor(() =>
-    expect(requests).toContainEqual({ kind: "playbackClose", id: "late" }),
+    expect(requests).toContainEqual({
+      kind: "playbackClose",
+      id: "late",
+      clear: true,
+    }),
   );
   expect(requests.some((r) => r.kind === "playbackControl")).toBe(false);
 });

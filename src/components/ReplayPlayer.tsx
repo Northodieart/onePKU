@@ -116,6 +116,23 @@ export default function ReplayPlayer({
     } catch {}
   }, [subtitleKey, subtitlesEnabled, subtitleOffset]);
   const [status, setStatus] = useState<CacheStatus>();
+  const statusRef = useRef<CacheStatus | undefined>(undefined);
+  // 「缓存播放」：开着才把整节预存到本机换流畅；无论开关，退出播放都清掉，不留占空间。
+  const [cachePlay, setCachePlay] = useState(() => {
+    try {
+      return localStorage.getItem("onepku.replay.cache.v1") !== "off";
+    } catch {
+      return true;
+    }
+  });
+  const cachePlayRef = useRef(cachePlay);
+  useEffect(() => {
+    cachePlayRef.current = cachePlay;
+  }, [cachePlay]);
+  function saveStatus(next: CacheStatus) {
+    statusRef.current = next;
+    setStatus(next);
+  }
   const [error, setError] = useState("");
   const [waiting, setWaiting] = useState(true);
   const [needsPlay, setNeedsPlay] = useState(false);
@@ -164,18 +181,18 @@ export default function ReplayPlayer({
       .then(async (p) => {
         id = p.id;
         if (!live) {
-          await action({ kind: "playbackClose", id });
+          await action({ kind: "playbackClose", id, clear: !p.status.offline });
           return;
         }
         setPlayback(p);
-        setStatus(p.status);
-        if (!p.status.complete && !p.status.offline) {
+        saveStatus(p.status);
+        if (cachePlayRef.current && !p.status.complete && !p.status.offline) {
           const next = await action<CacheStatus>({
             kind: "playbackControl",
             id,
             downloading: true,
           });
-          if (live) setStatus(next);
+          if (live) saveStatus(next);
         }
       })
       .catch((e) => {
@@ -186,7 +203,14 @@ export default function ReplayPlayer({
       });
     return () => {
       live = false;
-      if (id) void action({ kind: "playbackClose", id }).catch(() => {});
+      // 缓存播放只是这一节的临时缓冲：退出播放就清掉，不把磁盘占满。
+      // 学校连接已经断了就留着已有分片，重连后还能接着用。
+      if (id)
+        void action({
+          kind: "playbackClose",
+          id,
+          clear: !statusRef.current?.offline,
+        }).catch(() => {});
     };
   }, [lesson, video.hash_id, retry]);
   // 观看进度按原站口径回写：暂停、关闭，以及每 60 秒一次心跳。
@@ -227,7 +251,7 @@ export default function ReplayPlayer({
           kind: "playbackStatus",
           id: playback.id,
         });
-        if (live) setStatus(next);
+        if (live) saveStatus(next);
       } catch {
         /* Playback can continue while status is unavailable. */
       }
@@ -328,7 +352,7 @@ export default function ReplayPlayer({
     if (!playback) return;
     setBusy(true);
     try {
-      setStatus(
+      saveStatus(
         await action<CacheStatus>({
           kind: "playbackControl",
           id: playback.id,
@@ -340,6 +364,15 @@ export default function ReplayPlayer({
     } finally {
       setBusy(false);
     }
+  }
+  function toggleCachePlay(next: boolean) {
+    setCachePlay(next);
+    try {
+      localStorage.setItem("onepku.replay.cache.v1", next ? "on" : "off");
+    } catch {
+      /* 记不住偏好不影响这次播放。 */
+    }
+    if (status && !status.complete) void changeCache(next);
   }
   async function clearCache() {
     if (!playback) return;
@@ -602,6 +635,20 @@ export default function ReplayPlayer({
           />
           {optionsOpen && (
             <div id="replay-options" className="replay-options">
+              <label className="replay-cache-play">
+                <input
+                  type="checkbox"
+                  checked={cachePlay}
+                  onChange={(e) => toggleCachePlay(e.target.checked)}
+                />
+                <span>
+                  <strong>缓存播放</strong>
+                  <small>
+                    开着会把整节回放先存到本机以保证流畅；关掉只边播边取。
+                    两种都只保留这一次播放用的缓存，退出播放就清掉。
+                  </small>
+                </span>
+              </label>
               {status && (
                 <div className="replay-cache">
                   <div className="replay-cache-line">

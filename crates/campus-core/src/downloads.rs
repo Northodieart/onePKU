@@ -200,6 +200,57 @@ pub(crate) fn set_download_root(path: Option<&std::path::Path>) -> Result<Value>
     }
     Ok(download_root_info())
 }
+/// 回放缓存的默认位置：应用缓存目录（Windows 上就在 C 盘用户目录里）。
+pub(crate) fn default_cache_root() -> Result<PathBuf> {
+    Ok(directories::ProjectDirs::from("me", "petertian", "OnePKU")
+        .ok_or_else(|| anyhow!("无法定位回放缓存"))?
+        .cache_dir()
+        .to_path_buf())
+}
+/// 当前生效的缓存目录：设置里选过就用它，否则回到应用缓存目录。
+pub(crate) fn cache_root() -> Result<PathBuf> {
+    if let Some(p) = crate::maintenance::read_preferences()
+        .get("cacheRoot")
+        .and_then(|v| v.as_str())
+    {
+        let path = PathBuf::from(p);
+        if path.is_absolute() && path.is_dir() {
+            return Ok(path);
+        }
+    }
+    default_cache_root()
+}
+pub(crate) fn cache_root_info() -> Value {
+    let effective = cache_root().ok();
+    let normalize = |p: PathBuf| dunce::canonicalize(&p).unwrap_or(p);
+    let is_default = effective.clone().map(normalize)
+        == default_cache_root().ok().map(normalize);
+    json!({
+        "cacheRoot": effective.as_ref().map(|p| p.to_string_lossy().to_string()),
+        "cacheRootIsDefault": effective.is_some() && is_default,
+    })
+}
+/// 换缓存位置：记下新位置，再把旧位置的回放缓存清掉——缓存都是可重下的分片，
+/// 留着只是继续占着原来那块盘。
+pub(crate) fn set_cache_root(path: Option<&std::path::Path>) -> Result<Value> {
+    let previous = cache_root().ok();
+    match path {
+        Some(p) => {
+            let canon = validate_download_root(p)?;
+            std::fs::create_dir_all(&canon)?;
+            crate::maintenance::write_preference(
+                "cacheRoot",
+                Value::String(canon.to_string_lossy().to_string()),
+            )?;
+        }
+        None => crate::maintenance::write_preference("cacheRoot", Value::Null)?,
+    }
+    if let Some(old) = previous.filter(|old| Some(old) != cache_root().ok().as_ref()) {
+        let _ = std::fs::remove_dir_all(old.join("playback-v1"));
+        let _ = std::fs::remove_dir_all(old.join("video-downloads-v1"));
+    }
+    Ok(cache_root_info())
+}
 pub(crate) fn archive_directory(semester: &str, course: &str) -> Result<PathBuf> {
     Ok(archive_directory_at(&download_root()?, semester, course))
 }
@@ -543,10 +594,13 @@ impl Core {
         let _cleanup = Cleanup(temp.clone());
         let account = self.course_account(generation).await.unwrap_or_else(|_| generation.into());
         let resume = playback::shared_cache_root(&account, &replay.course, &replay.episode)?;
-        let dirs = directories::ProjectDirs::from("me", "petertian", "OnePKU")
-            .ok_or_else(|| anyhow!("无法定位回放缓存"))?;
-        let playback_cache = playback::adopt_account_cache(&dirs.cache_dir().join("playback-v1"),
-            &accounts::root()?, &account, &replay.course, &replay.episode)?;
+        let playback_cache = playback::adopt_account_cache(
+            &cache_root()?.join("playback-v1"),
+            &accounts::root()?,
+            &account,
+            &replay.course,
+            &replay.episode,
+        )?;
         let ffmpeg = [
             "/opt/homebrew/bin/ffmpeg",
             "/usr/local/bin/ffmpeg",
