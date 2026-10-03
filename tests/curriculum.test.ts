@@ -273,6 +273,19 @@ describe("computeProgress", () => {
     expect(doing).toContain("离散数学基础");
     expect(doing).not.toContain("离散数学基础习题课");
     expect(doing).not.toContain("几何与拓扑");
+    // 标题里不写学期的课会落到「未标注学期」，不能由它定下本学期是哪一组。
+    const mixed = computeProgress(
+      plan,
+      [],
+      [{ id: "untagged", name: "形势与政策", current: true }, ...rows],
+    )
+      .sections.flatMap((s) => [s, ...s.children])
+      .flatMap((s) => s.courses)
+      .filter((c) => c.status === "inProgress")
+      .map((c) => c.name);
+    expect(mixed).toContain("形势与政策");
+    expect(mixed).toContain("离散数学基础");
+    expect(mixed).not.toContain("几何与拓扑");
   });
   it("assigns by name, alternative, variant, keyword and category, and leaves the rest pending", () => {
     const progress = computeProgress(plan, scores, courses);

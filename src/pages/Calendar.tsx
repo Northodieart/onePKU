@@ -43,9 +43,12 @@ function Document({
   useEffect(() => {
     const el = container.current;
     if (!el) return;
-    const resize = new ResizeObserver((entries) =>
-      setWidth(entries[0].contentRect.width),
-    );
+    const resize = new ResizeObserver((entries) => {
+      const next = entries[0].contentRect.width;
+      // 亚像素的变化不重排：画布宽度回头影响内容宽度时，一点点抖动就会被放大成
+      // 高频的重渲染循环。
+      setWidth((current) => (Math.abs(current - next) < 1 ? current : next));
+    });
     resize.observe(el);
     return () => resize.disconnect();
   }, []);

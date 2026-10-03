@@ -2116,6 +2116,8 @@ input[type="checkbox"] {
 .calendar-viewport {
   width: 100%;
   overflow: auto;
+  /* 滚动条槽常驻：否则「出现滚动条 → 内容变窄 → 画布变矮 → 滚动条消失」会来回抖。 */
+  scrollbar-gutter: stable;
   min-height: 300px;
   max-height: 75vh;
   background: var(--sidebar);
