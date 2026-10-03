@@ -1,36 +1,63 @@
 use super::*;
 use chrono::{Datelike, NaiveDate};
+/// 结尾括号里的学期写法统一成「26-27学年第1学期」。教学网的学期后缀不止一种写法
+/// （「26-27学年第1学期」「26-27-1」「2026-2027 学年第一学期」），只认一种就会把
+/// 整串带进培养方案的课程名匹配，在修课程因此认不出来；不像学期的括号原样保留。
+fn term_label(inner: &str) -> Option<String> {
+    let text = inner.trim();
+    let years = regex::Regex::new(r"(\d{2,4})\s*[-—–－]\s*(\d{2,4})").unwrap();
+    let caps = years.captures(text)?;
+    let short = |value: &str| value[value.len() - 2..].to_string();
+    let number = regex::Regex::new(r"第\s*([0-9一二三])\s*学期")
+        .unwrap()
+        .captures(text)
+        .map(|found| {
+            match &found[1] {
+                "一" => "1",
+                "二" => "2",
+                "三" => "3",
+                other => other,
+            }
+            .to_string()
+        })
+        .or_else(|| {
+            regex::Regex::new(r"[-—–－]\s*([123])\s*$")
+                .unwrap()
+                .captures(text)
+                .map(|found| found[1].to_string())
+        });
+    Some(match number {
+        Some(number) => format!("{}-{}学年第{}学期", short(&caps[1]), short(&caps[2]), number),
+        None => format!("{}-{}学年", short(&caps[1]), short(&caps[2])),
+    })
+}
 pub(crate) fn course_value(c: &pku_course::api::CourseInfo) -> Value {
-    let re = regex::Regex::new(r"[（(]\s*((?:20)?[0-9]{2})\s*[-—–－]\s*((?:20)?[0-9]{2})\s*学年\s*第\s*([123一二三])\s*学期\s*[）)]\s*$").unwrap();
+    // 「26271-x: 数据结构 (26-27学年第1学期)」：冒号前是课程编号，结尾括号是学期。
     let title = c
         .long_title
         .split_once([':', '：'])
         .map(|(_, t)| t.trim())
         .unwrap_or(c.long_title.trim());
-    let semester = re
-        .captures(title)
-        .map(|m| {
-            let term = match &m[3] {
-                "一" => "1",
-                "二" => "2",
-                "三" => "3",
-                n => n,
-            };
-            format!(
-                "{}-{}学年第{}学期",
-                &m[1][m[1].len() - 2..],
-                &m[2][m[2].len() - 2..],
-                term
-            )
-        })
-        .or_else(|| {
-            let prefix = regex::Regex::new(r"^(\d{2})(\d{2})([123])-").unwrap();
-            prefix
-                .captures(&c.long_title)
-                .map(|m| format!("{}-{}学年第{}学期", &m[1], &m[2], &m[3]))
-        })
-        .unwrap_or_else(|| "未标注学期".into());
-    json!({"id":c.id,"name":re.replace(title, "").trim(),"semester":semester,"current":c.is_current})
+    let suffix = regex::Regex::new(r"[（(]([^（）()]*)[）)]\s*$").unwrap();
+    let tail = suffix.captures(title).map(|found| found[1].to_string());
+    let term = tail.as_deref().and_then(term_label);
+    let name = if term.is_some() {
+        suffix.replace(title, "").trim().to_string()
+    } else {
+        title.to_string()
+    };
+    let semester = term.or_else(|| {
+        let prefix = regex::Regex::new(r"^(\d{2})(\d{2})([123])-").unwrap();
+        prefix
+            .captures(&c.long_title)
+            .map(|m| format!("{}-{}学年第{}学期", &m[1], &m[2], &m[3]))
+    });
+    json!({
+        "id": c.id,
+        "name": name,
+        "semester": semester.unwrap_or_else(|| "未标注学期".into()),
+        "current": c.is_current,
+    })
 }
 fn month_range(month: &str) -> Result<(NaiveDate, NaiveDate)> {
     if month.len() != 7
@@ -245,6 +272,32 @@ mod tests {
             ..c
         };
         assert_eq!(course_value(&c)["semester"], "25-26学年第1学期");
+    }
+    #[test]
+    fn every_term_spelling_leaves_a_bare_course_name() {
+        // 学期后缀写法不统一，认不全就会把整串带进培养方案匹配，在修课程少一类。
+        for (title, name, semester) in [
+            ("26271-x: 高等数学A (2026-2027 学年第一学期)", "高等数学A", "26-27学年第1学期"),
+            ("26271-x: 大学物理 (26-27-2)", "大学物理", "26-27学年第2学期"),
+            ("26271-x: 综合英语（三）(26-27学年第3学期)", "综合英语（三）", "26-27学年第3学期"),
+            ("26271-x: 代数与数论 (26-27)", "代数与数论", "26-27学年"),
+        ] {
+            let value = course_value(&pku_course::api::CourseInfo {
+                id: "_1_1".into(),
+                long_title: title.into(),
+                is_current: true,
+            });
+            assert_eq!(value["name"], name, "{title}");
+            assert_eq!(value["semester"], semester, "{title}");
+        }
+        // 不像学期的括号是课程名的一部分，必须留着。
+        let value = course_value(&pku_course::api::CourseInfo {
+            id: "_1_1".into(),
+            long_title: "26271-x: 综合英语 (上)".into(),
+            is_current: true,
+        });
+        assert_eq!(value["name"], "综合英语 (上)");
+        assert_eq!(value["semester"], "26-27学年第1学期");
     }
     #[test]
     fn month_boundaries() {

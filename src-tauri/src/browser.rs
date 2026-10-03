@@ -271,9 +271,23 @@ pub async fn open_browser(
     Ok(())
 }
 
+/// Windows 与 Linux 不装菜单栏：那条横条里只有系统菜单，桌面端用不上，还白占一行高度。
+/// Tauri 只在 macOS 生成默认菜单，所以非 macOS 什么都不设就不会有横条。
 pub fn install_menu(app: &tauri::App) -> tauri::Result<()> {
+    #[cfg(target_os = "macos")]
+    return macos_menu(app);
+    #[cfg(not(target_os = "macos"))]
+    {
+        let _ = app;
+        Ok(())
+    }
+}
+
+/// macOS 的应用菜单在屏幕顶部，是「关于/退出」与网页快捷键的入口，不能省。
+/// 只留应用、编辑与网页三项：默认菜单里的 File/View/Window/Help 是多余的横条。
+#[cfg(target_os = "macos")]
+fn macos_menu(app: &tauri::App) -> tauri::Result<()> {
     use tauri::menu::{Menu, MenuItem, PredefinedMenuItem, Submenu};
-    // 只留应用、编辑与网页三项：默认菜单里的 File/View/Window/Help 对中文界面是多余的横条。
     let app_menu = Submenu::with_items(
         app,
         "OnePKU",
