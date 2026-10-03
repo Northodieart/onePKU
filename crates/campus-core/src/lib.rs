@@ -79,6 +79,14 @@ pub enum Request {
     },
     HaoxueStatus,
     HaoxueLogout,
+    /// 同名课程的候选（让用户认一次是哪一门）。
+    HaoxueCandidates {
+        name: String,
+    },
+    SetHaoxueCourse {
+        name: String,
+        id: String,
+    },
     /// 统一认证完成后：以安卓身份重取中转页，用窗口 cookie 解出令牌。
     HaoxueRelay {
         url: String,
@@ -473,6 +481,8 @@ fn problem(e: anyhow::Error) -> Problem {
     .any(|prefix| s.starts_with(prefix))
     {
         ("validation", s.as_str())
+    } else if s.contains("同名课程") {
+        ("haoxueAmbiguous", s.as_str())
     } else if s.starts_with("课堂实录") || s.starts_with("好学") {
         // 好学侧的报错本来就是给用户看的：同名候选、未收录等，不能抹成通用文案。
         ("haoxue", s.as_str())
@@ -679,6 +689,8 @@ impl Core {
             Request::PortalLogout => news::portal_logout()?,
             Request::ServiceLogout { service } => Self::service_logout(service)?,
             Request::HaoxueRelay { url, cookies } => haoxue::relay_login(url, cookies).await?,
+            Request::HaoxueCandidates { name } => haoxue::candidates(name).await?,
+            Request::SetHaoxueCourse { name, id } => haoxue::set_course(name, id)?,
             Request::SetDepartment { value } => news::set_department(value)?,
             Request::CalendarPdf { year } => news::calendar_pdf(year).await?,
             Request::CurriculumPages {
@@ -1099,6 +1111,19 @@ mod tests {
             "kind": "authPassword", "username": "a"
         }))
         .is_err());
+    }
+    #[test]
+    fn haoxue_course_picks_are_named_and_not_cached() {
+        for kind in [
+            json!({ "kind": "haoxueCandidates", "name": "量子力学" }),
+            json!({ "kind": "setHaoxueCourse", "name": "量子力学", "id": "c1" }),
+        ] {
+            let request = serde_json::from_value::<Request>(kind).unwrap();
+            assert!(!storage::cacheable(&request));
+        }
+        // 同名歧义要能落到专门的 code，前端据此展示候选而不是报错。
+        let problem = problem(anyhow!("课堂实录有 3 门同名课程，需要人工确认是哪一门"));
+        assert_eq!(problem.code, "haoxueAmbiguous");
     }
     #[test]
     fn service_logout_is_named_and_not_cached() {

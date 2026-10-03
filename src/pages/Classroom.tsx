@@ -53,7 +53,14 @@ function lessonLabel(lesson: Lesson) {
   return meta ? `${lesson.title}（${meta}）` : lesson.title;
 }
 
-export default function Classroom({ login }: { login: Login }) {
+export default function Classroom({
+  login,
+  dateOnly = false,
+}: {
+  login: Login;
+  /** 嵌在课程页里时只按日期浏览：课程上下文里再放「按课程」是多余的。 */
+  dateOnly?: boolean;
+}) {
   const [raw, update] = usePageParams("课程");
   // 目录挂在「课程 → 课程回放」里，与课程页共用地址栏，
   // 键统一加 hx 前缀，翻页与选课次时不会互相覆盖。
@@ -150,7 +157,7 @@ export default function Classroom({ login }: { login: Login }) {
           <h1>课堂实录</h1>
         )}
       </header>
-      {!course && (
+      {!course && !dateOnly && (
         <div className="tabs" aria-label="课堂实录浏览方式">
           <button
             className={mode === "course" ? "active" : ""}

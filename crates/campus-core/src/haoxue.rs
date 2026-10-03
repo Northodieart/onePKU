@@ -565,8 +565,62 @@ pub(crate) fn search_keys(name: &str) -> Vec<String> {
 /// 教学网课程名 → 好学课次列表。认领失败必须显式报出来，不能显示成「没有回放」。
 /// 搜索是按页返回的，只翻第一页就会漏掉排在后面的课程，所以按页扫到空为止；
 /// 每页行数原站没有文档，退化成「比上一页少就认为到底」，并设最多 10 页的上限。
+/// 记住同名课程的选择：键是规范化课程名，值是好学的 course_id。只存本机。
+fn remembered_course(key: &str) -> Option<String> {
+    super::maintenance::read_preferences()
+        .get("haoxueCourseMap")?
+        .get(key)?
+        .as_str()
+        .map(str::to_string)
+        .filter(|id| !id.is_empty())
+}
+fn forget_course(key: &str) {
+    let mut prefs = super::maintenance::read_preferences();
+    let Some(mut map) = prefs
+        .remove("haoxueCourseMap")
+        .and_then(|v| v.as_object().cloned())
+    else {
+        return;
+    };
+    map.remove(key);
+    let _ = super::maintenance::write_preference("haoxueCourseMap", Value::Object(map));
+}
+/// 用户人工确认过一次同名课程后，这门课在好学里的身份就固定下来。
+pub(crate) fn set_course(name: &str, id: &str) -> Result<Value> {
+    let name = name.trim();
+    let id = id.trim();
+    if name.is_empty()
+        || name.chars().count() > 200
+        || id.is_empty()
+        || id.chars().count() > 64
+        || !id
+            .chars()
+            .all(|c| c.is_ascii_alphanumeric() || c == '-' || c == '_')
+    {
+        bail!("invalid course");
+    }
+    let mut prefs = super::maintenance::read_preferences();
+    let mut map = prefs
+        .remove("haoxueCourseMap")
+        .and_then(|v| v.as_object().cloned())
+        .unwrap_or_default();
+    map.insert(normalize(name), Value::String(id.to_string()));
+    if map.len() > 500 {
+        bail!("同名课程选择过多，请先清理");
+    }
+    super::maintenance::write_preference("haoxueCourseMap", Value::Object(map))?;
+    Ok(json!({ "saved": true }))
+}
 pub(crate) async fn replays(name: &str) -> Result<(Vec<Value>, usize)> {
     let learner = Haoxue::from_session()?;
+    // 用户人工确认过的同名课程，直接用记住的那一门；课程下架就忘掉重新匹配。
+    let key = normalize(name);
+    if let Some(id) = remembered_course(&key) {
+        match learner.list_episodes(&id).await {
+            Ok(episodes) => return Ok(replay_rows(&id, name, &episodes)),
+            Err(_) => forget_course(&key),
+        }
+    }
     let mut miss = None;
     for key in search_keys(name) {
         let mut found: Vec<Value> = vec![];
@@ -593,6 +647,32 @@ pub(crate) async fn replays(name: &str) -> Result<(Vec<Value>, usize)> {
         }
     }
     Err(miss.unwrap_or_else(|| anyhow!("课堂实录未收录这门课，请在原站核对")))
+}
+/// 同名课程的候选：课程页让用户认一次是哪一门，之后按记住的那一门走。
+pub(crate) async fn candidates(name: &str) -> Result<Value> {
+    let learner = Haoxue::from_session()?;
+    let key = normalize(name);
+    for search in search_keys(name) {
+        let mut found: Vec<Value> = vec![];
+        let mut previous = usize::MAX;
+        for page in 1..=10u32 {
+            let rows = learner.list_courses(page, &search).await?;
+            if rows.is_empty() || rows.len() < previous {
+                found.extend(rows);
+                break;
+            }
+            previous = rows.len();
+            found.extend(rows);
+        }
+        let hits: Vec<Value> = course_rows(&found)
+            .into_iter()
+            .filter(|row| normalize(&scalar(row, "name")) == key)
+            .collect();
+        if !hits.is_empty() {
+            return Ok(json!(hits));
+        }
+    }
+    Ok(json!([]))
 }
 /// 好学原生目录：按课程浏览，带原站的搜索与翻页。
 pub(crate) async fn catalogue(page: u32, search: &str) -> Result<Value> {

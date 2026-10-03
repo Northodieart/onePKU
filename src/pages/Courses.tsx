@@ -8,6 +8,7 @@ import LocalMaterials from "../components/LocalMaterials";
 import CourseReviews from "../components/CourseReviews";
 import { ArrowLeft, BookOpen, ChevronRight, Play } from "lucide-react";
 import {
+  action,
   connectHaoxue,
   openOfficial,
   useResource,
@@ -225,6 +226,14 @@ function CourseDetail({
   );
 }
 
+type Candidate = {
+  courseId: string;
+  name: string;
+  teacher: string;
+  college: string;
+  term: string;
+};
+
 function Videos({ course, login }: { course: Course; login: Login }) {
   // 回放只要好学源：直接拿课名去课堂实录查，不再要求连接教学网。
   const q = useResource<Replay[]>({ kind: "videos", course: course.name });
@@ -243,15 +252,22 @@ function Videos({ course, login }: { course: Course; login: Login }) {
   );
 
   const videoId = params.get("video");
-  // 按课程名匹配失败（同名候选、未收录等）：自动展开全目录并把课程名填进搜索，
-  // 用户自己确认是哪一门，不用手抄课名。
-  useEffect(() => {
-    if (q.data?.error) {
-      setCatalogue(true);
-      navigate({ hxsearch: course.name });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [q.data?.error?.message]);
+  const ambiguous = q.data?.error?.code === "haoxueAmbiguous";
+  const candidates = useResource<Candidate[]>(
+    { kind: "haoxueCandidates", name: course.name },
+    ambiguous,
+  );
+  const [pickError, setPickError] = useState("");
+  function pick(candidate: Candidate) {
+    setPickError("");
+    void action({
+      kind: "setHaoxueCourse",
+      name: course.name,
+      id: candidate.courseId,
+    })
+      .then(() => void q.refetch())
+      .catch(() => setPickError("选择未能保存，请重试"));
+  }
   useEffect(() => {
     setPlaying((current) => {
       if (!videoId) return undefined;
@@ -299,6 +315,53 @@ function Videos({ course, login }: { course: Course; login: Login }) {
           </p>
         )}
       </>
+    );
+  }
+  if (ambiguous) {
+    return (
+      <section className="resource resource-plain" aria-label="同名课程选择">
+        <div className="resource-head">
+          <h2>课程回放</h2>
+        </div>
+        <p>
+          好学上有几门同名的「{course.name}
+          」，认一次你上的那一门就好，以后会直接用这一门：
+        </p>
+        <Resource
+          title="同名候选"
+          q={candidates}
+          login={login}
+          className="resource-plain"
+        >
+          {(rows) =>
+            rows.length ? (
+              <div className="video-list">
+                {rows.map((c) => (
+                  <button
+                    key={c.courseId}
+                    className="assignment-choice"
+                    onClick={() => pick(c)}
+                  >
+                    <strong>{c.name}</strong>
+                    <small>
+                      {[c.teacher, c.college, c.term]
+                        .filter(Boolean)
+                        .join(" · ")}
+                    </small>
+                  </button>
+                ))}
+              </div>
+            ) : (
+              <Empty>候选列表暂不可用，请刷新重试</Empty>
+            )
+          }
+        </Resource>
+        {pickError && (
+          <p className="inline-error" role="alert">
+            {pickError}
+          </p>
+        )}
+      </section>
     );
   }
   return (
@@ -364,10 +427,8 @@ function Videos({ course, login }: { course: Course; login: Login }) {
         open={catalogue}
         onToggle={(e) => setCatalogue((e.target as HTMLDetailsElement).open)}
       >
-        <summary>
-          课堂实录全目录（含其他课程与全部日期）：按课程搜索翻页，或按日期看当天的全部课堂
-        </summary>
-        {catalogue && <Classroom login={login} />}
+        <summary>按日期浏览全部课堂实录（含其他课程）</summary>
+        {catalogue && <Classroom login={login} dateOnly />}
       </details>
     </>
   );
