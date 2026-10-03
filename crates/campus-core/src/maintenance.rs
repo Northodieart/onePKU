@@ -32,6 +32,8 @@ impl Core {
         let core = Arc::new(Self::default());
         core.restore_cache();
         core.recover_writes();
+        // 旧版本清缓存留下的空目录与 `.cleared` 标记，启动时收一次。
+        crate::playback::sweep_leftovers();
         // Bind existing subtitles before the user next changes login credentials.
         let initial = core.clone();
         std::thread::spawn(move || {

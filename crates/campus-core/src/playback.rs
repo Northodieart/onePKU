@@ -108,6 +108,50 @@ pub(crate) fn prune_empty(directory: &Path) {
         current = parent.to_path_buf();
     }
 }
+/// 旧版本清缓存留下的 `.cleared` 标记与空掉的长名目录：启动时扫一遍收掉。
+/// 只删标记文件和真的空的目录，还在用的缓存一律不动。
+pub(crate) fn sweep_leftovers() {
+    if let Ok(root) = crate::downloads::cache_root() {
+        sweep_leftovers_in(&root);
+    }
+}
+fn sweep_leftovers_in(root: &Path) {
+    for name in CACHE_ROOTS {
+        let holder = root.join(name);
+        let Ok(entries) = fs::read_dir(&holder) else {
+            continue;
+        };
+        for entry in entries.flatten() {
+            let path = entry.path();
+            if path.is_file() {
+                if path.extension().and_then(|e| e.to_str()) == Some("cleared") {
+                    let _ = fs::remove_file(&path);
+                }
+            } else if plain_directory(&path) {
+                prune_empty_below(&path);
+            }
+        }
+    }
+}
+/// 自底向上收空目录：先把还留着分片的最深层留住，空的才逐层往上删；
+/// 路上遇到的 `.cleared` 标记一并删掉，否则它会撑着那个本来已经空了的目录。
+fn prune_empty_below(directory: &Path) {
+    if let Ok(entries) = fs::read_dir(directory) {
+        for entry in entries.flatten() {
+            let child = entry.path();
+            if child.is_dir() && plain_directory(&child) {
+                prune_empty_below(&child);
+            } else if child.is_file()
+                && child.extension().and_then(|e| e.to_str()) == Some("cleared")
+            {
+                let _ = fs::remove_file(&child);
+            }
+        }
+    }
+    if fs::read_dir(directory).is_ok_and(|mut entries| entries.next().is_none()) {
+        let _ = fs::remove_dir(directory);
+    }
+}
 /// Adopt complete parts only from login generations previously bound to this
 /// verified account. Leave all originals in place and reject changed media.
 pub(crate) fn adopt_account_cache(
@@ -1620,6 +1664,31 @@ mod migration_regressions {
         prune_empty(&video);
         assert!(!video.parent().unwrap().exists());
         assert!(temp.path().join("playback-v1").exists());
+    }
+    #[test]
+    fn the_startup_sweep_collects_leftovers_without_touching_live_cache() {
+        let temp = tempfile::tempdir().unwrap();
+        let stale = temp
+            .path()
+            .join("playback-v1")
+            .join("b".repeat(64))
+            .join("a".repeat(64));
+        fs::create_dir_all(&stale).unwrap();
+        fs::write(legacy_marker(&stale), b"1").unwrap();
+        // 还在用的那份不能碰。
+        let keeping = temp
+            .path()
+            .join("video-downloads-v1")
+            .join("account")
+            .join("c".repeat(64));
+        fs::create_dir_all(&keeping).unwrap();
+        fs::write(keeping.join("00000.ts"), b"segment").unwrap();
+        sweep_leftovers_in(temp.path());
+        assert!(!stale.parent().unwrap().exists(), "空的代次目录应被收掉");
+        assert!(!legacy_marker(&stale).exists());
+        assert!(temp.path().join("playback-v1").exists());
+        assert!(keeping.join("00000.ts").exists());
+        assert!(temp.path().join("video-downloads-v1").exists());
     }
     #[test]
     fn pruning_stops_where_a_directory_still_holds_something() {
