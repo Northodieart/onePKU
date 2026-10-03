@@ -49,6 +49,23 @@ fn is_login_window(label: &str) -> bool {
     label.starts_with(LABEL)
 }
 
+/// 登录排障日志：只记域名与路径，绝不记查询串与令牌。文件在好学配置目录，
+/// 用户自己决定发不发给维护者。
+fn debug_log(app: &tauri::AppHandle, line: &str) {
+    let Some(mut dir) = app.path().app_config_dir().ok() else {
+        return;
+    };
+    dir.push("haoxue");
+    let _ = std::fs::create_dir_all(&dir);
+    let stamped = format!("{line}
+");
+    let _ = std::fs::OpenOptions::new()
+        .create(true)
+        .append(true)
+        .open(dir.join("login-debug.txt"))
+        .and_then(|mut file| std::io::Write::write_all(&mut file, stamped.as_bytes()));
+}
+
 fn settle(app: &tauri::AppHandle) {
     for (_, window) in app.webview_windows() {
         if is_login_window(window.label()) {
@@ -68,6 +85,13 @@ fn open(app: &tauri::AppHandle) -> Result<(), String> {
         "{LABEL}-{}",
         NEXT_LOGIN.fetch_add(1, std::sync::atomic::Ordering::Relaxed)
     );
+    // 每次打开重新记：日志反映最近一次尝试。
+    if let Ok(mut dir) = app.path().app_config_dir() {
+        dir.push("haoxue");
+        let _ = std::fs::create_dir_all(&dir);
+        let _ = std::fs::write(dir.join("login-debug.txt"), "打开登录窗口
+");
+    }
     let window = tauri::WebviewWindowBuilder::new(
         app,
         &label,
@@ -84,6 +108,11 @@ fn open(app: &tauri::AppHandle) -> Result<(), String> {
             return;
         }
         let url = payload.url().clone();
+        let app = window.app_handle().clone();
+        debug_log(
+            &app,
+            &format!("页面加载完成: {}{}", url.host_str().unwrap_or(""), url.path()),
+        );
         if !url.as_str().starts_with(RELAY) {
             return;
         }
@@ -94,11 +123,11 @@ fn open(app: &tauri::AppHandle) -> Result<(), String> {
             .iter()
             .map(|cookie| (cookie.name().to_string(), cookie.value().to_string()))
             .collect::<Vec<_>>();
-        let app = window.app_handle().clone();
         let core = app.state::<Arc<campus_core::Core>>().inner().clone();
         tauri::async_runtime::spawn(async move {
             // 会话 cookie 可能在中转页渲染后才落稳：拿不到令牌就稍等再取。
             let settled = tauri::async_runtime::spawn_blocking(move || {
+                let mut last = String::new();
                 for attempt in 0..3 {
                     if attempt > 0 {
                         std::thread::sleep(std::time::Duration::from_millis(1500));
@@ -107,15 +136,21 @@ fn open(app: &tauri::AppHandle) -> Result<(), String> {
                         url: url.to_string(),
                         cookies: cookies.clone(),
                     });
-                    if envelope.error.is_none() {
-                        return true;
+                    match envelope.error {
+                        None => return None,
+                        Some(problem) => last = problem.message,
                     }
                 }
-                false
+                Some(last)
             })
             .await;
-            if matches!(settled, Ok(true)) {
-                settle(&app);
+            match settled {
+                Ok(None) => {
+                    debug_log(&app, "中转页令牌解出，登录完成");
+                    settle(&app);
+                }
+                Ok(Some(message)) => debug_log(&app, &format!("中转页取令牌失败: {message}")),
+                Err(_) => debug_log(&app, "中转页取令牌任务中断"),
             }
         });
     })
