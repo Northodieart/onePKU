@@ -31,9 +31,6 @@ pub(crate) fn cacheable(req: &Request) -> bool {
         Request::Courses
             | Request::AllCourses
             | Request::Videos { .. }
-            | Request::HaoxueCourses { .. }
-            | Request::HaoxueByDate { .. }
-            | Request::HaoxueEpisodes { .. }
             | Request::Scores
             | Request::Exams
             | Request::CardStats { .. }

@@ -307,15 +307,6 @@ pub(crate) fn course_rows(rows: &[Value]) -> Vec<Value> {
 pub(crate) fn lesson_page(course: &str, episode: &str) -> String {
     format!("https://onlineroomse.pku.edu.cn/livingroom?course_id={course}&sub_id={episode}")
 }
-/// 分页翻页与原站一致：下一页只看返回是否还有内容，上一页由页码决定。
-pub(crate) fn page_shape(page: u32, rows: &[Value]) -> Value {
-    json!({
-        "page": page,
-        "rows": rows,
-        "hasPrev": page > 1,
-        "hasNext": !rows.is_empty(),
-    })
-}
 /// app-login 交给原生桥的载荷形态不稳定：可能是对象、JSON 文本，或被再编码
 /// 一层；与haoxue 同样最多展开四层，再在其中找带令牌的节点。
 fn unwrap_payload(value: &Value) -> Value {
@@ -647,60 +638,268 @@ pub(crate) async fn replays(name: &str) -> Result<(Vec<Value>, usize)> {
         }
     }
     // 好学的「按课程」目录本身不全：不少课只出现在按日期流里（日期流是本人
-    // 的课堂记录，天然完整、没有同名歧义）。目录没认下来时先回扫日期流，
+    // 的课堂记录，天然完整、没有同名歧义）。目录没认下来时改用本机按日期索引，
     // 扫到就用，扫不到再报目录侧的说明（同名候选或未收录）。
-    if let Ok((rows, waiting)) = replays_from_dates(&learner, name).await {
-        if !rows.is_empty() {
-            return Ok((rows, waiting));
-        }
+    refresh_index(&learner).await;
+    let rows = dated_index().lock().await.rows_for(name);
+    if !rows.is_empty() {
+        return Ok((rows, 0));
     }
     Err(miss.unwrap_or_else(|| anyhow!("课堂实录未收录这门课，请在原站核对")))
 }
-/// 回扫最近 45 天的「按日期」流，取属于这门课的课堂，按时间倒序。
-/// 并行分批发起，避免一次课程页打开就串行等几十次网络。
-async fn replays_from_dates(learner: &Haoxue, name: &str) -> Result<(Vec<Value>, usize)> {
-    let key = normalize(name);
-    let today = chrono::Local::now().date_naive();
-    let days: Vec<String> = (0..45i64)
-        .map(|back| {
-            (today - chrono::Duration::days(back))
-                .format("%Y-%m-%d")
-                .to_string()
+// 本地按日期索引。好学「按课程」目录由教师端发布，缺课是常态；「按日期」流
+// 是本人的课堂记录，完整且天然没有同名歧义。整份记录只扫一次并存本机，
+// 每门课缺省时都从这同一份索引里取，用户不必再自己挑一遍日期。
+/// 全量扫描的天数上限：够跨两个学期，覆盖在修课程的绝大多数课堂。
+const INDEX_BACK: i64 = 180;
+/// 录像生成有延迟，每次刷新把最近这些天重扫。
+const INDEX_RECENT: i64 = 12;
+/// 全量扫描要发上百个请求，并行到这么多；串行会把课程页等死。
+const INDEX_CHUNK: usize = 10;
+/// 一小时内的重复查询直接用现成的索引，不再打接口。
+const INDEX_TTL: i64 = 3600;
+const INDEX_KEY: &str = "haoxueDatedIndex";
+
+#[derive(Default)]
+struct DatedIndex {
+    /// 索引属于哪个好学账号（不可逆指纹）。换账号必须重建，
+    /// 不能把别人课堂的记录显示在这门课里。
+    account: String,
+    /// 已经扫到的最早一天；空串表示这份索引还没建起来。
+    covers: String,
+    /// 最近一次扫描的时刻（Unix 秒）。
+    checked: i64,
+    /// 日期 → 这一天可播放的回放行。重扫时整天替换，不会留下已经消失的课堂。
+    days: std::collections::BTreeMap<String, Vec<Value>>,
+}
+
+fn dated_index() -> &'static tokio::sync::Mutex<DatedIndex> {
+    static INDEX: std::sync::OnceLock<tokio::sync::Mutex<DatedIndex>> =
+        std::sync::OnceLock::new();
+    INDEX.get_or_init(|| tokio::sync::Mutex::new(DatedIndex::default()))
+}
+/// 只认 YYYY-MM-DD，手工改过的索引文件不至于把日期键带偏。
+fn is_date(text: &str) -> bool {
+    text.len() == 10
+        && text.chars().enumerate().all(|(index, character)| {
+            if matches!(index, 4 | 7) {
+                character == '-'
+            } else {
+                character.is_ascii_digit()
+            }
         })
-        .collect();
-    let mut rows: Vec<Value> = vec![];
-    for chunk in days.chunks(6) {
-        let found = futures::future::join_all(chunk.iter().map(|date| {
-            let key = key.clone();
-            async move {
-            let mut day_rows = learner.list_dates(date, 1).await.unwrap_or_default();
-            if day_rows.len() >= 10 {
-                if let Ok(more) = learner.list_dates(date, 2).await {
-                    day_rows.extend(more);
-                }
-            }
-            day_rows
-                .into_iter()
-                .filter(|row| normalize(&pick(row, &["course_name"])) == key)
-                .collect::<Vec<_>>()
-            }
-        }))
-        .await;
-        for day in found {
-            rows.extend(day);
+}
+/// 索引匹配用的课程名：除了去空白与小写，还把全半角括号统一，
+/// 「量子力学（A班）」与「量子力学(A班)」在索引里就是同一门课。
+fn canonical(value: &str) -> String {
+    value
+        .chars()
+        .filter(|c| !c.is_whitespace())
+        .map(|c| match c {
+            '（' | '[' | '【' => '(',
+            '）' | ']' | '】' => ')',
+            other => other,
+        })
+        .collect::<String>()
+        .to_lowercase()
+}
+fn dedup_rows(rows: Vec<Value>) -> Vec<Value> {
+    let mut seen = std::collections::HashSet::new();
+    rows.into_iter()
+        .filter(|row| {
+            seen.insert((scalar(row, "courseId"), scalar(row, "episodeId")))
+        })
+        .collect()
+}
+/// 一天的课堂记录；原站每页十行，满十行就再取一页。
+async fn day_rows(learner: &Haoxue, date: &str) -> Result<Vec<Value>> {
+    let mut rows = learner.list_dates(date, 1).await?;
+    if rows.len() >= 10 {
+        if let Ok(more) = learner.list_dates(date, 2).await {
+            rows.extend(more);
         }
     }
-    if rows.is_empty() {
-        return Ok((vec![], 0));
+    Ok(rows)
+}
+impl DatedIndex {
+    /// 本机存过的索引。账号指纹不符、日期形状不对或行缺标识的都丢掉；
+    /// 存的是课程名、课次标识与上课时间，没有令牌。
+    fn load(account: &str) -> Self {
+        let prefs = super::maintenance::read_preferences();
+        let Some(saved) = prefs.get(INDEX_KEY) else {
+            return Self::default();
+        };
+        if scalar(saved, "account") != account {
+            return Self::default();
+        }
+        let mut days = std::collections::BTreeMap::new();
+        if let Some(stored) = saved.get("days").and_then(Value::as_object) {
+            for (date, rows) in stored {
+                if !is_date(date) {
+                    continue;
+                }
+                let kept = rows
+                    .as_array()
+                    .map(|list| {
+                        list.iter()
+                            .filter(|row| {
+                                !scalar(row, "course_name").is_empty()
+                                    && !scalar(row, "episodeId").is_empty()
+                                    && !scalar(row, "time").is_empty()
+                            })
+                            .cloned()
+                            .collect::<Vec<Value>>()
+                    })
+                    .unwrap_or_default();
+                if !kept.is_empty() {
+                    days.insert(date.clone(), kept);
+                }
+            }
+        }
+        Self {
+            account: account.to_string(),
+            covers: scalar(saved, "covers"),
+            checked: saved
+                .get("checked")
+                .and_then(Value::as_i64)
+                .unwrap_or_default(),
+            days,
+        }
     }
-    let (mut out, waiting) = dated_rows(&rows);
-    out.sort_by(|a, b| {
-        b["time"]
-            .as_str()
-            .unwrap_or_default()
-            .cmp(a["time"].as_str().unwrap_or_default())
-    });
-    Ok((out, waiting))
+    fn save(&self) {
+        if self.account.is_empty() || self.days.is_empty() {
+            return;
+        }
+        let days = self
+            .days
+            .iter()
+            .map(|(date, rows)| (date.clone(), Value::Array(rows.clone())))
+            .collect::<serde_json::Map<String, Value>>();
+        let _ = super::maintenance::write_preference(
+            INDEX_KEY,
+            json!({
+                "account": self.account,
+                "covers": self.covers,
+                "checked": self.checked,
+                "days": days,
+            }),
+        );
+    }
+    /// 索引里属于这门课的课堂，按上课时间倒序。先认规范化全名；全名对不上时
+    /// 退回主标题前缀，但只认唯一一组课名——分不清是这门课还是同名另一门时
+    /// 宁可什么都不显示，也不能把别的课塞进这一页。
+    fn rows_for(&self, name: &str) -> Vec<Value> {
+        let keys = search_keys(name);
+        let named = |keep: &dyn Fn(&str) -> bool| -> Vec<(String, Value)> {
+            self.days
+                .values()
+                .flatten()
+                .filter_map(|row| {
+                    let title = scalar(row, "course_name");
+                    let title_key = canonical(&title);
+                    keep(&title_key).then(|| (title_key, row.clone()))
+                })
+                .collect()
+        };
+        let exact = canonical(&keys[0]);
+        let mut hits = named(&|title| title == exact);
+        if hits.is_empty() {
+            let base = canonical(keys.last().unwrap_or(&keys[0]));
+            let prefix = format!("{base}(");
+            let groups = named(&|title| {
+                title == base || (title.starts_with(prefix.as_str()) && base.chars().count() >= 3)
+            });
+            let distinct = groups
+                .iter()
+                .map(|(title, _)| title.clone())
+                .collect::<std::collections::HashSet<String>>();
+            if distinct.len() == 1 {
+                hits = groups;
+            }
+        }
+        let mut rows = hits.into_iter().map(|(_, row)| row).collect::<Vec<Value>>();
+        rows.sort_by(|a, b| {
+            b["time"]
+                .as_str()
+                .unwrap_or_default()
+                .cmp(a["time"].as_str().unwrap_or_default())
+        });
+        rows
+    }
+}
+/// 待扫的日子，从最近的那天往前排。最近这几天总要重扫（录像是课后才生成的），
+/// 比已扫下限更早的接着往前补，整份窗口以今天往前 `INDEX_BACK` 天为限。
+fn sweep_plan(today: chrono::NaiveDate, covers: &str) -> Vec<String> {
+    let floor = today - chrono::Duration::days(INDEX_BACK);
+    let mut plan = std::collections::BTreeSet::<String>::new();
+    let mut cursor = today;
+    let recent_from = today - chrono::Duration::days(INDEX_RECENT);
+    while cursor >= recent_from {
+        plan.insert(cursor.format("%Y-%m-%d").to_string());
+        cursor -= chrono::Duration::days(1);
+    }
+    // 还没建起来就从窗口最远端扫起；已经扫过的日子不重复扫。
+    cursor = match covers.parse::<chrono::NaiveDate>() {
+        Ok(covers) => covers - chrono::Duration::days(1),
+        Err(_) => today,
+    };
+    while cursor >= floor {
+        plan.insert(cursor.format("%Y-%m-%d").to_string());
+        cursor -= chrono::Duration::days(1);
+    }
+    plan.into_iter().rev().collect()
+}
+/// 把索引补到最新：整份窗口只扫一次，之后每次只重扫最近这几天，
+/// 上次没扫完的部分接着往前补。请求失败的那些天不进索引，
+/// 免得把一次网络抖动记成「这天没有课」。
+async fn refresh_index(learner: &Haoxue) {
+    let account = learner.account_key().to_string();
+    let now = chrono::Utc::now().timestamp();
+    let mut index = dated_index().lock().await;
+    if index.account != account || index.covers.is_empty() {
+        *index = DatedIndex::load(&account);
+    }
+    index.account = account.clone();
+    if !index.covers.is_empty() && now - index.checked < INDEX_TTL {
+        return;
+    }
+    let dates = sweep_plan(chrono::Local::now().date_naive(), &index.covers);
+    let mut swept = false;
+    for chunk in dates.chunks(INDEX_CHUNK) {
+        let found = futures::future::join_all(
+            chunk
+                .iter()
+                .map(|date| async move { (date.clone(), day_rows(learner, date).await) }),
+        )
+        .await;
+        let mut failed = 0usize;
+        for (date, rows) in found {
+            match rows {
+                Ok(rows) => {
+                    let (built, _) = dated_rows(&rows);
+                    index.days.insert(date.clone(), dedup_rows(built));
+                    if index.covers.is_empty() || date < index.covers {
+                        index.covers = date;
+                    }
+                    swept = true;
+                }
+                Err(_) => {
+                    index.days.remove(&date);
+                    failed += 1;
+                }
+            }
+        }
+        // 一整批全失败多半是登录已失效，别再往下空跑。
+        if failed == chunk.len() {
+            break;
+        }
+    }
+    // 一天都没扫到：覆盖范围与时刻都不推进，下次查询再试。
+    if !swept {
+        return;
+    }
+    index.checked = now;
+    index.save();
 }
 /// 同名课程的候选：课程页让用户认一次是哪一门，之后按记住的那一门走。
 pub(crate) async fn candidates(name: &str) -> Result<Value> {
@@ -727,40 +926,6 @@ pub(crate) async fn candidates(name: &str) -> Result<Value> {
         }
     }
     Ok(json!([]))
-}
-/// 好学原生目录：按课程浏览，带原站的搜索与翻页。
-pub(crate) async fn catalogue(page: u32, search: &str) -> Result<Value> {
-    let learner = Haoxue::from_session()?;
-    let page = page.max(1);
-    Ok(page_shape(
-        page,
-        &course_rows(&learner.list_courses(page, search).await?),
-    ))
-}
-/// 好学原生目录：按日期浏览当天全部课堂记录，每行都能直接播放。
-pub(crate) async fn by_date(date: &str, page: u32) -> Result<Value> {
-    let learner = Haoxue::from_session()?;
-    let page = page.max(1);
-    let (rows, waiting) = dated_rows(&learner.list_dates(date, page).await?);
-    let mut shape = page_shape(page, &rows);
-    shape["waiting"] = waiting.into();
-    Ok(shape)
-}
-/// 一门课的全部课次；`course` 是好学的课程标识。
-pub(crate) async fn course_episodes(course: &str) -> Result<Value> {
-    let learner = Haoxue::from_session()?;
-    let detail = learner.course_detail(course).await?;
-    let name = pick(&detail, &["course_name", "title"]);
-    let (rows, waiting) = replay_rows(course, &name, &episodes_of(&detail));
-    Ok(json!({
-        "courseId": course,
-        "name": name,
-        "teacher": pick(&detail, &["course_teacher", "teacher"]),
-        "term": pick(&detail, &["term_name", "course_term", "term"]),
-        "thumb": scalar(&detail, "thumb"),
-        "rows": rows,
-        "waiting": waiting,
-    }))
 }
 /// 存档一次回放所需的稳定信息。播放列表地址会过期，所以只在真正下载时
 /// 再向好学取一次，队列里只留课程与课次标识。
@@ -833,6 +998,8 @@ pub(crate) async fn record(
 pub(crate) struct Haoxue {
     token: String,
     pub(crate) cookie_token: String,
+    /// 账号指纹：按日期索引靠它绑定账号，换人登录必须重建索引。
+    account_key: String,
     client: reqwest::Client,
 }
 impl Haoxue {
@@ -846,14 +1013,31 @@ impl Haoxue {
             .and_then(Value::as_str)
             .unwrap_or_default()
             .to_string();
+        // 账号比令牌稳定：重新登录换了令牌也不必把整份索引重扫一遍。
+        let seed = session
+            .extra
+            .get("account")
+            .and_then(Value::as_str)
+            .map(str::trim)
+            .filter(|text| !text.is_empty())
+            .unwrap_or(session.token.as_str())
+            .to_string();
+        let account_key = Md5::digest(format!("haoxue-index:{seed}").as_bytes())
+            .iter()
+            .map(|byte| format!("{byte:02x}"))
+            .collect::<String>();
         Ok(Self {
             token: session.token,
             cookie_token,
+            account_key,
             client: reqwest::Client::builder()
                 .cookie_store(false)
                 .timeout(Duration::from_secs(15))
                 .build()?,
         })
+    }
+    pub(crate) fn account_key(&self) -> &str {
+        &self.account_key
     }
     async fn call(&self, api: &str, input: &[(&str, &str)], post: bool) -> Result<Value> {
         if self.token.is_empty() {
@@ -1150,6 +1334,98 @@ mod tests {
             "课堂实录未收录这门课，请在原站核对"
         );
     }
+    fn indexed(days: Vec<(&str, Vec<Value>)>) -> DatedIndex {
+        DatedIndex {
+            account: "账号指纹".to_string(),
+            covers: "2026-04-01".to_string(),
+            checked: 0,
+            days: days
+                .into_iter()
+                .map(|(date, rows)| (date.to_string(), rows))
+                .collect(),
+        }
+    }
+    fn lesson(course: &str, episode: &str, time: &str) -> Value {
+        json!({
+            "course_name": course,
+            "episodeId": episode,
+            "courseId": "7",
+            "hash_id": episode,
+            "time": time,
+        })
+    }
+    #[test]
+    fn the_dated_index_answers_for_a_course_the_catalogue_missed() {
+        let index = indexed(vec![
+            (
+                "2026-09-28",
+                vec![lesson("量子力学", "11", "2026-09-28 08:00")],
+            ),
+            (
+                "2026-09-30",
+                vec![
+                    lesson("量子力学", "12", "2026-09-30 08:00"),
+                    lesson("电动力学", "13", "2026-09-30 10:00"),
+                ],
+            ),
+        ]);
+        let rows = index.rows_for("量子力学");
+        // 只取这门课，按上课时间倒序；别的课一节都不能混进来。
+        assert_eq!(rows.len(), 2);
+        assert_eq!(rows[0]["episodeId"], "12");
+        assert_eq!(rows[1]["episodeId"], "11");
+        assert!(index.rows_for("结构化学").is_empty());
+    }
+    #[test]
+    fn the_sweep_scans_once_then_only_tops_up() {
+        let today = chrono::NaiveDate::from_ymd_opt(2026, 10, 3).unwrap();
+        let format = |back: i64| {
+            (today - chrono::Duration::days(back))
+                .format("%Y-%m-%d")
+                .to_string()
+        };
+        // 第一次建索引：整份窗口从今天扫到下限。
+        let first = sweep_plan(today, "");
+        assert_eq!(first.len(), INDEX_BACK as usize + 1);
+        assert_eq!(first[0], format(0));
+        assert_eq!(first[first.len() - 1], format(INDEX_BACK));
+        // 扫完之后就只补最近这几天，不会每天把半年重扫一遍。
+        let topup = sweep_plan(today, &format(INDEX_BACK));
+        assert_eq!(topup.len(), INDEX_RECENT as usize + 1);
+        assert_eq!(topup[topup.len() - 1], format(INDEX_RECENT));
+        // 上次扫到一半被打断：接着往前补，已经扫过的日子不再重复。
+        let resume = sweep_plan(today, &format(60));
+        assert_eq!(resume[resume.len() - 1], format(INDEX_BACK));
+        assert!(!resume.contains(&format(60)));
+        assert!(resume.contains(&format(61)));
+    }
+    #[test]
+    fn dated_index_matching_forgives_brackets_but_not_a_guess() {
+        // 全半角括号与空白差异是同一门课。
+        let bracketed = indexed(vec![(
+            "2026-05-06",
+            vec![lesson("高等数学(B)", "21", "2026-05-06 08:00")],
+        )]);
+        assert_eq!(bracketed.rows_for("高等数学（B）").len(), 1);
+        // 主标题前缀只有一组课名时才认。
+        let suffixed = indexed(vec![(
+            "2026-05-06",
+            vec![lesson("量子力学（1班）", "22", "2026-05-06 08:00")],
+        )]);
+        assert_eq!(suffixed.rows_for("量子力学").len(), 1);
+        // 认不出是哪一门就不显示，绝不把隔壁的课凑成一页。
+        let two = indexed(vec![
+            (
+                "2026-05-06",
+                vec![lesson("量子力学（1班）", "23", "2026-05-06 08:00")],
+            ),
+            (
+                "2026-05-07",
+                vec![lesson("量子力学（2班）", "24", "2026-05-07 08:00")],
+            ),
+        ]);
+        assert!(two.rows_for("量子力学（3班）").is_empty());
+    }
     #[test]
     fn replay_rows_keep_the_existing_shape_and_skip_unfinished_sessions() {
         let rows = vec![
@@ -1196,7 +1472,7 @@ mod tests {
         assert_eq!(videos[0]["hash_id"], "9001");
     }
     #[test]
-    fn catalogue_rows_and_paging_follow_the_original_site() {
+    fn catalogue_rows_name_the_course_teacher_and_term() {
         let rows = course_rows(&[
             json!({"course_id": "9", "course_name": "高等数学", "course_teacher": "李老师",
                    "course_college": "数学科学学院", "course_term": "2025-2026 上学期"}),
@@ -1206,12 +1482,6 @@ mod tests {
         assert_eq!(rows[0]["name"], "高等数学");
         assert_eq!(rows[0]["college"], "数学科学学院");
         assert_eq!(rows[0]["term"], "2025-2026 上学期");
-        let first = page_shape(1, &rows);
-        assert_eq!(first["hasPrev"], false);
-        assert_eq!(first["hasNext"], true);
-        let last = page_shape(2, &[]);
-        assert_eq!(last["hasPrev"], true);
-        assert_eq!(last["hasNext"], false);
     }
     #[test]
     fn login_payload_expands_until_a_token_appears() {

@@ -96,20 +96,6 @@ pub enum Request {
     ServiceLogout {
         service: String,
     },
-    /// 好学课堂实录目录：按课程浏览，`search` 用原站的搜索语义。
-    HaoxueCourses {
-        page: u32,
-        search: String,
-    },
-    /// 好学课堂实录目录：按日期浏览当天的全部课次，每行都可直接播放。
-    HaoxueByDate {
-        date: String,
-        page: u32,
-    },
-    /// 一门好学课程的全部课次。
-    HaoxueEpisodes {
-        course: String,
-    },
     /// 观看进度回写好学；`seconds` 是距上次上报的观看秒数。
     HaoxueRecord {
         course: String,
@@ -388,9 +374,6 @@ fn owner(req: &Request) -> &'static str {
         | Request::OpenAssignment { .. }
         | Request::Courses
         | Request::AllCourses
-        | Request::HaoxueCourses { .. }
-        | Request::HaoxueByDate { .. }
-        | Request::HaoxueEpisodes { .. }
         | Request::HaoxueRecord { .. }
         | Request::Recordings { .. }
         | Request::RecordingSessions { .. }
@@ -614,9 +597,6 @@ impl Core {
                 Request::Courses
                     | Request::AllCourses
                     | Request::Videos { .. }
-                    | Request::HaoxueCourses { .. }
-                    | Request::HaoxueByDate { .. }
-                    | Request::HaoxueEpisodes { .. }
                     | Request::Scores
                     | Request::Exams
                     | Request::CardStats { .. }
@@ -717,9 +697,6 @@ impl Core {
                 haoxue::clear_session()?;
                 json!({ "connected": false })
             }
-            Request::HaoxueCourses { page, search } => haoxue::catalogue(*page, search).await?,
-            Request::HaoxueByDate { date, page } => haoxue::by_date(date, *page).await?,
-            Request::HaoxueEpisodes { course } => haoxue::course_episodes(course).await?,
             Request::HaoxueRecord {
                 course,
                 episode,
@@ -1050,21 +1027,21 @@ mod tests {
         assert!(valid_id("x&mode=delete").is_err());
     }
     #[test]
-    fn classroom_catalogue_requests_are_named_and_split() {
+    fn replay_requests_are_named_and_split() {
         // 前端用的 kind 字符串与 Rust 字段名必须成对，写错就是静默失效。
-        let list: Request = serde_json::from_value(json!({
-            "kind": "haoxueCourses", "page": 2, "search": "高等数学"
-        }))
-        .unwrap();
-        assert!(matches!(list, Request::HaoxueCourses { page: 2, .. }));
-        assert_eq!(owner(&list), "course");
+        let list: Request =
+            serde_json::from_value(json!({ "kind": "videos", "course": "量子力学" })).unwrap();
+        assert!(matches!(list, Request::Videos { .. }));
+        // 回放只归课堂实录，不再要求教学网会话。
+        assert_eq!(owner(&list), "public");
         assert!(storage::cacheable(&list));
+        // 「按课程」「按日期」的原始目录不再对外提供：回放只从课程页那一份列表进。
         for kind in [
+            json!({"kind": "haoxueCourses", "page": 2, "search": "高等数学"}),
             json!({"kind": "haoxueByDate", "date": "2026-03-01", "page": 1}),
             json!({"kind": "haoxueEpisodes", "course": "123"}),
         ] {
-            let read = serde_json::from_value::<Request>(kind).unwrap();
-            assert!(storage::cacheable(&read));
+            assert!(serde_json::from_value::<Request>(kind).is_err());
         }
         // 进度回写是出站写操作：不进缓存，也少一个字段都不收。
         let write = serde_json::from_value::<Request>(json!({

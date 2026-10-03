@@ -1,7 +1,6 @@
 import ReplayPlayer, { type Replay } from "../components/ReplayPlayer";
 import { useEffect, useState } from "react";
 import { AssignmentWorkspace } from "./Assignments";
-import Classroom from "./Classroom";
 import CourseNotices from "../components/CourseNotices";
 import LearningGrades from "../components/LearningGrades";
 import LocalMaterials from "../components/LocalMaterials";
@@ -246,10 +245,6 @@ function Videos({ course, login }: { course: Course; login: Login }) {
     generation: string;
   }>();
   const [params, navigate] = usePageParams("课程");
-  // 全目录默认收起；地址栏里已经带着目录的翻页状态时展开，刷新不丢位置。
-  const [catalogue, setCatalogue] = useState(
-    () => !!params.get("hxvideo") || !!params.get("hxcourse"),
-  );
 
   const videoId = params.get("video");
   const ambiguous = q.data?.error?.code === "haoxueAmbiguous";
@@ -386,7 +381,7 @@ function Videos({ course, login }: { course: Course; login: Login }) {
           className="resource-plain"
           heading={
             <span className="subtle">
-              课堂实录按课程名匹配 · {q.data?.data?.length ?? 0} 节回放
+              课堂实录 · {q.data?.data?.length ?? 0} 节回放
             </span>
           }
         >
@@ -416,21 +411,12 @@ function Videos({ course, login }: { course: Course; login: Login }) {
               </div>
             ) : (
               <Empty>
-                这门课在课堂实录里还没有可播放的回放（目录与近 45
-                天的课堂记录都查过）。
+                这门课在课堂实录里还没有可播放的回放（课程目录和本学期的课堂记录都查过）。
               </Empty>
             )
           }
         </Resource>
       )}
-      <details
-        className="classroom-catalogue"
-        open={catalogue}
-        onToggle={(e) => setCatalogue((e.target as HTMLDetailsElement).open)}
-      >
-        <summary>按日期浏览全部课堂实录（含其他课程）</summary>
-        {catalogue && <Classroom login={login} dateOnly />}
-      </details>
     </>
   );
 }

@@ -1344,16 +1344,6 @@ tbody tr:last-child td {
   min-width: 0;
   flex: 1;
 }
-.classroom-catalogue {
-  margin-top: 18px;
-  border-top: 1px solid var(--border);
-  padding-top: 12px;
-}
-.classroom-catalogue summary {
-  font-size: 13px;
-  color: var(--muted);
-  cursor: pointer;
-}
 .auth-form label {
   display: block;
   font-size: 13px;

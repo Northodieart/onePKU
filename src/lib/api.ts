@@ -151,9 +151,6 @@ export function serviceFor(request: Request): Service | undefined {
     [
       "courses",
       "allCourses",
-      "haoxueCourses",
-      "haoxueByDate",
-      "haoxueEpisodes",
       "content",
       "localMaterials",
       "assignments",
