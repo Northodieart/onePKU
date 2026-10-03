@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowLeft, Play } from "lucide-react";
 import ReplayPlayer, { type Replay } from "../components/ReplayPlayer";
 import {
@@ -73,6 +73,8 @@ export default function Classroom({ login }: { login: Login }) {
   const course = params.get("course") ?? "";
   const video = params.get("video") ?? "";
   const [draft, setDraft] = useState(search);
+  // 课程回放匹配失败时会替用户把课名填进来，搜索框要跟住。
+  useEffect(() => setDraft(search), [search]);
   const [draftDate, setDraftDate] = useState(date);
   const [busy, setBusy] = useState(false);
   const [failure, setFailure] = useState("");

@@ -464,13 +464,6 @@ fn brace_blocks(text: &str) -> Vec<String> {
     }
     out
 }
-/// 诊断转储前把令牌类字段打码：保留页面结构，不保留任何凭证。
-fn redact_tokens(text: &str) -> String {
-    let pairs = regex::Regex::new(r#""((?:_)?(?:cookie_)?[tT]oken)"\s*:\s*"[^"]*""#).unwrap();
-    let text = pairs.replace_all(text, r#""$1":"***""#).to_string();
-    let query = regex::Regex::new(r#"((?:_)?(?:cookie_)?token=)[^&\s"']+"#).unwrap();
-    query.replace_all(&text, "$1***").to_string()
-}
 /// 好学安卓客户端的 WebView 身份：中转页按 UA 决定要不要交出令牌。
 pub(crate) const ANDROID_UA: &str = "Mozilla/5.0 (Linux; Android 13; Pixel 7 Build/TQ3A.230805.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/120.0.0.0 Mobile Safari/537.36";
 /// 浏览器窗口完成统一认证后落在中转页：拿窗口里的会话 cookie、以安卓身份
@@ -511,12 +504,7 @@ pub(crate) async fn relay_login(url: &str, cookies: &[(String, String)]) -> Resu
     match extract_payload(&text) {
         Some(candidate) => save_session(&Value::String(candidate)),
         None => {
-            // 诊断：页面结构一次一换，猜不中就如实留证。令牌类字段一律打码，
-            // 这份文件可以安全地发给维护者。
             let marker = text.contains("PKULoginSuccess");
-            let dir = Store::new(SERVICE)?.config_dir().to_path_buf();
-            let redacted = redact_tokens(&text.chars().take(256 * 1024).collect::<String>());
-            let dump = std::fs::write(dir.join("relay-debug.html"), redacted);
             let mut message = format!(
                 "中转页未交出令牌（HTTP {status}，含 PKULoginSuccess：{}，长度 {}）",
                 if marker { "是" } else { "否" },
@@ -524,9 +512,6 @@ pub(crate) async fn relay_login(url: &str, cookies: &[(String, String)]) -> Resu
             );
             if final_url.as_str() != url.as_str() {
                 message.push_str(&format!("，重定向到 {}", final_url.path()));
-            }
-            if dump.is_ok() {
-                message.push_str(&format!("；页面已存到 {}", dir.join("relay-debug.html").display()));
             }
             Err(anyhow!("{message}"))
         }
@@ -842,16 +827,6 @@ mod extract_tests {
         assert_eq!(token, "abc123");
         assert_eq!(cookie, "ck");
         assert_eq!(account, "23001");
-    }
-    #[test]
-    fn diagnostics_redact_tokens_but_keep_the_page_structure() {
-        let page = r#"{"_token":"abc123","account":"23001","note":"token=secret 保留"} <a href="x?_token=zzz">"#;
-        let redacted = redact_tokens(page);
-        assert!(!redacted.contains("abc123"));
-        assert!(!redacted.contains("secret"));
-        assert!(!redacted.contains("zzz"));
-        assert!(redacted.contains("23001"));
-        assert!(redacted.contains("_token"));
     }
     #[test]
     fn extracts_a_quoted_payload_and_tolerates_noise() {

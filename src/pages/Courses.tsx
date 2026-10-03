@@ -243,6 +243,15 @@ function Videos({ course, login }: { course: Course; login: Login }) {
   );
 
   const videoId = params.get("video");
+  // 按课程名匹配失败（同名候选、未收录等）：自动展开全目录并把课程名填进搜索，
+  // 用户自己确认是哪一门，不用手抄课名。
+  useEffect(() => {
+    if (q.data?.error) {
+      setCatalogue(true);
+      navigate({ hxsearch: course.name });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [q.data?.error?.message]);
   useEffect(() => {
     setPlaying((current) => {
       if (!videoId) return undefined;
@@ -313,7 +322,9 @@ function Videos({ course, login }: { course: Course; login: Login }) {
           login={login}
           className="resource-plain"
           heading={
-            <span className="subtle">{q.data?.data?.length ?? 0} 节回放</span>
+            <span className="subtle">
+              课堂实录按课程名自动匹配 · {q.data?.data?.length ?? 0} 节回放
+            </span>
           }
         >
           {(videos) =>
@@ -354,7 +365,7 @@ function Videos({ course, login }: { course: Course; login: Login }) {
         onToggle={(e) => setCatalogue((e.target as HTMLDetailsElement).open)}
       >
         <summary>
-          课堂实录全目录：按课程搜索翻页，或按日期看当天的全部课堂
+          课堂实录全目录（含其他课程与全部日期）：按课程搜索翻页，或按日期看当天的全部课堂
         </summary>
         {catalogue && <Classroom login={login} />}
       </details>

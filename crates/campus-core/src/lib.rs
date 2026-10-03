@@ -473,6 +473,9 @@ fn problem(e: anyhow::Error) -> Problem {
     .any(|prefix| s.starts_with(prefix))
     {
         ("validation", s.as_str())
+    } else if s.starts_with("课堂实录") || s.starts_with("好学") {
+        // 好学侧的报错本来就是给用户看的：同名候选、未收录等，不能抹成通用文案。
+        ("haoxue", s.as_str())
     } else if s.contains("filename") || s.contains("文件名") {
         ("invalid", "这个文件名无法保存")
     } else {
