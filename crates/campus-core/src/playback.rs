@@ -83,8 +83,30 @@ fn part_path(directory: &Path, index: usize) -> PathBuf {
 fn plain_directory(path: &Path) -> bool {
     fs::symlink_metadata(path).is_ok_and(|m| m.is_dir() && !platform::is_link(&m))
 }
-fn clear_marker(directory: &Path) -> PathBuf {
+/// 缓存的版本根：清掉一节课的副本后，向上收空目录只收到这一层为止。
+const CACHE_ROOTS: [&str; 2] = ["playback-v1", "video-downloads-v1"];
+/// 旧版本在视频目录旁边留的 `.cleared` 标记，用来阻止「采纳」把清掉的课再捡回来。
+/// 现在清除会把所有副本一起删掉，标记失去意义，留着只是在攒长文件名的垃圾。
+fn legacy_marker(directory: &Path) -> PathBuf {
     directory.with_extension("cleared")
+}
+/// 收掉空掉的长名目录：只删真的空的，删不动就停，绝不碰别人还在用的缓存。
+pub(crate) fn prune_empty(directory: &Path) {
+    let mut current = directory.to_path_buf();
+    while let Some(parent) = current.parent() {
+        if parent.file_name().is_some_and(|name| {
+            CACHE_ROOTS
+                .iter()
+                .any(|root| name == std::ffi::OsStr::new(root))
+        }) {
+            return;
+        }
+        let empty = fs::read_dir(parent).is_ok_and(|mut entries| entries.next().is_none());
+        if !empty || fs::remove_dir(parent).is_err() {
+            return;
+        }
+        current = parent.to_path_buf();
+    }
 }
 /// Adopt complete parts only from login generations previously bound to this
 /// verified account. Leave all originals in place and reject changed media.
@@ -97,17 +119,11 @@ pub(crate) fn adopt_account_cache(
 ) -> Result<PathBuf> {
     let key = format!("{:x}", Sha256::digest(format!("{course}|{video}")));
     let destination = cache.join(account).join(&key);
-    // Keep legacy originals, but never undo an explicit clear by adopting them again.
-    // This marker is outside the removable video directory and survives relogin.
-    if clear_marker(&destination).exists() {
-        return Ok(destination);
-    }
     let mut sources = accounts::bound_generations(data, account)
         .into_iter()
         .map(|g| cache.join(g).join(&key))
         .filter(|p| {
             *p != destination
-                && !clear_marker(p).exists()
                 && plain_directory(p)
                 && p.parent().is_some_and(plain_directory)
         })
@@ -329,6 +345,30 @@ impl Session {
             }
         }
         self.shared_directory.get()
+    }
+    /// 这节课在各处的缓存副本：当前登录代次、账号采纳目录，以及其他绑定过该账号的
+    /// 代次里的同名目录。清除要一次清干净，否则下一次「采纳」又把旧副本捡回来。
+    fn cache_copies(&self) -> Vec<PathBuf> {
+        let mut out = vec![self.directory.clone()];
+        let Some(root) = self.directory.parent().and_then(|p| p.parent()) else {
+            return out;
+        };
+        let Some(key) = self.directory.file_name().and_then(|n| n.to_str()) else {
+            return out;
+        };
+        if let Ok(entries) = fs::read_dir(root) {
+            for entry in entries.flatten() {
+                let holder = entry.path();
+                if !plain_directory(&holder) {
+                    continue;
+                }
+                let copy = holder.join(key);
+                if copy != self.directory {
+                    out.push(copy);
+                }
+            }
+        }
+        out
     }
     async fn remote_media(&self) -> Result<&(CourseApi, PlaybackMedia)> {
         // Only a missing part waits for school authorization. Cached parts and
@@ -966,15 +1006,21 @@ impl Core {
             s.downloading.store(false, Ordering::Relaxed);
             let _disk = s.progress.lock().unwrap();
             if clear {
-                write_private(&clear_marker(&s.directory), b"1")?;
                 let shared = s.shared_directory().cloned();
-                if plain_directory(&s.directory) {
-                    fs::remove_dir_all(&s.directory)?;
+                // 退出播放就是这一节缓存的终点：所有副本一起删，连旧版本的
+                // `.cleared` 标记和空掉的长名目录也收干净，不留残渣。
+                for directory in s.cache_copies() {
+                    if plain_directory(&directory) {
+                        let _ = fs::remove_dir_all(&directory);
+                    }
+                    let _ = fs::remove_file(legacy_marker(&directory));
+                    prune_empty(&directory);
                 }
                 if let Some(shared) = &shared {
                     if plain_directory(shared) {
-                        fs::remove_dir_all(shared)?;
+                        let _ = fs::remove_dir_all(shared);
                     }
+                    prune_empty(shared);
                 }
             }
         }
@@ -1477,7 +1523,9 @@ mod migration_regressions {
             !part_path(&reopened, 0).exists(),
             "clear was undone: legacy segment was imported again"
         );
-        assert!(part_path(&legacy, 0).exists()); // Migration never destroys originals.
+        // 清除会把同一节在其他登录代次里的副本一起删掉：缓存现在是退出即清的临时物，
+        // 留着旧副本就等于下一次「采纳」又把它捡回来，永远清不干净。
+        assert!(!part_path(&legacy, 0).exists());
         fs::create_dir_all(&reopened).unwrap();
         let mut newer = old_manifest();
         newer.signature = "new-recording".into();
@@ -1555,5 +1603,34 @@ mod migration_regressions {
                 .cache_signature,
             Some(signature)
         );
+    }
+    #[test]
+    fn clearing_a_video_leaves_no_long_name_leftovers() {
+        let temp = tempfile::tempdir().unwrap();
+        let video = temp
+            .path()
+            .join("playback-v1")
+            .join("generation")
+            .join("a".repeat(64));
+        fs::create_dir_all(&video).unwrap();
+        fs::write(legacy_marker(&video), b"1").unwrap();
+        // 清缓存该做到的：分片目录、旧标记与空掉的长名目录一个都不留。
+        fs::remove_dir_all(&video).unwrap();
+        fs::remove_file(legacy_marker(&video)).unwrap();
+        prune_empty(&video);
+        assert!(!video.parent().unwrap().exists());
+        assert!(temp.path().join("playback-v1").exists());
+    }
+    #[test]
+    fn pruning_stops_where_a_directory_still_holds_something() {
+        let temp = tempfile::tempdir().unwrap();
+        let holder = temp.path().join("video-downloads-v1").join("account");
+        fs::create_dir_all(&holder).unwrap();
+        fs::write(holder.join("other"), b"keep").unwrap();
+        let video = holder.join("b".repeat(64));
+        fs::create_dir_all(&video).unwrap();
+        fs::remove_dir_all(&video).unwrap();
+        prune_empty(&video);
+        assert!(holder.exists());
     }
 }

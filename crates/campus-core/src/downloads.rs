@@ -630,6 +630,9 @@ impl Core {
             bail!("cancelled")
         }
         let path = finish_archive(&temp, &dir, &filename, &hash)?;
+        // 成片已经落盘，下载用的分片就只是重复占空间的残渣：连空掉的长名目录一起收掉。
+        let _ = std::fs::remove_dir_all(&resume);
+        playback::prune_empty(&resume);
         let meta = json!({"title":replay.title,"time":replay.time,"course":replay.course,"semester":replay.semester,"source":"好学课堂实录","recordingId":replay.episode,"sha256":hash,"downloadedAt":chrono::Utc::now().to_rfc3339()});
         let sidecar = path.with_file_name(format!(
             "{}.source.json",
