@@ -1,6 +1,7 @@
 //! 好学课堂实录登录窗口。学校把令牌交给页面里的原生桥，本模块只负责注入桥、
 //! 把原始载荷交给核心解析，并在校验通过后关闭窗口。密码始终只留在学校页面里。
 use super::*;
+use tauri::Emitter;
 
 const LABEL: &str = "haoxue-login";
 const LOGIN: &str = "https://passport.pku.edu.cn/auth/login?redirect=https%3A%2F%2Fpassport.pku.edu.cn%2Fauth%2Fapp-login";
@@ -56,13 +57,22 @@ fn allowed_navigation(url: &tauri::Url) -> bool {
         .any(|prefix| url.as_str().starts_with(prefix))
 }
 
+fn is_login_window(label: &str) -> bool {
+    label.starts_with(LABEL)
+}
+
+static NEXT_LOGIN: std::sync::atomic::AtomicUsize = std::sync::atomic::AtomicUsize::new(1);
+
 fn open(app: &tauri::AppHandle, target: &str, android: bool) -> Result<(), String> {
-    if let Some(existing) = app.get_webview_window(LABEL) {
-        let _ = existing.close();
-    }
+    // 新窗口用轮换标签先建起来，再关旧的：同名标签「关了马上建」会和还没走完的
+    // 关闭流程撞车，建不出来就把人留在白屏里。
+    let label = format!(
+        "{LABEL}-{}",
+        NEXT_LOGIN.fetch_add(1, std::sync::atomic::Ordering::Relaxed)
+    );
     let mut builder = tauri::WebviewWindowBuilder::new(
         app,
-        LABEL,
+        &label,
         tauri::WebviewUrl::External(target.parse().map_err(|_| "登录地址无效")?),
     )
     .title("课堂实录 · 统一身份认证")
@@ -94,6 +104,11 @@ fn open(app: &tauri::AppHandle, target: &str, android: bool) -> Result<(), Strin
     }
     // 安卓身份下仍要先注入桥，否则中转页找不到原生接口。
     let window = builder.build().map_err(|_| "无法打开课堂实录登录窗口")?;
+    for (old_label, old) in app.webview_windows() {
+        if old_label != label && is_login_window(&old_label) {
+            let _ = old.close();
+        }
+    }
     if android {
         let _ = window.eval("window.__onpkuAndroid = true;");
     }
@@ -113,7 +128,7 @@ pub(crate) async fn open_haoxue_login(window: tauri::WebviewWindow) -> Result<()
 /// 中转页在桌面身份下不调用桥时，改用安卓 WebView 身份重开同一页。
 #[tauri::command]
 pub(crate) async fn haoxue_login_retry(window: tauri::WebviewWindow) -> Result<(), String> {
-    if window.label() != LABEL {
+    if !is_login_window(window.label()) {
         return Err("此窗口不可更改登录方式".into());
     }
     open(&window.app_handle().clone(), RELAY, true)
@@ -126,7 +141,7 @@ pub(crate) async fn haoxue_login(
     state: tauri::State<'_, Arc<campus_core::Core>>,
     payload: String,
 ) -> Result<(), String> {
-    if window.label() != LABEL {
+    if !is_login_window(window.label()) {
         return Err("此窗口不可写入登录状态".into());
     }
     let core = state.inner().clone();
@@ -144,12 +159,24 @@ pub(crate) async fn haoxue_login(
         );
     }
     let _ = window.close();
+    // 登录窗口是自己关的，主界面不会知道：广播一次，让回放列表马上刷新。
+    let _ = window
+        .app_handle()
+        .emit("haoxue-connected", ())
+        .map_err(|_| ());
     Ok(())
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
+    #[test]
+    fn login_window_labels_rotate_but_stay_recognizable() {
+        assert!(is_login_window("haoxue-login-3"));
+        assert!(is_login_window("haoxue-login"));
+        assert!(!is_login_window("reader-2"));
+        assert!(!is_login_window("main"));
+    }
     #[test]
     fn the_login_window_follows_the_unified_auth_redirect() {
         let ok = [
