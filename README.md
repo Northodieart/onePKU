@@ -53,7 +53,7 @@ xattr -cr /Applications/OnePKU.app
 
 ### Android
 
-未上架应用商店。从 [Releases](../../releases) 下载 APK 直接安装；想看最新未发布的构建，可以在 Actions 的 `Android CI` 运行记录里取 `onepku-android.apk` 产物。调试签名包安装时系统会提示"未知来源"，需要手动允许。
+未上架应用商店。从 [Releases](../../releases) 下载 APK 直接安装；想看最新未发布的构建，可以在 Actions 的 `Android APK` 运行记录里取产物，文件名按版本号是 `onepku-android-v<版本>.apk`。调试签名包安装时系统会提示"未知来源"，需要手动允许。
 
 ## 第一次打开
 

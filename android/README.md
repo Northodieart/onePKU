@@ -42,7 +42,7 @@ cd android
 
 ## 从 GitHub 下载 APK
 
-推送到 `Android` 分支后，GitHub Actions（`.github/workflows/android.yml`）自动构建并在运行产物（Artifacts）中提供 `onepku-android.apk`；发布 Release 时 APK 会附加到 Release 页面。
+推送到 `Android` 分支后，GitHub Actions（`.github/workflows/android.yml`）自动构建并在运行产物（Artifacts）中提供 `onepku-android-v<版本>.apk`，版本号取自 `app/build.gradle.kts` 的 `versionName`；发布 Release 时同名 APK 会附加到 Release 页面。
 
 ## 隐私
 

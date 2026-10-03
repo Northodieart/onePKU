@@ -36,17 +36,34 @@ jobs:
       - name: Build APK
         run: ./gradlew assembleDebug --stacktrace
 
+      - name: Read versionName
+        id: version
+        run: |
+          v=$(sed -n 's/^[[:space:]]*versionName = "\([^"]*\)".*/\1/p' app/build.gradle.kts | head -n 1)
+          if [ -z "$v" ]; then
+            echo "没能从 app/build.gradle.kts 读出 versionName" >&2
+            exit 1
+          fi
+          # fork 的 PR 里这个值由提交方控制,挡掉路径分隔符与 shell 元字符,只留版本号常用字符。
+          case "$v" in
+            *[!A-Za-z0-9._-]*) echo "versionName 含非法字符: $v" >&2; exit 1 ;;
+          esac
+          echo "name=$v" >> "$GITHUB_OUTPUT"
+          echo "apk=onepku-android-v$v.apk" >> "$GITHUB_OUTPUT"
+
       - name: Rename APK
-        run: cp app/build/outputs/apk/debug/app-debug.apk onepku-android.apk
+        env:
+          APK_NAME: ${{ steps.version.outputs.apk }}
+        run: cp app/build/outputs/apk/debug/app-debug.apk "$APK_NAME"
 
       - uses: actions/upload-artifact@v4
         with:
           name: onepku-android-apk
-          path: android/onepku-android.apk
+          path: android/${{ steps.version.outputs.apk }}
           retention-days: 30
 
       - name: Attach APK to GitHub Release
         if: github.event_name == 'release'
         uses: softprops/action-gh-release@v2
         with:
-          files: android/onepku-android.apk
+          files: android/${{ steps.version.outputs.apk }}
