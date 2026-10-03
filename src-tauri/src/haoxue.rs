@@ -117,15 +117,18 @@ fn open(app: &tauri::AppHandle) -> Result<(), String> {
             return;
         }
         // 落回中转页：取窗口里的会话 cookie，让核心以安卓身份重取这一页解令牌。
-        let cookies = window
-            .cookies_for_url(url.clone())
-            .unwrap_or_default()
-            .iter()
-            .map(|cookie| (cookie.name().to_string(), cookie.value().to_string()))
-            .collect::<Vec<_>>();
-        let core = app.state::<Arc<campus_core::Core>>().inner().clone();
+        // cookie 读取必须离开这个回调线程：WebView2 要把完成消息送回同一线程，
+        // 在这里直接调 cookies_for_url 会把任务卡死在第一步。
+        let window = window.clone();
         tauri::async_runtime::spawn(async move {
-            // 会话 cookie 可能在中转页渲染后才落稳：拿不到令牌就稍等再取。
+            let cookies = window
+                .cookies_for_url(url.clone())
+                .unwrap_or_default()
+                .iter()
+                .map(|cookie| (cookie.name().to_string(), cookie.value().to_string()))
+                .collect::<Vec<_>>();
+            debug_log(&app, &format!("会话 cookie 取得 {} 个，开始请求中转页", cookies.len()));
+            let core = app.state::<Arc<campus_core::Core>>().inner().clone();
             let settled = tauri::async_runtime::spawn_blocking(move || {
                 let mut last = String::new();
                 for attempt in 0..3 {

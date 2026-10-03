@@ -495,7 +495,7 @@ pub(crate) async fn relay_login(url: &str, cookies: &[(String, String)]) -> Resu
         .collect::<Vec<_>>()
         .join("; ");
     let client = reqwest::Client::builder()
-        .timeout(Duration::from_secs(20))
+        .timeout(Duration::from_secs(12))
         .redirect(reqwest::redirect::Policy::limited(5))
         .build()?;
     let response = client
