@@ -2957,9 +2957,12 @@ input[type="checkbox"] {
 
 .assignment-filters {
   display: grid;
-  grid-template-columns: minmax(180px, 1fr) minmax(220px, 320px) 160px;
+  grid-template-columns: minmax(180px, 1fr) minmax(220px, 320px);
   align-items: center;
   gap: 12px;
+  margin-bottom: 14px;
+}
+.assignment-tabs {
   margin-bottom: 24px;
 }
 .assignment-filters > .search {

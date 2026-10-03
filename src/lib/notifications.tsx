@@ -19,10 +19,10 @@ export const sources = [
   {
     id: "college",
     name: "本院通知",
-    description: "按设置里选择的院系读官网，读不到再回退门户部门公告",
+    description:
+      "按校内门户识别或手动选择的院系读学院官网，读不到再回退门户部门公告",
   },
   { id: "dean", name: "教务部", description: "选课、考试、培养与交流" },
-  { id: "eecs", name: "信息科学技术学院", description: "学院、教务与学工通知" },
   { id: "library", name: "图书馆活动", description: "讲座、阅读活动与培训" },
 ];
 export type NewsItem = {
@@ -107,16 +107,18 @@ type State = {
   storageError: string;
 };
 const Context = createContext<State | null>(null);
+const KNOWN = sources.map((s) => s.id);
+// 本院通知默认勾上；图书馆活动仍然只在手动订阅时读取。
+const DEFAULT_SOURCES = KNOWN.filter((id) => id !== "library");
 export function NotificationProvider({ children }: { children: ReactNode }) {
-  const [enabled, setEnabledState] = useState<string[]>(() =>
-    saved(
-      "onepku.news.sources.v1",
-      // 本院通知要先在设置里选院系，图书馆只在手动订阅时读取。
-      sources
-        .filter((s) => !["library", "college"].includes(s.id))
-        .map((s) => s.id),
-    ),
-  );
+  const [enabled, setEnabledState] = useState<string[]>(() => {
+    // 老用户勾过的「信息科学技术学院」换成范围更宽的本院通知；
+    // 空列表是用户自己取消全部订阅，不给他重新勾上。
+    const stored = saved("onepku.news.sources.v1", DEFAULT_SOURCES).map((id) =>
+      id === "eecs" ? "college" : id,
+    );
+    return [...new Set(stored.filter((id) => KNOWN.includes(id)))];
+  });
   const [read, setRead] = useState<string[]>(() =>
     saved("onepku.news.read.v1", []),
   );
@@ -145,15 +147,11 @@ export function NotificationProvider({ children }: { children: ReactNode }) {
     { kind: "news", source: "dean", page: 1 },
     enabled.includes("dean"),
   );
-  const eecs = useResource<NewsFeed>(
-    { kind: "news", source: "eecs", page: 1 },
-    enabled.includes("eecs"),
-  );
   const library = useResource<NewsFeed>(
     { kind: "news", source: "library", page: 1 },
     enabled.includes("library"),
   );
-  const feeds = { school, department, college, dean, eecs, library };
+  const feeds = { school, department, college, dean, library };
   const all = { course, ...feeds };
   const readSet = useMemo(() => new Set(read), [read]);
   function store(key: string, value: unknown) {

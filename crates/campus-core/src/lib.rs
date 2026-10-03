@@ -983,7 +983,8 @@ pub fn official_target(s: &str) -> Result<&'static str> {
         "course" => "https://course.pku.edu.cn",
         "treehole" => "https://treehole.pku.edu.cn",
         "timetable" => "https://treehole.pku.edu.cn/web/timetable",
-        "campuscard" => "https://bdcard.pku.edu.cn",
+        // 校园卡原站是门户站；bdcard 只是接口域名，直接打开会被拒（403）。
+        "campuscard" => "https://card.pku.edu.cn/",
         "portal" => "https://portal.pku.edu.cn",
         "elective" => "https://elective.pku.edu.cn/elective2008/",
         "recordings" => "https://onlineroomse.pku.edu.cn/",
