@@ -236,6 +236,44 @@ describe("computeProgress", () => {
       current: false,
     },
   ];
+  it("counts every course of the current term as in-progress", () => {
+    const rows = [
+      {
+        id: "flagged",
+        name: "线性代数 A（Ⅰ）",
+        semester: "26-27学年第1学期",
+        current: true,
+      },
+      // 门户的分组标题只写了学期名，这门课没有 current 标记。
+      {
+        id: "labeled",
+        name: "离散数学基础",
+        semester: "26-27学年第1学期",
+        current: false,
+      },
+      {
+        id: "exercise",
+        name: "离散数学基础习题课",
+        semester: "26-27学年第1学期",
+        current: false,
+      },
+      {
+        id: "past",
+        name: "几何与拓扑",
+        semester: "25-26学年第1学期",
+        current: false,
+      },
+    ];
+    const doing = computeProgress(plan, [], rows)
+      .sections.flatMap((s) => [s, ...s.children])
+      .flatMap((s) => s.courses)
+      .filter((c) => c.status === "inProgress")
+      .map((c) => c.name);
+    expect(doing).toContain("线性代数 A（Ⅰ）");
+    expect(doing).toContain("离散数学基础");
+    expect(doing).not.toContain("离散数学基础习题课");
+    expect(doing).not.toContain("几何与拓扑");
+  });
   it("assigns by name, alternative, variant, keyword and category, and leaves the rest pending", () => {
     const progress = computeProgress(plan, scores, courses);
     const find = (id: string) =>

@@ -855,9 +855,13 @@ export function computeProgress(
       ),
     );
   });
+  // 在修就是「课程」页里本学期那一组：门户的分组标题有的写「当前」，有的只写学期名，
+  // 只认 current 标记会把后者整批漏掉。习题课不算独立一门课：教学网把它和正课并列
+  // 排进在修，算进来就是重复计数。
+  const termOf = (course?: CurrentCourse) => course?.semester?.trim() ?? "";
+  const currentTerm = termOf(courses.find((c) => c.current));
   for (const c of courses) {
-    if (!c.current) continue;
-    // 习题课不算独立一门课：教学网把它和正课并排列进在修，算进来就是重复计数。
+    if (!c.current && (!currentTerm || termOf(c) !== currentTerm)) continue;
     if (/习题/.test(c.name)) continue;
     const key = normalizeCourseName(c.name);
     if (seen.has(key)) continue;
