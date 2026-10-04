@@ -1,6 +1,13 @@
 * {
   box-sizing: border-box;
 }
+/* 让原生控件（滚动条、输入框、日期选择）与页面配色一致。 */
+:root {
+  color-scheme: light;
+}
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
 html,
 body,
 #root {
@@ -1578,6 +1585,27 @@ tbody tr:last-child td {
   overflow-wrap: anywhere;
 }
 
+.theme-choice {
+  display: flex;
+  gap: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-default);
+  padding: 3px;
+}
+.theme-choice button {
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  padding: 6px 12px;
+  font-size: 13px;
+  color: var(--muted);
+  cursor: pointer;
+}
+.theme-choice button.active {
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-weight: 600;
+}
 .keepalive-switch {
   width: 40px;
   height: 24px;

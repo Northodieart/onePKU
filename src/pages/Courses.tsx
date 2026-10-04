@@ -125,8 +125,6 @@ export default function Courses({ login }: { login: Login }) {
                           onClick={() => navigate({ course: c.id })}
                         >
                           <h4>{c.name}</h4>
-                          {/* 培养方案的在修只认这个标记，标出来一眼能核对。 */}
-                          {c.current && <span className="badge">在修</span>}
                           <ChevronRight size={16} aria-hidden="true" />
                         </button>
                       ))}

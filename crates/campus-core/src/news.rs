@@ -343,9 +343,9 @@ pub(crate) fn department_setting() -> Result<String> {
 /// 校内门户连接状态：能读到基本资料才算连着，识别到的院系只作兜底。
 pub(crate) async fn portal_status() -> Result<Value> {
     let store = Store::new("portal")?;
-    if store.load_session()?.is_none() {
-        return Ok(json!({ "connected": false, "name": "", "department": "" }));
-    }
+    // 门户真正的凭据是 cookie，会话文件只是登录时顺手记下的标记，旧版本没存过。
+    // 拿它判「未连接」会让能正常识别学院的门户一直显示没连上，所以状态与
+    // 「识别学院」用同一个判断：能不能读到门户的基本资料。
     Ok(pku_portal::login::status(&store).await)
 }
 /// 读一次门户「单位」并记下来，供本院通知与培养方案推断使用。

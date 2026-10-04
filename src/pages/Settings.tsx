@@ -28,6 +28,7 @@ import {
   type Profile,
 } from "../lib/profile";
 import { planIndex } from "../lib/curriculum";
+import { chooseTheme, savedTheme, type ThemeMode } from "../lib/theme";
 import { APP_VERSION, RELEASES_URL } from "../lib/updater";
 
 export type Session = {
@@ -153,6 +154,7 @@ export default function Settings({
   const [storageError, setStorageError] = useState("");
   const [cacheRootMessage, setCacheRootMessage] = useState("");
   const [cacheRootError, setCacheRootError] = useState("");
+  const [theme, setTheme] = useState<ThemeMode>(savedTheme);
   const [cacheMessage, setCacheMessage] = useState("");
   const [cacheError, setCacheError] = useState("");
   const [haoxueError, setHaoxueError] = useState("");
@@ -264,7 +266,8 @@ export default function Settings({
     : "应用缓存目录";
   const cacheIsDefault = root ? root.cacheRootIsDefault !== false : true;
   // 统一身份认证的服务按安卓端顺序排，课堂实测与校内门户各自跟在后面。
-  const cards = (["course", "treehole", "campuscard", "bdkj"] as Service[]).map(
+  // 北大空间只在场地预约页按需登录，不占一张连接卡片。
+  const cards = (["course", "treehole", "campuscard"] as Service[]).map(
     (service) => {
       const session = sessions?.find((x) => x.service === service);
       const connected = ["saved", "verified"].includes(session?.state ?? "");
@@ -684,6 +687,34 @@ export default function Settings({
 
       <section className="resource settings-section" aria-label="关于">
         <h2>关于</h2>
+        <SettingRow
+          label="外观"
+          description="深色与浅色用的是同一套语义色；「跟随系统」会跟着系统的浅色/深色设置即时变化。"
+          control={
+            <div className="theme-choice" role="group" aria-label="外观模式">
+              {(
+                [
+                  ["system", "跟随系统"],
+                  ["light", "浅色"],
+                  ["dark", "深色"],
+                ] as [ThemeMode, string][]
+              ).map(([mode, name]) => (
+                <button
+                  key={mode}
+                  type="button"
+                  className={theme === mode ? "active" : ""}
+                  aria-pressed={theme === mode}
+                  onClick={() => {
+                    setTheme(mode);
+                    chooseTheme(mode);
+                  }}
+                >
+                  {name}
+                </button>
+              ))}
+            </div>
+          }
+        />
         <UpdateSettings />
         <SettingRow
           label="学校原站"

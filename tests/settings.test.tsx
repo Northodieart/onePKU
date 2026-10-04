@@ -6,6 +6,7 @@ import {
   render,
   screen,
   waitFor,
+  within,
 } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Settings, { type Session } from "../src/pages/Settings";
@@ -75,6 +76,8 @@ const sessions = (state: string): Session[] =>
 afterEach(() => {
   cleanup();
   vi.unstubAllGlobals();
+  localStorage.clear();
+  delete document.documentElement.dataset.theme;
 });
 
 it("lists every service as one connection card in the Android order", async () => {
@@ -120,21 +123,15 @@ it("lists every service as one connection card in the Android order", async () =
   );
   const names = await waitFor(() => {
     const cards = [...document.querySelectorAll(".connection h3")];
-    expect(cards.length).toBe(6);
+    expect(cards.length).toBe(5);
     return cards.map((card) => card.textContent);
   });
-  expect(names).toEqual([
-    "教学网",
-    "树洞",
-    "校园卡",
-    "北大空间",
-    "校内门户",
-    "课堂实录",
-  ]);
-  // 状态各归各：会话过期与未连接都不会被糊成「已连接」。
+  expect(names).toEqual(["教学网", "树洞", "校园卡", "校内门户", "课堂实录"]);
+  // 状态各归各：会话过期与已保存都不会被糊成「已连接」。
   await waitFor(() => expect(screen.getAllByText("已连接").length).toBe(3));
   expect(screen.getByText("会话已过期")).toBeInTheDocument();
-  expect(screen.getAllByText("尚未连接").length).toBe(1);
+  expect(screen.getByText("会话已保存")).toBeInTheDocument();
+  expect(screen.queryByText("尚未连接")).not.toBeInTheDocument();
   // 已连接的服务可以单独断开，不影响其它服务。
   fireEvent.click(screen.getAllByRole("button", { name: "断开" })[0]);
   await waitFor(() =>
@@ -174,9 +171,9 @@ it("keeps disconnected services honest and connectable", async () => {
   const login = vi.fn();
   mount(<Settings login={login} sessions={sessions("missing")} />);
   await waitFor(() =>
-    expect(document.querySelectorAll(".connection").length).toBe(6),
+    expect(document.querySelectorAll(".connection").length).toBe(5),
   );
-  expect(screen.getAllByText("尚未连接").length).toBe(6);
+  expect(screen.getAllByText("尚未连接").length).toBe(5);
   // 没连接就没有「断开」，也不给「识别学院」。
   expect(
     screen.queryByRole("button", { name: "断开" }),
@@ -188,7 +185,37 @@ it("keeps disconnected services honest and connectable", async () => {
   fireEvent.click(screen.getAllByRole("button", { name: "连接" })[0]);
   expect(login).toHaveBeenCalledWith("course");
   // 浏览器预览里打不开原生窗口，课堂实录要如实说明而不是假装有登录页。
-  expect(document.querySelectorAll(".connection")[5].textContent).toContain(
-    "请在桌面应用中连接课堂实录",
+  const haoxue = [...document.querySelectorAll(".connection")].find((card) =>
+    card.textContent?.includes("课堂实录"),
   );
+  expect(haoxue?.textContent).toContain("请在桌面应用中连接课堂实录");
+});
+
+it("switches the appearance and remembers the choice", async () => {
+  const data = resources({ connected: false, department: "", source: "" });
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(async (_url, options) => ({
+      ok: true,
+      json: async () => ({
+        data: data[JSON.parse(options.body).kind] ?? null,
+        updatedAt: new Date().toISOString(),
+        generation: "test",
+        error: null,
+        warnings: [],
+        stale: false,
+      }),
+    })),
+  );
+  mount(<Settings login={vi.fn()} sessions={sessions("missing")} />);
+  const group = await screen.findByRole("group", { name: "外观模式" });
+  expect(
+    within(group).getByRole("button", { name: "跟随系统" }),
+  ).toHaveAttribute("aria-pressed", "true");
+  fireEvent.click(within(group).getByRole("button", { name: "深色" }));
+  expect(document.documentElement.dataset.theme).toBe("dark");
+  expect(localStorage.getItem("onepku.theme.v1")).toBe("dark");
+  fireEvent.click(within(group).getByRole("button", { name: "浅色" }));
+  expect(document.documentElement.dataset.theme).toBe("light");
+  expect(localStorage.getItem("onepku.theme.v1")).toBe("light");
 });

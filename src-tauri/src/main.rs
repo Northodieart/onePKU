@@ -93,6 +93,18 @@ async fn choose_cache_folder(
     .await
     .map_err(|_| "未能保存所选文件夹".to_string())?
 }
+/// 原生窗口主题：页面切深色时标题栏与滚动条要一起变，不然一半深一半浅。
+#[tauri::command]
+async fn set_window_theme(app: tauri::AppHandle, theme: String) -> Result<(), String> {
+    let value = match theme.as_str() {
+        "dark" => tauri::utils::Theme::Dark,
+        _ => tauri::utils::Theme::Light,
+    };
+    for (_, window) in app.webview_windows() {
+        let _ = window.set_theme(Some(value));
+    }
+    Ok(())
+}
 #[tauri::command]
 async fn choose_course_files(
     window: tauri::WebviewWindow,
@@ -211,6 +223,7 @@ fn main() {
             choose_course_files,
             choose_download_folder,
             choose_cache_folder,
+            set_window_theme,
             choose_subtitle_file,
             open_booking,
             browser::open_browser,
