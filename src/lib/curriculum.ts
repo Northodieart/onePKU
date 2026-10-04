@@ -855,22 +855,11 @@ export function computeProgress(
       ),
     );
   });
-  // 在修就是「课程」页里本学期那一组。分组标题取带「当前」标记的课里最常见的那个学期
-  // 标签：有的课标题里不写学期，会被归到「未标注学期」，只认第一门带标记的课就会把
-  // 整组学期认错，剩下的课全都对不上。习题课不算独立一门课：教学网把它和正课并列
-  // 排进在修，算进来就是重复计数。
-  const termOf = (course?: CurrentCourse) => course?.semester?.trim() ?? "";
-  const tally = new Map<string, number>();
+  // 与安卓端同一套判据：教学网「当前」分组里的课就是在修，含「习题」的不算独立一门课
+  // （教学网把习题课与正课并排列进来，算上就是重复计数）。已经结业的课在成绩里早有
+  // 记录，按课程名去重时不会重复计入。
   for (const c of courses) {
-    const label = c.current ? termOf(c) : "";
-    if (label) tally.set(label, (tally.get(label) ?? 0) + 1);
-  }
-  const currentTerm = [...tally.entries()].sort(
-    (a, b) =>
-      b[1] - a[1] || b[0].localeCompare(a[0], "zh-CN", { numeric: true }),
-  )[0]?.[0] as string;
-  for (const c of courses) {
-    if (!c.current && (!currentTerm || termOf(c) !== currentTerm)) continue;
+    if (!c.current) continue;
     if (/习题/.test(c.name)) continue;
     const key = normalizeCourseName(c.name);
     if (seen.has(key)) continue;

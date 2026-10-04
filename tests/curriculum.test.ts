@@ -236,7 +236,7 @@ describe("computeProgress", () => {
       current: false,
     },
   ];
-  it("counts every course of the current term as in-progress", () => {
+  it("follows the Android rule: the site's current flag decides 在修", () => {
     const rows = [
       {
         id: "flagged",
@@ -244,7 +244,13 @@ describe("computeProgress", () => {
         semester: "26-27学年第1学期",
         current: true,
       },
-      // 门户的分组标题只写了学期名，这门课没有 current 标记。
+      // 学校把还在上的课挂在「非当前学期课程」分组里也照样算在修，与安卓端一致。
+      {
+        id: "late",
+        name: "习近平新时代中国特色社会主义思想概论",
+        semester: "25-26学年第2学期",
+        current: true,
+      },
       {
         id: "labeled",
         name: "离散数学基础",
@@ -253,15 +259,9 @@ describe("computeProgress", () => {
       },
       {
         id: "exercise",
-        name: "离散数学基础习题课",
+        name: "线性代数 A（Ⅰ）习题课",
         semester: "26-27学年第1学期",
-        current: false,
-      },
-      {
-        id: "past",
-        name: "几何与拓扑",
-        semester: "25-26学年第1学期",
-        current: false,
+        current: true,
       },
     ];
     const doing = computeProgress(plan, [], rows)
@@ -270,22 +270,11 @@ describe("computeProgress", () => {
       .filter((c) => c.status === "inProgress")
       .map((c) => c.name);
     expect(doing).toContain("线性代数 A（Ⅰ）");
-    expect(doing).toContain("离散数学基础");
-    expect(doing).not.toContain("离散数学基础习题课");
-    expect(doing).not.toContain("几何与拓扑");
-    // 标题里不写学期的课会落到「未标注学期」，不能由它定下本学期是哪一组。
-    const mixed = computeProgress(
-      plan,
-      [],
-      [{ id: "untagged", name: "形势与政策", current: true }, ...rows],
-    )
-      .sections.flatMap((s) => [s, ...s.children])
-      .flatMap((s) => s.courses)
-      .filter((c) => c.status === "inProgress")
-      .map((c) => c.name);
-    expect(mixed).toContain("形势与政策");
-    expect(mixed).toContain("离散数学基础");
-    expect(mixed).not.toContain("几何与拓扑");
+    expect(doing).toContain("习近平新时代中国特色社会主义思想概论");
+    // 没被列进「当前」分组的课不再靠学期标签去猜。
+    expect(doing).not.toContain("离散数学基础");
+    // 习题课不算独立一门课：教学网把它和正课并排列进来，算上就是重复计数。
+    expect(doing).not.toContain("线性代数 A（Ⅰ）习题课");
   });
   it("assigns by name, alternative, variant, keyword and category, and leaves the rest pending", () => {
     const progress = computeProgress(plan, scores, courses);

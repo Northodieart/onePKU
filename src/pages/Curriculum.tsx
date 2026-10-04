@@ -589,26 +589,7 @@ function ProgressView({
           学分。在“修改年级与专业”里选择你的英语分级后，这里会按分级固定英语学分，大类总额随之按各子系列求和。
         </p>
       )}
-      <div
-        className="section-detail"
-        role="tabpanel"
-        aria-label={current ? `${current.name}明细` : "全部学分系列明细"}
-      >
-        {current?.note && <p className="subtle detail-note">{current.note}</p>}
-        {current ? (
-          current.children.length > 0 ? (
-            current.children.map((c) => (
-              <DetailRow key={c.id} section={c} autoOpen editor={editor} />
-            ))
-          ) : (
-            <CourseList courses={current.courses} editor={editor} />
-          )
-        ) : (
-          sections.map((s) => (
-            <DetailRow key={s.id} section={s} top editor={editor} />
-          ))
-        )}
-      </div>
+      {/* 与安卓端一样，「待确认」是卡片下面的独立一栏，不跟着圆环切换。 */}
       {pending.length > 0 && (
         <div className="curriculum-pending">
           <h3>待确认（{pending.length}）</h3>
@@ -658,6 +639,26 @@ function ProgressView({
           </ul>
         </div>
       )}
+      <div
+        className="section-detail"
+        role="tabpanel"
+        aria-label={current ? `${current.name}明细` : "全部学分系列明细"}
+      >
+        {current?.note && <p className="subtle detail-note">{current.note}</p>}
+        {current ? (
+          current.children.length > 0 ? (
+            current.children.map((c) => (
+              <DetailRow key={c.id} section={c} autoOpen editor={editor} />
+            ))
+          ) : (
+            <CourseList courses={current.courses} editor={editor} />
+          )
+        ) : (
+          sections.map((s) => (
+            <DetailRow key={s.id} section={s} top editor={editor} />
+          ))
+        )}
+      </div>
       {ignored.length > 0 && (
         <details className="settings-explanation">
           <summary>不计入的记录（{ignored.length}）</summary>

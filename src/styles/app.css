@@ -3964,9 +3964,6 @@ input[type="checkbox"] {
 .detail-bar i.pending {
   opacity: 0.28;
 }
-.detail-row.complete .detail-bar i.done {
-  background: var(--success);
-}
 .detail-numbers {
   display: flex;
   align-items: baseline;
