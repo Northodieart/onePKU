@@ -589,13 +589,17 @@ function ProgressView({
           学分。在“修改年级与专业”里选择你的英语分级后，这里会按分级固定英语学分，大类总额随之按各子系列求和。
         </p>
       )}
-      {/* 与安卓端一样，「待确认」是卡片下面的独立一栏，不跟着圆环切换。 */}
-      {pending.length > 0 && (
-        <div className="curriculum-pending">
-          <h3>待确认（{pending.length}）</h3>
+      {/* 与安卓端一样，「待确认」是卡片下面常驻的一栏，不跟着圆环切换。 */}
+      <div className="curriculum-pending">
+        <h3>待确认（{pending.length}）</h3>
+        <p className="subtle">
+          这些课在方案课程表里没有同名条目，也无法按类别判断。归类只保存在本机，可随时改；归类不会自动补齐未知学分。
+        </p>
+        {pending.length === 0 ? (
           <p className="subtle">
-            这些课在方案课程表里没有同名条目，也无法按类别判断。归类只保存在本机，可随时改；归类不会自动补齐未知学分。
+            暂无待确认的课程：已修与在修的课都归到了方案里的某一类。
           </p>
+        ) : (
           <ul>
             {pending.map((c) => (
               <li key={c.key}>
@@ -637,8 +641,8 @@ function ProgressView({
               </li>
             ))}
           </ul>
-        </div>
-      )}
+        )}
+      </div>
       <div
         className="section-detail"
         role="tabpanel"
