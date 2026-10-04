@@ -320,6 +320,11 @@ it("lists in-progress courses without credits instead of counting them as unknow
   );
   // 教学网的在修列表不含学分，缺学分不再算成「学分未知」，只在课目里列出。
   await screen.findByLabelText(`主修方案：${ai.title}`);
+  // 在修课不该藏在折叠的系列里：默认视图（毕业总学分）就要能直接看到它。
+  expect(screen.getByLabelText("归类 太极拳")).toBeInTheDocument();
+  expect(screen.getByLabelText("归类 太极拳").closest("li")).toHaveTextContent(
+    "在修",
+  );
   expect(screen.queryByText(/已归类课程中有/)).not.toBeInTheDocument();
   expect(
     screen.getByLabelText("归类 待确认测试课程").closest("li"),

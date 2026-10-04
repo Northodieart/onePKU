@@ -65,6 +65,13 @@ function measure(s: ProgressSection) {
     return { value: s.earned, pending: s.inProgress, unit: "学时" };
   return { value: s.earned, pending: s.inProgress, unit: "学分" };
 }
+/** 这一类（含其子类）里有没有教学网的在修课程。 */
+function holdsInProgress(s: ProgressSection): boolean {
+  return (
+    s.courses.some((c) => c.status === "inProgress") ||
+    s.children.some(holdsInProgress)
+  );
+}
 function gap(s: ProgressSection) {
   if (s.min === undefined || s.unit === "学时") return null;
   const m = measure(s);
@@ -132,6 +139,16 @@ export default function Curriculum({
   const saved = normalizeProfile(profileQuery.data?.data ?? null);
   const scoreRows = scores.data?.data?.courses ?? [];
   const courseRows = courses.data?.data ?? [];
+  // 教学网没读到课程时，培养方案会安静地少算每一门在修课——必须说出来。
+  const courseError =
+    courses.data?.error?.message ?? courses.error?.message ?? "";
+  const courseNote = courseRows.length
+    ? ""
+    : courseError
+      ? `教学网课程未能读取：${courseError}。在修课程无法计入。`
+      : courses.isFetching
+        ? "正在读取教学网本学期课程…"
+        : "教学网没有返回任何课程，在修课程无法计入。";
   const college = useResource<{
     selected: string;
     detected: string;
@@ -295,6 +312,7 @@ export default function Curriculum({
             profile={saved}
             scoreRows={scoreRows}
             courseRows={courseRows}
+            courseNote={courseNote}
             onOverride={(key, sectionId) => {
               const overrides = { ...saved.overrides };
               if (sectionId) overrides[key] = sectionId;
@@ -316,6 +334,7 @@ export default function Curriculum({
               profile={saved}
               scoreRows={scoreRows}
               courseRows={courseRows}
+              courseNote={courseNote}
               secondary
               onOverride={(key, sectionId) => {
                 const overrides = { ...saved.overrides };
@@ -366,6 +385,7 @@ function PlanProgress({
   profile,
   scoreRows,
   courseRows,
+  courseNote,
   secondary = false,
   onOverride,
   onDirection,
@@ -375,6 +395,7 @@ function PlanProgress({
   profile: Profile;
   scoreRows: Scores["courses"];
   courseRows: Course[];
+  courseNote: string;
   secondary?: boolean;
   onOverride: (key: string, sectionId: string | null) => void;
   onDirection: (sectionId: string, groupId: string | null) => void;
@@ -428,6 +449,7 @@ function PlanProgress({
   return (
     <ProgressView
       progress={progress}
+      courseNote={courseNote}
       secondary={secondary}
       englishChosen={profile.englishLevel !== null}
       directions={directionsFor(planId, profile.directions)}
@@ -441,6 +463,7 @@ function PlanProgress({
 
 function ProgressView({
   progress,
+  courseNote,
   secondary,
   englishChosen,
   directions,
@@ -450,6 +473,7 @@ function ProgressView({
   onOverride,
 }: {
   progress: Progress;
+  courseNote: string;
   secondary: boolean;
   englishChosen: boolean;
   directions: Record<string, string>;
@@ -575,6 +599,11 @@ function ProgressView({
           );
         })}
       </div>
+      {courseNote && (
+        <p className="subtle curriculum-hint" role="status">
+          {courseNote}
+        </p>
+      )}
       {totals.unknownCredits > 0 && (
         <p className="subtle">
           已归类课程中有 {totals.unknownCredits}{" "}
@@ -775,7 +804,9 @@ function DetailRow({
   autoOpen?: boolean;
   editor: Editor;
 }) {
-  const [open, setOpen] = useState(autoOpen);
+  // 含在修课的系列默认就展开：在修课没有学分、不进合计，折叠起来等于看不见。
+  // 课往往记在子系列上，所以要看整棵子树。
+  const [open, setOpen] = useState(autoOpen || holdsInProgress(section));
   useEffect(() => {
     if (autoOpen) setOpen(true);
   }, [autoOpen]);
