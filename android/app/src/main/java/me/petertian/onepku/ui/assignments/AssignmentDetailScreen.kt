@@ -70,6 +70,8 @@ data class AssignmentDetailUiState(
     val title: String = "",
     val detail: UiData<AssignmentDetail> = UiData.Loading,
     val attempts: UiData<List<FeedbackAttempt>> = UiData.Loading,
+    /** 学校提交记录或成绩中心显示已提交;为真时不再显示截止时间。 */
+    val submitted: Boolean = false,
     /** 当前尝试的提交时刻;学校页面没给出时为空,不拿截止时间冒充。 */
     val submittedAtEpochMs: Long? = null,
     val pending: PendingSubmit? = null,
@@ -97,12 +99,14 @@ class AssignmentDetailViewModel @Inject constructor(
         viewModelScope.launch {
             coroutineScope {
                 var detailState: UiData<AssignmentDetail> = UiData.Loading
+                var submitted = false
                 var submittedAt: Long? = null
                 val detailJob = async {
                     try {
-                        // 一次抓取同时得到作业详情与当前尝试的提交时刻。
+                        // 一次抓取同时得到作业详情与当前尝试的提交情况。
                         val (assignment, snapshot) = repo.assignmentOverview(courseId, contentId)
                         detailState = UiData.Ready(assignment)
+                        submitted = snapshot.submitted
                         submittedAt = snapshot.submittedAtEpochMs
                     } catch (e: Exception) {
                         detailState = UiData.Failure(e.message ?: "作业详情加载失败")
@@ -117,9 +121,13 @@ class AssignmentDetailViewModel @Inject constructor(
                 }
                 detailJob.await()
                 val attemptsState = attemptsJob.await()
+                // 与作业列表同一口径:当前尝试或提交记录任一显示已提交,就算已提交。
+                val isSubmitted = submitted ||
+                    (attemptsState as? UiData.Ready)?.value?.isNotEmpty() == true
                 _ui.update {
                     it.copy(
                         detail = detailState,
+                        submitted = isSubmitted,
                         submittedAtEpochMs = submittedAt,
                         attempts = attemptsState,
                     )
@@ -224,7 +232,7 @@ fun AssignmentDetailScreen(nav: NavHostController, vm: AssignmentDetailViewModel
                         color = MaterialTheme.colorScheme.error,
                         style = MaterialTheme.typography.bodySmall,
                     )
-                    is UiData.Ready -> DetailCard(d.value, ui.title, ui.submittedAtEpochMs)
+                    is UiData.Ready -> DetailCard(d.value, ui.title, ui.submitted, ui.submittedAtEpochMs)
                 }
             }
 
@@ -286,7 +294,7 @@ fun AssignmentDetailScreen(nav: NavHostController, vm: AssignmentDetailViewModel
 }
 
 @Composable
-private fun DetailCard(detail: AssignmentDetail, fallbackTitle: String, submittedAtEpochMs: Long?) {
+private fun DetailCard(detail: AssignmentDetail, fallbackTitle: String, submitted: Boolean, submittedAtEpochMs: Long?) {
     Card(Modifier.fillMaxWidth()) {
         Column(Modifier.padding(16.dp)) {
             Text(
@@ -294,13 +302,15 @@ private fun DetailCard(detail: AssignmentDetail, fallbackTitle: String, submitte
                 style = MaterialTheme.typography.titleLarge,
             )
             Spacer(Modifier.height(8.dp))
-            // 已提交的作业页面上不再写到期日期(学校把那一栏换成了提交与评分),那就报页面上真有的信息。
-            if (detail.deadlineRaw == null && submittedAtEpochMs != null) {
-                Text(
-                    "已于 ${formatDateTime(submittedAtEpochMs)} 提交",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                )
+            // 已提交就不显示截止时间——交了之后那个时间没有意义;页面上给了提交时刻才报一句。
+            if (submitted) {
+                submittedAtEpochMs?.let {
+                    Text(
+                        "已于 ${formatDateTime(it)} 提交",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
             } else {
                 Row(
                     modifier = Modifier.fillMaxWidth(),

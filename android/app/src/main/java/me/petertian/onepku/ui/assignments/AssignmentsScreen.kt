@@ -189,13 +189,16 @@ fun AssignmentsScreen(nav: NavHostController, vm: AssignmentsViewModel = hiltVie
                                                         color = MaterialTheme.colorScheme.primary,
                                                     )
                                                 }
-                                                Text(
-                                                    deadlineLabel(a.deadlineEpochMs),
-                                                    style = MaterialTheme.typography.bodySmall,
-                                                    color = if ((a.deadlineEpochMs ?: Long.MAX_VALUE) - now < 24 * 3600_000 &&
-                                                        (a.deadlineEpochMs ?: 0L) >= now && !a.submitted
-                                                    ) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.onSurfaceVariant,
-                                                )
+                                                // 已提交就不显示截止时间,交了之后那个时间没有意义。
+                                                if (!a.submitted) {
+                                                    Text(
+                                                        deadlineLabel(a.deadlineEpochMs),
+                                                        style = MaterialTheme.typography.bodySmall,
+                                                        color = if ((a.deadlineEpochMs ?: Long.MAX_VALUE) - now < 24 * 3600_000 &&
+                                                            (a.deadlineEpochMs ?: 0L) >= now
+                                                        ) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.onSurfaceVariant,
+                                                    )
+                                                }
                                             }
                                         }
                                     }
