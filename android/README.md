@@ -1,6 +1,6 @@
 # OnePKU Android
 
-北大校园服务的 Android 客户端，与 macOS 桌面版同源的独立实现。Kotlin + Jetpack Compose（Material 3）、MVVM（ViewModel + StateFlow）、Hilt 依赖注入，最低 Android 8.0（API 26）。当前版本 v0.3.2，逐版改动见仓库根 [CHANGELOG.md](../CHANGELOG.md)。
+北大校园服务的 Android 客户端，与桌面版同仓库、同数据的独立实现（不是桌面版打包）。Kotlin + Jetpack Compose（Material 3）、MVVM（ViewModel + StateFlow）、Hilt 依赖注入，最低 Android 8.0（API 26）。版本号独立于桌面版计数：当前 Android v0.3.2，桌面版是 v0.12.0，两者互不对应；逐版改动见仓库根 [CHANGELOG.md](../CHANGELOG.md) 的「Android 版」一节。
 
 ## 功能
 
@@ -42,7 +42,7 @@ cd android
 
 ## 从 GitHub 下载 APK
 
-推送到 `Android` 分支后，GitHub Actions（`.github/workflows/android.yml`）自动构建并在运行产物（Artifacts）中提供 `onepku-android-v<版本>.apk`，版本号取自 `app/build.gradle.kts` 的 `versionName`；发布 Release 时同名 APK 会附加到 Release 页面。
+`android/` 目录有改动就会触发构建：推 `Android` 或 `main` 分支、以及任何改到 `android/` 的 PR，GitHub Actions（`.github/workflows/android.yml`）都会构建并在运行产物（Artifacts）中提供 `onepku-android-v<版本>.apk`，版本号取自 `app/build.gradle.kts` 的 `versionName`。发布 Release 时同名 APK 会附加到 Release 页面——注意 Release 标签走的是桌面版版本号，APK 文件名仍按 Android 自己的 `versionName`。
 
 ## 隐私
 

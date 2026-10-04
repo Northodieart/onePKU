@@ -1,18 +1,21 @@
 name: Desktop checks and packages
 
+# 桌面端 CI 只看 android/ 之外的改动：仓库其余部分（含 PR）变了就跑双平台检查并出测试包。
 on:
   pull_request:
     paths-ignore:
       - "docs/**"
       - "**.md"
       - ".gitignore"
+      - "android/**"
   push:
-    # 桌面端在 Windows 分支上迭代：推上去就要直接出安装包，与安卓端的 APK 一致
-    branches: [main, "feat/windows-support"]
+    # 桌面端在 Desktop 分支上迭代：推上去就要直接出安装包，与安卓端的 APK 一致
+    branches: [main, Desktop]
     paths-ignore:
       - "docs/**"
       - "**.md"
       - ".gitignore"
+      - "android/**"
   workflow_dispatch:
 
 permissions:

@@ -1,8 +1,9 @@
 name: Android APK
 
+# 安卓端 CI 只看 android/：该目录（或本文件）有改动就构建调试 APK，桌面端的改动不会触发它。
 on:
   push:
-    branches: [Android]
+    branches: [main, Android]
     paths:
       - "android/**"
       - ".github/workflows/android.yml"

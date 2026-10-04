@@ -70,6 +70,10 @@ React 页面  ──useResource({kind:"scores"})──▶  src/lib/api.ts  call(
 
 MIT 快照，提交 0ad6dea。本地补丁只做四类事：暴露类型化查询、序列化结果模型、非交互式树洞登录、放宽人为的 24 小时本地过期。逐项记录在 [UPSTREAM.md](UPSTREAM.md)。可回馈的部分以补丁形式放在 `contributions/`。
 
+### Android 端 `android/`
+
+手机上是另一套实现：Kotlin + Jetpack Compose，MVVM + Hilt。它不走上面这条请求路径——不经过 Tauri，也不链接 `campus-core`，网络协议（IAAA 登录、教学网解析、树洞成绩、校园卡 JWT 链、门户通知）从 `crates/campus-core/` 与 `vendor/pkucli/` 移植过去。两端共用的是数据而不是代码：`data/curriculum/` 在构建时由 Gradle 同步进 assets，培养方案的匹配规则逐条对齐 `src/lib/curriculum.ts`。本文档的"数据与目录"与"不变量"讲的是桌面端；Android 端的能力差异、构建与隐私说明见 [android/README.md](../android/README.md)。
+
 ## 数据与目录
 
 应用程序安装位置与用户数据目录分开。具体平台路径见 [SECURITY.md](../SECURITY.md)，不要按安装路径推断数据路径，也不要把开发仓库当成用户数据目录。
@@ -100,4 +104,5 @@ Rust 核心使用 `directories` 查询操作系统目录；Tauri/WebView2 有单
 
 - `tests/*.test.tsx`：vitest + Testing Library，mock `call()` 返回 `Envelope`，测页面与 `lib/` 的纯函数。
 - `cargo test -p campus-core --lib`：解析器、缓存策略、保活退避、下载去重、写操作状态机。
+- `cd android && ./gradlew testDebugUnitTest`：Android 端的培养方案引擎与作业页 HTML 解析。
 - `docs/research/QA.md`：用真实账号做的手工验收记录，不含个人数据。

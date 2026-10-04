@@ -1,6 +1,8 @@
 # 推送 v* 标签时构建 macOS（Apple Silicon）和 Windows x64，生成草稿 Release：
 # OnePKU.app.zip（手动下载）、OnePKU.app.tar.gz + .sig 与 latest.json（应用内更新）。
 # 草稿由维护者检查后手动发布；发布后应用内“检查更新”即可看到。
+# 这里只打桌面端的包。Release 被 published 时 .github/workflows/android.yml 会另外触发一次，
+# 从同一份代码构建 onepku-android-v<Android 版本>.apk 挂到同一个 Release 上；两端版本号互不对应。
 name: Release
 on:
   push:
