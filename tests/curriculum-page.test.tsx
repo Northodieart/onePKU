@@ -302,6 +302,34 @@ it("offers to pick a plan when the profile was saved without one", async () => {
   expect(screen.getByLabelText("培养方案版本")).toHaveValue("2024");
 });
 
+it("shows a course that belongs to a section which has sub-sections", async () => {
+  // 2025 物理方案里习概归在「公共基础课程」这一类本身，不是它的子课目。
+  // 以前父类只要有子课目就只渲染子课目，这门课在页面上没有任何地方出现。
+  mount(
+    {
+      cohort: 2025,
+      planId: "2025-物理学院-物理学",
+      secondaryPlanId: null,
+      englishLevel: null,
+      overrides: {},
+      inferred: false,
+      updatedAt: "x",
+    },
+    [
+      {
+        id: "xg",
+        name: "习近平新时代中国特色社会主义思想概论",
+        semester: "26-27学年第1学期",
+        current: true,
+      },
+    ],
+  );
+  const row = await screen.findByLabelText(
+    "归类 习近平新时代中国特色社会主义思想概论",
+  );
+  expect(row.closest("li")).toHaveTextContent("在修");
+});
+
 it("lists in-progress courses without credits instead of counting them as unknown", async () => {
   const calls = mount(
     {

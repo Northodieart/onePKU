@@ -675,13 +675,21 @@ function ProgressView({
       >
         {current?.note && <p className="subtle detail-note">{current.note}</p>}
         {current ? (
-          current.children.length > 0 ? (
-            current.children.map((c) => (
+          <>
+            {current.children.map((c) => (
               <DetailRow key={c.id} section={c} autoOpen editor={editor} />
-            ))
-          ) : (
-            <CourseList courses={current.courses} editor={editor} />
-          )
+            ))}
+            {(current.courses.length > 0 || current.children.length === 0) && (
+              <>
+                {current.children.length > 0 && (
+                  <p className="subtle curriculum-hint">
+                    本类直属课程（不含上面各系列的课）
+                  </p>
+                )}
+                <CourseList courses={current.courses} editor={editor} />
+              </>
+            )}
+          </>
         ) : (
           sections.map((s) => (
             <DetailRow key={s.id} section={s} top editor={editor} />
@@ -860,7 +868,9 @@ function DetailRow({
           {open
             ? "收起"
             : hasChildren
-              ? `${section.children.length} 个系列`
+              ? hasCourses
+                ? `${section.children.length} 个系列 · ${section.courses.length} 门课`
+                : `${section.children.length} 个系列`
               : `${section.courses.length} 门课`}
         </button>
       )}
@@ -871,8 +881,15 @@ function DetailRow({
           ))}
         </div>
       )}
-      {open && !hasChildren && hasCourses && (
-        <CourseList courses={section.courses} editor={editor} />
+      {open && hasCourses && (
+        <>
+          {hasChildren && (
+            <p className="subtle curriculum-hint">
+              本类直属课程（不含上面各系列的课）
+            </p>
+          )}
+          <CourseList courses={section.courses} editor={editor} />
+        </>
       )}
     </div>
   );
