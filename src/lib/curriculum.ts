@@ -835,15 +835,18 @@ export function computeProgress(
   const seen = new Set<string>();
   const matched: MatchedCourse[] = [];
   scores.forEach((row, i) => {
-    const key = normalizeCourseName(row.kcmc);
-    seen.add(key);
+    const status = scoreStatus(row.xqcj);
+    // 成绩里那些根本不计分的记录（免修、退课、状态异常）不该把教学网本学期的同一门课
+    // 挡在在修之外：学校有时先把还在上的课登进成绩单，桌面端就再也见不到它了。
+    if (status !== "withdrawn" && status !== "other")
+      seen.add(normalizeCourseName(row.kcmc));
     matched.push(
       assign(
         {
           key: `score:${i}`,
           name: row.kcmc,
           credits: decimal(row.xf),
-          status: scoreStatus(row.xqcj),
+          status,
           term: `${row.xnd}·${row.xq}`,
           category: row.kclbmc,
           score: row.xqcj,

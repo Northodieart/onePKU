@@ -25,12 +25,13 @@ pub use recordings::RecordingSession;
 
 const APP_NAME: &str = "course";
 
-/// 与安卓端同一判据：分组标题里出现「当前」或 Current Semester 就算在修。
-/// 「非当前学期课程」也含「当前」，安卓端同样把它算进来——这不是疏忽：学校会把还在上的
-/// 课（如「习概」）挂在非当前分组下，只有这条判据认得出来；真结过业的课在成绩里已有记录，
-/// 培养方案按课程名去重时不会重复计入。
 fn current_course_module(title: &str) -> bool {
     let title = title.split_whitespace().collect::<Vec<_>>().join(" ").to_lowercase();
+    if ["非当前", "历史", "以往", "past", "previous", "not current"]
+        .iter().any(|s| title.contains(s))
+    {
+        return false;
+    }
     title.contains("当前") || title.contains("本学期") || title.contains("current semester")
 }
 
@@ -1688,11 +1689,10 @@ mod onepku_tests {
     use super::*;
     #[test]
     fn current_semester_module_labels() {
-        // 「非当前学期课程」按安卓端口径算在修：学校把还在上的课挂在这个分组下。
-        for title in ["当前学期课程", "本学期课程", "非当前学期课程", "Current Semester", "CURRENT\n SEMESTER Courses"] {
+        for title in ["当前学期课程", "本学期课程", "Current Semester", "CURRENT\n SEMESTER Courses"] {
             assert!(current_course_module(title), "{title}");
         }
-        for title in ["历史课程", "以往学期", "全部课程", ""] {
+        for title in ["非当前学期课程", "历史课程", "Previous Semester", "Not Current Semester", "全部课程", ""] {
             assert!(!current_course_module(title), "{title}");
         }
     }

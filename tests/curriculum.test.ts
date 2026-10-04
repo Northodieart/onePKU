@@ -276,6 +276,25 @@ describe("computeProgress", () => {
     // 习题课不算独立一门课：教学网把它和正课并排列进来，算上就是重复计数。
     expect(doing).not.toContain("线性代数 A（Ⅰ）习题课");
   });
+  it("keeps a current course visible when the transcript can't count it", () => {
+    // 学校有时把还在上的课先登进成绩单（免修/状态异常）。这条记录不该把
+    // 教学网「当前学期课程」里的同一门课挡掉。
+    const name = "习近平新时代中国特色社会主义思想概论";
+    const progress = computeProgress(
+      plan,
+      [score(name, "3", "免修", "思想政治理论课")],
+      [{ id: "current", name, current: true }],
+    );
+    const listed = [
+      ...progress.sections
+        .flatMap((s) => [s, ...s.children])
+        .flatMap((s) => s.courses)
+        .filter((c) => c.status === "inProgress")
+        .map((c) => c.name),
+      ...progress.pending.map((c) => c.name),
+    ];
+    expect(listed).toContain(name);
+  });
   it("assigns by name, alternative, variant, keyword and category, and leaves the rest pending", () => {
     const progress = computeProgress(plan, scores, courses);
     const find = (id: string) =>

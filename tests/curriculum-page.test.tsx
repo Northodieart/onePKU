@@ -192,11 +192,9 @@ it("shows earned, in-progress and pending courses and persists a manual assignme
     overrides: Record<string, string>;
   };
   expect(saved.overrides).toEqual({ 神秘学导论: "2-2" });
-  // 「待确认」是常驻的一栏：归完类不会整栏消失，只是变成空的。
   await waitFor(() =>
-    expect(screen.getByText("待确认（0）")).toBeInTheDocument(),
+    expect(screen.queryByText("待确认（1）")).not.toBeInTheDocument(),
   );
-  expect(screen.getByText(/暂无待确认的课程/)).toBeInTheDocument();
   expect(
     within(screen.getByRole("tab", { name: /毕业总学分/ })).getByText("16"),
   ).toBeInTheDocument();
