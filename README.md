@@ -2,13 +2,15 @@
 
 # OnePKU
 
-一个本地运行的北大校园桌面应用。课程、作业、成绩、通知、校历、空闲教室、校园卡放在一个窗口里，数据只在你的电脑上。
+一个本地运行的北大校园应用，有 macOS / Windows 桌面版和 Android 手机版两套实现。课程、作业、成绩、通知、校历、空闲教室、校园卡放在一处，数据只在你的设备上。
 
 ![OnePKU 今日页](docs/onepku-preview.png)
 
 </div>
 
 ## 能做什么
+
+下面按桌面版列出；Android 版覆盖其中大部分，差别见下一节。
 
 - **今日**：待交作业与附件、最新通知、校园卡余额。每一块独立刷新，一处出错不影响其他。
 - **课程**：按学期分组的全部课程，课程通知、资料、回放、教学网成绩；应用内边下边播，支持倍速、断点续看、可选的整节缓存播放与本机字幕。
@@ -22,11 +24,20 @@
 
 课程资料与「下载 MP4」的成片默认保存在 `~/Downloads/OnePKU/`，按学期、课程整理，附来源与 SHA-256；播放用的分片缓存单独放在应用缓存目录，两者都能在设置里改到别的文件夹。
 
+## Android 版
+
+手机上是独立的 Kotlin + Jetpack Compose 实现，不是桌面版打包。覆盖：账号密码登录、今日、课程与课程通知/资料/成绩、作业查看与提交、成绩单与 GPA、培养方案与完成度、本院通知、空闲教室、校历、校园卡。详见 [android/README.md](android/README.md)。
+
+与桌面版的差别是刻意的——手机只做便携场景：没有课程回放，树洞与校园卡只查询不互动；培养方案有，但原文不在应用内抽页，只给教务部整卷入口。两处不同值得单独说明：
+
+- **登录方式**：手机只有账号密码登录（密码用学校公钥加密后提交，与会话凭证一起存在系统 Keystore 加密的本地存储里，用于会话过期后自动重登）。桌面版的扫码登录在手机上不提供，也不会保存密码到任何第三方。
+- **本院通知**：手机会读校内门户的「单位」识别你所在院系，通知页据此显示本院通知；桌面版固定提供教务部与信科来源。
+
 ## 安装
 
-已发布版本目前只提供 macOS（Apple Silicon）。Windows x64 已加入实验性源码支持，尚未发布正式安装包，构建与验收见 [Windows 说明](docs/WINDOWS.md)。
+### macOS
 
-macOS：从 [Releases](../../releases) 下载 `OnePKU.app.zip`，解压后拖进"应用程序"。
+已发布版本目前只提供 Apple Silicon 的 macOS 包。从 [Releases](../../releases) 下载 `OnePKU.app.zip`，解压后拖进"应用程序"。
 
 应用没有 Apple 公证，首次打开会被系统拦下，按你的系统版本处理：
 
@@ -42,13 +53,21 @@ xattr -cr /Applications/OnePKU.app
 
 可选组件：下载回放为 MP4 需要 `ffmpeg`（`brew install ffmpeg`）；本机生成字幕需要 macOS 14 以上并运行一次 `bash scripts/subtitles/install.sh`，见 [字幕说明](docs/SUBTITLES.md)。播放回放、导入 SRT/VTT 字幕不需要这些。
 
+### Windows
+
+Windows x64 目前是实验性源码支持，还没有发布正式安装包，需要从源码构建；环境与验收范围见 [Windows 说明](docs/WINDOWS.md)。
+
+### Android
+
+未上架应用商店。从 [Releases](../../releases) 下载 APK 直接安装；想看最新未发布的构建，可以在 Actions 的 `Android APK` 运行记录里取产物，文件名按版本号是 `onepku-android-v<版本>.apk`。调试签名包安装时系统会提示"未知来源"，需要手动允许。
+
 ## 第一次打开
 
-1. 在设置里分别连接教学网、树洞、校园卡。全部是扫码或短信验证，应用不保存密码。
+1. 在设置里分别连接教学网、树洞、校园卡。全部是扫码或短信验证，应用不保存密码。（Android 版只有账号密码登录，见上文）
 2. 应用会根据成绩和课程推断你的入学年份、院系和专业，你可以改，之后随时在设置里改。
 3. 回到今日页。默认开启保持登录，应用运行期间每 15 分钟做一次轻量会话检查。
 
-登录凭证保存在按平台选择的用户配置目录（macOS：`~/Library/Application Support/info/<服务>/`；Windows：`%APPDATA%\info\config\<服务>\`），与 [PKU CLI](https://github.com/pkuinfo/pkucli) 共用。如果你已经在用 PKU CLI，打开应用直接复用会话。
+桌面版的登录凭证保存在按平台选择的用户配置目录（macOS：`~/Library/Application Support/info/<服务>/`；Windows：`%APPDATA%\info\config\<服务>\`），与 [PKU CLI](https://github.com/pkuinfo/pkucli) 共用。如果你已经在用 PKU CLI，打开应用直接复用会话。Android 版不存在共用：会话 Cookie 存应用私有目录，密码存在 Keystore 加密的本地存储里，只用于会话过期后自动重登。
 
 ## 边界与已知限制
 
@@ -57,6 +76,7 @@ xattr -cr /Applications/OnePKU.app
 - 考试安排来源当前不可用，不显示推断结果。
 - 培养方案完成度以教务部公开 PDF 清洗后的数据计算，匹配不上的课程标"待确认"，不假装算清；以学校毕业审查为准。
 - 浏览器与应用的登录态目前互相独立，可能需要各自登录。
+- Android 版没有课程回放，也不提供扫码登录；培养方案的原文不在应用内抽页。写操作只有作业提交。
 - 数据存放与不会做的事见 [SECURITY.md](SECURITY.md)。
 
 ## 本地开发
@@ -85,14 +105,24 @@ npm run tauri -- build --config src-tauri/tauri.test.conf.json --bundles nsis --
 
 上面的测试包不生成签名更新制品；正式发布使用默认配置和 `TAURI_SIGNING_PRIVATE_KEY`，见 `.github/workflows/release.yml`。不要把测试配置用于发布更新包。
 
-两个平台共用 React 界面和 Rust 业务逻辑，Tauri 自动合并对应平台配置；不需要两份仓库。
+macOS 与 Windows 共用 React 界面和 Rust 业务逻辑，Tauri 自动合并对应平台配置。Android 是同一仓库里的独立实现：不共用界面与 Rust 核心，但共用 `data/curriculum/` 的培养方案数据，构建时由 Gradle 同步进 assets，所以要连着整个仓库一起构建。
 
 浏览器里用真实后端验收：`npm run build && npm run preview:live`，打开 `http://127.0.0.1:1421`。
+
+Android 客户端在 `android/` 下，需要 JDK 17 与 Android SDK（`compileSdk 35`）：
+
+```bash
+cd android
+./gradlew assembleDebug      # 产物 app/build/outputs/apk/debug/app-debug.apk
+```
+
+CI 按路径分工：`android/` 之内的改动触发 `.github/workflows/android.yml` 构建调试 APK 并上传产物，`android/` 之外（仓库其余部分）的改动触发 `.github/workflows/desktop.yml` 的 macOS 与 Windows 检查和打包。
 
 验证：
 
 ```bash
 npm test && npm run typecheck && npm run format:check && npm run verify:tokens && cargo test -p campus-core --lib
+cd android && ./gradlew testDebugUnitTest   # 改了 android/ 才需要
 ```
 
 ## 项目结构
@@ -101,6 +131,7 @@ npm test && npm run typecheck && npm run format:check && npm run verify:tokens &
 src/                 React 界面（页面、组件、样式 token）
 crates/campus-core/  Rust 核心：类型化命令、缓存、认证、下载、回放、写操作
 src-tauri/           macOS / Windows 容器与原文窗口
+android/             Android 客户端（Kotlin + Compose，独立实现，协议移植自上面两处）
 vendor/pkucli/       PKU CLI 快照与本地补丁（MIT）
 data/curriculum/     培养方案结构化数据（由脚本生成）
 scripts/             token 校验、PDF 资源、字幕安装、培养方案清洗
