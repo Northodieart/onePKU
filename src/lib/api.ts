@@ -58,9 +58,19 @@ export function useResource<T>(request: Request, enabled = true) {
     refetchOnWindowFocus: true,
   });
 }
-export async function action<T = unknown>(request: Request) {
+/** 带错误码的失败：界面按 code 决定给哪个修复入口，而不是只有一行文案。 */
+export class ApiError extends Error {
+  constructor(
+    readonly code: string,
+    message: string,
+  ) {
+    super(message);
+    this.name = "ApiError";
+  }
+}
+export async function action<T = unknown>(request: Request): Promise<T> {
   const result = await call<T>(request);
-  if (result.error) throw Error(result.error.message);
+  if (result.error) throw new ApiError(result.error.code, result.error.message);
   return result.data as T;
 }
 export async function openOfficial(target: string) {

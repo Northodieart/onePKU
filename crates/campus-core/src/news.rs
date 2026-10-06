@@ -342,18 +342,35 @@ pub(crate) fn department_setting() -> Result<String> {
 }
 /// 校内门户连接状态：能读到基本资料才算连着，识别到的院系只作兜底。
 pub(crate) async fn portal_status() -> Result<Value> {
+    // 与安卓端同一口径：连接状态看本机存的会话，不拿它去联网探测。
+    // 探测会把「学校会话过期」显示成「没连接」，用户明明能识别学院却被告知未连。
     let store = Store::new("portal")?;
-    // 门户真正的凭据是 cookie，会话文件只是登录时顺手记下的标记，旧版本没存过。
-    // 拿它判「未连接」会让能正常识别学院的门户一直显示没连上，所以状态与
-    // 「识别学院」用同一个判断：能不能读到门户的基本资料。
-    Ok(pku_portal::login::status(&store).await)
+    match store.load_session()? {
+        Some(session) => Ok(json!({
+            "connected": true,
+            "name": session.extra.get("name").and_then(Value::as_str).unwrap_or_default(),
+            "department": session.extra.get("department").and_then(Value::as_str).unwrap_or_default(),
+        })),
+        None => Ok(json!({ "connected": false, "name": "", "department": "" })),
+    }
 }
 /// 读一次门户「单位」并记下来，供本院通知与培养方案推断使用。
 pub(crate) async fn portal_detect() -> Result<Value> {
-    let info = pku_portal::login::basic_info(&Store::new("portal")?).await?;
+    let store = Store::new("portal")?;
+    let info = pku_portal::login::basic_info(&store).await?;
     let department = pku_portal::login::department_of(&info);
     if department.is_empty() {
         bail!("门户没有返回院系信息，请在设置里手动选择本院");
+    }
+    // 识别成功就说明门户 cookie 是活的：顺手把会话补上，卡片才会显示已连接。
+    // 旧版本登录时只存了 cookie，没存会话，状态就一直停在未连接。
+    if store.load_session()?.is_none() {
+        let mut session = pkuinfo_common::session::Session::new(String::new());
+        session.extra = json!({
+            "department": department,
+            "name": pku_portal::login::name_of(&info),
+        });
+        store.save_session(&session)?;
     }
     super::maintenance::write_preference(
         "departmentDetected",

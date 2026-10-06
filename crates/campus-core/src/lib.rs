@@ -438,6 +438,23 @@ fn problem(e: anyhow::Error) -> Problem {
         ("noExams", "学校考试数据源当前不可用，请到校内门户核对")
     } else if s.contains("TIMETABLE_SOURCE_UNAVAILABLE") {
         ("noTimetable", "学校课表服务未返回课程数据，可稍后刷新")
+    } else if (s.starts_with("好学") || s.contains("课堂实录"))
+        && [
+            "未登录",
+            "登录已失效",
+            "登录失效",
+            "令牌",
+            "401",
+        ]
+        .iter()
+        .any(|needle| s.contains(needle))
+    {
+        // 课堂实录的登录失效不能报成通用「auth」：那会把用户引去重新登录教学网，
+        // 播放器里的「重试」也只是再撞一次 401。
+        (
+            "haoxueAuth",
+            "课堂实录登录已失效，请重新连接课堂实录",
+        )
     } else if s.contains("未登录")
         || s.contains("过期")
         || s.contains("401")
@@ -1179,6 +1196,10 @@ mod tests {
                 "登录已失效（token invalid）。请重新运行 `campuscard login`",
                 "auth",
             ),
+            // 课堂实录的失效要单独成码：报成 auth 会把用户推去重新登录教学网，
+            // 播放器里的「重试连接」只会再撞一次 401。
+            ("好学登录已失效，请重新登录", "haoxueAuth"),
+            ("未登录好学课堂实录", "haoxueAuth"),
             ("超时", "timeout"),
             ("TIMETABLE_SOURCE_UNAVAILABLE", "noTimetable"),
             ("课表数据缺少 course", "unavailable"),

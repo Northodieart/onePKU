@@ -265,3 +265,46 @@ it("closes a late preparation after the viewer has left", async () => {
   );
   expect(requests.some((r) => r.kind === "playbackControl")).toBe(false);
 });
+
+it("offers to reconnect the recording service when its token has expired", async () => {
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(async () => ({
+      ok: true,
+      json: async () => ({
+        data: null,
+        error: {
+          code: "haoxueAuth",
+          message: "课堂实录登录已失效，请重新连接课堂实录",
+        },
+        stale: false,
+        warnings: [],
+        generation: "account",
+        updatedAt: new Date().toISOString(),
+      }),
+    })),
+  );
+  render(
+    <ReplayPlayer
+      course="1"
+      video={{
+        title: "Lecture",
+        time: "2026-09-08",
+        url: "https://onlineroomse.pku.edu.cn/livingroom",
+        hash_id: "abc",
+      }}
+      generation="account"
+      close={() => {}}
+    />,
+  );
+  // 「重试连接」在这里是死路：只有重新连接课堂实录才能恢复播放。
+  expect(
+    await screen.findByText("课堂实录登录已失效，请重新连接课堂实录"),
+  ).toBeInTheDocument();
+  expect(
+    screen.queryByRole("button", { name: "重试连接" }),
+  ).not.toBeInTheDocument();
+  expect(
+    screen.getByRole("button", { name: "连接课堂实录" }),
+  ).toBeInTheDocument();
+});

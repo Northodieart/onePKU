@@ -11,7 +11,7 @@ import {
   VolumeX,
   X,
 } from "lucide-react";
-import { action } from "../lib/api";
+import { action, ApiError, connectHaoxue } from "../lib/api";
 import { openBrowser } from "../lib/browser";
 import { Button } from "./ui";
 import { useReplayFullscreen } from "./useReplayFullscreen";
@@ -117,6 +117,9 @@ export default function ReplayPlayer({
   }, [subtitleKey, subtitlesEnabled, subtitleOffset]);
   const [status, setStatus] = useState<CacheStatus>();
   const statusRef = useRef<CacheStatus | undefined>(undefined);
+  // 课堂实录的登录失效只能重新连接课堂实录：给「重试连接」就是原地打转。
+  const [needsAuth, setNeedsAuth] = useState(false);
+  const [connecting, setConnecting] = useState(false);
   // 「缓存播放」：开着才把整节预存到本机换流畅；无论开关，退出播放都清掉，不留占空间。
   const [cachePlay, setCachePlay] = useState(() => {
     try {
@@ -171,6 +174,7 @@ export default function ReplayPlayer({
     setStatus(undefined);
     setWaiting(true);
     setError("");
+    setNeedsAuth(false);
     void action<Playback>({
       kind: "playbackPrepare",
       course: lesson,
@@ -198,6 +202,7 @@ export default function ReplayPlayer({
       .catch((e) => {
         if (live) {
           setError(e instanceof Error ? e.message : "回放暂时无法连接");
+          setNeedsAuth(e instanceof ApiError && e.code === "haoxueAuth");
           setWaiting(false);
         }
       });
@@ -707,7 +712,27 @@ export default function ReplayPlayer({
           {(error || (status?.offline && !status.complete)) && (
             <div className="replay-error" role="alert">
               <span>{error || "当前仅能播放已缓存的部分"}</span>
-              <Button onClick={() => setRetry((v) => v + 1)}>重试连接</Button>
+              {needsAuth ? (
+                <Button
+                  variant="primary"
+                  disabled={connecting}
+                  onClick={() => {
+                    setConnecting(true);
+                    setNeedsAuth(false);
+                    void connectHaoxue()
+                      .catch(() => setError("登录窗口未能打开，请重试"))
+                      .finally(() => {
+                        setConnecting(false);
+                        // 连上之后从断点重新起播，不用手动再点一次。
+                        setRetry((value) => value + 1);
+                      });
+                  }}
+                >
+                  连接课堂实录
+                </Button>
+              ) : (
+                <Button onClick={() => setRetry((v) => v + 1)}>重试连接</Button>
+              )}
             </div>
           )}
         </div>

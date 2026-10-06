@@ -278,6 +278,22 @@ function Videos({ course, login }: { course: Course; login: Login }) {
       return video ? { video, generation: generation ?? "" } : undefined;
     });
   }, [videoId, q.data?.data, q.data?.generation]);
+  function connect() {
+    setConnectError("");
+    setConnecting(true);
+    void connectHaoxue()
+      .catch((error: unknown) =>
+        setConnectError(
+          error instanceof Error ? error.message : "无法打开认证窗口",
+        ),
+      )
+      .finally(() => {
+        setConnecting(false);
+        void haoxue.refetch();
+        // 列表也可能停在「课堂实录登录已失效」上，连上就重新取一次。
+        void q.refetch();
+      });
+  }
   if (!connected && !haoxue.data?.error && !haoxue.isFetching) {
     return (
       <>
@@ -287,20 +303,7 @@ function Videos({ course, login }: { course: Course; login: Login }) {
         <Button
           variant="primary"
           disabled={connecting}
-          onClick={() => {
-            setConnectError("");
-            setConnecting(true);
-            void connectHaoxue()
-              .catch((error: unknown) =>
-                setConnectError(
-                  error instanceof Error ? error.message : "无法打开认证窗口",
-                ),
-              )
-              .finally(() => {
-                setConnecting(false);
-                void haoxue.refetch();
-              });
-          }}
+          onClick={() => void connect()}
         >
           连接课堂实录
         </Button>
@@ -384,6 +387,17 @@ function Videos({ course, login }: { course: Course; login: Login }) {
               课堂实录 · {q.data?.data?.length ?? 0} 节回放
             </span>
           }
+          extra={
+            q.data?.error?.code === "haoxueAuth" ? (
+              <Button
+                variant="primary"
+                disabled={connecting}
+                onClick={() => void connect()}
+              >
+                连接课堂实录
+              </Button>
+            ) : undefined
+          }
         >
           {(videos) =>
             videos.length ? (
@@ -416,6 +430,11 @@ function Videos({ course, login }: { course: Course; login: Login }) {
             )
           }
         </Resource>
+      )}
+      {connectError && (
+        <p className="inline-error" role="alert">
+          {connectError}
+        </p>
       )}
     </>
   );
