@@ -396,6 +396,25 @@ fn owner(req: &Request) -> &'static str {
         _ => "public",
     }
 }
+/// 会话过期时允许自动重登再重试的，只有重复一次没有副作用的读取；写操作和负责
+/// 打开窗口的请求一律排除。课程表不落快照，但同样是换不到票就要人工登录的读取。
+fn may_relogin(req: &Request, service: &str) -> bool {
+    matches!(service, "course" | "treehole" | "campuscard" | "bdkj")
+        && (storage::cacheable(req) || matches!(req, Request::Timetable))
+}
+/// 快照键的前缀是当前账号基准；静默续期把基准换掉之后要按新基准重建同一个键。
+/// 密码登录的键里不能带凭证，只记账号与目标服务。
+fn request_key(req: &Request, generation: &str) -> String {
+    match req {
+        Request::AuthPassword {
+            username, services, ..
+        } => format!("{generation}:authPassword:{username}:{services:?}"),
+        Request::SaveCredentials { username, .. } => {
+            format!("{generation}:saveCredentials:{username}")
+        }
+        other => format!("{generation}:{}", serde_json::to_string(other).unwrap()),
+    }
+}
 pub fn fingerprint(service: &str) -> String {
     if service == "public" {
         return "public".into();
@@ -517,17 +536,8 @@ impl Core {
     }
     async fn execute(self: &Arc<Self>, req: Request) -> Envelope {
         let service = owner(&req);
-        let generation = fingerprint(service);
-        let key = match &req {
-            // 密码登录的键里不能带凭证，只记账号与目标服务。
-            Request::AuthPassword {
-                username, services, ..
-            } => format!("{generation}:authPassword:{username}:{services:?}"),
-            Request::SaveCredentials { username, .. } => {
-                format!("{generation}:saveCredentials:{username}")
-            }
-            other => format!("{generation}:{}", serde_json::to_string(other).unwrap()),
-        };
+        let mut generation = fingerprint(service);
+        let mut key = request_key(&req, &generation);
         let mut result = tokio::time::timeout(Duration::from_secs(75), self.dispatch(&req))
             .await
             .map_err(|_| anyhow!("超时"))
@@ -538,21 +548,15 @@ impl Core {
             .err()
             .map(|e| problem(anyhow!("{e}")))
             .is_some_and(|p| p.code == "auth");
-        if expired
-            && storage::cacheable(&req)
-            && matches!(service, "course" | "treehole" | "campuscard" | "bdkj")
-            && pkuinfo_common::credential::keyring_credential().is_some()
-        {
-            if self
-                .auth_password(&[service.to_string()], "", "", None, false)
+        if expired && may_relogin(&req, service) && self.relogin(service).await.is_ok() {
+            // 换票改写了 session.json，基准得跟着挪到新的那份：这是我们自己替用户续的会话，
+            // 不是切账号。继续按旧基准走就会被当成「账号已更新」，把刚取到的数据丢掉。
+            generation = fingerprint(service);
+            key = request_key(&req, &generation);
+            result = tokio::time::timeout(Duration::from_secs(75), self.dispatch(&req))
                 .await
-                .is_ok()
-            {
-                result = tokio::time::timeout(Duration::from_secs(75), self.dispatch(&req))
-                    .await
-                    .map_err(|_| anyhow!("超时"))
-                    .and_then(|v| v);
-            }
+                .map_err(|_| anyhow!("超时"))
+                .and_then(|v| v);
         }
         if generation != fingerprint(service) {
             return Envelope {
@@ -1136,6 +1140,33 @@ mod tests {
         // 同名歧义要能落到专门的 code，前端据此展示候选而不是报错。
         let problem = problem(anyhow!("课堂实录有 3 门同名课程，需要人工确认是哪一门"));
         assert_eq!(problem.code, "haoxueAmbiguous");
+    }
+    #[test]
+    fn only_idempotent_session_reads_may_relogin() {
+        // Request 里带着密码，测试失败时只回显 kind，不要把这个枚举做成 Debug。
+        for kind in [
+            json!({ "kind": "assignments" }),
+            json!({ "kind": "card" }),
+            json!({ "kind": "timetable" }),
+        ] {
+            let request = serde_json::from_value::<Request>(kind.clone()).unwrap();
+            assert!(
+                may_relogin(&request, owner(&request)),
+                "会话过期时读取要自动重登：{kind}"
+            );
+        }
+        // 重放写请求就是二次提交，打开原站窗口的请求也不需要会话。
+        for (kind, service) in [
+            (json!({ "kind": "commitSubmission", "id": "x" }), "course"),
+            (
+                json!({ "kind": "openAssignment", "course": "c", "content": "x" }),
+                "course",
+            ),
+            (json!({ "kind": "news", "source": "s", "page": 1 }), "public"),
+        ] {
+            let request = serde_json::from_value::<Request>(kind.clone()).unwrap();
+            assert!(!may_relogin(&request, service), "不能自动重放：{kind}");
+        }
     }
     #[test]
     fn service_logout_is_named_and_not_cached() {

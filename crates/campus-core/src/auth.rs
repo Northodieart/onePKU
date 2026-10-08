@@ -121,6 +121,14 @@ impl Core {
             "remembered": remembered,
         }))
     }
+    /// 会话过期时拿钥匙串里记住的账号换一张新票，对应安卓端 `AuthManager.relogin`。
+    /// 这条路径绝不写也绝不删钥匙串：自动续期要是顺手清了凭据，下次过期就只剩人工登录。
+    pub(crate) async fn relogin(&self, service: &str) -> Result<()> {
+        let credential = pkuinfo_common::credential::keyring_credential()
+            .ok_or_else(|| anyhow!("没有记住的账号，请手动登录"))?;
+        self.login_with_password(service, &credential.username, &credential.password, None)
+            .await
+    }
     async fn login_with_password(
         &self,
         service: &str,
