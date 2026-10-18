@@ -131,16 +131,29 @@ it("pinches to zoom only in fullscreen, pans when zoomed, and restores on exit",
   expect(scaleOf(video)).toBeLessThanOrEqual(4);
   const zoom = scaleOf(video);
 
-  // ③ 放大之后双指拖动平移画面，越不出多出来的那半圈。
+  // ③ 放大后双指拖动要跟着手指走：自然滚动里手指往下是负的 deltaY，画面应往下（正偏移）。
   stage.dispatchEvent(
     new WheelEvent("wheel", {
       bubbles: true,
       cancelable: true,
-      deltaY: 99999,
+      deltaY: -99999,
     }),
   );
   await waitFor(() => expect(offsetOf(video).y).toBeGreaterThan(0));
   expect(offsetOf(video).y).toBeCloseTo((600 * zoom - 600) / 2, 3);
+  // 反向往左上拖，回到另外一侧的上限，越不出多出来的那半圈。
+  stage.dispatchEvent(
+    new WheelEvent("wheel", {
+      bubbles: true,
+      cancelable: true,
+      deltaX: 99999,
+      deltaY: 99999,
+    }),
+  );
+  await waitFor(() =>
+    expect(offsetOf(video).y).toBeCloseTo(-(600 * zoom - 600) / 2, 3),
+  );
+  expect(offsetOf(video).x).toBeCloseTo(-(800 * zoom - 800) / 2, 3);
 
   // ④ 控制栏出现复位按钮，点一下回到原尺寸。
   fireEvent.click(screen.getByRole("button", { name: "复位画面" }));

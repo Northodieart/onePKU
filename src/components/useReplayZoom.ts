@@ -69,7 +69,8 @@ export function useReplayZoom(
         setView(panTo({ ...state, zoom }, 0, 0, width, height));
         event.preventDefault();
       } else if (state.zoom > MIN_ZOOM) {
-        setView(panTo(state, event.deltaX, event.deltaY, width, height));
+        // wheel 的 delta 表示"滚动量"，手指往下给的是负值；画面要跟着手指走就得取反。
+        setView(panTo(state, -event.deltaX, -event.deltaY, width, height));
         event.preventDefault();
       }
     };
