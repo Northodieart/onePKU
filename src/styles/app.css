@@ -2704,6 +2704,8 @@ input[type="checkbox"] {
   background: #111;
   width: 100%;
   height: min(52vh, 620px);
+  /* 全屏捏合放大时，超出画面的部分不能糊到控制栏和页面上。 */
+  overflow: hidden;
 }
 .replay-surface video {
   display: block;
@@ -2788,6 +2790,11 @@ input[type="checkbox"] {
 }
 .replay-cache-play small {
   color: var(--muted);
+}
+.replay-zoom-hint {
+  padding: 10px 18px;
+  color: var(--muted);
+  font-size: 12px;
 }
 .replay-error {
   display: flex;

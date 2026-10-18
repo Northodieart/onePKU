@@ -7,6 +7,7 @@ import {
   Play,
   RotateCcw,
   RotateCw,
+  Shrink,
   Volume2,
   VolumeX,
   X,
@@ -15,6 +16,7 @@ import { action, ApiError, connectHaoxue } from "../lib/api";
 import { openBrowser } from "../lib/browser";
 import { Button } from "./ui";
 import { useReplayFullscreen } from "./useReplayFullscreen";
+import { useReplayZoom } from "./useReplayZoom";
 import { usePlayerControls } from "./usePlayerControls";
 import {
   SubtitleControls,
@@ -78,6 +80,8 @@ export default function ReplayPlayer({
 }) {
   const element = useRef<HTMLVideoElement>(null);
   const surface = useRef<HTMLDivElement>(null);
+  // 画面本体（不含底部控制栏）：全屏里的捏合缩放只认这块区域的手势。
+  const stage = useRef<HTMLDivElement>(null);
   // 好学的课程标识才是回放的真实身份：缓存、续播位置与进度回写都按它对齐。
   const lesson = video.courseId ?? course;
   const storageKey = `onepku.playback.${generation}.${lesson}.${video.hash_id}`;
@@ -152,6 +156,11 @@ export default function ReplayPlayer({
     toggle: fullscreen,
     native: nativeFullscreen,
   } = useReplayFullscreen(surface, setError);
+  const {
+    zoom,
+    reset: resetZoom,
+    transform,
+  } = useReplayZoom(stage, isFullscreen);
   const controls = usePlayerControls(isFullscreen);
   function togglePlay() {
     const video = element.current;
@@ -410,9 +419,10 @@ export default function ReplayPlayer({
         onPointerDown={controls.hold}
         onKeyDownCapture={controls.reveal}
       >
-        <div className="replay-surface">
+        <div className="replay-surface" ref={stage}>
           <video
             ref={element}
+            style={transform ? { transform } : undefined}
             tabIndex={0}
             onClick={togglePlay}
             onKeyDown={(e) => {
@@ -607,6 +617,16 @@ export default function ReplayPlayer({
             >
               {isFullscreen ? <Minimize size={18} /> : <Maximize size={18} />}
             </Button>
+            {zoom > 1 && (
+              <Button
+                variant="quiet"
+                onClick={resetZoom}
+                aria-label="复位画面"
+                title={`画面放大到 ${Math.round(zoom * 100)}%，点击复位；双指捏合缩放，放大后双指拖动平移`}
+              >
+                <Shrink size={18} />
+              </Button>
+            )}
             <Button
               variant="quiet"
               className="replay-more"
@@ -686,6 +706,10 @@ export default function ReplayPlayer({
                   )}
                 </div>
               )}
+              <p className="replay-zoom-hint">
+                全屏时双指捏合放大画面（1–4
+                倍），放大后双指拖动平移；退出全屏自动回到原尺寸。
+              </p>
               <div className="replay-footer">
                 <div>
                   <button
