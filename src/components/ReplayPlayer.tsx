@@ -156,11 +156,11 @@ export default function ReplayPlayer({
     toggle: fullscreen,
     native: nativeFullscreen,
   } = useReplayFullscreen(surface, setError);
-  const {
-    zoom,
-    reset: resetZoom,
-    transform,
-  } = useReplayZoom(stage, isFullscreen);
+  const { zoomed, reset: resetZoom } = useReplayZoom(
+    stage,
+    element,
+    isFullscreen,
+  );
   const controls = usePlayerControls(isFullscreen);
   function togglePlay() {
     const video = element.current;
@@ -422,7 +422,6 @@ export default function ReplayPlayer({
         <div className="replay-surface" ref={stage}>
           <video
             ref={element}
-            style={transform ? { transform } : undefined}
             tabIndex={0}
             onClick={togglePlay}
             onKeyDown={(e) => {
@@ -617,12 +616,12 @@ export default function ReplayPlayer({
             >
               {isFullscreen ? <Minimize size={18} /> : <Maximize size={18} />}
             </Button>
-            {zoom > 1 && (
+            {zoomed && (
               <Button
                 variant="quiet"
                 onClick={resetZoom}
                 aria-label="复位画面"
-                title={`画面放大到 ${Math.round(zoom * 100)}%，点击复位；双指捏合缩放，放大后双指拖动平移`}
+                title="画面已放大，点击复位；双指捏合缩放，放大后双指拖动平移"
               >
                 <Shrink size={18} />
               </Button>

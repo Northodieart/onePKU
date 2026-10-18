@@ -93,10 +93,9 @@ it("pinches to zoom only in fullscreen, pans when zoomed, and restores on exit",
   );
   const video = screen.getByLabelText("Lecture 视频") as HTMLVideoElement;
   const stage = video.parentElement as HTMLElement;
-  vi.spyOn(stage, "getBoundingClientRect").mockReturnValue({
-    width: 800,
-    height: 600,
-  } as DOMRect);
+  const rectSpy = vi
+    .spyOn(stage, "getBoundingClientRect")
+    .mockReturnValue({ width: 800, height: 600 } as DOMRect);
   // 播放会话没就绪前全屏按钮是禁用的，先等它可用再点。
   await waitFor(() =>
     expect(
@@ -119,16 +118,27 @@ it("pinches to zoom only in fullscreen, pans when zoomed, and restores on exit",
   await screen.findByRole("button", { name: "退出全屏" });
 
   // ② 全屏里双指捏合放大，并吃掉默认行为，不让 WebView 跟着缩整页。
-  const pinch = new WheelEvent("wheel", {
-    bubbles: true,
-    cancelable: true,
-    ctrlKey: true,
-    deltaY: -300,
-  });
-  stage.dispatchEvent(pinch);
+  // 一次捏合会连着送来几十个 wheel 事件：每个都要算进倍数，但每帧只读一次尺寸、写一次样式。
+  const deltas = [-8, -6, -12, -20, -40];
+  rectSpy.mockClear();
+  const pinches = deltas.map(
+    (deltaY) =>
+      new WheelEvent("wheel", {
+        bubbles: true,
+        cancelable: true,
+        ctrlKey: true,
+        deltaY,
+      }),
+  );
+  for (const event of pinches) stage.dispatchEvent(event);
   await waitFor(() => expect(scaleOf(video)).toBeGreaterThan(1));
-  expect(pinch.defaultPrevented).toBe(true);
-  expect(scaleOf(video)).toBeLessThanOrEqual(4);
+  expect(pinches.every((event) => event.defaultPrevented)).toBe(true);
+  // 指数累加等于一次总位移，说明同一帧内的事件都没被丢掉。
+  expect(scaleOf(video)).toBeCloseTo(
+    Math.exp(-deltas.reduce((sum, d) => sum + d, 0) / 240),
+    4,
+  );
+  expect(rectSpy).toHaveBeenCalledTimes(1);
   const zoom = scaleOf(video);
 
   // ③ 放大后双指拖动要跟着手指走：自然滚动里手指往下是负的 deltaY，画面应往下（正偏移）。

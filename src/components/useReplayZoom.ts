@@ -1,4 +1,10 @@
-import { useEffect, useRef, useState, type RefObject } from "react";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type RefObject,
+} from "react";
 
 /** 全屏里的缩放范围：1 倍就是原始画面，再往上放大只剩块状了。 */
 const MIN_ZOOM = 1;
@@ -42,49 +48,80 @@ export function panTo(
 }
 
 /**
- * 全屏回放里的触控板手势缩放：只在全屏启用，捏合放大画面，放大后双指拖动平移，退出全屏复位。
- * 非全屏不拦截手势，浏览器的页面缩放照旧。
+ * 全屏回放里的触控板手势缩放：捏合放大画面，放大后双指拖动平移，退出全屏复位；只在 enabled 时接管手势。
+ *
+ * 一次捏合能推上百个 wheel 事件，所以倍数与偏移累加在 ref 里，每个动画帧只写一次 DOM，
+ * React 状态只在「有没有放大」翻转时变一次——把它当逐帧状态用会让整个播放器树跟着重渲染，手势就发涩。
  */
 export function useReplayZoom(
   stage: RefObject<HTMLElement | null>,
+  video: RefObject<HTMLElement | null>,
   enabled: boolean,
 ) {
-  const [view, setView] = useState<View>(FIT);
-  const current = useRef(view);
-  current.current = view;
+  const view = useRef<View>(FIT);
+  const painted = useRef("");
+  const frame = useRef(0);
+  const [zoomed, setZoomed] = useState(false);
+
+  const paint = useCallback(() => {
+    frame.current = 0;
+    const node = video.current;
+    const box = stage.current?.getBoundingClientRect();
+    if (!node || !box) return;
+    view.current = panTo(view.current, 0, 0, box.width, box.height);
+    const { zoom, x, y } = view.current;
+    const transform =
+      zoom > MIN_ZOOM ? `translate(${x}px, ${y}px) scale(${zoom})` : "";
+    if (transform === painted.current) return;
+    node.style.transform = transform;
+    painted.current = transform;
+    setZoomed(transform !== "");
+  }, [stage, video]);
+
+  const queue = useCallback(() => {
+    // 同一帧里到达的多个事件合成一次写入。
+    if (!frame.current) frame.current = requestAnimationFrame(paint);
+  }, [paint]);
+
+  const reset = useCallback(() => {
+    if (frame.current) cancelAnimationFrame(frame.current);
+    frame.current = 0;
+    view.current = FIT;
+    paint();
+  }, [paint]);
 
   useEffect(() => {
     if (!enabled) {
-      setView(FIT);
+      reset();
       return;
     }
     const element = stage.current;
     if (!element) return;
     const onWheel = (event: WheelEvent) => {
-      const { width, height } = element.getBoundingClientRect();
-      const state = current.current;
+      const state = view.current;
       if (event.ctrlKey) {
-        const zoom = zoomAfter(state.zoom, event);
-        // 改变倍数后原来的平移量可能就越界了，按新倍数重新夹一次。
-        setView(panTo({ ...state, zoom }, 0, 0, width, height));
-        event.preventDefault();
+        view.current = { ...state, zoom: zoomAfter(state.zoom, event) };
       } else if (state.zoom > MIN_ZOOM) {
-        // wheel 的 delta 表示"滚动量"，手指往下给的是负值；画面要跟着手指走就得取反。
-        setView(panTo(state, -event.deltaX, -event.deltaY, width, height));
-        event.preventDefault();
+        // wheel 的 delta 表示滚动量，与手指方向相反，取反后画面才跟着手指走。
+        view.current = {
+          zoom: state.zoom,
+          x: state.x - event.deltaX,
+          y: state.y - event.deltaY,
+        };
+      } else {
+        return;
       }
+      event.preventDefault();
+      queue();
     };
     // React 的合成 onWheel 是 passive 监听，preventDefault 无效，只能自己挂。
     element.addEventListener("wheel", onWheel, { passive: false });
-    return () => element.removeEventListener("wheel", onWheel);
-  }, [enabled, stage]);
+    return () => {
+      element.removeEventListener("wheel", onWheel);
+      if (frame.current) cancelAnimationFrame(frame.current);
+      frame.current = 0;
+    };
+  }, [enabled, stage, queue, reset]);
 
-  return {
-    zoom: view.zoom,
-    reset: () => setView(FIT),
-    transform:
-      enabled && view.zoom > MIN_ZOOM
-        ? `translate(${view.x}px, ${view.y}px) scale(${view.zoom})`
-        : undefined,
-  };
+  return { zoomed, reset };
 }
