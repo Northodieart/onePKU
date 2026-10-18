@@ -41,7 +41,7 @@ npm run tauri -- build --config src-tauri/tauri.test.conf.json --bundles nsis --
 
 安装包：`target/release/bundle/nsis/OnePKU_<版本>_x64-setup.exe`。
 
-Windows 配置使用当前用户安装模式，不要求把应用安装到系统级 Program Files；Windows 配置文件由 Tauri 自动合并，无需手工覆盖公共配置。主程序不弹控制台，ffmpeg/字幕子进程也不弹命令窗口。
+Windows 配置使用当前用户安装模式，不要求把应用安装到系统级 Program Files；`tauri.windows.conf.json` 会被 Tauri 合并到公共配置上，通常不需要在这里重复公共字段。唯一的例外是数组：合并时整个替换而不是逐项合并，所以这个文件里写了 `app.windows` 就必须把窗口的标题与尺寸一起带上（当前与公共配置一致，另加 `zoomHotkeysEnabled`）；改窗口默认尺寸时两处都要改，否则 Windows 包会静默回到 Tauri 的默认窗口。主程序不弹控制台，ffmpeg/字幕子进程也不弹命令窗口。
 
 开发包未做 Windows 代码签名，SmartScreen 可能提示未知发布者。只测试自己构建或维护者明确提供的文件，不要为运行开发包全局关闭 Defender/SmartScreen。最终发布应考虑代码签名，并明确列出 SHA-256。
 
@@ -49,18 +49,19 @@ macOS 仍使用 `npm run tauri -- build --config src-tauri/tauri.test.conf.json 
 
 ## 平台差异
 
-| 项目          | Windows 行为                                                                                         |
-| ------------- | ---------------------------------------------------------------------------------------------------- |
-| 本地数据      | 使用 Known Folders / `directories`；具体位置见 `SECURITY.md`                                         |
-| 资料目录      | 默认系统“下载”目录下 `OnePKU`；设置可更改，旧文件不搬移，保留来源 sidecar                            |
-| 文件权限      | 继承当前用户目录的 NTFS ACL；Unix 的 0600/0700 仅在 Unix 设置                                        |
-| 资料安全      | 拒绝重解析点/目录联接；用卷 ID 和文件 ID 检查身份；禁止设备名与备用数据流文件名                      |
-| 打开文件/网页 | Windows Shell API，目标不拼进 cmd.exe 命令                                                           |
-| 删除资料      | 系统回收站，仍需界面确认，不永久删除学校原件                                                         |
-| 操作日志      | 写入、同步并关闭临时文件后替换；Windows 使用带 write-through 的原生移动 API，不对目录调用 Unix fsync |
-| 搜索快捷键    | Ctrl K；macOS 保持 ⌘ K                                                                               |
-| 下载 MP4      | 需要用户自行提供 PATH 中的 `ffmpeg.exe`，应用不自动安装                                              |
-| 自动字幕      | 内置 MLX 安装仅限 Apple Silicon；Windows 保留导入/持久化和高级本机适配器协议                         |
+| 项目          | Windows 行为                                                                                                                                                                                                                              |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 本地数据      | 使用 Known Folders / `directories`；具体位置见 `SECURITY.md`                                                                                                                                                                              |
+| 资料目录      | 默认系统“下载”目录下 `OnePKU`；设置可更改，旧文件不搬移，保留来源 sidecar                                                                                                                                                                 |
+| 文件权限      | 继承当前用户目录的 NTFS ACL；Unix 的 0600/0700 仅在 Unix 设置                                                                                                                                                                             |
+| 资料安全      | 拒绝重解析点/目录联接；用卷 ID 和文件 ID 检查身份；禁止设备名与备用数据流文件名                                                                                                                                                           |
+| 打开文件/网页 | Windows Shell API，目标不拼进 cmd.exe 命令                                                                                                                                                                                                |
+| 删除资料      | 系统回收站，仍需界面确认，不永久删除学校原件                                                                                                                                                                                              |
+| 操作日志      | 写入、同步并关闭临时文件后替换；Windows 使用带 write-through 的原生移动 API，不对目录调用 Unix fsync                                                                                                                                      |
+| 搜索快捷键    | Ctrl K；macOS 保持 ⌘ K                                                                                                                                                                                                                    |
+| 下载 MP4      | 需要用户自行提供 PATH 中的 `ffmpeg.exe`，应用不自动安装                                                                                                                                                                                   |
+| 自动字幕      | 内置 MLX 安装仅限 Apple Silicon；Windows 保留导入/持久化和高级本机适配器协议                                                                                                                                                              |
+| 触控板捏合    | WebView2 的 `IsZoomControlEnabled` 关闭时，捏合停在宿主层、不会作为事件送进网页（macOS 则会），所以 Windows 打开 `zoomHotkeysEnabled`；打开后由 `src/lib/pageZoomGuard.ts` 取消带 Ctrl 的滚轮，界面不整页缩放，手势只在回放全屏时放大画面 |
 
 下载目录不要放在共享可写文件夹。对重解析点的拒绝是保守选择，可能使联接/部分云盘目录不可用；不为方便而绕过这项检查。
 
@@ -101,6 +102,7 @@ macOS 仍使用 `npm run tauri -- build --config src-tauri/tauri.test.conf.json 
 - [ ] 课程、作业、成绩、通知、培养方案和原文窗口可访问；退出登录后不串账号。
 - [ ] 中文/空格/特殊字符资料名；导入、打开、回收站恢复及同名不同内容归档。
 - [ ] 在线回放、离线缓存、倍速/全屏、断点续看；窗口无后台控制台闪烁。
+- [ ] 全屏回放里双指捏合放大画面、双指拖动跟手平移、点「复位画面」与退出全屏都回到原尺寸；非全屏时捏合不会把界面整体缩放。
 - [ ] 导入 SRT/VTT、字幕偏移、重启后复用；未配置引擎时不出现 Mac 安装命令。
 - [ ] 如需验收作业提交，由本人明确选择测试作业逐步确认；不自动提交或测试支付/选课。
 - [ ] macOS CI 通过，并在真实 Mac 上复查启动、资料和字幕组件。

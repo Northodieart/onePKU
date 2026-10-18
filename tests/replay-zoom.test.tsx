@@ -104,7 +104,7 @@ it("pinches to zoom only in fullscreen, pans when zoomed, and restores on exit",
     ).toBeEnabled(),
   );
 
-  // ① 非全屏不接管手势：捏合仍归浏览器页面缩放，画面不动。
+  // ① 非全屏时画面区域不接管这个手势（整页缩放由 pageZoomGuard 取消），画面本身不动。
   const outside = new WheelEvent("wheel", {
     bubbles: true,
     cancelable: true,

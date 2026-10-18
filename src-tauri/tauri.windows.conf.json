@@ -1,4 +1,16 @@
 {
+  "app": {
+    "windows": [
+      {
+        "title": "OnePKU",
+        "width": 1320,
+        "height": 880,
+        "minWidth": 760,
+        "minHeight": 600,
+        "zoomHotkeysEnabled": true
+      }
+    ]
+  },
   "bundle": {
     "targets": ["nsis"],
     "windows": {

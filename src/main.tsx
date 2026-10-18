@@ -5,11 +5,14 @@ import App from "./App";
 import { call, type Envelope, type Request } from "./lib/api";
 import { NotificationProvider } from "./lib/notifications";
 import { applyTheme, savedTheme } from "./lib/theme";
+import { guardPageZoom } from "./lib/pageZoomGuard";
 import "./styles/tokens.css";
 import "./styles/app.css";
 import "./styles/search.css";
 // 先定主题再画第一帧，避免浅色闪一下再变深。
 applyTheme(savedTheme());
+// 捏合只用来放大回放画面，应用界面自己不跟着缩放。
+guardPageZoom();
 const client = new QueryClient();
 async function start() {
   try {
