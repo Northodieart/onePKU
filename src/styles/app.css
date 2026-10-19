@@ -1279,6 +1279,8 @@ tbody tr:last-child td {
   padding: 7px 26px 0;
   font-size: 12px;
   color: var(--muted);
+  /* 保存位置是绝对路径，Windows 上很长，不能把弹窗撑破。 */
+  overflow-wrap: anywhere;
 }
 .modal-body {
   padding: 24px 26px 28px;
@@ -1573,6 +1575,10 @@ tbody tr:last-child td {
   gap: 12px;
   padding: 16px 0;
   border-bottom: 1px solid var(--border);
+}
+.download-open {
+  display: flex;
+  justify-content: flex-end;
 }
 .download-record:last-child {
   border-bottom: 0;

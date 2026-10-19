@@ -1,7 +1,14 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { Download, FileCheck2, LoaderCircle, RotateCcw, X } from "lucide-react";
-import { action } from "../lib/api";
+import {
+  Download,
+  FileCheck2,
+  FolderOpen,
+  LoaderCircle,
+  RotateCcw,
+  X,
+} from "lucide-react";
+import { action, useResource, type Preferences } from "../lib/api";
 import { Modal, Button } from "./ui";
 type Job = {
   id: string;
@@ -19,6 +26,9 @@ export default function Downloads() {
   const [open, setOpen] = useState(false);
   const [retrying, setRetrying] = useState<string | null>(null);
   const [error, setError] = useState("");
+  // 保存位置以设置里选的为准，写死的提示会指错目录（Windows 上尤其明显）。
+  const prefs = useResource<Preferences>({ kind: "preferences" });
+  const root = prefs.data?.data?.downloadRoot;
   const q = useQuery({
     queryKey: ["downloads"],
     queryFn: () => action<Job[]>({ kind: "downloads" }),
@@ -45,11 +55,33 @@ export default function Downloads() {
       </button>
       <Modal
         title="下载记录"
-        description="文件保存在「下载 / OnePKU」并按学期、课程归档；同名同内容复用，更新版本另存。"
+        description={
+          root
+            ? `文件保存在「${root}」并按学期、课程归档；同名同内容复用，更新版本另存。`
+            : "文件按设置里选的保存位置归档；同名同内容复用，更新版本另存。"
+        }
         open={open}
         onClose={() => setOpen(false)}
       >
         {error && <p role="alert">{error}</p>}
+        <div className="download-open">
+          <Button
+            variant="quiet"
+            title={root ? `打开 ${root}` : "打开保存位置"}
+            onClick={() => {
+              setError("");
+              void action({ kind: "openDownloadRoot" }).catch((e: unknown) =>
+                setError(
+                  "未能打开保存位置：" +
+                    (e instanceof Error ? e.message : String(e)),
+                ),
+              );
+            }}
+          >
+            <FolderOpen size={14} />
+            打开文件夹
+          </Button>
+        </div>
         {jobs.map((j) => (
           <div className="download-record" key={j.id}>
             {["running", "queued"].includes(j.state) ? (
