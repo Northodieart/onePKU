@@ -84,6 +84,21 @@ jobs:
           echo "打包产物：$src"
           cp "$src" "$APK_NAME"
 
+      # 产物本身要登录才能下载，签名状态写进运行摘要就不用翻日志：
+      # 文件名是 app-release.apk 说明带上了正式钥匙，app-release-unsigned.apk 就是没配 secrets。
+      - name: 记录产物与签名状态
+        env:
+          SIGNED: ${{ steps.signing.outputs.signed }}
+          APK_NAME: ${{ steps.version.outputs.apk }}
+        run: |
+          src=$(ls app/build/outputs/apk/release/*.apk | head -n 1)
+          {
+            echo "### 安卓包与签名"
+            echo "- 正式钥匙：${SIGNED:-unknown}"
+            echo "- 构建产物：${src}"
+            echo "- 发布文件名：${APK_NAME}"
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - uses: actions/upload-artifact@v4
         with:
           name: onepku-android-apk
