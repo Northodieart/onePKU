@@ -1,12 +1,19 @@
 name: Android APK
 
 # 安卓端 CI 只看 android/：该目录（或本文件）有改动就构建 release APK，桌面端的改动不会触发它。
+#
+# 发安卓版：推 `onepku-for-android-vX.Y.Z` 标签（版本号必须与 app/build.gradle.kts 的 versionName 一致），
+# 本工作流构建后创建一个**预发布** Release。标预发布是为了不抢 GitHub 的 `releases/latest` 指针——
+# 桌面端的更新清单就读那个地址（`latest.json` 只挂在桌面 Release 上）。安卓端不依赖 latest，
+# 它在 releases 列表里按资产名 `onepku-android-v*.apk` 认最新。
+#
 # 签名钥匙是两个仓库 secrets：ONEPKU_KEYSTORE_BASE64（.jks 的 base64）与 ONEPKU_KEYSTORE_PASSWORD。
 # 所有对外发布的包必须用同一把钥匙签，否则版本之间签名不一致，Android 会拒绝覆盖安装；
-# 因此 release 事件下缺钥匙直接失败，fork 的 PR 读不到 secrets 时只出未签名包。
+# 因此标签构建缺钥匙直接失败，fork 的 PR 读不到 secrets 时只出未签名包。
 on:
   push:
     branches: [main, Android]
+    tags: ["onepku-for-android-*"]
     paths:
       - "android/**"
       - ".github/workflows/android.yml"
@@ -15,8 +22,6 @@ on:
       - "android/**"
       - ".github/workflows/android.yml"
   workflow_dispatch:
-  release:
-    types: [published]
 
 permissions:
   contents: write
@@ -41,11 +46,11 @@ jobs:
         id: signing
         env:
           KEYSTORE_BASE64: ${{ secrets.ONEPKU_KEYSTORE_BASE64 }}
-          EVENT_NAME: ${{ github.event_name }}
+          REF_TYPE: ${{ github.ref_type }}
         run: |
           if [ -z "$KEYSTORE_BASE64" ]; then
-            if [ "$EVENT_NAME" = "release" ]; then
-              echo "缺少 ONEPKU_KEYSTORE_BASE64：往 Release 上挂 APK 必须用正式钥匙签名" >&2
+            if [ "$REF_TYPE" = "tag" ]; then
+              echo "缺少 ONEPKU_KEYSTORE_BASE64：发安卓 Release 必须用正式钥匙签名" >&2
               exit 1
             fi
             echo "没有签名钥匙（fork 的 PR 读不到 secrets 属正常），本次出未签名包。"
@@ -105,8 +110,19 @@ jobs:
           path: android/${{ steps.version.outputs.apk }}
           retention-days: 30
 
-      - name: Attach APK to GitHub Release
-        if: github.event_name == 'release'
-        uses: softprops/action-gh-release@v2
-        with:
-          files: android/${{ steps.version.outputs.apk }}
+      - name: 发布安卓预发布 Release
+        if: github.ref_type == 'tag'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ github.ref_name }}
+          VERSION: ${{ steps.version.outputs.name }}
+          APK_NAME: ${{ steps.version.outputs.apk }}
+        run: |
+          if [ "$TAG" != "onepku-for-android-v$VERSION" ]; then
+            echo "标签 $TAG 与 versionName $VERSION 不一致，拒绝发布" >&2
+            exit 1
+          fi
+          gh release create "$TAG" --prerelease --title "OnePKU for Android v$VERSION" \
+            --notes "更新内容见仓库 CHANGELOG.md 的「Android 版」一节。从 v0.3.2 及更早的版本升级要先卸载：那些包由构建机临时生成的 debug 钥匙签名，与本包不是同一把钥匙，系统会拒绝覆盖安装。" \
+            "$APK_NAME" \
+            || gh release upload "$TAG" --clobber "$APK_NAME"

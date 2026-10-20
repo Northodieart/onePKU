@@ -16,11 +16,15 @@ import org.junit.Test
  */
 class UpdateApiTest {
 
-    private fun releaseJson(vararg names: String) =
-        """{"tag_name":"v0.12.5","assets":[""" + names.joinToString(",") { name ->
-            """{"name":"$name","size":22743250,"digest":"sha256:ff3dea54616249ff233f4a805d8dcfe456fbb15f13c448324f77d866976ea7a7",""" +
-                """"browser_download_url":"https://github.com/Northodieart/onePKU/releases/download/v0.12.5/$name"}"""
-        } + "]}"
+    private fun assetJson(name: String) =
+        """{"name":"$name","size":22743250,"digest":"sha256:ff3dea54616249ff233f4a805d8dcfe456fbb15f13c448324f77d866976ea7a7",""" +
+            """"browser_download_url":"https://github.com/Northodieart/onePKU/releases/download/v0.12.5/$name"}"""
+
+    /** 安卓端读的是 releases 列表（安卓发布是预发布，不占 releases/latest），所以夹具也是数组。 */
+    private fun releaseJson(vararg names: String) = releasesJson("v0.12.5", *names)
+
+    private fun releasesJson(tag: String, vararg names: String) =
+        """[{"tag_name":"$tag","assets":[""" + names.joinToString(",") { assetJson(it) } + "]}]"
 
     @Test
     fun `只认 onepku-android 包名里的版本号，桌面资产一概跳过`() {
@@ -61,6 +65,26 @@ class UpdateApiTest {
     }
 
     @Test
+    fun `桌面 Release 排在前面也盖不住后面的安卓包`() {
+        val text = """[{"tag_name":"v0.12.5","assets":[""" +
+            assetJson("OnePKU.app.zip") + "," + assetJson("latest.json") +
+            """]},{"tag_name":"onepku-for-android-v0.4.0","assets":[""" +
+            assetJson("onepku-android-v0.4.0.apk") + "]}]"
+        val check = UpdateApi.parseCheck(text, currentVersion = "0.3.2")
+        assertEquals("0.4.0", (check as UpdateCheck.Available).release.version)
+    }
+
+    @Test
+    fun `列表顺序不反映版本高低时，仍按版本号取最新`() {
+        val newerFirst = """[{"tag_name":"onepku-for-android-v0.5.0","assets":[""" +
+            assetJson("onepku-android-v0.5.0.apk") +
+            """]},{"tag_name":"onepku-for-android-v0.4.0","assets":[""" +
+            assetJson("onepku-android-v0.4.0.apk") + "]}]"
+        val check = UpdateApi.parseCheck(newerFirst, currentVersion = "0.3.2")
+        assertEquals("0.5.0", (check as UpdateCheck.Available).release.version)
+    }
+
+    @Test
     fun `版本号认不出就当没有更新，不拿垃圾去比`() {
         assertNull(UpdateApi.apkVersionOf("onepku-android.apk"))
         assertNull(UpdateApi.apkVersionOf("onepku-android-v0.4.apk"))
@@ -71,11 +95,12 @@ class UpdateApiTest {
 
     @Test
     fun `结构认不出就抛，不静默当成没有更新`() {
-        runCatching { UpdateApi.parseCheck("""{"tag_name":"v1"}""", "0.3.2") }
-            .onSuccess { error("没有 assets 应该报错，而不是当成没有更新") }
-            .onFailure { assertEquals(UpdateException::class, it::class) }
-        runCatching { UpdateApi.parseCheck("not json", "0.3.2") }
-            .onFailure { assertEquals(UpdateException::class, it::class) }
+        // 缺 assets 的响应不是我们预期的结构，不能当成「没有更新」。
+        for (text in listOf("""{"tag_name":"v1"}""", """[{"tag_name":"v1"}]""", "not json")) {
+            runCatching { UpdateApi.parseCheck(text, "0.3.2") }
+                .onSuccess { error("应该报错而不是当成没有更新：$text") }
+                .onFailure { assertEquals(UpdateException::class, it::class) }
+        }
     }
 
     @Test

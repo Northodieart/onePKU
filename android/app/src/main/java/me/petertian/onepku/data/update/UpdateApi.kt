@@ -15,6 +15,7 @@ import javax.inject.Singleton
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.json.Json
 import me.petertian.onepku.BuildConfig
 import me.petertian.onepku.core.network.HttpFactory
@@ -49,7 +50,7 @@ class UpdateApi @Inject constructor(
     suspend fun check(currentVersion: String = BuildConfig.VERSION_NAME): UpdateCheck =
         withContext(Dispatchers.IO) {
             val request = Request.Builder()
-                .url(LATEST_RELEASE_API)
+                .url(RELEASES_API)
                 .header("Accept", "application/vnd.github+json")
                 .build()
             val response = try {
@@ -180,8 +181,12 @@ class UpdateApi @Inject constructor(
         else PackageManager.GET_SIGNATURES
 
     companion object {
-        const val LATEST_RELEASE_API =
-            "https://api.github.com/repos/Northodieart/onePKU/releases/latest"
+        /**
+         * 读 releases 列表而不是 `releases/latest`：安卓走独立发布且标成预发布（不抢桌面端更新清单
+         * 所在的 latest 指针），所以最新版要在列表里按资产名认。
+         */
+        const val RELEASES_API =
+            "https://api.github.com/repos/Northodieart/onePKU/releases?per_page=30"
         const val APK_MIME = "application/vnd.android.package-archive"
         private const val MAX_APK_BYTES = 200L * 1024 * 1024
 
@@ -229,9 +234,10 @@ class UpdateApi @Inject constructor(
 
         /** 纯解析：认不出结构就抛，别把它当成「没有更新」。 */
         fun parseCheck(text: String, currentVersion: String): UpdateCheck {
-            val release = runCatching { json.decodeFromString(GhRelease.serializer(), text) }
-                .getOrElse { throw UpdateException("发布信息无法解析") }
-            val packages = release.assets.mapNotNull { asset ->
+            val releases = runCatching {
+                json.decodeFromString(ListSerializer(GhRelease.serializer()), text)
+            }.getOrElse { throw UpdateException("发布信息无法解析") }
+            val packages = releases.flatMap { it.assets }.mapNotNull { asset ->
                 apkVersionOf(asset.name)?.let { it to asset }
             }
             if (packages.isEmpty()) return UpdateCheck.NoAndroidPackage

@@ -47,6 +47,8 @@ debug 产物在 `app/build/outputs/apk/debug/`，release 在 `app/build/outputs/
 
 所有对外发布的包用同一把正式钥匙签名（`signingConfigs.release`，钥匙路径与口令由 `ONEPKU_KEYSTORE_FILE` / `ONEPKU_KEYSTORE_PASSWORD` 提供，不进仓库）。CI 需要两个仓库 secrets：`ONEPKU_KEYSTORE_BASE64` 与 `ONEPKU_KEYSTORE_PASSWORD`；缺钥匙时挂 Release 的构建直接失败，fork 的 PR 读不到 secrets 只出未签名包。签名不一致的包之间无法覆盖安装，因此从 v0.3.2 及更早的 debug 版升级需要先卸载一次（本机登录态与设置会丢）。
 
+发安卓版：推 `onepku-for-android-vX.Y.Z` 标签（版本号要与 `versionName` 一致，CI 会核对），`android.yml` 构建后创建一个**预发布** Release，资产即 `onepku-android-vX.Y.Z.apk`。标预发布是为了不抢 GitHub 全仓库唯一的 `releases/latest` 指针——桌面端的更新清单读的是那个地址。
+
 ## 从 GitHub 下载 APK
 
 `android/` 目录有改动就会触发构建：推 `Android` 或 `main` 分支、以及任何改到 `android/` 的 PR，GitHub Actions（`.github/workflows/android.yml`）都会构建并在运行产物（Artifacts）中提供 `onepku-android-v<版本>.apk`，版本号取自 `app/build.gradle.kts` 的 `versionName`。发布 Release 时同名 APK 会附加到 Release 页面——注意 Release 标签走的是桌面版版本号，APK 文件名仍按 Android 自己的 `versionName`。

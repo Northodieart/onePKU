@@ -76,7 +76,7 @@ CI 按路径分工，不看改动落在哪条分支：
 
 - `android/**` 的改动触发 `.github/workflows/android.yml`，构建 release APK 并上传产物。
 - `android/` 之外的改动触发 `.github/workflows/desktop.yml`，在 Windows x64 与 macOS Apple Silicon 上跑检查并上传测试安装包；`android/**`、`docs/**` 与 `*.md` 被它忽略。
-- 两个工作流都不会自动发布 Release。发布由维护者打 `v*` 标签触发 `.github/workflows/release.yml`；Release 一旦发布，`android.yml` 也会触发一次，从该标签指向的提交构建 APK 挂到同一个 Release 上，所以发版时两端各自核对产物文件名（`OnePKU.app.zip` 与 `onepku-android-v<Android 版本>.apk`）。只想发 Android 版时用 `onepku-for-android-vX.Y.Z` 这种前缀标签，`release.yml` 的 `if: startsWith(github.ref, 'refs/tags/v')` 不会命中它。
+- 两端各发各的 Release。桌面版打 `v*` 标签触发 `.github/workflows/release.yml`；安卓版打 `onepku-for-android-vX.Y.Z` 标签触发 `.github/workflows/android.yml`，由它构建并创建一个**预发布** Release（标签版本号必须与 `versionName` 一致，CI 会核对）。安卓发布标预发布是为了不抢 GitHub 全仓库唯一的 `releases/latest` 指针——桌面端的更新清单就读 `releases/latest/download/latest.json`；安卓端反过来不依赖 latest，它在 releases 列表里按资产名 `onepku-android-v*.apk` 认最新。`release.yml` 的 `if: startsWith(github.ref, 'refs/tags/v')` 也不会命中安卓前缀标签。
 - 两个平台的检查都通过、真实账号只读流程完成后才算验收。没有硬件或账号验证的部分要在 PR 中明确注明，不能把成功编译描述为完整功能验收。
 
 桌面端的平台差异尽量放在 `crates/campus-core/src/platform.rs` 和 `src-tauri/tauri.{macos,windows}.conf.json`，业务命令和凭证边界保持共享。Windows 移植同时修改了 vendored 会话持久化与 ffmpeg 进程启动；可回馈的增量见 `contributions/pkucli-windows.patch`。不要把个人 Rust/C++ 工具链、安装缓存、账号数据、测试日志或构建产物提交进 Git。
