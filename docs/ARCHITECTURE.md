@@ -104,5 +104,5 @@ Rust 核心使用 `directories` 查询操作系统目录；Tauri/WebView2 有单
 
 - `tests/*.test.tsx`：vitest + Testing Library，mock `call()` 返回 `Envelope`，测页面与 `lib/` 的纯函数。
 - `cargo test -p campus-core --lib`：解析器、缓存策略、保活退避、下载去重、写操作状态机。
-- `cd android && ./gradlew testDebugUnitTest`：Android 端的培养方案引擎与作业页 HTML 解析。
+- `cd android && ./gradlew testDebugUnitTest`：Android 端的培养方案引擎、作业页 HTML 解析与应用内更新的版本判读（认包名、比版本、校验和与签名比对）。
 - `docs/research/QA.md`：用真实账号做的手工验收记录，不含个人数据。

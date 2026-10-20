@@ -22,7 +22,7 @@ cd android
 ./gradlew testDebugUnitTest
 ```
 
-调试 APK 用 `./gradlew assembleDebug`，产物在 `android/app/build/outputs/apk/debug/`；`android/` 目录有改动时 CI 会构建并上传同名产物，见 `.github/workflows/android.yml`。培养方案数据不在 `android/` 下，构建时由 Gradle 从仓库根 `data/curriculum/` 同步，所以要连着整个仓库一起构建。改了仓库根的 Markdown 仍要跑 `npm run format:check`——两端同样受 Prettier 约束。
+日常开发可以继续 `./gradlew assembleDebug`（包名带 `.debug` 后缀，能与正式版并存），但对外发布走 `./gradlew assembleRelease`：产物在 `android/app/build/outputs/apk/release/`，需要 `ONEPKU_KEYSTORE_FILE` 与 `ONEPKU_KEYSTORE_PASSWORD` 两把环境变量，缺钥匙时只出未签名包。`android/` 目录有改动时 CI 会构建并上传产物，见 `.github/workflows/android.yml`。培养方案数据不在 `android/` 下，构建时由 Gradle 从仓库根 `data/curriculum/` 同步，所以要连着整个仓库一起构建。改了仓库根的 Markdown 仍要跑 `npm run format:check`——两端同样受 Prettier 约束。
 
 提交前跑一遍：
 
@@ -68,13 +68,13 @@ cargo test -p pku-course --lib --locked
 
 - `main` 是集成主线，桌面端与 Android 端的改动最终都落到这里；合并后的 `main` 同时含两套实现，发布 `v*` 标签也从 `main` 出。
 - `Desktop` 是桌面端（macOS 与 Windows）的迭代分支，推上去就要能直接拿到双平台测试安装包。
-- `Android` 是安卓端的迭代分支，推上去就要能直接拿到调试 APK。
+- `Android` 是安卓端的迭代分支，推上去就要能直接拿到 APK 产物。
 
 功能分支从最新 `main` 建，通过 PR 合并；不要在 `Desktop` 或 `Android` 上再长期另开平行分支，也不要把只属一端的改动直接推上 `main`。改了 `data/curriculum/` 这类两端共用的数据，要同时想清楚两端的读法——Android 端构建时把它同步进 assets，桌面端在运行时解析。
 
 CI 按路径分工，不看改动落在哪条分支：
 
-- `android/**` 的改动触发 `.github/workflows/android.yml`，构建调试 APK 并上传产物。
+- `android/**` 的改动触发 `.github/workflows/android.yml`，构建 release APK 并上传产物。
 - `android/` 之外的改动触发 `.github/workflows/desktop.yml`，在 Windows x64 与 macOS Apple Silicon 上跑检查并上传测试安装包；`android/**`、`docs/**` 与 `*.md` 被它忽略。
 - 两个工作流都不会自动发布 Release。发布由维护者打 `v*` 标签触发 `.github/workflows/release.yml`；Release 一旦发布，`android.yml` 也会触发一次，从该标签指向的提交构建 APK 挂到同一个 Release 上，所以发版时两端各自核对产物文件名（`OnePKU.app.zip` 与 `onepku-android-v<Android 版本>.apk`）。只想发 Android 版时用 `onepku-for-android-vX.Y.Z` 这种前缀标签，`release.yml` 的 `if: startsWith(github.ref, 'refs/tags/v')` 不会命中它。
 - 两个平台的检查都通过、真实账号只读流程完成后才算验收。没有硬件或账号验证的部分要在 PR 中明确注明，不能把成功编译描述为完整功能验收。

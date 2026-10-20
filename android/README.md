@@ -31,14 +31,21 @@
 
 ```bash
 cd android
-./gradlew assembleDebug
+./gradlew assembleDebug      # 日常开发，包名带 .debug 后缀
+./gradlew assembleRelease    # 对外发布，需要签名钥匙
 ```
 
-产物在 `app/build/outputs/apk/debug/`。Release 构建需自行配置签名。
+debug 产物在 `app/build/outputs/apk/debug/`，release 在 `app/build/outputs/apk/release/`。Release 的签名钥匙由 `ONEPKU_KEYSTORE_FILE` 与 `ONEPKU_KEYSTORE_PASSWORD` 两个环境变量（或 `android/local.properties` 里的同名 `onepku.*` 项）提供；没有它们时 Gradle 出未签名包，CI 在挂 Release 的那次构建会直接失败。
 
 培养方案数据不在本目录，构建时由 Gradle 从仓库根的 `data/curriculum/` 同步进 assets，因此必须连着整个仓库一起构建，不能只拷 `android/` 出去。
 
 单元测试：`./gradlew testDebugUnitTest`，覆盖培养方案完成度引擎与作业页的 HTML 解析。
+
+## 更新与签名
+
+设置页「关于」里的「检查更新」读本仓库最新的 GitHub Release，按包名 `onepku-android-vX.Y.Z.apk` 认安卓包（Release 标签跟着桌面版版本号走，与这里无关）。发现新版本后在应用内下载，校验发布方的 sha256、包名与签名钥匙，三项都过才调起系统安装器；没授权「安装未知应用」时会给出去设置的入口。只在点击时请求，不自动检查。
+
+所有对外发布的包用同一把正式钥匙签名（`signingConfigs.release`，钥匙路径与口令由 `ONEPKU_KEYSTORE_FILE` / `ONEPKU_KEYSTORE_PASSWORD` 提供，不进仓库）。CI 需要两个仓库 secrets：`ONEPKU_KEYSTORE_BASE64` 与 `ONEPKU_KEYSTORE_PASSWORD`；缺钥匙时挂 Release 的构建直接失败，fork 的 PR 读不到 secrets 只出未签名包。签名不一致的包之间无法覆盖安装，因此从 v0.3.2 及更早的 debug 版升级需要先卸载一次（本机登录态与设置会丢）。
 
 ## 从 GitHub 下载 APK
 
@@ -48,7 +55,7 @@ cd android
 
 - 账号密码只用于登录学校服务，保存在本机 EncryptedSharedPreferences（AES256-GCM，密钥由 Android Keystore 托管）。
 - 各服务会话 Cookie 存于应用私有目录；退出登录即全部清除。
-- 不接入任何第三方统计或广告 SDK，网络请求只发往学校域名。
+- 不接入任何第三方统计或广告 SDK；网络请求只发往学校域名，唯一的例外是用户主动点击的「检查更新」，它只读 GitHub 的公开 Releases 接口。
 
 ## 协议来源
 

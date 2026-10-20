@@ -48,8 +48,12 @@ import me.petertian.onepku.core.session.Service
 import me.petertian.onepku.data.auth.AuthManager
 import me.petertian.onepku.data.news.SchoolNoticeApi
 import me.petertian.onepku.data.repo.DepartmentStore
+import me.petertian.onepku.data.update.AndroidRelease
+import me.petertian.onepku.data.update.UpdateApi
+import me.petertian.onepku.data.update.UpdateCheck
 import me.petertian.onepku.ui.navigation.back
 import me.petertian.onepku.ui.navigation.toLogin
+import java.io.File
 import javax.inject.Inject
 
 data class SettingsUiState(
@@ -60,6 +64,11 @@ data class SettingsUiState(
     val pickingSchool: Boolean = false,
     val busy: Boolean = false,
     val message: String? = null,
+    val update: UpdateCheck? = null,
+    val checking: Boolean = false,
+    val download: Pair<Long, Long?>? = null,
+    val installFile: String? = null,
+    val needPermission: Boolean = false,
 )
 
 @HiltViewModel
@@ -67,6 +76,7 @@ class SettingsViewModel @Inject constructor(
     private val auth: AuthManager,
     private val departments: DepartmentStore,
     schoolNotices: SchoolNoticeApi,
+    private val updates: UpdateApi,
 ) : ViewModel() {
 
     private val _ui = MutableStateFlow(SettingsUiState(schools = schoolNotices.schools()))
@@ -113,6 +123,67 @@ class SettingsViewModel @Inject constructor(
     fun logoutAll(onDone: () -> Unit) {
         auth.logoutAll()
         onDone()
+    }
+
+    fun checkForUpdates() {
+        viewModelScope.launch {
+            _ui.update {
+                it.copy(
+                    checking = true,
+                    message = null,
+                    update = null,
+                    download = null,
+                    installFile = null,
+                    needPermission = false,
+                )
+            }
+            try {
+                _ui.update { it.copy(update = updates.check()) }
+            } catch (e: Exception) {
+                _ui.update { it.copy(message = "检查更新失败:${e.message}") }
+            }
+            _ui.update { it.copy(checking = false) }
+        }
+    }
+
+    fun downloadUpdate(release: AndroidRelease) {
+        viewModelScope.launch {
+            _ui.update {
+                it.copy(
+                    message = null,
+                    download = 0L to release.size.takeIf { size -> size > 0 },
+                )
+            }
+            try {
+                val file = updates.download(release) { done, total ->
+                    _ui.update { state -> state.copy(download = done to (total ?: state.download?.second)) }
+                }
+                _ui.update { it.copy(download = null, installFile = file.path) }
+                installDownloaded()
+            } catch (e: Exception) {
+                _ui.update { it.copy(message = "更新未能安装:${e.message}", download = null) }
+            }
+        }
+    }
+
+    /** 装不了就留在原地：要么没授权，要么系统没给可用的安装界面，两种都说清下一步。 */
+    fun installDownloaded() {
+        val path = _ui.value.installFile ?: return
+        if (!updates.canInstall()) {
+            _ui.update { it.copy(needPermission = true, message = "需要你先允许 OnePKU 安装应用") }
+            return
+        }
+        if (!updates.launchInstall(File(path))) {
+            _ui.update { it.copy(needPermission = false, message = "没能打开系统安装界面,请从下载记录里手动打开") }
+        }
+    }
+
+    fun openInstallPermission() {
+        if (!updates.openInstallPermissionSettings()) {
+            _ui.update { it.copy(message = "找不到系统的应用权限设置页") }
+            return
+        }
+        _ui.update { it.copy(needPermission = false, message = "允许后回到这里,点「继续安装」") }
     }
 }
 
@@ -298,9 +369,57 @@ fun SettingsScreen(nav: NavHostController, vm: SettingsViewModel = hiltViewModel
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                         )
+                        val progress = ui.download
+                        val available = (ui.update as? UpdateCheck.Available)?.release
+                        Row(
+                            horizontalArrangement = Arrangement.spacedBy(8.dp),
+                            verticalAlignment = Alignment.CenterVertically,
+                        ) {
+                            TextButton(
+                                onClick = { vm.checkForUpdates() },
+                                enabled = !ui.checking && progress == null,
+                            ) { Text(if (ui.checking) "检查中…" else "检查更新") }
+                            if (available != null && progress == null && ui.installFile == null) {
+                                TextButton(onClick = { vm.downloadUpdate(available) }) {
+                                    Text("下载 v${available.version}")
+                                }
+                            }
+                            if (ui.installFile != null) {
+                                TextButton(onClick = { vm.installDownloaded() }) { Text("继续安装") }
+                            }
+                            if (ui.needPermission) {
+                                TextButton(onClick = { vm.openInstallPermission() }) { Text("去允许") }
+                            }
+                        }
+                        if (progress != null) {
+                            val total = progress.second
+                            UpdateStatus(
+                                if (total == null) "下载中 ${mbOf(progress.first)}"
+                                else "下载中 ${mbOf(progress.first)} / ${mbOf(total)}",
+                            )
+                        }
+                        when (val state = ui.update) {
+                            is UpdateCheck.UpToDate -> UpdateStatus("已是最新版本")
+                            is UpdateCheck.NoAndroidPackage -> UpdateStatus("这个版本还没有安卓安装包")
+                            is UpdateCheck.Available -> UpdateStatus(
+                                "发现新版本 v${state.release.version},约 ${mbOf(state.release.size)}",
+                            )
+                            null -> {}
+                        }
                     }
                 }
             }
         }
     }
 }
+
+@Composable
+private fun UpdateStatus(text: String) {
+    Text(
+        text,
+        style = MaterialTheme.typography.bodySmall,
+        color = MaterialTheme.colorScheme.onSurfaceVariant,
+    )
+}
+
+private fun mbOf(bytes: Long): String = "${bytes / 1024 / 1024} MB"

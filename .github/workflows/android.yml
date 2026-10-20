@@ -1,6 +1,9 @@
 name: Android APK
 
-# 安卓端 CI 只看 android/：该目录（或本文件）有改动就构建调试 APK，桌面端的改动不会触发它。
+# 安卓端 CI 只看 android/：该目录（或本文件）有改动就构建 release APK，桌面端的改动不会触发它。
+# 签名钥匙是两个仓库 secrets：ONEPKU_KEYSTORE_BASE64（.jks 的 base64）与 ONEPKU_KEYSTORE_PASSWORD。
+# 所有对外发布的包必须用同一把钥匙签，否则版本之间签名不一致，Android 会拒绝覆盖安装；
+# 因此 release 事件下缺钥匙直接失败，fork 的 PR 读不到 secrets 时只出未签名包。
 on:
   push:
     branches: [main, Android]
@@ -34,8 +37,29 @@ jobs:
 
       - uses: gradle/actions/setup-gradle@v4
 
+      - name: 还原签名钥匙
+        id: signing
+        env:
+          KEYSTORE_BASE64: ${{ secrets.ONEPKU_KEYSTORE_BASE64 }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          if [ -z "$KEYSTORE_BASE64" ]; then
+            if [ "$EVENT_NAME" = "release" ]; then
+              echo "缺少 ONEPKU_KEYSTORE_BASE64：往 Release 上挂 APK 必须用正式钥匙签名" >&2
+              exit 1
+            fi
+            echo "没有签名钥匙（fork 的 PR 读不到 secrets 属正常），本次出未签名包。"
+            echo "signed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          printf '%s' "$KEYSTORE_BASE64" | base64 -d > "$RUNNER_TEMP/onepku-release.jks"
+          echo "ONEPKU_KEYSTORE_FILE=$RUNNER_TEMP/onepku-release.jks" >> "$GITHUB_ENV"
+          echo "signed=true" >> "$GITHUB_OUTPUT"
+
       - name: Build APK
-        run: ./gradlew assembleDebug --stacktrace
+        env:
+          ONEPKU_KEYSTORE_PASSWORD: ${{ secrets.ONEPKU_KEYSTORE_PASSWORD }}
+        run: ./gradlew assembleRelease --stacktrace
 
       - name: Read versionName
         id: version
@@ -55,7 +79,10 @@ jobs:
       - name: Rename APK
         env:
           APK_NAME: ${{ steps.version.outputs.apk }}
-        run: cp app/build/outputs/apk/debug/app-debug.apk "$APK_NAME"
+        run: |
+          src=$(ls app/build/outputs/apk/release/*.apk | head -n 1)
+          echo "打包产物：$src"
+          cp "$src" "$APK_NAME"
 
       - uses: actions/upload-artifact@v4
         with:

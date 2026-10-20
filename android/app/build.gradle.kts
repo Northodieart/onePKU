@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -18,12 +20,30 @@ val syncCurriculumAssets by tasks.registering(Copy::class) {
     into(curriculumAssetsDir)
 }
 
-// 让资源合并任务等同步完成,否则 srcDir 只声明路径、不会触发拷贝。
+// 让读这个目录的任务都等同步完成。除了 merge*Assets，lint 的模型任务也直接吃它，
+// 只挂 merge 会让 release 构建卡在 Gradle 的隐式依赖检查上。
 tasks.configureEach {
-    if (name.startsWith("merge") && name.endsWith("Assets")) {
+    if ((name.startsWith("merge") && name.endsWith("Assets")) || name.contains("lint", ignoreCase = true)) {
         dependsOn(syncCurriculumAssets)
     }
 }
+
+// 正式签名钥匙不进仓库:CI 把 secret 还原成文件后设 ONEPKU_KEYSTORE_FILE,
+// 本机自测可以在 android/local.properties 里写 onepku.keystore.file=… 等项。
+// 缺钥匙时 release 出未签名包(只为验证 R8 与资源收缩),CI 那侧会先挡住不让它发布。
+fun signingSecret(env: String, prop: String): String? =
+    System.getenv(env) ?: runCatching {
+        val local = File(rootProject.projectDir, "local.properties")
+        if (!local.exists()) return@runCatching null
+        Properties().apply { local.inputStream().use { load(it) } }.getProperty(prop)
+    }.getOrNull()
+
+val keystoreFile = signingSecret("ONEPKU_KEYSTORE_FILE", "onepku.keystore.file")?.let { File(it) }
+val keystorePasswordValue = signingSecret("ONEPKU_KEYSTORE_PASSWORD", "onepku.keystore.password")
+val keystoreAliasValue = signingSecret("ONEPKU_KEYSTORE_ALIAS", "onepku.keystore.alias") ?: "onepku"
+// 局部变量不能叫 storeFile/storePassword/keyAlias/keyPassword：在 signingConfigs 的 lambda 里
+// 它们会被解析成 receiver 自己的属性，赋值等于原地自赋值，签名会静默缺项。
+val keystoreKeyPasswordValue = signingSecret("ONEPKU_KEY_PASSWORD", "onepku.key.password") ?: keystorePasswordValue
 
 android {
     namespace = "me.petertian.onepku"
@@ -35,8 +55,19 @@ android {
         applicationId = "me.petertian.onepku"
         minSdk = 26
         targetSdk = 35
-        versionCode = 4
-        versionName = "0.3.2"
+        versionCode = 5
+        versionName = "0.4.0"
+    }
+
+    signingConfigs {
+        if (keystoreFile != null && keystoreFile.isFile && keystorePasswordValue != null) {
+            create("release") {
+                storeFile = keystoreFile
+                storePassword = keystorePasswordValue
+                keyAlias = keystoreAliasValue
+                keyPassword = keystoreKeyPasswordValue
+            }
+        }
     }
 
     buildTypes {
@@ -44,6 +75,8 @@ android {
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            // 所有对外发布的包都用同一把钥匙,否则版本之间签名不一致,系统会拒绝覆盖安装。
+            signingConfig = signingConfigs.findByName("release")
         }
         debug {
             applicationIdSuffix = ".debug"

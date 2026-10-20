@@ -1,6 +1,6 @@
 # 更新记录
 
-桌面版与 Android 版分开计数、各自发版，版本号互不对应：桌面版当前 v0.12.5（macOS 与 Windows 同一条包序列），Android 版当前 v0.3.2。下面两节各自最新版本在前。
+桌面版与 Android 版分开计数、各自发版，版本号互不对应：桌面版当前 v0.12.5（macOS 与 Windows 同一条包序列），Android 版当前 v0.4.0。下面两节各自最新版本在前。
 
 条目整理自各版本发布时的 README 说明，保留当时的措辞与验证范围，所以读到的可能是当时的分支名与 CI 约定；当前的分支与 CI 分工见 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
@@ -446,6 +446,17 @@
 GUI 的取舍：以集中查看和整理为主；树洞的搜索/线索检索保留在底层和 CLI，未创建 MCP 接入。上游写能力与 OnePKU 当前边界见 [能力盘点](docs/research/CAPABILITIES.md)。
 
 ## Android 版
+
+### v0.4.0 应用内可以检查并安装更新，改用正式签名出包
+
+Android 应用版本记为 v0.4.0（`versionCode` 5）。本版新增应用内更新，单元测试由 50 个增至 60 个。
+
+- 设置页「关于」加「检查更新」：读本仓库 GitHub Releases 的最新发布，按包名 `onepku-android-vX.Y.Z.apk` 认安卓包——Release 标签跟着桌面端走，不能拿来比版本。发现新版本就显示版本号与大小，点「下载」取包。只在用户点击时请求，不自动检查，也不发送任何账号数据。
+- 下载完先过三道关再交给安装器：GitHub 给的 sha256 摘要、安装包的应用包名、安装包签名与本机安装签名是否同一把钥匙。任何一项不过就删掉文件并说明原因；发布信息里没有摘要时宁可不自动装。「有新版但这一版没发安卓包」单独提示，不冒充「已是最新」。
+- 需要用户先在系统里允许「安装未知应用」。未授权时给「去允许」按钮跳到对应设置页，回来后点「继续安装」，已下载的包不重复下载。
+- 出包改用正式签名钥匙的 release 构建。此前是 `assembleDebug`，而 debug 钥匙由构建机首次构建时临时生成，GitHub 每次都是新虚拟机，所以**各版本发布的 APK 签名互不相同、根本覆盖安装不了**。包体由 22.7 MB 降到 4.3 MB，也不再是 debuggable 构建。代价：已装的 debug 版与新包签名不同，要先卸载再装一次，本机登录态与设置会丢；此后版本之间才可直接覆盖升级。
+- CI 新增两个仓库 secrets：`ONEPKU_KEYSTORE_BASE64`（keystore 文件的 base64）与 `ONEPKU_KEYSTORE_PASSWORD`。缺钥匙时挂到 Release 的那次构建直接失败；fork 的 PR 读不到 secrets，只出未签名包。
+- 顺带修掉构建脚本两处问题：`syncCurriculumAssets` 的产物原先只挂给 `merge*Assets`，release 的 lint 任务同样读它，Gradle 因隐式依赖检查直接失败；R8 缺 Tink 所引用的 errorprone 注解规则，补 `-dontwarn`。
 
 ### v0.3.2 适配教学网作业页改版，修正作业的时间与提交查看
 

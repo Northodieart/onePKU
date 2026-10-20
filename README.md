@@ -113,10 +113,10 @@ Android 客户端在 `android/` 下，需要 JDK 17 与 Android SDK（`compileSd
 
 ```bash
 cd android
-./gradlew assembleDebug      # 产物 app/build/outputs/apk/debug/app-debug.apk
+./gradlew assembleRelease    # 产物 app/build/outputs/apk/release/app-release.apk，需签名钥匙
 ```
 
-CI 按路径分工：`android/` 之内的改动触发 `.github/workflows/android.yml` 构建调试 APK 并上传产物，`android/` 之外（仓库其余部分）的改动触发 `.github/workflows/desktop.yml` 的 macOS 与 Windows 检查和打包。
+CI 按路径分工：`android/` 之内的改动触发 `.github/workflows/android.yml` 构建 release APK 并上传产物，`android/` 之外（仓库其余部分）的改动触发 `.github/workflows/desktop.yml` 的 macOS 与 Windows 检查和打包。
 
 验证：
 
