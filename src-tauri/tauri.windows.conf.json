@@ -16,6 +16,7 @@
     "windows": {
       "nsis": {
         "installMode": "currentUser",
+        "installerHooks": "hooks/uninstall.nsi",
         "languages": ["SimpChinese", "English"],
         "displayLanguageSelector": true
       }

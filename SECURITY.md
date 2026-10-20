@@ -17,6 +17,7 @@
 - macOS 凭证：`~/Library/Application Support/info/<服务>/`。
 - Windows WebView2 独立保存网页运行数据（可能含网页会话和缓存）：`%LOCALAPPDATA%\me.petertian.onepku\EBWebView\`。它与下述 Rust 业务数据目录不同，不要把该目录作为诊断资料公开发送。
 - Windows 凭证：`%APPDATA%\info\config\<服务>\`；OnePKU 缓存：`%LOCALAPPDATA%\petertian\OnePKU\cache\`；字幕和操作日志：同级 `data\`；偏好：`%APPDATA%\petertian\OnePKU\config\`。
+- Windows 卸载：NSIS 卸载器本身只按 `identifier` 清 `%APPDATA%\me.petertian.onepku` 与 `%LOCALAPPDATA%\me.petertian.onepku`，上面那些业务数据它够不到；勾选「删除应用数据」时由 `src-tauri/hooks/uninstall.nsi` 补删业务目录、与 PKU CLI 共用的 `%APPDATA%\info`、凭据管理器里的 `username.info-pku` / `password.info-pku` 以及 `%TEMP%` 里更新留下的安装器目录。「下载\OnePKU」是用户内容，单独二次确认、默认保留。设置里改过缓存或保存位置时，钩子只清默认位置，自定义目录要自己删。静默/passive 卸载跳过确认页，等于不清数据。
 - Unix 新建私有文件保留 0600、私有目录保留 0700；Windows 使用当前用户目录继承的 NTFS ACL，不把 POSIX mode 位误称为 Windows 权限。没有添加 Everyone/Users 授权，也不修改用户目录现有 ACL。若用户把目录共享给其他账号，应用不承诺消除该共享访问。
 - 归档读取拒绝符号链接；Windows 额外拒绝重解析点（含目录联接），保留文件身份和内容校验。
 

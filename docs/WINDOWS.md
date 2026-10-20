@@ -62,6 +62,7 @@ macOS 仍使用 `npm run tauri -- build --config src-tauri/tauri.test.conf.json 
 | 下载 MP4      | 需要用户自行提供 PATH 中的 `ffmpeg.exe`，应用不自动安装                                                                                                                                                                                   |
 | 自动字幕      | 内置 MLX 安装仅限 Apple Silicon；Windows 保留导入/持久化和高级本机适配器协议                                                                                                                                                              |
 | 触控板捏合    | WebView2 的 `IsZoomControlEnabled` 关闭时，捏合停在宿主层、不会作为事件送进网页（macOS 则会），所以 Windows 打开 `zoomHotkeysEnabled`；打开后由 `src/lib/pageZoomGuard.ts` 取消带 Ctrl 的滚轮，界面不整页缩放，手势只在回放全屏时放大画面 |
+| 卸载清理      | 勾选「删除应用数据」时由 `src-tauri/hooks/uninstall.nsi` 补删业务目录、与 PKU CLI 共用的会话和凭据管理器条目；「下载\OnePKU」单独二次确认，自定义保存位置要自己删                                                                 |
 
 下载目录不要放在共享可写文件夹。对重解析点的拒绝是保守选择，可能使联接/部分云盘目录不可用；不为方便而绕过这项检查。
 
@@ -97,7 +98,7 @@ macOS 仍使用 `npm run tauri -- build --config src-tauri/tauri.test.conf.json 
 
 ## 发布前手工验收清单
 
-- [ ] 在普通用户账户安装、启动、卸载；缺失 WebView2 时提示/安装正常。
+- [ ] 在普通用户账户安装、启动、卸载；缺失 WebView2 时提示/安装正常。卸载时勾上「删除应用数据」，确认 `%LOCALAPPDATA%\petertian\OnePKU`、`%APPDATA%\petertian\OnePKU`、`%APPDATA%\info`、`%LOCALAPPDATA%\me.petertian.onepku` 与凭据管理器里的 `*.info-pku` 都不再残留，`%TEMP%` 里没有 `OnePKU-*-updater-*`；下载目录按提示选保留时应原样在那里。
 - [ ] 扫码登录、关闭重开、保持会话；凭证不出现在前端或日志。
 - [ ] 课程、作业、成绩、通知、培养方案和原文窗口可访问；退出登录后不串账号。
 - [ ] 中文/空格/特殊字符资料名；导入、打开、回收站恢复及同名不同内容归档。
