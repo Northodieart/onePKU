@@ -1,6 +1,7 @@
 import React from "react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import {
+  act,
   cleanup,
   fireEvent,
   render,
@@ -116,6 +117,9 @@ it("pinches to zoom only in fullscreen, pans when zoomed, and restores on exit",
 
   fireEvent.click(screen.getByRole("button", { name: "全屏", exact: true }));
   await screen.findByRole("button", { name: "退出全屏" });
+  // 挂 wheel 监听的是被动 effect，React 19 要等 paint 之后才 flush；
+  // DOM 上已经出现「退出全屏」时监听可能还没装上，不等它就派发手势，事件会整个丢掉。
+  await act(async () => {});
 
   // ② 全屏里双指捏合放大，并吃掉默认行为，不让 WebView 跟着缩整页。
   // 一次捏合会连着送来几十个 wheel 事件：每个都要算进倍数，但每帧只读一次尺寸、写一次样式。
@@ -184,6 +188,8 @@ it("pinches to zoom only in fullscreen, pans when zoomed, and restores on exit",
   await waitFor(() => expect(scaleOf(video)).toBeGreaterThan(1));
   fireEvent.click(screen.getByRole("button", { name: "退出全屏" }));
   await waitFor(() => expect(video.style.transform).toBe(""));
+  // 同样要等 effect 的清理跑完（监听被摘掉），才能断言捏合不再被接管。
+  await act(async () => {});
   const afterExit = new WheelEvent("wheel", {
     bubbles: true,
     cancelable: true,
