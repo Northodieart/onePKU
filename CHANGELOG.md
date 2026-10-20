@@ -1,10 +1,37 @@
 # 更新记录
 
-桌面版与 Android 版分开计数、各自发版，版本号互不对应：桌面版当前 v0.12.4（macOS 与 Windows 同一条包序列），Android 版当前 v0.3.2。下面两节各自最新版本在前。
+桌面版与 Android 版分开计数、各自发版，版本号互不对应：桌面版当前 v0.12.5（macOS 与 Windows 同一条包序列），Android 版当前 v0.3.2。下面两节各自最新版本在前。
 
 条目整理自各版本发布时的 README 说明，保留当时的措辞与验证范围，所以读到的可能是当时的分支名与 CI 约定；当前的分支与 CI 分工见 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
 ## 桌面版
+
+### v0.12.5 卸载能真的清干净本机，更新签名换成仓库自己的钥匙
+
+（2026-10-20。Windows 卸载器原先只删自己装进去的文件，勾了「删除应用数据」也碰不到应用真正写数据的地方；更新签名用的还是我们拿不到私钥的上游公钥。）
+
+#### 卸载清理
+
+- 新增 `src-tauri/hooks/uninstall.nsi`：勾选「删除应用数据」时，除 Tauri 自带的 identifier 目录（WebView2 的网页运行数据在里面）外，再删 C 盘上的缓存与业务数据、偏好与提醒、与 PKU CLI 共用的学校会话 Cookie、凭据管理器里的 `username.info-pku` / `password.info-pku`，以及应用内更新留在 `%TEMP%` 的安装器目录。
+- 「下载\OnePKU」是用户内容，单独二次确认、默认不删；设置里改过缓存或保存位置时，钩子只清默认位置，自定义目录要自己删。
+- 下载目录改从注册表 `User Shell Folders` 定位：NSIS 3.09 不认 `$DOWNLOADS` 常量，写下去只会静默删不到东西。
+- 静默/passive 卸载跳过确认页，行为与以前一致。
+
+#### 更新签名
+
+- 换成仓库自己生成的一对 minisign 密钥，公钥 key ID `D79C76EF3AB7D5B2`；私钥只存在维护者机器与 GitHub Actions 密钥里，不进仓库。此前内置上游公钥的包验不过新签名，需要手动装一次本版本，之后应用内更新才接得上。
+- 「检查更新」读不到清单时不再回显插件的英文报错，改成说明原因并提示手动下载安装包。
+
+#### 测试与 CI
+
+- 捏合用例修掉一处偶发失败：React 19 的被动 effect 在 paint 之后才 flush，`findByRole` 看到「退出全屏」时 wheel 监听可能还没挂上，手势事件白发一次；现在派发前先 flush，退出全屏那侧同理。
+- `npm test` 失败时把用例名写进 Actions 运行摘要，不用下载日志就能定位。
+
+#### 本轮验证
+
+- 本机：前端 32 个测试文件、140 个用例通过，`tsc -b` 与 Prettier 通过；`cargo test -p campus-core --locked`（92 个）、`-p pku-course --lib`（16 个）、vendored `pkuinfo-common --lib`（2 个）全绿；`makensis -WX` 单独编译过卸载钩子；签名自证得到的 key ID 与新公钥一致。
+- CI：`006e04b` 的 Windows 与 macOS 作业全绿，Windows 打包步骤在 Tauri 的真实模板里编译过钩子。
+- 未验证：应用内更新的端到端（要等带 `latest.json` 的 Release 发出来才算）；卸载器实际删文件的真机验收。
 
 ### v0.12.4 应用内更新改读本仓库的 Releases
 
