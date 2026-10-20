@@ -42,7 +42,7 @@
   },
   "plugins": {
     "updater": {
-      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDJENkQ4MjlENUY5Q0FDMjgKUldRb3JKeGZuWUp0TFF1OG81ZERFWDNqZHI2Ym5POGxNdWdRcWdTWlNRdExHdWRvQ2cvV05pcXcK",
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEQ3OUM3NkVGM0FCN0Q1QjIKUldTeTFiYzY3M2FjMXc5Tlk0elY0YTBjdHZ2QUQ5WkZLRlRyY0w4bCtNb3pjdTc1bDYxQXJYZFkK",
       "endpoints": [
         "https://github.com/Northodieart/onePKU/releases/latest/download/latest.json"
       ]
