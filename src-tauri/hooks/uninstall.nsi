@@ -30,9 +30,16 @@ LangString onepkuDownloadsQuestion ${LANG_ENGLISH} "Also delete the course files
     ; 应用内更新留下的安装器目录：<应用名>-<版本>-updater-<随机>，插件用的是 tempdir().keep()
     !insertmacro RemoveUpdaterTemp
 
-    ; 下载的资料属于用户内容，单独确认，默认不删
+    ; 下载的资料属于用户内容，单独确认，默认不删。
+    ; Downloads 的真实位置从注册表读：NSIS 的 $DOWNLOADS 常量并非所有版本都有，
+    ; 而且用户可能把「下载」整个重定向到其他盘——注册表这个键就是系统给出的权威位置。
     MessageBox MB_YESNO|MB_ICONEXCLAMATION "$(onepkuDownloadsQuestion)" IDNO onepku_keep_downloads
-      RMDir /r "$DOWNLOADS\OnePKU"
+      ReadRegStr $0 HKCU "Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders" "{374DE290-123F-4555-916C-4DA4E70E65B8}"
+      ${If} $0 == ""
+        StrCpy $0 "$PROFILE\Downloads"
+      ${EndIf}
+      ExpandEnvStrings $0 $0
+      RMDir /r "$0\OnePKU"
     onepku_keep_downloads:
   ${EndIf}
 !macroend
