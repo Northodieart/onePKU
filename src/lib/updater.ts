@@ -23,14 +23,18 @@ export async function checkForUpdate(): Promise<UpdateHandle | null> {
   const { check } = await import("@tauri-apps/plugin-updater");
   const update = await check({ timeout: 20_000 }).catch((error: unknown) => {
     const message = error instanceof Error ? error.message : String(error);
+    // 清单取不到时插件只留一句英文，真实原因几乎总是 Releases 里还没有 latest.json。
+    if (message.includes("Could not fetch a valid release JSON")) {
+      throw new Error(
+        "暂时读不到更新清单，本仓库的 Releases 里还没有 latest.json，需要手动下载安装包。",
+      );
+    }
     if (
       message.includes("platforms") &&
       (message.includes("not found") ||
         message.includes("None of the fallback"))
     ) {
-      throw new Error(
-        "此版本尚未提供当前系统的更新包，请稍后重试或查看 Releases。",
-      );
+      throw new Error("此版本尚未提供当前系统的更新包，请稍后再试。");
     }
     throw error;
   });

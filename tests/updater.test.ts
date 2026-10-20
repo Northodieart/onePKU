@@ -17,6 +17,12 @@ it("explains a missing platform package instead of claiming the app is current",
     await expect(checkForUpdate()).rejects.toThrow("尚未提供当前系统的更新包");
   }
 });
+it("names the missing manifest instead of echoing the plugin's English error", async () => {
+  mocks.check.mockRejectedValue(
+    "Could not fetch a valid release JSON from the remote",
+  );
+  await expect(checkForUpdate()).rejects.toThrow("还没有 latest.json");
+});
 it("propagates network errors without saying latest", async () => {
   mocks.check.mockRejectedValue(new Error("offline"));
   await expect(checkForUpdate()).rejects.toThrow("offline");
