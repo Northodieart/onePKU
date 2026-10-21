@@ -252,9 +252,12 @@ pub fn compute_hash_id(parts: &[&str]) -> String {
 /// 解析 Blackboard 中文格式的截止时间
 /// 格式: "2025年3月15日 星期六 下午11:59"
 pub fn parse_deadline(raw: &str) -> Option<chrono::DateTime<chrono::Local>> {
-    let re =
-        regex::Regex::new(r"(\d{4})年(\d{1,2})月(\d{1,2})日 星期. (上午|下午)(\d{1,2}):(\d{1,2})")
-            .ok()?;
+    // 日期与"星期X"、"星期X"与"上午/下午"之间的空白不固定：jsoup/scraper 取纯文本时
+    // 可能把它们直接拼成"星期三下午11:59"，所以这里允许空白缺席，与安卓端同一口径。
+    let re = regex::Regex::new(
+        r"(\d{4})年(\d{1,2})月(\d{1,2})日\s*星期.\s*(上午|下午)(\d{1,2}):(\d{1,2})",
+    )
+    .ok()?;
 
     let caps = re.captures(raw)?;
     let year: i32 = caps[1].parse().ok()?;
@@ -279,6 +282,25 @@ pub fn parse_deadline(raw: &str) -> Option<chrono::DateTime<chrono::Local>> {
         .from_local_datetime(&naive_dt)
         .single()
         .map(|d| d.with_timezone(&chrono::Local))
+}
+
+/// 取作业页上的截止时间文本，判据与安卓端 `CourseApi.deadlineText` 一致。
+///
+/// 学校把到期日期从 `.itemdates` 搬进了 `.metaField`，同一排还并排着"满分"等字段，
+/// 所以按"能不能解析成日期"来挑，而不是按位置挑；旧版 `.itemdates` 继续兼容。
+pub fn deadline_text(dom: &Html) -> Option<String> {
+    let meta = Selector::parse(".metaField").expect("static selector");
+    let found = dom
+        .select(&meta)
+        .map(|el| el.text().collect::<String>().trim().to_string())
+        .find(|text| parse_deadline(text).is_some());
+    if found.is_some() {
+        return found;
+    }
+    dom.select(&Selector::parse(".itemdates").expect("static selector"))
+        .next()
+        .map(|el| el.text().collect::<String>().trim().to_string())
+        .filter(|text| !text.is_empty())
 }
 
 /// 格式化截止时间倒计时
@@ -902,10 +924,7 @@ impl CourseApi {
             .to_string();
 
         // 截止时间
-        let deadline = dom
-            .select(&Selector::parse(".itemdates").expect("static selector"))
-            .next()
-            .map(|el| el.text().collect::<String>().trim().to_string());
+        let deadline = deadline_text(&dom);
 
         // 说明
         let instructions = dom
@@ -1687,6 +1706,66 @@ fn get_mime_type(extension: &str) -> &'static str {
 #[cfg(test)]
 mod onepku_tests {
     use super::*;
+
+    fn dom(html: &str) -> Html {
+        Html::parse_document(html)
+    }
+
+    #[test]
+    fn deadline_prefers_the_metafield_row_that_actually_parses() {
+        // 学校改版后的形状：到期日期嵌在 .metaField 里，同一排还有"满分"等字段。
+        let page = dom(
+            r#"<div class="metaField"><span>满分:</span><span>100</span></div>
+               <div class="metaField"><span>到期日期:</span><span class="metaSubInfo">2026年10月20日 星期二 下午11:59</span></div>"#,
+        );
+        let text = deadline_text(&page).expect("改版后应能读到截止时间");
+        assert!(text.contains("2026年10月20日"), "{text}");
+        assert!(parse_deadline(&text).is_some(), "{text}");
+    }
+
+    #[test]
+    fn deadline_still_reads_the_legacy_itemdates_block() {
+        let page = dom(r#"<div class="itemdates">2026年9月9日 星期三 下午11:59</div>"#);
+        assert_eq!(
+            deadline_text(&page).as_deref(),
+            Some("2026年9月9日 星期三 下午11:59")
+        );
+    }
+
+    #[test]
+    fn deadline_tolerates_missing_whitespace_before_the_weekday_and_ampm() {
+        // 取纯文本时 jsoup/scraper 可能不留空格，"星期二下午11:59" 这种写法要照样认。
+        let page = dom(r#"<div class="metaField">2026年10月20日 星期二下午11:59</div>"#);
+        let text = deadline_text(&page).expect("无空格写法也要解析成截止时间");
+        let at = parse_deadline(&text).expect("截止时间应可解析");
+        assert_eq!(
+            at.with_timezone(&chrono::Utc).to_rfc3339(),
+            "2026-10-20T15:59:00+00:00"
+        );
+    }
+
+    #[test]
+    fn no_deadline_at_all_reads_as_none_not_a_fake_date() {
+        let page = dom(r#"<div class="metaField"><span>满分:</span><span>100</span></div>"#);
+        assert_eq!(deadline_text(&page), None);
+    }
+
+    #[test]
+    fn ampm_midnight_and_noon_are_not_swapped() {
+        assert_eq!(
+            parse_deadline("2026年9月9日 星期三 上午12:00")
+                .map(|d| d.with_timezone(&chrono::Utc).to_rfc3339())
+                .as_deref(),
+            Some("2026-09-08T16:00:00+00:00")
+        );
+        assert_eq!(
+            parse_deadline("2026年9月9日 星期三 下午12:30")
+                .map(|d| d.with_timezone(&chrono::Utc).to_rfc3339())
+                .as_deref(),
+            Some("2026-09-09T04:30:00+00:00")
+        );
+    }
+
     #[test]
     fn current_semester_module_labels() {
         for title in ["当前学期课程", "本学期课程", "Current Semester", "CURRENT\n SEMESTER Courses"] {

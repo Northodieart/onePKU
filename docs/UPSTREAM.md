@@ -69,3 +69,5 @@ Core error classification now recognizes the campus-card library's exact `登录
 播放与 MP4 下载现在共用恢复目录及播放列表指纹，通过进程内的异步分片锁合并并发请求；原子落盘后供两者读取，取消等待不会锁死后续请求。旧播放缓存只在账号、课程、视频及指纹匹配时导入，校验完整 TS 后优先硬链接；播放状态同步读取下载缓存。新增并发仅请求一次、取消恢复、旧缓存复用及下载分片无网络播放回归测试。
 
 完整 vendored 增量整理在 `contributions/pkucli-replay-cache.patch`，基线为 OnePKU `31beb7c`；其中已包含学期分组修复，不能再叠加独立学期补丁。双平台 CI 显式执行 `pku-course` 单元测试，覆盖共享下载与恢复逻辑；主工作区测试本身不会运行依赖包的单元测试。
+
+作业截止时间改从 `.metaField` 读。教学网把到期日期从 `.itemdates` 搬进 `.metaField`，同一排还并排着"满分"等字段，所以按"能不能解析成日期"挑那一格，旧版 `.itemdates` 继续兜底；中文日期正则同时允许"星期X"与"上午/下午"前后没有空白（取纯文本时可能被拼成"星期二下午11:59"）。判据与安卓端 `CourseApi.deadlineText` 一致，新增改版形状、旧版兜底、无空白写法与"确实没有截止时间"四类回归测试。仅修改 OnePKU 的 vendored 实现，未更新全局 CLI 或提交上游。
