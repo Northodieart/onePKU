@@ -1,8 +1,9 @@
-# 推送 v* 标签时构建 macOS（Apple Silicon）和 Windows x64，生成草稿 Release：
-# OnePKU.app.zip（手动下载）、OnePKU.app.tar.gz + .sig 与 latest.json（应用内更新）。
-# 草稿由维护者检查后手动发布；发布后应用内“检查更新”即可看到。
-# 这里只打桌面端的包。Release 被 published 时 .github/workflows/android.yml 会另外触发一次，
-# 从同一份代码构建 onepku-android-v<Android 版本>.apk 挂到同一个 Release 上；两端版本号互不对应。
+# 推送 v* 标签时构建 macOS（Apple Silicon）和 Windows x64，两端的资产与 latest.json
+# 先收在同一个草稿 Release 上，最后一个 publish 作业确认两边都成功后直接发布，
+# 不需要维护者再手动点一次；任一平台作业失败就留在草稿，等于自动拦住半份更新包。
+# 资产：OnePKU.app.zip（手动下载）、OnePKU.app.tar.gz + .sig 与 latest.json（应用内更新）。
+# 这里只打桌面端的包。安卓端由 .github/workflows/android.yml 走自己的预发布 Release，
+# 挂到桌面版标签上会让 releases/latest 变成安卓包。
 name: Release
 on:
   push:
@@ -87,3 +88,25 @@ jobs:
           prerelease: false
           includeUpdaterJson: true
           args: --target x86_64-pc-windows-msvc --bundles nsis -- --locked
+
+  publish:
+    # 两个平台作业都成功才会跑：草稿上已经有了两端的包与合并好的 latest.json，
+    # 直接发布出去，省掉手动确认；任一作业失败就留在草稿，不会放出半份更新通道。
+    needs: [macos, windows]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          gh release edit "$TAG" --draft=false
+          count=$(gh release view "$TAG" --json assets --jq '.assets | length')
+          {
+            echo "### Release 已自动发布"
+            echo "- 标签：${TAG}"
+            echo "- 资产：${count} 个"
+          } >> "$GITHUB_STEP_SUMMARY"
