@@ -238,6 +238,11 @@ function Videos({ course, login }: { course: Course; login: Login }) {
   const q = useResource<Replay[]>({ kind: "videos", course: course.name });
   const haoxue = useResource<{ connected: boolean }>({ kind: "haoxueStatus" });
   const connected = haoxue.data?.data?.connected ?? false;
+  // 登录窗口自己关掉后靠桌面端广播刷新，这里再兜一层：连接状态一变好，
+  // 就把停在「登录已失效」上的列表补取一次，不用手动点重试。
+  useEffect(() => {
+    if (connected && q.data?.error?.code === "haoxueAuth") void q.refetch();
+  }, [connected, q.data?.error?.code]);
   const [connecting, setConnecting] = useState(false);
   const [connectError, setConnectError] = useState("");
   const [playing, setPlaying] = useState<{

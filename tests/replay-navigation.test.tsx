@@ -22,10 +22,14 @@ const videosKey = [
   "resource",
   { kind: "videos", course: "视觉艺术与计算美学" },
 ];
-const envelope = (data: unknown, generation = "account") => ({
+const envelope = (
+  data: unknown,
+  generation = "account",
+  error: { code: string; message: string } | null = null,
+) => ({
   data,
   generation,
-  error: null,
+  error,
   warnings: [],
   stale: false,
   updatedAt: null,
@@ -171,6 +175,64 @@ it("closes playback when navigation removes the selected replay", async () => {
   );
   expect(
     screen.queryByLabelText(`${replay.title} 视频`),
+  ).not.toBeInTheDocument();
+});
+
+it("refreshes the replay list once the recording login succeeds, without clicking retry", async () => {
+  history.replaceState(
+    null,
+    "",
+    `/#${encodeURIComponent(
+      pageLink("课程", { course: "art", tab: "videos" }),
+    )}`,
+  );
+  let connected = false;
+  let authenticated = false;
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(async (_url, options) => {
+      const request = JSON.parse(options.body);
+      const data =
+        request.kind === "allCourses"
+          ? [{ id: "art", name: "视觉艺术与计算美学" }]
+          : request.kind === "haoxueStatus"
+            ? { connected }
+            : request.kind === "videos" && authenticated
+              ? [replay]
+              : null;
+      const error =
+        request.kind === "videos" && !authenticated
+          ? {
+              code: "haoxueAuth",
+              message: "课堂实录登录已失效，请重新连接课堂实录",
+            }
+          : null;
+      return { ok: true, json: async () => envelope(data, "account", error) };
+    }),
+  );
+  const client = new QueryClient({
+    defaultOptions: { queries: { retry: false } },
+  });
+  render(
+    <QueryClientProvider client={client}>
+      <Courses login={() => {}} />
+    </QueryClientProvider>,
+  );
+  expect(
+    await screen.findByRole("button", { name: "连接课堂实录" }),
+  ).toBeInTheDocument();
+  authenticated = true;
+  connected = true;
+  await act(async () => {
+    client.setQueryData(
+      ["resource", { kind: "haoxueStatus" }],
+      envelope({ connected: true }),
+    );
+    await new Promise((resolve) => setTimeout(resolve, 10));
+  });
+  expect(await screen.findByText("9月21日 · 视觉艺术回放")).toBeInTheDocument();
+  expect(
+    screen.queryByText("课堂实录登录已失效，请重新连接课堂实录"),
   ).not.toBeInTheDocument();
 });
 

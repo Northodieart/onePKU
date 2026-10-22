@@ -2,6 +2,8 @@
   "identifier": "main",
   "windows": ["main"],
   "permissions": [
+    "core:event:allow-listen",
+    "core:event:allow-unlisten",
     "core:window:allow-is-fullscreen",
     "core:window:allow-set-fullscreen",
     "updater:default",

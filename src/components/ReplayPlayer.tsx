@@ -13,6 +13,7 @@ import {
   X,
 } from "lucide-react";
 import { action, ApiError, connectHaoxue } from "../lib/api";
+import { listen } from "@tauri-apps/api/event";
 import { openBrowser } from "../lib/browser";
 import { Button } from "./ui";
 import { useReplayFullscreen } from "./useReplayFullscreen";
@@ -144,6 +145,23 @@ export default function ReplayPlayer({
   const [waiting, setWaiting] = useState(true);
   const [needsPlay, setNeedsPlay] = useState(false);
   const [retry, setRetry] = useState(0);
+  // 登录窗口登录成功后自己关掉，播放器收不到任何回调：等桌面端广播再起播，
+  // 否则开窗即重试，登录还没完成，请求仍然失败。
+  useEffect(() => {
+    if (!needsAuth || !("__TAURI_INTERNALS__" in window)) return;
+    let live = true;
+    let dispose: (() => void) | undefined;
+    void listen("haoxue-connected", () => setRetry((value) => value + 1))
+      .then((unlisten) => {
+        if (live) dispose = unlisten;
+        else unlisten();
+      })
+      .catch(() => {});
+    return () => {
+      live = false;
+      dispose?.();
+    };
+  }, [needsAuth]);
   const [rate, setRate] = useState(1);
   const [busy, setBusy] = useState(false);
   const [optionsOpen, setOptionsOpen] = useState(false);
@@ -741,14 +759,10 @@ export default function ReplayPlayer({
                   disabled={connecting}
                   onClick={() => {
                     setConnecting(true);
-                    setNeedsAuth(false);
+                    // needsAuth 留着，登录成功的广播才有监听者；起播在广播里做。
                     void connectHaoxue()
                       .catch(() => setError("登录窗口未能打开，请重试"))
-                      .finally(() => {
-                        setConnecting(false);
-                        // 连上之后从断点重新起播，不用手动再点一次。
-                        setRetry((value) => value + 1);
-                      });
+                      .finally(() => setConnecting(false));
                   }}
                 >
                   连接课堂实录
